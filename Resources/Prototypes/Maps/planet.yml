@@ -1,0 +1,19 @@
+- type: gameMap
+  id: Planet
+  mapName: 'Planet'
+  mapPath: /Maps/planet.yml
+  minPlayers: 0
+  stations:
+    Evacpod:
+      stationProto: StandardNanotrasenStation
+      components:
+        - type: StationBiome
+          biome: Continental
+        - type: StationNameSetup
+          mapNameTemplate: '{0} ??? Station {1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: '???'
+        - type: StationJobs
+          availableJobs:
+            Passenger: [ -1, -1 ]
