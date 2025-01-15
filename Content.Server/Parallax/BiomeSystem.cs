@@ -1,6 +1,7 @@
 using System.Linq;
 using System.Numerics;
 using System.Threading.Tasks;
+using Content.Server.Administration.Managers;
 using Content.Server.Atmos;
 using Content.Server.Atmos.Components;
 using Content.Server.Atmos.EntitySystems;
@@ -9,6 +10,7 @@ using Content.Server.Ghost.Roles.Components;
 using Content.Server.Shuttles.Events;
 using Content.Server.Shuttles.Systems;
 using Content.Shared.Atmos;
+using Content.Shared.CCVar;
 using Content.Shared.Decals;
 using Content.Shared.Ghost;
 using Content.Shared.Gravity;
@@ -36,6 +38,7 @@ namespace Content.Server.Parallax;
 
 public sealed partial class BiomeSystem : SharedBiomeSystem
 {
+    [Dependency] private readonly IAdminManager _admin = default!;
     [Dependency] private readonly IConfigurationManager _configManager = default!;
     [Dependency] private readonly IConsoleHost _console = default!;
     [Dependency] private readonly IMapManager _mapManager = default!;
@@ -77,6 +80,8 @@ public sealed partial class BiomeSystem : SharedBiomeSystem
     private readonly Dictionary<BiomeComponent,
         Dictionary<string, HashSet<Vector2i>>> _markerChunks = new();
 
+    private bool _adminghostload;
+
     public override void Initialize()
     {
         base.Initialize();
@@ -89,8 +94,14 @@ public sealed partial class BiomeSystem : SharedBiomeSystem
         SubscribeLocalEvent<FTLStartedEvent>(OnFTLStarted);
         SubscribeLocalEvent<ShuttleFlattenEvent>(OnShuttleFlatten);
         Subs.CVar(_configManager, CVars.NetMaxUpdateRange, SetLoadRange, true);
+        Subs.CVar(_configManager, CCVars.AdminGhostsLoadTerrain, AdminGhostLoadChange, true);
         InitializeCommands();
         SubscribeLocalEvent<PrototypesReloadedEventArgs>(ProtoReload);
+    }
+
+    private void AdminGhostLoadChange(bool cvar)
+    {
+        _adminghostload = cvar;
     }
 
     private void ProtoReload(PrototypesReloadedEventArgs obj)
@@ -320,6 +331,8 @@ public sealed partial class BiomeSystem : SharedBiomeSystem
 
     private bool CanLoad(EntityUid uid)
     {
+        if (_adminghostload)
+            return !(_ghostQuery.HasComp(uid) && !_admin.IsAdmin(uid));
         return !_ghostQuery.HasComp(uid);
     }
 
