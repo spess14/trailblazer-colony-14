@@ -9,6 +9,13 @@ public sealed partial class CCVars
     public static readonly CVarDef<int> EntityMenuGroupingType = CVarDef.Create("entity_menu", 0, CVar.CLIENTONLY);
 
     /// <summary>
+    ///     If true, admin ghosts can load things around them.
+    ///     Keep in mind that this may crash the server if the admin uses it in bad faith
+    /// </summary>
+    public static readonly CVarDef<bool> AdminGhostsLoadTerrain =
+        CVarDef.Create("tc14.terrain.admin_load", true, CVar.SERVERONLY);
+
+    /// <summary>
     ///     Should we pre-load all of the procgen atlasses.
     /// </summary>
     public static readonly CVarDef<bool> ProcgenPreload =
