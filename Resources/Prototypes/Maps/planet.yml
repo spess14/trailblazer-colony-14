@@ -7,15 +7,15 @@
   randomRotation: false
   stations:
     Evacpod:
-      stationProto: StandardNanotrasenStation
+      stationProto: PlanetaryColony
       components:
         - type: StationBiome
           biome: Continental
         - type: StationNameSetup
-          mapNameTemplate: '{0} ??? Station {1}'
+          mapNameTemplate: '{0} Planet ??? {1}'
           nameGenerator:
             !type:NanotrasenNameGenerator
-            prefixCreator: '???'
+            prefixCreator: 'X'
         - type: StationJobs
           availableJobs:
             Passenger: [ -1, -1 ]
