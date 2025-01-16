@@ -64,7 +64,8 @@ namespace Content.IntegrationTests.Tests
             "Gate",
             "Amber",
             "Loop",
-            "Elkridge"
+            "Elkridge",
+            "Planet"
 
 
         };
