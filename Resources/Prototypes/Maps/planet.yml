@@ -3,13 +3,12 @@
   mapName: 'Planet'
   mapPath: /Maps/planet.yml
   minPlayers: 0
+  maxRandomOffset: 0
+  randomRotation: false
   stations:
     Evacpod:
       stationProto: StandardNanotrasenStation
       components:
-        - type: StationRandomTransform
-          enableStationRotation: false
-          maxStationOffset: null
         - type: StationBiome
           biome: Continental
         - type: StationNameSetup
