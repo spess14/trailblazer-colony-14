@@ -80,7 +80,8 @@ namespace Content.IntegrationTests.Tests
             "Plasma",
             "Elkridge",
             "Convex",
-            "Relic"
+            "Relic",
+            "Planet",
         };
 
         /// <summary>
