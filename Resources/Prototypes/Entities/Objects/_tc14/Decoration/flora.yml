@@ -1,0 +1,62 @@
+- type: entity
+  name: bush
+  id: BaseBush
+  description: A bush. Maybe you can forage something from it.
+  abstract: true
+  components:
+  - type: SpriteFade
+  - type: Clickable
+  - type: Sprite
+    noRot: true
+    sprite: Objects/Decoration/Flora/flora_bush.rsi
+    drawdepth: Overdoors
+  - type: Physics
+    bodyType: Static
+  - type: Damageable
+    damageContainer: StructuralInorganic
+    damageModifierSet: Wood
+  - type: MeleeSound
+    soundGroups:
+      Brute:
+        path: /Audio/Effects/chop.ogg
+        params:
+          variation: 0.05
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 100
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+    - trigger:
+        !type:DamageTrigger
+        damage: 20
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          path: /Audio/Effects/tree_fell.ogg
+          params:
+            volume: 5
+            variation: 0.05
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          Log:
+            min: 1
+            max: 2
+
+- type: entity
+  id: BushForage
+  parent: BaseBush
+  components:
+  - type: Sprite
+    layers:
+    - state: bush1
+      map: ["random"]
+  - type: RandomSprite
+    available:
+    - random:
+        bush1: ""
+        bush2: ""
