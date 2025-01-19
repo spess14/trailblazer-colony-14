@@ -12,6 +12,7 @@
     drawdepth: Overdoors
   - type: Physics
     bodyType: Static
+    canCollide: false
   - type: Damageable
     damageContainer: StructuralInorganic
     damageModifierSet: Wood
