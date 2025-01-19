@@ -47,6 +47,10 @@
           Log:
             min: 1
             max: 2
+      - !type:WeightedSpawnEntityBehavior
+        weightedEntityTable: "RandomBushTable"
+        minSpawn: 0
+        maxSpawn: 1
 
 - type: entity
   id: BushForage
@@ -61,3 +65,26 @@
     - random:
         bush1: ""
         bush2: ""
+
+- type: weightedRandomEntity
+  id: RandomBushTable
+  weights:
+    WheatSeeds: 3
+    CarrotSeeds: 3
+    CabbageSeeds: 3
+    GarlicSeeds: 3
+    LemonSeeds: 3
+    PotatoSeeds: 3
+    TomatoSeeds: 3
+    EggplantSeeds: 3
+    CornSeeds: 3
+    LimeSeeds: 1
+    TeaPlantSeeds: 1
+    TowercapSeeds: 1
+    ChanterelleSeeds: 1
+    EggySeeds: 1
+    TobaccoSeeds: 1
+    CannabisSeeds: 1
+    NettleSeeds: 1
+    AloeSeeds: 1
+    PoppySeeds: 1
