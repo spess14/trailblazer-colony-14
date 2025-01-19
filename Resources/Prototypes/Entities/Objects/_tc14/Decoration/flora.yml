@@ -15,7 +15,7 @@
     canCollide: false
   - type: Damageable
     damageContainer: StructuralInorganic
-    damageModifierSet: Wood
+    damageModifierSet: Web # do not ask
   - type: MeleeSound
     soundGroups:
       Brute:
