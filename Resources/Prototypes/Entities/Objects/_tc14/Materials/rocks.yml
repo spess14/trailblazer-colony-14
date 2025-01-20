@@ -1,0 +1,33 @@
+- type: entity
+  parent: BaseItem
+  id: RockItem
+  name: rock
+  description: The foundation of any civilization.
+  components:
+  - type: Sprite
+    sprite: Objects/Materials/materials.rsi
+    state: "rock"
+  - type: Item
+    sprite: Objects/Materials/materials.rsi
+    size: Normal
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: FlimsyMetallic
+  - type: MeleeWeapon
+    wideAnimationRotation: -135
+    damage:
+      types:
+        Blunt: 11
+  - type: LandAtCursor
+  - type: DamageOtherOnHit
+    damage:
+      types:
+        Blunt: 15
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 150
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]

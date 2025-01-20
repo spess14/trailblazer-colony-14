@@ -96,6 +96,18 @@
     entities:
     - BushForage
   - !type:BiomeEntityLayer
+    threshold: 0.4
+    noise:
+      seed: 0
+      noiseType: OpenSimplex2
+      fractalType: FBm
+      frequency: 2
+    allowedTiles:
+    - FloorPlanetGrass
+    - FloorPlanetDirt
+    entities:
+    - RockItem
+  - !type:BiomeEntityLayer
     threshold: 0.5
     noise:
       seed: 0
