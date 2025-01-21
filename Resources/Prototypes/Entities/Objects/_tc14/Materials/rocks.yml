@@ -17,12 +17,12 @@
     wideAnimationRotation: -135
     damage:
       types:
-        Blunt: 11
+        Blunt: 7
   - type: LandAtCursor
   - type: DamageOtherOnHit
     damage:
       types:
-        Blunt: 15
+        Blunt: 7
   - type: Destructible
     thresholds:
     - trigger:
