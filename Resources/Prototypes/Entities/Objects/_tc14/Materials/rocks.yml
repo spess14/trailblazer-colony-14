@@ -10,9 +10,22 @@
   - type: Item
     sprite: Objects/Materials/materials.rsi
     size: Normal
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 150
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
   - type: Damageable
     damageContainer: Inorganic
     damageModifierSet: FlimsyMetallic
+  - type: Tool
+    qualities:
+    - Hammering
+    useSound:
+      path: /Audio/Effects/Footsteps/largethud.ogg
   - type: MeleeWeapon
     wideAnimationRotation: -135
     damage:
@@ -23,11 +36,3 @@
     damage:
       types:
         Blunt: 7
-  - type: Destructible
-    thresholds:
-    - trigger:
-        !type:DamageTrigger
-        damage: 150
-      behaviors:
-      - !type:DoActsBehavior
-        acts: [ "Destruction" ]

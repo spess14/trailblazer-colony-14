@@ -1,0 +1,6 @@
+- type: tool
+  id: Hammering
+  name: tool-quality-hammering-name
+  toolName: tool-quality-hammering-tool-name
+  spawn: RockItem
+  icon: { sprite: Objects/Materials/materials.rsi, state: rock }
