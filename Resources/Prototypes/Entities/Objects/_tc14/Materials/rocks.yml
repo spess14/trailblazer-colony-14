@@ -5,10 +5,10 @@
   description: The foundation of any civilization.
   components:
   - type: Sprite
-    sprite: Objects/Materials/materials.rsi
+    sprite: Objects/Tools/rock.rsi
     state: "rock"
   - type: Item
-    sprite: Objects/Materials/materials.rsi
+    sprite: Objects/Tools/rock.rsi
     size: Normal
   - type: Destructible
     thresholds:
@@ -31,8 +31,39 @@
     damage:
       types:
         Blunt: 7
-  - type: LandAtCursor
-  - type: DamageOtherOnHit
+
+- type: entity
+  parent: BaseItem
+  id: FlakingRock
+  name: flaking rock
+  description: Sharp rock, quite a neat tool!
+  components:
+  - type: Sprite
+    sprite: Objects/Tools/rock.rsi
+    state: "flakingrock"
+  - type: Item
+    sprite: Objects/Tools/rock.rsi
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 100
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: FlimsyMetallic
+  - type: Sharp
+    butcherDelayModifier: 2.5 # this sucks
+  - type: Tool
+    qualities:
+    - Slicing
+    speedModifier: 0.5
+  - type: MeleeWeapon
+    attackRate: 1.5
     damage:
       types:
-        Blunt: 7
+        Slash: 5
+
+
