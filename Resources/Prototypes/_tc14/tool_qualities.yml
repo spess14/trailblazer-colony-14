@@ -3,4 +3,4 @@
   name: tool-quality-hammering-name
   toolName: tool-quality-hammering-tool-name
   spawn: RockItem
-  icon: { sprite: Objects/Materials/materials.rsi, state: rock }
+  icon: { sprite: Objects/Tools/rock.rsi, state: rock }
