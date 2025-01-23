@@ -5,7 +5,7 @@
   components:
   - type: Sprite
     layers:
-    - sprite: Objects/Materials/materials.rsi
+    - sprite: Objects/Tools/rock.rsi
       state: "rock"
   - type: RandomSpawner
     prototypes:
