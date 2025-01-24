@@ -2,7 +2,7 @@
   parent: BaseItem
   id: RockItem
   name: rock
-  description: The foundation of any civilization.
+  description: Bash two of those together and see what happens.
   components:
   - type: Sprite
     sprite: Objects/Tools/rock.rsi
@@ -21,6 +21,9 @@
   - type: Damageable
     damageContainer: Inorganic
     damageModifierSet: FlimsyMetallic
+  - type: Construction
+    graph: FlakingRock
+    node: start
   - type: Tool
     qualities:
     - Hammering
@@ -56,6 +59,9 @@
     damageModifierSet: FlimsyMetallic
   - type: Sharp
     butcherDelayModifier: 2.5 # this sucks
+  - type: Construction
+    graph: FlakingRock
+    node: flakingRock
   - type: Tool
     qualities:
     - Slicing

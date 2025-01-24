@@ -1,0 +1,13 @@
+- type: constructionGraph
+  id: FlakingRock
+  start: start
+  graph:
+  - node: start
+    entity: RockItem
+    edges:
+    - to: flakingRock
+      steps:
+      - tool: Hammering
+        doAfter: 2
+  - node: flakingRock
+    entity: FlakingRock
