@@ -54,3 +54,6 @@
     state: brick
   - type: Stack
     count: 1
+  - type: Construction
+    graph: StoneBrick
+    node: brick

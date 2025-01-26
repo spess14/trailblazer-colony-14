@@ -1,11 +1,4 @@
 - type: tool
-  id: Hammering
-  name: tool-quality-hammering-name
-  toolName: tool-quality-hammering-tool-name
-  spawn: RockItem
-  icon: { sprite: Objects/Tools/rock.rsi, state: rock }
-
-- type: tool
   id: Chiseling
   name: tool-quality-chiseling-name
   toolName: tool-quality-chiseling-tool-name

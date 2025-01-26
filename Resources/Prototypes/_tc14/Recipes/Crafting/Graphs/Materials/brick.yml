@@ -1,0 +1,13 @@
+- type: constructionGraph
+  id: StoneBrick
+  start: start
+  graph:
+  - node: start
+    entity: RockItem
+    edges:
+    - to: brick
+      steps:
+      - tool: Chiseling
+        doAfter: 0.5
+  - node: brick
+    entity: BrickStone1
