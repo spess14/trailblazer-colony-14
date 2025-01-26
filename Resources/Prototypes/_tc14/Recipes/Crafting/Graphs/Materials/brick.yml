@@ -1,5 +1,5 @@
 - type: constructionGraph
-  id: StoneBrick
+  id: Rock
   start: start
   graph:
   - node: start
@@ -9,5 +9,11 @@
       steps:
       - tool: Chiseling
         doAfter: 0.5
+    - to: flakingRock
+      steps:
+      - tool: Hammering
+        doAfter: 3
   - node: brick
     entity: BrickStone1
+  - node: flakingRock
+    entity: FlakingRock

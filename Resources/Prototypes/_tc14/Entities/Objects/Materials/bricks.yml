@@ -55,5 +55,5 @@
   - type: Stack
     count: 1
   - type: Construction
-    graph: StoneBrick
+    graph: Rock
     node: brick
