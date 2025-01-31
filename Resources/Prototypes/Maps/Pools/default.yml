@@ -1,20 +1,4 @@
 - type: gameMapPool
   id: DefaultMapPool
   maps:
-  - Amber
-  - Bagel
-  - Box
-  - Cog
-  - Core
-  - Elkridge
-  - Fland
-  #- Gate
-  - Loop
-  - Marathon
-  - Meta
-  - Oasis
-  - Omega
-  - Packed
-  - Plasma
-  - Reach
-  #- Train
+  - Planet # it's almost as if we're having a planetary fork here :godo:
