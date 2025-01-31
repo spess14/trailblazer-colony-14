@@ -1,0 +1,14 @@
+- type: entity
+  name: random overworld misc spawner
+  id: OverworldMiscSpawner
+  parent: MarkerBase
+  components:
+  - type: Sprite
+    layers:
+    - sprite: Objects/Tools/rock.rsi
+      state: "rock"
+  - type: RandomSpawner
+    prototypes:
+    - RockItem
+    - BushForage
+    offset: 0.5

@@ -1,0 +1,17 @@
+- type: construction
+  name: cobblestone wall
+  id: CobbleWall
+  graph: CobbleWall
+  startNode: start
+  targetNode: wall
+  category: construction-category-structures
+  description: Stone by stone, perfectly fitted together to form a wall.
+  icon:
+    sprite: /Textures/Structures/Walls/cobblebrick.rsi
+    state: full
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canRotate: false
+  canBuildInImpassable: false
+  conditions:
+  - !type:TileNotBlocked

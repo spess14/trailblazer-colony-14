@@ -1429,6 +1429,9 @@
     cost: 6
     delay: 8
     fx: EffectRCDDeconstruct8
+  - type: Construction
+    graph: CobbleWall
+    node: wall
   - type: Destructible
     thresholds:
     - trigger:
