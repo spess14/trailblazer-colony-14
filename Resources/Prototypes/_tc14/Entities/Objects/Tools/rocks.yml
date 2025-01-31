@@ -36,7 +36,7 @@
         Blunt: 7
 
 - type: entity
-  parent: BaseItem
+  parent: BaseKnife
   id: FlakingRock
   name: flaking rock
   description: Sharp rock, quite a neat tool!
