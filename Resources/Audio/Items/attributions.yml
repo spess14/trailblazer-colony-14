@@ -144,3 +144,8 @@
   license: "CC0-1.0"
   copyright: "Original sound by vestibule-door on freesound.org, processed by DylanWhittingham"
   source: "https://freesound.org/people/vestibule-door/sounds/668985/"
+
+- files: [ "chisel_use.ogg" ]
+  license: "CC-BY-NC-4.0"
+  copyright: "Original sound by iainmccurdy on freesound.org, processed by Killerqu00"
+  source: "https://freesound.org/people/iainmccurdy/sounds/750949/"

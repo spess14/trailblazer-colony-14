@@ -1,0 +1,59 @@
+- type: entity
+  abstract: true
+  parent: BaseItem
+  id: BrickBase
+  description: A heavy brick.
+  components:
+  - type: Sprite
+    sprite: Objects/Materials/bricks.rsi
+  - type: Item
+    sprite: Objects/Materials/bricks.rsi
+    size: Normal
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: Rock
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 200
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+
+- type: entity
+  parent: BrickBase
+  id: BrickStone
+  name: stone brick
+  suffix: Full
+  components:
+  - type: Material
+  - type: Stack
+    stackType: BrickStone
+    baseLayer: base
+    layerStates:
+    - brick
+    - brick_2
+    - brick_3
+  - type: Sprite
+    state: brick_3
+    layers:
+    - state: brick_3
+      map: [ "base" ]
+  - type: Item
+    heldPrefix: brick
+  - type: Appearance
+
+- type: entity
+  parent: BrickStone
+  id: BrickStone1
+  name: stone brick
+  suffix: Single
+  components:
+  - type: Sprite
+    state: brick
+  - type: Stack
+    count: 1
+  - type: Construction
+    graph: Rock
+    node: brick

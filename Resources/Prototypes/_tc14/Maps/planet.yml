@@ -10,7 +10,8 @@
       stationProto: PlanetaryColony
       components:
         - type: StationBiome
-          biome: Continental
+          biome: ContinentalPlanet
+          mapLightColor: '#FFFFFFFF'
         - type: StationNameSetup
           mapNameTemplate: '{0} Planet ??? {1}'
           nameGenerator:

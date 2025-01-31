@@ -1,0 +1,19 @@
+- type: constructionGraph
+  id: Rock
+  start: start
+  graph:
+  - node: start
+    entity: RockItem
+    edges:
+    - to: brick
+      steps:
+      - tool: Chiseling
+        doAfter: 0.5
+    - to: flakingRock
+      steps:
+      - tool: Hammering
+        doAfter: 3
+  - node: brick
+    entity: BrickStone1
+  - node: flakingRock
+    entity: FlakingRock
