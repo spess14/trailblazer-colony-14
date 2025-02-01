@@ -1,0 +1,46 @@
+﻿# playtest configuration
+
+[game]
+desc = "A planetary fork inspired by Rimworld, Dwarf Fortress and (a bit) by 1000 player Minecraft Civilization videos."
+hostname = "[EN][MRP] Trailblazer Station 14 [Europe]"
+round_restart_time = 300
+lobbyduration = 600
+map_rotation = false
+role_timers = false
+cryo_sleep_rejoining = true
+contraband_examine = false
+
+
+[server]
+rules_file = "MRPRuleset"
+
+[whitelist]
+enabled = false
+prototype_list = "salamanderMrpWhitelist"
+
+[vote]
+preset_enabled = false
+restart_required_ratio = 0.7 # it is a playtest, after all
+
+[shuttle]
+emergency_early_launch_allowed = true
+
+[biomass]
+easy_mode = false
+
+[looc]
+enabled_dead = true
+enabled_crit = true
+
+[ooc]
+enable_during_round = true
+
+[ic]
+flavor_text = true
+punctuation = true
+
+[ghost]
+kill_crit = false
+
+[hub]
+tags = "lang:en,region:am_n_w,rp:med"
