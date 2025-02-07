@@ -207,11 +207,6 @@ public sealed partial class BiomeSystem : SharedBiomeSystem
             component.Layers.Add(layer);
         }
 
-        foreach (var markerLayerProtoId in template.MarkerLayers)
-        {
-            component.ForcedMarkerLayers.Add(markerLayerProtoId);
-        }
-
         if (dirty)
             Dirty(uid, component);
     }
@@ -1031,6 +1026,10 @@ public sealed partial class BiomeSystem : SharedBiomeSystem
         SetSeed(mapUid, biome, seed.Value, false);
         SetTemplate(mapUid, biome, biomeTemplate, false);
         AddComp(mapUid, biome, true);
+        foreach (var marker in biomeTemplate.MarkerLayers)
+        {
+            AddMarkerLayer(mapUid, biome, marker);
+        }
         Dirty(mapUid, biome, metadata);
 
         var gravity = EnsureComp<GravityComponent>(mapUid);
