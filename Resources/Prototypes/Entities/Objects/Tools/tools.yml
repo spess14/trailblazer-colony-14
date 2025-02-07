@@ -469,6 +469,9 @@
         Blunt: 14
     soundHit:
       collection: MetalThud
+  - type: Construction
+    graph: WoodenHandleTools
+    node: shovel
   - type: Item
     size: Normal
     sprite: Objects/Tools/shovel.rsi
