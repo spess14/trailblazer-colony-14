@@ -34,13 +34,10 @@
   markerLayers:
   - OreIron
   - OreQuartz
-  - OreCoal
-  - OreSalt
   - OreGold
   - OreSilver
   - OrePlasma
   - OreUranium
-  - OreDiamond
   - OreArtifactFragment
 
 - type: biomeTemplate
