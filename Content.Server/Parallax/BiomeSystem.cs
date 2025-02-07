@@ -208,6 +208,11 @@ public sealed partial class BiomeSystem : SharedBiomeSystem
 
         foreach (var markerLayerProtoId in template.MarkerLayers)
         {
+            // TODO this fucking sucks
+            // if I insert uid instead of comp owner, it passes MetaData sometimes for some reason because fuck you ig
+#pragma warning disable CS0618 // Type or member is obsolete
+            AddMarkerLayer(component.Owner, component, markerLayerProtoId.Id);
+#pragma warning restore CS0618 // Type or member is obsolete
             component.ForcedMarkerLayers.Add(markerLayerProtoId);
         }
 
