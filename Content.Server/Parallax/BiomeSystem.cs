@@ -206,11 +206,6 @@ public sealed partial class BiomeSystem : SharedBiomeSystem
             component.Layers.Add(layer);
         }
 
-        foreach (var markerLayerProtoId in template.MarkerLayers)
-        {
-            component.ForcedMarkerLayers.Add(markerLayerProtoId);
-        }
-
         if (dirty)
             Dirty(uid, component);
     }
