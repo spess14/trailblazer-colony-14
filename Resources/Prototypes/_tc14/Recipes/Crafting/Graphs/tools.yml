@@ -1,0 +1,35 @@
+- type: constructionGraph
+  id: WoodenHandleTools
+  start: start
+  graph:
+  - node: start
+    edges:
+    - to: handle
+      steps:
+      - material: WoodPlank
+        amount: 5
+        doAfter: 3
+  - node: handle
+    entity: WoodenHandle
+    edges:
+    - to: chisel
+      steps:
+      - tool: Slicing
+        doAfter: 1
+    - to: shovel
+      steps:
+      - material: Steel
+        amount: 5
+        doAfter: 2
+  - node: chisel
+    entity: Chisel
+  - node: shovel
+    entity: Shovel
+    edges:
+    - to: pickaxe
+      steps:
+      - material: Steel
+        amount: 10
+        doAfter: 3
+  - node: pickaxe
+    entity: Pickaxe

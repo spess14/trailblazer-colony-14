@@ -1,0 +1,38 @@
+- type: construction
+  name: chisel
+  id: chisel
+  graph: WoodenHandleTools
+  startNode: start
+  targetNode: chisel
+  category: construction-category-tools
+  description: Main tool of any architect.
+  icon:
+    sprite: Objects/Tools/chisel.rsi
+    state: icon
+  objectType: Item
+
+- type: construction
+  name: pickaxe
+  id: pickaxe
+  graph: WoodenHandleTools
+  startNode: start
+  targetNode: pickaxe
+  category: construction-category-tools
+  description: Notched to perfection, for jamming it into rocks.
+  icon:
+    sprite: Objects/Weapons/Melee/pickaxe.rsi
+    state: pickaxe
+  objectType: Item
+
+- type: construction
+  name: shovel
+  id: shovel
+  graph: WoodenHandleTools
+  startNode: start
+  targetNode: shovel
+  category: construction-category-tools
+  description: A large tool for digging and moving dirt.
+  icon:
+    sprite: Objects/Tools/shovel.rsi
+    state: icon
+  objectType: Item

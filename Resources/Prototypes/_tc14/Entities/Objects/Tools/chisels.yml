@@ -18,6 +18,9 @@
     - Chiseling
     useSound:
       path: /Audio/Items/chisel_use.ogg
+  - type: Construction
+    graph: WoodenHandleTools
+    node: chisel
   - type: Item
     sprite: Objects/Tools/chisel.rsi
   - type: Sprite

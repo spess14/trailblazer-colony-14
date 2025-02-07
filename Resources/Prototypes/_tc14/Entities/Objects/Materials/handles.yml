@@ -1,0 +1,30 @@
+- type: entity
+  parent: BaseItem
+  id: WoodenHandle
+  name: wooden handle
+  description: A stick that is comfortable to hold.
+  components:
+  - type: Sprite
+    sprite: Objects/Misc/handles.rsi
+    state: "wooden-handle"
+  - type: Item
+    sprite: Objects/Misc/handles.rsi
+    size: Normal
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 20
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: Diona #:godo:
+  - type: Construction
+    graph: WoodenHandleTools
+    node: handle
+  - type: MeleeWeapon
+    damage:
+      types:
+        Blunt: 5

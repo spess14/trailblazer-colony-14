@@ -20,6 +20,9 @@
     damage:
       groups:
         Brute: 5
+  - type: Construction
+    graph: WoodenHandleTools
+    node: pickaxe
   - type: Wieldable
   - type: IncreaseDamageOnWield
     damage:
