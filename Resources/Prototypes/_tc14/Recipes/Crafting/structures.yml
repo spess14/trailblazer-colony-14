@@ -15,3 +15,21 @@
   canBuildInImpassable: false
   conditions:
   - !type:TileNotBlocked
+
+- type: construction
+  name: smeltery
+  id: Smeltery
+  graph: Smeltery
+  startNode: start
+  targetNode: smeltery
+  category: construction-category-structures
+  description: Ore goes in, ingots come out.
+  icon:
+    sprite: /Textures/Structures/Machines/smeltery.rsi
+    state: icon
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canRotate: false
+  canBuildInImpassable: false
+  conditions:
+  - !type:TileNotBlocked

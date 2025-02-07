@@ -1,0 +1,16 @@
+- type: constructionGraph
+  id: Smeltery
+  start: start
+  graph:
+  - node: start
+    edges:
+    - to: smeltery
+      completed:
+      - !type:SnapToGrid
+        southRotation: true
+      steps:
+      - material: BrickStone
+        amount: 10
+        doAfter: 5
+  - node: smeltery
+    entity: Smeltery
