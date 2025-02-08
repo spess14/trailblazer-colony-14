@@ -33,6 +33,7 @@
       lacunarity: 2
   markerLayers:
   - OreIron
+  - OreCoal
   - OreQuartz
   - OreGold
   - OreSilver
