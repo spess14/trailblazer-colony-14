@@ -82,6 +82,7 @@ namespace Content.IntegrationTests.Tests
             "Convex",
             "Relic",
             "Planet",
+
         };
 
         /// <summary>
