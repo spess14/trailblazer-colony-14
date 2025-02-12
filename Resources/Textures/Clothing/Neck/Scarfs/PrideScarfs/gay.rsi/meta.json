@@ -1,42 +1,26 @@
 {
-  "version": 1,
-<<<<<<<< HEAD:Resources/Textures/Objects/Tools/chisel.rsi/meta.json
-  "license": "CC-BY-NC-4.0",
-  "copyright": "Made by Killerqu00",
-========
-  "license": "CC-BY-SA-3.0",
-  "copyright": "Taken from tgstation at commit https://github.com/tgstation/tgstation/commit/5a73e8f825ff279e82949b9329783a9e3070e2da | In hand sprites sprited by PuroSlavKing (Github) for Space Station 14, recolored by BackeTako (github)",
->>>>>>>> ss14/master:Resources/Textures/Clothing/Neck/Scarfs/PrideScarfs/gay.rsi/meta.json
-  "size": {
-    "x": 32,
-    "y": 32
-  },
-  "states": [
-    {
-<<<<<<<< HEAD:Resources/Textures/Objects/Tools/chisel.rsi/meta.json
-      "name": "icon"
-========
-      "name": "equipped-NECK",
-      "directions": 4
+    "version": 1,
+    "license": "CC-BY-SA-3.0",
+    "copyright": "Made by superfreak9111 on discord for Space Station 14",
+    "size": {
+        "x": 32,
+        "y": 32
     },
-    {
-      "name": "icon"
-    },
-    {
-      "name": "inhand-left",
-      "directions": 4
->>>>>>>> ss14/master:Resources/Textures/Clothing/Neck/Scarfs/PrideScarfs/gay.rsi/meta.json
-    },
-    {
-      "name": "inhand-right",
-      "directions": 4
-<<<<<<<< HEAD:Resources/Textures/Objects/Tools/chisel.rsi/meta.json
-    },
-    {
-      "name": "inhand-left",
-      "directions": 4
-========
->>>>>>>> ss14/master:Resources/Textures/Clothing/Neck/Scarfs/PrideScarfs/gay.rsi/meta.json
-    }
-  ]
+    "states": [
+        {
+            "name": "icon"
+        },
+        {
+            "name": "equipped-NECK",
+            "directions": 4
+        },
+        {
+            "name": "inhand-left",
+            "directions": 4
+        },
+        {
+            "name": "inhand-right",
+            "directions": 4
+        }
+    ]
 }
