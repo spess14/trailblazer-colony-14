@@ -116,6 +116,18 @@
     entities:
     - FloraTree
     - FloraTreeLarge
+  - !type:BiomeEntityLayer
+    threshold: 0.7
+    noise:
+      seed: 0
+      noiseType: OpenSimplex2
+      fractalType: FBm
+      frequency: 2
+    allowedTiles:
+    - FloorPlanetGrass
+    - FloorPlanetDirt
+    entities:
+    - RuinsRoomMarker
   # Rock formations
   - !type:BiomeEntityLayer
     allowedTiles:
