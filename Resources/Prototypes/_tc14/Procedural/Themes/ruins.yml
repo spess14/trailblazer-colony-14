@@ -59,6 +59,7 @@
   size: 7,7
   atlas: /Maps/_tc14/ruins.yml
   offset: 8,8
+  ignoreTile: FloorShuttleOrange
   tags:
   - PlanetRuin
 
