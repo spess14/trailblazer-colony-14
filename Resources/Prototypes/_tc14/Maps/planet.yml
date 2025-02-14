@@ -10,7 +10,7 @@
       stationProto: PlanetaryColony
       components:
         - type: StationBiome
-          biome: ContinentalPlanet
+          biome: OverworldBiome
           mapLightColor: '#FFFFFFFF'
         - type: StationNameSetup
           mapNameTemplate: '{0} Planet ??? {1}'
