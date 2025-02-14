@@ -31,15 +31,6 @@
       fractalType: FBm
       octaves: 2
       lacunarity: 2
-  markerLayers:
-  - OreIron
-  - OreCoal
-  - OreQuartz
-  - OreGold
-  - OreSilver
-  - OrePlasma
-  - OreUranium
-  - OreArtifactFragment
 
 - type: biomeTemplate
   id: OverworldBiome
@@ -117,7 +108,7 @@
     - FloraTree
     - FloraTreeLarge
   - !type:BiomeEntityLayer
-    threshold: 0.7
+    threshold: 0.8
     noise:
       seed: 0
       noiseType: OpenSimplex2
@@ -197,3 +188,12 @@
       octaves: 5
       cellularDistanceFunction: Euclidean
       cellularReturnType: Distance2
+  markerLayers:
+  - OreIron
+  - OreCoal
+  - OreQuartz
+  - OreGold
+  - OreSilver
+  - OrePlasma
+  - OreUranium
+  - OreArtifactFragment
