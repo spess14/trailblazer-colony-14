@@ -1,0 +1,105 @@
+- type: dungeonRoom
+  id: RuinLandingPad
+  size: 7,7
+  atlas: /Maps/_tc14/ruins.yml
+  offset: 0,0
+  tags:
+  - PlanetRuin
+
+- type: dungeonRoom
+  id: RuinAME
+  size: 7,7
+  atlas: /Maps/_tc14/ruins.yml
+  offset: 0,8
+  tags:
+  - PlanetRuin
+
+- type: dungeonRoom
+  id: RuinTechStorage1
+  size: 7,7
+  atlas: /Maps/_tc14/ruins.yml
+  offset: 0,16
+  tags:
+  - PlanetRuin
+
+- type: dungeonRoom
+  id: RuinBar
+  size: 7,7
+  atlas: /Maps/_tc14/ruins.yml
+  offset: 0,24
+  tags:
+  - PlanetRuin
+
+- type: dungeonRoom
+  id: RuinKitchen
+  size: 7,7
+  atlas: /Maps/_tc14/ruins.yml
+  offset: 0,32
+  tags:
+  - PlanetRuin
+
+- type: dungeonRoom
+  id: RuinBotany
+  size: 7,7
+  atlas: /Maps/_tc14/ruins.yml
+  offset: 0,40
+  tags:
+  - PlanetRuin
+
+- type: dungeonRoom
+  id: RuinTheater
+  size: 7,7
+  atlas: /Maps/_tc14/ruins.yml
+  offset: 8,0
+  tags:
+  - PlanetRuin
+
+- type: dungeonRoom
+  id: RuinCampSmall
+  size: 7,7
+  atlas: /Maps/_tc14/ruins.yml
+  offset: 8,8
+  tags:
+  - PlanetRuin
+
+- type: dungeonRoom
+  id: RuinScienceServer
+  size: 7,7
+  atlas: /Maps/_tc14/ruins.yml
+  offset: 8,16
+  tags:
+  - PlanetRuin
+
+- type: dungeonRoom
+  id: RuinHospital
+  size: 7,7
+  atlas: /Maps/_tc14/ruins.yml
+  offset: 8,24
+  tags:
+  - PlanetRuin
+
+- type: dungeonRoom
+  id: RuinTechStorage2
+  size: 7,7
+  atlas: /Maps/_tc14/ruins.yml
+  offset: 8,32
+  tags:
+  - PlanetRuin
+
+- type: dungeonRoom
+  id: RuinSupply
+  size: 7,7
+  atlas: /Maps/_tc14/ruins.yml
+  offset: 8,40
+  tags:
+  - PlanetRuin
+
+- type: entity
+  id: RuinsRoomMarker
+  parent: BaseRoomMarker
+  name: Ruins marker
+  components:
+  - type: RoomFill
+    roomWhitelist:
+      tags:
+      - PlanetRuin
