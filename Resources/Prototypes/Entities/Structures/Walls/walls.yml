@@ -1435,6 +1435,9 @@
       behaviors:
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
+  - type: Construction
+    graph: CobbleWall
+    node: wall
   - type: IconSmooth
     key: cobblebricks
     base: cobblebrick
