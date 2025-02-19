@@ -44,6 +44,7 @@ public sealed class ThrusterSystem : EntitySystem
         base.Initialize();
         SubscribeLocalEvent<ThrusterComponent, ActivateInWorldEvent>(OnActivateThruster);
         SubscribeLocalEvent<ThrusterComponent, ComponentInit>(OnThrusterInit);
+        SubscribeLocalEvent<ThrusterComponent, MapInitEvent>(OnMapInit);
         SubscribeLocalEvent<ThrusterComponent, ComponentShutdown>(OnThrusterShutdown);
         SubscribeLocalEvent<ThrusterComponent, PowerChangedEvent>(OnPowerChange);
         SubscribeLocalEvent<ThrusterComponent, AnchorStateChangedEvent>(OnAnchorChange);
@@ -245,6 +246,11 @@ public sealed class ThrusterSystem : EntitySystem
         {
             EnableThruster(uid, component);
         }
+    }
+
+    private void OnMapInit(Entity<ThrusterComponent> ent, ref MapInitEvent args)
+    {
+        ent.Comp.NextFire = _timing.CurTime + ent.Comp.FireCooldown;
     }
 
     private void OnThrusterShutdown(EntityUid uid, ThrusterComponent component, ComponentShutdown args)
