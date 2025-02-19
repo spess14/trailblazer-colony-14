@@ -429,24 +429,7 @@ public abstract class SharedStorageSystem : EntitySystem
         }
         else
         {
-            // Handle recursively opening nested storages.
-            if (ContainerSystem.TryGetContainingContainer((args.Target, null, null), out var container) &&
-                UI.IsUiOpen(container.Owner, StorageComponent.StorageUiKey.Key, args.User))
-            {
-                _nestedCheck = true;
-                HideStorageWindow(container.Owner, args.User);
-                OpenStorageUI(uid, args.User, storageComp, silent: true);
-                _nestedCheck = false;
-            }
-            else
-            {
-                // If you need something more sophisticated for multi-UI you'll need to code some smarter
-                // interactions.
-                if (_openStorageLimit == 1)
-                    UI.CloseUserUis<StorageComponent.StorageUiKey>(args.User);
-
-                OpenStorageUI(uid, args.User, storageComp, silent: false);
-            }
+            OpenStorageUI(uid, args.User, storageComp);
         }
 
         args.Handled = true;
