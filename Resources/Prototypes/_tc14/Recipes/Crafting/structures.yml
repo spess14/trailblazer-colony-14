@@ -33,3 +33,20 @@
   canBuildInImpassable: false
   conditions:
   - !type:TileNotBlocked
+
+- type: construction
+  name: workbench
+  id: Workbench
+  graph: Table
+  startNode: start
+  targetNode: Workbench
+  category: construction-category-structures
+  description: This fancy crafting table can make so much tools!
+  icon:
+    sprite: Structures/Machines/workbench.rsi
+    state: workbench
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+  - !type:TileNotBlocked
