@@ -40,6 +40,9 @@
     whitelist:
       tags:
       - BlueprintAutolathe
+  - type: Construction
+    graph: Table
+    node: Workbench
   - type: MaterialStorage
     whitelist:
       tags:
