@@ -6,6 +6,7 @@ using Content.Shared.Mobs.Components;
 using Content.Shared.Procedural;
 using Content.Shared.Radio;
 using Content.Shared.Salvage.Magnet;
+using Robust.Server.Maps;
 using Robust.Shared.Exceptions;
 using Robust.Shared.Map;
 
@@ -290,10 +291,15 @@ public sealed partial class SalvageSystem
             case SalvageOffering wreck:
                 var salvageProto = wreck.SalvageMap;
 
-                if (!_loader.TryLoadGrid(salvMapXform.MapID, salvageProto.MapPath, out _))
+                var opts = new MapLoadOptions
+                {
+                    Offset = new Vector2(0, 0)
+                };
+
+                if (!_map.TryLoad(salvMapXform.MapID, salvageProto.MapPath.ToString(), out _, opts))
                 {
                     Report(magnet, MagnetChannel, "salvage-system-announcement-spawn-debris-disintegrated");
-                    _mapSystem.DeleteMap(salvMapXform.MapID);
+                    _mapManager.DeleteMap(salvMapXform.MapID);
                     return;
                 }
 

@@ -195,7 +195,6 @@
     dynamicPacks:
     - AdvancedTools
     - ScienceEquipment
-    - ScienceExplosives
     - ScienceClothing
     - PowerCells
     - ScienceWeapons
