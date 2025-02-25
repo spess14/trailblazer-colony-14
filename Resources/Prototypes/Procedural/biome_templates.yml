@@ -546,7 +546,6 @@
     - !type:BiomeTileLayer
       threshold: -1.0
       tile: FloorAsteroidSand
-      flags: 1
 
 # Asteroid
 - type: biomeTemplate
