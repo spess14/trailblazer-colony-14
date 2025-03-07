@@ -82,3 +82,51 @@
   name: guide-entry-rules-0-10
   ruleEntry: true
   text: "/ServerInfo/_tc14/ServerRules/CoreRules/0-10.xml"
+
+- type: guideEntry
+  id: 1-0
+  name: guide-entry-rules-1-0
+  ruleEntry: true
+  text: "/ServerInfo/_tc14/ServerRules/CoreRules/1-0.xml"
+
+- type: guideEntry
+  id: 1-1
+  name: guide-entry-rules-1-1
+  ruleEntry: true
+  text: "/ServerInfo/_tc14/ServerRules/CoreRules/1-1.xml"
+
+- type: guideEntry
+  id: 1-2
+  name: guide-entry-rules-1-2
+  ruleEntry: true
+  text: "/ServerInfo/_tc14/ServerRules/CoreRules/1-2.xml"
+
+- type: guideEntry
+  id: 1-3
+  name: guide-entry-rules-1-3
+  ruleEntry: true
+  text: "/ServerInfo/_tc14/ServerRules/CoreRules/1-3.xml"
+
+- type: guideEntry
+  id: 1-4
+  name: guide-entry-rules-1-4
+  ruleEntry: true
+  text: "/ServerInfo/_tc14/ServerRules/CoreRules/1-4.xml"
+
+- type: guideEntry
+  id: 1-5
+  name: guide-entry-rules-1-5
+  ruleEntry: true
+  text: "/ServerInfo/_tc14/ServerRules/CoreRules/1-5.xml"
+
+- type: guideEntry
+  id: 1-6
+  name: guide-entry-rules-1-6
+  ruleEntry: true
+  text: "/ServerInfo/_tc14/ServerRules/CoreRules/1-6.xml"
+
+- type: guideEntry
+  id: 1-7
+  name: guide-entry-rules-1-7
+  ruleEntry: true
+  text: "/ServerInfo/_tc14/ServerRules/CoreRules/1-7.xml"
