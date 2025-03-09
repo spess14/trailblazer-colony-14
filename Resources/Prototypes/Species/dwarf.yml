@@ -7,3 +7,7 @@
   markingLimits: MobHumanMarkingLimits
   dollPrototype: MobDwarfDummy
   skinColoration: HumanToned
+  minAge: 18 # even though dwarves are usually adult at 25, I feel like being more broad is better here
+  youngAge: 125
+  oldAge: 200 # 188 according to pathfinder, but it's not a beautiful number
+  maxAge: 400 # pf manuals tell that dwarves usually die at 250 + 2d100, so pretty close i guess. also follows the: maxAge = 2*oldAge so that's neat
