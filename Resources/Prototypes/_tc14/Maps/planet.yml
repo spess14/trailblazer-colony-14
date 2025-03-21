@@ -11,7 +11,7 @@
       components:
         - type: StationBiome
           biome: OverworldBiome
-          mapLightColor: '#FFFFFFFF'
+          mapLightColor: '#D8B059'
         - type: StationNameSetup
           mapNameTemplate: '{0} Planet ??? {1}'
           nameGenerator:
