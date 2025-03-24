@@ -93,6 +93,7 @@ namespace Content.Server.Ghost
             SubscribeNetworkEvent<GhostReturnToBodyRequest>(OnGhostReturnToBodyRequest);
             SubscribeNetworkEvent<GhostWarpToTargetRequestEvent>(OnGhostWarpToTargetRequest);
             SubscribeNetworkEvent<GhostnadoRequestEvent>(OnGhostnadoRequest);
+            SubscribeNetworkEvent<GhostRequestRespawnEvent>(OnGhostRespawn);
 
             SubscribeLocalEvent<GhostComponent, BooActionEvent>(OnActionPerform);
             SubscribeLocalEvent<GhostComponent, ToggleGhostHearingActionEvent>(OnGhostHearingAction);
@@ -329,6 +330,18 @@ namespace Content.Server.Ghost
                 return;
 
             WarpTo(uid, target);
+        }
+
+        private void OnGhostRespawn(GhostRequestRespawnEvent msg, EntitySessionEventArgs args)
+        {
+            if (args.SenderSession.AttachedEntity is not {} uid
+                || !_ghostQuery.HasComp(uid))
+            {
+                Log.Warning($"User {args.SenderSession.Name} tried to respawn without being a ghost.");
+                return;
+            }
+
+            _gameTicker.Respawn(args.SenderSession);
         }
 
         private void WarpTo(EntityUid uid, EntityUid target)

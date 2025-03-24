@@ -15,6 +15,7 @@ public sealed partial class GhostGui : UIWidget
     public event Action? ReturnToBodyPressed;
     public event Action? GhostRolesPressed;
     private int _prevNumberRoles;
+    public event Action? RespawnGhostPressed;
 
     public GhostGui()
     {
@@ -28,6 +29,7 @@ public sealed partial class GhostGui : UIWidget
         ReturnToBodyButton.OnPressed += _ => ReturnToBodyPressed?.Invoke();
         GhostRolesButton.OnPressed += _ => GhostRolesPressed?.Invoke();
         GhostRolesButton.OnPressed += _ => GhostRolesButton.StyleClasses.Remove(StyleBase.ButtonCaution);
+        GhostRespawnButton.OnPressed += _ => RespawnGhostPressed?.Invoke();
     }
 
     public void Hide()
