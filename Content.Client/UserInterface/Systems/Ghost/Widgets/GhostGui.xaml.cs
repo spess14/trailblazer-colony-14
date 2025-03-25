@@ -44,6 +44,16 @@ public sealed partial class GhostGui : UIWidget
         UpdateRespawn(args.DeltaSeconds);
     }
 
+    protected override void VisibilityChanged(bool newVisible)
+    {
+        base.VisibilityChanged(newVisible);
+
+        if (newVisible)
+        {
+            _respawnTime = 10f;
+        }
+    }
+
     public void Hide()
     {
         TargetWindow.Close();
