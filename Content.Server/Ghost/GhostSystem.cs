@@ -66,6 +66,7 @@ namespace Content.Server.Ghost
         [Dependency] private readonly SharedPopupSystem _popup = default!;
         [Dependency] private readonly IRobustRandom _random = default!;
         [Dependency] private readonly TagSystem _tag = default!;
+        [Dependency] private readonly IGameTiming _timing = default!;
 
         private EntityQuery<GhostComponent> _ghostQuery;
         private EntityQuery<PhysicsComponent> _physicsQuery;
@@ -93,6 +94,7 @@ namespace Content.Server.Ghost
             SubscribeNetworkEvent<GhostReturnToBodyRequest>(OnGhostReturnToBodyRequest);
             SubscribeNetworkEvent<GhostWarpToTargetRequestEvent>(OnGhostWarpToTargetRequest);
             SubscribeNetworkEvent<GhostnadoRequestEvent>(OnGhostnadoRequest);
+            SubscribeNetworkEvent<GhostRespawnRequestEvent>(OnGhostRespawnRequest);
 
             SubscribeLocalEvent<GhostComponent, BooActionEvent>(OnActionPerform);
             SubscribeLocalEvent<GhostComponent, ToggleGhostHearingActionEvent>(OnGhostHearingAction);
@@ -329,6 +331,26 @@ namespace Content.Server.Ghost
                 return;
 
             WarpTo(uid, target);
+        }
+
+        private void OnGhostRespawnRequest(GhostRespawnRequestEvent msg, EntitySessionEventArgs args)
+        {
+            if (args.SenderSession.AttachedEntity is not {} uid
+                || !_ghostQuery.HasComp(uid))
+            {
+                Log.Warning($"User {args.SenderSession.Name} tried to respawn without being a ghost.");
+                return;
+            }
+
+            var ghost = _ghostQuery.GetComponent(uid);
+
+            if (ghost.TimeOfDeath + TimeSpan.FromSeconds(_configurationManager.GetCVar(CCVars.RespawnCooldown)) >= _timing.CurTime)
+            {
+                Log.Warning($"User {args.SenderSession.Name} tried to respawn before respawn cooldown expired.");
+                return;
+            }
+
+            _gameTicker.Respawn(args.SenderSession);
         }
 
         private void WarpTo(EntityUid uid, EntityUid target)

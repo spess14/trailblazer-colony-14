@@ -10,4 +10,10 @@ public sealed partial class CCVars
     /// </summary>
     public static readonly CVarDef<bool> AdminGhostsLoadTerrain =
         CVarDef.Create("tc14.terrain.admin_load", true, CVar.SERVERONLY);
+
+    /// <summary>
+    ///     How much time (in seconds) must pass before a ghost can respawn?
+    /// </summary>
+    public static readonly CVarDef<float> RespawnCooldown =
+        CVarDef.Create("tc14.respawn.cooldown", 600f, CVar.SERVER);
 }
