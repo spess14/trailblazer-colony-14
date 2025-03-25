@@ -344,7 +344,7 @@ namespace Content.Server.Ghost
 
             var ghost = _ghostQuery.GetComponent(uid);
 
-            if (ghost.TimeOfDeath + TimeSpan.FromSeconds(10) >= _timing.CurTime)
+            if (ghost.TimeOfDeath + TimeSpan.FromSeconds(_configurationManager.GetCVar(CCVars.RespawnCooldown)) >= _timing.CurTime)
             {
                 Log.Warning($"User {args.SenderSession.Name} tried to respawn before respawn cooldown expired.");
                 return;
