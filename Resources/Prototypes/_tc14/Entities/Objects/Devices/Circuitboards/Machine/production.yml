@@ -1,0 +1,19 @@
+- type: entity
+  id: PortableGeneratorCPacmanMachineCircuitboard
+  parent: BaseMachineCircuitboard
+  name: C.P.A.C.M.A.N.-type portable generator machine board
+  components:
+  - type: Sprite
+    state: engineering
+  - type: MachineBoard
+    prototype: PortableGeneratorCPacman
+    stackRequirements:
+      Capacitor: 1
+      Cable: 5
+  - type: PhysicalComposition
+    materialComposition:
+      Glass: 200
+    chemicalComposition:
+      Silicon: 20
+  - type: StaticPrice
+    price: 40
