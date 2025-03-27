@@ -33,7 +33,7 @@
     tags:
     - Pickaxe
   - type: Sprite
-    sprite: Objects/Weapons/Melee/stonepickaxe.rsi
+    sprite: Objects/Tools/stonepickaxe.rsi
     state: pickaxe
   - type: MeleeWeapon
     attackRate: 0.5
