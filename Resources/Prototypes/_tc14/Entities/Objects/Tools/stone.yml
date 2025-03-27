@@ -22,10 +22,6 @@
   - type: Item
     size: Normal
     sprite: Objects/Tools/stoneshovel.rsi
-  - type: PhysicalComposition
-    materialComposition:
-      BrickStone: 5
-      Wood: 10
   - type: StaticPrice
     price: 25
   - type: Shovel
