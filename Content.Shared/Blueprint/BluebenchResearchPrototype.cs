@@ -1,0 +1,59 @@
+﻿using Content.Shared.Construction.Components;
+using Content.Shared.Research.Prototypes;
+using Content.Shared.Stacks;
+using Content.Shared.Tag;
+using Robust.Shared.Prototypes;
+using Robust.Shared.Serialization;
+using Robust.Shared.Utility;
+
+namespace Content.Shared.Blueprint;
+
+[Serializable, NetSerializable, Prototype]
+public sealed class BluebenchResearchPrototype : IPrototype
+{
+    [ViewVariables]
+    [IdDataField]
+    public string ID { get; private set; } = default!;
+
+    /// <summary>
+    ///     Name displayed in the blueprint workbench.
+    /// </summary>
+    [DataField]
+    public LocId? Name;
+
+    /// <summary>
+    ///     Describes some research stuff
+    /// </summary>
+    [DataField]
+    public LocId? Description;
+
+    /// <summary>
+    ///     An entity whose sprite is displayed in the ui in place of the actual recipe result.
+    /// </summary>
+    [DataField]
+    public SpriteSpecifier? Icon;
+
+    /// <summary>
+    /// The stacks needed to research this blueprint
+    /// </summary>
+    [DataField]
+    public Dictionary<ProtoId<StackPrototype>, int> StackRequirements = new();
+
+    /// <summary>
+    /// Entities needed to research this blueprint, discriminated by tag
+    /// </summary>
+    [DataField]
+    public Dictionary<ProtoId<TagPrototype>, GenericPartInfo> TagRequirements = new();
+
+    /// <summary>
+    /// Entities needed to research this blueprint, discriminated by component.
+    /// </summary>
+    [DataField]
+    public Dictionary<string, GenericPartInfo> ComponentRequirements = new();
+
+    /// <summary>
+    /// The recipes produced with the blueprint
+    /// </summary>
+    [DataField]
+    public HashSet<ProtoId<LatheRecipePrototype>> OutputRecipes = new();
+}

@@ -4,7 +4,7 @@ using JetBrains.Annotations;
 using Robust.Client.UserInterface;
 
 namespace Content.Client.Lathe.UI
-{
+    {
     [UsedImplicitly]
     public sealed class LatheBoundUserInterface : BoundUserInterface
     {
