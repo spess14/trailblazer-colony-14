@@ -108,7 +108,7 @@
     - FloraTree
     - FloraTreeLarge
   - !type:BiomeEntityLayer
-    threshold: 0.8
+    threshold: 0.9
     noise:
       seed: 0
       noiseType: OpenSimplex2
