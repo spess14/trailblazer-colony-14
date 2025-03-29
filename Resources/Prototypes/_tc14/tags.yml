@@ -1,2 +1,8 @@
 - type: Tag
   id: PlanetRuin
+
+- type: Tag
+  id: Rock
+
+- type: Tag
+  id: FlakingRock

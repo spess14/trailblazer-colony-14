@@ -16,6 +16,9 @@
         Blunt: 10
     soundHit:
       collection: MetalThud
+  - type: Construction
+    graph: WoodenHandleTools
+    node: shovel
   - type: Item
     size: Normal
     sprite: Objects/Tools/stoneshovel.rsi
@@ -45,6 +48,9 @@
     damage:
       groups:
         Brute: 5
+  - type: Construction
+    graph: WoodenHandleTools
+    node: pickaxe
   - type: Wieldable
   - type: IncreaseDamageOnWield
     damage:

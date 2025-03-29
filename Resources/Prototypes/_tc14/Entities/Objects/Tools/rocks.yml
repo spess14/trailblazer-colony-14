@@ -34,6 +34,9 @@
     damage:
       types:
         Blunt: 7
+  - type: Tag
+    tags:
+    - Rock
 
 - type: entity
   parent: BaseKnife
@@ -71,5 +74,8 @@
     damage:
       types:
         Slash: 5
+  - type: Tag
+    tags:
+    - FlakingRock
 
 
