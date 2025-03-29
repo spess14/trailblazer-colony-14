@@ -18,18 +18,16 @@
         doAfter: 1
     - to: shovel
       steps:
-      - material: Steel
-        amount: 5
+      - tag: Rock
         doAfter: 2
   - node: chisel
     entity: Chisel
   - node: shovel
-    entity: Shovel
+    entity: StoneShovel
     edges:
     - to: pickaxe
       steps:
-      - material: Steel
-        amount: 10
+      - tag: Rock
         doAfter: 3
   - node: pickaxe
-    entity: Pickaxe
+    entity: StonePickaxe
