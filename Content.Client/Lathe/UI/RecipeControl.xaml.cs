@@ -21,7 +21,7 @@ public sealed partial class RecipeControl : Control
         TooltipTextSupplier = tooltipTextSupplier;
         Button.TooltipSupplier = SupplyTooltip;
 
-        Button.OnPressed += (_) =>
+        Button.OnPressed += _ =>
         {
             OnButtonPressed?.Invoke(recipe.ID);
         };
