@@ -63,6 +63,6 @@
     shape:
     - 0,0,2,0
     - 1,1,1,2
-    sprite: Objects/Weapons/Melee/stonepickaxe.rsi
+    sprite: Objects/Tools/stonepickaxe.rsi
     storedRotation: -45
   - type: UseDelay
