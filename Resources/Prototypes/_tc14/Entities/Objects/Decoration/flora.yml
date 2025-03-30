@@ -19,7 +19,7 @@
   - type: MeleeSound
     soundGroups:
       Brute:
-        path: /Audio/Effects/chop.ogg
+        path: /Audio/Weapons/slash.ogg # arguably it sounds better? 
         params:
           variation: 0.05
   - type: Destructible
@@ -46,6 +46,9 @@
         spawn:
           Log:
             min: 1
+            max: 2
+          MaterialCloth1:
+            min: 0
             max: 2
       - !type:WeightedSpawnEntityBehavior
         weightedEntityTable: "RandomBushTable"
