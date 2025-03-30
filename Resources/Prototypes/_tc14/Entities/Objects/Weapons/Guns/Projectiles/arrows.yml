@@ -1,0 +1,26 @@
+- type: entity
+  parent: BaseArrow
+  id: ArrowImprovisedRock
+  name: improvised arrow
+  description: The greyshirt's preferred projectile.
+  components:
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Projectiles/arrows.rsi
+    layers:
+    - state: tail
+      color: white
+    - state: rod
+      color: darkgray
+    - state: tip
+      color: gray
+    - state: solution1
+      map: ["enum.SolutionContainerLayers.Fill"]
+      visible: false
+  - type: Projectile
+    damage:
+      types:
+        Piercing: 15
+        Blunt: 6
+  - type: Construction
+    graph: ImprovisedArrowRock
+    node: ImprovisedArrowRock

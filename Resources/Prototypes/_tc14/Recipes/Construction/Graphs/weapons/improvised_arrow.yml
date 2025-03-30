@@ -1,0 +1,23 @@
+- type: constructionGraph
+  id: ImprovisedArrowRock
+  start: start
+  graph:
+  - node: start
+    edges:
+    - to: ImprovisedArrowRock
+      steps:
+      - material: MetalRod
+        amount: 1
+        doAfter: 0.5
+      - material: Cloth
+        amount: 1
+        doAfter: 0.5
+      - tag: FlakingRock
+        name: flaking rock
+        icon:
+          sprite: Objects/Tools/rock.rsi
+          state: flakingrock
+        doAfter: 0.5
+
+  - node: ImprovisedArrowRock
+    entity: ArrowImprovisedRock
