@@ -115,7 +115,7 @@ namespace Content.Server.Light.EntitySystems
             return true;
         }
 
-        private void OnInteractUsing(EntityUid uid, ExpendableLightComponent component, InteractUsingEvent args)
+        private void OnInteractUsing(EntityUid uid, ExpendableLightComponent component, ref InteractUsingEvent args)
         {
             if (args.Handled)
                 return;
@@ -142,6 +142,7 @@ namespace Content.Server.Light.EntitySystems
 
             component.StateExpiryTime += component.RefuelMaterialTime;
             _stackSystem.SetCount(args.Used, stack.Count - 1, stack);
+            args.Handled = true;
         }
 
         private void OnRefreshNameModifiers(EntityUid uid, ExpendableLightComponent component, RefreshNameModifiersEvent args)
