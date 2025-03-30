@@ -11,13 +11,3 @@
               doAfter: 2
     - node: torch
       entity: Torch
-      edges:
-        - to: start
-          completed:
-            - !type:SpawnPrototype
-              prototype: MaterialWoodPlank1
-              amount: 1
-            - !type:DeleteEntity {}
-          steps:
-            - tool: Slicing
-              doAfter: 1

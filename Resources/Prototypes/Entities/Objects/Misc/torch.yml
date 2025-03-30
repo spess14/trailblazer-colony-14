@@ -7,7 +7,7 @@
     - type: ExpendableLight
       spentName: expendable-light-burnt-torch-name
       spentDesc: expendable-light-burnt-torch-desc
-      glowDuration: 175
+      glowDuration: 100
       fadeOutDuration: 4
       iconStateSpent: torch_spent
       turnOnBehaviourID: turn_on
