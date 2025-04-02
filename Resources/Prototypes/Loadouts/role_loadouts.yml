@@ -10,6 +10,7 @@
   - Survival
   - Trinkets
   - GroupSpeciesBreathTool
+  - PersonalItemsJobAgnostic # Umbra
 
 - type: roleLoadout
   id: JobHeadOfPersonnel
@@ -24,6 +25,7 @@
   - Survival
   - Trinkets
   - GroupSpeciesBreathTool
+  - PersonalItemsJobAgnostic # Umbra
 
 # Moffstation - Start - Clown/Borg/Mime loadout names
 # Silicons
@@ -54,6 +56,7 @@
   - Survival
   - Trinkets
   - GroupSpeciesBreathTool
+  - PersonalItemsJobAgnostic # Umbra
 
 - type: roleLoadout
   id: JobBartender
@@ -67,6 +70,7 @@
   - Survival
   - Trinkets
   - GroupSpeciesBreathTool
+  - PersonalItemsJobAgnostic # Umbra
 
 - type: roleLoadout
   id: JobServiceWorker
@@ -78,6 +82,7 @@
   - Survival
   - Trinkets
   - GroupSpeciesBreathTool
+  - PersonalItemsJobAgnostic # Umbra
 
 - type: roleLoadout
   id: JobChef
@@ -92,6 +97,7 @@
   - Survival
   - Trinkets
   - GroupSpeciesBreathTool
+  - PersonalItemsJobAgnostic # Umbra
 
 - type: roleLoadout
   id: JobLibrarian
@@ -103,6 +109,7 @@
   - Survival
   - Trinkets
   - GroupSpeciesBreathTool
+  - PersonalItemsJobAgnostic # Umbra
 
 - type: roleLoadout
   id: JobLawyer
@@ -115,6 +122,7 @@
   - Survival
   - Trinkets
   - GroupSpeciesBreathTool
+  - PersonalItemsJobAgnostic # Umbra
 
 - type: roleLoadout
   id: JobChaplain
@@ -130,6 +138,7 @@
   - Survival
   - Trinkets
   - GroupSpeciesBreathTool
+  - PersonalItemsJobAgnostic # Umbra
 
 - type: roleLoadout
   id: JobJanitor
@@ -145,6 +154,7 @@
   - Trinkets
   - JanitorPlunger
   - GroupSpeciesBreathTool
+  - PersonalItemsJobAgnostic # Umbra
 
 - type: roleLoadout
   id: JobBotanist
@@ -158,6 +168,7 @@
   - Survival
   - Trinkets
   - GroupSpeciesBreathTool
+  - PersonalItemsJobAgnostic # Umbra
 
 - type: roleLoadout
   id: JobClown
@@ -172,6 +183,7 @@
   - Glasses
   - SurvivalClown
   - Trinkets
+  - PersonalItemsJobAgnostic # Umbra
 
 - type: roleLoadout
   id: JobMime
@@ -187,6 +199,7 @@
   - Glasses
   - SurvivalMime
   - Trinkets
+  - PersonalItemsJobAgnostic # Umbra
 
 - type: roleLoadout
   id: JobMusician
@@ -200,6 +213,7 @@
   - Trinkets
   - Instruments
   - GroupSpeciesBreathTool
+  - PersonalItemsJobAgnostic # Umbra
 
 # Cargo
 - type: roleLoadout
@@ -216,6 +230,7 @@
   - Survival
   - Trinkets
   - GroupSpeciesBreathTool
+  - PersonalItemsJobAgnostic # Umbra
 
 - type: roleLoadout
   id: JobCargoTechnician
@@ -230,6 +245,7 @@
   - Survival
   - Trinkets
   - GroupSpeciesBreathTool
+  - PersonalItemsJobAgnostic # Umbra
 
 - type: roleLoadout
   id: JobSalvageSpecialist
@@ -242,6 +258,7 @@
   - Survival
   - Trinkets
   - GroupSpeciesBreathTool
+  - PersonalItemsJobAgnostic # Umbra
 
 # Engineering
 - type: roleLoadout
@@ -257,6 +274,7 @@
   - SurvivalExtended
   - Trinkets
   - GroupSpeciesBreathTool
+  - PersonalItemsJobAgnostic # Umbra
 
 - type: roleLoadout
   id: JobTechnicalAssistant
@@ -267,6 +285,7 @@
   - SurvivalExtended
   - Trinkets
   - GroupSpeciesBreathTool
+  - PersonalItemsJobAgnostic # Umbra
 
 - type: roleLoadout
   id: JobStationEngineer
@@ -281,6 +300,7 @@
   - SurvivalExtended
   - Trinkets
   - GroupSpeciesBreathTool
+  - PersonalItemsJobAgnostic # Umbra
 
 - type: roleLoadout
   id: JobAtmosphericTechnician
@@ -293,6 +313,7 @@
   - SurvivalExtended
   - Trinkets
   - GroupSpeciesBreathTool
+  - PersonalItemsJobAgnostic # Umbra
 
 # Science
 - type: roleLoadout
@@ -310,6 +331,7 @@
   - Survival
   - Trinkets
   - GroupSpeciesBreathTool
+  - PersonalItemsJobAgnostic # Umbra
 
 - type: roleLoadout
   id: JobScientist
@@ -327,6 +349,7 @@
   - Survival
   - Trinkets
   - GroupSpeciesBreathTool
+  - PersonalItemsJobAgnostic # Umbra
 
 - type: roleLoadout
   id: JobResearchAssistant
@@ -338,6 +361,7 @@
   - Survival
   - Trinkets
   - GroupSpeciesBreathTool
+  - PersonalItemsJobAgnostic # Umbra
 
 # Security
 - type: roleLoadout
@@ -354,6 +378,7 @@
   - Trinkets
   - SecurityStar
   - GroupSpeciesBreathToolSecurity
+  - PersonalItemsJobAgnostic # Umbra
 
 - type: roleLoadout
   id: JobWarden
@@ -368,6 +393,7 @@
   - Trinkets
   - SecurityStar
   - GroupSpeciesBreathToolSecurity
+  - PersonalItemsJobAgnostic # Umbra
 
 - type: roleLoadout
   id: JobSecurityOfficer
@@ -383,6 +409,7 @@
   - Trinkets
   - SecurityStar
   - GroupSpeciesBreathToolSecurity
+  - PersonalItemsJobAgnostic # Umbra
 
 - type: roleLoadout
   id: JobDetective
@@ -397,6 +424,7 @@
   - Trinkets
   - SecurityStar
   - GroupSpeciesBreathToolSecurity
+  - PersonalItemsJobAgnostic # Umbra
 
 - type: roleLoadout
   id: JobSecurityCadet
@@ -406,6 +434,7 @@
   - SurvivalSecurity
   - Trinkets
   - GroupSpeciesBreathToolSecurity
+  - PersonalItemsJobAgnostic # Umbra
 
 # Medical
 - type: roleLoadout
@@ -424,6 +453,7 @@
   - SurvivalMedical
   - Trinkets
   - GroupSpeciesBreathToolMedical
+  - PersonalItemsJobAgnostic # Umbra
 
 - type: roleLoadout
   id: JobMedicalDoctor
@@ -441,6 +471,7 @@
   - SurvivalMedical
   - Trinkets
   - GroupSpeciesBreathToolMedical
+  - PersonalItemsJobAgnostic # Umbra
 
 - type: roleLoadout
   id: JobMedicalIntern
@@ -452,6 +483,7 @@
   - SurvivalMedical
   - Trinkets
   - GroupSpeciesBreathToolMedical
+  - PersonalItemsJobAgnostic # Umbra
 
 - type: roleLoadout
   id: JobChemist
@@ -466,6 +498,7 @@
   - SurvivalMedical
   - Trinkets
   - GroupSpeciesBreathToolMedical
+  - PersonalItemsJobAgnostic # Umbra
 
 - type: roleLoadout
   id: JobParamedic
@@ -482,6 +515,7 @@
   - SurvivalMedical
   - Trinkets
   - GroupSpeciesBreathToolMedical
+  - PersonalItemsJobAgnostic # Umbra
 
 # Wildcards
 - type: roleLoadout
@@ -493,6 +527,7 @@
   - Survival
   - Trinkets
   - GroupSpeciesBreathTool
+  - PersonalItemsJobAgnostic # Umbra
 
 - type: roleLoadout
   id: JobReporter
@@ -504,6 +539,7 @@
   - Survival
   - Trinkets
   - GroupSpeciesBreathTool
+  - PersonalItemsJobAgnostic # Umbra
 
 - type: roleLoadout
   id: JobPsychologist
@@ -515,6 +551,7 @@
   - Survival
   - Trinkets
   - GroupSpeciesBreathTool
+  - PersonalItemsJobAgnostic # Umbra
 
 - type: roleLoadout
   id: JobBoxer
@@ -526,6 +563,7 @@
   - Glasses
   - Survival
   - Trinkets
+  - PersonalItemsJobAgnostic # Umbra
   - GroupSpeciesBreathTool
 
 # These loadouts are used for non-crew spawns, like off-station antags and event mobs
