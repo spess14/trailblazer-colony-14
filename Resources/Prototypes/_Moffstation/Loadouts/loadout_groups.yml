@@ -13,6 +13,7 @@
   minLimit: 0
   maxLimit: 2
   loadouts:
+  - PersonalItemCooksPlushie
   - PersonalItemDarnellLighter
   - PersonalItemDeliPearl
   - PersonalItemEclipseSunshadeGun
