@@ -1,17 +1,17 @@
 ﻿- type: entity
   parent: PlushieLizard
   id: PersonalItemScribblesPlushie
-  name: scribbles' best friend
+  name: Scribbles' best friend
   description: A lizard plushie that looks like it's seen a hard life.
   suffix: PersonalItem
   components:
   - type: Sprite
-    sprite: _Moffstation/PersonalItems/Items/scribblesplushie.rsi
+    sprite: _Moffstation/PersonalItems/Items/Altimus/Scribbles-the-Notes/scribblesplushie.rsi
     state: icon
   - type: Item
-    sprite: _Moffstation/PersonalItems/Items/scribblesplushie.rsi
+    sprite: _Moffstation/PersonalItems/Items/Altimus/Scribbles-the-Notes/scribblesplushie.rsi
   - type: Clothing
-    sprite: _Moffstation/PersonalItems/Items/scribblesplushie.rsi
+    sprite: _Moffstation/PersonalItems/Items/Altimus/Scribbles-the-Notes/scribblesplushie.rsi
   - type: Tag
     tags: [] # Specifically remove tags to make the plush not useable in crafting or edible for moths
   - type: DetailExaminable
