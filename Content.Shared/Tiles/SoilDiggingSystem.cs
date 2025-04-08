@@ -67,7 +67,7 @@ public sealed class SoilDiggingSystem : EntitySystem
 
         var doAfterArgs = new DoAfterArgs(EntityManager,
             args.User,
-            5f / ent.Comp.SpeedModifier,
+            2f / ent.Comp.SpeedModifier,
             new SoilDigEvent
             {
                 SoilPrototypeName = tileDef.SoilPrototypeName,
