@@ -79,6 +79,9 @@ namespace Content.Shared.Maps
         [DataField("itemDrop", customTypeSerializer:typeof(PrototypeIdSerializer<EntityPrototype>))]
         public string ItemDropPrototypeName { get; private set; } = "FloorTileItemSteel";
 
+        [DataField(customTypeSerializer:typeof(PrototypeIdSerializer<EntityPrototype>))]
+        public string? SoilPrototypeName { get; private set; }
+
         // TODO rename data-field in yaml
         /// <summary>
         /// Whether or not the tile is exposed to the map's atmosphere.

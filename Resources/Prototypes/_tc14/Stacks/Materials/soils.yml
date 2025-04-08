@@ -1,0 +1,6 @@
+- type: stack
+  id: Dirt
+  name: dirt
+  icon: { sprite: "/Textures/_tc14/Objects/Materials/materials.rsi", state: dirt }
+  spawn: DirtItem1
+  maxCount: 30
