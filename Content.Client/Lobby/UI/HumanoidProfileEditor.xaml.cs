@@ -237,6 +237,41 @@ namespace Content.Client.Lobby.UI
             // Umbra re-added this.
             #endregion Species
 
+            #region CDHeight
+
+            CDHeight.OnTextChanged += args =>
+            {
+                if (Profile is null || !float.TryParse(args.Text, out var newHeight))
+                    return;
+
+                var prototype = _prototypeManager.Index(Profile.Species);
+                newHeight = MathF.Round(Math.Clamp(newHeight, prototype.MinHeight, prototype.MaxHeight), 2);
+
+                // The percentage between the start and end numbers, aka "inverse lerp"
+                var sliderPercent = (newHeight - prototype.MinHeight) /
+                                    (prototype.MaxHeight - prototype.MinHeight);
+                CDHeightSlider.Value = sliderPercent;
+
+                SetProfileHeight(newHeight);
+            };
+
+            CDHeightReset.OnPressed += _ =>
+            {
+                CDHeight.SetText(_defaultHeight.ToString(CultureInfo.InvariantCulture), true);
+            };
+
+            CDHeightSlider.OnValueChanged += _ =>
+            {
+                if (Profile is null)
+                    return;
+                var prototype = _prototypeManager.Index(Profile.Species);
+                var newHeight = MathF.Round(MathHelper.Lerp(prototype.MinHeight, prototype.MaxHeight, CDHeightSlider.Value), 2);
+                CDHeight.Text = newHeight.ToString(CultureInfo.InvariantCulture);
+                SetProfileHeight(newHeight);
+            };
+
+            #endregion CDHeight
+
             #region Skin
 
             Skin.OnValueChanged += _ =>
@@ -1450,6 +1485,7 @@ namespace Content.Client.Lobby.UI
             PronounsButton.SelectId((int) Profile.Gender);
         }
 
+        // Moffstation Start - CD Height
         private void UpdateHeightControls()
         {
             if (Profile == null)
@@ -1461,10 +1497,13 @@ namespace Content.Client.Lobby.UI
             if (species != null)
                 _defaultHeight = species.DefaultHeight;
 
-            var prototype = _prototypeManager.Index<SpeciesPrototype>(Profile.Species);
+            var prototype = _prototypeManager.Index(Profile.Species);
             var sliderPercent = (Profile.Height - prototype.MinHeight) /
                                 (prototype.MaxHeight - prototype.MinHeight);
+            CDHeightSlider.Value = sliderPercent;
+            CDHeight.Text = Profile.Height.ToString(CultureInfo.InvariantCulture);
         }
+        // Moffstation End
 
         private void UpdateSpawnPriorityControls()
         {
