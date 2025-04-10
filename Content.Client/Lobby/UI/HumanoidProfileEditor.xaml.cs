@@ -1,4 +1,4 @@
-using System.Globalization;
+using System.Globalization; // Moffstation
 using System.IO;
 using System.Linq;
 using System.Numerics;
@@ -1293,12 +1293,14 @@ namespace Content.Client.Lobby.UI
             _entManager.System<MetaDataSystem>().SetEntityName(PreviewDummy, newName);
         }
 
+        // Moffstation Start - CD Height
         private void SetProfileHeight(float height)
         {
             Profile = Profile?.WithHeight(height);
             SetDirty();
             ReloadProfilePreview();
         }
+        // Moffstation End
 
         private void SetSpawnPriority(SpawnPriorityPreference newSpawnPriority)
         {

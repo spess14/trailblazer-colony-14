@@ -5,7 +5,7 @@ using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototy
 
 namespace Content.Shared.Humanoid.Prototypes;
 
-[Prototype("species")]
+[Prototype]
 public sealed partial class SpeciesPrototype : IPrototype
 {
     /// <summary>
@@ -123,6 +123,7 @@ public sealed partial class SpeciesPrototype : IPrototype
     [DataField]
     public int MaxAge = 120;
 
+    // Moffstation Start - CD Height Sprite Scaling
     /// <summary>
     /// The minimum height for this species
     /// </summary>
@@ -158,6 +159,7 @@ public sealed partial class SpeciesPrototype : IPrototype
     /// </summary>
     [DataField("scaleHeight")]
     public bool ScaleHeight = true;
+    // Moffstation End
 }
 
 public enum SpeciesNaming : byte
