@@ -1,7 +1,11 @@
 {
   "version": 1,
   "license": "CC-BY-SA-3.0",
+<<<<<<<< HEAD:Resources/Textures/Objects/Tools/stoneshovel.rsi/meta.json
   "copyright": "Made by Widow",
+========
+  "copyright": "Base made by superfreak9111 on discord for Space Station 14, recoloured by momochitters",
+>>>>>>>> ss14/stable:Resources/Textures/Clothing/Neck/Cloaks/aroace.rsi/meta.json
   "size": {
     "x": 32,
     "y": 32
@@ -10,6 +14,13 @@
     {
       "name": "icon"
     },
+<<<<<<<< HEAD:Resources/Textures/Objects/Tools/stoneshovel.rsi/meta.json
+========
+	{
+      "name": "equipped-NECK",
+      "directions": 4
+    },
+>>>>>>>> ss14/stable:Resources/Textures/Clothing/Neck/Cloaks/aroace.rsi/meta.json
     {
       "name": "inhand-left",
       "directions": 4

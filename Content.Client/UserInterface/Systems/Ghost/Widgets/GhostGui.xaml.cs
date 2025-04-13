@@ -35,6 +35,8 @@ public sealed partial class GhostGui : UIWidget
         GhostRolesButton.OnPressed += _ => GhostRolesPressed?.Invoke();
         GhostRolesButton.OnPressed += _ => GhostRolesButton.StyleClasses.Remove(StyleBase.ButtonCaution);
         GhostRespawnButton.OnPressed += _ => GhostRespawnPressed?.Invoke();
+        GhostRolesButton.OnPressed += _ => GhostRolesButton.StyleClasses.Remove(StyleBase.ButtonCaution);
+
 
         _respawnTime = _configManager.GetCVar(CCVars.RespawnCooldown);
     }
