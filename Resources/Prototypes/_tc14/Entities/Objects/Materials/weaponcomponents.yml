@@ -1,0 +1,109 @@
+- type: entity
+  parent: BaseItem
+  id: WeaponFrameCraftingPart
+  name: long-gun framework
+  description: a long-gun framework capible of turning into many different weapons!
+  components:
+  - type: Sprite
+    sprite: _tc14/Objects/Weapons/Guns/framework.rsi
+    state: icon
+  - type: Construction
+    graph: LongGunFrameworkCrafting
+    node: start
+
+- type: entity
+  parent: BaseItem
+  id: GenericWeaponCraftingPart
+  name: weapon internals component
+  description: a generic component for firearm internal mechanisms
+  components:
+  - type: Sprite
+    sprite: Objects/Fun/bikehorn.rsi
+    state: icon
+  - type: Tag
+    tags:
+    - WeaponComponentInternal
+
+- type: entity
+  parent: BaseItem
+  id: EmptyEnforcerInternalsCraftingPart
+  name: empty enforcer internal framework
+  description: a small container made to hold the componenets that make up an enforcer shotgun
+  components:
+  - type: Sprite
+    sprite: _tc14/Objects/Weapons/Guns/Shotguns/enforcercrafting.rsi
+    state: stage1
+  - type: Construction
+    graph: EnforcerInternalsCrafting
+    node: start
+
+- type: entity
+  parent: BaseItem
+  id: EnforcerInternalsCraftingPart
+  name: enforcer internal framework
+  description: a small container holding all the internal components of an enforcer shotgun
+  components:
+  - type: Sprite
+    sprite: _tc14/Objects/Weapons/Guns/Shotguns/enforcercrafting.rsi
+    state: stage1
+  - type: Construction
+    graph: EnforcerInternalsCrafting
+    node: internals
+  - type: Tag
+    tags:
+    - WeaponFinishedInternalsPart
+    - EnforcerPart  
+
+- type: entity
+  parent: BaseItem
+  id: EnforcerBarrelCraftingPart
+  name: enforcer barrel
+  description: a barrel for the enforcer shotgun
+  components:
+  - type: Sprite
+    sprite: _tc14/Objects/Weapons/Guns/Shotguns/enforcercrafting.rsi
+    state: barrel
+  - type: Tag
+    tags:
+    - WeaponBarrelPart
+    - EnforcerPart
+
+- type: entity
+  parent: BaseItem
+  id: EnforcerCraftingStep1
+  name: long-gun framework with enforcer internals
+  description: a long-gun framework with all the internal components required for an enforcer shotgun
+  components:
+  - type: Sprite
+    sprite: _tc14/Objects/Weapons/Guns/Shotguns/enforcercrafting.rsi
+    state: stage1
+  - type: Construction
+    graph: LongGunFrameworkCrafting
+    node: enforcerstep1
+    
+- type: entity
+  parent: BaseItem
+  id: EnforcerCraftingStep2
+  name: long-gun framework with enforcer internals and barrel
+  description: a long-gun framework with all the internal components and a barrel for the enforcer shotgun
+  components:
+  - type: Sprite
+    sprite: _tc14/Objects/Weapons/Guns/Shotguns/enforcercrafting.rsi
+    state: stage2
+  - type: Construction
+    graph: LongGunFrameworkCrafting
+    node: enforcerstep2
+
+- type: entity
+  parent: BaseItem
+  id: EnforcerStockCraftingPart
+  name: enforcer stock
+  description: A stock for the enforcer
+  components:
+  - type: Sprite
+    sprite: _tc14/Objects/Weapons/Guns/Shotguns/enforcercrafting.rsi
+    state: stock
+  - type: Tag
+    tags:
+    - WeaponStockPart
+    - EnforcerPart

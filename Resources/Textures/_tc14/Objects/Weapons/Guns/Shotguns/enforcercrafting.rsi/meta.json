@@ -1,0 +1,23 @@
+{
+    "version": 1,
+    "license": "CC-BY-SA-3.0",
+    "copyright": "Taken from https://github.com/tgstation/tgstation/ at commit fb2d71495bfe81446159ef528534193d09dd8d34, bolt-open modified from icon.png by Flareguy, cut up version modified by T4D2",
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+    "states": [
+        {
+            "name": "stage1"
+        },
+        {
+            "name": "stage2"
+        },
+	{
+	    "name": "barrel"
+	},
+	{
+	    "name": "stock"
+	}
+    ]
+}
