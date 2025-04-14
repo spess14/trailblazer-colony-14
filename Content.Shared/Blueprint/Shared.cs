@@ -7,3 +7,14 @@ public enum BluebenchUiKey
 {
     Key,
 }
+
+[Serializable, NetSerializable]
+public sealed class ResearchProjectStartMessage : BoundUserInterfaceMessage
+{
+    public string Id;
+
+    public ResearchProjectStartMessage(string id)
+    {
+        Id = id;
+    }
+}

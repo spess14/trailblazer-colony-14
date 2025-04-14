@@ -17,6 +17,10 @@ public sealed class BluebenchBoundUserInterface(EntityUid owner, Enum uiKey) : B
 
         _menu = this.CreateWindow<BluebenchMenu>();
         _menu.Title = "AAA";
+        _menu.OnTechnologyProjectStart += id =>
+        {
+            SendMessage(new ResearchProjectStartMessage(id));
+        };
     }
 
     protected override void Dispose(bool disposing)
@@ -35,5 +39,6 @@ public sealed class BluebenchBoundUserInterface(EntityUid owner, Enum uiKey) : B
             return;
 
         _menu?.UpdateResearchEntries(newState.AvailableResearchEntries);
+        _menu?.UpdateRequiredComponents(newState.ActiveProject);
     }
 }

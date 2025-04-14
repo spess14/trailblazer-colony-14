@@ -11,7 +11,8 @@ namespace Content.Client.Blueprint.UI;
 public sealed partial class BluebenchMenu : DefaultWindow
 {
     [Dependency] private readonly IEntityManager _entityManager = default!;
-    [Dependency] private readonly ILocalizationManager Loc = default!;
+    [Dependency] private readonly ILocalizationManager _loc = default!;
+    public Action<String>? OnTechnologyProjectStart;
     private SpriteSystem _spriteSystem;
 
     public BluebenchMenu()
@@ -47,7 +48,15 @@ public sealed partial class BluebenchMenu : DefaultWindow
                 message.AddMarkupOrThrow($"{value.Amount}x {key}");
             }
 
-            ResearchList.AddChild(new BluebenchResearchEntry(entry.Name!, message, _spriteSystem.Frame0(entry.Icon!), entry.ID));
+            var item = new BluebenchResearchEntry(entry.Name!, message, _spriteSystem.Frame0(entry.Icon!), entry.ID);
+            item.OnTechnologyProjectStart = OnTechnologyProjectStart;
+
+            ResearchList.AddChild(item);
         }
+    }
+
+    public void UpdateRequiredComponents(BluebenchResearchPrototype? activeResearch)
+    {
+        ActiveResearch.Text = _loc.GetString("bluebench-active-project") + (activeResearch == null ? "N/A" : activeResearch.Name);
     }
 }

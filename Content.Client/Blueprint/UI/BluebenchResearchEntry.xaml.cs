@@ -9,7 +9,7 @@ namespace Content.Client.Blueprint.UI;
 [GenerateTypedNameReferences]
 public sealed partial class BluebenchResearchEntry : PanelContainer
 {
-    public readonly string ID;
+    public Action<String>? OnTechnologyProjectStart;
 
     public BluebenchResearchEntry(string researchName, FormattedMessage researchDescription, Texture icon, string ID)
     {
@@ -17,7 +17,10 @@ public sealed partial class BluebenchResearchEntry : PanelContainer
         ResearchName.Text = researchName;
         ResearchDescription.SetMessage(researchDescription);
         Icon.Texture = icon;
-        this.ID = ID;
+        ActivateResearch.OnPressed += _ =>
+        {
+            OnTechnologyProjectStart?.Invoke(ID);
+        };
     }
 }
 
