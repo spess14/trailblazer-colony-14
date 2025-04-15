@@ -1,6 +1,7 @@
 using System.Diagnostics.CodeAnalysis;
 using Content.Server.Cargo.Components;
 using Content.Server.Station.Components;
+using Content.Shared._Moffstation.Cargo.Events; // Moffstation
 using Content.Shared.Cargo;
 using Content.Shared.Cargo.BUI;
 using Content.Shared.Cargo.Components;
@@ -524,6 +525,8 @@ namespace Content.Server.Cargo.Systems
                     _slots.TryInsert(item, label.LabelSlot, printed, null);
                 }
             }
+
+            RaiseLocalEvent(item, new CargoOrderFulfilledEvent()); // Moffstation
 
             return true;
 
