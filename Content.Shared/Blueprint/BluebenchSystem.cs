@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System.Diagnostics;
+using System.Linq;
 using Content.Shared.Examine;
 using Content.Shared.Interaction;
 using Content.Shared.UserInterface;
@@ -43,17 +44,17 @@ public sealed partial class BluebenchSystem : EntitySystem
         using (e.PushGroup(nameof(BluebenchComponent)))
         {
             e.PushMarkup($"Currently researching: {researchProject.Name}");
-            foreach (var (key, value) in researchProject.StackRequirements)
+            foreach (var (key, value) in component.MaterialProgress)
             {
                 e.PushMarkup($"{value}x {key.Id}");
             }
-            foreach (var (key, value) in researchProject.TagRequirements)
+            foreach (var (key, value) in component.TagProgress)
             {
-                e.PushMarkup($"{value.Amount}x {key.Id}");
+                e.PushMarkup($"{value}x {key.Id}");
             }
-            foreach (var (key, value) in researchProject.ComponentRequirements)
+            foreach (var (key, value) in component.ComponentProgress)
             {
-                e.PushMarkup($"{value.Amount}x {key}");
+                e.PushMarkup($"{value}x {key}");
             }
         }
     }
@@ -70,6 +71,9 @@ public sealed partial class BluebenchSystem : EntitySystem
 
         if (!prototypeManager.TryIndex<BluebenchResearchPrototype>(args.Id, out var prototype))
             return;
+
+        if (component.ActiveProject != null && component.ActiveProject.ID != prototype.ID)
+            return; // ideally should put an error or something, idk
 
         component.ActiveProject = prototype;
         UpdateUiState(uid, component);

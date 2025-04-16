@@ -38,7 +38,11 @@ public sealed class BluebenchBoundUserInterface(EntityUid owner, Enum uiKey) : B
         if (state is not BluebenchBoundUserInterfaceState newState)
             return;
 
+        if (_menu == null)
+            return;
+
+        _menu.ActiveResearchProto = newState.ActiveProject;
         _menu?.UpdateResearchEntries(newState.AvailableResearchEntries);
-        _menu?.UpdateRequiredComponents(newState.ActiveProject);
+        _menu?.UpdateRequiredComponents();
     }
 }

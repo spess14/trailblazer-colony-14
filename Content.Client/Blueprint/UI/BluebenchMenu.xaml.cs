@@ -14,6 +14,7 @@ public sealed partial class BluebenchMenu : DefaultWindow
     [Dependency] private readonly ILocalizationManager _loc = default!;
     public Action<String>? OnTechnologyProjectStart;
     private SpriteSystem _spriteSystem;
+    public BluebenchResearchPrototype? ActiveResearchProto;
 
     public BluebenchMenu()
     {
@@ -48,15 +49,16 @@ public sealed partial class BluebenchMenu : DefaultWindow
                 message.AddMarkupOrThrow($"{value.Amount}x {key}");
             }
 
-            var item = new BluebenchResearchEntry(entry.Name!, message, _spriteSystem.Frame0(entry.Icon!), entry.ID);
+            var enabled = !(ActiveResearchProto != null && ActiveResearchProto.ID == entry.ID);
+            var item = new BluebenchResearchEntry(entry.Name!, message, _spriteSystem.Frame0(entry.Icon!), entry.ID, enabled);
             item.OnTechnologyProjectStart = OnTechnologyProjectStart;
 
             ResearchList.AddChild(item);
         }
     }
 
-    public void UpdateRequiredComponents(BluebenchResearchPrototype? activeResearch)
+    public void UpdateRequiredComponents()
     {
-        ActiveResearch.Text = _loc.GetString("bluebench-active-project") + (activeResearch == null ? "N/A" : activeResearch.Name);
+        ActiveResearch.Text = _loc.GetString("bluebench-active-project") + (ActiveResearchProto == null ? "N/A" : ActiveResearchProto.Name);
     }
 }

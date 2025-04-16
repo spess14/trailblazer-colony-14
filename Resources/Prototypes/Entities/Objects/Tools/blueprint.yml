@@ -21,8 +21,7 @@
 - type: entity
   parent: BaseBlueprint
   id: BlueprintFulton
-  name: fulton blueprint
-  description: A blueprint with a schematic of a fulton. It can be inserted into an autolathe.
+  prefix: fulton
   components:
   - type: Blueprint
     providedRecipes:
@@ -31,8 +30,7 @@
 - type: entity
   parent: BaseBlueprint
   id: BlueprintSeismicCharge
-  name: seismic charge blueprint
-  description: A blueprint with a schematic of a seismic charge. It can be inserted into an autolathe.
+  prefix: seismic charge
   components:
   - type: Blueprint
     providedRecipes:
@@ -41,8 +39,7 @@
 - type: entity
   parent: BaseBlueprint
   id: BlueprintDoubleEmergencyTank
-  name: double emergency tank blueprint
-  description: A blueprint with a schematic of a double emergency tank. It can be inserted into an autolathe.
+  prefix: double tanks
   components:
   - type: Blueprint
     providedRecipes:

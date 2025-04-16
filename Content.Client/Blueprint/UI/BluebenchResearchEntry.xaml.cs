@@ -11,12 +11,13 @@ public sealed partial class BluebenchResearchEntry : PanelContainer
 {
     public Action<String>? OnTechnologyProjectStart;
 
-    public BluebenchResearchEntry(string researchName, FormattedMessage researchDescription, Texture icon, string ID)
+    public BluebenchResearchEntry(string researchName, FormattedMessage researchDescription, Texture icon, string ID, bool enabled)
     {
         RobustXamlLoader.Load(this);
         ResearchName.Text = researchName;
         ResearchDescription.SetMessage(researchDescription);
         Icon.Texture = icon;
+        ActivateResearch.Disabled = !enabled;
         ActivateResearch.OnPressed += _ =>
         {
             OnTechnologyProjectStart?.Invoke(ID);
