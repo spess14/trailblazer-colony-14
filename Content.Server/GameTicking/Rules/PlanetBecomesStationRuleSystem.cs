@@ -38,8 +38,14 @@ public sealed class PlanetBecomesStationRuleSystem : GameRuleSystem<PlanetBecome
 
         var mapId = _gameTicker.DefaultMap;
         var mapGrids = _mapMan.GetAllGrids(mapId).Select(grid => grid.Owner);
+        //a bit evil but it'll do for now
         foreach (var grid in mapGrids)
         {
+            if (!HasComp<BiomeComponent>(grid))
+            {
+                _host.ExecuteCommand($"stations:get stations:rmgrid {grid}");
+                continue;
+            }
             _host.ExecuteCommand($"stations:get stations:addgrid {grid}");
         }
     }
