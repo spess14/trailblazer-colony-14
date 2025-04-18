@@ -1,0 +1,13 @@
+﻿- type: bluebenchResearch
+  id: blorp
+  name: Zleep zlorp
+  description: vorp?!?!?
+  icon:
+    sprite: Objects/Fun/bananiumhorn.rsi
+    state: icon
+  stackRequirements:
+    Manipulator: 3
+    Capacitor: 1
+    Glass: 5
+  outputRecipes:
+    - Matchbox
