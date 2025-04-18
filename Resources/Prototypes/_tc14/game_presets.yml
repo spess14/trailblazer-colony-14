@@ -7,4 +7,4 @@
   showInVote: true # secret
   description: planet-survival-description
   rules:
-  - RampingStationEventScheduler
+  - PlanetaryStationGameRule
