@@ -49,6 +49,9 @@
         enum.ConstructionVisuals.Layer:
           Primed: { state: primed }
           Unprimed: { state: icon }
+  - type: Tag
+    tags:
+    - HandGrenade
 
 # Moffstation - Begin (Resilient Grenades)
 - type: entity
@@ -122,6 +125,7 @@
     - Antagonists
   - type: Tag
     tags:
+    - HandGrenade
     - GrenadeFlashBang
 
 - type: entity
@@ -356,6 +360,9 @@
       map: [ "enum.ConstructionVisuals.Layer" ]
   - type: Item
     size: Small
+  - type: Tag
+    tags:
+    - HandGrenade
   - type: PayloadCase
   - type: Construction
     graph: ModularGrenadeGraph
