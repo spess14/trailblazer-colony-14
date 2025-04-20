@@ -76,6 +76,20 @@ public sealed partial class BluebenchSystem : EntitySystem
             return; // ideally should put an error or something, idk
 
         component.ActiveProject = prototype;
+        foreach (var requirement in prototype.ComponentRequirements)
+        {
+            component.ComponentProgress.Add(requirement.Key, requirement.Value.Amount);
+        }
+
+        foreach (var requirement in prototype.TagRequirements)
+        {
+            component.TagProgress.Add(requirement.Key, requirement.Value.Amount);
+        }
+
+        foreach (var requirement in prototype.StackRequirements)
+        {
+            component.MaterialProgress.Add(requirement.Key, requirement.Value);
+        }
         UpdateUiState(uid, component);
     }
 
