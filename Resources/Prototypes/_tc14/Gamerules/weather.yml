@@ -24,29 +24,17 @@
       earliestStart: 0
       reoccurrenceDelay: 0
     - type: WeatherChangeRule
-      weatherTable: !type:GroupSelector
-        children:
-        - !type:GroupSelector
-          weight: 50 # rain
-          children:
-            - id: Rain
-        - !type:GroupSelector # common weather
-          weight: 30
-          children:
-            - id: SnowfallLight
-            - id: SnowfallMedium
-            # - id: SnowfallHeavy
-        - !type:GroupSelector # rare weather
-          weight: 15
-          children:
-            - id: Hail
-            - id: Sandstorm
-            # - id: SandstormHeavy
-            - id: Storm
-        - !type:GroupSelector # extreme weather
-          weight: 5
-          children:
-            - id: Ashfall
-            - id: AshfallLight
-            # - id: AshfallHeavy
-            - id: Fallout
+      weatherTable: WeatherIDTable
+
+- type: weightedRandom
+  id: WeatherIDTable
+  weights:
+    Rain: 50
+    SnowfallLight: 30
+    SnowfallMedium: 30
+    Hail: 15
+    Sandstorm: 15
+    Storm: 15
+    Ashfall: 5
+    AshfallLight: 5
+    Fallout: 5

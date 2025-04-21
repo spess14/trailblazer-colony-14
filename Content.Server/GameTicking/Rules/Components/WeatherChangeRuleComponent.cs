@@ -1,4 +1,6 @@
 using Content.Shared.EntityTable.EntitySelectors;
+using Content.Shared.Random;
+using Robust.Shared.Prototypes;
 
 namespace Content.Server.GameTicking.Rules.Components;
 
@@ -12,7 +14,7 @@ public sealed partial class WeatherChangeRuleComponent : Component
     /// Weather selector prototype ID.
     /// </summary>
     [DataField]
-    public EntityTableSelector WeatherTable;
+    public ProtoId<WeightedRandomPrototype> WeatherTable;
 
     [DataField]
     public TimeSpan MinTime = TimeSpan.FromMinutes(1);
