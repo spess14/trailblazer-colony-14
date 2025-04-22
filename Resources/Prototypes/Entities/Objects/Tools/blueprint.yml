@@ -3,7 +3,7 @@
   id: BaseBlueprint
   name: blueprint
   description: A blueprint for some machine. It can be inserted into an autolathe.
-  abstract: true
+  # abstract: true
   components:
   - type: Sprite
     sprite: Objects/Materials/researchearlytechpaper.rsi
@@ -11,7 +11,6 @@
   - type: Item
     sprite: Objects/Materials/researchearlytechpaper.rsi
     size: Normal
-  - type: Blueprint
   - type: StaticPrice
     price: 1000
   - type: Tag
@@ -21,7 +20,7 @@
 - type: entity
   parent: BaseBlueprint
   id: BlueprintFulton
-  prefix: fulton
+  suffix: fulton
   components:
   - type: Blueprint
     providedRecipes:
@@ -30,7 +29,7 @@
 - type: entity
   parent: BaseBlueprint
   id: BlueprintSeismicCharge
-  prefix: seismic charge
+  suffix: seismic charge
   components:
   - type: Blueprint
     providedRecipes:
@@ -39,7 +38,7 @@
 - type: entity
   parent: BaseBlueprint
   id: BlueprintDoubleEmergencyTank
-  prefix: double tanks
+  suffix: double tanks
   components:
   - type: Blueprint
     providedRecipes:

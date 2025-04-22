@@ -20,16 +20,8 @@
                 </PanelContainer.PanelOverride>
                 <BoxContainer Orientation="Vertical">
                     <RichTextLabel VerticalAlignment="Stretch" Text="Active research: " Name="ActiveResearch" Margin="10 10 10 10"/>
-                    <BoxContainer Orientation="Vertical">
-                        <BoxContainer Orientation="Horizontal">
-                            <BoxContainer
-                                Margin="0 0 4 0"
-                                HorizontalAlignment="Center"
-                                VerticalAlignment="Center"
-                                MinSize="32 32"
-                            />
-                            <Label HorizontalExpand="True" Text="Name" />
-                        </BoxContainer>
+                    <BoxContainer Orientation="Vertical" Name="Requirements">
+
                     </BoxContainer>
                 </BoxContainer>
             </PanelContainer>

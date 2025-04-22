@@ -5,6 +5,14 @@
   icon:
     sprite: Objects/Fun/bananiumhorn.rsi
     state: icon
+  tagRequirements:
+    GlassBeaker:
+      amount: 2
+      defaultPrototype: Beaker
+  componentRequirements:
+    AmeFuelContainer:
+      amount: 1
+      defaultPrototype: AmeJar
   stackRequirements:
     Manipulator: 3
     Capacitor: 1

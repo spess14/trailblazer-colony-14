@@ -2,6 +2,9 @@
 using System.Linq;
 using Content.Shared.Examine;
 using Content.Shared.Interaction;
+using Content.Shared.Research.Components;
+using Content.Shared.Stacks;
+using Content.Shared.Tag;
 using Content.Shared.UserInterface;
 using Robust.Client.GameObjects;
 using Robust.Client.Prototypes;
@@ -12,9 +15,12 @@ namespace Content.Shared.Blueprint;
 /// <summary>
 /// This handles the bluebench bullshit
 /// </summary>
-public sealed partial class BluebenchSystem : EntitySystem
+public sealed class BluebenchSystem : EntitySystem
 {
     [Dependency] private readonly SharedUserInterfaceSystem _uiSystem = default!;
+    [Dependency] private readonly SharedStackSystem _stackSystem = default!;
+    [Dependency] private readonly TagSystem _tagSystem = default!;
+    [Dependency] private readonly IComponentFactory _factory = default!;
 
     /// <inheritdoc/>
     public override void Initialize()
@@ -46,23 +52,142 @@ public sealed partial class BluebenchSystem : EntitySystem
             e.PushMarkup($"Currently researching: {researchProject.Name}");
             foreach (var (key, value) in component.MaterialProgress)
             {
+                if (value == 0)
+                    continue;
+
                 e.PushMarkup($"{value}x {key.Id}");
             }
             foreach (var (key, value) in component.TagProgress)
             {
+                if (value == 0)
+                    continue;
+
                 e.PushMarkup($"{value}x {key.Id}");
             }
             foreach (var (key, value) in component.ComponentProgress)
             {
+                if (value == 0)
+                    continue;
+
                 e.PushMarkup($"{value}x {key}");
             }
         }
+    }
+
+    private bool TryInsertStack(EntityUid uid, EntityUid used, BluebenchComponent component, StackComponent stack)
+    {
+        var type = stack.StackTypeId;
+
+        if (component.ActiveProject is null)
+            return false;
+
+        if (!component.ActiveProject.StackRequirements.ContainsKey(type))
+            return false;
+
+        if (component.MaterialProgress[type] == 0)
+            return false;
+
+        var stackCount = _stackSystem.GetCount(used, stack);
+        var toInsert = Math.Clamp(component.MaterialProgress[type], 1, stackCount);
+
+        component.MaterialProgress[type] -= toInsert;
+        _stackSystem.SetCount(used, stackCount - toInsert,stack);
+
+        return true;
     }
 
     private void OnInteractUsingEvent(EntityUid entity, BluebenchComponent component, InteractUsingEvent args)
     {
         if (args.Handled)
             return;
+
+        if (component.ActiveProject is null)
+            return;
+
+        if (TryComp<StackComponent>(args.Used, out var stack))
+        {
+            if (TryInsertStack(entity, args.Used, component, stack))
+                args.Handled = true;
+        }
+
+        if (TryComp<TagComponent>(args.Used, out var tagComp))
+        {
+            foreach (var (tagName, _) in component.ActiveProject.TagRequirements)
+            {
+                if (component.TagProgress[tagName] == 0)
+                    continue;
+
+                if (!_tagSystem.HasTag(tagComp, tagName))
+                    continue;
+
+                if (!args.Handled)
+                {
+                    QueueDel(args.Used);
+                }
+
+                component.TagProgress[tagName]--;
+                args.Handled = true;
+            }
+        }
+
+        foreach (var (compName, _) in component.ActiveProject.ComponentRequirements)
+        {
+            if (component.ComponentProgress[compName] == 0)
+                continue;
+
+            var registration = _factory.GetRegistration(compName);
+
+            if (!HasComp(args.Used, registration.Type))
+                continue;
+
+            // Insert the entity, if it hasn't already been inserted
+            if (!args.Handled)
+            {
+                QueueDel(args.Used);
+                args.Handled = true;
+            }
+
+            component.ComponentProgress[compName]--;
+        }
+
+        if (IsComplete(component))
+        {
+            var result = Spawn("BaseBlueprint", Transform(entity).Coordinates);
+            var blueprint = AddComp<BlueprintComponent>(result);
+            foreach (var recipe in component.ActiveProject.OutputRecipes)
+            {
+                blueprint.ProvidedRecipes.Add(recipe);
+            }
+
+            component.ActiveProject = null;
+            UpdateUiState(entity, component);
+        }
+    }
+
+    private static bool IsComplete(BluebenchComponent component)
+    {
+        if (component.ActiveProject is null)
+            return false;
+
+        foreach (var (type, _) in component.ActiveProject.StackRequirements)
+        {
+            if (component.MaterialProgress[type] != 0)
+                return false;
+        }
+
+        foreach (var (compName, info) in component.ActiveProject.ComponentRequirements)
+        {
+            if (component.ComponentProgress[compName] != 0)
+                return false;
+        }
+
+        foreach (var (tagName, _) in component.ActiveProject.TagRequirements)
+        {
+            if (component.TagProgress[tagName] != 0)
+                return false;
+        }
+
+        return true;
     }
 
     private void OnResearchProjectStart(EntityUid uid, BluebenchComponent component, ResearchProjectStartMessage args)
@@ -99,6 +224,6 @@ public sealed partial class BluebenchSystem : EntitySystem
         var prototypes = prototypeManager.EnumeratePrototypes<BluebenchResearchPrototype>().ToHashSet();
         var availablePrototypes = new HashSet<BluebenchResearchPrototype>(prototypes.Except(component.ResearchedPrototypes));
 
-        _uiSystem.SetUiState(uid, BluebenchUiKey.Key, new BluebenchBoundUserInterfaceState(availablePrototypes, component.ActiveProject));
+        _uiSystem.SetUiState(uid, BluebenchUiKey.Key, new BluebenchBoundUserInterfaceState(availablePrototypes, component.ActiveProject, component.MaterialProgress, component.ComponentProgress, component.TagProgress));
     }
 }
