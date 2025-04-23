@@ -16,7 +16,7 @@ public sealed class BluebenchBoundUserInterface(EntityUid owner, Enum uiKey) : B
         base.Open();
 
         _menu = this.CreateWindow<BluebenchMenu>();
-        _menu.Title = "AAA";
+
         _menu.OnTechnologyProjectStart += id =>
         {
             SendMessage(new ResearchProjectStartMessage(id));
