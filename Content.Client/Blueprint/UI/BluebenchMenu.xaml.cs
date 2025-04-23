@@ -97,11 +97,7 @@ public sealed partial class BluebenchMenu : DefaultWindow
 
         foreach (var (key, value) in ComponentProgress)
         {
-            if (!prototypeManager.TryIndex(key, out var componentPrototype))
-                continue;
-
-            var frame = _spriteSystem.Frame0(componentPrototype);
-            Requirements.AddChild(new BluebenchMaterialRequirement(frame, $"{value}x {componentPrototype.Name}"));
+            Requirements.AddChild(new BluebenchMaterialRequirement(null, $"{value}x {key}")); // should add some simple enough way to explain "an item containing this component", idc for now
         }
     }
 }
