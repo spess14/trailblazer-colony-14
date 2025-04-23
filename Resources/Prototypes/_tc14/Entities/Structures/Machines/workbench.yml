@@ -78,7 +78,7 @@
 - type: entity
   id: BlueprintWorkbench
   parent: BaseMachine
-  name: Blueprint workbench
+  name: blueprint workbench
   description: A table with tools made out of whatever you could find, yet sufficient for basic research.
   components:
   - type: Bluebench
