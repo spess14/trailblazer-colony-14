@@ -19,13 +19,13 @@ public sealed class BluebenchResearchPrototype : IPrototype
     ///     Name displayed in the blueprint workbench.
     /// </summary>
     [DataField]
-    public LocId? Name;
+    public string? Name;
 
     /// <summary>
     ///     Describes some research stuff
     /// </summary>
     [DataField]
-    public LocId? Description;
+    public string? Description;
 
     /// <summary>
     ///     An entity whose sprite is displayed in the ui in place of the actual recipe result.
