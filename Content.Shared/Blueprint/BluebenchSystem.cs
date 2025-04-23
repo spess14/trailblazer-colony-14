@@ -1,13 +1,9 @@
-﻿using System.Diagnostics;
-using System.Linq;
+﻿using System.Linq;
 using Content.Shared.Examine;
 using Content.Shared.Interaction;
 using Content.Shared.Research.Components;
 using Content.Shared.Stacks;
 using Content.Shared.Tag;
-using Content.Shared.UserInterface;
-using Robust.Client.GameObjects;
-using Robust.Client.Prototypes;
 using Robust.Shared.Prototypes;
 
 namespace Content.Shared.Blueprint;
