@@ -155,6 +155,10 @@ public sealed class BluebenchSystem : EntitySystem
                 blueprint.ProvidedRecipes.Add(recipe);
             }
 
+            component.ComponentProgress.Clear();
+            component.MaterialProgress.Clear();
+            component.TagProgress.Clear();
+            component.ResearchedPrototypes.Add(component.ActiveProject);
             component.ActiveProject = null;
         }
 
