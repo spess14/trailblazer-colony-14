@@ -156,8 +156,9 @@ public sealed class BluebenchSystem : EntitySystem
             }
 
             component.ActiveProject = null;
-            UpdateUiState(entity, component);
         }
+
+        UpdateUiState(entity, component);
     }
 
     private static bool IsComplete(BluebenchComponent component)
