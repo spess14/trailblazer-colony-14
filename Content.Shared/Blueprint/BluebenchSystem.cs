@@ -194,7 +194,7 @@ public sealed class BluebenchSystem : EntitySystem
             return;
 
         if (component.ActiveProject != null && component.ActiveProject.ID != prototype.ID)
-            return; // ideally should put an error or something, idk
+            return;
 
         component.ActiveProject = prototype;
         foreach (var requirement in prototype.ComponentRequirements)

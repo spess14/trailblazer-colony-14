@@ -12,23 +12,18 @@ namespace Content.Shared.Blueprint;
 [AutoGenerateComponentState]
 public sealed partial class BluebenchComponent : Component
 {
-    [DataField]
-    [AutoNetworkedField]
+    [DataField, AutoNetworkedField]
     public BluebenchResearchPrototype? ActiveProject;
 
-    [DataField]
-    [AutoNetworkedField]
+    [DataField, AutoNetworkedField]
     public Dictionary<ProtoId<StackPrototype>, int> MaterialProgress = new();
 
-    [DataField]
-    [AutoNetworkedField]
+    [DataField, AutoNetworkedField]
     public Dictionary<string, int> ComponentProgress = new();
 
-    [DataField]
-    [AutoNetworkedField]
+    [DataField, AutoNetworkedField]
     public Dictionary<ProtoId<TagPrototype>, int> TagProgress = new();
 
-    [DataField]
-    [AutoNetworkedField]
+    [DataField, AutoNetworkedField]
     public HashSet<BluebenchResearchPrototype> ResearchedPrototypes = [];
 }
