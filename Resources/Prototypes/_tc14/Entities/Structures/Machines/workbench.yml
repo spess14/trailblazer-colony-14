@@ -74,3 +74,62 @@
   - type: Transform
     anchored: true
   - type: Pullable
+
+- type: entity
+  id: BlueprintWorkbench
+  parent: BaseMachine
+  name: blueprint workbench
+  description: A table with tools made out of whatever you could find, yet sufficient for basic research.
+  components:
+  - type: Bluebench
+  - type: Appearance
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.4,-0.4,0.4,0.4"
+        density: 190
+        mask:
+        - MachineMask
+        layer:
+        - MachineLayer
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 100
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+      - !type:PlaySoundBehavior
+        sound:
+          collection: WoodDestroy
+  - type: Transform
+    anchored: true
+  - type: Pullable
+  - type: Sprite
+    sprite: Structures/Machines/earlyresearchbench.rsi
+    layers:
+    - state: earlyresearchbench
+  - type: Construction
+    graph: Table
+    node: Workbench
+  - type: ContainerContainer
+    containers:
+      blueprint: !type:Container
+  - type: BlueprintReceiver
+    whitelist:
+      tags:
+      - BlueprintAutolathe
+  - type: MaterialStorage
+    whitelist:
+      tags:
+      - BlueprintMaterial
+  - type: ActivatableUI
+    key: enum.BluebenchUiKey.Key
+  - type: UserInterface
+    interfaces:
+      enum.BluebenchUiKey.Key:
+        type: BluebenchBoundUserInterface
+

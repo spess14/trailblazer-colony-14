@@ -1,3 +1,4 @@
+using Content.Shared.Examine;
 using Content.Shared.IdentityManagement;
 using Content.Shared.Interaction;
 using Content.Shared.Lathe;
@@ -7,6 +8,7 @@ using Content.Shared.Research.Prototypes;
 using Content.Shared.Whitelist;
 using Robust.Shared.Containers;
 using Robust.Shared.Prototypes;
+using Robust.Shared.Utility;
 
 namespace Content.Shared.Research.Systems;
 
@@ -15,6 +17,7 @@ public sealed class BlueprintSystem : EntitySystem
     [Dependency] private readonly SharedContainerSystem _container = default!;
     [Dependency] private readonly EntityWhitelistSystem _entityWhitelist = default!;
     [Dependency] private readonly SharedPopupSystem _popup = default!;
+    [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
 
     /// <inheritdoc/>
     public override void Initialize()
@@ -22,6 +25,34 @@ public sealed class BlueprintSystem : EntitySystem
         SubscribeLocalEvent<BlueprintReceiverComponent, ComponentStartup>(OnStartup);
         SubscribeLocalEvent<BlueprintReceiverComponent, AfterInteractUsingEvent>(OnAfterInteract);
         SubscribeLocalEvent<BlueprintReceiverComponent, LatheGetRecipesEvent>(OnGetRecipes);
+        SubscribeLocalEvent<BlueprintComponent, ExaminedEvent>(OnBlueprintExamine);
+    }
+
+    private void OnBlueprintExamine(Entity<BlueprintComponent> ent, ref ExaminedEvent args)
+    {
+        if (!args.IsInDetailsRange)
+            return;
+
+        using (args.PushGroup(nameof(BlueprintComponent)))
+        {
+            var formatted = new FormattedMessage();
+            formatted.PushNewline();
+            formatted.AddText(Loc.GetString("blueprint-contains"));
+            formatted.PushNewline();
+
+            var recipes = ent.Comp.ProvidedRecipes;
+
+            foreach (var recipe in recipes)
+            {
+                if (!_prototypeManager.TryIndex(recipe, out var proto))
+                    continue;
+
+                formatted.AddText(proto.ID);
+                formatted.PushNewline();
+            }
+
+            args.PushMessage(formatted);
+        }
     }
 
     private void OnStartup(Entity<BlueprintReceiverComponent> ent, ref ComponentStartup args)

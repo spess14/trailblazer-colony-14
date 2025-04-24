@@ -3,15 +3,14 @@
   id: BaseBlueprint
   name: blueprint
   description: A blueprint for some machine. It can be inserted into an autolathe.
-  abstract: true
+  # abstract: true
   components:
   - type: Sprite
-    sprite: Objects/Tools/blueprint.rsi
-    state: icon
+    sprite: Objects/Materials/researchearlytechpaper.rsi
+    state: fullbp
   - type: Item
-    sprite: Objects/Tools/blueprint.rsi
+    sprite: Objects/Materials/researchearlytechpaper.rsi
     size: Normal
-  - type: Blueprint
   - type: StaticPrice
     price: 1000
   - type: Tag
@@ -21,8 +20,7 @@
 - type: entity
   parent: BaseBlueprint
   id: BlueprintFulton
-  name: fulton blueprint
-  description: A blueprint with a schematic of a fulton. It can be inserted into an autolathe.
+  suffix: fulton
   components:
   - type: Blueprint
     providedRecipes:
@@ -31,8 +29,7 @@
 - type: entity
   parent: BaseBlueprint
   id: BlueprintSeismicCharge
-  name: seismic charge blueprint
-  description: A blueprint with a schematic of a seismic charge. It can be inserted into an autolathe.
+  suffix: seismic charge
   components:
   - type: Blueprint
     providedRecipes:
@@ -41,8 +38,7 @@
 - type: entity
   parent: BaseBlueprint
   id: BlueprintDoubleEmergencyTank
-  name: double emergency tank blueprint
-  description: A blueprint with a schematic of a double emergency tank. It can be inserted into an autolathe.
+  suffix: double tanks
   components:
   - type: Blueprint
     providedRecipes:

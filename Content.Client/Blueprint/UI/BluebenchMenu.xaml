@@ -1,0 +1,37 @@
+﻿<DefaultWindow
+    xmlns="https://spacestation14.io"
+    xmlns:gfx="clr-namespace:Robust.Client.Graphics;assembly=Robust.Client"
+    Title="{Loc 'lathe-menu-title'}"
+    MinSize="550 450"
+    SetSize="750 500">
+    <BoxContainer Orientation="Horizontal">
+        <ScrollContainer VScrollEnabled="True" VerticalExpand="True" HorizontalExpand="True">
+            <BoxContainer
+                Name="ResearchList"
+                Orientation="Vertical"
+                HorizontalExpand="False"
+                VerticalExpand="True">
+            </BoxContainer>
+        </ScrollContainer>
+        <BoxContainer HorizontalExpand="True" VerticalExpand="True" Orientation="Vertical">
+            <PanelContainer VerticalExpand="True" Margin="10 10 10 10">
+                <PanelContainer.PanelOverride>
+                    <gfx:StyleBoxFlat BackgroundColor="#1B1B1E"/>
+                </PanelContainer.PanelOverride>
+                <BoxContainer Orientation="Vertical">
+                    <RichTextLabel VerticalAlignment="Stretch" Text="Active research: " Name="ActiveResearch" Margin="10 10 10 10"/>
+                    <BoxContainer Orientation="Vertical" Name="Requirements">
+
+                    </BoxContainer>
+                </BoxContainer>
+            </PanelContainer>
+            <BoxContainer VerticalAlignment="Bottom" Margin="5 5 5 5" SeparationOverride="4">
+                <TextureRect Name="BlueprintIcon"/>
+                <Label Text="Blueprint"/>
+                <Button Text="1"/>
+                <Button Text="5"/>
+                <Button Text="15"/>
+            </BoxContainer>
+        </BoxContainer>
+    </BoxContainer>
+</DefaultWindow>
