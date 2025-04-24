@@ -1,73 +1,100 @@
-<Document>
-  # Core Rule 1.2 - Use realistic character names, and do not use names of famous people
-  - No names of people or characters from the real world
-  - Must follow all other rules (no slurs/sexual names/etc)
-  - Usernames, objects, random characters, very "low effort" names, "meta" names, or otherwise implausible names cannot be used as names. See examples below.
-  - Admin rulings on IC names are final and disputes should be done through appeals, not by refusing to comply with an admin.
+﻿<Document>
+  # Roleplay Rule 1.2 - Do not metagame, obey the Metashield
+  Something that is "shielded" cannot be known by your character during a round until the "revealing condition" happens. This also means that your character cannot do things based on "shielded" information. Knowing or acting on something that is shielded before the revealing condition is met is referred to as metagaming.
 
-  ## Clarification on "Meta" Names
-  Meta names are ones which attempt to take advantage of some game mechanic or game design choice. "Urist McHands" is a meta name because it is the default name used for admin spawned humans. "Operator Whiskey" is a meta name because it follows the naming pattern of nuclear operatives. This rule is not intended to prevent things like nuclear operatives using a fake ID with names that appear to be nuclear operative names if they decide that they want to do that.
+  Revealing conditions reveal the shielded information for the round, not for a specific instance. This means that once a revealing condition is met in a round, the shield no longer applies in any case for the remainder of the round.
 
-  ## Conventions and Examples
-  [color=#994444]Bad[/color] cannot be used by any species. [color=#449944]Acceptable[/color] names can be used by any species.
+  ## Never Revealed IC
+  Some shields are never revealed IC. This means that your character can never act as if they know about that shielded thing.
 
-  Humans typically use the Firstname Lastname convention.
-  - [color=#449944]Acceptable:[/color] Tom Fisher
-  - [color=#449944]Acceptable:[/color] Spacey Chapman
-  - [color=#449944]Acceptable:[/color] Dr. Tom Fisher
-  - [color=#994444]Bad:[/color] Walter White
-  - [color=#994444]Bad:[/color] George Washington
-  - [color=#994444]Bad:[/color] Joe Biden
-  - [color=#994444]Bad:[/color] Ben Dover
-  - [color=#994444]Bad:[/color] Mike Hunt
+  The following are shielded:
+  - Current game mode and possible antagonists during the current game mode.
+  - Events from previous rounds.
+  - Events you experienced as a different character.
+  - All information related to the player of a character rather than the character itself. (See "Metafriending and Metagrudging" below.)
+  - All information gained while dead or a ghost.
+  - The fact that a round will end.
 
-  Dwarfs typically use the human convention in a viking theme.
-  - [color=#449944]Acceptable:[/color] Ingrid Firebreath
-  - [color=#449944]Acceptable:[/color] Erik Lightningclaw
+  This prohibits things like preparing to kill people after round-end window appears (EORG).
 
-  Lizards typically use the Verb-article-Noun convention.
-  - [color=#449944]Acceptable:[/color] Eats-the-Nutripaste
-  - [color=#994444]Bad:[/color] Bans-the-Admins
+  ## Nuclear Operatives
 
-  Slimes typically have names that are onomatopoeia. A last name is optional.
-  - [color=#449944]Acceptable:[/color] Foolp Suub
-  - [color=#449944]Acceptable:[/color] Foolp
-  - [color=#994444]Bad:[/color] Slime
+  The existence of Nuclear Operatives beyond a myth that no one would act on is shielded.
 
-  Diona typically have calm, nature themed, Noun of Noun style names.
-  - [color=#449944]Acceptable:[/color] Petal of Tranquility
-  - [color=#449944]Acceptable:[/color] Garden of Relaxation
-  - [color=#994444]Bad:[/color] Tree but Alive
+  The revealing condition for this shield is any of the following:
+  - discovering a blood red hardsuit
+  - discovering a nuclear operative's vehicle
+  - an operative name
+  - a War Ops announcement
+  - being a nuclear operative
 
-  Mothmen typically use latin sounding names, or light themed names.
-  - [color=#449944]Acceptable:[/color] Socrates Temnora
-  - [color=#449944]Acceptable:[/color] Sierra Lightseeker
-  - [color=#449944]Acceptable:[/color] James Nightflitter
+  ## Implanted Implants
 
-  Arachnids typically use latin sounding names.
-  - [color=#449944]Acceptable:[/color] Argyroneta Reticulatus
-  - [color=#449944]Acceptable:[/color] Loxosceles Domesticus
-  - [color=#994444]Bad:[/color] Spider-Man
+  Implanted implants are shielded.
 
-  Vox typically use a single name made of random syllables, often with repeating patterns.
-  Names should not be excessively long or be so repetitive/convoluted as to be unreadable.
+  Implanters themselves and un-implanted implants are not shielded. This prohibits implant checking.
 
-  - [color=#449944]Acceptable:[/color] Hirixashahre
-  - [color=#449944]Acceptable:[/color] Xapikrikrik
-  - [color=#994444]Bad:[/color] Chipikirchitchitchitbecretretrer
-  - [color=#994444]Bad:[/color] Trololol
+  The revealing condition for this shield is any of the following:
+  - discovering a non-NT implanter, used or unused
+  - discovering a non-NT implant box
+  - discovering use of a non-NT implant by anyone
+  - experiencing a situation where absolutely no other explanation is possible
+  - discovering an unlocked uplink
 
-  Usernames, objects, random characters, very "low effort" names, "meta" names, or otherwise implausible names are not permitted.
-  - [color=#994444]Bad:[/color] XxRobustxX
-  - [color=#994444]Bad:[/color] SDpksSodjdfk
-  - [color=#994444]Bad:[/color] Lkdsoisgoieun
-  - [color=#994444]Bad:[/color] F4ith H3arth
-  - [color=#994444]Bad:[/color] Greytide
-  - [color=#994444]Bad:[/color] Passenger
-  - [color=#994444]Bad:[/color] Urist McHands
-  - [color=#994444]Bad:[/color] Admin
-  - [color=#994444]Bad:[/color] Game-Master
-  - [color=#994444]Bad:[/color] Joe Mamma
-  - [color=#994444]Bad:[/color] Middle-Aged Man
-  - [color=#994444]Bad:[/color] Operative Whiskey
+  ## Chameleon Items
+
+  Chameleon items are shielded.
+
+  Being suspicious of an item being fake or stolen is not shielded, but testing items or calling them chameleon is covered by this shield.
+
+  The revealing condition for this shield is any of the following:
+  - seeing someone else cause any chameleon item to change
+  - finding holographic nanomachine fibers
+  - experiencing a situation where absolutely no other explanation is possible
+  - discovering an unlocked uplink
+
+  ## Stealth Items
+
+  The fact that an item can be something other than what its visual appearance and examine description indicate is shielded.
+
+  This shield protects stealth items, including protecting them from being tested.
+
+  The revealing condition for this shield is any of the following:
+  - seeing the item behave differently than the expected behavior for the item
+  - seeing the item used for its hidden purpose
+  - experiencing a situation where absolutely no other explanation is possible
+  - discovering an unlocked uplink
+
+  A shield prevents your character from remembering anything that happened while unconscious. This shield is never revealed IC.
+
+  There is also a "New Life Rule" shield. It prevents you from remembering anything that lead to your death, even if you are put into an MMI. If you are cloned, it also prevents you from remembering everything from that round. This shield is never revealed IC.
+
+  ## Metafriending and Metagrudging
+  This section provides additional information on a concept that is prohibited by multiple metashield items that are never revealed IC. Giving a person or character preferential treatment based on something that your character should not know is considered metafriending. Treating a person or character negatively based on something that your character should not know is considered metagrudging.
+
+  ## Metafriending Examples
+  These are all examples of things that are prohibited by at least one metashield item that is never revealed IC.
+  - Giving a character differential treatment only because you are friends with the player who is playing that character.
+  - Trusting a character because you are friends with the player who is playing that character.
+  - Not fighting a character because you are friends with the player who is playing that character.
+  - Ignoring your objective to kill a character because your character and theirs became friends in a previous round.
+
+  ## Metagrudging Examples
+  These are all examples of things that are prohibited by at least one metashield item that is never revealed IC.
+  - Giving a character differential treatment because you are mad at or don't like the player who is playing that character.
+  - Not trusting a character because you are mad at or don't like the player who is playing that character.
+  - Starting a fight with a character because of something that they did last round.
+  - Starting a fight with a character because they killed you while you were playing a different character.
+  - Targeting or harassing a character based on anything which that character did outside the current round.
+  - Targeting or harassing a character based on anything which the character's player did while not playing the character.
+
+  ## Explicitly Not Shielded
+  The following is a list of things that are explicitly not shielded. If something is not on this list, it doesn't mean that it is shielded, but if something is on it then it definitely is not shielded.
+  - The fact that the nuke disk could be used by a bad actor to detonate the nuke.
+  - Items that are of high value or are desired by the Syndicate, and therefore are likely targets of theft.
+  - The idea that any Syndicate agent or other bad actor has goals or objectives that they are attempting to accomplish.
+  - The number of goals or objectives that a Syndicate agent or other bad actor has.
+  - The fact that the Syndicate are enemies of Nanotrasen, and that they regularly attempt to send covert agents to spy on, sabotage, or attack Nanotrasen.
+  - A character's typical appearance. Though you should keep in mind that multiple characters can share the same name.
+  - The fact that the Syndicate have covert items capable of getting items to them, and that these items are known as uplinks.
 </Document>

@@ -1,20 +1,22 @@
-<Document>
-  # Roleplay Rule 1.7 - Do not cause excessive death, damage, or destruction
-  If you are an antagonist, you are allowed to damage and destroy things proportional to your objectives.
-  This rule is not intended to disallow antagonist activity unrelated to objectives. Antagonists may cause a level of disruption that is proportional to their objectives, even if it is unrelated to their objectives. As an antagonist, killing a single person in a round is not on its own be a violation of this rule.
+﻿<Document>
+  # Roleplay Rule 1.7 - Follow the rules of your antag role
+  Some players may have an antag role. You can see it's objectives in your player panel ("C" key by default). You must follow your antag objectives.
 
-  ## Exemptions
-  The "die a glorious death" objective allows antagonists to ignore this rule entirely.
+  ## Crew Aligned/Non-antagonist
+  In most rounds, a majority of players will be non-antagonists. Non-antagonists are allowed to exhibit small amounts of antagonistic behavior, as long as it complies with roleplay rules.
 
-  ## Examples
-  Acceptable:
-  - Permanently round removing people who you have the objective to kill.
-  - Causing massive damage to a colony as an antagonist with the "die a glorious death" objective.
-  - Killing anyone you see as a nuclear operative.
-  - Permanently round removing a single person so that you can impersonate them to make it easier for you to complete a steal objective.
-  - Permanently round removing many people who have demonstrated a persistence and a capability to either kill you or interfere with the completion of your objectives.
+  ## Solo Antagonist
+  Certain roles are intended to cause problems for the round or for non-antagonists. You are only a solo antagonist if the game clearly and explicitly tells you that you are a solo antagonist. Antagonists are exempt from many but not all roleplay rules.
 
-  Prohibited:
-  - As a traitor with 3 kill objectives, taking steps to permanently round remove many non-objective people who are no longer an immediate threat to you, even if it is done to prevent yourself from being discovered.
-  - Setting up an electrified grille in a dark spot and using it to kill anyone who walks into it with the hope that one of your objectives will be one of them.
+  ## Team Antagonist
+  Team antagonists are like solo antagonists but they have other antagonists who they are expected to not hinder, and who they may be expected to help. You are only a team antagonist if the game clearly and explicitly tells you that you are a team antagonist.
+
+  ## Free Agent
+  Certain roles are free to choose if they want to behave as an antagonist or as a non-antagonist, and may change their mind whenever they'd like. You are only free agent if the game clearly and explicitly tells you that you are a free agent.
+
+  ## Familiar
+  Familiars are considered non-antagonists, but have instructions to obey someone. They must obey this person even if it causes them to violate roleplay rules or die. You are only a familiar if the game clearly and explicitly tells you that you are a familiar. You are only the familiar of the person the game tells you.
+
+  ## Silicon
+  Silicons have a set of laws that they must follow above all else except the core rules. You are only silicon if the game clearly and explicitly tells you that you are a silicon.
 </Document>
