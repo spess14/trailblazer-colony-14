@@ -1,20 +1,20 @@
-﻿<Document>
-  # Roleplay Rule 1.5 - Self-antagonism is not real. Follow escalation rules
-  Antagonists gain some leniency, but you are NOT exempt from this rule if you're an antagonist.
+<Document>
+  # Roleplay Rule 1.5 - Do not cause excessive death, damage, or destruction
+  If you are an antagonist, you are allowed to damage and destroy things proportional to your objectives.
+  This rule is not intended to disallow antagonist activity unrelated to objectives. Antagonists may cause a level of disruption that is proportional to their objectives, even if it is unrelated to their objectives. As an antagonist, killing a single person in a round is not on its own be a violation of this rule.
 
-  Conflict between characters or factions is natural for this fork and encouraged. Do not use this as an excuse to bait conflict or murderbone.
-  All conflicts must still be properly escalated. Randomly killing a person without a reason, even with a warning, is not sufficient escalation.
+  ## Exemptions
+  The "die a glorious death" objective allows antagonists to ignore this rule entirely.
 
-  ## How to escalate properly?
-  Most conflicts must start with verbal escalation. Here are some examples:
-  - Good: Telling someone that you are going to kill them if they don't give you their things.
-  - Good: Warning someone approaching your faction camp to leave, unless they want to die.
-  - Good: Attacking a member of a hostile faction, even without verbal escalation, as long as the declaration of hostility has been declared between your factions (explained later).
-  - Good: Seeing an unknown person in your camp while being a member of a somewhat isolationist faction, pulling out weapons and telling them to state their purpose here or die.
-  - Bad: Seeing an unknown person in your camp while being a member of a somewhat isolationist faction and killing them on sight.
-  - Bad: Killing someone simply because you don't like them.
+  ## Examples
+  Acceptable:
+  - Permanently round removing people who you have the objective to kill.
+  - Causing massive damage to a colony as an antagonist with the "die a glorious death" objective.
+  - Killing anyone you see as a nuclear operative.
+  - Permanently round removing a single person so that you can impersonate them to make it easier for you to complete a steal objective.
+  - Permanently round removing many people who have demonstrated a persistence and a capability to either kill you or interfere with the completion of your objectives.
 
-  ## What is a declaration of hostility?
-  Declaration of hostility is verbal escalation between groups of people. It requires everyone involved to be notified sufficiently about it before it becomes valid.
-  For example: faction A declares war on faction B. In order to do that, they send a person to faction B's land to notify them, and they also notify everyone in faction A about the war.
+  Prohibited:
+  - As a traitor with 3 kill objectives, taking steps to permanently round remove many non-objective people who are no longer an immediate threat to you, even if it is done to prevent yourself from being discovered.
+  - Setting up an electrified grille in a dark spot and using it to kill anyone who walks into it with the hope that one of your objectives will be one of them.
 </Document>
