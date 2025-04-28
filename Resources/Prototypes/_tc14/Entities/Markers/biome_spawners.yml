@@ -41,9 +41,8 @@
       state: "big"
   - type: RandomSpawner
     prototypes:
-    - MeteorSpaceDust
-    - MeteorSmall
-    - MeteorMedium
-    - MeteorLarge
-    offset: 3
+    - SpaceMeteorSpaceDust
+    - SpaceMeteorSmall
+    - SpaceMeteorMedium
+    - SpaceMeteorLarge
     destroyOnSpawn: true

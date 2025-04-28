@@ -1,0 +1,23 @@
+- type: entity
+  id: BaseInstantExplode
+  abstract: true
+  suffix: INSTABOOM
+  components:
+  - type: TriggerOnSpawn
+  - type: ExplodeOnTrigger
+
+- type: entity
+  parent: [BaseInstantExplode, MeteorSpaceDust]
+  id: SpaceMeteorSpaceDust
+
+- type: entity
+  parent: [BaseInstantExplode, MeteorSmall]
+  id: SpaceMeteorSmall
+
+- type: entity
+  parent: [BaseInstantExplode, MeteorMedium]
+  id: SpaceMeteorMedium
+
+- type: entity
+  parent: [BaseInstantExplode, MeteorLarge]
+  id: SpaceMeteorLarge
