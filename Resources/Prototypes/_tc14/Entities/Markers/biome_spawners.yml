@@ -29,6 +29,15 @@
     lifetime: 3
   - type: SpawnOnDespawn
     prototype: MeteorSpawner
+  - type: ExpendableLight
+    turnOnBehaviourID: turn_on
+  - type: LightBehaviour
+    behaviours:
+    - !type:FadeBehaviour
+      id: turn_on
+      maxDuration: 5.0
+      startValue: 0.0
+      endValue: 10.0
 
 - type: entity
   name: random meteor spawner
@@ -45,4 +54,3 @@
     - SpaceMeteorSmall
     - SpaceMeteorMedium
     - SpaceMeteorLarge
-    destroyOnSpawn: true
