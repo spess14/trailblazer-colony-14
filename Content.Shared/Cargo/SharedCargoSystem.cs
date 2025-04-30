@@ -50,7 +50,8 @@ public abstract class SharedCargoSystem : EntitySystem
 
         foreach (var (account, percentage) in stationBank.Comp.RevenueDistribution)
         {
-            distribution.Add(account, remaining * percentage);
+            var existing = distribution.GetOrNew(account);
+            distribution[account] = existing + remaining * percentage;
         }
         return distribution;
     }
