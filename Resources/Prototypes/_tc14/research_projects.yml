@@ -1,21 +1,43 @@
 ﻿- type: bluebenchResearch
-  id: blorp
-  name: Zleep zlorp
-  description: vorp?!?!?
+  id: BasicMedicineResearch
+  name: Basic Medicine
+  description: Not as good as chemicals, but it will do.
   icon:
-    sprite: Objects/Fun/bananiumhorn.rsi
-    state: icon
+    sprite: Objects/Specific/Medical/medical.rsi
+    state: brutepack
   tagRequirements:
     GlassBeaker:
       amount: 2
       defaultPrototype: Beaker
-  componentRequirements:
-    AmeFuelContainer:
-      amount: 1
-      defaultPrototype: AmeJar
   stackRequirements:
-    Manipulator: 3
-    Capacitor: 1
-    Glass: 5
+    Steel: 5
   outputRecipes:
-    - Matchbox
+    - Brutepack
+    - Ointment
+    - Gauze
+
+- type: bluebenchResearch
+  id: BasicSecurityResearch
+  name: Cuff'n'Dagger
+  description: Sometimes, war is a question, and the answer is yes.
+  icon:
+    sprite: Objects/Misc/handcuffs.rsi
+    state: handcuff
+  tagRequirements:
+    Arrow:
+      amount: 2
+      defaultPrototype: ArrowImprovisedRock
+  stackRequirements:
+    Cable: 5
+    Steel: 5
+  outputRecipes:
+  - Handcuffs
+  - TargetClown
+  - TargetHuman
+  - TargetSyndicate
+  - Zipties
+  - Flash
+  - Stunbaton
+  - CombatKnife
+  - RiotShield
+  - WeaponDisabler
