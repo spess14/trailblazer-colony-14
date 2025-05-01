@@ -6,12 +6,21 @@
     SetSize="750 500">
     <BoxContainer Orientation="Horizontal">
         <ScrollContainer VScrollEnabled="True" VerticalExpand="True" HorizontalExpand="True">
-            <BoxContainer
-                Name="ResearchList"
-                Orientation="Vertical"
-                HorizontalExpand="False"
-                VerticalExpand="True">
-            </BoxContainer>
+            <TabContainer Name="Tabs">
+                <BoxContainer
+                    Name="ResearchList"
+                    Orientation="Vertical"
+                    HorizontalExpand="False"
+                    VerticalExpand="True">
+                </BoxContainer>
+                <BoxContainer
+                    Name="ResearchedList"
+                    Orientation="Vertical"
+                    HorizontalExpand="False"
+                    VerticalExpand="True">
+
+                </BoxContainer>
+            </TabContainer>
         </ScrollContainer>
         <BoxContainer HorizontalExpand="True" VerticalExpand="True" Orientation="Vertical">
             <PanelContainer VerticalExpand="True" Margin="10 10 10 10">
@@ -26,11 +35,7 @@
                 </BoxContainer>
             </PanelContainer>
             <BoxContainer VerticalAlignment="Bottom" Margin="5 5 5 5" SeparationOverride="4">
-                <TextureRect Name="BlueprintIcon"/>
-                <Label Text="Blueprint"/>
-                <Button Text="1"/>
-                <Button Text="5"/>
-                <Button Text="15"/>
+                <Label Name="BlueprintText"/>
             </BoxContainer>
         </BoxContainer>
     </BoxContainer>

@@ -1,6 +1,7 @@
 ﻿using System.Linq;
 using Content.Shared.Examine;
 using Content.Shared.Interaction;
+using Content.Shared.Materials;
 using Content.Shared.Research.Components;
 using Content.Shared.Stacks;
 using Content.Shared.Tag;
@@ -17,6 +18,7 @@ public sealed class BluebenchSystem : EntitySystem
     [Dependency] private readonly SharedStackSystem _stackSystem = default!;
     [Dependency] private readonly TagSystem _tagSystem = default!;
     [Dependency] private readonly IComponentFactory _factory = default!;
+    [Dependency] private readonly SharedMaterialStorageSystem _material = default!;
 
     /// <inheritdoc/>
     public override void Initialize()
@@ -26,6 +28,12 @@ public sealed class BluebenchSystem : EntitySystem
         SubscribeLocalEvent<BluebenchComponent, BoundUIOpenedEvent>(OnUIOpened);
         SubscribeLocalEvent<BluebenchComponent, InteractUsingEvent>(OnInteractUsingEvent);
         SubscribeLocalEvent<BluebenchComponent, ResearchProjectStartMessage>(OnResearchProjectStart);
+        SubscribeLocalEvent<BluebenchComponent, MaterialEntityInsertedEvent>(OnMaterialInserted);
+    }
+
+    private void OnMaterialInserted(EntityUid uid, BluebenchComponent component, MaterialEntityInsertedEvent args)
+    {
+        UpdateUiState(uid, component);
     }
 
     private void OnUIOpened(EntityUid uid, BluebenchComponent component, BoundUIOpenedEvent e)
@@ -198,6 +206,25 @@ public sealed class BluebenchSystem : EntitySystem
         if (!prototypeManager.TryIndex<BluebenchResearchPrototype>(args.Id, out var prototype))
             return;
 
+        if (_material.GetMaterialAmount(uid, "Paper") == 0)
+            return;
+
+        if (!_material.TryChangeMaterialAmount(uid, "Paper", -1))
+            return;
+
+        if (component.ResearchedPrototypes.Contains(prototype))
+        {
+            var result = Spawn("BaseBlueprint", Transform(uid).Coordinates);
+            var blueprint = AddComp<BlueprintComponent>(result);
+            foreach (var recipe in prototype.OutputRecipes)
+            {
+                blueprint.ProvidedRecipes.Add(recipe);
+            }
+
+            UpdateUiState(uid, component);
+            return;
+        }
+
         if (component.ActiveProject != null && component.ActiveProject.ID != prototype.ID)
             return;
 
@@ -225,6 +252,6 @@ public sealed class BluebenchSystem : EntitySystem
         var prototypes = prototypeManager.EnumeratePrototypes<BluebenchResearchPrototype>().ToHashSet();
         var availablePrototypes = new HashSet<BluebenchResearchPrototype>(prototypes.Except(component.ResearchedPrototypes));
 
-        _uiSystem.SetUiState(uid, BluebenchUiKey.Key, new BluebenchBoundUserInterfaceState(availablePrototypes, component.ActiveProject, component.MaterialProgress, component.ComponentProgress, component.TagProgress));
+        _uiSystem.SetUiState(uid, BluebenchUiKey.Key, new BluebenchBoundUserInterfaceState(availablePrototypes, component.ActiveProject, component.MaterialProgress, component.ComponentProgress, component.TagProgress,_material.GetMaterialAmount(uid, "Paper"), component.ResearchedPrototypes));
     }
 }

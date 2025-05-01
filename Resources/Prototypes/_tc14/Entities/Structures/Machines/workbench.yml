@@ -118,10 +118,6 @@
   - type: ContainerContainer
     containers:
       blueprint: !type:Container
-  - type: BlueprintReceiver
-    whitelist:
-      tags:
-      - BlueprintAutolathe
   - type: MaterialStorage
     whitelist:
       tags:
