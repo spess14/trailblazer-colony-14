@@ -67,3 +67,20 @@
   canBuildInImpassable: false
   conditions:
   - !type:TileNotBlocked
+
+- type: construction
+  name: blueprint workbench
+  id: BlueprintWorkbench
+  graph: BlueprintWorkbench
+  startNode: start
+  targetNode: bluebench
+  category: construction-category-structures
+  description: Research everything!
+  icon:
+    sprite: Structures/Machines/earlyresearchbench.rsi
+    state: earlyresearchbench
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+  - !type:TileNotBlocked
