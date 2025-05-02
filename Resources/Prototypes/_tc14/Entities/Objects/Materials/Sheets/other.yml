@@ -18,7 +18,7 @@
     - type: Material
     - type: PhysicalComposition
       materialComposition:
-        Paper: 100
+        Paper: 1
     - type: Sprite
       sprite: Objects/Materials/researchearlytechpaper.rsi
       state: bluepaper_3
