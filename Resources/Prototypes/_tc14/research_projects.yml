@@ -20,7 +20,6 @@
   id: BasicSecurityResearch
   name: Cuff'n'Dagger
   description: Sometimes, war is a question, and the answer is yes.
-  requiredResearch: BasicMedicineResearch
   icon:
     sprite: Objects/Misc/handcuffs.rsi
     state: handcuff
