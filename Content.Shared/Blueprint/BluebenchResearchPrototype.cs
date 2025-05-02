@@ -56,4 +56,11 @@ public sealed class BluebenchResearchPrototype : IPrototype
     /// </summary>
     [DataField]
     public HashSet<ProtoId<LatheRecipePrototype>> OutputRecipes = new();
+
+
+    /// <summary>
+    /// Specifies the research project that needs to be completed before this one can start
+    /// </summary>
+    [DataField]
+    public ProtoId<BluebenchResearchPrototype>? RequiredResearch;
 }

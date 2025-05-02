@@ -250,7 +250,23 @@ public sealed class BluebenchSystem : EntitySystem
     {
         var prototypeManager = IoCManager.Resolve<IPrototypeManager>();
         var prototypes = prototypeManager.EnumeratePrototypes<BluebenchResearchPrototype>().ToHashSet();
-        var availablePrototypes = new HashSet<BluebenchResearchPrototype>(prototypes.Except(component.ResearchedPrototypes));
+        var availablePrototypes = new HashSet<BluebenchResearchPrototype>();
+        foreach (var proto in prototypes)
+        {
+            if (proto.RequiredResearch != null)
+            {
+                if (!prototypeManager.TryIndex<BluebenchResearchPrototype>(proto.RequiredResearch, out var reqProto))
+                    continue;
+
+                if (!component.ResearchedPrototypes.Contains(reqProto))
+                    continue;
+            }
+
+            if (component.ResearchedPrototypes.Contains(proto))
+                continue;
+
+            availablePrototypes.Add(proto);
+        }
 
         _uiSystem.SetUiState(uid, BluebenchUiKey.Key, new BluebenchBoundUserInterfaceState(availablePrototypes, component.ActiveProject, component.MaterialProgress, component.ComponentProgress, component.TagProgress,_material.GetMaterialAmount(uid, "Paper"), component.ResearchedPrototypes));
     }
