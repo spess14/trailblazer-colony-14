@@ -1,6 +1,0 @@
-- type: stack
-  id: WoodPulp
-  name: wood pulp
-  icon: { sprite: /Textures/Objects/Misc/reagent_fillings.rsi, state: powderpile }
-  spawn: WoodPulp
-  maxCount: 30

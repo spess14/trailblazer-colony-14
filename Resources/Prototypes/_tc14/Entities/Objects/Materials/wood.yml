@@ -4,9 +4,6 @@
   id: WoodPulp
   description: "GR-GR-GR-GREGTECH!!!!!"
   components:
-  - type: Stack
-    stackType: WoodPulp
-    count: 5
   - type: SolutionContainerManager
     solutions:
       paper:
