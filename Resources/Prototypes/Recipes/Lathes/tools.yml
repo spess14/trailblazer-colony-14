@@ -32,6 +32,8 @@
   parent: BaseToolRecipe
   id: Screwdriver
   result: Screwdriver
+  materials:
+    Steel: 200
   icon:
     sprite: Objects/Tools/screwdriver.rsi
     state: screwdriver-map
