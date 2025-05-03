@@ -82,3 +82,8 @@
   - type: Construction
     graph: Rock
     node: mortar
+  - type: Tool
+    qualities:
+    - Mortaring
+    useSound:
+      path: /Audio/Items/chisel_use.ogg
