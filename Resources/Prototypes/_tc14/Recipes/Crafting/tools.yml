@@ -47,5 +47,5 @@
   description: Mmmm... guacamole...
   icon:
     sprite: _tc14/Objects/Items/mortar.rsi
-    state: icon
+    state: mortar
   objectType: Item
