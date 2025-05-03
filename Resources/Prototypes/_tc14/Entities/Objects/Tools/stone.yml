@@ -66,3 +66,24 @@
     sprite: Objects/Tools/stonepickaxe.rsi
     storedRotation: -45
   - type: UseDelay
+
+- type: entity
+  name: mortar
+  parent: BaseItem
+  id: Mortar
+  description: G-g-g-greg?!?!?!
+  components:
+  - type: Sprite
+    sprite: _tc14/Objects/Items/mortar.rsi
+    state: mortar
+  - type: Item
+    size: Normal
+    sprite: _tc14/Objects/Items/mortar.rsi
+  - type: Construction
+    graph: Rock
+    node: mortar
+  - type: Tool
+    qualities:
+    - Mortaring
+    useSound:
+      path: /Audio/Items/chisel_use.ogg

@@ -36,3 +36,16 @@
     sprite: Objects/Tools/stoneshovel.rsi
     state: icon
   objectType: Item
+
+- type: construction
+  name: mortar
+  id: mortar
+  graph: Rock
+  startNode: start
+  targetNode: mortar
+  category: construction-category-tools
+  description: Mmmm... guacamole...
+  icon:
+    sprite: _tc14/Objects/Items/mortar.rsi
+    state: mortar
+  objectType: Item

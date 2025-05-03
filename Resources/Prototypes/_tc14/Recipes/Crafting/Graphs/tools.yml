@@ -24,6 +24,10 @@
         icon:
           sprite: Objects/Tools/rock.rsi
           state: "rock"
+    - to: pulp
+      steps:
+      - tool: Mortaring
+        doAfter: 0.5
   - node: chisel
     entity: Chisel
   - node: shovel
@@ -39,3 +43,5 @@
           state: "rock"
   - node: pickaxe
     entity: StonePickaxe
+  - node: pulp
+    entity: WoodPulp
