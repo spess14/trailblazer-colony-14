@@ -39,3 +39,6 @@ tool-quality-hammering-tool-name = Rock
 
 tool-quality-chiseling-name = Chiseling
 tool-quality-chiseling-tool-name = Chisel
+
+tool-quality-mortaring-name = Mortaring
+tool-quality-mortaring-tool-name = Mortar
