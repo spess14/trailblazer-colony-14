@@ -1,0 +1,1 @@
+job-description-colonist = Survive on an unknown planet.

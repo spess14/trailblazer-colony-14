@@ -1,0 +1,37 @@
+- type: job
+  id: Colonist
+  name: job-name-passenger
+  description: job-description-colonist
+  playTimeTracker: JobPassenger
+  startingGear: ColonistGear
+  icon: "JobIconPassenger"
+  supervisors: job-supervisors-yourself
+  access:
+  - Maintenance
+ # no loadouts because i cant be bothered to fathom that shit
+- type: startingGear
+  id: ColonistGear
+  equipment:
+    id: ColonistPDA
+    ears: ClothingHeadsetGrey
+    jumpsuit: ClothingUniformJumpsuitColorGrey
+    back: ClothingBackpackFilled
+    shoes: ClothingShoesColorBlack
+  innerClothingSkirt: ClothingUniformJumpskirtColorGrey
+  satchel: ClothingBackpackSatchelFilled
+  duffelbag: ClothingBackpackDuffelFilled
+
+- type: entity
+  parent: BasePDA
+  id: ColonistPDA
+  name: colonist PDA
+  description: -3 to mood, ate without a table.
+  components:
+  - type: Pda
+    id: PassengerIDCard
+  - type: PdaBorderColor
+    borderColor: "#717059"
+  - type: CartridgeLoader
+    uiKey: enum.PdaUiKey.Key
+    preinstalled:
+      - AstroNavCartridge
