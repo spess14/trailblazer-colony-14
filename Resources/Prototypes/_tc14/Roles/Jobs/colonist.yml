@@ -17,9 +17,6 @@
     jumpsuit: ClothingUniformJumpsuitColorGrey
     back: ClothingBackpackFilled
     shoes: ClothingShoesColorBlack
-  innerClothingSkirt: ClothingUniformJumpskirtColorGrey
-  satchel: ClothingBackpackSatchelFilled
-  duffelbag: ClothingBackpackDuffelFilled
 
 - type: entity
   parent: BasePDA
@@ -38,3 +35,11 @@
 
 - type: playTimeTracker
   id: JobColonist
+
+- type: entity
+  parent: ClothingBackpack
+  id: ClothingBackpackFilled
+  components:
+    - type: StorageFill
+      contents:
+        - id: BoxSurvival
