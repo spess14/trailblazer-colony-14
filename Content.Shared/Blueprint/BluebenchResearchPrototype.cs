@@ -1,4 +1,5 @@
 ﻿using Content.Shared.Construction.Components;
+using Content.Shared.Lathe.Prototypes;
 using Content.Shared.Research.Prototypes;
 using Content.Shared.Stacks;
 using Content.Shared.Tag;
@@ -55,8 +56,13 @@ public sealed class BluebenchResearchPrototype : IPrototype
     /// The recipes produced with the blueprint
     /// </summary>
     [DataField]
-    public HashSet<ProtoId<LatheRecipePrototype>> OutputRecipes = new();
+    public HashSet<ProtoId<LatheRecipePrototype>> OutputRecipes = [];
 
+    /// <summary>
+    /// The recipe packs whose recipes will be produced with the blueprint
+    /// </summary>
+    [DataField]
+    public HashSet<ProtoId<LatheRecipePackPrototype>>? OutputPacks = [];
 
     /// <summary>
     /// Specifies the research project that needs to be completed before this one can start
