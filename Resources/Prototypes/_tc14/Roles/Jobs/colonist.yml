@@ -43,3 +43,15 @@
     - type: StorageFill
       contents:
         - id: BoxSurvival
+
+- type: entity
+  id: SpawnPointColonist
+  parent: SpawnPointJobBase
+  name: colonist
+  components:
+  - type: SpawnPoint
+    job_id: Colonist
+  - type: Sprite
+    layers:
+      - state: green
+      - state: passenger
