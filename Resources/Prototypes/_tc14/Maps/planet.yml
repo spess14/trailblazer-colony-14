@@ -19,4 +19,4 @@
             prefixCreator: 'X'
         - type: StationJobs
           availableJobs:
-            Passenger: [ -1, -1 ]
+            Colonist: [ -1, -1 ]
