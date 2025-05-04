@@ -16,7 +16,7 @@ RELEASE_DIR = "release"
 # Forks should change these to publish to their own infrastructure.
 #
 ROBUST_CDN_URL = "https://robust.killerqu.com/"
-FORK_ID = "tc14"
+FORK_ID = "trailblazer-colony-14"
 
 def main():
     parser = argparse.ArgumentParser()
