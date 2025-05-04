@@ -6,18 +6,16 @@
   # abstract: true
   components:
   - type: Sprite
-    sprite: Objects/Tools/blueprint.rsi
-    state: icon
+    sprite: Objects/Materials/researchearlytechpaper.rsi
+    state: fullbp
   - type: Item
+    sprite: Objects/Materials/researchearlytechpaper.rsi
     size: Normal
-    shape:
-    - 0,0,2,0
-    storedSprite:
-      sprite: Objects/Tools/blueprint.rsi
-      state: storage
-  - type: Blueprint
   - type: StaticPrice
     price: 1000
+  - type: Tag
+    tags:
+    - BlueprintAutolathe
 
 - type: entity
   parent: BaseBlueprint
@@ -27,7 +25,6 @@
   - type: Blueprint
     providedRecipes:
     - Fulton
-    - FultonBeacon
 
 - type: entity
   parent: BaseBlueprint
