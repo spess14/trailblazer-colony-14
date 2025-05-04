@@ -2,7 +2,7 @@
   id: Colonist
   name: job-name-passenger
   description: job-description-colonist
-  playTimeTracker: JobPassenger
+  playTimeTracker: JobColonist
   startingGear: ColonistGear
   icon: "JobIconPassenger"
   supervisors: job-supervisors-yourself
@@ -35,3 +35,6 @@
     uiKey: enum.PdaUiKey.Key
     preinstalled:
       - AstroNavCartridge
+
+- type: playTimeTracker
+  id: JobColonist
