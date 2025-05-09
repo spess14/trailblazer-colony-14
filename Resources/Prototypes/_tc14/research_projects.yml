@@ -67,7 +67,7 @@
     state: beaker
   stackRequirements:
     Glass: 10
-    MaterialWoodPlank: 5
+    WoodPlank: 5
   outputRecipes:
   - Beaker
   - LargeBeaker
