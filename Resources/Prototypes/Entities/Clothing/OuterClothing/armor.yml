@@ -150,6 +150,10 @@
         Heat: 0.9
   - type: ExplosionResistance
     damageCoefficient: 0.9
+  # Moffstation - Begin (Stamina Resistance)
+  - type: StaminaResistance
+    damageCoefficient: 0.8 # Base value for armor.
+  # Moffstation - End
 
 #Elite web vest
 - type: entity
@@ -176,6 +180,10 @@
         Caustic: 0.5
   - type: ExplosionResistance
     damageCoefficient: 0.5
+  # Moffstation - Begin (Stamina Resistance)
+  - type: StaminaResistance
+    damageCoefficient: 0.8 # Base value for armor.
+  # Moffstation - End
   - type: FireProtection
     reduction: 0.85
 
@@ -199,6 +207,22 @@
         Heat: 0.9
   - type: ExplosionResistance
     damageCoefficient: 0.9
+
+#Detective's vest
+- type: entity
+  parent: [ClothingOuterArmorBase, BaseSecurityContraband]
+  id: ClothingOuterVestDetective
+  name: detective's vest
+  description: A hard-boiled private investigator's armored vest.
+  components:
+  - type: Sprite
+    sprite: Clothing/OuterClothing/Vests/detvest.rsi
+  - type: Clothing
+    sprite: Clothing/OuterClothing/Vests/detvest.rsi
+  # Moffstation - Begin (Stamina Resistance)
+  - type: StaminaResistance
+    damageCoefficient: 0.8 # Base value for armor.
+  # Moffstation - End
 
 
 # Armor covering multiple body parts including limbs
