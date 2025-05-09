@@ -92,7 +92,10 @@
       - PosterContrabandInterdyne
       - PosterContrabandWaffleCorp
       - PosterContrabandMissingSpacepen
-      - PosterMoffFiveHundredMothroaches # Moffstaion
+      - PosterContrabandExoAcid
+      - PosterContrabandExoRun
+      - PosterContrabandExoChomp
+      - PosterMoffFiveHundredMothroaches # Moffstation
     chance: 1
 
 - type: entity
