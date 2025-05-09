@@ -5,16 +5,19 @@
   icon:
     sprite: Objects/Specific/Medical/medical.rsi
     state: brutepack
-  tagRequirements:
-    GlassBeaker:
-      amount: 2
-      defaultPrototype: Beaker
   stackRequirements:
     Steel: 5
+    Glass: 10
   outputRecipes:
     - Brutepack
     - Ointment
     - Gauze
+    - Scalpel
+    - Retractor
+    - Cautery
+    - Drill
+    - Saw
+    - Hemostat
 
 - type: bluebenchResearch
   id: BasicSecurityResearch
@@ -29,15 +32,64 @@
       defaultPrototype: ArrowImprovisedRock
   stackRequirements:
     Cable: 5
-    Steel: 5
   outputRecipes:
   - Handcuffs
   - TargetClown
   - TargetHuman
   - TargetSyndicate
   - Zipties
+  - CombatKnife
+
+- type: bluebenchResearch
+  id: CommonSecurityResearch
+  name: Non-Lethal Weaponry
+  description: Pick up that can.
+  requiredResearch: BasicSecurityResearch
+  icon:
+    sprite: Objects/Weapons/Melee/stunbaton.rsi
+    state: stunbaton_off
+  stackRequirements:
+    Capacitor: 3
+    Steel: 10
+    Plastic: 5 # :godo:
+  outputRecipes:
   - Flash
   - Stunbaton
-  - CombatKnife
   - RiotShield
   - WeaponDisabler
+
+- type: bluebenchResearch
+  id: BasicChemistryResearch
+  name: Home Chemistry
+  description: Also known as Tiderchem in underground circles.
+  icon:
+    sprite: Objects/Specific/Chemistry/beaker.rsi
+    state: beaker
+  stackRequirements:
+    Glass: 10
+    MaterialWoodPlank: 5
+  outputRecipes:
+  - Beaker
+  - LargeBeaker
+  - Syringe
+  - PillCanister
+  - Jug
+  - ChemistryEmptyBottle01
+
+- type: bluebenchResearch
+  id: CommonChemistryResearch
+  name: Advanced Chemistry Tools
+  description: Having these items separates amateurs from pros.
+  requiredResearch: BasicChemistryResearch
+  icon:
+    sprite: Clothing/Eyes/Glasses/science.rsi
+    state: icon
+  stackRequirements:
+    Glass: 15
+    Plastic: 15
+  # add some liquid requirement
+  outputRecipes:
+  - ClothingEyesGlassesChemical
+  - HotplateMachineCircuitboard
+  - ChemDispenserMachineCircuitboard
+  - ChemMasterMachineCircuitboard
