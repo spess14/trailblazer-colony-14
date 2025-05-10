@@ -30,12 +30,9 @@
     - CablesStatic
     - CargoStatic
     - MaterialsStatic
-    - BasicChemistryStatic
     - RollerBedsStatic
     - LightsStatic
     - ServiceStatic
-    - PowerCellsStatic
-    - ElectronicsWorkbench
   - type: BlueprintReceiver
     whitelist:
       tags:
