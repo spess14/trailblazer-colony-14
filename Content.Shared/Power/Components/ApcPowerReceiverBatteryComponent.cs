@@ -8,8 +8,6 @@ namespace Content.Shared.Power.Components;
 /// If external power is interrupted, the entity will draw power from this battery instead.
 /// Requires <see cref="Content.Server.Power.Components.ApcPowerReceiverComponent"/> and <see cref="Content.Server.Power.Components.BatteryComponent"/> to function.
 /// </summary>
-[RegisterComponent, NetworkedComponent, AutoGenerateComponentState]
-[Access(typeof(SharedPowerNetSystem), typeof(SharedPowerReceiverSystem))]
 public sealed partial class ApcPowerReceiverBatteryComponent : Component
 {
     /// <summary>
