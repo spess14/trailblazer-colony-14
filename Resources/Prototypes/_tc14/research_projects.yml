@@ -69,6 +69,7 @@
     Glass: 10
     WoodPlank: 5
   outputRecipes:
+  - LargeBeaker
   - Syringe
   - PillCanister
   - Jug
