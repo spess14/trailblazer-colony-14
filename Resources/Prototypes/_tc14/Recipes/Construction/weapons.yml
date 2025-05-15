@@ -1,10 +1,7 @@
 - type: construction
-  name: improvised arrow
   id: ImprovisedArrowRock
   graph: ImprovisedArrowRock
   startNode: start
   targetNode: ImprovisedArrowRock
   category: construction-category-weapons
-  description: An arrow tipped with pieces of a sharp rock, for use with a bow.
-  icon: { sprite: Objects/Weapons/Guns/Bow/bow.rsi, state: wielded-arrow }
   objectType: Item

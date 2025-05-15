@@ -1,14 +1,9 @@
 - type: construction
-  name: cobblestone wall
   id: CobbleWall
   graph: CobbleWall
   startNode: start
   targetNode: wall
   category: construction-category-structures
-  description: Stone by stone, perfectly fitted together to form a wall.
-  icon:
-    sprite: /Textures/Structures/Walls/cobblebrick.rsi
-    state: full
   objectType: Structure
   placementMode: SnapgridCenter
   canRotate: false
@@ -17,16 +12,11 @@
   - !type:TileNotBlocked
 
 - type: construction
-  name: smeltery
   id: Smeltery
   graph: Smeltery
   startNode: start
   targetNode: smeltery
   category: construction-category-structures
-  description: Ore goes in, ingots come out.
-  icon:
-    sprite: /Textures/Structures/Machines/smeltery.rsi
-    state: icon
   objectType: Structure
   placementMode: SnapgridCenter
   canRotate: false
@@ -35,16 +25,11 @@
   - !type:TileNotBlocked
 
 - type: construction
-  name: workbench
   id: Workbench
   graph: Table
   startNode: start
   targetNode: Workbench
   category: construction-category-structures
-  description: This fancy crafting table can make so much tools!
-  icon:
-    sprite: Structures/Machines/workbench.rsi
-    state: workbench
   objectType: Structure
   placementMode: SnapgridCenter
   canBuildInImpassable: false
@@ -52,16 +37,11 @@
   - !type:TileNotBlocked
 
 - type: construction
-  name: soil
   id: Soil
   graph: Soil
   startNode: start
   targetNode: soil
   category: construction-category-structures
-  description: Place plants in it.
-  icon:
-    sprite: Structures/Hydroponics/misc.rsi
-    state: soil
   objectType: Structure
   placementMode: SnapgridCenter
   canBuildInImpassable: false
@@ -69,16 +49,11 @@
   - !type:TileNotBlocked
 
 - type: construction
-  name: blueprint workbench
   id: BlueprintWorkbench
   graph: BlueprintWorkbench
   startNode: start
   targetNode: bluebench
   category: construction-category-structures
-  description: Research everything!
-  icon:
-    sprite: Structures/Machines/earlyresearchbench.rsi
-    state: earlyresearchbench
   objectType: Structure
   placementMode: SnapgridCenter
   canBuildInImpassable: false
