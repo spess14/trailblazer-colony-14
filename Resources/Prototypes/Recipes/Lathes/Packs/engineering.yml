@@ -16,6 +16,7 @@
   - HandheldGPSBasic
   - TRayScanner
   - UtilityBelt
+  - ClothingOuterVestTank
   - HandheldStationMap
   - ClothingHeadHatWelding
   - ClothingHeadHatCone
@@ -44,7 +45,6 @@
   - CellRechargerCircuitboard
   - WeaponCapacitorRechargerCircuitboard
   - FreezerElectronics
-  - PortableGeneratorCPacmanMachineCircuitboard
 
 - type: latheRecipePack
   id: EngineeringBoardsStatic

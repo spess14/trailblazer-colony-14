@@ -3,7 +3,7 @@ using Robust.Shared.Prototypes;
 
 namespace Content.Shared.Magic.Events;
 
-public sealed partial class AnimateSpellEvent : EntityTargetActionEvent, ISpeakSpell
+public sealed partial class AnimateSpellEvent : EntityTargetActionEvent
 {
     [DataField]
     public string? Speech { get; private set; }
