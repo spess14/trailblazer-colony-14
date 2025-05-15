@@ -13,10 +13,7 @@
         amount: 1
         doAfter: 0.5
       - tag: FlakingRock
-        name: flaking rock
-        icon:
-          sprite: Objects/Tools/rock.rsi
-          state: flakingrock
+        name: construction-graph-tag-flaking-rock
         doAfter: 0.5
 
   - node: ImprovisedArrowRock

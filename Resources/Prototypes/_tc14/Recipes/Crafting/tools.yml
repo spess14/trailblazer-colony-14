@@ -1,51 +1,31 @@
 - type: construction
-  name: chisel
   id: chisel
   graph: WoodenHandleTools
   startNode: start
   targetNode: chisel
   category: construction-category-tools
-  description: Main tool of any architect.
-  icon:
-    sprite: Objects/Tools/chisel.rsi
-    state: icon
   objectType: Item
 
 - type: construction
-  name: stone pickaxe
   id: pickaxe
   graph: WoodenHandleTools
   startNode: start
   targetNode: pickaxe
   category: construction-category-tools
-  description: A crude stone pickaxe.
-  icon:
-    sprite: Objects/Tools/stonepickaxe.rsi
-    state: pickaxe
   objectType: Item
 
 - type: construction
-  name: stone shovel
   id: shovel
   graph: WoodenHandleTools
   startNode: start
   targetNode: shovel
   category: construction-category-tools
-  description: A crude handmade tool for digging and moving dirt.
-  icon:
-    sprite: Objects/Tools/stoneshovel.rsi
-    state: icon
   objectType: Item
 
 - type: construction
-  name: mortar
   id: mortar
   graph: Rock
   startNode: start
   targetNode: mortar
   category: construction-category-tools
-  description: Mmmm... guacamole...
-  icon:
-    sprite: _tc14/Objects/Items/mortar.rsi
-    state: mortar
   objectType: Item

@@ -1,13 +1,7 @@
 - type: construction
-  name: wood pulp
   id: woodPulp
   graph: WoodenHandleTools
   startNode: start
   targetNode: pulp
   category: construction-category-materials
-  description: GREG!!!!!!
-  icon:
-    sprite: Objects/Misc/reagent_fillings.rsi
-    state: powderpile
-    color: brown
   objectType: Item

@@ -14,6 +14,7 @@ using Content.Shared.Verbs;
 using JetBrains.Annotations;
 using Robust.Server.GameObjects;
 using Robust.Shared.Audio.Systems;
+using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
 
 namespace Content.Server.Light.EntitySystems
@@ -28,6 +29,8 @@ namespace Content.Server.Light.EntitySystems
         [Dependency] private readonly SharedAppearanceSystem _appearance = default!;
         [Dependency] private readonly StackSystem _stackSystem = default!;
         [Dependency] private readonly NameModifierSystem _nameModifier = default!;
+
+        private static readonly ProtoId<TagPrototype> TrashTag = "Trash";
 
         public override void Initialize()
         {
@@ -63,7 +66,7 @@ namespace Content.Server.Light.EntitySystems
                 {
                     case ExpendableLightState.Lit:
                         component.CurrentState = ExpendableLightState.Fading;
-                        component.StateExpiryTime = component.FadeOutDuration;
+                        component.StateExpiryTime = (float)component.FadeOutDuration.TotalSeconds;
 
                         UpdateVisualizer(ent);
 
@@ -74,9 +77,7 @@ namespace Content.Server.Light.EntitySystems
                         component.CurrentState = ExpendableLightState.Dead;
                         _nameModifier.RefreshNameModifiers(ent.Owner);
 
-                        _tagSystem.AddTag(ent, "Trash");
-
-                        _tagSystem.AddTag(ent, "Trash");
+                        _tagSystem.AddTag(ent, TrashTag);
 
                         UpdateSounds(ent);
                         UpdateVisualizer(ent);
@@ -120,19 +121,19 @@ namespace Content.Server.Light.EntitySystems
             if (args.Handled)
                 return;
 
-            if (!EntityManager.TryGetComponent(args.Used, out StackComponent? stack))
+            if (!TryComp(args.Used, out StackComponent? stack))
                 return;
 
             if (stack.StackTypeId != component.RefuelMaterialID)
                 return;
 
-            if (component.StateExpiryTime + component.RefuelMaterialTime >= component.RefuelMaximum)
+            if (component.StateExpiryTime + component.RefuelMaterialTime.TotalSeconds >= component.RefuelMaximumDuration.TotalSeconds)
                 return;
 
             if (component.CurrentState is ExpendableLightState.Dead)
             {
                 component.CurrentState = ExpendableLightState.BrandNew;
-                component.StateExpiryTime = component.RefuelMaterialTime;
+                component.StateExpiryTime = (float)component.RefuelMaterialTime.TotalSeconds;
 
                 _nameModifier.RefreshNameModifiers(uid);
                 _stackSystem.SetCount(args.Used, stack.Count - 1, stack);
@@ -140,15 +141,15 @@ namespace Content.Server.Light.EntitySystems
                 return;
             }
 
-            component.StateExpiryTime += component.RefuelMaterialTime;
+            component.StateExpiryTime += (float)component.RefuelMaterialTime.TotalSeconds;
             _stackSystem.SetCount(args.Used, stack.Count - 1, stack);
             args.Handled = true;
         }
 
-        private void OnRefreshNameModifiers(EntityUid uid, ExpendableLightComponent component, RefreshNameModifiersEvent args)
+        private void OnRefreshNameModifiers(Entity<ExpendableLightComponent> entity, ref RefreshNameModifiersEvent args)
         {
-            if (component.CurrentState is ExpendableLightState.Dead)
-                args.AddModifier(component.SpentName);
+            if (entity.Comp.CurrentState is ExpendableLightState.Dead)
+                args.AddModifier("expendable-light-spent-prefix");
         }
 
         private void UpdateVisualizer(Entity<ExpendableLightComponent> ent, AppearanceComponent? appearance = null)
@@ -207,7 +208,7 @@ namespace Content.Server.Light.EntitySystems
             }
 
             component.CurrentState = ExpendableLightState.BrandNew;
-            component.StateExpiryTime = component.GlowDuration;
+            component.StateExpiryTime = (float)component.GlowDuration.TotalSeconds;
             EntityManager.EnsureComponent<PointLightComponent>(uid);
         }
 

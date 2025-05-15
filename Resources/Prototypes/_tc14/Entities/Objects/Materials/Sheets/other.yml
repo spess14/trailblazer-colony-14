@@ -52,7 +52,7 @@
   id: BlueprintMaterial
 
 - type: stack
+  name: stack-blueprint-paper
   id: SheetBlueprintPaperStack
-  name: blueprint paper
   spawn: SheetBlueprintPaper
   maxCount: 30

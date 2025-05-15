@@ -15,6 +15,6 @@ public sealed partial class BlueprintComponent : Component
     /// <summary>
     /// The recipes that this blueprint provides.
     /// </summary>
-    [DataField(required: true)]
+    [DataField]
     public HashSet<ProtoId<LatheRecipePrototype>> ProvidedRecipes = new();
 }

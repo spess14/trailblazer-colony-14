@@ -1,7 +1,6 @@
 using System.Linq;
 using System.Numerics;
 using System.Threading.Tasks;
-using Content.Server.Administration.Managers;
 using Content.Server.Atmos;
 using Content.Server.Atmos.Components;
 using Content.Server.Atmos.EntitySystems;
@@ -10,7 +9,6 @@ using Content.Server.Ghost.Roles.Components;
 using Content.Server.Shuttles.Events;
 using Content.Server.Shuttles.Systems;
 using Content.Shared.Atmos;
-using Content.Shared.CCVar;
 using Content.Shared.Decals;
 using Content.Shared.Ghost;
 using Content.Shared.Gravity;
@@ -18,6 +16,7 @@ using Content.Shared.Light.Components;
 using Content.Shared.Parallax.Biomes;
 using Content.Shared.Parallax.Biomes.Layers;
 using Content.Shared.Parallax.Biomes.Markers;
+using Content.Shared.Tag;
 using Microsoft.Extensions.ObjectPool;
 using Robust.Server.Player;
 using Robust.Shared;
@@ -39,7 +38,6 @@ namespace Content.Server.Parallax;
 
 public sealed partial class BiomeSystem : SharedBiomeSystem
 {
-    [Dependency] private readonly IAdminManager _admin = default!;
     [Dependency] private readonly IConfigurationManager _configManager = default!;
     [Dependency] private readonly IConsoleHost _console = default!;
     [Dependency] private readonly IMapManager _mapManager = default!;
@@ -53,6 +51,7 @@ public sealed partial class BiomeSystem : SharedBiomeSystem
     [Dependency] private readonly SharedPhysicsSystem _physics = default!;
     [Dependency] private readonly SharedTransformSystem _transform = default!;
     [Dependency] private readonly ShuttleSystem _shuttles = default!;
+    [Dependency] private readonly TagSystem _tags = default!;
 
     private EntityQuery<BiomeComponent> _biomeQuery;
     private EntityQuery<FixturesComponent> _fixturesQuery;
@@ -62,13 +61,12 @@ public sealed partial class BiomeSystem : SharedBiomeSystem
     private readonly HashSet<EntityUid> _handledEntities = new();
     private const float DefaultLoadRange = 16f;
     private float _loadRange = DefaultLoadRange;
+    private static readonly ProtoId<TagPrototype> AllowBiomeLoadingTag = "AllowBiomeLoading";
 
     private List<(Vector2i, Tile)> _tiles = new();
 
     private ObjectPool<HashSet<Vector2i>> _tilePool =
         new DefaultObjectPool<HashSet<Vector2i>>(new SetPolicy<Vector2i>(), 256);
-
-    private bool _adminghostload;
 
     /// <summary>
     /// Load area for chunks containing tiles, decals etc.
@@ -95,14 +93,8 @@ public sealed partial class BiomeSystem : SharedBiomeSystem
         SubscribeLocalEvent<FTLStartedEvent>(OnFTLStarted);
         SubscribeLocalEvent<ShuttleFlattenEvent>(OnShuttleFlatten);
         Subs.CVar(_configManager, CVars.NetMaxUpdateRange, SetLoadRange, true);
-        Subs.CVar(_configManager, CCVars.AdminGhostsLoadTerrain, AdminGhostLoadChange, true);
         InitializeCommands();
         SubscribeLocalEvent<PrototypesReloadedEventArgs>(ProtoReload);
-    }
-
-    private void AdminGhostLoadChange(bool cvar)
-    {
-        _adminghostload = cvar;
     }
 
     private void ProtoReload(PrototypesReloadedEventArgs obj)
@@ -264,7 +256,7 @@ public sealed partial class BiomeSystem : SharedBiomeSystem
 
     private void OnFTLStarted(ref FTLStartedEvent ev)
     {
-        var targetMap = ev.TargetCoordinates.ToMap(EntityManager, _transform);
+        var targetMap = _transform.ToMapCoordinates(ev.TargetCoordinates);
         var targetMapUid = _mapManager.GetMapEntityId(targetMap.MapId);
 
         if (!TryComp<BiomeComponent>(targetMapUid, out var biome))
@@ -332,9 +324,7 @@ public sealed partial class BiomeSystem : SharedBiomeSystem
 
     private bool CanLoad(EntityUid uid)
     {
-        if (_adminghostload)
-            return !(_ghostQuery.HasComp(uid) && !_admin.IsAdmin(uid));
-        return !_ghostQuery.HasComp(uid);
+        return !_ghostQuery.HasComp(uid) || _tags.HasTag(uid, AllowBiomeLoadingTag);
     }
 
     public override void Update(float frameTime)

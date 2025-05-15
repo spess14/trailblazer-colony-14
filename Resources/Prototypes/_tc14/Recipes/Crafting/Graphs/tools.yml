@@ -19,11 +19,8 @@
     - to: shovel
       steps:
       - tag: Rock
+        name: construction-graph-tag-flaking-rock
         doAfter: 2
-        name: a rock
-        icon:
-          sprite: Objects/Tools/rock.rsi
-          state: "rock"
     - to: pulp
       steps:
       - tool: Mortaring
@@ -36,11 +33,8 @@
     - to: pickaxe
       steps:
       - tag: Rock
+        name: construction-graph-tag-flaking-rock
         doAfter: 3
-        name: a rock
-        icon:
-          sprite: Objects/Tools/rock.rsi
-          state: "rock"
   - node: pickaxe
     entity: StonePickaxe
   - node: pulp
