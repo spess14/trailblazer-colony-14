@@ -1,0 +1,9 @@
+- type: latheRecipe
+  parent: BaseToolRecipe
+  id: CheapLighter
+  result: CheapLighter
+  materials:
+    Steel: 100
+  icon:
+    sprite: Objects/Tools/lighters.rsi
+    state: icon_map
