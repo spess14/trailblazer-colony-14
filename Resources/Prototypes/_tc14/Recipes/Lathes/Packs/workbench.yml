@@ -16,6 +16,7 @@
   - UtilityBelt
   - ClothingHeadHatWelding
   - ClothingHeadHatCone
+  - CheapLighter
 
 - type: latheRecipePack
   id: ElectronicsWorkbench
