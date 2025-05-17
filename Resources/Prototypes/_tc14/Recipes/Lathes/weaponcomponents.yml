@@ -1,0 +1,37 @@
+- type: latheRecipe
+  id: WeaponFramePart
+  result: WeaponFrameCraftingPart
+  completetime: 10
+  materials:
+    Steel: 2000
+
+- type: latheRecipe
+  id: GenericWeaponPart
+  result: GenericWeaponCraftingPart
+  rompletetime: 2
+  materials:
+    Steel: 200
+    Plastic: 200
+
+- type: latheRecipe
+  id: EnforcerStockPart
+  result: EnforcerStockCraftingPart
+  completetime: 2
+  materials:
+    Plastic: 400
+
+- type: latheRecipe
+  id: EnforcerBarrelPart
+  result: EnforcerBarrelCraftingPart
+  completetime: 4
+  materials:
+    Plastic: 300
+    Steel: 1000
+
+- type: latheRecipe
+  id: EnforcerInternalsPart
+  result: EmptyEnforcerInternalsCraftingPart
+  completetime: 1
+  materials:
+    Plastic: 200
+    Steel: 200
