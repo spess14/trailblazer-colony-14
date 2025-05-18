@@ -1,12 +1,4 @@
 ﻿Entries:
-- author: Beck Thompson
-  changes:
-  - message: Minor tweaks to clumsiness. Some of the timings and or noises have been
-      changed slightly!
-    type: Tweak
-  id: 7613
-  time: '2024-11-15T23:46:02.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/31147
 - author: SaphireLattice
   changes:
   - message: Crayon UI now has categories and queue
@@ -3875,3 +3867,12 @@
   id: 8112
   time: '2025-03-27T17:19:36.0000000+00:00'
   url: https://github.com/space-wizards/space-station-14/pull/36104
+- author: mjarduk
+  changes:
+  - message: Added a new lobby background, made by rajonas5444!
+    type: Add
+  - message: "Removed space-related backgrounds, we're staying on duh planet now \U0001F608"
+    type: Remove
+  id: 8113
+  time: '2025-05-18T08:31:41.0000000+00:00'
+  url: https://github.com/Ariss-Interactive/trailblazer-colony-14/pull/90
