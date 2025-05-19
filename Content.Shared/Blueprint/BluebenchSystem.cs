@@ -79,7 +79,7 @@ public sealed class BluebenchSystem : EntitySystem
         }
     }
 
-    private bool TryInsertStack(EntityUid uid, EntityUid used, BluebenchComponent component, StackComponent stack)
+    private bool TryInsertStack(EntityUid used, BluebenchComponent component, StackComponent stack)
     {
         var type = stack.StackTypeId;
 
@@ -111,7 +111,7 @@ public sealed class BluebenchSystem : EntitySystem
 
         if (TryComp<StackComponent>(args.Used, out var stack))
         {
-            if (TryInsertStack(entity, args.Used, component, stack))
+            if (TryInsertStack(args.Used, component, stack))
                 args.Handled = true;
         }
 
@@ -159,6 +159,12 @@ public sealed class BluebenchSystem : EntitySystem
         {
             var result = Spawn("BaseBlueprint", Transform(entity).Coordinates);
             GenerateBlueprint(result, component);
+
+            component.ComponentProgress.Clear();
+            component.MaterialProgress.Clear();
+            component.TagProgress.Clear();
+            component.ResearchedPrototypes.Add(component.ActiveProject);
+            component.ActiveProject = null;
         }
 
         UpdateUiState(entity, component);
@@ -175,25 +181,19 @@ public sealed class BluebenchSystem : EntitySystem
             blueprint.ProvidedRecipes.Add(recipe);
         }
 
-        if (component.ActiveProject.OutputPacks is not null)
-        {
-            foreach (var pack in component.ActiveProject.OutputPacks)
-            {
-                if (!_prototypeManager.TryIndex(pack, out var proto))
-                    continue;
+        if (component.ActiveProject.OutputPacks is null)
+            return;
 
-                foreach (var recipe in proto.Recipes)
-                {
-                    blueprint.ProvidedRecipes.Add(recipe);
-                }
+        foreach (var pack in component.ActiveProject.OutputPacks)
+        {
+            if (!_prototypeManager.TryIndex(pack, out var proto))
+                continue;
+
+            foreach (var recipe in proto.Recipes)
+            {
+                blueprint.ProvidedRecipes.Add(recipe);
             }
         }
-
-        component.ComponentProgress.Clear();
-        component.MaterialProgress.Clear();
-        component.TagProgress.Clear();
-        component.ResearchedPrototypes.Add(component.ActiveProject);
-        component.ActiveProject = null;
     }
 
     private static bool IsComplete(BluebenchComponent component)
@@ -207,7 +207,7 @@ public sealed class BluebenchSystem : EntitySystem
                 return false;
         }
 
-        foreach (var (compName, info) in component.ActiveProject.ComponentRequirements)
+        foreach (var (compName, _) in component.ActiveProject.ComponentRequirements)
         {
             if (component.ComponentProgress[compName] != 0)
                 return false;
@@ -238,7 +238,7 @@ public sealed class BluebenchSystem : EntitySystem
         if (component.ResearchedPrototypes.Contains(prototype))
         {
             var result = Spawn("BaseBlueprint", Transform(uid).Coordinates);
-            GenerateBlueprint(uid, component);
+            GenerateBlueprint(result, component);
 
             UpdateUiState(uid, component);
             return;
@@ -273,7 +273,7 @@ public sealed class BluebenchSystem : EntitySystem
         {
             if (proto.RequiredResearch != null)
             {
-                if (!_prototypeManager.TryIndex<BluebenchResearchPrototype>(proto.RequiredResearch, out var reqProto))
+                if (!_prototypeManager.TryIndex(proto.RequiredResearch, out var reqProto))
                     continue;
 
                 if (!component.ResearchedPrototypes.Contains(reqProto))
