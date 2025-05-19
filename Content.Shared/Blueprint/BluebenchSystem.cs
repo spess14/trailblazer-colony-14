@@ -158,7 +158,7 @@ public sealed class BluebenchSystem : EntitySystem
         if (IsComplete(component))
         {
             var result = Spawn("BaseBlueprint", Transform(entity).Coordinates);
-            GenerateBlueprint(result, component);
+            GenerateBlueprint(result, component.ActiveProject);
 
             component.ComponentProgress.Clear();
             component.MaterialProgress.Clear();
@@ -170,21 +170,18 @@ public sealed class BluebenchSystem : EntitySystem
         UpdateUiState(entity, component);
     }
 
-    private void GenerateBlueprint(EntityUid uid, BluebenchComponent component)
+    private void GenerateBlueprint(EntityUid uid, BluebenchResearchPrototype project)
     {
-        if (component.ActiveProject is null)
-            return;
-
         var blueprint = AddComp<BlueprintComponent>(uid);
-        foreach (var recipe in component.ActiveProject.OutputRecipes)
+        foreach (var recipe in project.OutputRecipes)
         {
             blueprint.ProvidedRecipes.Add(recipe);
         }
 
-        if (component.ActiveProject.OutputPacks is null)
+        if (project.OutputPacks is null)
             return;
 
-        foreach (var pack in component.ActiveProject.OutputPacks)
+        foreach (var pack in project.OutputPacks)
         {
             if (!_prototypeManager.TryIndex(pack, out var proto))
                 continue;
@@ -238,7 +235,7 @@ public sealed class BluebenchSystem : EntitySystem
         if (component.ResearchedPrototypes.Contains(prototype))
         {
             var result = Spawn("BaseBlueprint", Transform(uid).Coordinates);
-            GenerateBlueprint(result, component);
+            GenerateBlueprint(result, prototype);
 
             UpdateUiState(uid, component);
             return;
