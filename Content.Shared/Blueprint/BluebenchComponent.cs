@@ -26,4 +26,7 @@ public sealed partial class BluebenchComponent : Component
 
     [DataField, AutoNetworkedField]
     public HashSet<BluebenchResearchPrototype> ResearchedPrototypes = [];
+
+    [DataField, AutoNetworkedField]
+    public HashSet<ProtoId<BluebenchResearchPrototype>> AvailablePrototypes = [];
 }

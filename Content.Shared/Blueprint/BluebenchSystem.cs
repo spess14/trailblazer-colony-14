@@ -25,11 +25,17 @@ public sealed class BluebenchSystem : EntitySystem
     public override void Initialize()
     {
         base.Initialize();
+        SubscribeLocalEvent<BluebenchComponent, ComponentInit>(OnBluebenchInit);
         SubscribeLocalEvent<BluebenchComponent, ExaminedEvent>(OnBluebenchExamined);
         SubscribeLocalEvent<BluebenchComponent, BoundUIOpenedEvent>(OnUIOpened);
         SubscribeLocalEvent<BluebenchComponent, InteractUsingEvent>(OnInteractUsingEvent);
         SubscribeLocalEvent<BluebenchComponent, ResearchProjectStartMessage>(OnResearchProjectStart);
         SubscribeLocalEvent<BluebenchComponent, MaterialEntityInsertedEvent>(OnMaterialInserted);
+    }
+
+    private void OnBluebenchInit(Entity<BluebenchComponent> ent, ref ComponentInit args)
+    {
+        RecomputeAvailable(ent.Comp);
     }
 
     private void OnMaterialInserted(EntityUid uid, BluebenchComponent component, MaterialEntityInsertedEvent args)
@@ -62,6 +68,7 @@ public sealed class BluebenchSystem : EntitySystem
 
                 e.PushMarkup($"{value}x {key.Id}");
             }
+
             foreach (var (key, value) in component.TagProgress)
             {
                 if (value == 0)
@@ -69,6 +76,7 @@ public sealed class BluebenchSystem : EntitySystem
 
                 e.PushMarkup($"{value}x {key.Id}");
             }
+
             foreach (var (key, value) in component.ComponentProgress)
             {
                 if (value == 0)
@@ -96,7 +104,7 @@ public sealed class BluebenchSystem : EntitySystem
         var toInsert = Math.Clamp(component.MaterialProgress[type], 1, stackCount);
 
         component.MaterialProgress[type] -= toInsert;
-        _stackSystem.SetCount(used, stackCount - toInsert,stack);
+        _stackSystem.SetCount(used, stackCount - toInsert, stack);
 
         return true;
     }
@@ -165,6 +173,7 @@ public sealed class BluebenchSystem : EntitySystem
             component.TagProgress.Clear();
             component.ResearchedPrototypes.Add(component.ActiveProject);
             component.ActiveProject = null;
+            RecomputeAvailable(component);
         }
 
         UpdateUiState(entity, component);
@@ -193,6 +202,95 @@ public sealed class BluebenchSystem : EntitySystem
         }
     }
 
+    private void OnResearchProjectStart(EntityUid uid, BluebenchComponent component, ResearchProjectStartMessage args)
+    {
+        var prototypeManager = IoCManager.Resolve<IPrototypeManager>();
+
+        if (!prototypeManager.TryIndex<BluebenchResearchPrototype>(args.Id, out var prototype))
+            return;
+
+        if (_material.GetMaterialAmount(uid, "Paper") == 0)
+            return;
+
+        if (!_material.TryChangeMaterialAmount(uid, "Paper", -1))
+            return;
+
+        if (component.ResearchedPrototypes.Contains(prototype))
+        {
+            var result = Spawn("BaseBlueprint", Transform(uid).Coordinates);
+            GenerateBlueprint(result, prototype);
+
+            UpdateUiState(uid, component);
+            return;
+        }
+
+        if (!component.AvailablePrototypes.Contains(prototype))
+            return;
+
+        if (component.ActiveProject != null)
+            return;
+
+        component.ActiveProject = prototype;
+        foreach (var requirement in prototype.ComponentRequirements)
+        {
+            component.ComponentProgress.Add(requirement.Key, requirement.Value.Amount);
+        }
+
+        foreach (var requirement in prototype.TagRequirements)
+        {
+            component.TagProgress.Add(requirement.Key, requirement.Value.Amount);
+        }
+
+        foreach (var requirement in prototype.StackRequirements)
+        {
+            component.MaterialProgress.Add(requirement.Key, requirement.Value);
+        }
+
+        UpdateUiState(uid, component);
+    }
+
+    private void UpdateUiState(EntityUid uid, BluebenchComponent component)
+    {
+        _uiSystem.SetUiState(uid,
+            BluebenchUiKey.Key,
+            new BluebenchBoundUserInterfaceState(component.AvailablePrototypes,
+                component.ActiveProject,
+                component.MaterialProgress,
+                component.ComponentProgress,
+                component.TagProgress,
+                _material.GetMaterialAmount(uid, "Paper"),
+                component.ResearchedPrototypes));
+    }
+
+    private void RecomputeAvailable(BluebenchComponent component)
+    {
+        var prototypes = _prototypeManager.EnumeratePrototypes<BluebenchResearchPrototype>().ToHashSet();
+        component.AvailablePrototypes.Clear();
+
+        foreach (var proto in prototypes.Where(proto => !component.ResearchedPrototypes.Contains(proto)))
+        {
+            if (proto.RequiredResearch != null)
+            {
+                var flag = true;
+
+                foreach (var reqProtoId in proto.RequiredResearch)
+                {
+                    if (_prototypeManager.TryIndex(reqProtoId, out var reqProto) &&
+                        component.ResearchedPrototypes.Contains(reqProto))
+                        continue;
+
+                    flag = false;
+                    break;
+                }
+
+                if (!flag)
+                    continue;
+            }
+
+            component.AvailablePrototypes.Add(proto);
+        }
+    }
+
     private static bool IsComplete(BluebenchComponent component)
     {
         if (component.ActiveProject is null)
@@ -217,72 +315,5 @@ public sealed class BluebenchSystem : EntitySystem
         }
 
         return true;
-    }
-
-    private void OnResearchProjectStart(EntityUid uid, BluebenchComponent component, ResearchProjectStartMessage args)
-    {
-        var prototypeManager = IoCManager.Resolve<IPrototypeManager>();
-
-        if (!prototypeManager.TryIndex<BluebenchResearchPrototype>(args.Id, out var prototype))
-            return;
-
-        if (_material.GetMaterialAmount(uid, "Paper") == 0)
-            return;
-
-        if (!_material.TryChangeMaterialAmount(uid, "Paper", -1))
-            return;
-
-        if (component.ResearchedPrototypes.Contains(prototype))
-        {
-            var result = Spawn("BaseBlueprint", Transform(uid).Coordinates);
-            GenerateBlueprint(result, prototype);
-
-            UpdateUiState(uid, component);
-            return;
-        }
-
-        if (component.ActiveProject != null && component.ActiveProject.ID != prototype.ID)
-            return;
-
-        component.ActiveProject = prototype;
-        foreach (var requirement in prototype.ComponentRequirements)
-        {
-            component.ComponentProgress.Add(requirement.Key, requirement.Value.Amount);
-        }
-
-        foreach (var requirement in prototype.TagRequirements)
-        {
-            component.TagProgress.Add(requirement.Key, requirement.Value.Amount);
-        }
-
-        foreach (var requirement in prototype.StackRequirements)
-        {
-            component.MaterialProgress.Add(requirement.Key, requirement.Value);
-        }
-        UpdateUiState(uid, component);
-    }
-
-    private void UpdateUiState(EntityUid uid, BluebenchComponent component)
-    {
-        var prototypes = _prototypeManager.EnumeratePrototypes<BluebenchResearchPrototype>().ToHashSet();
-        var availablePrototypes = new HashSet<BluebenchResearchPrototype>();
-        foreach (var proto in prototypes)
-        {
-            if (proto.RequiredResearch != null)
-            {
-                if (!_prototypeManager.TryIndex(proto.RequiredResearch, out var reqProto))
-                    continue;
-
-                if (!component.ResearchedPrototypes.Contains(reqProto))
-                    continue;
-            }
-
-            if (component.ResearchedPrototypes.Contains(proto))
-                continue;
-
-            availablePrototypes.Add(proto);
-        }
-
-        _uiSystem.SetUiState(uid, BluebenchUiKey.Key, new BluebenchBoundUserInterfaceState(availablePrototypes, component.ActiveProject, component.MaterialProgress, component.ComponentProgress, component.TagProgress,_material.GetMaterialAmount(uid, "Paper"), component.ResearchedPrototypes));
     }
 }

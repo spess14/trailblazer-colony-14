@@ -17,8 +17,10 @@ public sealed partial class BluebenchMenu : DefaultWindow
 {
     [Dependency] private readonly IEntityManager _entityManager = default!;
     [Dependency] private readonly ILocalizationManager _loc = default!;
-    public Action<String>? OnTechnologyProjectStart;
-    private SpriteSystem _spriteSystem;
+    [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
+
+    public Action<string>? OnTechnologyProjectStart;
+    private readonly SpriteSystem _spriteSystem;
     public BluebenchResearchPrototype? ActiveResearchProto;
     public Dictionary<ProtoId<StackPrototype>, int> MaterialProgress = new();
     public Dictionary<string, int> ComponentProgress = new();
@@ -35,20 +37,24 @@ public sealed partial class BluebenchMenu : DefaultWindow
         Tabs.SetTabTitle(1, _loc.GetString("bluebench-completed-tab"));
     }
 
-    public void UpdateResearchEntries(HashSet<BluebenchResearchPrototype> researchEntries)
+    public void UpdateResearchEntries(HashSet<ProtoId<BluebenchResearchPrototype>> researchEntries)
     {
         ResearchList.RemoveAllChildren();
         ResearchedList.RemoveAllChildren();
-        foreach (var item in from entry in researchEntries
-                 let message = GetRequirements(entry)
-                 let enabled = ActiveResearchProto == null && BlueprintCount != 0
-                 select new BluebenchResearchEntry(entry.Name!,
-                     message,
-                     _spriteSystem.Frame0(entry.Icon!),
-                     entry.ID,
-                     enabled,
-                     true)) // I <3 linq
+        foreach (var protoId in  researchEntries)
         {
+            if (!_prototypeManager.TryIndex(protoId, out var proto))
+                continue;
+
+            var message = GetRequirements(proto);
+            var enabled = ActiveResearchProto == null && BlueprintCount != 0;
+            var item = new BluebenchResearchEntry(proto.Name!,
+                message,
+                _spriteSystem.Frame0(proto.Icon!),
+                proto.ID,
+                enabled,
+                true);
+
             item.OnTechnologyProjectStart = OnTechnologyProjectStart;
 
             ResearchList.AddChild(item);
