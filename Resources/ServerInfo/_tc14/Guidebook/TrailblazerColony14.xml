@@ -1,0 +1,33 @@
+﻿<Document>
+# Planet
+
+Every round of TC14 is a [bold]self-contained mission[/bold] that takes place on a very, very remote planet.
+
+Rounds typically last around [color=cyan]180 minutes[/color], but players are free to leave and join at any point during a round.
+
+## Drop Pod
+You will likely spawn on the [color=lime]Drop Pod[/color].
+As soon as you leave it, you will be in a whole new environment. Your goal is to find your place in it.
+
+## The End
+Near the end of the round [color=gray](barring a [color=red][bold]nuclear disaster[/bold][/color])[/color], you will be notified via the [color=lime]shuttle announcement[/color].
+When it's called, an announcement will play alerting everyone and signaling [color=cyan]the end of round in 10 minutes.[/color]
+Once it arrives, it is over.
+
+The round end is OOC information.
+
+<Box>
+  <GuideEntityEmbed Entity="CryogenicSleepUnit"/>
+</Box>
+
+If you need to leave a round early, you can do so through a [color=lime]cyrogenic sleep unit[/color].
+Simply going inside and leaving the game will store your belongings and ensure that they are not stolen or misused.
+
+## More Info
+Learning the controls? [textlink="Click here to read about the different controls" link="Controls"]
+
+Don't know how to perform a job? [textlink="Click here to jump to a list of jobs" link="Jobs"]
+
+Keep dying? [textlink="Click here to see a survival guide" link="Survival"]
+
+</Document>
