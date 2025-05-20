@@ -25,17 +25,11 @@ public sealed class BluebenchSystem : EntitySystem
     public override void Initialize()
     {
         base.Initialize();
-        SubscribeLocalEvent<BluebenchComponent, ComponentInit>(OnBluebenchInit);
         SubscribeLocalEvent<BluebenchComponent, ExaminedEvent>(OnBluebenchExamined);
         SubscribeLocalEvent<BluebenchComponent, BoundUIOpenedEvent>(OnUIOpened);
         SubscribeLocalEvent<BluebenchComponent, InteractUsingEvent>(OnInteractUsingEvent);
         SubscribeLocalEvent<BluebenchComponent, ResearchProjectStartMessage>(OnResearchProjectStart);
         SubscribeLocalEvent<BluebenchComponent, MaterialEntityInsertedEvent>(OnMaterialInserted);
-    }
-
-    private void OnBluebenchInit(Entity<BluebenchComponent> ent, ref ComponentInit args)
-    {
-        RecomputeAvailable(ent.Comp);
     }
 
     private void OnMaterialInserted(EntityUid uid, BluebenchComponent component, MaterialEntityInsertedEvent args)
