@@ -1,5 +1,4 @@
-﻿using Content.Client.VendingMachines.UI;
-using Content.Shared.Blueprint;
+﻿using Content.Shared.Blueprint;
 using JetBrains.Annotations;
 using Robust.Client.UserInterface;
 
