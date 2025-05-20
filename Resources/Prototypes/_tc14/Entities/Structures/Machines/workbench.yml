@@ -79,6 +79,11 @@
   description: A table with tools made out of whatever you could find, yet sufficient for basic research.
   components:
   - type: Bluebench
+    availablePrototypes:
+    - BasicSecurityResearch
+    - BasicChemistryResearch
+    - CommonElectricityResearch
+    - BasicMedicineResearch
   - type: Appearance
   - type: Fixtures
     fixtures:
@@ -125,4 +130,3 @@
     interfaces:
       enum.BluebenchUiKey.Key:
         type: BluebenchBoundUserInterface
-
