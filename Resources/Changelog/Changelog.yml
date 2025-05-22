@@ -1,11 +1,4 @@
 ﻿Entries:
-- author: Southbridge
-  changes:
-  - message: The BRB sign is now included in the Bureaucracy Crate
-    type: Add
-  id: 7615
-  time: '2024-11-16T03:26:48.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/33341
 - author: SaphireLattice
   changes:
   - message: Utensils can finally go into disposals
@@ -3878,3 +3871,10 @@
   id: 8114
   time: '2025-05-20T22:10:21.0000000+00:00'
   url: https://github.com/Ariss-Interactive/trailblazer-colony-14/pull/92
+- author: ashley-graves
+  changes:
+  - message: PDA now has AstroNav by default
+    type: Add
+  id: 8115
+  time: '2025-05-22T14:48:24.0000000+00:00'
+  url: https://github.com/Ariss-Interactive/trailblazer-colony-14/pull/96
