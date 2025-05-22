@@ -1,11 +1,4 @@
 ﻿Entries:
-- author: SaphireLattice
-  changes:
-  - message: Utensils can finally go into disposals
-    type: Fix
-  id: 7616
-  time: '2024-11-16T03:39:19.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/33326
 - author: K-Dynamic
   changes:
   - message: Solar assembly crate now comes with 10 flatpacks and 20 glass to make
@@ -3878,3 +3871,12 @@
   id: 8115
   time: '2025-05-22T14:48:24.0000000+00:00'
   url: https://github.com/Ariss-Interactive/trailblazer-colony-14/pull/96
+- author: mjarduk
+  changes:
+  - message: Added wallmounted/floor torches.
+    type: Add
+  - message: Torch refueling costs ***way*** less.
+    type: Tweak
+  id: 8116
+  time: '2025-05-22T21:04:12.0000000+00:00'
+  url: https://github.com/Ariss-Interactive/trailblazer-colony-14/pull/97
