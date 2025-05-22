@@ -173,3 +173,29 @@
   description: A high powered light bulb containing a green crystal.
   icon: { sprite: Objects/Power/light_bulb.rsi, state: normal }
   objectType: Item
+
+- type: construction
+  name: wall torch
+  id: WallTorch
+  graph: WallTorch
+  startNode: start
+  targetNode: WallTorch
+  category: construction-category-utilities
+  description: A wooden stake on the wall you can light
+  icon: { sprite: Structures/Decoration/torches.rsi, state: wall_torch_unlit }
+  objectType: Structure
+  placementMode: SnapgridCenter
+  hide: false
+
+- type: construction
+  name: floor torch
+  id: FloorTorch
+  graph: FloorTorch
+  startNode: start
+  targetNode: FloorTorch
+  category: construction-category-utilities
+  description: A wooden stake on the floor you can light
+  icon: { sprite: Structures/Decoration/torches.rsi, state: torch_unlit }
+  objectType: Structure
+  placementMode: SnapgridCenter
+  hide: false
