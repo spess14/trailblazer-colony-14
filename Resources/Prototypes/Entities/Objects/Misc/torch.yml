@@ -5,10 +5,10 @@
   description: A torch fashioned from some wood.
   components:
     - type: ExpendableLight
-      spentName: expendable-light-burnt-torch-name
       refuelMaterialID: WoodPlank
-      refuelMaximum: 205
-      glowDuration: 100
+      glowDuration: 205
+      refuelMaterialTime: 205
+      refuelMaximumDuration: 510
       fadeOutDuration: 4
       iconStateSpent: torch_spent
       turnOnBehaviourID: turn_on
@@ -80,5 +80,3 @@
     - type: Tag
       tags:
       - Torch
-    - type: NameModifier
-      baseName: torch
