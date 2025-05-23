@@ -45,4 +45,25 @@
 #   - CutterMachineCircuitboard
 #   - BorgChargerCircuitboard
 # 
+# - type: bluebenchResearch
+#   id: BasicSecurityResearch
+#   name: Cuff'n'Dagger
+#   description: Sometimes, war is a question, and the answer is yes.
+#   icon:
+#     sprite: Objects/Misc/handcuffs.rsi
+#     state: handcuff
+#   tagRequirements:
+#     Arrow:
+#       amount: 2
+#       defaultPrototype: ArrowImprovisedRock
+#   stackRequirements:
+#     Cable: 5
+#   outputRecipes:
+#   - Handcuffs
+#   - TargetClown
+#   - TargetHuman
+#   - TargetSyndicate
+#   - Zipties
+#   - CombatKnife
+#
 # kept here as an example
