@@ -108,7 +108,6 @@
     - type: Pullable
     - type: Transform
       anchored: true
-      norot: true
     - type: Anchorable
       delay: 2
 
