@@ -1,0 +1,11 @@
+- type: bluebenchResearch
+  id: EfficientClothProductionResearch
+  name: Efficient Cloth Production
+  description: Up your clothing game.
+  icon:
+    sprite: _tc14/ResearchIcons/stone_tools.rsi
+    state: researchicon
+  stackRequirements:
+    Cloth: 20
+  outputRecipes:
+  - Cloth

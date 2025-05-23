@@ -1,0 +1,6 @@
+- type: latheRecipe
+  id: Cloth
+  result: MaterialCloth1
+  completetime: 1
+  materials:
+    Cotton: 1
