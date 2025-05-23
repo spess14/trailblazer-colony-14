@@ -82,6 +82,7 @@
     availablePrototypes:
     - OreRefineryResearch
     - StoneToolsResearch
+    - EfficientClothProductionResearch
   - type: Appearance
   - type: Fixtures
     fixtures:
