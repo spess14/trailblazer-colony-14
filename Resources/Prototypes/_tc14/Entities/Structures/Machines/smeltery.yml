@@ -4,6 +4,10 @@
   name: smeltery
   description: Ore goes in, ingots come out.
   components:
+  - type: BlueprintReceiver
+    whitelist:
+      tags:
+      - BlueprintOre
   - type: Appearance
   - type: Fixtures
     fixtures:
@@ -27,8 +31,6 @@
     timeMultiplier: 0.5 #some recipes use it, some don't for some reason
     materialUseMultiplier: 2.0 #this is a furnace, of course it sucks
     defaultProductionAmount: 10
-    staticPacks:
-    - OreSmelting
   - type: MaterialStorage
     ignoreColor: true
     whitelist:

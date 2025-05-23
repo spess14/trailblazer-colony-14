@@ -88,8 +88,9 @@
       - Biological
     damage:
       types:
-        Slash: -0.5
-        Piercing: -0.5
+        Slash: -2
+        Piercing: -2
+        Blunt: -2
     bloodlossModifier: -4
     healingBeginSound:
       path: "/Audio/Items/Medical/brutepack_begin.ogg"

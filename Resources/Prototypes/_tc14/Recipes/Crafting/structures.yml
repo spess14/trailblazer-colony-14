@@ -23,7 +23,7 @@
   startNode: start
   targetNode: smeltery
   category: construction-category-structures
-  description: Ore goes in, ingots come out.
+  description: Ore goes in, ingots come out. Requires blueprints to start smelting.
   icon:
     sprite: /Textures/Structures/Machines/smeltery.rsi
     state: icon
