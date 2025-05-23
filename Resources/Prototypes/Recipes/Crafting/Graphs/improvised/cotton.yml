@@ -7,7 +7,7 @@
     - to: cottoncloth
       steps:
       - material: Cotton
-        amount: 4
-        doAfter: 3
+        amount: 2  # TC14 change
+        doAfter: 1.5 # TC14 change
   - node: cottoncloth
     entity: MaterialCloth1
