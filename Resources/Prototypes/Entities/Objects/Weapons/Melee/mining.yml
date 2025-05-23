@@ -11,7 +11,6 @@
     sprite: Objects/Weapons/Melee/pickaxe.rsi
     state: pickaxe
   - type: MeleeWeapon
-    attackRate: 0.7
     wideAnimationRotation: -135
     soundHit:
       path: "/Audio/Weapons/smash.ogg"
@@ -19,14 +18,14 @@
         volume: -3
     damage:
       groups:
-        Brute: 5
+        Brute: 3.5 # damage lowered to account for faster attack rate, mathematically DPS is the same
   - type: Wieldable
   - type: IncreaseDamageOnWield
     damage:
       groups:
-        Brute: 10
+        Brute: 7 # damage lowered to account for faster attack rate, mathematically DPS is the same
       types:
-        Structural: 30
+        Structural: 21 # damage lowered to account for faster attack rate, mathematically DPS is the same
   - type: Item
     size: Normal
     shape:

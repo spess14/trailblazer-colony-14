@@ -7,6 +7,7 @@
   - type: Tag
     tags:
     - Ingot
+    - StoneBrick
   - type: Sprite
     sprite: Objects/Materials/bricks.rsi
   - type: Item
