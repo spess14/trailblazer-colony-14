@@ -23,7 +23,7 @@
   - type: Lathe
     idleState: workbench
     materialUseMultiplier: 1.5
-    staticPacks:
+#   staticPacks:
     # - ToolsWorkbench
     # - PartsStatic
     # - AtmosStatic
@@ -81,6 +81,7 @@
   - type: Bluebench
     availablePrototypes:
     - OreRefineryResearch
+    - StoneToolsResearch
   - type: Appearance
   - type: Fixtures
     fixtures:

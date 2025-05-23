@@ -7,7 +7,7 @@
   - type: BlueprintReceiver
     whitelist:
       tags:
-      - BlueprintOre
+      - BlueprintAutolathe
   - type: Appearance
   - type: Fixtures
     fixtures:

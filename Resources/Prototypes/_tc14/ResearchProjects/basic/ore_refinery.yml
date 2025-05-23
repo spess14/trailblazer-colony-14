@@ -6,10 +6,13 @@
     sprite: _tc14/Structures/Machines/smeltery.rsi
     state: icon
   stackRequirements:
-    SpaceQuartz: 10
-    GoldOre: 5
-    SilverOre: 5
+    SpaceQuartz: 30
+    GoldOre: 20
+    SilverOre: 20
   outputRecipes:
   - SheetGlass1
   - IngotGold1
   - IngotSilver1
+  - MaterialBananium1
+  - SheetPlasma1
+  - SheetUranium1 # included other ores because it would be tedious to collect all of them

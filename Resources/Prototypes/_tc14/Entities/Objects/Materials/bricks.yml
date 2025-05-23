@@ -4,6 +4,9 @@
   id: BrickBase
   description: A heavy brick.
   components:
+  - type: Tag
+    tags:
+    - Ingot
   - type: Sprite
     sprite: Objects/Materials/bricks.rsi
   - type: Item

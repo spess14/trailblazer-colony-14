@@ -1,0 +1,15 @@
+- type: latheRecipe
+  id: StonePickaxeWorkbench
+  result: StonePickaxeWorkbench
+  completetime: 8
+  materials:
+    WoodPlank: 2
+    BrickStone: 3
+
+- type: latheRecipe
+  id: StoneShovelWorkbench
+  result: StoneShovelWorkbench
+  completetime: 8
+  materials:
+    WoodPlank: 3
+    BrickStone: 2
