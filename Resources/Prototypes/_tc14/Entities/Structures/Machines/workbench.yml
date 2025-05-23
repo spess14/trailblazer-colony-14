@@ -79,8 +79,8 @@
   description: A table with tools made out of whatever you could find, yet sufficient for basic research.
   components:
   - type: Bluebench
-    # availablePrototypes:
-    # - 
+    availablePrototypes:
+    - OreRefineryResearch
   - type: Appearance
   - type: Fixtures
     fixtures:
