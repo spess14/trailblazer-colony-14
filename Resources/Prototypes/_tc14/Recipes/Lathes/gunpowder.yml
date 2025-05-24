@@ -5,3 +5,20 @@
   materials:
     RawSulfur: 300
     Coal: 100
+
+- type: latheRecipe
+  id: WeaponPistolFlintlock
+  result: WeaponPistolFlintlock
+  completetime: 10
+  materials:
+    Wood: 1300
+    Steel: 1000
+    Gunpowder: 200
+
+- type: latheRecipe
+  id: CartridgeAntiMateriel
+  result: CartridgeAntiMateriel
+  completetime: 0.5
+  materials:
+    Steel: 100
+    Gunpowder: 75

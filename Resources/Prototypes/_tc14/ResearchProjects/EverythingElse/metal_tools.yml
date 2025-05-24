@@ -4,6 +4,7 @@
   description: The tools of a professional.
   requiredResearch:
   - MetalworksResearch
+  - StoneToolsResearch
   icon:
     sprite: _tc14/ResearchIcons/metal_tools.rsi
     state: researchicon

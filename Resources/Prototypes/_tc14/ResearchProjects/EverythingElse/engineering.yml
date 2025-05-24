@@ -8,7 +8,7 @@
     sprite: Interface/Misc/job_icons.rsi
     state: StationEngineer
   stackRequirements:
-    SulfurOre: 20
+    Steel: 15
   outputRecipes:
   - Wirecutter
   - Screwdriver

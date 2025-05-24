@@ -15,8 +15,8 @@
 
 - type: latheRecipe
   id: Katana
-  result: Sledgehammer
+  result: Katana
   completetime: 3
   materials:
-    Steel: 1500
-    Plasteel: 300
+    Steel: 500
+    Plasteel: 800

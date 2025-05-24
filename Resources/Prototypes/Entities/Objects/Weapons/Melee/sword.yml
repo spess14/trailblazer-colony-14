@@ -53,8 +53,11 @@
   name: katana
   parent: [ BaseSword, BaseMajorContraband ]
   id: Katana
-  description: Ancient craftwork made with not so ancient plasteel.
+  description: Ancient craftwork made with not so ancient plasteel. Can reflect projectiles.
   components:
+  - type: Reflect
+    reflectProb: .50
+    spread: 90
   - type: Tag
     tags:
     - Katana
@@ -70,6 +73,7 @@
   - type: Item
     sprite: Objects/Weapons/Melee/katana.rsi
   - type: DisarmMalus
+
 
 - type: entity
   name: energy katana
