@@ -1,7 +1,7 @@
 - type: bluebenchResearch
   id: MeleeWeaponsResearch
   name: Melee Weapons
-  description: Remember to not bring a knife to a gunfight. Prerequisite for Flintlock Research.
+  description: "Remember to not bring a knife to a gunfight.\nPrerequisite for Flintlock Research."
   requiredResearch:
   - MetalworksResearch
   icon:

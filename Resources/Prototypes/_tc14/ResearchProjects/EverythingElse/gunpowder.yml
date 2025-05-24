@@ -1,7 +1,7 @@
 - type: bluebenchResearch
   id: GunpowderResearch
   name: Gunpowder
-  description: This is where the killing begins. Prerequisite for Flintlock and Basic Explosive Research.
+  description: "This is where the killing begins.\nPrerequisite for Flintlock and Basic Explosive Research."
   requiredResearch:
   - OreRefineryResearch
   icon:

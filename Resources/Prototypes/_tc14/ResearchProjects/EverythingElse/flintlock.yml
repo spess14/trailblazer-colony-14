@@ -1,7 +1,7 @@
 - type: bluebenchResearch
   id: FlintlockResearch
-  name: Engineering Essentials
-  description: It's no good rifle, but still a ranged gun. Funnily enough, it fires .60 anti-materiel.
+  name: Flintlock
+  description: "It's no good rifle, but still a ranged gun.\nFunnily enough, it fires .60 anti-materiel."
   requiredResearch:
   - MeleeWeaponsResearch
   - GunpowderResearch
@@ -11,7 +11,7 @@
   stackRequirements:
     Gunpowder: 30
     Steel: 60
-    Wood: 60
+    WoodPlank: 60
   outputRecipes:
   - WeaponPistolFlintlock
   - CartridgeAntiMateriel

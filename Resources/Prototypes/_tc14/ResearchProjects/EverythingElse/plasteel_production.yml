@@ -1,7 +1,7 @@
 - type: bluebenchResearch
   id: PlasteelProductionResearch
   name: Plasteel Production
-  description: Plasteel, a very expensive but durable material. Often used in heavy armor or weaponry.
+  description: "Plasteel, a very expensive but durable material.\nOften used in heavy armor or weaponry."
   requiredResearch:
   - OreRefineryResearch
   icon:

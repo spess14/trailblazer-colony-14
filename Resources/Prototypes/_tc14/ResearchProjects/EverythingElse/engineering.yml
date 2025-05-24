@@ -1,7 +1,7 @@
 - type: bluebenchResearch
   id: EngineeringEssentialsResearch
   name: Engineering Essentials
-  description: The stuff an aspiring engineer would need. Electronics not included.
+  description: "The stuff an aspiring engineer would need.\nElectronics not included."
   requiredResearch:
   - MetalworksResearch
   icon:

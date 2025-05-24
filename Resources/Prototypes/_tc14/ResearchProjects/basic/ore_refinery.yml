@@ -1,7 +1,7 @@
 - type: bluebenchResearch
   id: OreRefineryResearch
   name: Ore Refinery
-  description: Allows you to produce materials using the Smeltery.
+  description: "Allows you to produce materials using the Smeltery."
   icon:
     sprite: _tc14/Structures/Machines/smeltery.rsi
     state: icon
