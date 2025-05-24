@@ -1,0 +1,15 @@
+- type: bluebenchResearch
+  id: PlasticExplosiveResearch
+  name: Plastic Explosives
+  description: "Warning: Very Explosive."
+  requiredResearch:
+  - BasicExplosiveResearch
+  icon:
+    sprite: Objects/Weapons/Bombs/c4.rsi
+    state: icon
+  stackRequirements:
+    Gunpowder: 120
+    Steel: 80
+    Plasteel: 30
+  outputRecipes:
+  - C4

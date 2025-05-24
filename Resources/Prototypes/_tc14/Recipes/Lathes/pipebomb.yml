@@ -1,0 +1,7 @@
+- type: latheRecipe
+  id: PipeBombWorkbench
+  result: PipeBombWorkbench
+  completetime: 8
+  materials:
+    Gunpowder: 330
+    Steel: 200

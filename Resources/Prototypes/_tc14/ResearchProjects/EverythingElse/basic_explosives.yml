@@ -1,0 +1,14 @@
+- type: bluebenchResearch
+  id: BasicExplosiveResearch
+  name: Basic Explosives
+  description: "A saboteur's favorite weapon.\nThis bomb was made with better tools,\ntherefore much better than the inferior counterpart."
+  requiredResearch:
+  - GunpowderResearch
+  icon:
+    sprite: Objects/Weapons/Bombs/pipebomb.rsi
+    state: icon
+  stackRequirements:
+    Gunpowder: 8
+    Steel: 10
+  outputRecipes:
+  - PipeBombWorkbench

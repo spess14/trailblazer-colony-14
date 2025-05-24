@@ -1,0 +1,8 @@
+- type: latheRecipe
+  id: C4
+  result: C4
+  completetime: 8
+  materials:
+    Gunpowder: 1000
+    Steel: 400
+    Plasteel: 200
