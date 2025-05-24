@@ -1,7 +1,7 @@
 {
     "version": 1,
     "license": "CC-BY-SA-3.0",
-    "copyright": "Made by Widow",
+    "copyright": "Made by Widow, sharpened state by Harriet",
     "size": {
         "x": 32,
         "y": 32
@@ -17,6 +17,9 @@
         },
         {
             "name": "pickaxe"
+        },
+        {
+            "name": "sharpened"
         },
         {
             "name": "wielded-inhand-left",

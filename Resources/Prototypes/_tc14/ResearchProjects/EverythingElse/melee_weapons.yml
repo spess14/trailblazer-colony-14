@@ -1,0 +1,15 @@
+- type: bluebenchResearch
+  id: MeleeWeaponsResearch
+  name: Melee Weapons
+  description: "Remember to not bring a knife to a gunfight.\nPrerequisite for Flintlock Research."
+  requiredResearch:
+  - MetalworksResearch
+  icon:
+    sprite: Objects/Weapons/Melee/survival_knife.rsi
+    state: icon
+  stackRequirements:
+    Steel: 25
+  outputRecipes:
+  - SurvivalKnife
+  - Sledgehammer
+  - Katana

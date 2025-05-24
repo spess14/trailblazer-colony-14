@@ -1,0 +1,29 @@
+- type: entity
+  parent: GrenadeBase
+  id: PipeBombWorkbench
+  name: pipe bomb
+  description: A saboteur's favorite weapon. This bomb was made with better tools, therefore better than the inferior counterpart.
+  components:
+  - type: Sprite
+    sprite: Objects/Weapons/Bombs/pipebomb.rsi
+    layers:
+    - state: base
+      map: ["enum.TriggerVisualLayers.Base"]
+    - state: wires
+  - type: OnUseTimerTrigger # todo: make it activate through welder/lighter/fire instead
+    delay: 5
+    examinable: false
+    initialBeepDelay: 0
+    beepSound: /Audio/Effects/lightburn.ogg
+  - type: RandomTimerTrigger
+    min: 1
+    max: 10
+  - type: ExplodeOnTrigger
+  - type: Explosive # Weak explosion in a very small radius. Doesn't break underplating. # made weaker, see _tc14/ for default version
+    explosionType: Default
+    totalIntensity: 25
+    intensitySlope: 5
+    maxIntensity: 6
+    canCreateVacuum: false
+  - type: Appearance
+  - type: TimerTriggerVisuals

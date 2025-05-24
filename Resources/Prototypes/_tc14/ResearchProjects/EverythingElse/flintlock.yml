@@ -1,0 +1,17 @@
+- type: bluebenchResearch
+  id: FlintlockResearch
+  name: Flintlock
+  description: "It's no good rifle, but still a ranged gun.\nFunnily enough, it fires .60 anti-materiel."
+  requiredResearch:
+  - MeleeWeaponsResearch
+  - GunpowderResearch
+  icon:
+    sprite: Objects/Weapons/Guns/Snipers/flintlock.rsi
+    state: base
+  stackRequirements:
+    Gunpowder: 30
+    Steel: 60
+    WoodPlank: 60
+  outputRecipes:
+  - WeaponPistolFlintlock
+  - CartridgeAntiMateriel

@@ -1,0 +1,8 @@
+- type: material
+  id: RawSulfur
+  stackEntity: SulfurOre1
+  name: materials-raw-sulfur
+  unit: materials-unit-chunk
+  icon: { sprite: Objects/Materials/ore.rsi, state: sulfur }
+  color: "#FFD700"
+  price: 0.2

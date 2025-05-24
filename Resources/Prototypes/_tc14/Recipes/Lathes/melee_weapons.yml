@@ -1,0 +1,22 @@
+- type: latheRecipe
+  id: SurvivalKnife
+  result: SurvivalKnife
+  completetime: 3
+  materials:
+    Steel: 400
+
+- type: latheRecipe
+  id: Sledgehammer
+  result: Sledgehammer
+  completetime: 3
+  materials:
+    Steel: 1500
+    Plasteel: 300
+
+- type: latheRecipe
+  id: Katana
+  result: Katana
+  completetime: 3
+  materials:
+    Steel: 500
+    Plasteel: 800

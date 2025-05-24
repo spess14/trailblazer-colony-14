@@ -1,0 +1,32 @@
+- type: entity
+  parent: OreBase
+  id: SulfurOre
+  name: sulfur ore
+  suffix: Full
+  components:
+  - type: Stack
+    stackType: SulfurOre
+  - type: Sprite
+    state: sulfur
+  - type: Material
+  - type: PhysicalComposition
+    materialComposition:
+      RawSulfur: 100
+  - type: Extractable
+    grindableSolutionName: sulfurore
+  - type: SolutionContainerManager
+    solutions:
+      sulfurore:
+        reagents:
+        - ReagentId: Sulfur
+          Quantity: 10
+  - type: Item
+    heldPrefix: gold
+
+- type: entity
+  parent: SulfurOre
+  id: SulfurOre1
+  suffix: Single
+  components:
+  - type: Stack
+    count: 1
