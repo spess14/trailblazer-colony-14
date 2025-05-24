@@ -26,7 +26,7 @@
   oreEntity: GoldOre1
   minOreYield: 1
   maxOreYield: 3
-
+  
 - type: ore
   id: OreSilver
   oreEntity: SilverOre1

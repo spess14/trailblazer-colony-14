@@ -1,0 +1,7 @@
+- type: oreDunGen
+  id: OreSulfur
+  replacement: AsteroidRock
+  entity: AsteroidRockSulfur
+  count: 4
+  minGroupSize: 4
+  maxGroupSize: 6

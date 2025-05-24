@@ -3,13 +3,13 @@
   result: StonePickaxeWorkbench
   completetime: 8
   materials:
-    WoodPlank: 2
-    BrickStone: 3
+    Wood: 200
+    BrickStone: 300
 
 - type: latheRecipe
   id: StoneShovelWorkbench
   result: StoneShovelWorkbench
   completetime: 8
   materials:
-    WoodPlank: 3
-    BrickStone: 2
+    Wood: 300
+    BrickStone: 200

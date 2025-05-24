@@ -30,8 +30,9 @@
         doAfter: 0.5
     - to: mortar
       steps:
-    - material: BrickStone
-      amount: 1
+      - material: BrickStone
+        amount: 1
+        doAfter: 2
   - node: chisel
     entity: Chisel
   - node: shovel

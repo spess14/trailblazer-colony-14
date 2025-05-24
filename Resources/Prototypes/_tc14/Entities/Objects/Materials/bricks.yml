@@ -47,6 +47,9 @@
   - type: Item
     heldPrefix: brick
   - type: Appearance
+  - type: PhysicalComposition
+    materialComposition:
+      BrickStone: 100
 
 - type: entity
   parent: BrickStone
@@ -61,3 +64,10 @@
   - type: Construction
     graph: Rock
     node: brick
+
+- type: material
+  id: BrickStone
+  stackEntity: BrickStone1
+  name: materials-brick
+  icon: { sprite: Objects/Materials/bricks.rsi, state: brick }
+  price: 0.15 # $15 for 1 unit

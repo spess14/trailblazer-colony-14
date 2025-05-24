@@ -1,0 +1,6 @@
+- type: stack
+  id: SulfurOre
+  name: sulfur ore
+  icon: { sprite: /Textures/Objects/Materials/ore.rsi, state: gold }
+  spawn: SulfurOre1
+  maxCount: 30
