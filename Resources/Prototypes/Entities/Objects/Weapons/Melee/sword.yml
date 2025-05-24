@@ -61,9 +61,10 @@
   - type: Sprite
     sprite: Objects/Weapons/Melee/katana.rsi
   - type: MeleeWeapon
+    attackRate: 0.8
     damage:
       types:
-        Slash: 15
+        Slash: 12
     soundHit:
         path: /Audio/Weapons/bladeslice.ogg
   - type: Item

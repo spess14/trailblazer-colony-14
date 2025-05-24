@@ -11,16 +11,17 @@
     wideAnimationRotation: -135
     damage:
       types:
-        Blunt: 10
-        Structural: 10
+        Blunt: 17  # +7 damage increase due to 0.3 attack rate
+        Structural: 17 # +7 damage increase due to 0.3 attack rate
     soundHit:
       collection: MetalThud
+      attackRate: 0.3
   - type: Wieldable
   - type: IncreaseDamageOnWield
     damage:
       types:
-        Blunt: 10
-        Structural: 10
+        Blunt: 17 # +7 damage increase due to 0.3 attack rate
+        Structural: 51 # here's johnny      # +21 damage increase due to 0.3 attack rate
   - type: Item
     size: Large
 

@@ -1,0 +1,21 @@
+- type: bluebenchResearch
+  id: EngineeringEssentialsResearch
+  name: Engineering Essentials
+  description: The stuff an aspiring engineer would need. Electronics not included.
+  requiredResearch:
+  - MetalworksResearch
+  icon:
+    sprite: Interface/Misc/job_icons.rsi
+    state: StationEngineer
+  stackRequirements:
+    SulfurOre: 20
+  outputRecipes:
+  - Wirecutter
+  - Screwdriver
+  - Welder
+  - Wrench
+  - CableStack
+  - CableMVStack
+  - CableHVStack
+  - CrowbarGreen
+  - UtilityBelt
