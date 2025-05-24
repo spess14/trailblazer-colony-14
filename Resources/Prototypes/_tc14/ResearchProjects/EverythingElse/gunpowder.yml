@@ -1,5 +1,5 @@
 - type: bluebenchResearch
-  id: CommonElectricityResearch
+  id: GunpowderResearch
   name: Gunpowder
   description: This is where the killing begins.
   requiredResearch:
