@@ -33,6 +33,18 @@
     - RollerBedsStatic
     - LightsStatic
     - ServiceStatic
+    - ClothingCivilian
+    - ClothingCargo
+    - ClothingCommand
+    - ClothingEngineering
+    - ClothingMedical
+    - ClothingScience
+    - ClothingSecurity
+    - ClothingService
+    - ClothingSyndie
+    - WinterCoats
+    - Ties
+    - Scarves
   - type: BlueprintReceiver
     whitelist:
       tags:
