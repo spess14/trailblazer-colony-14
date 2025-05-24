@@ -1,0 +1,15 @@
+- type: bluebenchResearch
+  id: BasicArmorResearch
+  name: Basic Armor
+  description: "Basically, protects you from stuff."
+  requiredResearch:
+  - ComplexClothingResearch
+  icon:
+    sprite: Clothing/OuterClothing/Armor/security.rsi
+    state: icon
+  stackRequirements:
+    Cloth: 30
+    Steel: 90
+  outputRecipes:
+  - ClothingOuterArmorBase
+  - ClothingHeadHelmetBasic

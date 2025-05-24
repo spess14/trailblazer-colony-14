@@ -1,0 +1,16 @@
+- type: bluebenchResearch
+  id: BasicArmorResearch
+  name: Advanced Armor
+  description: "This will be the solution to every armor problem."
+  requiredResearch:
+  - BasicArmorResearch
+  icon:
+    sprite: Clothing/OuterClothing/Armor/heavy.rsi
+    state: icon
+  stackRequirements:
+    Cloth: 60
+    Steel: 120
+    Plasteel: 90
+  outputRecipes:
+  - ClothingOuterArmorBase
+  - ClothingHeadHelmetBasic
