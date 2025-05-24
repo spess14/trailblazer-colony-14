@@ -488,6 +488,7 @@ public sealed partial class ShuttleSystem
         _physics.SetLinearDamping(uid, body, entity.Comp2.LinearDamping);
         _physics.SetAngularDamping(uid, body, entity.Comp2.AngularDamping);
 
+
         var target = entity.Comp1.TargetCoordinates;
 
         MapId mapId;
@@ -520,14 +521,14 @@ public sealed partial class ShuttleSystem
             else
             {
                 FTLDock((uid, xform), config);
-                // Moffstation - Start - Mark each dock as unqueued
+            }
+            // Moffstation - Start - Mark each dock as unqueued
             foreach (var dock in config.Docks)
             {
                 dock.DockA.Queued = false;
                 dock.DockB.Queued = false;
             }
-                // Moffstation - End
-            }
+            // Moffstation - End
 
             mapId = mapCoordinates.MapId;
         }

@@ -69,6 +69,7 @@
         time: 4
         type: Add
         refresh: false
+      # Moffstation start - Make ChloralHydrate sleep
       - !type:GenericStatusEffect
         conditions:
         - !type:ReagentThreshold
@@ -78,7 +79,7 @@
         component: ForcedSleeping
         refresh: false
         type: Add
-
+      # Moffstation End - Make ChloralHydrate sleep
 - type: reagent
   id: GastroToxin
   name: reagent-name-gastrotoxin
