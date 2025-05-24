@@ -5,7 +5,7 @@
   requiredResearch:
   - ComplexClothingResearch
   icon:
-    sprite: Clothing/Uniforms/Jumpsuit/ancient.rsi
+    sprite: Clothing/OuterClothing/WinterCoats/coat.rsi
     state: icon
   stackRequirements:
     Cloth: 10
