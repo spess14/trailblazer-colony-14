@@ -1,6 +1,6 @@
 - type: bluebenchResearch
   id: ComplexClothingResearch
-  name: Melee Weapons
+  name: Clothing
   description: "The stuff to keep you cozy."
   icon:
     sprite: Clothing/Uniforms/Jumpsuit/ancient.rsi
