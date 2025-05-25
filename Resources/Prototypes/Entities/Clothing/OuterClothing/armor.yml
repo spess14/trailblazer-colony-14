@@ -89,18 +89,6 @@
       - Energy
     reflectingInHands: false
 
-#Detective's vest
-- type: entity
-  parent: [ClothingOuterArmorBase, BaseSecurityContraband]
-  id: ClothingOuterVestDetective
-  name: detective's vest
-  description: A hard-boiled private investigator's armored vest.
-  components:
-  - type: Sprite
-    sprite: Clothing/OuterClothing/Vests/detvest.rsi
-  - type: Clothing
-    sprite: Clothing/OuterClothing/Vests/detvest.rsi
-
 - type: entity
   parent: [ClothingOuterBaseLarge, AllowSuitStorageClothing]
   id: ClothingOuterArmorBaseCarapace

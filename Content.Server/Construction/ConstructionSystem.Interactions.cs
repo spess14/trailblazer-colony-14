@@ -280,10 +280,6 @@ namespace Content.Server.Construction
                     if(HasComp<UnremoveableComponent>(insert) && (!TryComp<StackComponent>(insert, out var comp) || !comp.Lingering))
                         return HandleResult.False;
 
-                    // Unremovable items can't be inserted, unless they are a lingering stack
-                    if(HasComp<UnremoveableComponent>(insert) && (!TryComp<StackComponent>(insert, out var comp) || !comp.Lingering))
-                        return HandleResult.False;
-
                     // If we're only testing whether this step would be handled by the given event, then we're done.
                     if (validation)
                         return HandleResult.Validated;

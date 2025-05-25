@@ -514,14 +514,14 @@ public sealed partial class ShuttleSystem
             else
             {
                 FTLDock((uid, xform), config);
+                // Moffstation - Start - Mark each dock as unqueued
+                foreach (var dock in config.Docks)
+                {
+                    dock.DockA.Queued = false;
+                    dock.DockB.Queued = false;
+                }
+                // Moffstation - End
             }
-            // Moffstation - Start - Mark each dock as unqueued
-            foreach (var dock in config.Docks)
-            {
-                dock.DockA.Queued = false;
-                dock.DockB.Queued = false;
-            }
-            // Moffstation - End
 
             mapId = mapCoordinates.MapId;
         }

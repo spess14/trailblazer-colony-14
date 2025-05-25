@@ -50,13 +50,17 @@ public sealed class HumanoidAppearanceSystem : SharedHumanoidAppearanceSystem
         ApplyMarkingSet(entity);
 
         // Moffstation Start - CD Height
+        if (!TryComp<HumanoidAppearanceComponent>(entity, out var component) ||
+            !TryComp<SpriteComponent>(entity, out var sprite))
+            return;
+
         var speciesPrototype = _prototypeManager.Index(component.Species);
         var height = Math.Clamp(MathF.Round(component.Height, 2), speciesPrototype.MinHeight, speciesPrototype.MaxHeight); // should NOT be locked, at all
 
-        sprite.Scale = new Vector2(
+        _sprite.SetScale((entity,sprite), new Vector2(
             (speciesPrototype.ScaleHeight ? height : 1f) * speciesPrototype.ImplicitSpriteScale.X,
             height * speciesPrototype.ImplicitSpriteScale.Y
-        );
+        ));
         // Moffstation End
 
         sprite[sprite.LayerMapReserveBlank(HumanoidVisualLayers.Eyes)].Color = component.EyeColor;
