@@ -160,7 +160,7 @@
   - type: Clothing
     sprite: Objects/Weapons/Guns/Revolvers/pirate_revolver.rsi
   - type: Gun
-    fireRate: 1
+    fireRate: 0.8
   - type: ContainerContainer
     containers:
       revolver-ammo: !type:Container

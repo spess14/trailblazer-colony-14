@@ -212,8 +212,8 @@
     sprite: Clothing/OuterClothing/Armor/heavy.rsi
   - type: Clothing
     sprite: Clothing/OuterClothing/Armor/heavy.rsi
-    equipDelay: 2
-    unequipDelay: 2
+    equipDelay: 4
+    unequipDelay: 4
   - type: Armor
     modifiers:
       coefficients:
@@ -227,13 +227,8 @@
   - type: ProtectedFromStepTriggers
     slots: WITHOUT_POCKET
   - type: ClothingSpeedModifier
-    walkModifier: 0.65
-    sprintModifier: 0.65
-  - type: FootstepModifier
-    footstepSoundCollection:
-      collection: FootstepHeavy
-      params:
-        variation: 0.07
+    walkModifier: 0.4
+    sprintModifier: 0.4
 
 - type: entity
   parent: ClothingOuterArmorHeavy

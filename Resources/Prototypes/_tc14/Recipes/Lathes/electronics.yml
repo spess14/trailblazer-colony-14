@@ -2,3 +2,13 @@
   parent: BaseCircuitboardRecipe
   id: PortableGeneratorCPacmanMachineCircuitboard
   result: PortableGeneratorCPacmanMachineCircuitboard
+
+- type: latheRecipe
+  parent: BaseSilverCircuitboardRecipe
+  id: ResearchComputerCircuitboard
+  result: ResearchComputerCircuitboard
+
+- type: latheRecipe
+  parent: BaseGoldCircuitboardRecipe
+  id: ResearchAndDevelopmentServerMachineCircuitboard
+  result: ResearchAndDevelopmentServerMachineCircuitboard

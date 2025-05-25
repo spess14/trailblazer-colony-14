@@ -1,0 +1,15 @@
+- type: bluebenchResearch
+  id: LasersResearch
+  name: Lasers
+  description: "Ash your enemy with these guns."
+  requiredResearch:
+  - PowercellResearch
+  icon:
+    sprite: Objects/Weapons/Guns/Battery/makeshift.rsi
+    state: icon
+  stackRequirements:
+    Gunpowder: 180
+    Steel: 500
+  outputRecipes:
+  - WeaponTeslaGun
+  - WeaponMakeshiftLaser
