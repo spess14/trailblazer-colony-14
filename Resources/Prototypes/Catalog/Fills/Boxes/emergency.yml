@@ -240,11 +240,11 @@
   components:
   - type: StorageFill
     contents:
-    - id: ClothingMaskBreath
+    - id: ClothingMaskMime # Moffstation - (Survival Box Improvements)
     - id: EmergencyOxygenTankFilled
     - id: EmergencyMedipen
     - id: Flare
-    - id: FoodBreadBaguetteCotton
+    - id: FoodSnackNutribrick # Moffstation - (Survival Box Improvements)
     - id: DrinkWaterBottleFull
 
 - type: entity
