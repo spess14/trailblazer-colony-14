@@ -38,13 +38,14 @@
     Plasteel: 200
     ReinforcedGlass: 300
 
-- type: latheRecipe
-  id: ClothingOuterArmorReflective
-  result: ClothingOuterArmorReflective
-  completetime: 8
-  materials:
-    Steel: 300
-    ReinforcedGlass: 600
+# - type: latheRecipe
+#   id: ClothingOuterArmorReflective
+#   result: ClothingOuterArmorReflective
+#   completetime: 8
+#   materials:
+#     Steel: 300
+#     ReinforcedGlass: 600
+# apparently its already in the game
 
 - type: latheRecipe
   id: ClothingOuterArmorReflective
@@ -59,8 +60,8 @@
   result: ClothingOuterArmorHeavy
   completetime: 8
   materials:
-    Steel: 1000
-    Plasteel: 1000
+    Steel: 2000
+    Plasteel: 2000
 
 - type: latheRecipe
   id: ClothingOuterSuitAtmosFire

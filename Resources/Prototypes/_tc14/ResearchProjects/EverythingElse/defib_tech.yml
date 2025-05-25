@@ -1,0 +1,16 @@
+- type: bluebenchResearch
+  id: ResuscitationResearch
+  name: Resuscitation Technology
+  description: Wake the fuck up, samurai.
+  requiredResearch:
+  - PowercellResearch
+  - MedicineResearch
+  icon:
+    sprite: Objects/Specific/Medical/defib.rsi
+    state: icon
+  stackRequirements:
+    Steel: 60
+    Glass: 20
+    Silver: 10
+  outputRecipes:
+  - Defibrillator

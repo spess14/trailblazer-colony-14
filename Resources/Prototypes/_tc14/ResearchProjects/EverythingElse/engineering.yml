@@ -5,8 +5,8 @@
   requiredResearch:
   - MetalworksResearch
   icon:
-    sprite: Interface/Misc/job_icons.rsi
-    state: StationEngineer
+    sprite: Objects/Tools/cable-coils.rsi
+    state: coillv-30
   stackRequirements:
     Steel: 15
   outputRecipes:
@@ -19,3 +19,4 @@
   - CableHVStack
   - CrowbarGreen
   - UtilityBelt
+  - ClothingHeadHatWelding
