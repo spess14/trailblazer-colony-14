@@ -5,21 +5,12 @@ using Robust.Client.UserInterface.Controls;
 using Robust.Client.UserInterface.RichText;
 using Robust.Shared.Input;
 using Robust.Shared.Utility;
-<<<<<<< HEAD
-using Content.Client.UserInterface.ControlExtensions;
-=======
->>>>>>> 494861dc3d938b752567bead5bf40132fba03107
 
 namespace Content.Client.Guidebook.RichText;
 
 [UsedImplicitly]
 public sealed class TextLinkTag : IMarkupTag
 {
-<<<<<<< HEAD
-    public static Color LinkColor => Color.CornflowerBlue;
-
-=======
->>>>>>> 494861dc3d938b752567bead5bf40132fba03107
     public string Name => "textlink";
 
     public Control? Control;
@@ -39,11 +30,7 @@ public sealed class TextLinkTag : IMarkupTag
         label.Text = text;
 
         label.MouseFilter = Control.MouseFilterMode.Stop;
-<<<<<<< HEAD
-        label.FontColorOverride = LinkColor;
-=======
         label.FontColorOverride = Color.CornflowerBlue;
->>>>>>> 494861dc3d938b752567bead5bf40132fba03107
         label.DefaultCursorShape = Control.CursorShape.Hand;
 
         label.OnMouseEntered += _ => label.FontColorOverride = Color.LightSkyBlue;
@@ -63,12 +50,6 @@ public sealed class TextLinkTag : IMarkupTag
         if (Control == null)
             return;
 
-<<<<<<< HEAD
-        if (Control.TryGetParentHandler<ILinkClickHandler>(out var handler))
-            handler.HandleClick(link);
-        else
-            Logger.Warning("Warning! No valid ILinkClickHandler found.");
-=======
         var current = Control;
         while (current != null)
         {
@@ -80,7 +61,6 @@ public sealed class TextLinkTag : IMarkupTag
             return;
         }
         Logger.Warning($"Warning! No valid ILinkClickHandler found.");
->>>>>>> 494861dc3d938b752567bead5bf40132fba03107
     }
 }
 
