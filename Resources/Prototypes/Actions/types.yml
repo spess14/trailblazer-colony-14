@@ -398,15 +398,3 @@
       state: icon-siren
     useDelay: 1
     itemIconStyle: BigAction
-
-- type: entity
-  id: ActionChameleonController
-  name: Control clothing
-  description: Change your entire outfit fast!
-  components:
-  - type: Action
-    priority: -20
-    icon: { sprite: Actions/Implants/implants.rsi, state: chameleon }
-    itemIconStyle: BigAction
-  - type: InstantAction
-    event: !type:ChameleonControllerOpenMenuEvent

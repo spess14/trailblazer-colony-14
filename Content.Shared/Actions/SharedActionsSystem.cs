@@ -58,7 +58,6 @@ public abstract class SharedActionsSystem : EntitySystem
         SubscribeLocalEvent<ActionsComponent, ComponentShutdown>(OnShutdown);
         SubscribeLocalEvent<ActionsComponent, ComponentGetState>(OnGetState);
 
-        SubscribeLocalEvent<ActionComponent, ActionValidateEvent>(OnValidate);
         SubscribeLocalEvent<InstantActionComponent, ActionValidateEvent>(OnInstantValidate);
         SubscribeLocalEvent<EntityTargetActionComponent, ActionValidateEvent>(OnEntityValidate);
         SubscribeLocalEvent<WorldTargetActionComponent, ActionValidateEvent>(OnWorldValidate);
@@ -317,9 +316,19 @@ public abstract class SharedActionsSystem : EntitySystem
 
     private void OnValidate(Entity<ActionComponent> ent, ref ActionValidateEvent args)
     {
-        if ((ent.Comp.CheckConsciousness && !_actionBlocker.CanConsciouslyPerformAction(args.User))
-            || (ent.Comp.CheckCanInteract && !_actionBlocker.CanInteract(args.User, null)))
+        if (ent.Comp.CheckConsciousness && !_actionBlocker.CanConsciouslyPerformAction(args.User))
+        {
             args.Invalid = true;
+            return;
+        }
+
+        if (ent.Comp.CheckCanInteract && !_actionBlocker.CanInteract(args.User, null))
+        {
+            args.Invalid = true;
+            return;
+        }
+
+        // Event is not set here, only below
     }
 
     private void OnInstantValidate(Entity<InstantActionComponent> ent, ref ActionValidateEvent args)
@@ -348,9 +357,7 @@ public abstract class SharedActionsSystem : EntitySystem
         var target = GetEntity(netTarget);
 
         var targetWorldPos = _transform.GetWorldPosition(target);
-
-        if (ent.Comp.RotateOnUse)
-            _rotateToFace.TryFaceCoordinates(user, targetWorldPos);
+        _rotateToFace.TryFaceCoordinates(user, targetWorldPos);
 
         if (!ValidateEntityTarget(user, target, ent))
             return;
@@ -371,9 +378,7 @@ public abstract class SharedActionsSystem : EntitySystem
 
         var user = args.User;
         var target = GetCoordinates(netTarget);
-
-        if (ent.Comp.RotateOnUse)
-            _rotateToFace.TryFaceCoordinates(user, _transform.ToMapCoordinates(target).Position);
+        _rotateToFace.TryFaceCoordinates(user, target.ToMapPos(EntityManager, _transform));
 
         if (!ValidateWorldTarget(user, target, ent))
             return;
