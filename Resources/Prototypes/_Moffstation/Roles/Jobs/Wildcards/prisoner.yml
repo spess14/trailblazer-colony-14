@@ -1,0 +1,7 @@
+- type: chameleonOutfit
+  id: PrisonOutfit
+  name: job-name-prisoner
+  startingGear: PrisonerGear
+  icon: "JobIconPrisoner"
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitPrisoner
