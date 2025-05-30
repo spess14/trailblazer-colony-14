@@ -39,13 +39,13 @@
     noRot: true
     layers:
       - state: peedeeavatar
-        map: [ "enum.ToggleVisuals.Layer" ]
+        map: [ "enum.ToggleableVisuals.Layer" ]
         shader: unshaded
   - type: Appearance
   - type: GenericVisualizer
     visuals:
-      enum.ToggleVisuals.Toggled:
-        enum.ToggleVisuals.Layer:
+      enum.ToggleableVisuals.Toggled:
+        enum.ToggleableVisuals.Layer:
           True: { state: peedeeavatar-dance }
           False: { state: peedeeavatar }
   - type: ItemToggle
