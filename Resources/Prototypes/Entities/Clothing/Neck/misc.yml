@@ -11,7 +11,7 @@
       map: [ "enum.ToggleableVisuals.Layer" ]
   - type: Clothing
     equippedPrefix: off
-    sprite: _Moffstation/Clothing/Neck/Misc/headphones.rsi
+    sprite: Clothing/Neck/Misc/headphones.rsi
   - type: ToggleableVisuals
     spriteLayer: enum.ToggleableVisuals.Layer
     clothingVisuals:
