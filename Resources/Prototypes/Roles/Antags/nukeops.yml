@@ -108,15 +108,6 @@
     head: ClothingHeadHelmetHardsuitSyndieCommander
     neck: ClothingNeckScarfStripedSyndieGreen
 
-- type: chameleonOutfit
-  id: NukeopsCommanderOutfit
-  name: roles-antag-nuclear-operative-commander-name
-  startingGear: SyndicateCommanderGearFull
-  icon: "JobIconSyndicate"
-  equipment:
-    head: ClothingHeadHelmetHardsuitSyndieCommander
-    neck: ClothingNeckScarfStripedSyndieGreen
-
 #Nuclear Operative Medic Gear
 - type: startingGear
   id: SyndicateOperativeMedicFull
