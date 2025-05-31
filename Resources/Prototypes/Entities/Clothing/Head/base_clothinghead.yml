@@ -63,7 +63,6 @@
     heldPrefix: off
     size: Normal
   - type: ToggleableLightVisuals
-  - type: ItemTogglePointLight # Moffstation
   - type: PointLight
     enabled: false
     radius: 3
@@ -209,7 +208,6 @@
   - type: Clothing
     equippedPrefix: off
   - type: ToggleableLightVisuals
-  - type: ItemTogglePointLight # Moffstation
   - type: PointLight
     enabled: false
     radius: 3
