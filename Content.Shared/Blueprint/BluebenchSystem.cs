@@ -196,9 +196,10 @@ public sealed class BluebenchSystem : EntitySystem
         }
 
         var tagComp = AddComp<TagComponent>(uid);
-        foreach (var tag in project.OutputTags) // afaik there's no prettier way to do this, + it all comes down to this. sorry
+
+        foreach (var tag in project.OutputTags) // afaik there's   no prettier way to do this, + it all comes down to this. sorry
         {
-            tagComp.Tags.Add(tag);
+            _tagSystem.AddTag(uid, tag);
         }
     }
 
