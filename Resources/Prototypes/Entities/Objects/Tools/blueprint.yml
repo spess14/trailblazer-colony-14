@@ -13,9 +13,6 @@
     size: Normal
   - type: StaticPrice
     price: 1000
-  - type: Tag
-    tags:
-    - BlueprintAutolathe
 
 - type: entity
   parent: BaseBlueprint
@@ -25,6 +22,9 @@
   - type: Blueprint
     providedRecipes:
     - Fulton
+  - type: Tag
+    tags:
+    - BlueprintAutolathe
 
 - type: entity
   parent: BaseBlueprint
@@ -34,6 +34,9 @@
   - type: Blueprint
     providedRecipes:
     - SeismicCharge
+  - type: Tag
+    tags:
+    - BlueprintAutolathe
 
 - type: entity
   parent: BaseBlueprint
@@ -44,3 +47,6 @@
     providedRecipes:
     - DoubleEmergencyOxygenTank
     - DoubleEmergencyNitrogenTank
+  - type: Tag
+    tags:
+    - BlueprintAutolathe
