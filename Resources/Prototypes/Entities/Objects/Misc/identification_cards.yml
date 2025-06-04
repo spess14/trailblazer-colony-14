@@ -685,8 +685,7 @@
     - state: pirate
   - type: Access
     tags:
-    - NuclearOperative
-    - SyndicateAgent
+    - Pirate  # Moffstation - Created pirate access
   - type: NanoChatCard # CD
     listNumber: false
 
@@ -908,6 +907,7 @@
     - SyndicateAgent
     - Wizard
     - Xenoborg
+    - Pirate  # Moffstation - Pirate access
   - type: Tag #  Ignore Chameleon tags
     tags:
     - DoorBumpOpener
