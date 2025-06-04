@@ -38,13 +38,13 @@
     sprite: _Moffstation/PersonalItems/Items/Chartman95/Peedee/peedeeavatar.rsi
     noRot: true
     layers:
-      - state: peedeeavatar
-        map: [ "enum.ToggleableVisuals.Layer" ]
-        shader: unshaded
+    - state: peedeeavatar
+      map: [ "enum.ToggleableVisuals.Layer" ]
+      shader: unshaded
   - type: Appearance
   - type: GenericVisualizer
     visuals:
-      enum.ToggleableVisuals.Toggled:
+      enum.ToggleableVisuals.Enabled:
         enum.ToggleableVisuals.Layer:
           True: { state: peedeeavatar-dance }
           False: { state: peedeeavatar }
