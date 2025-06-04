@@ -12,8 +12,8 @@
   - type: Clothing
     equippedPrefix: off
     sprite: _Moffstation/Clothing/Neck/Misc/headphones.rsi
-  - type: ToggleableLightVisuals
-    spriteLayer: enum.ToggleVisuals.Layer
+  - type: ToggleableVisuals
+    spriteLayer: enum.ToggleableVisuals.Layer
     clothingVisuals:
       neck:
       - state: on-equipped-NECK
