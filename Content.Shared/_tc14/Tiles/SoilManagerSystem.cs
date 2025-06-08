@@ -1,6 +1,4 @@
-using System.Linq;
 using Content.Shared.Burial.Components;
-using Content.Shared.Coordinates;
 using Content.Shared.DoAfter;
 using Content.Shared.Interaction;
 using Content.Shared.Maps;
@@ -11,12 +9,12 @@ using Robust.Shared.Physics;
 using Robust.Shared.Physics.Components;
 using Robust.Shared.Physics.Systems;
 
-namespace Content.Shared.Tiles;
+namespace Content.Shared._tc14.Tiles;
 
 /// <summary>
 ///     Handles digging up soil.
 /// </summary>
-public sealed class SoilDiggingSystem : EntitySystem
+public sealed class SoilManagerSystem : EntitySystem
 {
     [Dependency] private readonly SharedTransformSystem _transform = default!;
     [Dependency] private readonly SharedPhysicsSystem _physics = default!;
@@ -31,15 +29,16 @@ public sealed class SoilDiggingSystem : EntitySystem
         SubscribeLocalEvent<ShovelComponent, AfterInteractEvent>(OnAfterInteract);
     }
 
-    private void OnAfterInteract(Entity<ShovelComponent> ent, ref AfterInteractEvent args)
+    public bool GetInteractedWithTileDef(ref AfterInteractEvent args, out ContentTileDefinition? tileDef)
     {
+        tileDef = null;
         if (!args.CanReach || args.Handled)
-            return;
+            return false;
 
         var location = args.ClickLocation.AlignWithClosestGridTile();
         var locationMap = location.ToMap(EntityManager, _transform);
         if (locationMap.MapId == MapId.Nullspace)
-            return;
+            return false;
 
         var physicQuery = GetEntityQuery<PhysicsComponent>();
         var transformQuery = GetEntityQuery<TransformComponent>();
@@ -48,21 +47,26 @@ public sealed class SoilDiggingSystem : EntitySystem
 
         var userPos = transformQuery.GetComponent(args.User).Coordinates.ToMapPos(EntityManager, _transform);
         var dir = userPos - map.Position;
-        var canAccessCenter = false;
         if (dir.LengthSquared() > 0.01)
         {
             var ray = new CollisionRay(map.Position, dir.Normalized(), (int) CollisionGroup.Impassable);
             var results = _physics.IntersectRay(locationMap.MapId, ray, dir.Length(), returnOnFirstHit: true);
-            canAccessCenter = !results.Any();
         }
 
         if (!TryComp<MapGridComponent>(location.EntityId, out var mapGrid))
-            return;
+            return false;
         var gridUid = location.EntityId;
         var tile = _map.GetTileRef(gridUid, mapGrid, location);
-        var tileDef = (ContentTileDefinition) _tileDefinitionManager[tile.Tile.TypeId];
+        tileDef = (ContentTileDefinition) _tileDefinitionManager[tile.Tile.TypeId];
+        return true;
+    }
 
-        if (tileDef.SoilPrototypeName is null)
+    private void OnAfterInteract(Entity<ShovelComponent> ent, ref AfterInteractEvent args)
+    {
+        if (!GetInteractedWithTileDef(ref args, out var tileDef))
+            return;
+
+        if (tileDef!.SoilPrototypeName is null)
             return;
 
         var doAfterArgs = new DoAfterArgs(EntityManager,
