@@ -484,15 +484,16 @@ namespace Content.Server.Cargo.Systems
 
             // Moffstation - Start - Railguard since it can cause errors with pirates
             if (!TryComp<StationCargoOrderDatabaseComponent>(station, out var orderDatabase))
-                return;
+                return amount;
 
             if (!orderDatabase.Orders.ContainsKey(account))
-                return 0;
+                return amount;
             // Moffstation - End
+
             if (!TryComp<StationBankAccountComponent>(station, out var bank))
                 return amount;
 
-            foreach (var order in component.Orders[account])
+            foreach (var order in station.Comp.Orders[account])
             {
                 if (!order.Approved)
                     continue;
