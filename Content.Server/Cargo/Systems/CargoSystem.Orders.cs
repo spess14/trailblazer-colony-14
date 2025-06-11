@@ -421,9 +421,10 @@ namespace Content.Server.Cargo.Systems
             if (!TryComp<StationCargoOrderDatabaseComponent>(station, out var orderDatabase))
                 return;
 
-            // Moffstation - Railguard since it can cause errors with pirates
+            // Moffstation - Start - Railguard since it can cause errors with pirates
             if (!orderDatabase.Orders.ContainsKey(console.Account))
                 return;
+            // Moffstation - End
 
             if (_uiSystem.HasUi(consoleUid, CargoConsoleUiKey.Orders))
             {
@@ -481,9 +482,15 @@ namespace Content.Server.Cargo.Systems
         {
             var amount = 0;
 
-            // Moffstation - Railguard since it can cause errors with pirates
-            if (!component.Orders.ContainsKey(account))
+            // Moffstation - Start - Railguard since it can cause errors with pirates
+            if (!TryComp<StationCargoOrderDatabaseComponent>(station, out var orderDatabase))
+                return;
+
+            if (!orderDatabase.Orders.ContainsKey(account))
                 return 0;
+            // Moffstation - End
+            if (!TryComp<StationBankAccountComponent>(station, out var bank))
+                return amount;
 
             foreach (var order in component.Orders[account])
             {
