@@ -17,7 +17,6 @@ namespace Content.Shared._tc14.Tiles;
 public sealed class SoilManagerSystem : EntitySystem
 {
     [Dependency] private readonly SharedTransformSystem _transform = default!;
-    [Dependency] private readonly SharedPhysicsSystem _physics = default!;
     [Dependency] private readonly SharedMapSystem _map = default!;
     [Dependency] private readonly ITileDefinitionManager _tileDefinitionManager = default!;
     [Dependency] private readonly SharedDoAfterSystem _doAfterSystem = default!;
@@ -26,12 +25,12 @@ public sealed class SoilManagerSystem : EntitySystem
     public override void Initialize()
     {
         base.Initialize();
-        SubscribeLocalEvent<ShovelComponent, AfterInteractEvent>(OnAfterInteract);
+        SubscribeLocalEvent<ShovelComponent, AfterInteractEvent>(OnShovelAfterInteract);
     }
 
-    public bool GetInteractedWithTileDef(ref AfterInteractEvent args, out ContentTileDefinition? tileDef)
+    public bool GetInteractedWithTileDef(ref AfterInteractEvent args, out TileRef tileRef)
     {
-        tileDef = null;
+        tileRef = TileRef.Zero;
         if (!args.CanReach || args.Handled)
             return false;
 
@@ -40,31 +39,19 @@ public sealed class SoilManagerSystem : EntitySystem
         if (locationMap.MapId == MapId.Nullspace)
             return false;
 
-        var physicQuery = GetEntityQuery<PhysicsComponent>();
-        var transformQuery = GetEntityQuery<TransformComponent>();
-
-        var map = location.ToMap(EntityManager, _transform);
-
-        var userPos = transformQuery.GetComponent(args.User).Coordinates.ToMapPos(EntityManager, _transform);
-        var dir = userPos - map.Position;
-        if (dir.LengthSquared() > 0.01)
-        {
-            var ray = new CollisionRay(map.Position, dir.Normalized(), (int) CollisionGroup.Impassable);
-            var results = _physics.IntersectRay(locationMap.MapId, ray, dir.Length(), returnOnFirstHit: true);
-        }
-
         if (!TryComp<MapGridComponent>(location.EntityId, out var mapGrid))
             return false;
         var gridUid = location.EntityId;
-        var tile = _map.GetTileRef(gridUid, mapGrid, location);
-        tileDef = (ContentTileDefinition) _tileDefinitionManager[tile.Tile.TypeId];
+        tileRef = _map.GetTileRef(gridUid, mapGrid, location);
         return true;
     }
 
-    private void OnAfterInteract(Entity<ShovelComponent> ent, ref AfterInteractEvent args)
+    private void OnShovelAfterInteract(Entity<ShovelComponent> ent, ref AfterInteractEvent args)
     {
-        if (!GetInteractedWithTileDef(ref args, out var tileDef))
+        if (!GetInteractedWithTileDef(ref args, out var tileRef))
             return;
+
+        var tileDef = (ContentTileDefinition)_tileDefinitionManager[tileRef.Tile.TypeId];
 
         if (tileDef!.SoilPrototypeName is null)
             return;
