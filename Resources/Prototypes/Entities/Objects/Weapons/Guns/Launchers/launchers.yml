@@ -46,7 +46,6 @@
     - 0,0,4,3
   # Moffstation - End
   - type: AmmoCounter
-  - type: GunRequiresWield # Moffstation - Launcher Tweaks
   - type: Gun
     fireRate: 1
     selectedMode: SemiAuto
@@ -90,7 +89,6 @@
   # Moffstation - End
   - type: AmmoCounter
   # Moffstation - Begin (Launcher Tweaks)
-  - type: GunRequiresWield
   - type: Gun
     fireRate: 0.8
   # Moffstation - End
