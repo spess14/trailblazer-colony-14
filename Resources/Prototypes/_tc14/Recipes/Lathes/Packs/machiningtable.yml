@@ -1,0 +1,8 @@
+- type: latheRecipePack
+  id: WeaponCraftingParts
+  recipes:
+  - GenericWeaponPart
+  - WeaponFramePart
+  - EnforcerBarrelPart
+  - EnforcerInternalsPart
+  - EnforcerStockPart
