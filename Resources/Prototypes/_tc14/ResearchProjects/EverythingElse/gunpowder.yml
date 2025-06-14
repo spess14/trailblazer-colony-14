@@ -1,0 +1,14 @@
+- type: bluebenchResearch
+  id: GunpowderResearch
+  name: Gunpowder
+  description: "This is where the killing begins.\nPrerequisite for Flintlock and Basic Explosive Research."
+  requiredResearch:
+  - OreRefineryResearch
+  icon:
+    sprite: Objects/Misc/reagent_fillings.rsi
+    state: powderpile
+    color: darkgray
+  stackRequirements:
+    SulfurOre: 20
+  outputRecipes:
+  - Gunpowder

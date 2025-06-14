@@ -62,6 +62,9 @@
   - type: ExplosionResistance
     damageCoefficient: 0.9
   - type: GroupExamine
+  - type: ClothingSpeedModifier
+    walkModifier: 0.8
+    sprintModifier: 0.8
 
 - type: entity
   parent: ClothingOuterArmorBase
@@ -209,18 +212,23 @@
     sprite: Clothing/OuterClothing/Armor/heavy.rsi
   - type: Clothing
     sprite: Clothing/OuterClothing/Armor/heavy.rsi
+    equipDelay: 4
+    unequipDelay: 4
   - type: Armor
     modifiers:
       coefficients:
-        Blunt: 0.2
-        Slash: 0.2
-        Piercing: 0.2
-        Heat: 0.5
+        Blunt: 0.4
+        Slash: 0.4
+        Piercing: 0.4
+        Heat: 0.6
         Radiation: 0
         Caustic: 0.75
   - type: GroupExamine
   - type: ProtectedFromStepTriggers
     slots: WITHOUT_POCKET
+  - type: ClothingSpeedModifier
+    walkModifier: 0.4
+    sprintModifier: 0.4
 
 - type: entity
   parent: ClothingOuterArmorHeavy

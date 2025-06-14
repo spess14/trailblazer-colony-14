@@ -24,15 +24,6 @@
     idleState: workbench
     materialUseMultiplier: 1.5
     staticPacks:
-    - ToolsWorkbench
-    - PartsStatic
-    - AtmosStatic
-    - CablesStatic
-    - CargoStatic
-    - MaterialsStatic
-    - RollerBedsStatic
-    - LightsStatic
-    - ServiceStatic
     - ClothingCivilian
     - ClothingCargo
     - ClothingCommand
@@ -92,10 +83,9 @@
   components:
   - type: Bluebench
     availablePrototypes:
-    - BasicSecurityResearch
-    - BasicChemistryResearch
-    - CommonElectricityResearch
-    - BasicMedicineResearch
+    - OreRefineryResearch
+    - StoneToolsResearch
+    - EfficientClothProductionResearch
   - type: Appearance
   - type: Fixtures
     fixtures:

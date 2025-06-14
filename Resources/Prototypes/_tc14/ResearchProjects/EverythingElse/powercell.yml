@@ -1,0 +1,16 @@
+- type: bluebenchResearch
+  id: PowercellResearch
+  name: Powercells
+  description: Portable power.
+  requiredResearch:
+  - ElectronicsResearch
+  icon:
+    sprite: Objects/Power/power_cells.rsi
+    state: small
+  stackRequirements:
+    Steel: 20
+    Gold: 5
+  outputRecipes:
+  - PowerCellSmall
+  - CellRechargerCircuitboard
+  - WeaponCapacitorRechargerCircuitboard

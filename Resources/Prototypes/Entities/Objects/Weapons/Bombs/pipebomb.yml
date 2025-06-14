@@ -19,9 +19,9 @@
     min: 1
     max: 10
   - type: ExplodeOnTrigger
-  - type: Explosive # Weak explosion in a very small radius. Doesn't break underplating.
+  - type: Explosive # Weak explosion in a very small radius. Doesn't break underplating. # made weaker, see _tc14/ for default version
     explosionType: Default
-    totalIntensity: 50
+    totalIntensity: 5 # it's shit but still explosive godo
     intensitySlope: 5
     maxIntensity: 6
     canCreateVacuum: false

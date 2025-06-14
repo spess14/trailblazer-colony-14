@@ -1,0 +1,19 @@
+- type: bluebenchResearch
+  id: SemiAutoResearch
+  name: Semiauto Tech
+  description: "Sir, get down."
+  requiredResearch:
+  - FlintlockResearch
+  - RevolverResearch
+  icon:
+    sprite: Objects/Weapons/Guns/Pistols/mk58.rsi
+    state: base
+  stackRequirements:
+    Gunpowder: 30
+    Steel: 80
+  outputRecipes:
+  - WeaponPistolMk58
+  - MagazinePistol
+  - CartridgePistol
+  - MagazinePistolPractice
+  - MagazinePistolEmpty

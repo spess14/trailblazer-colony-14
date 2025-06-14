@@ -1,0 +1,119 @@
+- type: latheRecipe
+  id: ClothingEyesBlindfold
+  result: ClothingEyesBlindfold
+  completetime: 2
+  materials:
+    Cloth: 200
+
+- type: latheRecipe
+  id: ClothingEyesEyepatch
+  result: ClothingEyesEyepatch
+  completetime: 2
+  materials:
+    Cloth: 200
+
+- type: latheRecipe
+  id: ClothingEyesGlassesBase
+  completetime: 2
+  materials:
+    Steel: 50
+    Glass: 100
+
+- type: latheRecipe
+  id: ClothingEyesGlassesGar
+  parent: ClothingEyesGlassesBase
+  result: ClothingEyesGlassesGar
+
+- type: latheRecipe
+  id: ClothingEyesGlassesGarOrange
+  parent: ClothingEyesGlassesBase
+  result: ClothingEyesGlassesGarOrange
+
+- type: latheRecipe
+  id: ClothingEyesGlassesGarGiga
+  parent: ClothingEyesGlassesBase
+  result: ClothingEyesGlassesGarGiga
+
+- type: latheRecipe
+  id: ClothingEyesGlassesJamjar
+  parent: ClothingEyesGlassesBase
+  result: ClothingEyesGlassesJamjar
+
+- type: latheRecipe
+  id: ClothingEyesGlassesOutlawGlasses
+  parent: ClothingEyesGlassesBase
+  result: ClothingEyesGlassesOutlawGlasses
+
+- type: latheRecipe
+  id: ClothingEyesGlassesCheapSunglasses
+  parent: ClothingEyesGlassesBase
+  result: ClothingEyesGlassesCheapSunglasses
+
+- type: latheRecipe
+  id: ClothingEyesGlassesExpensiveBase
+  result: ClothingEyesGlasses
+  completetime: 3
+  materials:
+    Steel: 50
+    ReinforcedGlass: 100
+
+- type: latheRecipe
+  id: ClothingEyesGlassesMercenary
+  parent: ClothingEyesGlassesExpensiveBase
+  result: ClothingEyesGlassesMercenary
+
+- type: latheRecipe
+  id: ClothingHandsGlovesBase
+  completetime: 3
+  materials:
+    Cloth: 200
+
+- type: latheRecipe
+  id: ClothingHandsGlovesColorPurple
+  parent: ClothingHandsGlovesBase
+  result: ClothingHandsGlovesColorPurple
+
+- type: latheRecipe
+  id: ClothingHandsGlovesColorRed
+  parent: ClothingHandsGlovesBase
+  result: ClothingHandsGlovesColorRed
+
+- type: latheRecipe
+  id: ClothingHandsGlovesColorBlue
+  parent: ClothingHandsGlovesBase
+  result: ClothingHandsGlovesColorBlue
+
+- type: latheRecipe
+  id: ClothingHandsGlovesColorTeal
+  parent: ClothingHandsGlovesBase
+  result: ClothingHandsGlovesColorTeal
+
+- type: latheRecipe
+  id: ClothingHandsGlovesColorGray
+  parent: ClothingHandsGlovesBase
+  result: ClothingHandsGlovesColorGray
+
+- type: latheRecipe
+  id: ClothingHandsGlovesColorGreen
+  parent: ClothingHandsGlovesBase
+  result: ClothingHandsGlovesColorGreen
+
+- type: latheRecipe
+  id: ClothingHandsGlovesColorLightBrown
+  parent: ClothingHandsGlovesBase
+  result: ClothingHandsGlovesColorLightBrown
+
+- type: latheRecipe
+  id: ClothingHandsGlovesColorOrange
+  parent: ClothingHandsGlovesBase
+  result: ClothingHandsGlovesColorOrange
+
+- type: latheRecipe
+  id: ClothingHandsGlovesColorWhite
+  parent: ClothingHandsGlovesBase
+  result: ClothingHandsGlovesColorWhite
+
+- type: latheRecipe
+  id: ClothingHandsGlovesColorBlack
+  parent: ClothingHandsGlovesBase
+  result: ClothingHandsGlovesColorBlack

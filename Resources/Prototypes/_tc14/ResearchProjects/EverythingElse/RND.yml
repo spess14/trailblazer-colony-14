@@ -1,0 +1,23 @@
+- type: bluebenchResearch
+  id: RNDResearch
+  name: RND
+  description: "The endgame.\nRequires plastic."
+  requiredResearch:
+  - ResuscitationResearch
+  - PowercellResearch
+  - FullAutoResearch
+  icon:
+    sprite: Structures/Machines/server.rsi
+    state: server
+  stackRequirements:
+    Plastic: 10
+    Steel: 150
+    Gold: 50
+    Silver: 50
+    Uranium: 30
+  outputRecipes:
+  - ArtifactAnalyzerMachineCircuitboard
+  - AnalysisComputerCircuitboard
+  - ResearchComputerCircuitboard
+  - ResearchAndDevelopmentServerMachineCircuitboard
+  - CircuitImprinterMachineCircuitboard

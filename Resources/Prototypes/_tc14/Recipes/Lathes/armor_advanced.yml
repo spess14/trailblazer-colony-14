@@ -1,0 +1,72 @@
+- type: latheRecipe
+  id: ClothingOuterArmorRiot
+  result: ClothingOuterArmorRiot
+  completetime: 8
+  materials:
+    Steel: 1000
+    Plasteel: 300
+
+- type: latheRecipe
+  id: ClothingHeadHelmetRiot
+  result: ClothingHeadHelmetRiot
+  completetime: 2
+  materials:
+    Steel: 700
+    Glass: 400
+
+- type: latheRecipe
+  id: ClothingOuterArmorBulletproof
+  result: ClothingOuterArmorBulletproof
+  completetime: 8
+  materials:
+    Steel: 800
+    Plasteel: 1000
+
+- type: latheRecipe
+  id: ClothingOuterSuitBomb
+  result: ClothingOuterSuitBomb
+  completetime: 8
+  materials:
+    Steel: 800
+    Plasteel: 1000
+
+- type: latheRecipe
+  id: ClothingHeadHelmetBombSuit
+  result: ClothingHeadHelmetBombSuit
+  completetime: 8
+  materials:
+    Plasteel: 500
+    ReinforcedGlass: 300
+
+- type: latheRecipe
+  id: ClothingOuterArmorReflective
+  result: ClothingOuterArmorReflective
+  completetime: 8
+  materials:
+    Steel: 900
+    ReinforcedGlass: 1000
+
+- type: latheRecipe
+  id: ClothingOuterArmorHeavy
+  result: ClothingOuterArmorHeavy
+  completetime: 8
+  materials:
+    Steel: 3000
+    Plasteel: 3000
+
+- type: latheRecipe
+  id: ClothingOuterSuitAtmosFire
+  result: ClothingOuterSuitAtmosFire
+  completetime: 8
+  materials:
+    Steel: 1500
+    Plasteel: 800
+
+- type: latheRecipe
+  id: ClothingHeadHelmetAtmosFire
+  result: ClothingHeadHelmetAtmosFire
+  completetime: 8
+  materials:
+    Steel: 300
+    Plasteel: 700
+    ReinforcedGlass: 800

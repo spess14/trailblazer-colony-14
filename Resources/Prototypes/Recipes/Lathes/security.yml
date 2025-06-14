@@ -208,6 +208,7 @@
   result: MagazinePistol
   materials:
     Steel: 145
+    Gunpowder: 1100
 
 - type: latheRecipe
   parent: BaseAmmoRecipe
@@ -305,7 +306,7 @@
   result: MagazineRifle
   materials:
     Steel: 475
-
+    Gunpowder: 3000
 
 - type: latheRecipe
   parent: BaseAmmoRecipe

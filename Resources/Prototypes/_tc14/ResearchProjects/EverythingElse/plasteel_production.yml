@@ -1,0 +1,14 @@
+- type: bluebenchResearch
+  id: PlasteelProductionResearch
+  name: Plasteel Production
+  description: "Plasteel, a very expensive but durable material.\nOften used in heavy armor or weaponry."
+  requiredResearch:
+  - OreRefineryResearch
+  icon:
+    sprite: Objects/Materials/Sheets/metal.rsi
+    state: plasteel_3
+  stackRequirements:
+    Steel: 20
+    Plasma: 40
+  outputRecipes:
+  - SheetPlasteel1

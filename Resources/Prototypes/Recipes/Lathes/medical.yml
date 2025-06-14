@@ -55,7 +55,7 @@
   completetime: 1
   materials:
     Steel: 25
-    Plastic: 25
+    Cloth: 25
 
 - type: latheRecipe
   id: Ointment
@@ -63,7 +63,7 @@
   completetime: 1
   materials:
     Glass: 25
-    Plastic: 25
+    Cloth: 25
 
 - type: latheRecipe
   id: Gauze

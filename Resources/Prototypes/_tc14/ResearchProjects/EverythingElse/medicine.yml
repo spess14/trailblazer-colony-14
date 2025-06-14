@@ -1,0 +1,17 @@
+- type: bluebenchResearch
+  id: MedicineResearch
+  name: Medicine
+  description: The healing is not as rewarding as the hurting.
+  requiredResearch:
+  - ComplexClothingResearch
+  icon:
+    sprite: Objects/Specific/Medical/medical.rsi
+    state: brutepack
+  stackRequirements:
+    Cloth: 20
+    Steel: 20
+  outputRecipes:
+  - Gauze
+  - Ointment
+  - Brutepack
+  - BodyBag

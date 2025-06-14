@@ -1,0 +1,32 @@
+- type: bluebenchResearch
+  id: WarmClothingResearch
+  name: Melee Weapons
+  description: "The stuff to keep you cozy."
+  requiredResearch:
+  - ComplexClothingResearch
+  icon:
+    sprite: Clothing/OuterClothing/WinterCoats/coat.rsi
+    state: icon
+  stackRequirements:
+    Cloth: 10
+  outputRecipes:
+  - ClothingOuterWinterMusician
+  - ClothingOuterWinterClown
+  - ClothingOuterWinterMime
+  - ClothingOuterWinterCoat
+  - ClothingOuterWinterJani
+  - ClothingOuterWinterBar
+  - ClothingOuterWinterChef
+  - ClothingOuterWinterHydro
+  - ClothingOuterWinterAtmos
+  - ClothingOuterWinterEngi
+  - ClothingOuterWinterCargo
+  - ClothingOuterWinterMiner
+  - ClothingOuterWinterMed
+  - ClothingOuterWinterPara
+  - ClothingOuterWinterChem
+  - ClothingOuterWinterGen
+  - ClothingOuterWinterViro
+  - ClothingOuterWinterSci
+  - ClothingOuterWinterRobo
+  - ClothingOuterWinterSec

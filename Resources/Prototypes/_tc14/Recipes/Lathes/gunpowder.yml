@@ -1,0 +1,7 @@
+- type: latheRecipe
+  id: Gunpowder
+  result: MaterialGunpowder
+  completetime: 2
+  materials:
+    RawSulfur: 75
+    Coal: 50
