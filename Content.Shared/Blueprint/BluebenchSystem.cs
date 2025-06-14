@@ -194,6 +194,13 @@ public sealed class BluebenchSystem : EntitySystem
                 blueprint.ProvidedRecipes.Add(recipe);
             }
         }
+
+        var tagComp = AddComp<TagComponent>(uid);
+
+        foreach (var tag in project.OutputTags) // afaik there's   no prettier way to do this, + it all comes down to this. sorry
+        {
+            _tagSystem.AddTag(uid, tag);
+        }
     }
 
     private void OnResearchProjectStart(EntityUid uid, BluebenchComponent component, ResearchProjectStartMessage args)

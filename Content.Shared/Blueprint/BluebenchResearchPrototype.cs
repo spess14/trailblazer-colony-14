@@ -65,6 +65,13 @@ public sealed class BluebenchResearchPrototype : IPrototype
     public HashSet<ProtoId<LatheRecipePackPrototype>>? OutputPacks = [];
 
     /// <summary>
+    /// Tags that are attached to the blueprint.
+    /// By default, the "BlueprintAutolathe" tag is attached.
+    /// </summary>
+    [DataField]
+    public HashSet<ProtoId<TagPrototype>> OutputTags = ["BlueprintAutolathe"];
+
+    /// <summary>
     /// Specifies the research project that needs to be completed before this one can start
     /// </summary>
     [DataField]

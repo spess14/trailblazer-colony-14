@@ -23,16 +23,19 @@
   - type: Lathe
     idleState: workbench
     materialUseMultiplier: 1.5
-#   staticPacks:
-    # - ToolsWorkbench
-    # - PartsStatic
-    # - AtmosStatic
-    # - CablesStatic
-    # - CargoStatic
-    # - MaterialsStatic
-    # - RollerBedsStatic
-    # - LightsStatic
-    # - ServiceStatic
+    staticPacks:
+    - ClothingCivilian
+    - ClothingCargo
+    - ClothingCommand
+    - ClothingEngineering
+    - ClothingMedical
+    - ClothingScience
+    - ClothingSecurity
+    - ClothingService
+    - ClothingSyndie
+    - WinterCoats
+    - Ties
+    - Scarves
   - type: BlueprintReceiver
     whitelist:
       tags:
