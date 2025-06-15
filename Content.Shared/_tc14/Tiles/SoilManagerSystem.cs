@@ -3,6 +3,9 @@ using Content.Shared.DoAfter;
 using Content.Shared.Interaction;
 using Content.Shared.Maps;
 using Content.Shared.Physics;
+using Content.Shared.Tools;
+using Content.Shared.Tools.Components;
+using Content.Shared.Tools.Systems;
 using Robust.Shared.Map;
 using Robust.Shared.Map.Components;
 using Robust.Shared.Physics;
@@ -20,12 +23,15 @@ public sealed class SoilManagerSystem : EntitySystem
     [Dependency] private readonly SharedMapSystem _map = default!;
     [Dependency] private readonly ITileDefinitionManager _tileDefinitionManager = default!;
     [Dependency] private readonly SharedDoAfterSystem _doAfterSystem = default!;
+    [Dependency] private readonly SharedToolSystem _tool = default!;
+    [Dependency] private readonly TileSystem _tile = default!;
 
     /// <inheritdoc/>
     public override void Initialize()
     {
         base.Initialize();
         SubscribeLocalEvent<ShovelComponent, AfterInteractEvent>(OnShovelAfterInteract);
+        SubscribeLocalEvent<ToolComponent, AfterInteractEvent>(OnChiselAfterInteract);
     }
 
     public bool GetInteractedWithTileDef(ref AfterInteractEvent args, out TileRef tileRef)
@@ -53,7 +59,7 @@ public sealed class SoilManagerSystem : EntitySystem
 
         var tileDef = (ContentTileDefinition)_tileDefinitionManager[tileRef.Tile.TypeId];
 
-        if (tileDef!.SoilPrototypeName is null)
+        if (tileDef.SoilPrototypeName is null)
             return;
 
         var doAfterArgs = new DoAfterArgs(EntityManager,
@@ -72,5 +78,23 @@ public sealed class SoilManagerSystem : EntitySystem
             NeedHand = true,
         };
         _doAfterSystem.TryStartDoAfter(doAfterArgs);
+    }
+
+    private void OnChiselAfterInteract(Entity<ToolComponent> ent, ref AfterInteractEvent args)
+    {
+        if (!TryComp<ToolComponent>(ent, out var tool))
+            return;
+        if (!_tool.HasQuality(ent, "Chiseling", tool))
+            return;
+        if (!GetInteractedWithTileDef(ref args, out var tileRef))
+            return;
+        var tileDef = (ContentTileDefinition)_tileDefinitionManager[tileRef.Tile.TypeId];
+        if (tileDef.ID != "FloorPlanetGrass" &&
+            tileDef.ID !=
+            "FloorPlanetDirt") //TODO hardcoding tiledefs like this is absolutely terrible and should never be done, yet I do it anyway because I might be stupid
+            return;
+        if (!_tileDefinitionManager.TryGetDefinition("FloorPlanetStone", out var stoneDef))
+            return;
+        _tile.ReplaceTile(tileRef, (ContentTileDefinition)stoneDef);
     }
 }
