@@ -8,6 +8,7 @@ using Content.Shared.Tools.Components;
 using Content.Shared.Tools.Systems;
 using Robust.Shared.Map;
 using Robust.Shared.Map.Components;
+using Robust.Shared.Network;
 using Robust.Shared.Physics;
 using Robust.Shared.Physics.Components;
 using Robust.Shared.Physics.Systems;
@@ -25,6 +26,7 @@ public sealed class SoilManagerSystem : EntitySystem
     [Dependency] private readonly SharedDoAfterSystem _doAfterSystem = default!;
     [Dependency] private readonly SharedToolSystem _tool = default!;
     [Dependency] private readonly TileSystem _tile = default!;
+    [Dependency] private readonly INetManager _net = default!;
 
     /// <inheritdoc/>
     public override void Initialize()
@@ -95,6 +97,10 @@ public sealed class SoilManagerSystem : EntitySystem
             return;
         if (!_tileDefinitionManager.TryGetDefinition("FloorPlanetStone", out var stoneDef))
             return;
-        _tile.ReplaceTile(tileRef, (ContentTileDefinition)stoneDef);
+        // do not do this on client to avoid ugly mispredicts
+        if (!_net.IsClient)
+        {
+            _tile.ReplaceTile(tileRef, (ContentTileDefinition)stoneDef);
+        }
     }
 }
