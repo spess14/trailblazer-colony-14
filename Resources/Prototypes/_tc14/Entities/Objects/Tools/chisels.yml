@@ -2,7 +2,7 @@
   name: chisel
   parent: BaseItem
   id: Chisel
-  description: Main tool of any architect.
+  description: Main tool of any architect. Can also expose stone under dirt, allowing you to place flooring.
   components:
   - type: EmitSoundOnLand
     sound:

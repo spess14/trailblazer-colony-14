@@ -70,7 +70,7 @@ public sealed class DoAfterCancellationTests : InteractionTest
         await AssertTile(Floor);
 
         await InteractUsing(Pry);
-        await AssertTile(Plating);
+        await AssertTile(Rock);
     }
 
     [Test]
@@ -90,7 +90,7 @@ public sealed class DoAfterCancellationTests : InteractionTest
         // Third do after will work fine
         await InteractUsing(Pry);
         Assert.That(ActiveDoAfters.Count(), Is.EqualTo(0));
-        await AssertTile(Plating);
+        await AssertTile(Rock);
     }
 
     [Test]

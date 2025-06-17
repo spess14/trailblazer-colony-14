@@ -7,6 +7,7 @@ public abstract partial class InteractionTest
     // Tiles
     protected const string Floor = "FloorSteel";
     protected const string FloorItem = "FloorTileItemSteel";
+    protected const string Rock = "FloorPlanetStone";
     protected const string Plating = "Plating";
     protected const string Lattice = "Lattice";
 

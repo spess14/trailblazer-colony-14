@@ -1,0 +1,16 @@
+﻿- type: tile
+  id: FloorPlanetStone
+  name: tiles-stone-floor
+  sprite: /Textures/_tc14/Tiles/Planet/stone.rsi/stone.png
+  variants: 4
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  isSubfloor: true
+  footstepSounds:
+    collection: FootstepAsteroid
+  heatCapacity: 10000
+  weather: true
+  indestructible: true
