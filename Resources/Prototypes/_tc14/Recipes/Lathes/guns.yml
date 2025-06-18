@@ -1,0 +1,82 @@
+- type: latheRecipe
+  id: WeaponPistolFlintlock
+  result: WeaponPistolFlintlock
+  completetime: 10
+  materials:
+    Wood: 1300
+    Steel: 1000
+    Gunpowder: 75
+
+- type: latheRecipe
+  id: CartridgeAntiMateriel
+  result: CartridgeAntiMateriel
+  completetime: 0.5
+  materials:
+    Steel: 50
+    Gunpowder: 75
+
+- type: latheRecipe
+  id: WeaponRevolverPirate
+  result: WeaponRevolverPirate
+  completetime: 10
+  materials:
+    Steel: 1900
+        
+- type: latheRecipe
+  id: CartridgeMagnum
+  result: CartridgeMagnum
+  completetime: 0.5
+  materials:
+    Steel: 50
+    Gunpowder: 100
+
+- type: latheRecipe
+  id: WeaponPistolMk58
+  result: WeaponPistolMk58
+  completetime: 12
+  materials:
+    Steel: 2500
+    Gunpowder: 1100
+
+- type: latheRecipe
+  id: CartridgePistol
+  result: CartridgePistol
+  completetime: 0.5
+  materials:
+    Steel: 50
+    Gunpowder: 100
+
+- type: latheRecipe
+  id: WeaponRifleLecter
+  result: WeaponRifleLecter
+  completetime: 20
+  materials:
+    Steel: 4000
+    Gunpowder: 3000
+    Plasteel: 2000
+
+- type: latheRecipe
+  id: CartridgeLightRifle
+  result: CartridgeLightRifle
+  completetime: 0.5
+  materials:
+    Steel: 50
+    Gunpowder: 100
+
+- type: latheRecipe
+  id: WeaponTeslaGun
+  result: WeaponTeslaGun
+  completetime: 15
+  materials:
+    Steel: 1500
+    Gold: 500
+    Silver: 500
+
+- type: latheRecipe
+  id: WeaponMakeshiftLaser
+  result: WeaponMakeshiftLaser
+  completetime: 15
+  materials:
+    Steel: 750
+    Gold: 200
+    Silver: 200

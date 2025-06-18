@@ -1,0 +1,17 @@
+- type: bluebenchResearch
+  id: FullAutoResearch
+  name: Fullauto Tech
+  description: "Deliver liberal amounts of bullets."
+  requiredResearch:
+  - SemiAutoResearch
+  icon:
+    sprite: Objects/Weapons/Guns/Rifles/lecter.rsi
+    state: icon
+  stackRequirements:
+    Gunpowder: 180
+    Steel: 500
+  outputRecipes:
+  - WeaponRifleLecter
+  - MagazineRifleEmpty
+  - MagazineRifle
+  - MagazineRiflePractice

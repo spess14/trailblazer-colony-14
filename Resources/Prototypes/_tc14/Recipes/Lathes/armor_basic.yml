@@ -1,0 +1,15 @@
+- type: latheRecipe
+  id: ClothingOuterArmorBase
+  result: ClothingOuterArmorBase
+  completetime: 6
+  materials:
+    Steel: 800
+    Cloth: 700
+
+- type: latheRecipe
+  id: ClothingHeadHelmetBasic
+  result: ClothingHeadHelmetBasic
+  completetime: 2
+  materials:
+    Steel: 600
+    Glass: 300

@@ -1,0 +1,37 @@
+- type: bluebenchResearch
+  id: ElectronicsResearch
+  name: Electronics
+  description: And God said, Let there be light.
+  requiredResearch:
+  - EngineeringEssentialsResearch
+  icon:
+    sprite: Structures/Power/apc.rsi
+    state: static
+  stackRequirements:
+    Steel: 60
+    Glass: 80
+    Gold: 40
+    Silver: 40
+  outputRecipes:
+  - FirelockElectronics
+  - MailingUnitElectronics
+  - DoorElectronics
+  - FreezerElectronics
+  - AirAlarmElectronics
+  - StationMapElectronics
+  - IntercomElectronics
+  - FireAlarmElectronics
+  - SignalTimerElectronics
+  - APCElectronics
+  - SubstationMachineCircuitboard
+  - WallmountSubstationElectronics
+  - SMESMachineCircuitboard
+  - PortableGeneratorJrPacmanMachineCircuitboard
+  - PortableGeneratorCPacmanMachineCircuitboard
+  - LightTube
+  - LedLightTube
+  - SodiumLightTube
+  - LightBulb
+  - LedLightBulb
+  - DimLightBulb
+  - WarmLightBulb

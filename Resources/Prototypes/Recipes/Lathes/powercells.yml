@@ -6,7 +6,7 @@
   completetime: 1
   materials:
     Steel: 100
-    Plastic: 50
+    Gold: 10
 
 - type: latheRecipe
   id: PowerCellMedium

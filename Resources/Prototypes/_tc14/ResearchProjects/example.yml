@@ -1,0 +1,69 @@
+# - type: bluebenchResearch
+#   id: CommonElectricityResearch
+#   name: Electricity
+#   description: This is where the fun begins.
+#   icon:
+#     sprite: Structures/Power/smes.rsi
+#     state: smes
+#   stackRequirements:
+#     Steel: 15
+#     Glass: 15
+#     Plastic: 15
+#   outputRecipes:
+#   - DoorElectronics
+#   - SignalTimerElectronics
+#   - APCElectronics
+#   - SMESMachineCircuitboard
+#   - SubstationMachineCircuitboard
+#   - WallmountSubstationElectronics
+#   - CellRechargerCircuitboard
+#   - WeaponCapacitorRechargerCircuitboard
+#   - PortableGeneratorCPacmanMachineCircuitboard
+#   - PowerCellSmall
+#   - PowerCellMedium
+
+# - type: bluebenchResearch
+#   id: CommonFabricationResearch
+#   name: Fabrication
+#   description: Advanced means of constructing items.
+#   requiredResearch:
+#   - CommonElectricityResearch
+#   icon:
+#     sprite: Structures/Machines/protolathe.rsi
+#     state: icon
+#   stackRequirements:
+#     Steel: 10
+#     Glass: 5
+#     Plastic: 10
+#     Capacitor: 3
+#     Cable: 10
+#   outputRecipes:
+#   - ProtolatheMachineCircuitboard
+#   - AutolatheMachineCircuitboard
+#   - CircuitImprinterMachineCircuitboard
+#   - ExosuitFabricatorMachineCircuitboard
+#   - CutterMachineCircuitboard
+#   - BorgChargerCircuitboard
+# 
+# - type: bluebenchResearch
+#   id: BasicSecurityResearch
+#   name: Cuff'n'Dagger
+#   description: Sometimes, war is a question, and the answer is yes.
+#   icon:
+#     sprite: Objects/Misc/handcuffs.rsi
+#     state: handcuff
+#   tagRequirements:
+#     Arrow:
+#       amount: 2
+#       defaultPrototype: ArrowImprovisedRock
+#   stackRequirements:
+#     Cable: 5
+#   outputRecipes:
+#   - Handcuffs
+#   - TargetClown
+#   - TargetHuman
+#   - TargetSyndicate
+#   - Zipties
+#   - CombatKnife
+#
+# kept here as an example

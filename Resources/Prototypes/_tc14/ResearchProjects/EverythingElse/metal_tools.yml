@@ -1,0 +1,20 @@
+- type: bluebenchResearch
+  id: MetalToolsResearch
+  name: Metal Tools
+  description: The tools of a professional.
+  requiredResearch:
+  - MetalworksResearch
+  - StoneToolsResearch
+  icon:
+    sprite: _tc14/ResearchIcons/metal_tools.rsi
+    state: researchicon
+  tagRequirements:
+    Pickaxe:
+      amount: 2
+      defaultPrototype: StonePickaxe
+  stackRequirements:
+    SteelOre: 20
+    WoodPlank: 20
+  outputRecipes:
+  - Pickaxe
+  - Shovel

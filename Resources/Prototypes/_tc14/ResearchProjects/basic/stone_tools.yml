@@ -1,0 +1,13 @@
+- type: bluebenchResearch
+  id: StoneToolsResearch
+  name: Sharper Rocks
+  description: Craft better tools using your workbench.
+  icon:
+    sprite: _tc14/ResearchIcons/stone_tools.rsi
+    state: researchicon
+  stackRequirements:
+    BrickStone: 20
+    WoodPlank: 20
+  outputRecipes:
+  - StoneShovelWorkbench
+  - StonePickaxeWorkbench

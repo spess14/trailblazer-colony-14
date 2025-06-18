@@ -1,0 +1,22 @@
+- type: bluebenchResearch
+  id: EngineeringEssentialsResearch
+  name: Engineering Essentials
+  description: "The stuff an aspiring engineer would need.\nElectronics not included."
+  requiredResearch:
+  - MetalworksResearch
+  icon:
+    sprite: Objects/Tools/cable-coils.rsi
+    state: coillv-30
+  stackRequirements:
+    Steel: 15
+  outputRecipes:
+  - Wirecutter
+  - Screwdriver
+  - Welder
+  - Wrench
+  - CableStack
+  - CableMVStack
+  - CableHVStack
+  - CrowbarGreen
+  - UtilityBelt
+  - ClothingHeadHatWelding

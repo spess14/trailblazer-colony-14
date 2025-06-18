@@ -488,6 +488,7 @@
   - type: StaticPrice
     price: 25
   - type: Shovel
+    SpeedModifier: 2 # TC14 change
 
 - type: entity
   parent: BaseItem
