@@ -141,7 +141,6 @@
     sprite: Clothing/OuterClothing/Armor/captain_carapace.rsi
   - type: Clothing
     sprite: Clothing/OuterClothing/Armor/captain_carapace.rsi
-    damageCoefficient: 0.65
   #Moffstation - Begin (Stamina Resistance)
   - type: StaminaResistance
     damageCoefficient: 0.8 # Base value for armor.

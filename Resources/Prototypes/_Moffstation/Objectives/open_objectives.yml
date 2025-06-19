@@ -12,7 +12,7 @@
 # Open-ended objective to disrupt a certain department
 - type: entity
   parent: BaseTraitorObjective
-  id: DisruptDepartmentObjective
+  id: DisruptionObjective
   name: Disrupt Department
   description: We need you to disrupt this department's activities.
   components:
