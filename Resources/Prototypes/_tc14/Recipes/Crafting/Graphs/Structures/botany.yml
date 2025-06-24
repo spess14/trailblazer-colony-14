@@ -1,5 +1,5 @@
 - type: constructionGraph
-  id: Soil
+  id: PlanetSoil
   start: start
   graph:
   - node: start

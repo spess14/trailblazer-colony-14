@@ -122,12 +122,6 @@
   groupBy: "pin"
 
 - type: loadout
-  id: ClothingNeckAllyPin
-  storage:
-    back:
-    - ClothingNeckAllyPin
-
-- type: loadout
   id: ClothingNeckAromanticPin
   storage:
     back:
@@ -140,12 +134,6 @@
     back:
     - ClothingNeckAsexualPin
   groupBy: "pin"
-
-- type: loadout
-  id: ClothingNeckAroacePin
-  storage:
-    back:
-    - ClothingNeckAroacePin
 
 - type: loadout
   id: ClothingNeckBisexualPin
@@ -202,12 +190,6 @@
     back:
     - ClothingNeckGenderqueerPin
   groupBy: "pin"
-
-- type: loadout
-  id: ClothingNeckGenderqueerPin
-  storage:
-    back:
-    - ClothingNeckGenderqueerPin
 
 - type: loadout
   id: ClothingNeckTransPin

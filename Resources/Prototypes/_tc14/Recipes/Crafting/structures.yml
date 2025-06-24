@@ -54,7 +54,7 @@
 - type: construction
   name: soil
   id: Soil
-  graph: Soil
+  graph: PlanetSoil
   startNode: start
   targetNode: soil
   category: construction-category-structures

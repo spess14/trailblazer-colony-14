@@ -25,7 +25,7 @@
     damageContainer: Inorganic
     damageModifierSet: Metallic
   - type: Construction
-    graph: Soil
+    graph: PlanetSoil
     node: soil
   - type: Destructible
     thresholds:

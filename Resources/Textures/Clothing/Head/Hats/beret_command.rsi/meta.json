@@ -1,40 +1,30 @@
-
 {
-  "version": 1,
-  "license": "CC-BY-SA-3.0",
-<<<<<<<< HEAD:Resources/Textures/Clothing/OuterClothing/Hardsuits/goliath.rsi/meta.json
-  "copyright": "All sprites created by https://github.com/Pronana / princesscheeseballs (Discord)",
-
-========
-  "copyright": "Made by GoldenCan(github) by modifying beret_engineering.rsi which was taken from tgstation at commit https://github.com/tgstation/tgstation/commit/4f6190e2895e09116663ef282d3ce1d8b35c032e",
->>>>>>>> ss14/stable:Resources/Textures/Clothing/Head/Hats/beret_command.rsi/meta.json
-  "size": {
-    "x": 32,
-    "y": 32
-  },
-  "states": [
-    {
-      "name": "icon"
+    "version": 1,
+    "license": "CC-BY-SA-3.0",
+    "copyright": "Made by GoldenCan(github) by modifying beret_engineering.rsi which was taken from tgstation at commit https://github.com/tgstation/tgstation/commit/4f6190e2895e09116663ef282d3ce1d8b35c032e",
+    "size": {
+        "x": 32,
+        "y": 32
     },
-    {
-      "name": "equipped-OUTERCLOTHING",
-      "directions": 4
-    },
-    {
-<<<<<<<< HEAD:Resources/Textures/Clothing/OuterClothing/Hardsuits/goliath.rsi/meta.json
-      "name": "equipped-OUTERCLOTHING-vox",
-========
-      "name": "equipped-HELMET-hamster",
->>>>>>>> ss14/stable:Resources/Textures/Clothing/Head/Hats/beret_command.rsi/meta.json
-      "directions": 4
-    },
-    {
-      "name": "inhand-left",
-      "directions": 4
-    },
-    {
-      "name": "inhand-right",
-      "directions": 4
-    }
-  ]
+    "states": [
+        {
+            "name": "icon"
+        },
+        {
+            "name": "equipped-HELMET",
+            "directions": 4
+        },
+        {
+            "name": "equipped-HELMET-hamster",
+            "directions": 4
+        },
+        {
+            "name": "inhand-left",
+            "directions": 4
+        },
+        {
+            "name": "inhand-right",
+            "directions": 4
+        }
+    ]
 }

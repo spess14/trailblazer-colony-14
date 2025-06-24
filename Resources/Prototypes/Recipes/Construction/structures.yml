@@ -1281,14 +1281,15 @@
   conditions:
     - !type:TileNotBlocked
 
-- type: construction
-  id: FungalSoil
-  graph: Soil
-  startNode: start
-  targetNode: fungalSoil
-  category: construction-category-structures
-  objectType: Structure
-  placementMode: SnapgridCenter
-  canBuildInImpassable: false
-  conditions:
-    - !type:TileNotBlocked
+# TC14: obsolete, we have our own recipe
+#- type: construction
+#  id: FungalSoil
+#  graph: Soil
+#  startNode: start
+#  targetNode: fungalSoil
+#  category: construction-category-structures
+#  objectType: Structure
+#  placementMode: SnapgridCenter
+#  canBuildInImpassable: false
+#  conditions:
+#    - !type:TileNotBlocked
