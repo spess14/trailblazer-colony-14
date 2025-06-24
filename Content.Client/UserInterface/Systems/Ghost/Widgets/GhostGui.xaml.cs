@@ -18,8 +18,8 @@ public sealed partial class GhostGui : UIWidget
     public event Action? RequestWarpsPressed;
     public event Action? ReturnToBodyPressed;
     public event Action? GhostRolesPressed;
-    public event Action? GhostRespawnPressed;
     private int _prevNumberRoles;
+    public event Action? GhostRespawnPressed;
     private float _respawnTime;
 
     public GhostGui()
