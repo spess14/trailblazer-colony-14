@@ -3,7 +3,7 @@
   id: BaseBlueprint
   name: blueprint
   description: A blueprint for some machine. It can be inserted into an autolathe.
-  # abstract: true
+  abstract: true
   components:
   - type: Sprite
     sprite: Objects/Tools/blueprint.rsi
@@ -21,6 +21,13 @@
   - type: Tag
     tags:
     - BlueprintAutolathe
+
+- type: entity
+  parent: BaseBlueprint
+  id: BlueprintEmpty
+  components:
+  - type: StaticPrice
+    price: 10 # just to change the proto somehow
 
 - type: entity
   parent: BaseBlueprint
