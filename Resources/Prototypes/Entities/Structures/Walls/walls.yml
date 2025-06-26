@@ -1524,6 +1524,7 @@
     sprite: Structures/Magic/forcewall.rsi
     state: forcewall
 
+# TC14: added construction comp
 - type: entity
   parent: BaseWall
   id: WallCobblebrick
@@ -1546,6 +1547,9 @@
       behaviors:
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
+  - type: Construction
+    graph: CobbleWall
+    node: wall
   - type: IconSmooth
     key: cobblebricks
     base: cobblebrick
