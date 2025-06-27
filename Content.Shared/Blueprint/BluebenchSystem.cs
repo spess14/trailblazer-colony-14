@@ -159,7 +159,7 @@ public sealed class BluebenchSystem : EntitySystem
 
         if (IsComplete(component))
         {
-            var result = Spawn("BaseBlueprint", Transform(entity).Coordinates);
+            var result = Spawn("BlueprintEmpty", Transform(entity).Coordinates);
             GenerateBlueprint(result, component.ActiveProject);
 
             component.ComponentProgress.Clear();
@@ -175,7 +175,7 @@ public sealed class BluebenchSystem : EntitySystem
 
     private void GenerateBlueprint(EntityUid uid, BluebenchResearchPrototype project)
     {
-        var blueprint = AddComp<BlueprintComponent>(uid);
+        var blueprint = EnsureComp<BlueprintComponent>(uid);
         foreach (var recipe in project.OutputRecipes)
         {
             blueprint.ProvidedRecipes.Add(recipe);
@@ -195,7 +195,7 @@ public sealed class BluebenchSystem : EntitySystem
             }
         }
 
-        var tagComp = AddComp<TagComponent>(uid);
+        var tagComp = EnsureComp<TagComponent>(uid);
 
         foreach (var tag in project.OutputTags) // afaik there's   no prettier way to do this, + it all comes down to this. sorry
         {
@@ -218,7 +218,7 @@ public sealed class BluebenchSystem : EntitySystem
 
         if (component.ResearchedPrototypes.Contains(prototype))
         {
-            var result = Spawn("BaseBlueprint", Transform(uid).Coordinates);
+            var result = Spawn("BlueprintEmpty", Transform(uid).Coordinates);
             GenerateBlueprint(result, prototype);
 
             UpdateUiState(uid, component);

@@ -1,6 +1,7 @@
 - type: entity
-  name: soil
   id: hydroponicsSoil
+  name: soil
+  description: A mix of organic matter and minerals creating a soil to grow your plant in space. Seems to be dry.
   placement:
     mode: SnapgridCenter
   components:
@@ -24,7 +25,7 @@
     damageContainer: Inorganic
     damageModifierSet: Metallic
   - type: Construction
-    graph: Soil
+    graph: PlanetSoil
     node: soil
   - type: Destructible
     thresholds:
