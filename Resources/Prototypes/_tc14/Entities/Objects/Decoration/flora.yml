@@ -12,7 +12,16 @@
     drawdepth: Overdoors
   - type: Physics
     bodyType: Static
-    canCollide: false
+    # canCollide: false
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.05,-0.05,0.05,0.05"
+        density: 1000
+        layer:
+        - WallLayer
   - type: Damageable
     damageContainer: StructuralInorganic
     damageModifierSet: Web # do not ask
