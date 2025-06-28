@@ -1,5 +1,6 @@
 ﻿using Content.Shared._Moffstation.Atmos.Components;
 using Content.Shared._Moffstation.Atmos.EntitySystems;
+using Content.Shared.Hands.Components;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization;
 

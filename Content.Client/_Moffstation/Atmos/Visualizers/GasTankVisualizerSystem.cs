@@ -1,9 +1,12 @@
-﻿using Content.Client.Clothing;
+﻿using System.Linq;
+using Content.Client.Clothing;
 using Content.Client.Items.Systems;
 using Content.Shared._Moffstation.Atmos.Components;
 using Content.Shared._Moffstation.Atmos.Visuals;
 using Content.Shared.Clothing;
 using Content.Shared.Hands;
+using Content.Shared.Hands.Components;
+using Content.Shared.Inventory;
 using Content.Shared.Item;
 using Robust.Client.GameObjects;
 using Robust.Shared.Reflection;
@@ -18,6 +21,9 @@ public sealed partial class GasTankVisualizerSystem : VisualizerSystem<GasTankVi
 {
     [Dependency] private readonly IReflectionManager _reflect = default!;
     [Dependency] private readonly SharedItemSystem _itemSys = default!;
+
+    private static readonly List<GasTankVisualsLayers> ModifiableLayers =
+        new() { GasTankVisualsLayers.Tank, GasTankVisualsLayers.StripeMiddle, GasTankVisualsLayers.StripeLow };
 
     public override void Initialize()
     {
@@ -43,9 +49,10 @@ public sealed partial class GasTankVisualizerSystem : VisualizerSystem<GasTankVi
             return;
 
         var entity = new Entity<AppearanceComponent, SpriteComponent>(uid, args.Component, sprite);
-        SetLayerVisibilityAndColor(entity, GasTankVisualsLayers.Tank);
-        SetLayerVisibilityAndColor(entity, GasTankVisualsLayers.StripeMiddle);
-        SetLayerVisibilityAndColor(entity, GasTankVisualsLayers.StripeLow);
+        foreach (var layer in ModifiableLayers)
+        {
+            SetLayerVisibilityAndColor(entity, layer);
+        }
 
         // update clothing & in-hand visuals.
         _itemSys.VisualsChanged(uid);
@@ -75,31 +82,101 @@ public sealed partial class GasTankVisualizerSystem : VisualizerSystem<GasTankVi
 
     private void OnGetHeldVisuals(Entity<GasTankVisualsComponent> entity, ref GetInhandVisualsEvent args)
     {
-        OnGetGenericVisuals(entity, args.Layers);
+        // Copy location because the lambda below doesn't want to capture over a `ref` field.
+        var location = args.Location;
+        OnGetGenericVisuals(
+            entity,
+            args.Layers,
+            $"hand-{args.Location.ToString().ToLowerInvariant()}",
+            // Return null if this layer should be excluded.
+            key => entity.Comp.ExcludedInhandLayers.Contains(key) ? null : GetInhandRsiState(key, location));
     }
 
     private void OnGetEquipmentVisuals(Entity<GasTankVisualsComponent> entity, ref GetEquipmentVisualsEvent args)
     {
-        OnGetGenericVisuals(entity, args.Layers);
+        // If the component says this species uses different clothing, pass in the species ID.
+        string? species = null;
+        if (TryComp<InventoryComponent>(args.Equipee, out var inventory) &&
+            inventory.SpeciesId is { } speciesId &&
+            entity.Comp.SpeciesWithDifferentClothing.Contains(speciesId))
+            species = speciesId;
+
+        // Copy slot because the lambda below doesn't want to capture over a `ref` field.
+        var slot = args.Slot;
+        OnGetGenericVisuals(
+            entity,
+            args.Layers,
+            $"equipped-{args.Slot.ToUpperInvariant()}-",
+            key => GetEquippedRsiState(key, slot, species)
+        );
     }
 
     private void OnGetGenericVisuals(
         Entity<GasTankVisualsComponent> entity,
-        List<(string, PrototypeLayerData)> layers)
+        List<(string, PrototypeLayerData)> layers,
+        string visualKeyPrefix,
+        Func<GasTankVisualsLayers, string?> visualsLayerToRsiState
+    )
     {
         if (!TryComp<AppearanceComponent>(entity, out var appearance))
             return;
 
-        // Try to get appearance data for each layer in the sprite, setting the layer's visibility and color based on
-        // the appearance data.
-        foreach (var (layerKey, layer) in layers)
+        foreach (var key in ModifiableLayers)
         {
-            if (!_reflect.TryParseEnumReference(layerKey, out var key))
+            if (visualsLayerToRsiState(key) is not { } state)
                 continue;
 
             var hasAppearance = AppearanceSystem.TryGetData<Color>(entity, key, out var color, appearance);
-            layer.Visible = hasAppearance;
-            layer.Color = color;
+            layers.Add((
+                $"{visualKeyPrefix}-{_reflect.GetEnumReference(key)}",
+                new PrototypeLayerData
+                {
+                    State = state,
+                    Visible = hasAppearance,
+                    Color = color,
+                }
+            ));
         }
+    }
+
+    private static string? LayerToRsiState(GasTankVisualsLayers layer)
+    {
+        return layer switch
+        {
+            GasTankVisualsLayers.Tank => "tank",
+            GasTankVisualsLayers.StripeMiddle => "stripe-middle",
+            GasTankVisualsLayers.StripeLow => "stripe-low",
+            _ => null,
+        };
+    }
+
+    private static string? GetInhandRsiState(GasTankVisualsLayers layer, HandLocation hand)
+    {
+        return LayerToRsiState(layer) is { } state ? $"inhand-{hand.ToString().ToLowerInvariant()}-{state}" : null;
+    }
+
+    private static string? GetEquippedRsiState(GasTankVisualsLayers layer, string inventorySlot, string? species)
+    {
+        if (LayerToRsiState(layer) is not { } state)
+            return null;
+
+        string slotStr;
+        switch (inventorySlot)
+        {
+            case "suitstorage":
+                slotStr = "SUITSTORAGE";
+                break;
+            case "belt":
+                slotStr = "BELT";
+                break;
+            case "back":
+                slotStr = "BACKPACK";
+                break;
+            default:
+                return null;
+        }
+
+        var speciesSuffix = species != null ? $"-{species.ToLowerInvariant()}" : "";
+        return $"equipped-{slotStr}-{state}{speciesSuffix}";
     }
 }
