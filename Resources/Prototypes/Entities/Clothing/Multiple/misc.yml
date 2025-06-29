@@ -5,7 +5,7 @@
   description: Quality headphones from Drunk Masters, with good sound insulation.
   components:
   - type: Sprite
-    sprite: Clothing/Multiple/headphones.rsi
+    sprite: _Moffstation/Clothing/Multiple/headphones.rsi # Moffstation - Added colorful notes
     layers:
     - state: icon
       map: [ "enum.ToggleableVisuals.Layer" ]
