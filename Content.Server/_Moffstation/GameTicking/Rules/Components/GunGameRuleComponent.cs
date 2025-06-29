@@ -70,3 +70,6 @@ public sealed partial class GunGameRuleComponent : Robust.Shared.GameObjects.Com
     [DataField, ReadOnly(true)]
     public ProtoId<StartingGearPrototype> Gear = "GunGameGear";
 }
+
+[Serializable]
+public sealed class GunGamePlayerTracking
