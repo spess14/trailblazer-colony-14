@@ -32,7 +32,7 @@ public sealed class DevourSystem : SharedDevourSystem
              HasComp<HumanoidAppearanceComponent>(args.Args.Target)))
         {
             var ichorInjection = new Solution(entity.Comp.Chemical, entity.Comp.HealRate);
-            _bloodstreamSystem.TryAddToChemicals(entity, ichorInjection);
+            _bloodstreamSystem.TryAddToChemicals(entity.Owner, ichorInjection);
         }
 
         // Either put the entity into the devourer's stomach or delete it.
