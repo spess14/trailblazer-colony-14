@@ -172,6 +172,8 @@
       - id: ClothingUniformJumpsuitFamilyGuy
       - id: WristwatchGold
       - id: RubberStampGreytide
+      - id: MysteryLighterBox
+      - id: GoldenPersonalAI
 
 - type: entity
   name: Maint Loot Spawner
@@ -181,9 +183,9 @@
   components:
   - type: Sprite
     layers:
-      - state: red
-      - sprite: Clothing/Eyes/Glasses/gar.rsi
-        state: icon-super
+    - state: red
+    - sprite: Clothing/Eyes/Glasses/gar.rsi
+      state: icon-super
   - type: EntityTableSpawner
     table: !type:NestedSelector
       tableId: MaintFluffTable
@@ -309,9 +311,9 @@
   components:
   - type: Sprite
     layers:
-      - state: red
-      - sprite: Objects/Power/power_cells.rsi
-        state: high
+    - state: red
+    - sprite: Objects/Power/power_cells.rsi
+      state: high
   - type: EntityTableSpawner
     table: !type:NestedSelector
       tableId: MaintToolsTable
@@ -367,9 +369,9 @@
   components:
   - type: Sprite
     layers:
-      - state: red
-      - sprite: Objects/Weapons/Melee/machete.rsi
-        state: icon
+    - state: red
+    - sprite: Objects/Weapons/Melee/machete.rsi
+      state: icon
   - type: EntityTableSpawner
     table: !type:NestedSelector
       tableId: MaintWeaponTable
@@ -381,16 +383,16 @@
   id: MaintenancePlantSpawner
   parent: MarkerBase
   components:
-    - type: Sprite
-      layers:
-        - state: red
-        - sprite: Objects/Misc/spaceshroom.rsi
-          state: structure
-    - type: RandomSpawner
-      prototypes:
-        - Spaceshroom
-      chance: 0.6
-      offset: 0.0
+  - type: Sprite
+    layers:
+    - state: red
+    - sprite: Objects/Misc/spaceshroom.rsi
+      state: structure
+  - type: RandomSpawner
+    prototypes:
+    - Spaceshroom
+    chance: 0.6
+    offset: 0.0
 
 
 - type: entityTable
