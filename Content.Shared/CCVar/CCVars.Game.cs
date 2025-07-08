@@ -21,7 +21,7 @@ public sealed partial class CCVars
     ///     Controls the duration of the lobby timer in seconds. Defaults to 2 minutes and 30 seconds.
     /// </summary>
     public static readonly CVarDef<int>
-        GameLobbyDuration = CVarDef.Create("game.lobbyduration", 150, CVar.ARCHIVE);
+        GameLobbyDuration = CVarDef.Create("game.lobbyduration", 600, CVar.ARCHIVE);
 
     /// <summary>
     ///     Controls if players can latejoin at all.
@@ -57,7 +57,7 @@ public sealed partial class CCVars
     ///     Controls if round-end window shows whether the objective was completed or not.
     /// </summary>
     public static readonly CVarDef<bool>
-        GameShowGreentext = CVarDef.Create("game.showgreentext", true, CVar.ARCHIVE | CVar.SERVERONLY);
+        GameShowGreentext = CVarDef.Create("game.showgreentext", false, CVar.ARCHIVE | CVar.SERVERONLY);
 
     /// <summary>
     ///     Controls the maximum number of character slots a player is allowed to have.
@@ -125,7 +125,7 @@ public sealed partial class CCVars
     ///     Whether or not disconnecting inside of a cryopod should remove the character or just store them until they reconnect.
     /// </summary>
     public static readonly CVarDef<bool>
-        GameCryoSleepRejoining = CVarDef.Create("game.cryo_sleep_rejoining", false, CVar.SERVER | CVar.REPLICATED);
+        GameCryoSleepRejoining = CVarDef.Create("game.cryo_sleep_rejoining", true, CVar.SERVER | CVar.REPLICATED);
 
     /// <summary>
     ///     When enabled, guests will be assigned permanent UIDs and will have their preferences stored.
@@ -384,7 +384,7 @@ public sealed partial class CCVars
     ///     If true, contraband severity can be viewed in the examine menu
     /// </summary>
     public static readonly CVarDef<bool> ContrabandExamine =
-        CVarDef.Create("game.contraband_examine", true, CVar.SERVER | CVar.REPLICATED);
+        CVarDef.Create("game.contraband_examine", false, CVar.SERVER | CVar.REPLICATED);
 
     /// <summary>
     ///     If true, contraband examination is only possible while wearing an item with `ShowContrabandDetailsComponent`. Requires `ContrabandExamine` to be true as well.

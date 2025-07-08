@@ -9,7 +9,7 @@ public sealed partial class CCVars
     ///     Keep in mind that this may crash the server if the admin uses it in bad faith
     /// </summary>
     public static readonly CVarDef<bool> AdminGhostsLoadTerrain =
-        CVarDef.Create("tc14.terrain.admin_load", true, CVar.SERVERONLY);
+        CVarDef.Create("tc14.terrain.admin_load", false, CVar.SERVERONLY);
 
     /// <summary>
     ///     How much time (in seconds) must pass before a ghost can respawn?
