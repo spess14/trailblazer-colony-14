@@ -8,6 +8,7 @@
 
 ## Requirements
 - [ ] I have read and am following the [Pull Request and Changelog Guidelines](https://docs.spacestation14.com/en/general-development/codebase-info/pull-request-guidelines.html).
+- [ ] I have read and am following the [TC14 Conventions](https://wiki.tc14.space/Conventions)
 
 **Changelog**
 :cl:
