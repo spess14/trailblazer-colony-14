@@ -1,8 +1,9 @@
+# alphabet order pls
+- type: Tag
+  id: FlakingRock
+
 - type: Tag
   id: PlanetRuin
 
 - type: Tag
   id: Rock
-
-- type: Tag
-  id: FlakingRock
