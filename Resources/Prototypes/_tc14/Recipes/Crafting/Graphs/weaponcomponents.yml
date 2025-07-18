@@ -1,0 +1,53 @@
+- type: constructionGraph
+  id: LongGunFrameworkCrafting
+  start: start
+  graph:
+  - node: start
+    entity:  WeaponFrameCraftingPart
+    edges:
+    - to: enforcerstep1
+      steps:
+      - allTags:
+          - WeaponFinishedInternalsPart
+          - EnforcerPart
+        doAfter: 3
+
+  - node: enforcerstep1
+    entity: EnforcerCraftingStep1
+    edges:
+    - to: enforcerstep2
+      steps:
+      - allTags:
+         - WeaponBarrelPart
+         - EnforcerPart
+        doAfter: 3
+  
+  - node: enforcerstep2
+    entity: EnforcerCraftingStep2
+    edges:
+    - to: enforcerfinal
+      steps:
+      - allTags:
+          - WeaponStockPart
+          - EnforcerPart
+        doAfter: 3
+
+  - node: enforcerfinal
+    entity: WeaponShotgunEnforcer
+
+- type: constructionGraph
+  id: EnforcerInternalsCrafting
+  start: start
+  graph:
+  - node: start
+    entity: EmptyEnforcerInternalsCraftingPart
+    edges:
+    - to: internals
+      steps:
+      - tag: WeaponComponentInternal
+        doAfter: 3
+  - node: internals
+    entity: EnforcerInternalsCraftingPart
+
+    
+
