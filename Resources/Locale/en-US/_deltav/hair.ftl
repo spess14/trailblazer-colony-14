@@ -1,0 +1,10 @@
+marking-ZetaHairLongSpikehair = Long Spikehair
+marking-ZetaHairNerfish = Nerfish
+marking-ZetaHairPlantpoofs = Plantish Poofs
+marking-ZetaHairQuadspike = Quadspike
+marking-ZetaHairRattyRoyalty = Ratty Royalty
+marking-ZetaHairShortMessy = Short and Messy
+marking-ZetaHairShortSpikehair = Short Spikehair
+marking-ZetaHairSpikehawk = Spikehawk
+marking-ZetaHairPolitical = The Political
+marking-ZetaHairZetaBasicBraids = Basic Braids (Zeta)
