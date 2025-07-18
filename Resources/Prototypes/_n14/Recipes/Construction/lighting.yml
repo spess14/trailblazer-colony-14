@@ -1,0 +1,19 @@
+- type: construction
+  id: WallTorch
+  graph: WallTorch
+  startNode: start
+  targetNode: WallTorch
+  category: construction-category-utilities
+  objectType: Structure
+  placementMode: SnapgridCenter
+  hide: false
+
+- type: construction
+  id: FloorTorch
+  graph: FloorTorch
+  startNode: start
+  targetNode: FloorTorch
+  category: construction-category-utilities
+  objectType: Structure
+  placementMode: SnapgridCenter
+  hide: false
