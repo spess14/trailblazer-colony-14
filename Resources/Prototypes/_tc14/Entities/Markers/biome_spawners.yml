@@ -12,3 +12,45 @@
     - RockItem
     - BushForage
     offset: 0.5
+
+- type: entity
+  name: random falling meteor spawner
+  id: FallingMeteorSpawner
+  parent: MarkerBase
+  components:
+  - type: Sprite
+    layers:
+    - sprite: Objects/Misc/meteor.rsi
+      state: "big"
+  - type: EmitSoundOnSpawn
+    sound:
+      path: /Audio/Effects/falling.ogg
+  - type: TimedDespawn
+    lifetime: 3
+  - type: SpawnOnDespawn
+    prototype: MeteorSpawner
+  - type: ExpendableLight
+    turnOnBehaviourID: turn_on
+  - type: LightBehaviour
+    behaviours:
+    - !type:FadeBehaviour
+      id: turn_on
+      maxDuration: 5.0
+      startValue: 0.0
+      endValue: 10.0
+
+- type: entity
+  name: random meteor spawner
+  id: MeteorSpawner
+  parent: MarkerBase
+  components:
+  - type: Sprite
+    layers:
+    - sprite: Objects/Misc/meteor.rsi
+      state: "big"
+  - type: RandomSpawner
+    prototypes:
+    - SpaceMeteorSpaceDust
+    - SpaceMeteorSmall
+    - SpaceMeteorMedium
+    - SpaceMeteorLarge
