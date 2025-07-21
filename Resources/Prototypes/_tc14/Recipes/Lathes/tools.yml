@@ -5,5 +5,5 @@
   materials:
     Steel: 100
   icon:
-    sprite: Objects/Tools/lighters.rsi
+    sprite: Objects/Tools/Lighters/lighters.rsi
     state: icon_map
