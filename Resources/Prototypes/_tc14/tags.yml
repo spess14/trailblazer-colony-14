@@ -1,4 +1,7 @@
 - type: Tag
+  id: EnforcerPart
+
+- type: Tag
   id: PlanetRuin
 
 - type: Tag
@@ -6,3 +9,15 @@
 
 - type: Tag
   id: FlakingRock
+
+- type: Tag
+  id: WeaponComponentInternal
+
+- type: Tag
+  id: WeaponFinishedInternalsPart
+
+- type: Tag
+  id: WeaponStockPart
+
+- type: Tag
+  id: WeaponBarrelPart
