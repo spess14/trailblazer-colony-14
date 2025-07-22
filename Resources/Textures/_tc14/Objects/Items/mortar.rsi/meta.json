@@ -5,10 +5,13 @@
         "y": 32
     },
     "license": "CC-BY-NC-SA-4.0",
-    "copyright": "Made by some dudes that made GTNH",
+    "copyright": "Mortar made by some dudes that made GTNH",
     "states": [
         {
             "name": "mortar"
+        },
+        {
+            "name": "roof"
         }
     ]
 }
