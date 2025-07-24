@@ -73,7 +73,7 @@ def get_all_changelogs(recent_prs):
     for pr in recent_prs:
         changelogs = {
             "id" : pr["number"],
-            "time" : datetime.datetime.fromisoformat(pr["mergedAt"]).strftime(time_format),
+            "time" : datetime.datetime.fromisoformat(pr["mergedAt"]).strftime('{0}'.format(time_format)),
             "url": pr["url"]
         }
         try:

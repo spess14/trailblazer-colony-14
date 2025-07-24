@@ -1058,6 +1058,13 @@ Entries:
   id: 346
   time: '2025-07-07T16:16:02.000+00:00'
   url: https://github.com/moff-station/moff-station-14/pull/346
+- author: DuckManZach
+  changes:
+  - message: Antags and Gamerules can now be triggered from signatures
+    type: add
+  id: 349
+  time: '2025-07-24T01:09:50.000+00:00'
+  url: https://github.com/moff-station/moff-station-14/pull/349
 - author: Dave
   changes:
   - message: some code from the yml
@@ -1094,5 +1101,26 @@ Entries:
   id: 356
   time: '2025-07-17T03:52:42.000+00:00'
   url: https://github.com/moff-station/moff-station-14/pull/356
+- author: DuckManZach
+  changes:
+  - message: Open ended objectives have received some improvements.
+    type: tweak
+  id: 358
+  time: '2025-07-19T22:05:02.000+00:00'
+  url: https://github.com/moff-station/moff-station-14/pull/358
+- author: FreianOfVoid, Centronias
+  changes:
+  - message: Reels-It-In's Knife (Personal Item)
+    type: add
+  id: 366
+  time: '2025-07-22T20:31:36.000+00:00'
+  url: https://github.com/moff-station/moff-station-14/pull/366
+- author: FreianOfVoid, Centronias
+  changes:
+  - message: The Ruffler's Mask (Personal Item)
+    type: add
+  id: 367
+  time: '2025-07-22T20:30:43.000+00:00'
+  url: https://github.com/moff-station/moff-station-14/pull/367
 Name: Mofflog
 Order: -2
