@@ -940,8 +940,24 @@ Entries:
   - message: Added the angel AI hologram made by catsmilly.
     type: add
   id: 313
+  time: 2025-06-23T02:53:33.000%:z
+  url: https://github.com/moff-station/moff-station-14/pull/313
+- author: Southbridge, catsmilly
+  changes:
+  - message: Added a lot more AI customizations
+    type: add
+  - message: Added the angel AI hologram made by catsmilly.
+    type: add
+  id: 313
   time: '2025-06-23T02:53:33.000+00:00'
   url: https://github.com/moff-station/moff-station-14/pull/313
+- author: Southbridge, lilly_the_moth
+  changes:
+  - message: Chits! A yummy snack for moths!
+    type: add
+  id: 314
+  time: 2025-06-23T02:53:25.000%:z
+  url: https://github.com/moff-station/moff-station-14/pull/314
 - author: Southbridge, lilly_the_moth
   changes:
   - message: Chits! A yummy snack for moths!
@@ -955,6 +971,14 @@ Entries:
       throw your stinger.
     type: tweak
   id: 321
+  time: 2025-06-26T18:31:10.000%:z
+  url: https://github.com/moff-station/moff-station-14/pull/321
+- author: Nox38
+  changes:
+  - message: Grenade fragments now travel as far as bullets. Be careful where you
+      throw your stinger.
+    type: tweak
+  id: 321
   time: '2025-06-26T18:31:10.000+00:00'
   url: https://github.com/moff-station/moff-station-14/pull/321
 - author: Nox38
@@ -962,8 +986,22 @@ Entries:
   - message: Made stamina resistance simpler.
     type: tweak
   id: 323
+  time: 2025-06-26T18:58:29.000%:z
+  url: https://github.com/moff-station/moff-station-14/pull/323
+- author: Nox38
+  changes:
+  - message: Made stamina resistance simpler.
+    type: tweak
+  id: 323
   time: '2025-06-26T18:58:29.000+00:00'
   url: https://github.com/moff-station/moff-station-14/pull/323
+- author: shedonk, Southbridge
+  changes:
+  - message: The Mask added as a new piece of lobby art.
+    type: add
+  id: 325
+  time: 2025-06-26T19:36:39.000%:z
+  url: https://github.com/moff-station/moff-station-14/pull/325
 - author: shedonk, Southbridge
   changes:
   - message: The Mask added as a new piece of lobby art.
@@ -977,6 +1015,14 @@ Entries:
       and rifles are more compact.
     type: tweak
   id: 326
+  time: 2025-07-07T16:24:26.000%:z
+  url: https://github.com/moff-station/moff-station-14/pull/326
+- author: Nox38
+  changes:
+  - message: Updated weapon sizes. All pistol shaped items are now.. pistol shaped,
+      and rifles are more compact.
+    type: tweak
+  id: 326
   time: '2025-07-07T16:24:26.000+00:00'
   url: https://github.com/moff-station/moff-station-14/pull/326
 - author: Chartman
@@ -984,8 +1030,22 @@ Entries:
   - message: Added Space Frolick lobby art.
     type: add
   id: 327
+  time: 2025-06-27T05:03:33.000%:z
+  url: https://github.com/moff-station/moff-station-14/pull/327
+- author: Chartman
+  changes:
+  - message: Added Space Frolick lobby art.
+    type: add
+  id: 327
   time: '2025-06-27T05:03:33.000+00:00'
   url: https://github.com/moff-station/moff-station-14/pull/327
+- author: Chartman
+  changes:
+  - message: Added Dawn of the Xenoborgs lobby art,
+    type: add
+  id: 328
+  time: 2025-06-28T23:36:30.000%:z
+  url: https://github.com/moff-station/moff-station-14/pull/328
 - author: Chartman
   changes:
   - message: Added Dawn of the Xenoborgs lobby art,
@@ -999,8 +1059,23 @@ Entries:
       GPS) rather than relative to the station the crew monitor is on.
     type: tweak
   id: 333
+  time: 2025-07-01T17:24:51.000%:z
+  url: https://github.com/moff-station/moff-station-14/pull/333
+- author: Centronias
+  changes:
+  - message: Coordinates displayed on the Crew Monitor are now relative to space (like
+      GPS) rather than relative to the station the crew monitor is on.
+    type: tweak
+  id: 333
   time: '2025-07-01T17:24:51.000+00:00'
   url: https://github.com/moff-station/moff-station-14/pull/333
+- author: Southbridge
+  changes:
+  - message: Borgs have neck slots now.
+    type: add
+  id: 335
+  time: 2025-07-17T07:59:25.000%:z
+  url: https://github.com/moff-station/moff-station-14/pull/335
 - author: Southbridge
   changes:
   - message: Borgs have neck slots now.
@@ -1013,8 +1088,22 @@ Entries:
   - message: Added poultice packs, a botanist's alternative to bruise packs.
     type: add
   id: 337
+  time: 2025-07-03T09:43:43.000%:z
+  url: https://github.com/moff-station/moff-station-14/pull/337
+- author: Honeydew, Southbridge
+  changes:
+  - message: Added poultice packs, a botanist's alternative to bruise packs.
+    type: add
+  id: 337
   time: '2025-07-03T09:43:43.000+00:00'
   url: https://github.com/moff-station/moff-station-14/pull/337
+- author: Davyei, Southbridge
+  changes:
+  - message: Changed the Medal Sprites.
+    type: tweak
+  id: 338
+  time: 2025-07-02T22:15:00.000%:z
+  url: https://github.com/moff-station/moff-station-14/pull/338
 - author: Davyei, Southbridge
   changes:
   - message: Changed the Medal Sprites.
@@ -1027,8 +1116,22 @@ Entries:
   - message: Added Rosy and Deathshead mothroaches.
     type: add
   id: 340
+  time: 2025-07-03T18:04:43.000%:z
+  url: https://github.com/moff-station/moff-station-14/pull/340
+- author: Southbridge
+  changes:
+  - message: Added Rosy and Deathshead mothroaches.
+    type: add
+  id: 340
   time: '2025-07-03T18:04:43.000+00:00'
   url: https://github.com/moff-station/moff-station-14/pull/340
+- author: JamiMyst, ps3moira
+  changes:
+  - message: Added a drumkit, now available in cargo!
+    type: add
+  id: 342
+  time: 2025-07-04T18:55:39.000%:z
+  url: https://github.com/moff-station/moff-station-14/pull/342
 - author: JamiMyst, ps3moira
   changes:
   - message: Added a drumkit, now available in cargo!
@@ -1042,8 +1145,23 @@ Entries:
       it.
     type: tweak
   id: 343
+  time: 2025-07-05T03:07:32.000%:z
+  url: https://github.com/moff-station/moff-station-14/pull/343
+- author: ArtisticRoomba
+  changes:
+  - message: Rule 2.2 has been reworded and expanded for clarity. Be sure to read
+      it.
+    type: tweak
+  id: 343
   time: '2025-07-05T03:07:32.000+00:00'
   url: https://github.com/moff-station/moff-station-14/pull/343
+- author: Nox38
+  changes:
+  - message: Added BlueSec. (new warden uniforms!)
+    type: add
+  id: 345
+  time: 2025-07-07T16:23:25.000%:z
+  url: https://github.com/moff-station/moff-station-14/pull/345
 - author: Nox38
   changes:
   - message: Added BlueSec. (new warden uniforms!)
@@ -1056,6 +1174,13 @@ Entries:
   - message: Added Toffee McMarmalade Clown Mask Item
     type: add
   id: 346
+  time: 2025-07-07T16:16:02.000%:z
+  url: https://github.com/moff-station/moff-station-14/pull/346
+- author: Davyei
+  changes:
+  - message: Added Toffee McMarmalade Clown Mask Item
+    type: add
+  id: 346
   time: '2025-07-07T16:16:02.000+00:00'
   url: https://github.com/moff-station/moff-station-14/pull/346
 - author: DuckManZach
@@ -1063,8 +1188,22 @@ Entries:
   - message: Antags and Gamerules can now be triggered from signatures
     type: add
   id: 349
+  time: 2025-07-24T01:09:50.000%:z
+  url: https://github.com/moff-station/moff-station-14/pull/349
+- author: DuckManZach
+  changes:
+  - message: Antags and Gamerules can now be triggered from signatures
+    type: add
+  id: 349
   time: '2025-07-24T01:09:50.000+00:00'
   url: https://github.com/moff-station/moff-station-14/pull/349
+- author: Dave
+  changes:
+  - message: some code from the yml
+    type: remove
+  id: 350
+  time: 2025-07-11T07:20:26.000%:z
+  url: https://github.com/moff-station/moff-station-14/pull/350
 - author: Dave
   changes:
   - message: some code from the yml
@@ -1078,8 +1217,23 @@ Entries:
       orientations.
     type: fix
   id: 353
+  time: 2025-07-17T03:56:03.000%:z
+  url: https://github.com/moff-station/moff-station-14/pull/353
+- author: Exbedio, Centronias
+  changes:
+  - message: Fixed Valkyrie HUD sprites being misaligned on the player sprite in side-facing
+      orientations.
+    type: fix
+  id: 353
   time: '2025-07-17T03:56:03.000+00:00'
   url: https://github.com/moff-station/moff-station-14/pull/353
+- author: DuckManZach
+  changes:
+  - message: Admins will now hear your prayers!
+    type: tweak
+  id: 354
+  time: 2025-07-15T01:05:09.000%:z
+  url: https://github.com/moff-station/moff-station-14/pull/354
 - author: DuckManZach
   changes:
   - message: Admins will now hear your prayers!
@@ -1092,8 +1246,22 @@ Entries:
   - message: Pawgliachi can now sing
     type: add
   id: 355
+  time: 2025-07-16T18:02:25.000%:z
+  url: https://github.com/moff-station/moff-station-14/pull/355
+- author: DuckManZach
+  changes:
+  - message: Pawgliachi can now sing
+    type: add
+  id: 355
   time: '2025-07-16T18:02:25.000+00:00'
   url: https://github.com/moff-station/moff-station-14/pull/355
+- author: PanzerVo
+  changes:
+  - message: Swat Shoes to ClothesMate manager wire
+    type: add
+  id: 356
+  time: 2025-07-17T03:52:42.000%:z
+  url: https://github.com/moff-station/moff-station-14/pull/356
 - author: PanzerVo
   changes:
   - message: Swat Shoes to ClothesMate manager wire
@@ -1106,8 +1274,22 @@ Entries:
   - message: Open ended objectives have received some improvements.
     type: tweak
   id: 358
+  time: 2025-07-19T22:05:02.000%:z
+  url: https://github.com/moff-station/moff-station-14/pull/358
+- author: DuckManZach
+  changes:
+  - message: Open ended objectives have received some improvements.
+    type: tweak
+  id: 358
   time: '2025-07-19T22:05:02.000+00:00'
   url: https://github.com/moff-station/moff-station-14/pull/358
+- author: FreianOfVoid, Centronias
+  changes:
+  - message: Reels-It-In's Knife (Personal Item)
+    type: add
+  id: 366
+  time: 2025-07-22T20:31:36.000%:z
+  url: https://github.com/moff-station/moff-station-14/pull/366
 - author: FreianOfVoid, Centronias
   changes:
   - message: Reels-It-In's Knife (Personal Item)
@@ -1120,7 +1302,28 @@ Entries:
   - message: The Ruffler's Mask (Personal Item)
     type: add
   id: 367
+  time: 2025-07-22T20:30:43.000%:z
+  url: https://github.com/moff-station/moff-station-14/pull/367
+- author: FreianOfVoid, Centronias
+  changes:
+  - message: The Ruffler's Mask (Personal Item)
+    type: add
+  id: 367
   time: '2025-07-22T20:30:43.000+00:00'
   url: https://github.com/moff-station/moff-station-14/pull/367
+- author: DuckManZach
+  changes:
+  - message: Pinktext will now submit as its being typed.
+    type: fix
+  id: 369
+  time: 2025-07-24T20:32:13.000%:z
+  url: https://github.com/moff-station/moff-station-14/pull/369
+- author: compilatron
+  changes:
+  - message: Added 1 more figurine
+    type: add
+  id: 370
+  time: 2025-07-24T21:33:26.000%:z
+  url: https://github.com/moff-station/moff-station-14/pull/370
 Name: Mofflog
 Order: -2
