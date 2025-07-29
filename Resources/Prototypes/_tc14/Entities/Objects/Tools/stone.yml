@@ -80,10 +80,49 @@
     size: Normal
     sprite: _tc14/Objects/Items/mortar.rsi
   - type: Construction
-    graph: Rock
+    graph: WoodenHandleTools
     node: mortar
   - type: Tool
     qualities:
     - Mortaring
     useSound:
       path: /Audio/Items/chisel_use.ogg
+  - type: ItemSlots
+    slots:
+      mortar:
+        name: mortar-slot-name
+        whitelist:
+          components:
+          - SolutionContainerManager
+  - type: ContainerContainer
+    containers:
+      mortar: !type:ContainerSlot { }
+  - type: SolutionContainerManager
+    solutions:
+      mortar:
+        maxVol: 25
+  - type: MixableSolution
+    solution: mortar
+  - type: RefillableSolution
+    solution: mortar
+  - type: DrainableSolution
+    solution: mortar
+  - type: ExaminableSolution
+    solution: mortar
+  - type: DrawableSolution
+    solution: mortar
+  - type: InjectableSolution
+    solution: mortar
+  - type: SolutionTransfer
+    canChangeTransferAmount: true
+  - type: SolutionItemStatus
+    solution: mortar
+  - type: UserInterface
+    interfaces:
+      enum.TransferAmountUiKey.Key:
+        type: TransferAmountBoundUserInterface
+  - type: Drink
+    solution: mortar
+  - type: GrindOnDoAfter
+    solution: mortar
+    itemSlot: mortar

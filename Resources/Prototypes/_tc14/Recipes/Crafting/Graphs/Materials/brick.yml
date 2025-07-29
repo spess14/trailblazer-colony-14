@@ -15,13 +15,5 @@
         doAfter: 3
   - node: brick
     entity: BrickStone1
-    edges:
-    - to: mortar
-      steps:
-      - material: WoodPlank
-        amount: 1
-        doAfter: 0.5
   - node: flakingRock
     entity: FlakingRock
-  - node: mortar
-    entity: Mortar
