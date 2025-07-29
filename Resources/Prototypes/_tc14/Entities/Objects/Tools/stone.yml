@@ -94,6 +94,9 @@
         whitelist:
           components:
           - SolutionContainerManager
+  - type: ContainerContainer
+    containers:
+      mortar: !type:ContainerSlot { }
   - type: SolutionContainerManager
     solutions:
       mortar:
