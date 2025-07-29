@@ -80,7 +80,7 @@
     size: Normal
     sprite: _tc14/Objects/Items/mortar.rsi
   - type: Construction
-    graph: Rock
+    graph: WoodenHandleTools
     node: mortar
   - type: Tool
     qualities:

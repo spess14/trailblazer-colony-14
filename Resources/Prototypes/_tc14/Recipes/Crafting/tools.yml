@@ -24,8 +24,8 @@
 
 - type: construction
   id: mortar
-  graph: Rock
-  startNode: brick
+  graph: WoodenHandleTools
+  startNode: start
   targetNode: mortar
   category: construction-category-tools
   objectType: Item

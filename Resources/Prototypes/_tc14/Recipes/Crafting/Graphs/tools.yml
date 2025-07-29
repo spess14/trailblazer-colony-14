@@ -25,6 +25,11 @@
       steps:
       - tool: Mortaring
         doAfter: 0.5
+    - to: mortar
+      steps:
+      - material: WoodPlank
+        amount: 1
+        doAfter: 0.5
   - node: chisel
     entity: Chisel
   - node: shovel
@@ -39,3 +44,5 @@
     entity: StonePickaxe
   - node: pulp
     entity: WoodPulp
+  - node: mortar
+    entity: Mortar
