@@ -1313,6 +1313,13 @@ Entries:
   id: 370
   time: '2025-07-24T21:33:26.000'
   url: https://github.com/moff-station/moff-station-14/pull/370
+- author: PanzerVo
+  changes:
+  - message: Engineering Sunglasses for crafting
+    type: add
+  id: 372
+  time: '2025-07-31T01:45:34.000'
+  url: https://github.com/moff-station/moff-station-14/pull/372
 - author: Coolsurf6
   changes:
   - message: Added Kai's plushie. Place on head and hands included!
@@ -1327,5 +1334,12 @@ Entries:
   id: 376
   time: '2025-07-29T23:53:20.000'
   url: https://github.com/moff-station/moff-station-14/pull/376
+- author: compilatron
+  changes:
+  - message: Added Frezon Relay Station, a new Ultra Low Pop station.
+    type: add
+  id: 377
+  time: '2025-07-30T21:07:30.000'
+  url: https://github.com/moff-station/moff-station-14/pull/377
 Name: Mofflog
 Order: -2
