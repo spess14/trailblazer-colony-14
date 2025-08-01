@@ -100,7 +100,7 @@
   - type: SolutionContainerManager
     solutions:
       mortar:
-        maxVol: 25
+        maxVol: 50
   - type: MixableSolution
     solution: mortar
   - type: RefillableSolution

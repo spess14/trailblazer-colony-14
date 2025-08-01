@@ -1,4 +1,5 @@
-﻿using Content.Shared._tc14.Tools.Components;
+﻿using Content.Server.Stack;
+using Content.Shared._tc14.Tools.Components;
 using Content.Shared._tc14.Tools.Systems;
 using Content.Shared.Chemistry.Components.SolutionManager;
 using Content.Shared.Chemistry.EntitySystems;
@@ -18,7 +19,7 @@ public sealed class GrindOnDoAfterSystem : EntitySystem
     [Dependency] private readonly ItemSlotsSystem _itemSlots = default!;
     [Dependency] private readonly SharedSolutionContainerSystem _solution = default!;
     [Dependency] private readonly SharedPopupSystem _popups = default!;
-    [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
+    [Dependency] private readonly StackSystem _stack = default!;
 
     /// <inheritdoc/>
     public override void Initialize()
@@ -40,9 +41,10 @@ public sealed class GrindOnDoAfterSystem : EntitySystem
             return;
 
         var solution = solutionEnt.Value.Comp.Solution;
+        var scale = _stack.GetCount(item.Value);
+        solution.ScaleSolution(scale);
         _solution.TryGetSolution(uid, component.Solution, out var target);
-        _solution.TryAddSolution(target!.Value, solution);
-
+        _solution.ForceAddSolution(target!.Value, solution);
         QueueDel(item);
         _popups.PopupClient(Loc.GetString("grind-grinded"), args.User);
     }
