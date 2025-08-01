@@ -11,4 +11,14 @@
     prototypes:
     - RockItem
     - BushForage
+    rarePrototypes:
+    - SpawnMobCow
+    - SpawnMobCatGeneric
+    - SpawnMobButterfly
+    - SpawnMobBee
+    - SpawnMobGoat
+    - SpawnMobMonkey
+    - SpawnMobMouse
+    - SpawnMobReindeerBuck
+    - SpawnMobReindeerDoe
     offset: 0.5
