@@ -55,6 +55,9 @@
       behaviors:
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
+  - type: Construction
+    graph: Campfire
+    node: campfire
   - type: ItemPlacer
   - type: PlaceableSurface
   - type: AmbientSound

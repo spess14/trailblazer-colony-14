@@ -59,3 +59,15 @@
   canBuildInImpassable: false
   conditions:
   - !type:TileNotBlocked
+
+- type: construction
+  id: Campfire
+  graph: Campfire
+  startNode: start
+  targetNode: campfire
+  category: construction-category-structures
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+  - !type:TileNotBlocked
