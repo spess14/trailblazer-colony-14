@@ -1341,5 +1341,27 @@ Entries:
   id: 377
   time: '2025-07-30T21:07:30.000'
   url: https://github.com/moff-station/moff-station-14/pull/377
+- author: DuckManZach
+  changes:
+  - message: Gamerules now check total playercount rather than readycount when seeing
+      if they can be fired.
+    type: tweak
+  id: 380
+  time: '2025-07-31T23:33:00.000'
+  url: https://github.com/moff-station/moff-station-14/pull/380
+- author: DuckManZach
+  changes:
+  - message: change the borg plush noise!
+    type: tweak
+  id: 381
+  time: '2025-08-01T02:19:29.000'
+  url: https://github.com/moff-station/moff-station-14/pull/381
+- author: Jona-K
+  changes:
+  - message: "Added Siege\xB4s Personal Item"
+    type: add
+  id: 382
+  time: '2025-08-01T01:04:26.000'
+  url: https://github.com/moff-station/moff-station-14/pull/382
 Name: Mofflog
 Order: -2
