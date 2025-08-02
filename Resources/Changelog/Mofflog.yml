@@ -1285,6 +1285,13 @@ Entries:
   id: 358
   time: '2025-07-19T22:05:02.000'
   url: https://github.com/moff-station/moff-station-14/pull/358
+- author: DuckManZach
+  changes:
+  - message: Added the Syndicate Listening Outpost!
+    type: add
+  id: 365
+  time: '2025-08-01T03:53:20.000'
+  url: https://github.com/moff-station/moff-station-14/pull/365
 - author: FreianOfVoid, Centronias
   changes:
   - message: Reels-It-In's Knife (Personal Item)
