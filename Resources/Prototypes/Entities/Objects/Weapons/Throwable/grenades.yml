@@ -191,7 +191,7 @@
       - !type:TriggerBehavior
         keyOut: timer # immediately explode
       - !type:DoActsBehavior
-        acts: ["Destruction"]
+        acts: [ "Destruction"]
   - type: TimerTrigger
     delay: 5
   - type: ExplodeOnTrigger
