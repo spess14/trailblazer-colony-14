@@ -1407,5 +1407,26 @@ Entries:
   id: 387
   time: '2025-08-03T19:27:52.000'
   url: https://github.com/moff-station/moff-station-14/pull/387
+- author: Nox38
+  changes:
+  - message: Reverted stamina resistance and damage to match upstream.
+    type: tweak
+  id: 389
+  time: '2025-08-04T22:27:55.000'
+  url: https://github.com/moff-station/moff-station-14/pull/389
+- author: DuckManZach
+  changes:
+  - message: Added new sec webbing!
+    type: add
+  id: 391
+  time: '2025-08-04T20:33:56.000'
+  url: https://github.com/moff-station/moff-station-14/pull/391
+- author: Centronias
+  changes:
+  - message: Eclipse's personal foam gun now comes with additional ammo!
+    type: tweak
+  id: 393
+  time: '2025-08-04T16:53:26.000'
+  url: https://github.com/moff-station/moff-station-14/pull/393
 Name: Mofflog
 Order: -2
