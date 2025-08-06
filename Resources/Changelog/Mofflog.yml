@@ -1058,6 +1058,13 @@ Entries:
   id: 288
   time: '2025-06-12T20:04:58.000'
   url: https://github.com/moff-station/moff-station-14/pull/288
+- author: DuckManZach
+  changes:
+  - message: Pirates have received a major update!
+    type: add
+  id: 292
+  time: '2025-08-05T20:47:17.000'
+  url: https://github.com/moff-station/moff-station-14/pull/292
 - author: Centronias
   changes:
   - message: The Box of Foam Darts can now quickly pick up foam darts in the same
@@ -1409,6 +1416,13 @@ Entries:
   url: https://github.com/moff-station/moff-station-14/pull/387
 - author: Nox38
   changes:
+  - message: Wardens once again have command comms!
+    type: add
+  id: 388
+  time: '2025-08-05T14:37:10.000'
+  url: https://github.com/moff-station/moff-station-14/pull/388
+- author: Nox38
+  changes:
   - message: Reverted stamina resistance and damage to match upstream.
     type: tweak
   id: 389
@@ -1428,5 +1442,19 @@ Entries:
   id: 393
   time: '2025-08-04T16:53:26.000'
   url: https://github.com/moff-station/moff-station-14/pull/393
+- author: Altimus, Southbridge
+  changes:
+  - message: Added Drunk Driving Incident lobby screen
+    type: add
+  id: 396
+  time: '2025-08-05T15:02:40.000'
+  url: https://github.com/moff-station/moff-station-14/pull/396
+- author: Davyei
+  changes:
+  - message: Resprited the chef jacket.
+    type: tweak
+  id: 398
+  time: '2025-08-05T23:12:40.000'
+  url: https://github.com/moff-station/moff-station-14/pull/398
 Name: Mofflog
 Order: -2
