@@ -20,6 +20,7 @@
   - CigarGold
   - GoldRing    # Moffstation - Begin - allow people to pick rings, abstaining from the expensive ones for now
   - SilverRing  # Moffstation - End
+  - Folder # Moffstation - (Misc Loadout Improvements)
   - ClothingNeckLGBTPin
   - ClothingNeckAllyPin
   - ClothingNeckAromanticPin
@@ -873,6 +874,7 @@
   minLimit: 0
   loadouts:
   - AtmosphericTechnicianWintercoat
+  - StationEngineerOuterVest # Moffstation - (Misc Loadout Improvements)
 
 - type: loadoutGroup
   id: AtmosphericTechnicianBackpack
@@ -889,6 +891,7 @@
   loadouts:
   - WhiteShoes
   - EngineeringWinterBoots
+  - WorkBoots # Moffstation - (Misc Loadout Improvements)
 
 - type: loadoutGroup
   id: SurvivalExtended
@@ -1142,6 +1145,13 @@
   loadouts:
   - DetectiveFedora
   - DetectiveFedoraGrey
+  # Moffstation - Begin (Misc Loadout Improvements)
+  - SecurityHelmet
+  - MilitaryHelmet
+  - SecurityBeret
+  - SecurityHat
+  - TrooperHat
+  # Moffstation - End
 
 - type: loadoutGroup
   id: DetectiveNeck
@@ -1295,6 +1305,14 @@
   - MedicalDoctorBackpack
   - MedicalDoctorSatchel
   - MedicalDoctorDuffel
+  # Moffstation - Begin (Misc Loadout Improvements)
+  - VirologyBackpack
+  - VirologySatchel
+  - VirologyDuffel
+  - GeneticsBackpack
+  - GeneticsSatchel
+  - GeneticsDuffel
+  # Moffstation - End
   - LeatherSatchel  # Moffstation - Allow picking leather satchel
 
 - type: loadoutGroup
