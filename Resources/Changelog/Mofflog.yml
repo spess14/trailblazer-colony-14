@@ -1456,5 +1456,19 @@ Entries:
   id: 398
   time: '2025-08-05T23:12:40.000'
   url: https://github.com/moff-station/moff-station-14/pull/398
+- author: Nyxilath
+  changes:
+  - message: new law board sprites
+    type: add
+  id: 401
+  time: '2025-08-06T17:51:10.000'
+  url: https://github.com/moff-station/moff-station-14/pull/401
+- author: DuckManZach
+  changes:
+  - message: Rebuffed advanced chems.
+    type: tweak
+  id: 402
+  time: '2025-08-06T19:07:24.000'
+  url: https://github.com/moff-station/moff-station-14/pull/402
 Name: Mofflog
 Order: -2
