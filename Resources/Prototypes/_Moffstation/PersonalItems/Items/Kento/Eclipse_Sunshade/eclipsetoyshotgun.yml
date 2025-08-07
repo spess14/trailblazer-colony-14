@@ -35,6 +35,7 @@
 
 - type: loadout
   id: PersonalItemEclipseSunshadeGun
+  dummyEntity: PersonalItemEclipseSunshadeGun
   storage:
     back:
     - PersonalItemEclipseSunshadeGun
