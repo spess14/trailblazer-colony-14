@@ -69,3 +69,8 @@ lpo-existing = [color=Crimson]Syndicate Listening Outpost[/color]
 lpo-list-start = The outpost was operated by:
 lpo-list-name = [color=White]{$name}[/color]
 lpo-list-name-user = [color=White]{$name}[/color] ([color=gray]{$user}[/color])
+
+# High Value Target
+
+roles-high-value-target = High Value Target
+roles-high-value-target-objective = You are a high-value target for the syndicate. Contracts are more likely to target you than other crew members.
