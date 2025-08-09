@@ -1450,6 +1450,13 @@ Entries:
   id: 393
   time: '2025-08-04T16:53:26.000'
   url: https://github.com/moff-station/moff-station-14/pull/393
+- author: DuckManZach
+  changes:
+  - message: Added an alt sec belt (its drippy)!
+    type: add
+  id: 395
+  time: '2025-08-08T20:00:09.000'
+  url: https://github.com/moff-station/moff-station-14/pull/395
 - author: Altimus, Southbridge
   changes:
   - message: Added Drunk Driving Incident lobby screen
@@ -1485,6 +1492,14 @@ Entries:
   id: 402
   time: '2025-08-06T19:07:24.000'
   url: https://github.com/moff-station/moff-station-14/pull/402
+- author: Davyei, Remminster, Southbridge
+  changes:
+  - message: arachnid, diona, dwarf, elf, justice, moth, reptilian, and vox AI holograms
+      have been added.
+    type: add
+  id: 404
+  time: '2025-08-08T19:59:19.000'
+  url: https://github.com/moff-station/moff-station-14/pull/404
 - author: Southbridge
   changes:
   - message: You can now set yourself as a high-value target, causing the syndicate
@@ -1516,5 +1531,14 @@ Entries:
   id: 415
   time: '2025-08-08T05:39:55.000'
   url: https://github.com/moff-station/moff-station-14/pull/415
+- author: DuckManZach
+  changes:
+  - message: Added a variety of swimsuits!
+    type: add
+  - message: Added the swimvend!
+    type: add
+  id: 418
+  time: '2025-08-08T20:08:10.000'
+  url: https://github.com/moff-station/moff-station-14/pull/418
 Name: Mofflog
 Order: -2
