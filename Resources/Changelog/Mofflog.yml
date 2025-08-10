@@ -1522,6 +1522,15 @@ Entries:
   id: 411
   time: '2025-08-07T17:00:08.000'
   url: https://github.com/moff-station/moff-station-14/pull/411
+- author: Freian, Nox38
+  changes:
+  - message: Added new Remia/Loraine's pin personal item!
+    type: add
+  - message: Removed Remia's photo personal item.
+    type: remove
+  id: 413
+  time: '2025-08-09T19:55:28.000'
+  url: https://github.com/moff-station/moff-station-14/pull/413
 - author: DuckManZach
   changes:
   - message: The LPO now starts with a holopad and chameleon gear!
