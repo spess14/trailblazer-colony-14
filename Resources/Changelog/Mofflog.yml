@@ -1531,6 +1531,15 @@ Entries:
   id: 413
   time: '2025-08-09T19:55:28.000'
   url: https://github.com/moff-station/moff-station-14/pull/413
+- author: Nyxilath
+  changes:
+  - message: New law boards, printable from the law matrix imprinter
+    type: add
+  - message: Law matrix imprinter can now be EMAG'd for dangerous law boards
+    type: add
+  id: 414
+  time: '2025-08-10T21:24:52.000'
+  url: https://github.com/moff-station/moff-station-14/pull/414
 - author: DuckManZach
   changes:
   - message: The LPO now starts with a holopad and chameleon gear!
