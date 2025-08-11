@@ -45,10 +45,10 @@ public sealed class BlueprintSystem : EntitySystem
 
             foreach (var recipe in recipes)
             {
-                if (!_prototypeManager.TryIndex(recipe, out var proto))
+                if (!_prototypeManager.Resolve(recipe, out var recipePrototype) || !_prototypeManager.Resolve(recipePrototype.Result, out var prototype))
                     continue;
 
-                formatted.AddText(proto.ID);
+                formatted.AddText(Loc.GetString(prototype.Name));
                 formatted.PushNewline();
             }
 

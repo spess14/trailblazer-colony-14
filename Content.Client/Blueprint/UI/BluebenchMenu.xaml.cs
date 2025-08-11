@@ -80,7 +80,7 @@ public sealed partial class BluebenchMenu : DefaultWindow
 
     public void UpdateRequiredComponents()
     {
-        ActiveResearch.Text = _loc.GetString("bluebench-active-project") +
+        ActiveResearch.Text = _loc.GetString("bluebench-active-project") + " " +
                               (ActiveResearchProto == null ? "N/A" : ActiveResearchProto.Name);
         if (ActiveResearchProto is null)
             return;
@@ -100,7 +100,7 @@ public sealed partial class BluebenchMenu : DefaultWindow
             if (stackPrototype.Icon is not null)
                 _spriteSystem.GetFrame(stackPrototype.Icon, TimeSpan.Zero, false);
 
-            Requirements.AddChild(new BluebenchMaterialRequirement(frame, $"{value}x {stackPrototype.Name}"));
+            Requirements.AddChild(new BluebenchMaterialRequirement(frame, $"{value}x {Loc.GetString(stackPrototype.Name)}"));
         }
 
         foreach (var (key, value) in TagProgress)
@@ -111,7 +111,7 @@ public sealed partial class BluebenchMenu : DefaultWindow
             if (!prototypeManager.TryIndex(key, out var tagPrototype))
                 continue;
 
-            Requirements.AddChild(new BluebenchMaterialRequirement(null, $"{value}x {tagPrototype.ID}"));
+            Requirements.AddChild(new BluebenchMaterialRequirement(null, $"{value}x {tagPrototype.ID.ToLower()}"));
         }
 
         foreach (var (key, value) in ComponentProgress)
@@ -133,19 +133,21 @@ public sealed partial class BluebenchMenu : DefaultWindow
         foreach (var (key, value) in entry.StackRequirements)
         {
             message.PushNewline();
-            message.AddMarkupOrThrow($"{value}x {key.Id}");
+            if (_prototypeManager.Resolve(key, out var prototype))
+                message.AddMarkupOrThrow($"{value}x {Loc.GetString(prototype.Name)}");
         }
 
         foreach (var (key, value) in entry.TagRequirements)
         {
             message.PushNewline();
-            message.AddMarkupOrThrow($"{value.Amount}x {key.Id}");
+            message.AddMarkupOrThrow($"{value.Amount}x {key.Id.ToLower()}"); // ToLower for consistency with regular prototype names
         }
 
         foreach (var (key, value) in entry.ComponentRequirements)
         {
             message.PushNewline();
-            message.AddMarkupOrThrow($"{value.Amount}x {key}");
+            if (_prototypeManager.Resolve(key, out var prototype))
+                message.AddMarkupOrThrow($"{value.Amount}x {prototype.Name}");
         }
 
         return message;
