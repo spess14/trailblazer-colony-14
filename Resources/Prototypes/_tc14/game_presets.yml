@@ -8,4 +8,3 @@
   description: planet-survival-description
   rules:
   - PlanetaryStationGameRule
-  - WeatherEventScheduler

@@ -17,6 +17,9 @@ namespace Content.Server.GameTicking.Rules;
 /// </summary>
 public sealed class PlanetBecomesStationRuleSystem : GameRuleSystem<PlanetBecomesStationRuleComponent>
 {
+    [Dependency] private readonly TransformSystem _transform = default!;
+    [Dependency] private readonly StationSystem _station = default!;
+    [Dependency] private readonly SharedMapSystem _mapSystem = default!;
     [Dependency] private readonly IMapManager _mapMan = default!;
     [Dependency] private readonly GameTicker _gameTicker = default!;
     [Dependency] private readonly IConsoleHost _host = default!;
