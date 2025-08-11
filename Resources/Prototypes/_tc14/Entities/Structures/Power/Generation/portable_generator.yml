@@ -12,7 +12,7 @@
     layers:
     - state: portgen4
       map: [ "enum.GeneratorVisualLayers.Body" ]
-    - state: portgen4on
+    - state: portgen4on_unlit
       map: [ "enum.GeneratorVisualLayers.Unlit" ]
       shader: unshaded
       visible: false
