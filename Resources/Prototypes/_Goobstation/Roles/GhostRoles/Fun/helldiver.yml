@@ -8,24 +8,28 @@
     jumpsuit: ClothingUniformJumpsuitMercenary
     back: WeaponRifleM90
     belt: ClothingBeltMercWebbingHelldiverFilled
-    mask: ClothingMaskGasMerc
-    eyes: ClothingEyesGlassesMercenary # Night Vision when added
     ears: ClothingHeadsetAltFreelancer
-    gloves: ClothingHandsMercGlovesCombat
+    gloves: ClothingHandsGlovesCombat
     neck: ClothingNeckCloakHelldiver
     head: ClothingHeadHelmetHelldiver
     outerClothing: ClothingOuterArmorHelldiver
     suitstorage: DoubleEmergencyOxygenTankFilled
-    shoes: ClothingShoesBootsMercFilled
+    shoes: ClothingShoesBootsCombat
     id: HelldiverPDA
     pocket1: ToolDebug
     pocket2: WeaponPistolEchis
 
 - type: entity
-  parent: ClothingBeltMercWebbing
+  parent: ClothingBeltMilitaryWebbing
   id: ClothingBeltMercWebbingHelldiverFilled
-  suffix: Helldiver, Filled
+  name: Helldiver Webbing
+  description: Super Earth Standard Issue webbing for ammo and supplies.
   components:
+  - type: Storage
+    maxItemSize: Normal
+    defaultStorageOrientation: Vertical
+    grid:
+    - 0,0,15,1
   - type: EntityTableContainerFill
     containers:
       storagebase: !type:NestedSelector
