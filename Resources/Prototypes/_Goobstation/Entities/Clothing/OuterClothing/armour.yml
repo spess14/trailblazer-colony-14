@@ -4,7 +4,7 @@
 
 # Helldiver
 - type: entity
-  parent: [ ClothingOuterArmorRaid, GeigerCounterClothing, ClothingOuterHardsuitBase ]
+  parent: [ ClothingOuterArmorRaid, GeigerCounterClothing ]
   id: ClothingOuterArmorHelldiver
   name: B-01 Tactical Armor
   description: This armor is the Super Earth Standard Issue, made from the same titanium alloy as the Destroyer's hull.

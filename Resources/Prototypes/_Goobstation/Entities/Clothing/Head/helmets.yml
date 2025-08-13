@@ -3,7 +3,7 @@
 # SPDX-License-Identifier: MIT
 # TC14: We have received permission to use this code under the MIT license from bombasterDS. The code has been cherry-picked to only contain the parts we have permission to use.
 - type: entity
-  parent: [ ClothingOuterHardsuitBase, ClothingHeadHelmetRaid ]
+  parent: ClothingHeadHelmetRaid
   id: ClothingHeadHelmetHelldiver
   name: B-01 Tactical Helmet
   description: This helmet is the Super Earth Standard Issue, made from the same titanium alloy as the Destroyer's hull.
