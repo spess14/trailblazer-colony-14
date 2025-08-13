@@ -1,0 +1,23 @@
+# SPDX-FileCopyrightText: 2024 BombasterDS <115770678+BombasterDS@users.noreply.github.com>
+#
+# SPDX-License-Identifier: MIT
+# TC14: We have received permission to use this code under the MIT license from bombasterDS. The code has been cherry-picked to only contain the parts we have permission to use.
+- type: entity
+  parent: ClothingHeadHelmetRaid
+  id: ClothingHeadHelmetHelldiver
+  name: salvage NT-01 tactical helmet
+  description: This armor is the NanoTrasen standard issue, made from the same titanium alloy as the Goliath hull.
+  components:
+  - type: BreathMask
+  - type: Sprite
+    sprite: _Goobstation/Textures/Helmets/helldiver.rsi
+  - type: Clothing
+    sprite: _Goobstation/Textures/Helmets/helldiver.rsi
+  - type: TemperatureProtection
+    heatingCoefficient: 0.1
+    coolingCoefficient: 0.1
+  - type: HideLayerClothing
+    slots:
+    - Hair
+    - HeadTop
+    - HeadSide

@@ -1,0 +1,14 @@
+# SPDX-FileCopyrightText: 2024 BombasterDS <115770678+BombasterDS@users.noreply.github.com>
+# SPDX-License-Identifier: MIT
+# TC14: We have received permission to use this code under the MIT license from bombasterDS. The code has been cherry-picked to only contain the parts we have permission to use.
+
+- type: entity
+  parent: ClothingNeckBase
+  id: ClothingNeckCloakHelldiver
+  name: salvage pure loality cape
+  description: A representation of the thankfulness of those infinite crew whose wealthy existence we strive to ensure.
+  components:
+  - type: Sprite
+    sprite: _Goobstation/Clothing/Neck/Cloaks/helldiver.rsi
+  - type: StealTarget
+    stealGroup: HeadCloak
