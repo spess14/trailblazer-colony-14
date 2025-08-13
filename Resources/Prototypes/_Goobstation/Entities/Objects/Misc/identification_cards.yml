@@ -6,12 +6,12 @@
 - type: entity
   parent: SalvageIDCard
   id: HelldiverIDCard
-  name: HELL diver ID card
+  name: Helldiver ID card
   components:
   - type: Sprite
     sprite: _Goobstation/Objects/Misc/id_cards.rsi
     layers:
     - state: idhelldiver
   - type: IdCard
-    jobTitle: job-name-salvagediver
+    jobTitle: job-name-helldiver
     jobIcon: JobIconShaftMiner

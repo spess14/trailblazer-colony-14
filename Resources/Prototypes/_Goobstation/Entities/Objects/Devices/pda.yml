@@ -5,7 +5,7 @@
 - type: entity
   parent: SalvagePDA
   id: HelldiverPDA
-  name: Hell Diver PDA
+  name: Helldiver PDA
   description: Smells like corpses of insects and androids.
   components:
   - type: Sprite

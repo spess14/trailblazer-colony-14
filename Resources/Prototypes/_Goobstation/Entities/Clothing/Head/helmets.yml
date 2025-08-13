@@ -5,7 +5,7 @@
 - type: entity
   parent: ClothingHeadHelmetRaid
   id: ClothingHeadHelmetHelldiver
-  name: B-01 Tactical helmet
+  name: B-01 Tactical Helmet
   description: This helmet is the Super Earth Standard Issue, made from the same titanium alloy as the Destroyer's hull.
   components:
   - type: BreathMask
