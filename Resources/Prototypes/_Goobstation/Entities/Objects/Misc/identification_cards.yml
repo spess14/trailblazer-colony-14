@@ -1,0 +1,17 @@
+# SPDX-FileCopyrightText: 2024 BombasterDS <115770678+BombasterDS@users.noreply.github.com>
+# SPDX-License-Identifier: MIT
+# TC14: We have received permission to use this code under the MIT license from bombasterDS. The code has been cherry-picked to only contain the parts we have permission to use.
+
+# Helldiver
+- type: entity
+  parent: SalvageIDCard
+  id: HelldiverIDCard
+  name: HELL diver ID card
+  components:
+  - type: Sprite
+    sprite: _Goobstation/Objects/Misc/id_cards.rsi
+    layers:
+    - state: idhelldiver
+  - type: IdCard
+    jobTitle: job-name-salvagediver
+    jobIcon: JobIconShaftMiner
