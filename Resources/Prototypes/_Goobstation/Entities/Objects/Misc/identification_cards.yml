@@ -13,5 +13,5 @@
     layers:
     - state: idhelldiver
   - type: IdCard
-    jobTitle: job-name-helldiver
-    jobIcon: JobIconShaftMiner
+    jobTitle: Helldiver
+    jobIcon: JobIconZombie

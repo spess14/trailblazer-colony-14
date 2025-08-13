@@ -6,18 +6,18 @@
   id: HelldiverGear
   equipment:
     jumpsuit: ClothingUniformJumpsuitMercenary
-    back: WeaponRifleM90
+    suitstorage: DoubleEmergencyOxygenTankFilled
     belt: ClothingBeltMercWebbingHelldiverFilled
     ears: ClothingHeadsetAltFreelancer
     gloves: ClothingHandsGlovesCombat
     neck: ClothingNeckCloakHelldiver
     head: ClothingHeadHelmetHelldiver
     outerClothing: ClothingOuterArmorHelldiver
-    suitstorage: DoubleEmergencyOxygenTankFilled
     shoes: ClothingShoesBootsCombat
     id: HelldiverPDA
     pocket1: ToolDebug
-    pocket2: WeaponPistolEchis
+    pocket2: WeaponPistolMk58
+    back: WeaponRifleM90GrenadeLauncher
 
 - type: entity
   parent: ClothingBeltMilitaryWebbing
@@ -29,7 +29,7 @@
     maxItemSize: Normal
     defaultStorageOrientation: Vertical
     grid:
-    - 0,0,15,1
+    - 0,0,17,1
   - type: EntityTableContainerFill
     containers:
       storagebase: !type:NestedSelector
@@ -41,9 +41,11 @@
     children:
     - id: MagazineRifle
       amount: !type:ConstantNumberSelector
-        value: 3
-    - id: MagazineBoxRifleBig
+        value: 6
+    - id: MagazinePistol
+      amount: !type:ConstantNumberSelector
+        value: 6
     - id: ExGrenade
       amount: !type:ConstantNumberSelector
-        value: 2
+        value: 4
     - id: MedkitCombatFilled
