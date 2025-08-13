@@ -5,8 +5,8 @@
 - type: entity
   parent: ClothingHeadHelmetRaid
   id: ClothingHeadHelmetHelldiver
-  name: salvage NT-01 tactical helmet
-  description: This armor is the NanoTrasen standard issue, made from the same titanium alloy as the Goliath hull.
+  name: B-01 Tactical helmet
+  description: This helmet is the Super Earth Standard Issue, made from the same titanium alloy as the Destroyer's hull.
   components:
   - type: BreathMask
   - type: Sprite
