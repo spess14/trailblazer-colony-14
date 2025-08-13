@@ -22,7 +22,7 @@
 - type: entity
   parent: ClothingBeltMilitaryWebbing
   id: ClothingBeltMercWebbingHelldiverFilled
-  name: Helldiver Webbing
+  name: SEAF Webbing
   description: Super Earth Standard Issue webbing for ammo and supplies.
   components:
   - type: Storage
@@ -30,6 +30,10 @@
     defaultStorageOrientation: Vertical
     grid:
     - 0,0,17,1
+  - type: Sprite
+    sprite: _Mono/Clothing/Belt/webbings_big_black.rsi
+  - type: Clothing
+    sprite: _Mono/Clothing/Belt/webbings_big_black.rsi
   - type: EntityTableContainerFill
     containers:
       storagebase: !type:NestedSelector
@@ -41,10 +45,10 @@
     children:
     - id: MagazineRifle
       amount: !type:ConstantNumberSelector
-        value: 6
+        value: 4
     - id: MagazinePistol
       amount: !type:ConstantNumberSelector
-        value: 6
+        value: 8
     - id: ExGrenade
       amount: !type:ConstantNumberSelector
         value: 4

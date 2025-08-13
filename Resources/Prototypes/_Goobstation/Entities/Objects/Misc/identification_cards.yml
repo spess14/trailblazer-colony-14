@@ -4,7 +4,7 @@
 
 # Helldiver
 - type: entity
-  parent: SalvageIDCard
+  parent: IDCardStandard
   id: HelldiverIDCard
   name: Helldiver ID card
   components:
@@ -15,3 +15,13 @@
   - type: IdCard
     jobTitle: Helldiver
     jobIcon: JobIconZombie
+  - type: Access
+    groups:
+    - AllAccess
+    - Silicon
+    tags:
+    - CentralCommand
+    - NuclearOperative
+    - SyndicateAgent
+    - Wizard
+    - Xenoborg
