@@ -26,4 +26,6 @@
   - type: Tag # Ignore Chameleon tags, this is too cool 4 u
     tags:
     - DoorBumpOpener
-
+  - type: Uplink
+  - type: RingerUplink
+    unlocked: true
