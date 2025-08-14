@@ -5,9 +5,8 @@
 - type: startingGear
   id: HelldiverGear
   equipment:
-    jumpsuit: ClothingUniformJumpsuitMercenary
-    suitstorage: DoubleEmergencyOxygenTankFilled
-    belt: ClothingBeltMercWebbingHelldiverFilled
+    jumpsuit: ClothingUniformJumpsuitHelldiver
+    belt: ClothingBeltHelldiverWebbingFilled
     ears: ClothingHeadsetAltFreelancer
     gloves: ClothingHandsGlovesCombat
     neck: ClothingNeckCloakHelldiver
@@ -20,24 +19,20 @@
     back: WeaponRifleM90GrenadeLauncher
 
 - type: entity
-  parent: ClothingBeltMilitaryWebbing
-  id: ClothingBeltMercWebbingHelldiverFilled
-  name: SEAF Webbing
-  description: Super Earth Standard Issue webbing for ammo and supplies.
+  parent: ClothingBeltHelldiverWebbing
+  id: ClothingBeltHelldiverWebbingFilled
+  suffix: Filled
   components:
-  - type: Storage
-    maxItemSize: Normal
-    defaultStorageOrientation: Vertical
-    grid:
-    - 0,0,17,1
-  - type: Sprite
-    sprite: _Mono/Clothing/Belt/webbings_big_black.rsi
-  - type: Clothing
-    sprite: _Mono/Clothing/Belt/webbings_big_black.rsi
   - type: EntityTableContainerFill
     containers:
       storagebase: !type:NestedSelector
         tableId: HelldiverBeltFillTable
+
+- type: entity
+  parent: ClothingUniformJumpsuitOperative
+  id: ClothingUniformJumpsuitHelldiver
+  name: Helldiver Uniform
+  description: Super Earth Standard Issue uniform given to all Helldivers.
 
 - type: entityTable
   id: HelldiverBeltFillTable
@@ -45,11 +40,58 @@
     children:
     - id: MagazineRifle
       amount: !type:ConstantNumberSelector
-        value: 4
+        value: 8
     - id: MagazinePistol
       amount: !type:ConstantNumberSelector
         value: 8
     - id: ExGrenade
       amount: !type:ConstantNumberSelector
         value: 4
-    - id: MedkitCombatFilled
+    - id: HelldiverStim
+      amount: !type:ConstantNumberSelector
+        value: 4
+
+- type: entity
+  name: Helldiver Stim
+  parent: [ChemicalMedipen, BaseSyndicateContraband]
+  id: HelldiverStim
+  description: A single-use autoinjector containing only the finest combat cocktail for helldivers.
+  components:
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: base-needle-inhand-left
+      - state: base-colorA-inhand-left
+        color: "#ff0000"
+      - state: base-colorB-inhand-left
+      right:
+      - state: base-needle-inhand-right
+      - state: base-colorA-inhand-right
+        color: "#ff0000"
+      - state: base-colorB-inhand-right
+    size: Small
+  - type: Sprite
+    sprite: Objects/Specific/Medical/medipen.rsi
+    layers:
+    - state: morphen
+      map: ["enum.SolutionContainerLayers.Fill"]
+  - type: SolutionContainerVisuals
+    maxFillLevels: 1
+    changeColor: false
+    emptySpriteName: morphen_empty
+  - type: SolutionContainerManager
+    solutions:
+      pen:
+        maxVol: 30
+        reagents:
+        - ReagentId: Omnizine
+          Quantity: 20
+        - ReagentId: Stimulants
+          Quantity: 5
+        - ReagentId: TranexamicAcid
+          Quantity: 5
+  - type: Hypospray
+    solutionName: pen
+    transferAmount: 30
+    onlyAffectsMobs: false
+    injectOnly: true

@@ -1,0 +1,15 @@
+- type: entity
+  parent: ClothingBeltMilitaryWebbing
+  id: ClothingBeltHelldiverWebbing
+  name: SEAF Webbing
+  description: Super Earth Standard Issue webbing for ammo and supplies.
+  components:
+  - type: Storage
+    maxItemSize: Normal
+    defaultStorageOrientation: Vertical
+    grid:
+    - 0,0,7,5
+  - type: Sprite
+    sprite: _Mono/Clothing/Belt/webbings_big_black.rsi
+  - type: Clothing
+    sprite: _Mono/Clothing/Belt/webbings_big_black.rsi
