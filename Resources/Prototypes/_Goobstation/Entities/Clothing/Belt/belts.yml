@@ -8,7 +8,7 @@
     maxItemSize: Normal
     defaultStorageOrientation: Vertical
     grid:
-    - 0,0,7,5
+    - 0,0,7,4
   - type: Sprite
     sprite: _Mono/Clothing/Belt/webbings_big_black.rsi
   - type: Clothing
