@@ -1,0 +1,27 @@
+- type: entity
+  name: SEAF medipen
+  parent: [ ChemicalMedipen, BaseSyndicateContraband ]
+  id: HelldiverStim
+  description: Super Earth Standard Issue single-use autoinjector containing only the finest combat cocktail for helldivers.
+  components:
+  - type: Sprite
+    sprite: Objects/Specific/Medical/medipen.rsi
+    layers:
+    - state: morphen
+      map: [ "enum.SolutionContainerLayers.Fill" ]
+  - type: SolutionContainerVisuals
+    maxFillLevels: 1
+    changeColor: false
+    emptySpriteName: morphen_empty
+  - type: SolutionContainerManager
+    solutions:
+      pen:
+        maxVol: 5
+        reagents:
+        - ReagentId: Cura
+          Quantity: 5
+  - type: Hypospray
+    solutionName: pen
+    transferAmount: 5
+    onlyAffectsMobs: false
+    injectOnly: true

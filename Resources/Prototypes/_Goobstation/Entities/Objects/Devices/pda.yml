@@ -12,9 +12,7 @@
     sprite: _Goobstation/Objects/Devices/pda.rsi
   - type: Appearance
     appearanceDataInit:
-      enum.PdaVisuals.PdaType:
-        !type:String
-        pda-heccd
+      enum.PdaVisuals.PdaType: !type:String pda-heccd
   - type: Pda
     id: HelldiverIDCard
   - type: PdaBorderColor

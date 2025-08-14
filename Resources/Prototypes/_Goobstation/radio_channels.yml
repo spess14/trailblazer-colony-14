@@ -1,0 +1,7 @@
+- type: radioChannel
+  id: Helldiver
+  name: chat-radio-helldiver
+  keycode: "q"
+  frequency: 20
+  color: "#ffff00"
+  longRange: true

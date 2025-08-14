@@ -1,0 +1,8 @@
+- type: entity
+  parent: ExGrenade
+  id: HelldiverGrenade
+  name: G-12 High Explosive
+  description: A high explosive grenade which damages lightly armored targets. Creates high damage over a small area when detonated.
+  components:
+  - type: Item
+    size: Tiny

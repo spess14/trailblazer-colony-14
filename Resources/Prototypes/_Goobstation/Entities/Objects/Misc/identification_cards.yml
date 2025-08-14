@@ -13,7 +13,7 @@
     layers:
     - state: idhelldiver
   - type: IdCard
-    jobTitle: Helldiver
+    jobTitle: job-name-helldiver
     jobIcon: JobIconZombie
   - type: Access
     groups:
