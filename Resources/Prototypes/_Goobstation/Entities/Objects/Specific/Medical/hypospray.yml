@@ -2,7 +2,7 @@
   name: cura auto-injector
   parent: [ ChemicalMedipen, BaseSyndicateContraband ]
   id: HelldiverStim
-  description: A single-use Cura autoi-njector manufactured by Permacura Biopharma. Non-addictive.
+  description: A single-use Cura auto-injector manufactured by Permacura Biopharma. Non-addictive.
   components:
   - type: Sprite
     sprite: Objects/Specific/Medical/medipen.rsi
