@@ -18,8 +18,8 @@
     id: HelldiverPDA
     pocket1: ToolDebug
     pocket2: DeathAcidifierImplanter
-    suitstorage: WeaponPistolMk58
-    back: WeaponRifleM90GrenadeLauncher
+    suitstorage: WeaponPistolHelldiver
+    back: WeaponRifleHelldiver
 
 - type: entity
   parent: ClothingBeltHelldiverWebbing
@@ -35,10 +35,10 @@
   id: HelldiverBeltFillTable
   table: !type:AllSelector
     children:
-    - id: MagazineRifle
+    - id: MagazineRifleHelldiver
       amount: !type:ConstantNumberSelector
         value: 8
-    - id: MagazinePistol
+    - id: MagazinePistolHelldiver
       amount: !type:ConstantNumberSelector
         value: 8
     - id: HelldiverGrenade
