@@ -18,8 +18,8 @@
     id: HelldiverPDA
     pocket1: ToolDebug
     pocket2: DeathAcidifierImplanter
-    suitstorage: WeaponPistolMk58
-    back: WeaponRifleM90GrenadeLauncher
+    suitstorage: WeaponPistolHelldiver
+    back: WeaponRifleHelldiver
 
 - type: entity
   parent: ClothingBeltHelldiverWebbing
@@ -31,20 +31,14 @@
       storagebase: !type:NestedSelector
         tableId: HelldiverBeltFillTable
 
-- type: entity
-  parent: ClothingUniformJumpsuitOperative
-  id: ClothingUniformJumpsuitHelldiver
-  name: helldiver uniform
-  description: Super Earth Standard Issue uniform given to all Helldivers.
-
 - type: entityTable
   id: HelldiverBeltFillTable
   table: !type:AllSelector
     children:
-    - id: MagazineRifle
+    - id: MagazineRifleHelldiver
       amount: !type:ConstantNumberSelector
         value: 8
-    - id: MagazinePistol
+    - id: MagazinePistolHelldiver
       amount: !type:ConstantNumberSelector
         value: 8
     - id: HelldiverGrenade
@@ -53,127 +47,3 @@
     - id: HelldiverStim
       amount: !type:ConstantNumberSelector
         value: 4
-
-- type: entity
-  parent: ExGrenade
-  id: HelldiverGrenade
-  components:
-  - type: Item
-    size: Tiny
-
-- type: entity
-  parent: [ ClothingHandsGlovesColorBlack, BaseSecurityEngineeringContraband ]
-  id: ClothingHandsGlovesHelldiver
-  name: helldiver combat gloves
-  description: Super Earth Standard Issue combat gloves.
-  components:
-  - type: Sprite
-    sprite: Clothing/Hands/Gloves/combat.rsi
-  - type: Clothing
-    sprite: Clothing/Hands/Gloves/combat.rsi
-  - type: Insulated
-  - type: Fiber
-    fiberMaterial: fibers-insulative
-  - type: MeleeWeapon
-    attackRate: 1.5
-    damage:
-      types:
-        Blunt: 15
-        Structural: 35
-    soundHit:
-      collection: Punch
-    animation: WeaponArcFist
-    mustBeEquippedToUse: true
-  - type: Tag
-    tags:
-    - WhitelistChameleon
-    - Kangaroo
-
-- type: entity
-  parent: [ ClothingShoesMilitaryBase ]
-  id: ClothingBootsHelldiver
-  name: helldiver combat boots
-  description: Super Earth Standard Issue combat boots.
-  components:
-  - type: Sprite
-    sprite: Clothing/Shoes/Boots/combatboots.rsi
-  - type: Clothing
-    sprite: Clothing/Shoes/Boots/combatboots.rsi
-  - type: NoSlip
-  - type: Tag
-    tags:
-    - WhitelistChameleon
-    - Kangaroo
-
-- type: entity
-  name: SEAF medipen
-  parent: [ChemicalMedipen, BaseSyndicateContraband]
-  id: HelldiverStim
-  description: Super Earth Standard Issue single-use autoinjector containing only the finest combat cocktail for helldivers.
-  components:
-  - type: Sprite
-    sprite: Objects/Specific/Medical/medipen.rsi
-    layers:
-    - state: morphen
-      map: ["enum.SolutionContainerLayers.Fill"]
-  - type: SolutionContainerVisuals
-    maxFillLevels: 1
-    changeColor: false
-    emptySpriteName: morphen_empty
-  - type: SolutionContainerManager
-    solutions:
-      pen:
-        maxVol: 30
-        reagents:
-        - ReagentId: Omnizine
-          Quantity: 20
-
-        - ReagentId: Stimulants
-          Quantity: 5
-        - ReagentId: TranexamicAcid
-          Quantity: 5
-  - type: Hypospray
-    solutionName: pen
-    transferAmount: 30
-    onlyAffectsMobs: false
-    injectOnly: true
-
-- type: entity
-  parent: [ EncryptionKey ]
-  id: EncryptionKeyHelldiver
-  name: helldiver encryption key
-  description: An encryption key used by Super Earth's elite forces.
-  components:
-  - type: Sprite
-    layers:
-    - state: crypt_red
-  - type: EncryptionKey
-    channels:
-    - Helldiver
-    defaultChannel: Helldiver
-
-- type: entity
-  parent: [ClothingHeadsetAlt]
-  id: ClothingHeadsetHelldiver
-  name: helldiver headset
-  description: Super Earth Standard Issue communication device.
-  components:
-  - type: Headset
-  - type: EncryptionKeyHolder
-    keySlots: 1
-  - type: ContainerFill
-    containers:
-      key_slots:
-      - EncryptionKeyHelldiver
-  - type: Sprite
-    sprite: Clothing/Ears/Headsets/syndicate.rsi
-  - type: Clothing
-    sprite: Clothing/Ears/Headsets/syndicate.rsi
-
-- type: radioChannel
-  id: Helldiver
-  name: Helldiver
-  keycode: 'q'
-  frequency: 20
-  color: "#ffff00"
-  longRange: true

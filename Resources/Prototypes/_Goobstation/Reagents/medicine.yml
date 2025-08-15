@@ -1,0 +1,41 @@
+- type: reagent
+  id: Cura
+  name: reagent-name-cura
+  group: Medicine
+  desc: reagent-desc-cura
+  physicalDesc: reagent-physical-desc-soothing
+  flavor: medicine
+  color: "#fcf7f9"
+  metabolisms:
+    Medicine:
+      metabolismRate: 1
+      effects:
+      - !type:ModifyBleedAmount
+        amount: -5
+      - !type:EvenHealthChange
+        damage:
+          Burn: -25
+          Toxin: -25
+          Airloss: -25
+          Brute: -25
+      - !type:GenericStatusEffect
+        key: Stun
+        time: 10
+        type: Remove
+      - !type:GenericStatusEffect
+        key: KnockedDown
+        time: 10
+        type: Remove
+      - !type:GenericStatusEffect
+        key: StaminaModifier
+        component: StaminaModifier
+        time: 10
+        type: Add
+      - !type:ModifyStatusEffect
+        effectProto: StatusEffectForcedSleeping
+        time: 10
+        type: Remove
+      - !type:ModifyStatusEffect
+        effectProto: StatusEffectDrowsiness
+        time: 10
+        type: Remove

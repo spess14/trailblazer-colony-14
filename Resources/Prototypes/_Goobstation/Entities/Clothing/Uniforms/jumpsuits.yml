@@ -1,0 +1,5 @@
+- type: entity
+  parent: ClothingUniformJumpsuitOperative
+  id: ClothingUniformJumpsuitHelldiver
+  name: helldiver uniform
+  description: Super Earth Standard Issue uniform given to all Helldivers.
