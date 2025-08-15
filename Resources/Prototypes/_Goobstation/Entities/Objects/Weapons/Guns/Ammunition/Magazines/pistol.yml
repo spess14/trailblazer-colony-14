@@ -27,6 +27,7 @@
     proto: CartridgePistolHelldiver
     capacity: 15
   - type: Sprite
+    sprite: Objects/Weapons/Guns/Ammunition/Magazine/CaselessRifle/caseless_pistol_mag.rsi
     layers:
     - state: base
       map: [ "enum.GunVisualLayers.Base" ]

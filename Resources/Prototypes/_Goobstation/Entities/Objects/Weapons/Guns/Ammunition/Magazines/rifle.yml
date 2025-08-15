@@ -26,6 +26,7 @@
     proto: CartridgeRifleHelldiver
     capacity: 45
   - type: Sprite
+    sprite: Objects/Weapons/Guns/Ammunition/Magazine/LightRifle/light_rifle_mag.rsi
     layers:
     - state: base
       map: [ "enum.GunVisualLayers.Base" ]
