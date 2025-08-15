@@ -1,10 +1,29 @@
 - type: entity
+  id: BulletRifleHelldiver
+  name: bullet (5.5x50mm FMJ)
+  parent: BaseBullet
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Projectile
+    damage:
+      types:
+        Piercing: 25
+
+- type: entity
+  id: CartridgeRifleHelldiver
+  name: cartridge (5.5x50mm FMJ)
+  parent: BaseCartridgeRifle
+  components:
+  - type: CartridgeAmmo
+    proto: BulletRifleHelldiver
+
+- type: entity
   id: MagazineRifleHelldiver
   name: rifle magazine (5.5x50mm FMJ)
   parent: BaseMagazineRifle
   components:
   - type: BallisticAmmoProvider
-    proto: CartridgeRifle
+    proto: CartridgeRifleHelldiver
     capacity: 45
   - type: Sprite
     layers:
