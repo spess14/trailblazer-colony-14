@@ -1,0 +1,14 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "Made by Renee in Goobstation discord - https://discord.com/channels/1202734573247795300/1272641181565714486",
+  "size": {
+    "x": 84,
+    "y": 74
+  },
+  "states": [
+    {
+      "name": "base"
+    }
+  ]
+}

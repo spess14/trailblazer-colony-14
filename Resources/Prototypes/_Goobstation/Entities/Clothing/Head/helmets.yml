@@ -19,6 +19,7 @@
   - type: HideLayerClothing
     slots:
     - Hair
+    - FacialHair
     - HeadTop
     - HeadSide
   - type: GasTank
