@@ -13,12 +13,6 @@
       map: [ "enum.GunVisualLayers.Mag" ]
   - type: Clothing
     sprite: Objects/Weapons/Guns/Pistols/mk58.rsi
-  - type: Gun
-    fireRate: 15
-    availableModes:
-    - SemiAuto
-    soundGunshot:
-      path: /Audio/Weapons/Guns/Gunshots/mk58.ogg
   - type: ItemSlots
     slots:
       gun_magazine:
@@ -31,3 +25,16 @@
           tags:
           - MagazinePistolHelldiver
         whitelistFailPopup: gun-magazine-whitelist-fail
+      gun_chamber:
+        name: Chamber
+        startingItem: CartridgePistolHelldiver
+        priority: 1
+        whitelist:
+          tags:
+          - CartridgePistolHelldiver
+  - type: Gun
+    fireRate: 15
+    availableModes:
+    - SemiAuto
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/mk58.ogg

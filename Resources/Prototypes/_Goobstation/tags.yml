@@ -1,4 +1,10 @@
 - type: Tag
+  id: CartridgePistolHelldiver
+
+- type: Tag
+  id: CartridgeRifleHelldiver
+
+- type: Tag
   id: MagazinePistolHelldiver
 
 - type: Tag

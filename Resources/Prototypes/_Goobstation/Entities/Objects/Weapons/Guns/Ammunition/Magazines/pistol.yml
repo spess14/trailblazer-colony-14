@@ -1,10 +1,30 @@
 - type: entity
+  id: BulletPistolHelldiver
+  name: bullet (9x20mm HP)
+  parent: BaseBullet
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Projectile
+    damage:
+      types:
+        Piercing: 5
+        Blunt: 10
+
+- type: entity
+  id: CartridgePistolHelldiver
+  name: cartridge (9x20mm HP)
+  parent: BaseCartridgePistol
+  components:
+  - type: CartridgeAmmo
+    proto: BulletPistolHelldiver
+
+- type: entity
   id: MagazinePistolHelldiver
   name: pistol magazine (9x20mm HP)
   parent: BaseMagazinePistol
   components:
   - type: BallisticAmmoProvider
-    proto: CartridgePistol
+    proto: CartridgePistolHelldiver
     capacity: 15
   - type: Sprite
     layers:
