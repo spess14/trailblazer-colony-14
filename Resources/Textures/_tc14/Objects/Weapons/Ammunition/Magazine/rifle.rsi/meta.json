@@ -1,38 +1,35 @@
 {
     "version": 1,
-    "license": "CC-BY-SA-3.0",
-    "copyright": "Created by Rajonas & Renee",
     "size": {
         "x": 32,
         "y": 32
     },
+    "license": "CC-BY-SA-3.0",
+    "copyright": "Created by Rajonas",
     "states": [
-        {
-            "name": "icon"
-        },
         {
             "name": "base"
         },
         {
-            "name": "bolt-open"
+            "name": "stripe"
         },
         {
-            "name": "mag-0"
+            "name": "mag-1"
         },
         {
-            "name": "inhand-left",
+            "name": "inhand-left-mag",
             "directions": 4
         },
         {
-            "name": "inhand-right",
+            "name": "inhand-left-stripe",
             "directions": 4
         },
         {
-            "name": "equipped-BELT",
+            "name": "inhand-right-mag",
             "directions": 4
         },
         {
-            "name": "equipped-SUITSTORAGE",
+            "name": "inhand-right-stripe",
             "directions": 4
         }
     ]
