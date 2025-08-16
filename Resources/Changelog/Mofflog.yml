@@ -1610,5 +1610,12 @@ Entries:
   id: 432
   time: '2025-08-14T16:04:34.000'
   url: https://github.com/moff-station/moff-station-14/pull/432
+- author: Sable
+  changes:
+  - message: A new personal item for The Rose of Silence!
+    type: add
+  id: 435
+  time: '2025-08-15T19:52:34.000'
+  url: https://github.com/moff-station/moff-station-14/pull/435
 Name: Mofflog
 Order: -2
