@@ -85,6 +85,8 @@
           color: "#FFFFFF"
           visible: false
           shader: unshaded
+        - state: torch_unlit
+          map: [ enum.ExpendableLightVisualLayers.Overlay ]
     - type: Appearance
     - type: Construction
       graph: FloorTorch
@@ -126,6 +128,8 @@
         color: "#FFFFFF"
         visible: false
         shader: unshaded
+      - state: wall_torch_unlit
+        map: [ enum.ExpendableLightVisualLayers.Overlay ]
   - type: Appearance
   - type: Construction
     graph: WallTorch
