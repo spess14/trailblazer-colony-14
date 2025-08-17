@@ -57,11 +57,11 @@
         endValue: 1.0
   - type: ExpendableLight
     refuelMaterialID: WoodPlank
-    refuelMaximum: 1025
-    refuelMaterialTime: 205
+    refuelMaterialTime: 410
+    refuelMaximumDuration: 1025
     glowDuration: 205
     fadeOutDuration: 4
-    iconStateSpent: torch_spent
+    iconStateSpent: torch_unlit
     turnOnBehaviourID: turn_on
     fadeOutBehaviourID: fade_out
     # Sounds legit nuff
