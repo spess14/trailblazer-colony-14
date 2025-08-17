@@ -6,7 +6,7 @@
   id: HelldiverGear
   equipment:
     jumpsuit: ClothingUniformJumpsuitHelldiver
-    belt: ClothingBeltHelldiverWebbingFilled
+    belt: WeaponPistolHelldiver
     ears: ClothingHeadsetHelldiver
     gloves: ClothingHandsGlovesHelldiver
     neck: ClothingNeckCloakHelldiver
@@ -18,8 +18,8 @@
     id: HelldiverPDA
     pocket1: ToolDebug
     pocket2: DeathAcidifierImplanter
-    suitstorage: WeaponPistolHelldiver
-    back: WeaponRifleHelldiver
+    suitstorage: WeaponRifleHelldiver
+    back: ClothingBeltHelldiverWebbingFilled
 
 - type: entity
   parent: ClothingBeltHelldiverWebbing

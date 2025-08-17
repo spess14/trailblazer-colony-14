@@ -13,3 +13,6 @@
     sprite: _Mono/Clothing/Belt/webbings_big_black.rsi
   - type: Clothing
     sprite: _Mono/Clothing/Belt/webbings_big_black.rsi
+    slots:
+    - Belt
+    - Back
