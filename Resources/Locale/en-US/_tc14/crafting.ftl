@@ -1,1 +1,1 @@
-﻿construction-graph-tag-flaking-rock = a flaking rockt
+﻿construction-graph-tag-rock = a rock

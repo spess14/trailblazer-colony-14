@@ -13,7 +13,7 @@
         amount: 1
         doAfter: 0.5
       - tag: FlakingRock
-        name: construction-graph-tag-flaking-rock
+        name: construction-graph-tag-rock
         doAfter: 0.5
 
   - node: ImprovisedArrowRock
