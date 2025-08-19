@@ -1669,5 +1669,19 @@ Entries:
   id: 442
   time: '2025-08-17T06:56:41.000'
   url: https://github.com/moff-station/moff-station-14/pull/442
+- author: SeaWyrm
+  changes:
+  - message: 'Added new map for Gun Game: ctf_2fort'
+    type: add
+  id: 448
+  time: '2025-08-19T05:41:01.000'
+  url: https://github.com/moff-station/moff-station-14/pull/448
+- author: Nyxilath
+  changes:
+  - message: You can now select more plushies in your loadout!
+    type: add
+  id: 450
+  time: '2025-08-19T04:50:53.000'
+  url: https://github.com/moff-station/moff-station-14/pull/450
 Name: Mofflog
 Order: -2
