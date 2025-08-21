@@ -2,7 +2,7 @@
   id: TCRuleset
   name: guide-entry-rules
   ruleEntry: true
-  priority: 10
+  priority: 15
   text: "/ServerInfo/_tc14/ServerRules/TCRules.xml"
   children:
   - 0-0

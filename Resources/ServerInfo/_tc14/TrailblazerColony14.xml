@@ -1,0 +1,15 @@
+<Document>
+# Planet and Rounds
+Each round of TC14 is a [bold]self-contained[/bold] expedition to colonize a planet.
+
+Rounds typically last around [color=cyan]3 hours[/color], but players are free to leave and join at any point during a round.
+
+## Cryosleep
+
+<Box>
+  <GuideEntityEmbed Entity="CryogenicSleepUnit"/>
+</Box>
+
+If you need to leave a round early, you can do so through a [color=lime]cryogenic sleep unit[/color].
+Simply going inside and leaving the game will store your belongings and ensure that they are not stolen or misused.
+</Document>

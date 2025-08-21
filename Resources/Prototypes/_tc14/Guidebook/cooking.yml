@@ -1,0 +1,117 @@
+- type: guideEntry
+  id: TCDrinks
+  name: guide-entry-drinks
+  text: "/ServerInfo/_tc14/Cooking/Drinks.xml"
+  filterEnabled: True
+
+- type: guideEntry
+  id: TCFoodRecipes
+  name: guide-entry-foodrecipes
+  text: "/ServerInfo/_tc14/Cooking/FoodRecipes.xml"
+  filterEnabled: True
+  children:
+  - TCPizzaRecipes
+  - TCSavoryRecipes
+  - TCBreadRecipes
+  - TCBreakfastRecipes
+  - TCMothRecipes
+  - TCPastaRecipes
+  - TCDessertRecipes
+  - TCSoupRecipes
+  - TCPieRecipes
+  - TCBarsAndCookiesRecipes
+  - TCCakeRecipes
+  - TCSaladRecipes
+  - TCOtherRecipes
+  - TCMedicinalRecipes
+  - TCSecretRecipes
+
+- type: guideEntry
+  id: TCPizzaRecipes
+  name: guide-entry-pizza-recipes
+  text: "/ServerInfo/_tc14/Cooking/PizzaRecipes.xml"
+  filterEnabled: True
+
+- type: guideEntry
+  id: TCSavoryRecipes
+  name: guide-entry-savory-recipes
+  text: "/ServerInfo/_tc14/Cooking/SavoryRecipes.xml"
+  filterEnabled: True
+
+- type: guideEntry
+  id: TCBreadRecipes
+  name: guide-entry-bread-recipes
+  text: "/ServerInfo/_tc14/Cooking/BreadRecipes.xml"
+  filterEnabled: True
+
+- type: guideEntry
+  id: TCBreakfastRecipes
+  name: guide-entry-breakfast-recipes
+  text: "/ServerInfo/_tc14/Cooking/BreakfastRecipes.xml"
+  filterEnabled: True
+
+- type: guideEntry
+  id: TCMothRecipes
+  name: guide-entry-moth-recipes
+  text: "/ServerInfo/_tc14/Cooking/MothRecipes.xml"
+  filterEnabled: True
+
+- type: guideEntry
+  id: TCPastaRecipes
+  name: guide-entry-pasta-recipes
+  text: "/ServerInfo/_tc14/Cooking/PastaRecipes.xml"
+  filterEnabled: True
+
+- type: guideEntry
+  id: TCDessertRecipes
+  name: guide-entry-dessert-recipes
+  text: "/ServerInfo/_tc14/Cooking/DessertRecipes.xml"
+  filterEnabled: True
+
+- type: guideEntry
+  id: TCSoupRecipes
+  name: guide-entry-soup-recipes
+  text: "/ServerInfo/_tc14/Cooking/SoupRecipes.xml"
+  filterEnabled: True
+
+- type: guideEntry
+  id: TCPieRecipes
+  name: guide-entry-pie-recipes
+  text: "/ServerInfo/_tc14/Cooking/PieRecipes.xml"
+  filterEnabled: True
+
+- type: guideEntry
+  id: TCBarsAndCookiesRecipes
+  name: guide-entry-barsandcookies-recipes
+  text: "/ServerInfo/_tc14/Cooking/BarsAndCookiesRecipes.xml"
+  filterEnabled: True
+
+- type: guideEntry
+  id: TCCakeRecipes
+  name: guide-entry-cake-recipes
+  text: "/ServerInfo/_tc14/Cooking/CakeRecipes.xml"
+  filterEnabled: True
+
+- type: guideEntry
+  id: TCSaladRecipes
+  name: guide-entry-salad-recipes
+  text: "/ServerInfo/_tc14/Cooking/SaladRecipes.xml"
+  filterEnabled: True
+
+- type: guideEntry
+  id: TCOtherRecipes
+  name: guide-entry-other-recipes
+  text: "/ServerInfo/_tc14/Cooking/OtherRecipes.xml"
+  filterEnabled: True
+
+- type: guideEntry
+  id: TCMedicinalRecipes
+  name: guide-entry-medicinal-recipes
+  text: "/ServerInfo/_tc14/Cooking/MedicinalRecipes.xml"
+  filterEnabled: True
+
+- type: guideEntry
+  id: TCSecretRecipes
+  name: guide-entry-secret-recipes
+  text: "/ServerInfo/_tc14/Cooking/SecretRecipes.xml"
+  filterEnabled: True
