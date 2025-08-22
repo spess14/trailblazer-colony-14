@@ -17,7 +17,7 @@
         layer:
         - MachineLayer
   - type: Sprite
-    sprite: Structures/Machines/smeltery.rsi
+    sprite: _tc14/Structures/Machines/smeltery.rsi
     layers:
     - state: icon
       map: [ "enum.LatheVisualLayers.IsRunning" ]
