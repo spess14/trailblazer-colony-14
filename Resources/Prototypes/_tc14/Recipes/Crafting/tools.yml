@@ -7,6 +7,22 @@
   objectType: Item
 
 - type: construction
+  id: handle
+  graph: WoodenHandleTools
+  startNode: start
+  targetNode: handle
+  category: construction-category-materials
+  objectType: Item
+
+- type: construction
+  id: longhandle
+  graph: WoodenHandleTools
+  startNode: start
+  targetNode: longhandle
+  category: construction-category-materials
+  objectType: Item
+
+- type: construction
   id: pickaxe
   graph: WoodenHandleTools
   startNode: start

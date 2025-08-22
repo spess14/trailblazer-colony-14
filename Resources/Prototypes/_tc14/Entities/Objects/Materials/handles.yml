@@ -5,10 +5,10 @@
   description: A stick that is comfortable to hold.
   components:
   - type: Sprite
-    sprite: Objects/Misc/handles.rsi
+    sprite: _tc14/Objects/Misc/handles.rsi
     state: "wooden-handle"
   - type: Item
-    sprite: Objects/Misc/handles.rsi
+    sprite: _tc14/Objects/Misc/handles.rsi
     size: Normal
   - type: Destructible
     thresholds:
@@ -24,7 +24,26 @@
   - type: Construction
     graph: WoodenHandleTools
     node: handle
+  - type: Tag
+    tags:
+    - Handle
   - type: MeleeWeapon
     damage:
       types:
         Blunt: 5
+
+- type: entity
+  parent: WoodenHandle
+  id: LongWoodenHandle
+  name: long wooden handle
+  description: Comfortable to hold, but pretty long.
+  components:
+  - type: Sprite
+    state: "long-wooden-handle"
+  - type: Construction
+    graph: WoodenHandleTools
+    node: longhandle
+  - type: MeleeWeapon
+    damage:
+      types:
+        Blunt: 7

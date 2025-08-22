@@ -7,7 +7,7 @@
     - to: handle
       steps:
       - material: WoodPlank
-        amount: 5
+        amount: 2
         doAfter: 3
   - node: handle
     entity: WoodenHandle
@@ -16,7 +16,12 @@
       steps:
       - tool: Slicing
         doAfter: 1
-    - to: shovel
+    - to: longhandle
+      steps:
+      - tag: Handle
+        name: construction-graph-tag-handle
+        doAfter: 1
+    - to: pickaxe
       steps:
       - tag: Rock
         name: construction-graph-tag-rock
@@ -32,16 +37,18 @@
         doAfter: 0.5
   - node: chisel
     entity: Chisel
-  - node: shovel
-    entity: StoneShovel
+  - node: longhandle
+    entity: LongWoodenHandle
     edges:
-    - to: pickaxe
+    - to: shovel
       steps:
       - tag: Rock
         name: construction-graph-tag-rock
         doAfter: 3
   - node: pickaxe
     entity: StonePickaxe
+  - node: shovel
+    entity: StoneShovel
   - node: pulp
     entity: WoodPulp
   - node: mortar
