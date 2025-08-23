@@ -24,36 +24,6 @@ public abstract partial class SharedStationSystem : EntitySystem
 
         _xformQuery = GetEntityQuery<TransformComponent>();
         _stationMemberQuery = GetEntityQuery<StationMemberComponent>();
-
-        SubscribeLocalEvent<StationTrackerComponent, MapInitEvent>(OnTrackerMapInit);
-        SubscribeLocalEvent<StationTrackerComponent, ComponentRemove>(OnTrackerRemove);
-        SubscribeLocalEvent<StationTrackerComponent, GridUidChangedEvent>(OnTrackerGridChanged);
-        SubscribeLocalEvent<StationTrackerComponent, MetaFlagRemoveAttemptEvent>(OnMetaFlagRemoveAttempt);
-    }
-
-    private void OnTrackerMapInit(Entity<StationTrackerComponent> ent, ref MapInitEvent args)
-    {
-        _meta.AddFlag(ent, MetaDataFlags.ExtraTransformEvents);
-        UpdateStationTracker(ent.AsNullable());
-    }
-
-    private void OnTrackerRemove(Entity<StationTrackerComponent> ent, ref ComponentRemove args)
-    {
-        _meta.RemoveFlag(ent, MetaDataFlags.ExtraTransformEvents);
-    }
-
-    private void OnTrackerGridChanged(Entity<StationTrackerComponent> ent, ref GridUidChangedEvent args)
-    {
-        UpdateStationTracker((ent, ent.Comp, args.Transform));
-    }
-
-    private void OnMetaFlagRemoveAttempt(Entity<StationTrackerComponent> ent, ref MetaFlagRemoveAttemptEvent args)
-    {
-        if ((args.ToRemove & MetaDataFlags.ExtraTransformEvents) != 0 &&
-            ent.Comp.LifeStage <= ComponentLifeStage.Running)
-        {
-            args.ToRemove &= ~MetaDataFlags.ExtraTransformEvents;
-        }
     }
 
     /// <summary>
