@@ -129,13 +129,6 @@
   - type: Construction
     graph: Table
     node: Workbench
-  - type: ContainerContainer
-    containers:
-      blueprint: !type:Container
-  - type: MaterialStorage
-    whitelist:
-      tags:
-      - BlueprintMaterial
   - type: ActivatableUI
     key: enum.BluebenchUiKey.Key
   - type: UserInterface

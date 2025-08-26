@@ -26,10 +26,6 @@
       - tag: Rock
         name: construction-graph-tag-rock
         doAfter: 2
-    - to: pulp
-      steps:
-      - tool: Mortaring
-        doAfter: 0.5
     - to: mortar
       steps:
       - material: WoodPlank
@@ -49,7 +45,5 @@
     entity: StonePickaxe
   - node: shovel
     entity: StoneShovel
-  - node: pulp
-    entity: WoodPulp
   - node: mortar
     entity: Mortar

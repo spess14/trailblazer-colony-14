@@ -34,9 +34,6 @@
                     </BoxContainer>
                 </BoxContainer>
             </PanelContainer>
-            <BoxContainer VerticalAlignment="Bottom" Margin="5 5 5 5" SeparationOverride="4">
-                <Label Name="BlueprintText"/>
-            </BoxContainer>
         </BoxContainer>
     </BoxContainer>
 </DefaultWindow>

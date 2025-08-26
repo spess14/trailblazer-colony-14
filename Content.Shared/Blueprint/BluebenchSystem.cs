@@ -210,12 +210,6 @@ public sealed class BluebenchSystem : EntitySystem
         if (!prototypeManager.TryIndex<BluebenchResearchPrototype>(args.Id, out var prototype))
             return;
 
-        if (_material.GetMaterialAmount(uid, "Paper") == 0)
-            return;
-
-        if (!_material.TryChangeMaterialAmount(uid, "Paper", -1))
-            return;
-
         if (component.ResearchedPrototypes.Contains(prototype))
         {
             var result = Spawn("BlueprintEmpty", Transform(uid).Coordinates);
@@ -259,7 +253,6 @@ public sealed class BluebenchSystem : EntitySystem
                 component.MaterialProgress,
                 component.ComponentProgress,
                 component.TagProgress,
-                _material.GetMaterialAmount(uid, "Paper"),
                 component.ResearchedPrototypes));
     }
 

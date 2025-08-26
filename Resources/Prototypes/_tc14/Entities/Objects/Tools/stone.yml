@@ -82,11 +82,6 @@
   - type: Construction
     graph: WoodenHandleTools
     node: mortar
-  - type: Tool
-    qualities:
-    - Mortaring
-    useSound:
-      path: /Audio/Items/chisel_use.ogg
   - type: ItemSlots
     slots:
       mortar:

@@ -1,7 +1,1 @@
-- type: construction
-  id: woodPulp
-  graph: WoodenHandleTools
-  startNode: start
-  targetNode: pulp
-  category: construction-category-materials
-  objectType: Item
+# empty now

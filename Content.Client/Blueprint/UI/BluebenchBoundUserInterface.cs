@@ -44,7 +44,6 @@ public sealed class BluebenchBoundUserInterface(EntityUid owner, Enum uiKey) : B
         _menu.MaterialProgress = newState.MaterialProgress;
         _menu.TagProgress = newState.TagProgress;
         _menu.ComponentProgress = newState.ComponentProgress;
-        _menu.BlueprintCount = newState.BlueprintCount;
         _menu.ResearchedPrototypes = newState.ResearchedPrototypes;
 
         _menu?.UpdateResearchEntries(newState.AvailableResearchEntries);

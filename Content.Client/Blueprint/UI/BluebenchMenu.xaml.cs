@@ -26,7 +26,6 @@ public sealed partial class BluebenchMenu : DefaultWindow
     public Dictionary<string, int> ComponentProgress = new();
     public HashSet<BluebenchResearchPrototype> ResearchedPrototypes = [];
     public Dictionary<ProtoId<TagPrototype>, int> TagProgress = new();
-    public int BlueprintCount = 0;
 
     public BluebenchMenu()
     {
@@ -47,7 +46,7 @@ public sealed partial class BluebenchMenu : DefaultWindow
                 continue;
 
             var message = GetRequirements(proto);
-            var enabled = ActiveResearchProto == null && BlueprintCount != 0;
+            var enabled = ActiveResearchProto == null;
             var item = new BluebenchResearchEntry(proto.Name!,
                 message,
                 _spriteSystem.Frame0(proto.Icon!),
@@ -62,7 +61,7 @@ public sealed partial class BluebenchMenu : DefaultWindow
 
         foreach (var item in from entry in ResearchedPrototypes
                  let message = GetRequirements(entry)
-                 let enabled = BlueprintCount != 0
+                 let enabled = true
                  select new BluebenchResearchEntry(entry.Name!,
                      message,
                      _spriteSystem.Frame0(entry.Icon!),
@@ -74,8 +73,6 @@ public sealed partial class BluebenchMenu : DefaultWindow
 
             ResearchedList.AddChild(item);
         }
-
-        BlueprintText.Text = _loc.GetString("bluebench-blueprints-text", ("blueprintCount", BlueprintCount));
     }
 
     public void UpdateRequiredComponents()

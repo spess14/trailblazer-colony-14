@@ -11,10 +11,3 @@
   toolName: tool-quality-chiseling-tool-name
   spawn: Chisel
   icon: { sprite: Objects/Tools/chisel.rsi, state: icon}
-
-- type: tool
-  id: Mortaring
-  name: tool-quality-mortaring-name
-  toolName: tool-quality-mortaring-tool-name
-  spawn: Mortar
-  icon: { sprite: _tc14/Objects/Items/mortar.rsi, state: mortar }
