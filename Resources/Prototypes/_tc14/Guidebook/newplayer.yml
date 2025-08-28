@@ -1,7 +1,7 @@
 - type: guideEntry
   id: TCNewPlayer
   name: guide-entry-newplayer
-  priority: 0
+  priority: -10
   text: "/ServerInfo/_tc14/NewPlayer/NewPlayer.xml"
   children:
   - TCControls
@@ -11,13 +11,14 @@
   id: TCControls
   name: guide-entry-controls
   text: "/ServerInfo/_tc14/NewPlayer/Controls/Controls.xml"
-  children:
-  - TCRadio
+  # children:
+  # - TCRadio
 
-- type: guideEntry
-  id: TCRadio
-  name: guide-entry-radio
-  text: "/ServerInfo/_tc14/NewPlayer/Controls/Radio.xml"
+# does not exist yet
+# - type: guideEntry
+#   id: TCRadio
+#   name: guide-entry-radio
+#   text: "/ServerInfo/_tc14/NewPlayer/Controls/Radio.xml"
 
 - type: guideEntry
   id: TCCharacterCreation

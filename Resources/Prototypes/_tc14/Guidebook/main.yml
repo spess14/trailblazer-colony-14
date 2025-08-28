@@ -3,7 +3,7 @@
 - type: guideEntry
   id: TC14
   name: guide-entry-tc14
-  priority: 20
+  priority: -20
   text: "/ServerInfo/_tc14/TrailblazerColony14.xml"
 
 - type: guideEntry
