@@ -1,0 +1,51 @@
+<Document>
+  # Early Progression
+  If you are reading this, you have just crashlanded on a planet with little supplies.
+
+  First of all, analyze the flora. You should be able to find solid material to make tools and shelter out of: usually, it's wood or something similar.
+  <Box>
+    <GuideEntityEmbed Entity="FloraTree"/>
+    <GuideEntityEmbed Entity="BushForage"/>
+  </Box>
+
+  Try to locate rocks nearby. By using a rock on another rock, you will create a basic cutting tool: it can be used for cutting things out of wood.
+  <Box>
+    <GuideEntityEmbed Entity="RockItem"/>
+    <GuideEntityEmbed Entity="FlakingRock"/>
+  </Box>
+
+  You should be able to make crude tools out of wood and stone.
+  <Box>
+    <GuideEntityEmbed Entity="StonePickaxe"/>
+    <GuideEntityEmbed Entity="StoneShovel"/>
+    <GuideEntityEmbed Entity="Chisel"/>
+    <GuideEntityEmbed Entity="Mortar"/>
+  </Box>
+
+  With basic tools and materials, you should look for a place to settle. It is recommended to settle in a place with moderate temperature and flowing water nearby.
+  If you wish to build out of stone, use your chisel on rocks to make stone bricks.
+  <Box>
+    <GuideEntityEmbed Entity="BrickStone"/>
+    <GuideEntityEmbed Entity="WallCobblebrick"/>
+  </Box>
+
+  With shelter being established, it is time to look into food production.
+  <Box>
+    <GuideEntityEmbed Entity="hydroponicsSoil"/>
+  </Box>
+
+  In order to make advanced items, you will need better workstations and research.
+  <Box>
+    <GuideEntityEmbed Entity="Workbench"/>
+    <GuideEntityEmbed Entity="Smeltery"/>
+    <GuideEntityEmbed Entity="BlueprintWorkbench"/>
+  </Box>
+
+  Finally, some research will require you to make plastic. Simple bioplastic can be made by mixing cornmeal and fat 5:2 and heating it up.
+  <Box>
+    <GuideEntityEmbed Entity="FoodCorn"/>
+    <GuideEntityEmbed Entity="FoodMeat"/>
+    <GuideEntityEmbed Entity="Mortar"/>
+    <GuideEntityEmbed Entity="Campfire"/>
+  </Box>
+</Document>
