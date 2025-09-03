@@ -1,3 +1,4 @@
+
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
 
@@ -41,6 +42,10 @@ namespace Content.Shared.Humanoid.Markings
 
         [DataField("sprites", required: true)]
         public List<SpriteSpecifier> Sprites { get; private set; } = default!;
+
+        /// CD change, originally created by Beck for Impstation
+	    [DataField("shader")]
+		public string? Shader = null;
 
         public Marking AsMarking()
         {
