@@ -467,6 +467,9 @@
         maxRange: 5
       spawns:
       - MobSpawnCrabUranium
+  - type: RadiationSource
+    intensity: 0.2
+    slope: 0.1
 
 - type: entity
   id: AnomalyRockBananium
@@ -849,17 +852,17 @@
     damageModifierSet: Diona
   - type: Destructible
     thresholds:
-    - trigger:
-        !type:DamageTrigger
-        damage: 1
-      behaviors:
-      - !type:DoActsBehavior
-        acts: [ "Destruction" ]
-      - !type:SpawnEntitiesBehavior
-        spawn:
-          EffectAnomalyFloraBulb:
-            min: 1
-            max: 1
+      - trigger:
+          !type:DamageTrigger
+          damage: 1
+        behaviors:
+          - !type:DoActsBehavior
+            acts: [ "Destruction" ]
+          - !type:SpawnEntitiesBehavior
+            spawn:
+              EffectAnomalyFloraBulb:
+                min: 1
+                max: 1
   - type: PointLight
     radius: 2.0
     energy: 4.5
@@ -979,8 +982,6 @@
     solution: anomaly
   - type: ExaminableSolution
     solution: anomaly
-    exactVolume: true
-    locVolume: "examinable-solution-on-examine-volume-no-max"
   - type: RefillableSolution
     solution: anomaly
   - type: InjectableSolution
@@ -1039,7 +1040,7 @@
     departureSound: /Audio/Items/hiss.ogg
   - type: Tag
     tags:
-    - SpookyFog
+      - SpookyFog
   - type: DamageOnInteract
     damage:
       types:
@@ -1082,8 +1083,8 @@
   - type: TechAnomaly
   - type: DeviceLinkSource
     ports:
-    - Pulse
-    - Timer
+      - Pulse
+      - Timer
 
 - type: entity
   id: AnomalyTechBeam
@@ -1110,7 +1111,7 @@
     lifetime: 2.3
   - type: Tag
     tags:
-    - HideContextMenu
+      - HideContextMenu
 
 - type: entity
   id: AnomalySanta

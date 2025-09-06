@@ -35,6 +35,7 @@
     bodyType: KinematicController # Same for all inheritors
   - type: StatusEffects
     allowed:
+    - Stutter
     - Electrocution
   - type: Pullable
   - type: Tag
@@ -52,6 +53,11 @@
     critThreshold: 120
   - type: Destructible
     thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 100
+      behaviors:
+      - !type:TriggerBehavior
     - trigger:
         !type:DamageTrigger
         damage: 120

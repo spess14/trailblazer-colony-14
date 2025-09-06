@@ -5,12 +5,12 @@
   description: What?
   abstract: true
   components:
-  - type: Sprite
-    sprite: Objects/Misc/stock_parts.rsi
-  - type: Item
-    size: Tiny
-  - type: Stack
-    count: 1
+    - type: Sprite
+      sprite: Objects/Misc/stock_parts.rsi
+    - type: Item
+      size: Tiny
+    - type: Stack
+      count: 1
 
 - type: entity
   id: CapacitorStockPart
@@ -19,10 +19,13 @@
   description: A basic capacitor used in the construction of a variety of devices.
   suffix: Rating 1
   components:
-  - type: Sprite
-    state: capacitor
-  - type: Stack
-    stackType: Capacitor
+    - type: Sprite
+      state: capacitor
+    - type: Tag
+      tags:
+        - CapacitorStockPart
+    - type: Stack
+      stackType: Capacitor
 
 - type: entity
   id: MicroManipulatorStockPart
@@ -31,10 +34,10 @@
   description: A basic manipulator used in the construction of a variety of devices.
   suffix: Rating 1
   components:
-  - type: Sprite
-    state: micro_mani
-  - type: Stack
-    stackType: Manipulator
+    - type: Sprite
+      state: micro_mani
+    - type: Stack
+      stackType: Manipulator
 
 - type: entity
   id: MatterBinStockPart
@@ -43,7 +46,7 @@
   description: A basic matter bin used in the construction of a variety of devices.
   suffix: Rating 1
   components:
-  - type: Sprite
-    state: matter_bin
-  - type: Stack
-    stackType: MatterBin
+    - type: Sprite
+      state: matter_bin
+    - type: Stack
+      stackType: MatterBin

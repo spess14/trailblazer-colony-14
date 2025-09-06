@@ -58,3 +58,10 @@
   - type: StatusEffectAlert
     alert: Stun
   - type: StunnedStatusEffect
+
+- type: entity
+  parent: MobStandStatusEffectBase
+  id: StatusEffectKnockdown
+  name: knocked down
+  components:
+  - type: KnockdownStatusEffect

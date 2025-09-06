@@ -13,7 +13,6 @@ using Content.Server.Clothing.Systems;
 using Content.Server.Implants;
 using Content.Shared.Implants;
 using Content.Shared.Inventory;
-using Content.Shared.Lock;
 using Content.Shared.PDA;
 
 namespace Content.Server.Access.Systems
@@ -26,7 +25,6 @@ namespace Content.Server.Access.Systems
         [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
         [Dependency] private readonly ChameleonClothingSystem _chameleon = default!;
         [Dependency] private readonly ChameleonControllerSystem _chamController = default!;
-        [Dependency] private readonly LockSystem _lock = default!;
 
         public override void Initialize()
         {
@@ -81,8 +79,7 @@ namespace Content.Server.Access.Systems
 
         private void OnAfterInteract(EntityUid uid, AgentIDCardComponent component, AfterInteractEvent args)
         {
-            if (args.Target == null || !args.CanReach || _lock.IsLocked(uid) ||
-                !TryComp<AccessComponent>(args.Target, out var targetAccess) || !HasComp<IdCardComponent>(args.Target))
+            if (args.Target == null || !args.CanReach || !TryComp<AccessComponent>(args.Target, out var targetAccess) || !HasComp<IdCardComponent>(args.Target))
                 return;
 
             if (!TryComp<AccessComponent>(uid, out var access) || !HasComp<IdCardComponent>(uid))

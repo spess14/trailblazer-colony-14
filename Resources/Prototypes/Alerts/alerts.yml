@@ -313,9 +313,7 @@
   id: PilotingShuttle
   category: Piloting
   clickEvent: !type:StopPilotingAlertEvent
-  icons:
-  - sprite: /Textures/Interface/Alerts/shuttle.rsi
-    state: piloting
+  icons: [ /Textures/Interface/Alerts/piloting.png ]
   name: alerts-piloting-name
   description: alerts-piloting-desc
 

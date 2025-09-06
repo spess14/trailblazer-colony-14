@@ -14,12 +14,9 @@ namespace Content.Server.Power.Components
         /// <summary>
         ///     Amount of charge this needs from an APC per second to function.
         /// </summary>
+        [ViewVariables(VVAccess.ReadWrite)]
         [DataField("powerLoad")]
-        public override float Load
-        {
-            get => NetworkLoad.DesiredPower;
-            set => NetworkLoad.DesiredPower = value;
-        }
+        public float Load { get => NetworkLoad.DesiredPower; set => NetworkLoad.DesiredPower = value; }
 
         public ApcPowerProviderComponent? Provider = null;
 

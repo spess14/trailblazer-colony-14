@@ -1,6 +1,7 @@
 using System.Linq;
 using Content.Shared.ActionBlocker;
 using Content.Shared.Administration.Logs;
+using Content.Shared.Body.Components;
 using Content.Shared.Climbing.Systems;
 using Content.Shared.Containers;
 using Content.Shared.Database;
@@ -14,7 +15,6 @@ using Content.Shared.Hands.EntitySystems;
 using Content.Shared.IdentityManagement;
 using Content.Shared.Interaction;
 using Content.Shared.Item;
-using Content.Shared.Mobs.Components;
 using Content.Shared.Movement.Events;
 using Content.Shared.Popups;
 using Content.Shared.Power;
@@ -450,7 +450,7 @@ public abstract class SharedDisposalUnitSystem : EntitySystem
             return false;
 
         var storable = HasComp<ItemComponent>(entity);
-        if (!storable && !HasComp<MobStateComponent>(entity))
+        if (!storable && !HasComp<BodyComponent>(entity))
             return false;
 
         if (_whitelistSystem.IsBlacklistPass(component.Blacklist, entity) ||

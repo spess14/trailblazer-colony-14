@@ -2,6 +2,7 @@ using Content.Server.Administration.Logs;
 using Content.Server.Atmos.Components;
 using Content.Server.Atmos.EntitySystems;
 using Content.Server.Station.Systems;
+using Content.Server.Warps;
 using Content.Shared.Database;
 using Content.Shared.Examine;
 using Content.Shared.Localizations;
@@ -62,6 +63,7 @@ public sealed partial class NavMapSystem : SharedNavMapSystem
         SubscribeLocalEvent<NavMapBeaconComponent, AnchorStateChangedEvent>(OnNavMapBeaconAnchor);
         SubscribeLocalEvent<ConfigurableNavMapBeaconComponent, NavMapBeaconConfigureBuiMessage>(OnConfigureMessage);
         SubscribeLocalEvent<ConfigurableNavMapBeaconComponent, MapInitEvent>(OnConfigurableMapInit);
+        SubscribeLocalEvent<ConfigurableNavMapBeaconComponent, ExaminedEvent>(OnConfigurableExamined);
     }
 
     private void OnStationInit(StationGridAddedEvent ev)
@@ -220,6 +222,17 @@ public sealed partial class NavMapSystem : SharedNavMapSystem
             warpPoint.Location = navMap.Text;
 
         UpdateBeaconEnabledVisuals((ent, navMap));
+    }
+
+    private void OnConfigurableExamined(Entity<ConfigurableNavMapBeaconComponent> ent, ref ExaminedEvent args)
+    {
+        if (!args.IsInDetailsRange || !TryComp<NavMapBeaconComponent>(ent, out var navMap))
+            return;
+
+        args.PushMarkup(Loc.GetString("nav-beacon-examine-text",
+            ("enabled", navMap.Enabled),
+            ("color", navMap.Color.ToHexNoAlpha()),
+            ("label", navMap.Text ?? string.Empty)));
     }
 
     #endregion

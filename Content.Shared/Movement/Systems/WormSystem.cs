@@ -12,6 +12,7 @@ namespace Content.Shared.Movement.Systems;
 public sealed class WormSystem : EntitySystem
 {
     [Dependency] private readonly AlertsSystem _alerts = default!;
+    [Dependency] private readonly SharedPopupSystem _popup = default!;
     [Dependency] private readonly SharedStunSystem _stun = default!;
 
     public override void Initialize()

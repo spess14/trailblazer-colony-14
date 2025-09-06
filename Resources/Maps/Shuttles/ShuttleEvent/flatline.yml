@@ -859,7 +859,7 @@ entities:
     - type: Physics
       canCollide: False
     - type: InsideEntityStorage
-- proto: ClothingUniformJumpsuitParamedic
+- proto: ClothingUniformJumpsuitParamedicNT
   entities:
   - uid: 213
     components:

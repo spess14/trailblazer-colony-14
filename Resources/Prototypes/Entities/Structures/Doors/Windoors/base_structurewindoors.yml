@@ -6,10 +6,6 @@
   placement:
     mode: SnapgridCenter
   components:
-  - type: Anchorable
-    flags:
-    - Anchorable
-  - type: Rotatable
   - type: MeleeSound
     soundGroups:
       Brute:

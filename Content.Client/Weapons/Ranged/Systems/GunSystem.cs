@@ -30,7 +30,6 @@ public sealed partial class GunSystem : SharedGunSystem
 {
     [Dependency] private readonly IEyeManager _eyeManager = default!;
     [Dependency] private readonly IInputManager _inputManager = default!;
-    [Dependency] private readonly IOverlayManager _overlayManager = default!;
     [Dependency] private readonly IPlayerManager _player = default!;
     [Dependency] private readonly IStateManager _state = default!;
     [Dependency] private readonly AnimationPlayerSystem _animPlayer = default!;
@@ -51,10 +50,11 @@ public sealed partial class GunSystem : SharedGunSystem
                 return;
 
             _spreadOverlay = value;
+            var overlayManager = IoCManager.Resolve<IOverlayManager>();
 
             if (_spreadOverlay)
             {
-                _overlayManager.AddOverlay(new GunSpreadOverlay(
+                overlayManager.AddOverlay(new GunSpreadOverlay(
                     EntityManager,
                     _eyeManager,
                     Timing,
@@ -65,7 +65,7 @@ public sealed partial class GunSystem : SharedGunSystem
             }
             else
             {
-                _overlayManager.RemoveOverlay<GunSpreadOverlay>();
+                overlayManager.RemoveOverlay<GunSpreadOverlay>();
             }
         }
     }

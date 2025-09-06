@@ -924,7 +924,6 @@
     id: CentcomIDCard
     penSlot:
       startingItem: PenCentcom
-      priority: -1
       whitelist:
         tags:
         - Write
@@ -1468,7 +1467,7 @@
       - MedTekCartridge
 
 - type: entity
-  parent: [BasePDA, SelectableLock]
+  parent: BasePDA
   id: ChameleonPDA
   name: passenger PDA
   description: Why isn't it gray?

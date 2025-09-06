@@ -1054,10 +1054,10 @@
     growthDelay: 20
   - type: ExaminableHunger
   - type: Wooly
-  - type: Edible
-    destroyOnEmpty: false
+  - type: Food
     solution: wool
     requiresSpecialDigestion: true
+    # Wooly prevents eating wool deleting the goat so its fine
     requireDead: false
   - type: FlavorProfile
     flavors:
@@ -1220,6 +1220,8 @@
       0: Alive
       200: Critical
       250: Dead
+  - type: StaminaResistance
+    damageCoefficient: 0.40
 
 - type: entity
   name: kangaroo
@@ -1431,7 +1433,6 @@
       methods: [ Touch ]
       effects:
       - !type:WashCreamPieReaction
-  - type: Crawler
 
 
 
@@ -1464,9 +1465,6 @@
         Piercing: 4
       groups:
         Burn: 3
-    catchingFailDamage:
-      types:
-        Blunt: 1
     clumsySound:
       path: /Audio/Animals/monkey_scream.ogg
 
@@ -1646,9 +1644,6 @@
         Piercing: 7
       groups:
         Burn: 3
-    catchingFailDamage:
-      types:
-        Blunt: 1
     clumsySound:
       path: /Audio/Voice/Reptilian/reptilian_scream.ogg
 
@@ -2318,7 +2313,6 @@
       types:
         Heat : 0.2 #per second, scales with temperature & other constants
 
-# TODO: Make grenade penguin voice activated like the rest of the stealth items.
 - type: entity
   name: grenade penguin
   parent: [ MobPenguin, MobCombat, BaseSyndicateContraband ]
@@ -2370,8 +2364,7 @@
   - type: Item
     size: Normal
     sprite: Mobs/Animals/grenadepenguin.rsi
-  - type: TriggerOnUse
-  - type: TimerTrigger
+  - type: OnUseTimerTrigger
     delay: 10
     beepSound:
       path: /Audio/Weapons/Guns/MagOut/pistol_magout.ogg #funny sfx use
@@ -2384,8 +2377,6 @@
     intensitySlope: 20
     totalIntensity: 225
   - type: ExplodeOnTrigger
-    keysIn:
-    - timer
   - type: Destructible
     thresholds:
     - trigger:
@@ -2859,7 +2850,6 @@
   - type: HTN
     rootTask:
       task: RuminantHostileCompound
-  - type: MessyDrinker
   - type: Tag
     tags:
     - VimPilot
@@ -2906,7 +2896,6 @@
       gender: epicene
   - type: MobPrice
     price: 200
-  - type: MessyDrinker
 
 - type: entity
   parent: MobCorgiBase

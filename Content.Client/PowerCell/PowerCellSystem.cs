@@ -48,9 +48,8 @@ public sealed class PowerCellSystem : SharedPowerCellSystem
         if (!_sprite.LayerExists((uid, args.Sprite), PowerCellVisualLayers.Unshaded))
             return;
 
-        // If no appearance data is set, rely on whatever existing sprite state is set being correct.
         if (!_appearance.TryGetData<byte>(uid, PowerCellVisuals.ChargeLevel, out var level, args.Component))
-            return;
+            level = 0;
 
         var positiveCharge = level > 0;
         _sprite.LayerSetVisible((uid, args.Sprite), PowerCellVisualLayers.Unshaded, positiveCharge);

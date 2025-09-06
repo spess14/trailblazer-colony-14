@@ -36,7 +36,7 @@ public sealed class RoleSystem : SharedRoleSystem
 
         // Briefing is no longer raised on the mind entity itself
         // because all the components that briefings subscribe to should be on Mind Role Entities
-        foreach (var role in mindComp.MindRoleContainer.ContainedEntities)
+        foreach(var role in mindComp.MindRoles)
         {
             RaiseLocalEvent(role, ref ev);
         }

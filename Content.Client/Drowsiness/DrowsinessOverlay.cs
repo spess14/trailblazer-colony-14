@@ -10,8 +10,6 @@ namespace Content.Client.Drowsiness;
 
 public sealed class DrowsinessOverlay : Overlay
 {
-    private static readonly ProtoId<ShaderPrototype> Shader = "Drowsiness";
-
     [Dependency] private readonly IEntityManager _entityManager = default!;
     [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
     [Dependency] private readonly IPlayerManager _playerManager = default!;
@@ -35,7 +33,7 @@ public sealed class DrowsinessOverlay : Overlay
 
         _statusEffects = _sysMan.GetEntitySystem<StatusEffectsSystem>();
 
-        _drowsinessShader = _prototypeManager.Index(Shader).InstanceUnique();
+        _drowsinessShader = _prototypeManager.Index<ShaderPrototype>("Drowsiness").InstanceUnique();
     }
 
     protected override void FrameUpdate(FrameEventArgs args)

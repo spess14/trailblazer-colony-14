@@ -53,8 +53,6 @@ public sealed class SuicideCommandTests
   components:
   - type: MaterialReclaimer";
     private static readonly ProtoId<TagPrototype> CannotSuicideTag = "CannotSuicide";
-    private static readonly ProtoId<DamageTypePrototype> DamageType = "Slash";
-
     /// <summary>
     /// Run the suicide command in the console
     /// Should successfully kill the player and ghost them
@@ -146,7 +144,7 @@ public sealed class SuicideCommandTests
             mobThresholdsComp = entManager.GetComponent<MobThresholdsComponent>(player);
             damageableComp = entManager.GetComponent<DamageableComponent>(player);
 
-            if (protoMan.TryIndex(DamageType, out var slashProto))
+            if (protoMan.TryIndex<DamageTypePrototype>("Slash", out var slashProto))
                 damageableSystem.TryChangeDamage(player, new DamageSpecifier(slashProto, FixedPoint2.New(46.5)));
         });
 

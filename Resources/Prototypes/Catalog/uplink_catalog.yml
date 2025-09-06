@@ -2202,7 +2202,7 @@
   discountDownTo:
     Telecrystal: 2
   cost:
-    Telecrystal: 3
+    Telecrystal: 5
   categories:
   - UplinkJob
   conditions:

@@ -37,6 +37,7 @@ tool-quality-digging-tool-name = Shovel
 tool-quality-brushing-name = Brushing
 tool-quality-brushing-tool-name = Wire Brush
 
+
 tool-quality-hammering-name = Hammering
 tool-quality-hammering-tool-name = Rock
 

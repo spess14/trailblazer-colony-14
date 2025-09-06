@@ -441,8 +441,6 @@
   params:
     variation: 0.05
   sounds:
-    Scream:
-      collection: XenoborgScream
     Laugh:
       collection: XenoborgLaugh
     Beep:
