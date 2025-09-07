@@ -226,9 +226,6 @@
   id: CanPilot
 
 - type: Tag
-  id: CapacitorStockPart
-
-- type: Tag
   id: CaptainSabre
 
 - type: Tag
@@ -349,6 +346,9 @@
 
 - type: Tag
   id: ComputerTelevisionCircuitboard
+
+- type: Tag
+  id: ConstructionMaterial
 
 - type: Tag
   id: ConveyorAssembly
@@ -802,6 +802,9 @@
   id: Ingot
 
 - type: Tag
+  id: Inflatable
+
+- type: Tag
   id: InstantDoAfters
 
 - type: Tag
@@ -1201,6 +1204,9 @@
 
 - type: Tag
   id: RollingPin
+
+- type: Tag
+  id: Ruminant
 
 - type: Tag
   id: SaltShaker
