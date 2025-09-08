@@ -1,0 +1,36 @@
+- type: bluebenchResearch
+  id: CommonBotanyResearch
+  name: Agriculture
+  description: It's a peaceful life.
+  icon:
+    sprite: Objects/Specific/Hydroponics/tomato.rsi
+    state: produce
+  stackRequirements:
+    WoodPlank: 10
+    Steel: 5
+  outputRecipes:
+  - HydroponicsToolMiniHoe
+  - HydroponicsToolScythe
+  - HydroponicsToolHatchet
+  - HydroponicsToolSpade
+  - HydroponicsToolClippers
+
+- type: bluebenchResearch
+  id: AdvancedBotanyResearch
+  name: Botany
+  description: Complex seed and produce processing.
+  requiredResearch:
+  - CommonElectricityResearch
+  - CommonBotanyResearch
+  icon:
+    sprite: Structures/Machines/seed_extractor.rsi
+    state: seedextractor-off
+  stackRequirements:
+    Steel: 20
+    Glass: 10
+    Plastic: 5
+    Capacitor: 3
+    Cable: 10
+  outputRecipes:
+  - HydroponicsTrayMachineCircuitboard
+  - SeedExtractorMachineCircuitboard

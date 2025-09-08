@@ -96,6 +96,7 @@
     - BasicChemistryResearch
     - CommonElectricityResearch
     - BasicMedicineResearch
+    - CommonBotanyResearch
   - type: Appearance
   - type: Fixtures
     fixtures:
