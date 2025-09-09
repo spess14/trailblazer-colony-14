@@ -139,7 +139,7 @@
   parent: ClothingHeadBase
   id: ClothingHeadHatBeretQM
   name: quartermaster's beret
-  description: A beret with the cargo department's insignia.
+  description: A beret with the cargo department's insignia. For quartermasters that are more inclined towards style.
   components:
   - type: Sprite
     sprite: Clothing/Head/Hats/beret_qm.rsi
@@ -420,7 +420,7 @@
   parent: [ClothingHeadBase, BaseCommandContraband]
   id: ClothingHeadHatHoshat
   name: head of security cap
-  description: A stylish cap worn by the Head of Security. Shows the officers who's in charge.
+  description: The robust standard-issue cap of the Head of Security. For showing the officers who's in charge.
   components:
   - type: Sprite
     sprite: Clothing/Head/Hats/hoshat.rsi
@@ -487,6 +487,7 @@
   id: ClothingHeadHatPirate
   name: pirate hat
   description: "\"Yo ho ho and a bottle of rum!\""
+  suffix: Pirate  # Moffstation - Adding a pirate tag
   components:
   - type: Sprite
     sprite: Clothing/Head/Hats/pirate.rsi
@@ -1038,6 +1039,7 @@
   id: ClothingHeadHatPirateTricord
   name: pirate hat
   description: "\"Yo ho ho and a bottle of rum!\""
+  suffix: Pirate  # Moffstation - Adding a pirate tag
   components:
   - type: Sprite
     sprite: Clothing/Head/Hats/piratetricord.rsi

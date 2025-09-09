@@ -1,3 +1,4 @@
+using System.Globalization; // Moffstation
 using System.IO;
 using System.Linq;
 using System.Numerics;
@@ -34,6 +35,10 @@ using Robust.Shared.Enums;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
 using Direction = Robust.Shared.Maths.Direction;
+
+// CD: Records editor imports
+using Content.Client._CD.Records.UI;
+using Content.Shared._CD.Records;
 
 namespace Content.Client.Lobby.UI
 {
@@ -102,6 +107,12 @@ namespace Content.Client.Lobby.UI
         private ColorSelectorSliders _rgbSkinColorSelector;
 
         private bool _isDirty;
+
+        // CD: Height
+        private float _defaultHeight = 1f;
+
+        // CD: Record editor
+        private readonly RecordEditorGui _recordsTab;
 
         private static readonly ProtoId<GuideEntryPrototype> DefaultSpeciesGuidebook = "Species";
 
@@ -221,6 +232,9 @@ namespace Content.Client.Lobby.UI
 
             #endregion Gender
 
+            // Umbra re-added this.
+            #region Species
+
             RefreshSpecies();
 
             SpeciesButton.OnItemSelected += args =>
@@ -230,6 +244,44 @@ namespace Content.Client.Lobby.UI
                 UpdateHairPickers();
                 OnSkinColorOnValueChanged();
             };
+
+            // Umbra re-added this.
+            #endregion Species
+
+            #region CDHeight
+
+            CDHeight.OnTextChanged += args =>
+            {
+                if (Profile is null || !float.TryParse(args.Text, out var newHeight))
+                    return;
+
+                var prototype = _prototypeManager.Index(Profile.Species);
+                newHeight = MathF.Round(Math.Clamp(newHeight, prototype.MinHeight, prototype.MaxHeight), 2);
+
+                // The percentage between the start and end numbers, aka "inverse lerp"
+                var sliderPercent = (newHeight - prototype.MinHeight) /
+                                    (prototype.MaxHeight - prototype.MinHeight);
+                CDHeightSlider.Value = sliderPercent;
+
+                SetProfileHeight(newHeight);
+            };
+
+            CDHeightReset.OnPressed += _ =>
+            {
+                CDHeight.SetText(_defaultHeight.ToString(CultureInfo.InvariantCulture), true);
+            };
+
+            CDHeightSlider.OnValueChanged += _ =>
+            {
+                if (Profile is null)
+                    return;
+                var prototype = _prototypeManager.Index(Profile.Species);
+                var newHeight = MathF.Round(MathHelper.Lerp(prototype.MinHeight, prototype.MaxHeight, CDHeightSlider.Value), 2);
+                CDHeight.Text = newHeight.ToString(CultureInfo.InvariantCulture);
+                SetProfileHeight(newHeight);
+            };
+
+            #endregion CDHeight
 
             #region Skin
 
@@ -424,6 +476,14 @@ namespace Content.Client.Lobby.UI
             Markings.OnMarkingRankChange += OnMarkingChange;
 
             #endregion Markings
+
+            #region CosmaticRecords
+
+            _recordsTab = new RecordEditorGui(UpdateProfileRecords);
+            TabContainer.AddChild(_recordsTab);
+            TabContainer.SetTabTitle(TabContainer.ChildCount - 1, Loc.GetString("humanoid-profile-editor-cd-records-tab"));
+
+            #endregion CosmaticRecords
 
             RefreshFlavorText();
 
@@ -680,13 +740,44 @@ namespace Content.Client.Lobby.UI
 
                 antagContainer.AddChild(selector);
 
-                antagContainer.AddChild(new Button()
+                // Moffstation - Begin - Enable loadouts for antags
+                var loadoutWindowBtn = new Button()
                 {
-                    Disabled = true,
+                    // Disabled = true,
                     Text = Loc.GetString("loadout-window"),
                     HorizontalAlignment = HAlignment.Right,
                     Margin = new Thickness(3f, 0f, 0f, 0f),
-                });
+                };
+
+                antagContainer.AddChild(loadoutWindowBtn);
+
+                var protoManager = IoCManager.Instance!.Resolve<IPrototypeManager>();
+
+                // If no loadout found then disabled button
+                if (!protoManager.TryIndex<RoleLoadoutPrototype>(LoadoutSystem.GetJobPrototype(antag.ID), out var roleLoadoutProto))
+                {
+                    loadoutWindowBtn.Disabled = true;
+                }
+                else
+                {
+                    loadoutWindowBtn.OnPressed += _ =>
+                    {
+                        RoleLoadout loadout;
+                        if (Profile != null && Profile.Loadouts.TryGetValue(LoadoutSystem.GetJobPrototype(antag.ID), out var roleLoadout))
+                        {
+                            // Clone so we don't modify the underlying loadout.
+                            loadout = roleLoadout.Clone();
+                        }
+                        else
+                        {
+                            loadout = new RoleLoadout(roleLoadoutProto.ID);
+                            loadout.SetDefault(Profile, _playerManager.LocalSession, _prototypeManager);
+                        }
+
+                        OpenLoadout(null, loadout, roleLoadoutProto);
+                    };
+                }
+                // Moffstation - End
 
                 AntagList.AddChild(antagContainer);
             }
@@ -768,6 +859,10 @@ namespace Content.Client.Lobby.UI
             UpdateHairPickers();
             UpdateCMarkingsHair();
             UpdateCMarkingsFacialHair();
+
+            // CD: our controls
+            UpdateHeightControls();
+            _recordsTab.Update(profile);
 
             RefreshAntags();
             RefreshJobs();
@@ -1020,7 +1115,13 @@ namespace Content.Client.Lobby.UI
 
             _loadoutWindow = new LoadoutWindow(Profile, roleLoadout, roleLoadoutProto, _playerManager.LocalSession, collection)
             {
-                Title = Loc.GetString("loadout-window-title-loadout", ("job", $"{jobProto?.LocalizedName}")),
+                // Moffstation Start
+                Title = jobProto?.ID switch
+                {
+                    null => "loadout",
+                    var id => Loc.GetString("loadout-window-title-loadout", ("job", $"{jobProto?.LocalizedName}")),
+                },
+                // Moffstation End
             };
 
             // Refresh the buttons etc.
@@ -1063,6 +1164,15 @@ namespace Content.Client.Lobby.UI
                 return;
 
             UpdateJobPriorities();
+        }
+
+        // CD: Records editor
+        private void UpdateProfileRecords(PlayerProvidedCharacterRecords records)
+        {
+            if (Profile is null)
+                return;
+            Profile = Profile.WithCDCharacterRecords(records);
+            IsDirty = true;
         }
 
         private void OnFlavorTextChange(string content)
@@ -1231,6 +1341,15 @@ namespace Content.Client.Lobby.UI
 
             _entManager.System<MetaDataSystem>().SetEntityName(PreviewDummy, newName);
         }
+
+        // Moffstation Start - CD Height
+        private void SetProfileHeight(float height)
+        {
+            Profile = Profile?.WithHeight(height);
+            SetDirty();
+            ReloadProfilePreview();
+        }
+        // Moffstation End
 
         private void SetSpawnPriority(SpawnPriorityPreference newSpawnPriority)
         {
@@ -1416,6 +1535,31 @@ namespace Content.Client.Lobby.UI
 
             PronounsButton.SelectId((int) Profile.Gender);
         }
+
+        // Moffstation Start - CD Height
+        private void UpdateHeightControls()
+        {
+            if (Profile == null)
+            {
+                return;
+            }
+
+            var species = _species.Find(x => x.ID == Profile.Species);
+            if (species != null)
+                _defaultHeight = species.DefaultHeight;
+
+            // This dirty hack deals with "uninitialized" height values. Without this, preexisting or weirdly imported
+            // characters' heights default to the minimum value on the slider.
+            if (Profile.Height == 0.0)
+                Profile.Height = _defaultHeight;
+
+            var prototype = _prototypeManager.Index(Profile.Species);
+            var sliderPercent = (Profile.Height - prototype.MinHeight) /
+                                (prototype.MaxHeight - prototype.MinHeight);
+            CDHeightSlider.Value = sliderPercent;
+            CDHeight.Text = Profile.Height.ToString(CultureInfo.InvariantCulture);
+        }
+        // Moffstation End
 
         private void UpdateSpawnPriorityControls()
         {

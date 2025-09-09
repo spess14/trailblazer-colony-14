@@ -52,6 +52,8 @@
   - SurveillanceWirelessCameraMonitorCircuitboard
   - TelecomServerCircuitboard
   - HolopadMachineCircuitboard
+  - SurveillanceWirelessCameraHandheld # MOFFSTATION CHANGE - Adds wireless handheld camera
+  - BladeServerRackMachineCircuitboard # Moffstation - Blade Server Rack constructible
 
 - type: technology
   id: AdvancedEntertainment
@@ -98,9 +100,12 @@
   - FauxTileAstroGrass
   - FauxTileMowedAstroGrass
   - FauxTileJungleAstroGrass
+  - FauxTileDarkAstroGrass
+  - FauxTileLightAstroGrass
   - FauxTileAstroIce
   - FauxTileAstroSnow
   - FauxTileAstroAsteroidSand
+  - FauxTileDesertAstroSand
 
 - type: technology
   id: BiochemicalStasis
@@ -183,7 +188,7 @@
     sprite: Structures/cargo_telepad.rsi
     state: display
   discipline: CivilianServices
-  tier: 2
+  tier: 3 # Moffstation
   cost: 15000
   recipeUnlocks:
   - CargoTelepadMachineCircuitboard
@@ -222,7 +227,7 @@
     sprite: Objects/Specific/Chemistry/beaker_bluespace.rsi
     state: beakerbluespace
   discipline: CivilianServices
-  tier: 3
+  tier: 2 # Moffstation
   cost: 10000
   recipeUnlocks:
   - BluespaceBeaker

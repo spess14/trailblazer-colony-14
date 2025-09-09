@@ -23,6 +23,7 @@
     - id: SnakeSpawn
     - id: SpiderClownSpawn
     - id: SpiderSpawn
+    - id: TarboldMigration #Moffstation - Tarbold Vent Critters
     - id: VentClog
 
 - type: entityTable
@@ -46,6 +47,7 @@
     - id: ZombieOutbreak
     - id: LoneOpsSpawn
     - id: WizardSpawn
+    - id: SyndicateListeningOutpostSpawn # Moffstation
     - !type:NestedSelector
       tableId: DerelictBorgEventTable
 
@@ -192,7 +194,7 @@
     weight: 6.5
     earliestStart: 40
     reoccurrenceDelay: 20
-    minimumPlayers: 20
+    minimumPlayers: 30  # Moffstation - Tune down antags
     duration: null
   - type: SpaceSpawnRule
     spawnDistance: 0
@@ -276,7 +278,7 @@
     duration: null
     earliestStart: 20
     reoccurrenceDelay: 20
-    minimumPlayers: 15
+    minimumPlayers: 20  # Moffstation - Tune down antags
   - type: ParadoxCloneRule
     objectiveBlacklist:
       tags:
@@ -326,7 +328,7 @@
     duration: 1
     earliestStart: 30
     reoccurrenceDelay: 60
-    minimumPlayers: 30
+    minimumPlayers: 30  # Moffstation - Tune down antags
   - type: AntagSelection
     agentName: wizard-round-end-name
     definitions:
@@ -338,6 +340,7 @@
       startingGear: WizardBlueGear
       roleLoadout:
       - RoleSurvivalExtended
+      - JobWizard   # Moffstation - Enable custom wizard name/loadout
       briefing:
         text: wizard-role-greeting
         color: Turquoise
@@ -458,7 +461,7 @@
     earliestStart: 20
     minimumPlayers: 15
     weight: 5
-    duration: 60
+    duration: 30 # Moffstation - used as delay
   - type: VentCrittersRule
     entries:
     - id: MobAdultSlimesBlueAngry
@@ -479,7 +482,7 @@
     earliestStart: 20
     minimumPlayers: 15
     weight: 5
-    duration: 60
+    duration: 30 # Moffstation - used as delay
   - type: VentCrittersRule
     entries:
     - id: MobPurpleSnake
@@ -500,7 +503,7 @@
     earliestStart: 20
     minimumPlayers: 15
     weight: 5
-    duration: 60
+    duration: 30 # Moffstation - used as delay
   - type: VentCrittersRule
     entries:
     - id: MobGiantSpiderAngry
@@ -517,7 +520,7 @@
     earliestStart: 20
     minimumPlayers: 20
     weight: 1.5
-    duration: 60
+    duration: 30 # Moffstation - used as delay
   - type: VentCrittersRule
     entries:
     - id: MobClownSpider
@@ -565,8 +568,8 @@
   - type: StationEvent
     earliestStart: 35
     weight: 5.5
-    minimumPlayers: 20
-    duration: null # LoneOpsSpawn needs an infinite duration so that it inherits the NukeOpsRule things of an actually appropriate end screen (not always "Neutral outcome!") and... ending the game if the station is nuked.
+    minimumPlayers: 30 # Moffstation - Tune down antags
+    duration: null # LoneOpsSpawn needs an infinite duration so that it inherits the NukeOpsRule things of an actually appropriate end scrreen (not always "Neutral outcome!") and... ending the game if the station is nuked.
   - type: RuleGrids
   - type: LoadMapRule
     gridPath: /Maps/Shuttles/ShuttleEvent/striker.yml
@@ -581,6 +584,7 @@
       startingGear: SyndicateLoneOperativeGearFull
       roleLoadout:
       - RoleSurvivalNukie
+      - JobNukeops  # Moffstation - Enable custom nukie name/loadout
       components:
       - type: NukeOperative
       - type: RandomMetadata
@@ -603,7 +607,7 @@
   - type: StationEvent
     earliestStart: 30
     weight: 8
-    minimumPlayers: 15
+    minimumPlayers: 25  # Moffstation - Tune down antags
     maxOccurrences: 1 # can only happen once per round
     startAnnouncement: station-event-communication-interception
     startAudio:

@@ -95,6 +95,7 @@
       - PosterContrabandExoAcid
       - PosterContrabandExoRun
       - PosterContrabandExoChomp
+      - PosterMoffFiveHundredMothroaches # Moffstaion
     chance: 1
 
 - type: entity

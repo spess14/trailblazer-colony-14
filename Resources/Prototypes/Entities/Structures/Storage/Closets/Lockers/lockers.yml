@@ -574,6 +574,7 @@
   id: LockerClown
   name: clown locker
   parent: LockerBaseSecure
+  suffix: Filled  # Moffstation - updating indicator
   components:
   - type: Appearance
   - type: AccessReader
@@ -582,6 +583,15 @@
     stateBaseClosed: clown
     stateDoorOpen: clown_open
     stateDoorClosed: clown_door
+  #    Moffstation - Start - Made Pawgliaci spawn on the clown locker, also add the Foolbox to the fill
+  - type: ConditionalSpawner
+    prototypes:
+    - MobPawgliaci
+  - type: EntityTableContainerFill
+    containers:
+      entity_storage: !type:NestedSelector
+        tableId: LockerFillClown
+  #    Moffstation - End
 
 # Mime
 - type: entity

@@ -99,6 +99,7 @@
   - type: Tag
     tags:
     - SiliconEmotes
+    - PAI # Moffstation - Persona Sabre (why does this need a tag)
 
 - type: entity
   parent: [ PersonalAI, BaseSyndicateContraband]

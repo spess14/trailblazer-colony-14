@@ -54,7 +54,7 @@
   description: Die.
   components:
   - type: Objective
-    difficulty: 0.5
+    difficulty: 0.8 # Moffstation - Made DAGD more difficult so it's less likely
     icon:
       sprite: Mobs/Ghosts/ghost_human.rsi
       state: icon
@@ -252,7 +252,7 @@
     job: HeadOfSecurity
   - type: StealCondition
     stealGroup: WeaponEnergyShotgun
-    owner: job-name-hos
+    owner: job-name-warden # Moffstation - Big Iron
 
 ## ce
 

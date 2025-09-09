@@ -45,6 +45,7 @@
       amount: 2
     - id: NetworkConfigurator
     - id: Binoculars
+    - id: WeaponEnergyShotgun # Moffstation - Big Iron
 
 - type: entityTable
   id: FillLockerWardenHarduit
@@ -88,6 +89,10 @@
       prob: 0.6
     - id: BookSpaceLaw
       prob: 0.5
+    # Moffstation - Begin (Security Armored Longcoat)
+    - id: ClothingOuterWinterSecArmored
+      prob: 0.3
+    # Moffstation - End
 
 - type: entity
   id: LockerBrigmedicFilled
@@ -163,6 +168,7 @@
     - id: HoloprojectorSecurity
     - id: BoxEvidenceMarkers
     - id: HandLabeler
+    - id: BoxTapeRecorder # DeltaV
 
 - type: entity
   id: ClosetBombFilled

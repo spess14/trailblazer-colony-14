@@ -17,6 +17,7 @@
         Science: [ ]
         Security: [ ]
         Service: [ ]
+        Pirates: [ ]
     - type: StationCargoBountyDatabase
 
 - type: entity
@@ -37,7 +38,8 @@
   id: BaseStationArrivals
   abstract: true
   components:
-    - type: StationArrivals
+  - type: StationArrivals
+    shuttlePath: /Maps/_Moffstation/Shuttles/arrivals.yml # Moffstation - Changed the arrivals shuttle
 
 - type: entity
   id: BaseStationGateway

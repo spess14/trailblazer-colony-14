@@ -210,6 +210,7 @@
     - Instruments
     - Equipment
     - FauxTiles
+    - WirelessCameraHandheld # MOFFSTATION CHANGE - Adds wireless handheld camera
   - type: EmagLatheRecipes
     emagDynamicPacks:
     - SecurityAmmo
@@ -332,7 +333,7 @@
 
 - type: entity
   id: Biofabricator
-  parent: BaseLathe
+  parent: BaseLatheLube #Moffstation
   name: biocube fabricator
   description: Produces animal cubes using biomass.
   components:
@@ -539,7 +540,7 @@
 
 - type: entity
   id: Biogenerator
-  parent: BaseLathe
+  parent: BaseLatheLube #Moffstation
   name: biogenerator
   description: Converts plants into biomass, which can be used to construct useful items.
   components:

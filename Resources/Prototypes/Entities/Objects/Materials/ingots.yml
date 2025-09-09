@@ -60,6 +60,12 @@
         reagents:
         - ReagentId: Gold
           Quantity: 10
+  # Moffstation - Start - Add tag for pirate bounty
+  - type: Tag
+    tags:
+    - Ingot
+    - BarGold
+  # Moffstation - End
 
 - type: entity
   parent: IngotGold
@@ -105,6 +111,12 @@
         reagents:
         - ReagentId: Silver
           Quantity: 10
+  # Moffstation - Start - Add tag for pirate bounty
+  - type: Tag
+    tags:
+    - Ingot
+    - BarSilver
+  # Moffstation - End
 
 - type: entity
   parent: IngotSilver

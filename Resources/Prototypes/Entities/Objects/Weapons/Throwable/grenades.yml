@@ -21,14 +21,28 @@
     damageContainer: Inorganic
   - type: Destructible
     thresholds:
+    # Moffstation - Begin (Resilient Grenades)
+    #- trigger:
+        #!type:DamageTrigger
+        #damage: 10
+      #behaviors:
+      #- !type:TriggerBehavior
+      #- !type:DoActsBehavior
+        #acts: ["Destruction"]
     - trigger:
         !type:DamageTrigger
         damage: 10
       behaviors:
+      - !type:TimerStartBehavior
+    - trigger:
+        !type:DamageTrigger
+        damage: 45
+      behaviors:
       - !type:TriggerBehavior
         keyOut: timer # explode immediately
       - !type:DoActsBehavior
-        acts: ["Destruction"]
+        acts: [ "Destruction" ]
+      # Moffstation - End
   - type: Appearance
   - type: AnimationPlayer
   - type: GenericVisualizer
@@ -51,8 +65,30 @@
         restitution: 0.3
         friction: 0.2
 
+# Moffstation - Begin (Resilient Grenades)
 - type: entity
-  name: explosive grenade
+  parent: GrenadeBase
+  id: GrenadeBaseFragile
+  abstract: true
+  components:
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 10
+      behaviors:
+      - !type:TimerStartBehavior
+    - trigger:
+        !type:DamageTrigger
+        damage: 30
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+#Moffstation - End
+
+- type: entity
+  #name: explosive grenade (Moffstation - Resilient Grenades - Replaced)
+  name: high explosive grenade
   description: Grenade that creates a small but devastating explosion.
   parent: [GrenadeBase, BaseSyndicateContraband]
   id: ExGrenade
@@ -77,7 +113,10 @@
 - type: entity
   name: flashbang
   description: Eeeeeeeeeeeeeeeeeeeeee.
-  parent: [ GrenadeBase, BaseSecurityContraband ]
+  # Moffstation - Begin (Resilient Grenades)
+  #parent: [ GrenadeBase, BaseSecurityContraband ]
+  parent: [ GrenadeBaseFragile, BaseSecurityContraband ]
+  # Moffstation - End
   id: GrenadeFlashBang
   components:
   - type: Sprite
@@ -153,7 +192,7 @@
       - !type:TriggerBehavior
         keyOut: timer # immediately explode
       - !type:DoActsBehavior
-        acts: ["Destruction"]
+        acts: [ "Destruction"]
   - type: TimerTrigger
     delay: 5
   - type: ExplodeOnTrigger
@@ -200,7 +239,10 @@
 
 
 - type: entity
-  parent: [ GrenadeBase, BaseSyndicateContraband ]
+  # Moffstation - Begin (Resilient Grenades)
+  #parent: [ GrenadeBase, BaseSyndicateContraband ]
+  parent: [ GrenadeBaseFragile, BaseSyndicateContraband ]
+  # Moffstation - End
   id: SingularityGrenade
   name: singularity grenade
   description: Grenade that simulates the power of a singularity, pulling things in a heap.
@@ -387,6 +429,13 @@
     damageContainer: Inorganic
   - type: Destructible
     thresholds:
+    # Moffstation - Begin (Resilient Grenades)
+    - trigger:
+        !type:DamageTrigger
+        damage: 10
+      behaviors:
+      - !type:TimerStartBehavior
+    # Moffstation - End
     - trigger:
         !type:DamageTrigger
         damage: 50
@@ -414,7 +463,10 @@
 - type: entity
   name: EMP grenade
   description: A grenade designed to wreak havoc on electronic systems.
-  parent: [GrenadeBase, BaseSyndicateContraband]
+  # Moffstation - Begin (Resilient Grenades)
+  #parent: [GrenadeBase, BaseSyndicateContraband]
+  parent: [GrenadeBaseFragile, BaseSyndicateContraband]
+  # Moffstation - End
   id: EmpGrenade
   components:
   - type: Sprite

@@ -321,6 +321,14 @@ public sealed partial class ShuttleSystem
         // Valid dock for now time so just use that as the target.
         if (config != null)
         {
+            // Moffstation - Start - Valid dock so mark each one as queued
+            foreach (var dock in config.Docks)
+            {
+                dock.DockA.Queued = true;
+                dock.DockB.Queued = true;
+            }
+            // Moffstation - End
+
             hyperspace.TargetCoordinates = config.Coordinates;
             hyperspace.TargetAngle = config.Angle;
         }
@@ -414,6 +422,8 @@ public sealed partial class ShuttleSystem
         Enable(uid, component: body);
         _physics.SetLinearVelocity(uid, new Vector2(0f, 20f), body: body);
         _physics.SetAngularVelocity(uid, 0f, body: body);
+        _physics.SetLinearDamping(uid, body, 0f);
+        _physics.SetAngularDamping(uid, body, 0f);
 
         _dockSystem.SetDockBolts(uid, true);
         _console.RefreshShuttleConsoles(uid);
@@ -468,6 +478,9 @@ public sealed partial class ShuttleSystem
 
         _physics.SetLinearVelocity(uid, Vector2.Zero, body: body);
         _physics.SetAngularVelocity(uid, 0f, body: body);
+        _physics.SetLinearDamping(uid, body, entity.Comp2.LinearDamping);
+        _physics.SetAngularDamping(uid, body, entity.Comp2.AngularDamping);
+
 
         var target = entity.Comp1.TargetCoordinates;
 
@@ -501,6 +514,13 @@ public sealed partial class ShuttleSystem
             else
             {
                 FTLDock((uid, xform), config);
+                // Moffstation - Start - Mark each dock as unqueued
+                foreach (var dock in config.Docks)
+                {
+                    dock.DockA.Queued = false;
+                    dock.DockB.Queued = false;
+                }
+                // Moffstation - End
             }
 
             mapId = mapCoordinates.MapId;

@@ -99,6 +99,7 @@
     - GunpetInstrument
     - BirdToyInstrument
     - MysteryFigureBox
+    - MysteryFigureBoxMoff # Moffstation - Adds moffstation themed figurines
     - PlushieHampter
     - PlushieLizard
     - PlushieRainbowLizard
@@ -125,6 +126,7 @@
     - PlushieSharkBlue
     - PlushieVox
     - PlushieXeno
+    - PlushieBorg # MOFFSTATION - adds borg plushie
     - PlasticBanana
     - RevolverCapGun
     - SnapPopBox

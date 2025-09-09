@@ -142,9 +142,12 @@
   metabolisms:
     Medicine:
       effects:
-      - !type:EvenHealthChange
+      # Moffstation - Start - Revert adv. chem changes
+      - !type:HealthChange
         damage:
-          Brute: -1.5
+          groups:
+            Brute: -2
+      # Moffstation - End
       - !type:HealthChange
         conditions:
         - !type:ReagentThreshold
@@ -1112,6 +1115,7 @@
   physicalDesc: reagent-physical-desc-holy
   flavor: holy
   color: "#91C3F7"
+  # Moffstation - Start - Making holywater hurt vampires
   metabolisms:
     Drink:
       effects:
@@ -1121,6 +1125,9 @@
         conditions:
         - !type:TotalDamage
           max: 50
+        - !type:OrganType
+          type: Vampire
+          shouldHave: false
         damage:
           types:
             Blunt: -0.2
@@ -1128,7 +1135,20 @@
             Heat: -0.2
             Shock: -0.2
             Cold: -0.2
-
+      - !type:HealthChange
+        conditions:
+        - !type:OrganType
+          type: Vampire
+          shouldHave: true
+        damage:
+          types:
+            Holy: 1.0
+      - !type:FlammableReaction
+        conditions:
+        - !type:OrganType
+          type: Vampire
+          shouldHave: true # Make them more flammable
+  # Moffstation - End - Making holywater hurt vampires
   reactiveEffects:
     Extinguish:
       methods: [ Touch ]

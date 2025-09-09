@@ -11,6 +11,34 @@
   - StationAiIconDorf
   - StationAiIconHeartline
   - StationAiIconSmiley
+  # Moffstation - Start - Added more AI Icons
+  - StationAiIconAiAlien
+  - StationAiIconAiAngryface
+  - StationAiIconAiBloodylove
+  - StationAiIconAiBoxfort
+  - StationAiIconAiCheerful
+  - StationAiIconAiDatabase
+  - StationAiIconAiFabulous
+  - StationAiIconAiGlitchman
+  - StationAiIconAiHades
+  - StationAiIconAiHelios
+  - StationAiIconAiHoneycomb
+  - StationAiIconAiHourglass
+  - StationAiIconAiMagma
+  - StationAiIconAiMatrix
+  - StationAiIconAiMono
+  - StationAiIconAiNanotrasen
+  - StationAiIconAiPresident
+  - StationAiIconAiRavensdale
+  - StationAiIconAiRoyal
+  - StationAiIconAiSheltered
+  - StationAiIconAiTerminal
+  - StationAiIconAiText
+  - StationAiIconAiThinking
+  - StationAiIconAiTriumvirate
+  - StationAiIconAiU
+  - StationAiIconAiWasp
+  # Moffstation - End - Added more AI Icons
 
 - type: stationAiCustomizationGroup
   id: StationAiHolograms
@@ -22,7 +50,18 @@
   - StationAiHologramFace
   - StationAiHologramCat
   - StationAiHologramDog
-
+  # Moffstation - Start - Added holograms
+  - StationAiHologramAngel 
+  - StationAiHologramArachnid
+  - StationAiHologramDiona
+  - StationAiHologramDwarf
+  - StationAiHologramElf
+  - StationAiHologramJustice
+  - StationAiHologramMoth
+  - StationAiHologramReptilian
+  - StationAiHologramVox
+  # Moffstation - End
+  
 # Iconography
 - type: stationAiCustomization
   abstract: true

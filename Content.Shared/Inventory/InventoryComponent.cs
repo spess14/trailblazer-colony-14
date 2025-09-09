@@ -27,14 +27,9 @@ public sealed partial class InventoryComponent : Component
         set => IoCManager.Resolve<IEntityManager>().System<InventorySystem>().SetTemplateId((Owner, this), value);
     }
 
-    [DataField, AutoNetworkedField]
-    public string? SpeciesId;
+    [DataField("speciesId")] public string? SpeciesId { get; set; }
 
-
-    [ViewVariables]
     public SlotDefinition[] Slots = Array.Empty<SlotDefinition>();
-
-    [ViewVariables]
     public ContainerSlot[] Containers = Array.Empty<ContainerSlot>();
 
     [DataField, AutoNetworkedField]

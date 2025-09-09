@@ -6,6 +6,7 @@
     TraitorObjectiveGroupKill: 1
     TraitorObjectiveGroupState: 1 #As in, something about your character. Alive, dead, arrested, gained an ability...
     TraitorObjectiveGroupSocial: 1 #Involves helping/harming others without killing them or stealing their stuff
+    TraitorObjectiveOpenEnded: 0.5  # Moffstation - Open ended objectives
 
 - type: weightedRandom
   id: TraitorObjectiveGroupSteal
@@ -29,6 +30,7 @@
   weights:
     KillRandomPersonObjective: 1
     KillRandomHeadObjective: 0.25
+    TeachLessonObjective: 1 # Moffstation - teach lesson objective
 
 - type: weightedRandom
   id: TraitorObjectiveGroupState
@@ -49,6 +51,7 @@
   weights:
     ThiefObjectiveGroupCollection: 1
     ThiefObjectiveGroupItem: 1
+    ThiefObjectiveOpenEnded: 0.5  # Moffstation - open ended objectives
 
 - type: weightedRandom
   id: ThiefBigObjectiveGroups

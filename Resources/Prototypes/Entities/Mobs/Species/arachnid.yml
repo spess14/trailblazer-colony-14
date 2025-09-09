@@ -89,10 +89,11 @@
       - map: ["enum.HumanoidVisualLayers.RHand"]
       - map: [ "gloves" ]
       - map: [ "shoes" ]
-      - map: [ "belt" ]
+      #- map: [ "belt" ] Moffstation (Belts Over Outerwear)
       - map: [ "id" ]
       - map: [ "outerClothing" ]
-      - map: [ "enum.HumanoidVisualLayers.Tail" ] # Mentioned in moth code: This needs renaming lol.
+      - map: [ "belt" ] # Moffstation (Belts Over Outerwear)
+      - map: [ "enum.HumanoidVisualLayers.Tail" ] # Mentioned in moth code: This needs renZming lol.
       - map: [ "back" ]
       - map: [ "neck" ]
       - map: [ "enum.HumanoidVisualLayers.SnoutCover" ]
@@ -131,4 +132,4 @@
     speciesId: arachnid
 
 
-#>88w88<
+#>88w88
