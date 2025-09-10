@@ -1,0 +1,19 @@
+- type: entity
+  parent: BaseMentalAction
+  id: ActionRoofOverlayToggle
+  name: "Roof Overlay"
+  description: Check the roof above you
+  components:
+  - type: Action
+    icon: Interface/Actions/harmOff.png
+    iconOn: Interface/Actions/harm.png
+  - type: InstantAction
+    event: !type:ToggleRoofingOverlayEvent
+
+- type: entity
+  parent: ActionRoofOverlayToggle
+  id: ActionRoofOverlayToggleOff
+  components:
+  - type: Action
+    enabled: false
+    autoPopulate: false
