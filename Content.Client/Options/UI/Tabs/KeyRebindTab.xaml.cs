@@ -316,7 +316,7 @@ namespace Content.Client.Options.UI.Tabs
 
             // TC14 functions
             AddHeader("ui-options-fork-specific");
-            AddButton(ForkKeyFunctions.ToggleRoofOverlay);
+            AddButton(ForkKeyFunctions.ToggleRoofOverlay); //ui-options-function-toggle-roof-overlay
 
             foreach (var control in _keyControls.Values)
             {
