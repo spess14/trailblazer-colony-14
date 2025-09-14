@@ -16,6 +16,7 @@ public sealed class WizdenContentFreeze
     /// https://github.com/space-wizards/space-station-14/issues/8524
     /// </summary>
     [Test]
+    // TODO MOFFSTATION WHEN THIS FREEZE ENDS WE NEED TO DEAL WITH OUR RECIPES!!
     public async Task MicrowaveRecipesFreezeTest()
     {
         await using var pair = await PoolManager.GetServerClient();
@@ -24,11 +25,11 @@ public sealed class WizdenContentFreeze
         var protoMan = server.ProtoMan;
 
         var recipesCount = protoMan.Count<FoodRecipePrototype>();
-        var recipesLimit = 218;
+        var recipesLimit = 221; // Moffstation
 
         if (recipesCount > recipesLimit)
         {
-            Assert.Fail($"PLEASE STOP ADDING NEW MICROWAVE RECIPES. MICROWAVE RECIPES ARE FROZEN AND NEED TO BE REPLACED WITH PROPER COOKING MECHANICS! See https://github.com/space-wizards/space-station-14/issues/8524. Keep it under {recipesLimit}. Current count: {recipesCount}");
+            Assert.Fail($"This is where you'd've tripped upstream's AHHHHH NO MORE MICROWAVE RECIPES test. Just bump the number in `WizdenContentFreeze.cs` from {recipesLimit} to {recipesCount}."); // Moffstation
         }
 
         if (recipesCount < recipesLimit)
