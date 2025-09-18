@@ -1,4 +1,10 @@
-﻿- type: latheRecipe
+# Generic
+- type: latheRecipe
+  parent: BaseBorgModuleRecipe
+  id: BorgModuleBureaucracy
+  result: BorgModuleBureaucracy
+
+- type: latheRecipe
   parent: BaseBorgModuleRecipe
   id: BorgModuleFoamForceGallant
   result: BorgModuleFoamForceGallant

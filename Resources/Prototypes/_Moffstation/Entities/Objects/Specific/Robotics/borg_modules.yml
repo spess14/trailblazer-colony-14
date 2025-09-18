@@ -1,3 +1,36 @@
+# Generic Modules
+- type: entity
+  id: BorgModuleBureaucracy
+  parent: [ BaseBorgModule, BaseProviderBorgModule ]
+  name: Bureaucracy cyborg module
+  components:
+  - type: Sprite
+    layers:
+    - state: generic
+    - sprite: _Moffstation/Objects/Specific/Robotics/borgmodule.rsi
+      state: icon-bureaucracy
+  - type: ItemBorgModule
+    hands:
+    - item: Pen
+    - item: BooksBag
+    - hand:
+        emptyLabel: borg-slot-documents-empty
+        emptyRepresentative: Paper
+        whitelist:
+          tags:
+          - Book
+          - Dice
+          - Document
+          - Figurine
+          - TabletopBoard
+          - Write
+    - item: HandLabeler
+    - item: RubberStampApproved
+    - item: RubberStampDenied
+  - type: BorgModuleIcon
+    icon: { sprite: _Moffstation/Interface/Actions/actions_borg.rsi, state: bureau-module }
+
+# Pirate Modules
 - type: entity
   id: BorgModulePirate
   parent: [ BaseBorgModuleSyndicate, BaseProviderBorgModule, BaseSyndicateContraband ]
