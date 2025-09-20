@@ -117,8 +117,9 @@ namespace Content.Shared.Maps
 
         /// <summary>
         /// Can weather affect this tile.
+        /// TC14: changed to "true" by default - roofing system is supposed to handle such interactions instead.
         /// </summary>
-        [DataField("weather")] public bool Weather = false;
+        [DataField("weather")] public bool Weather = true;
 
         /// <summary>
         /// Is this tile immune to RCD deconstruct.

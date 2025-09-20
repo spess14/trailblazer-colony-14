@@ -17,6 +17,7 @@
   - ClothingHeadHatWelding
   - ClothingHeadHatCone
   - CheapLighter
+  - RRD
 
 - type: latheRecipePack
   id: ElectronicsWorkbench

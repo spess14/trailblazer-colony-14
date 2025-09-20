@@ -7,3 +7,13 @@
   icon:
     sprite: Objects/Tools/Lighters/lighters.rsi
     state: icon_map
+
+- type: latheRecipe
+  parent: BaseToolRecipe
+  id: RRD
+  result: RRD
+  materials:
+    Steel: 600
+  icon:
+    sprite: _tc14/Objects/Tools/rrd.rsi
+    state: rrd
