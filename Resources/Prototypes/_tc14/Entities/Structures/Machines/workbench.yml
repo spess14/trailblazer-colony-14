@@ -26,6 +26,7 @@
     staticPacks:
     - ToolsWorkbench
     - PartsStatic
+    - ExtraPartsWorkbench
     - AtmosStatic
     - CablesStatic
     - CargoStatic

@@ -34,3 +34,10 @@
   - WeaponCapacitorRechargerCircuitboard
   - FreezerElectronics
   - PortableGeneratorCPacmanMachineCircuitboard
+
+
+- type: latheRecipePack
+  id: ExtraPartsWorkbench
+  recipes:
+  - CapacitorStockPart
+  - MatterBinStockPart
