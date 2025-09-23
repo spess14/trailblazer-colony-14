@@ -502,6 +502,7 @@
     powerLoad: 1000
   - type: Computer
     board: ResearchComputerCircuitboard
+  - type: ActivatableUIRequiresAccess
   - type: AccessReader
     access: [["Research"]]
   - type: PointLight
