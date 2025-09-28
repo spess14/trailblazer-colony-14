@@ -74,7 +74,6 @@
         effectProto: StatusEffectDrowsiness
         time: 4
         type: Add
-        refresh: false
       # Moffstation start - Make ChloralHydrate sleep
       - !type:GenericStatusEffect
         conditions:
@@ -365,7 +364,6 @@
         effectProto: StatusEffectSeeingRainbow
         type: Add
         time: 10
-        refresh: false
   # TODO: PROPER hallucinations
 
 - type: reagent
