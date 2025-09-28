@@ -74,7 +74,6 @@
         effectProto: StatusEffectDrowsiness
         time: 4
         type: Add
-        refresh: false
       # Moffstation start - Make ChloralHydrate sleep
       - !type:GenericStatusEffect
         conditions:
