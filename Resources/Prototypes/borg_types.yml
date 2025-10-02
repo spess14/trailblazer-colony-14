@@ -10,13 +10,16 @@
   moduleWhitelist:
     tags:
     - BorgModuleGeneric
-    - BorgModuleScience #until sciborgs are added
+    - BorgModuleScience # Moffstation - Scienceborgs
 
   defaultModules:
   - BorgModuleTool
-  - BorgModuleInflatable
-  - BorgModuleArtifact
-  - BorgModuleAnomaly
+  # Moffstation - Start - Scienceborgs
+  # - BorgModuleInflatable # also why tf do they have this baseline?
+  # - BorgModuleArtifact
+  # - BorgModuleAnomaly
+  # Moffstation - End
+
   radioChannels:
   - Science
 
