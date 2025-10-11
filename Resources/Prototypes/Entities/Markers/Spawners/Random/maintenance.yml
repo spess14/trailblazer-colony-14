@@ -175,7 +175,7 @@
       - id: RubberStampGreytide
       - id: MysteryLighterBox
       - id: GoldenPersonalAI
-      - id: CrayonRainbowInfinite
+      - id: CrayonInfinite  # Moffstation - infinite crayon in maints loot
 
 - type: entity
   name: Maint Loot Spawner
