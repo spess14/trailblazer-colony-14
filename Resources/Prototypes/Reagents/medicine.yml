@@ -1165,8 +1165,8 @@
         conditions:
         - !type:TotalDamageCondition
           max: 50
-        - !type:OrganType
-          type: Vampire
+        - !type:MetabolizerTypeCondition
+          type: [ Vampire ]
           shouldHave: false
         damage:
           types:
@@ -1177,16 +1177,16 @@
             Cold: -0.2
       - !type:HealthChange
         conditions:
-        - !type:OrganType
-          type: Vampire
+        - !type:MetabolizerTypeCondition
+          type: [ Vampire ]
           shouldHave: true
         damage:
           types:
             Holy: 1.0
       - !type:FlammableReaction
         conditions:
-        - !type:OrganType
-          type: Vampire
+        - !type:MetabolizerTypeCondition
+          type: [ Vampire ]
           shouldHave: true # Make them more flammable
   # Moffstation - End - Making holywater hurt vampires
   reactiveEffects:

@@ -44,8 +44,8 @@
       effects:
       - !type:ModifyBloodLevel
         conditions:
-        - !type:OrganType
-          type: Vampire
+        - !type:MetabolizerTypeCondition
+          type: [ Vampire ]
           shouldHave: true
     # Moffstation - End
   plantMetabolism:
@@ -92,8 +92,8 @@
       effects:
       - !type:ModifyBloodLevel
         conditions:
-        - !type:OrganType
-          type: Vampire
+        - !type:MetabolizerTypeCondition
+          type: [ Vampire ]
           shouldHave: true
     # Moffstation - End
   footstepSound:
@@ -127,8 +127,8 @@
       effects:
       - !type:ModifyBloodLevel
         conditions:
-        - !type:OrganType
-          type: Vampire
+        - !type:MetabolizerTypeCondition
+          type: [ Vampire ]
           shouldHave: true
     # Moffstation - End
   footstepSound:
@@ -186,8 +186,8 @@
       effects:
       - !type:ModifyBloodLevel
         conditions:
-        - !type:OrganType
-          type: Vampire
+        - !type:MetabolizerTypeCondition
+          type: [ Vampire ]
           shouldHave: true
     # Moffstation - End
 - type: reagent
