@@ -96,10 +96,7 @@ public sealed class RespiratorSystem : EntitySystem
                 }
             }
 
-            // Begin Offbrand - Respirators gasp when their heart has stopped
-            var isSuffocating = respirator.Saturation < respirator.SuffocationThreshold;
-            var shouldGaspFromHeart = TryComp<Content.Shared._Offbrand.Wounds.HeartrateComponent>(uid, out var heartrate) && !heartrate.Running;
-            if (isSuffocating || shouldGaspFromHeart)
+            if (respirator.Saturation < respirator.SuffocationThreshold)
             {
                 if (_gameTiming.CurTime >= respirator.LastGaspEmoteTime + respirator.GaspEmoteCooldown)
                 {
@@ -110,14 +107,10 @@ public sealed class RespiratorSystem : EntitySystem
                         ignoreActionBlocker: true);
                 }
 
-                if (isSuffocating)
-                {
-                    TakeSuffocationDamage((uid, respirator));
-                    respirator.SuffocationCycles += 1;
-                    continue;
-                }
+                TakeSuffocationDamage((uid, respirator));
+                respirator.SuffocationCycles += 1;
+                continue;
             }
-            // End Offbrand - Respirators gasp when their heart has stopped
 
             StopSuffocation((uid, respirator));
             respirator.SuffocationCycles = 0;
@@ -141,15 +134,7 @@ public sealed class RespiratorSystem : EntitySystem
         if (ev.Gas is null)
             return;
 
-        // Begin Offbrand
-        var breathEv = new Content.Shared._Offbrand.Wounds.BeforeBreathEvent(entity.Comp.BreathVolume);
-        RaiseLocalEvent(entity, ref breathEv);
-
-        var gas = ev.Gas.RemoveVolume(breathEv.BreathVolume);
-
-        var beforeEv = new Content.Shared._Offbrand.Wounds.BeforeInhaledGasEvent(gas);
-        RaiseLocalEvent(entity, ref beforeEv);
-        // End Offbrand
+        var gas = ev.Gas.RemoveVolume(entity.Comp.BreathVolume);
 
         var inhaleEv = new InhaledGasEvent(gas);
         RaiseLocalEvent(entity, ref inhaleEv);
