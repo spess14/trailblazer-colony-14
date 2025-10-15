@@ -18,7 +18,6 @@ public sealed class HeartrateOverlay : Overlay
     [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly IPrototypeManager _prototype = default!;
 
-    private readonly HeartSystem _heart;
     private readonly SharedTransformSystem _transform;
     private readonly SpriteSystem _sprite;
     private readonly StatusIconSystem _statusIcon;
@@ -33,7 +32,6 @@ public sealed class HeartrateOverlay : Overlay
     private static readonly SpriteSpecifier HudPoor = new SpriteSpecifier.Rsi(new("/Textures/_Offbrand/heart_rate_hud.rsi"), "hud_poor");
     private static readonly SpriteSpecifier HudBad = new SpriteSpecifier.Rsi(new("/Textures/_Offbrand/heart_rate_hud.rsi"), "hud_bad");
     private static readonly SpriteSpecifier HudDanger = new SpriteSpecifier.Rsi(new("/Textures/_Offbrand/heart_rate_hud.rsi"), "hud_danger");
-    private static readonly IReadOnlyList<SpriteSpecifier> Severities = new List<SpriteSpecifier>() { HudGood, HudOkay, HudPoor, HudBad, HudDanger };
 
     public HeartrateOverlay()
     {
@@ -42,17 +40,19 @@ public sealed class HeartrateOverlay : Overlay
         _transform = _entityManager.System<SharedTransformSystem>();
         _sprite = _entityManager.System<SpriteSystem>();
         _statusIcon = _entityManager.System<StatusIconSystem>();
-        _heart = _entityManager.System<HeartSystem>();
     }
 
     private SpriteSpecifier GetIcon(Entity<HeartrateComponent> ent)
     {
-        if (!ent.Comp.Running)
-            return HudStopped;
-
-        var max = 4;
-        var severity = Math.Min((int)Math.Round(max * _heart.Strain(ent)), max);
-        return Severities[severity];
+        var strain = ent.Comp.Strain;
+        return strain.Double() switch {
+            _ when !ent.Comp.Running => HudStopped,
+            >= 4 => HudDanger,
+            >= 3 => HudBad,
+            >= 2 => HudPoor,
+            >= 1 => HudOkay,
+            _ => HudGood,
+        };
     }
 
     protected override void Draw(in OverlayDrawArgs args)

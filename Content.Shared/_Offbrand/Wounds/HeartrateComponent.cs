@@ -1,3 +1,4 @@
+using Content.Shared.Damage.Prototypes;
 using Content.Shared.FixedPoint;
 using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
@@ -9,55 +10,18 @@ namespace Content.Shared._Offbrand.Wounds;
 [Access(typeof(HeartSystem))]
 public sealed partial class HeartrateComponent : Component
 {
-    [DataField, AutoNetworkedField]
-    public float Perfusion = 1f;
-
-    [DataField, AutoNetworkedField]
-    public float OxygenSupply = 1f;
-
-    [DataField, AutoNetworkedField]
-    public float OxygenDemand = 1f;
-
-    [DataField, AutoNetworkedField]
-    public float Compensation = 1f;
-
+    /// <summary>
+    /// The damage type to use when computing oxygenation from the lungs
+    /// </summary>
     [DataField(required: true)]
-    public float RespiratoryRateCoefficient;
+    public ProtoId<DamageTypePrototype> AsphyxiationDamage;
 
+    /// <summary>
+    /// The amount of <see cref="AsphyxiationDamage" /> at which lung oxygenation is considered to be 0%
+    /// </summary>
     [DataField(required: true)]
-    public float RespiratoryRateConstant;
+    public FixedPoint2 AsphyxiationThreshold;
 
-    [DataField(required: true)]
-    public float CompensationCoefficient;
-
-    [DataField(required: true)]
-    public float CompensationConstant;
-
-    [DataField(required: true)]
-    public float CompensationStrainCoefficient;
-
-    [DataField(required: true)]
-    public float CompensationStrainConstant;
-
-    [DataField]
-    public float MinimumCardiacOutput = 0.005f;
-
-    [DataField]
-    public float MinimumVascularTone = 0.005f;
-
-    [DataField]
-    public float MinimumBloodVolume = 0.005f;
-
-    [DataField]
-    public float MinimumLungFunction = 0.005f;
-
-    [DataField]
-    public float MinimumRespiratoryRateModifier = 0.5f;
-
-    [DataField]
-    public float MinimumPerfusionEtco2Modifier = 0.5f;
-
-    #region Damage
     /// <summary>
     /// The maximum amount of damage that this entity's heart can take
     /// </summary>
@@ -78,20 +42,37 @@ public sealed partial class HeartrateComponent : Component
     /// </summary>
     [DataField(required: true)]
     public SortedDictionary<FixedPoint2, (double Chance, FixedPoint2 Amount)> StrainDamageThresholds;
-    #endregion
-
-    #region Heartstop
-    [DataField, AutoNetworkedField]
-    public bool Running = true;
 
     /// <summary>
-    /// The status effect to apply when the heart is not running
+    /// The coefficient for how much strain contributes to the blood circulation
     /// </summary>
     [DataField(required: true)]
-    public EntProtoId HeartStoppedEffect;
-    #endregion
+    public FixedPoint4 CirculationStrainModifierCoefficient;
 
-    #region Fluff Numbers
+    /// <summary>
+    /// The constant for how much strain contributes to the blood circulation
+    /// </summary>
+    [DataField(required: true)]
+    public FixedPoint4 CirculationStrainModifierConstant;
+
+    /// <summary>
+    /// How much blood circulation there is when the heart is stopped
+    /// </summary>
+    [DataField(required: true)]
+    public FixedPoint2 StoppedBloodCirculationModifier;
+
+    /// <summary>
+    /// Blood circulation will never go below this number from damage
+    /// </summary>
+    [DataField(required: true)]
+    public FixedPoint2 MinimumDamageCirculationModifier;
+
+    /// <summary>
+    /// Shock will be divided by this much before contributing to strain
+    /// </summary>
+    [DataField(required: true)]
+    public FixedPoint2 ShockStrainDivisor;
+
     /// <summary>
     /// How much reported blood pressure deviates
     /// </summary>
@@ -102,13 +83,13 @@ public sealed partial class HeartrateComponent : Component
     /// Base number for reported systolic blood pressure
     /// </summary>
     [DataField(required: true)]
-    public int SystolicBase;
+    public FixedPoint2 SystolicBase;
 
     /// <summary>
     /// Base number for reported diastolic blood pressure
     /// </summary>
     [DataField(required: true)]
-    public int DiastolicBase;
+    public FixedPoint2 DiastolicBase;
 
     /// <summary>
     /// How much the reported heartrate deviates
@@ -117,59 +98,28 @@ public sealed partial class HeartrateComponent : Component
     public int HeartRateDeviation;
 
     /// <summary>
-    /// The base of the reported heartrate at 100% perfusion
+    /// The base of the reported heartrate
     /// </summary>
     [DataField(required: true)]
-    public float HeartRateFullPerfusion;
+    public FixedPoint2 HeartRateBase;
 
     /// <summary>
-    /// The base of the reported heartrate at 0% perfusion
+    /// Strain will be multiplied with this to contribute to the reported heartrate
     /// </summary>
     [DataField(required: true)]
-    public float HeartRateNoPerfusion;
+    public FixedPoint2 HeartRateStrainFactor;
 
     /// <summary>
-    /// The base of the reported etco2
+    /// Strain will be divided by this number before being multiplied to contribute to the reported heartrate
     /// </summary>
     [DataField(required: true)]
-    public float Etco2Base;
+    public FixedPoint2 HeartRateStrainDivisor;
 
     /// <summary>
-    /// The deviation of the reported etco2
+    /// The maximum amount of strain possible
     /// </summary>
     [DataField(required: true)]
-    public int Etco2Deviation;
-
-    /// <summary>
-    /// The assumed time per normal breath in seconds
-    /// </summary>
-    [DataField(required: true)]
-    public float RespiratoryRateNormalBreath;
-
-    /// <summary>
-    /// The name of the Etco2 vital
-    /// </summary>
-    [DataField(required: true)]
-    public LocId Etco2Name;
-
-    /// <summary>
-    /// The name of the gas purged by Etco2
-    /// </summary>
-    [DataField(required: true)]
-    public LocId Etco2GasName;
-
-    /// <summary>
-    /// The name of the Spo2 vital
-    /// </summary>
-    [DataField(required: true)]
-    public LocId Spo2Name;
-
-    /// <summary>
-    /// The name of the gas circulated by Spo2
-    /// </summary>
-    [DataField(required: true)]
-    public LocId Spo2GasName;
-    #endregion
+    public FixedPoint2 MaximumStrain;
 
     [DataField, AutoNetworkedField]
     public float UpdateIntervalMultiplier = 1f;
@@ -180,49 +130,21 @@ public sealed partial class HeartrateComponent : Component
     [ViewVariables]
     public TimeSpan AdjustedUpdateInterval => UpdateInterval * UpdateIntervalMultiplier;
 
+    [DataField, AutoNetworkedField]
+    public FixedPoint2 Strain = FixedPoint2.Zero;
+
     [DataField(customTypeSerializer: typeof(TimeOffsetSerializer)), AutoPausedField]
     [AutoNetworkedField]
     public TimeSpan? LastUpdate;
 
-    #region VV Conveniences
-    private HeartSystem _system => IoCManager.Resolve<IEntityManager>().System<HeartSystem>();
+    [DataField, AutoNetworkedField]
+    public bool Running = true;
 
-    [ViewVariables]
-    private float VV000BloodVolume => _system.ComputeBloodVolume((Owner, this));
-
-    [ViewVariables]
-    private float VV001VascularTone => _system.ComputeVascularTone((Owner, this));
-
-    [ViewVariables]
-    private float VV002CardiacOutput => _system.CardiacOutput((Owner, this));
-
-    [ViewVariables]
-    private float VV003Perfusion => MathF.Min(VV000BloodVolume, MathF.Min(VV001VascularTone, VV002CardiacOutput));
-
-    [ViewVariables]
-    private float VV004LungFunction => _system.ComputeLungFunction((Owner, this));
-
-    [ViewVariables]
-    private float VV005GrossSupply => VV004LungFunction * VV003Perfusion;
-
-    [ViewVariables]
-    private float VV006Demand => _system.ComputeMetabolicRate((Owner, this));
-
-    [ViewVariables]
-    private float VV007Compensation => _system.ComputeCompensation((Owner, this), VV005GrossSupply, VV006Demand);
-
-    [ViewVariables]
-    private float VV008NetSupply => VV005GrossSupply * VV007Compensation;
-
-    [ViewVariables]
-    private float VV009Balance => VV008NetSupply / VV006Demand;
-
-    [ViewVariables]
-    private float VV010Strain => _system.Strain((Owner, this));
-
-    [ViewVariables]
-    private float VV011RespiratoryRateModifier => _system.ComputeRespiratoryRateModifier((Owner, this));
-    #endregion
+    /// <summary>
+    /// The status effect to apply when the heart is not running
+    /// </summary>
+    [DataField(required: true)]
+    public EntProtoId HeartStoppedEffect;
 }
 
 [RegisterComponent]
@@ -231,6 +153,29 @@ public sealed partial class HeartDefibrillatableComponent : Component
 {
     [DataField]
     public LocId TargetIsDead = "heart-defibrillatable-target-is-dead";
+}
+
+[RegisterComponent]
+[Access(typeof(HeartSystem))]
+public sealed partial class HeartStopOnHypovolemiaComponent : Component
+{
+    /// <summary>
+    /// How likely the heart is to stop when the volume threshold is dipped below
+    /// </summary>
+    [DataField(required: true)]
+    public float Chance;
+
+    /// <summary>
+    /// The maximum volume at which the heart can stop from hypovolemia
+    /// </summary>
+    [DataField(required: true)]
+    public FixedPoint2 VolumeThreshold;
+
+    /// <summary>
+    /// The warning issued by defibrillators if the heart is restarted with hypovolemia
+    /// </summary>
+    [DataField]
+    public LocId Warning = "heart-defibrillatable-target-hypovolemia";
 }
 
 [RegisterComponent]
@@ -253,74 +198,49 @@ public sealed partial class HeartStopOnHighStrainComponent : Component
     /// The warning issued by defibrillators if the heart is restarted with high strain
     /// </summary>
     [DataField]
-    public LocId Warning = "heart-defibrillatable-target-strain";
+    public LocId Warning = "heart-defibrillatable-target-pain";
 }
 
-/// <summary>
-/// Raised on an entity to determine the base vascular tone
-/// </summary>
-[ByRefEvent]
-public record struct BaseVascularToneEvent(float Tone);
+[RegisterComponent]
+[Access(typeof(HeartSystem))]
+public sealed partial class HeartStopOnBrainHealthComponent : Component
+{
+    /// <summary>
+    /// How likely the heart is to stop when the brain health threshold is exceeded
+    /// </summary>
+    [DataField(required: true)]
+    public float Chance;
 
-/// <summary>
-/// Raised on an entity to determine modifiers to the vascular tone
-/// </summary>
-[ByRefEvent]
-public record struct ModifiedVascularToneEvent(float Tone);
+    /// <summary>
+    /// The minimum threshold at which the heart can stop from brain health
+    /// </summary>
+    [DataField(required: true)]
+    public FixedPoint2 Threshold;
 
-/// <summary>
-/// Raised on an entity to determine the base lung function
-/// </summary>
-[ByRefEvent]
-public record struct BaseLungFunctionEvent(float Function);
-
-/// <summary>
-/// Raised on an entity to determine modifiers to the lung function
-/// </summary>
-[ByRefEvent]
-public record struct ModifiedLungFunctionEvent(float Function);
-
-/// <summary>
-/// Raised on an entity to determine the base cardiac output
-/// </summary>
-[ByRefEvent]
-public record struct BaseCardiacOutputEvent(float Output);
-
-/// <summary>
-/// Raised on an entity to determine modifiers to the cardiac output
-/// </summary>
-[ByRefEvent]
-public record struct ModifiedCardiacOutputEvent(float Output);
-
-/// <summary>
-/// Raised on an entity to determine the base metabolic rate
-/// </summary>
-[ByRefEvent]
-public record struct BaseMetabolicRateEvent(float Rate);
-
-/// <summary>
-/// Raised on an entity to determine modifiers to the metabolic rate
-/// </summary>
-[ByRefEvent]
-public record struct ModifiedMetabolicRateEvent(float Rate);
-
-/// <summary>
-/// Raised on an entity to determine modifiers to the respiratory rate
-/// </summary>
-[ByRefEvent]
-public record struct ModifiedRespiratoryRateEvent(float Rate);
-
-/// <summary>
-/// Raised on an entity to update its respiratory rate
-/// </summary>
-[ByRefEvent]
-public record struct ApplyRespiratoryRateModifiersEvent(float BreathRate, float PurgeRate);
+    /// <summary>
+    /// The warning issued by defibrillators if the heart is restarted with severe brain damage
+    /// </summary>
+    [DataField]
+    public LocId Warning = "heart-defibrillatable-target-brain-damage";
+}
 
 /// <summary>
 /// Raised on an entity to determine if the heart should stop
 /// </summary>
 [ByRefEvent]
 public record struct HeartBeatEvent(bool Stop);
+
+/// <summary>
+/// Raised on an entity to determine its oxygenation modifier from air
+/// </summary>
+[ByRefEvent]
+public record struct GetOxygenationModifier(FixedPoint2 Modifier);
+
+/// <summary>
+/// Raised on an entity to determine its circulation modifier when stopped
+/// </summary>
+[ByRefEvent]
+public record struct GetStoppedCirculationModifier(FixedPoint2 Modifier);
 
 [ByRefEvent]
 public record struct AfterStrainChangedEvent;

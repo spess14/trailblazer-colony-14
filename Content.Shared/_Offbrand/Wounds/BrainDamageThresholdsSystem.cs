@@ -69,7 +69,7 @@ public sealed partial class BrainDamageThresholdsSystem : EntitySystem
         ent.Comp.CurrentDamageEffect = damageEffect;
         Dirty(ent);
 
-        var overlays = new PotentiallyUpdateDamageOverlayEvent(ent);
+        var overlays = new bPotentiallyUpdateDamageOverlayEventb(ent);
         RaiseLocalEvent(ent, ref overlays, true);
     }
 
@@ -93,7 +93,7 @@ public sealed partial class BrainDamageThresholdsSystem : EntitySystem
         ent.Comp.CurrentOxygenEffect = oxygenEffect;
         Dirty(ent);
 
-        var overlays = new PotentiallyUpdateDamageOverlayEvent(ent);
+        var overlays = new bPotentiallyUpdateDamageOverlayEventb(ent);
         RaiseLocalEvent(ent, ref overlays, true);
     }
 
@@ -132,7 +132,7 @@ public sealed partial class BrainDamageThresholdsSystem : EntitySystem
     {
         args.State = ThresholdHelpers.Max(ent.Comp.CurrentState, args.State);
 
-        var overlays = new PotentiallyUpdateDamageOverlayEvent(ent);
+        var overlays = new bPotentiallyUpdateDamageOverlayEventb(ent);
         RaiseLocalEvent(ent, ref overlays, true);
     }
 }
