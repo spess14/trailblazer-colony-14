@@ -1167,7 +1167,6 @@
           max: 50
         - !type:MetabolizerTypeCondition
           type: [ Vampire ]
-          shouldHave: false
         damage:
           types:
             Blunt: -0.2
@@ -1179,7 +1178,6 @@
         conditions:
         - !type:MetabolizerTypeCondition
           type: [ Vampire ]
-          shouldHave: true
         damage:
           types:
             Holy: 1.0
@@ -1187,7 +1185,6 @@
         conditions:
         - !type:MetabolizerTypeCondition
           type: [ Vampire ]
-          shouldHave: true # Make them more flammable
   # Moffstation - End - Making holywater hurt vampires
   reactiveEffects:
     Extinguish:

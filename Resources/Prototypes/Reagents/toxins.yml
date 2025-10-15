@@ -82,7 +82,6 @@
           min: 26
         key: ForcedSleep
         component: ForcedSleeping
-        refresh: false
         type: Add
       # Moffstation End - Make ChloralHydrate sleep
 - type: reagent

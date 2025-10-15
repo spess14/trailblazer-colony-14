@@ -46,7 +46,6 @@
         conditions:
         - !type:MetabolizerTypeCondition
           type: [ Vampire ]
-          shouldHave: true
     # Moffstation - End
   plantMetabolism:
     - !type:PlantAdjustWater
@@ -94,7 +93,6 @@
         conditions:
         - !type:MetabolizerTypeCondition
           type: [ Vampire ]
-          shouldHave: true
     # Moffstation - End
   footstepSound:
     collection: FootstepSlime # makes sense
@@ -129,7 +127,6 @@
         conditions:
         - !type:MetabolizerTypeCondition
           type: [ Vampire ]
-          shouldHave: true
     # Moffstation - End
   footstepSound:
     collection: FootstepSlime
@@ -188,7 +185,6 @@
         conditions:
         - !type:MetabolizerTypeCondition
           type: [ Vampire ]
-          shouldHave: true
     # Moffstation - End
 - type: reagent
   id: Ichor
