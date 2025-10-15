@@ -1183,7 +1183,7 @@
         damage:
           types:
             Holy: 1.0
-      - !type:FlammableReaction
+      - !type:Ignite
         conditions:
         - !type:MetabolizerTypeCondition
           type: [ Vampire ]
