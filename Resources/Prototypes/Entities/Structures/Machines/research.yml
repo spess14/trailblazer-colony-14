@@ -97,6 +97,9 @@
     radius: 1.5
     energy: 1.6
     color: "#3db83b"
+  - type: ActivatableUIRequiresAccess
+  - type: AccessReader
+    access: [["Research"]]
   - type: ActivatableUI
     key: enum.ResearchClientUiKey.Key
   - type: ActivatableUIRequiresPower

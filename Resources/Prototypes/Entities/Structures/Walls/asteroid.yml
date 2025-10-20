@@ -32,6 +32,9 @@
     - map: [ "enum.EdgeLayer.West" ]
       state: rock_asteroid_west
   - type: MiningScannerViewable
+  - type: OreVein
+    oreChance: 0.1
+    currentOre: OreRockPlain
   - type: Damageable
     damageContainer: StructuralInorganic
     damageModifierSet: Rock
@@ -59,7 +62,7 @@
         layer:
         - WallLayer
         density: 2000
-
+      
 - type: entity
   abstract: true
   id: BaseRockGibtonite
