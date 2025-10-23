@@ -344,9 +344,3 @@
           tags:
           - CrayonWhite
   - type: Appearance
-  # Moffstation - Start - Painting Cyborg Module
-  - type: Tag
-    tags:
-    - BoxCardboard
-    - Crayon
-  # Moffstation - End
