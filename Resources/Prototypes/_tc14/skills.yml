@@ -1,0 +1,23 @@
+- type: skill
+  id: SkillMelee
+  name: skill-melee
+
+- type: skill
+  id: SkillRanged
+  name: skill-ranged
+
+- type: skill
+  id: SkillFarming
+  name: skill-farming
+
+- type: skill
+  id: SkillCreating
+  name: skill-creating
+
+- type: skill
+  id: SkillResearch
+  name: skill-research
+
+- type: skill
+  id: SkillMedical
+  name: skill-medical
