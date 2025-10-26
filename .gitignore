@@ -6,6 +6,10 @@
 *.user
 *.userosscache
 *.sln.docstates
+*.lnk
+
+# LukeZurg22's Development Folder
+_DEVELOPMENT/
 
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs

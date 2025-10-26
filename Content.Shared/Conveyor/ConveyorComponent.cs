@@ -28,7 +28,16 @@ public sealed partial class ConveyorComponent : Component
     [ViewVariables(VVAccess.ReadWrite), AutoNetworkedField]
     public ConveyorState State;
 
-    [ViewVariables, AutoNetworkedField]
+    /// <summary>
+    /// TC14: Specifically for prototypes with conveyor components that are supposed to start enabled.<br/>
+    /// Authors Note: This could be expanded-upon by assigning it to an integer. Enums cannot be changed in prototype files,
+    /// but an integer will allow the user to change directions so long as the OnInit() code in ConveyorController.cs
+    /// is updated to accomodate. Regards, -LZ22
+    /// </summary>
+    [DataField, ViewVariables(VVAccess.ReadOnly), AutoNetworkedField]
+    public bool StartsReversed;
+
+    [DataField, ViewVariables(VVAccess.ReadWrite), AutoNetworkedField]
     public bool Powered;
 
     [DataField]

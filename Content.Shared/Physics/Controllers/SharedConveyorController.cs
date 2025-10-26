@@ -18,12 +18,12 @@ namespace Content.Shared.Physics.Controllers;
 public abstract class SharedConveyorController : VirtualController
 {
     [Dependency] protected readonly IMapManager MapManager = default!;
-    [Dependency] private   readonly IParallelManager _parallel = default!;
-    [Dependency] private   readonly CollisionWakeSystem _wake = default!;
+    [Dependency] private readonly IParallelManager _parallel = default!;
+    [Dependency] private readonly CollisionWakeSystem _wake = default!;
     [Dependency] protected readonly EntityLookupSystem Lookup = default!;
-    [Dependency] private   readonly FixtureSystem _fixtures = default!;
-    [Dependency] private   readonly SharedGravitySystem _gravity = default!;
-    [Dependency] private   readonly SharedMoverController _mover = default!;
+    [Dependency] private readonly FixtureSystem _fixtures = default!;
+    [Dependency] private readonly SharedGravitySystem _gravity = default!;
+    [Dependency] private readonly SharedMoverController _mover = default!;
 
     protected const string ConveyorFixture = "conveyor";
 
@@ -34,7 +34,7 @@ public abstract class SharedConveyorController : VirtualController
     protected EntityQuery<PhysicsComponent> PhysicsQuery;
     protected EntityQuery<TransformComponent> XformQuery;
 
-    protected HashSet<EntityUid> Intersecting = new();
+    protected HashSet<EntityUid> Intersecting = [];
 
     public override void Initialize()
     {
