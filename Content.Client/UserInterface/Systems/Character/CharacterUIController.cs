@@ -34,6 +34,7 @@ public sealed class CharacterUIController : UIController, IOnStateEntered<Gamepl
 
     [UISystemDependency] private readonly CharacterInfoSystem _characterInfo = default!;
     [UISystemDependency] private readonly SpriteSystem _sprite = default!;
+    [UISystemDependency] private readonly PlayerSkillsSystem _skills = default!;
 
     public override void Initialize()
     {
@@ -190,7 +191,7 @@ public sealed class CharacterUIController : UIController, IOnStateEntered<Gamepl
             var skillText = new FormattedMessage();
             skillText.TryAddMarkup(Loc.GetString("character-info-skill-text",
                 ("skill", Loc.GetString(prototype.Name)),
-                    ("level", Loc.GetString("skills-level-" + Math.Floor(skillExp.Double())))),
+                    ("level", Loc.GetString(_skills.GetVerbalLevelDesc(skillExp)))),
                 out _);
             var skillLabel = new RichTextLabel();
             skillLabel.SetMessage(skillText);

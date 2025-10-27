@@ -1,31 +1,18 @@
 character-info-skills-label = Character Skills
 character-info-skill-text = {$skill}: {$level}
 
-skill-melee = Melee
-skill-ranged = Ranged
-skill-farming = Farming
-skill-creating = Creating
-skill-research = Research
-skill-medical = Medical
+skill-melee = [color=yellow]Melee[/color]
+skill-ranged = [color=red]Ranged[/color]
+skill-farming = [color=lime]Farming[/color]
+skill-creating = [color=orange]Creating[/color]
+skill-research = [color=mediumpurple]Research[/color]
+skill-medical = [color=lightblue]Medical[/color]
 
-skills-level-0 = Barely heard of it
-skills-level-1 = Beginner
-skills-level-2 = Beginner
-skills-level-3 = Beginner
-skills-level-4 = Beginner
-skills-level-5 = Familiar
-skills-level-6 = Familiar
-skills-level-7 = Familiar
-skills-level-8 = Familiar
-skills-level-9 = Professional
-skills-level-10 = Professional
-skills-level-11 = Professional
-skills-level-12 = Professional
-skills-level-13 = Expert
-skills-level-14 = Expert
-skills-level-15 = Expert
-skills-level-16 = Expert
-skills-level-17 = Master
-skills-level-18 = Master
-skills-level-19 = Master
-skills-level-20 = Absolute Master
+skills-0 = Barely heard of it
+skills-1to4 = Beginner
+skills-5to8 = Familiar
+skills-9to12 = Professional
+skills-13to16 = Expert
+skills-17to19 = Master
+skills-20 = Absolute Master
+skills-unknown = Unknown

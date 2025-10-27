@@ -6,7 +6,7 @@ using Robust.Shared.Prototypes;
 namespace Content.Shared._tc14.Skills.Systems;
 
 /// <summary>
-/// This handles...
+/// Has basic API for player skills.
 /// </summary>
 public sealed class PlayerSkillsSystem : EntitySystem
 {
@@ -73,8 +73,19 @@ public sealed class PlayerSkillsSystem : EntitySystem
         SetSkillExperience(skillId, uid, skillExp+delta);
     }
 
-    public string GetVerbalLevelDesc(FixedPoint2 exp)
+    public LocId GetVerbalLevelDesc(FixedPoint2 exp)
     {
-        return Loc.GetString("skills-level-" + Math.Floor(exp.Double()));
+        var lvl = (int)Math.Floor(exp.Float());
+        return lvl switch
+        {
+            0 => new LocId("skills-0"),
+            <= 4 => new LocId("skills-1to4"),
+            <= 8 => new LocId("skills-5to8"),
+            <= 12 => new LocId("skills-9to12"),
+            <= 16 => new LocId("skills-13to16"),
+            <= 19 => new LocId("skills-17to19"),
+            20 => new LocId("skills-20"),
+            _ => new LocId("skills-unknown"),
+        };
     }
 }
