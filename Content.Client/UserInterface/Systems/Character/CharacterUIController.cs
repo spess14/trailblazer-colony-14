@@ -6,6 +6,7 @@ using Content.Client.UserInterface.Controls;
 using Content.Client.UserInterface.Systems.Character.Controls;
 using Content.Client.UserInterface.Systems.Character.Windows;
 using Content.Client.UserInterface.Systems.Objectives.Controls;
+using Content.Shared._tc14.Skills.Systems;
 using Content.Shared.Input;
 using Content.Shared.Mind;
 using Content.Shared.Mind.Components;
@@ -189,7 +190,7 @@ public sealed class CharacterUIController : UIController, IOnStateEntered<Gamepl
             var skillText = new FormattedMessage();
             skillText.TryAddMarkup(Loc.GetString("character-info-skill-text",
                 ("skill", Loc.GetString(prototype.Name)),
-                    ("level", skillExp.ToString())),
+                    ("level", Loc.GetString("skills-level-" + Math.Floor(skillExp.Double())))),
                 out _);
             var skillLabel = new RichTextLabel();
             skillLabel.SetMessage(skillText);

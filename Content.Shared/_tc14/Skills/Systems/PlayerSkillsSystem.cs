@@ -72,4 +72,9 @@ public sealed class PlayerSkillsSystem : EntitySystem
         var skillExp = (float)skills[skillId];
         SetSkillExperience(skillId, uid, skillExp+delta);
     }
+
+    public string GetVerbalLevelDesc(FixedPoint2 exp)
+    {
+        return Loc.GetString("skills-level-" + Math.Floor(exp.Double()));
+    }
 }
