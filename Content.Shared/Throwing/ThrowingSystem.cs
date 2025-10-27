@@ -183,7 +183,7 @@ public sealed class ThrowingSystem : EntitySystem
         // Give it a l'il spin.
         // Moffstation - start - Predicted randomness workaround
         // TODO: Replace with RandomPredicted once the engine PR is merged
-        var seed = SharedRandomExtensions.HashCodeCombine(new() { (int)_gameTiming.CurTick.Value, uid.Id });
+        var seed = SharedRandomExtensions.HashCodeCombine((int)_gameTiming.CurTick.Value, uid.Id);
         var rand = new System.Random(seed);
         // Moffstation - End
         if (doSpin)
