@@ -28,9 +28,9 @@
   - type: MachineBoard
     prototype: RecyclerCrude
     stackRequirements:
-      Steel: 90
+      Steel: 15
   - type: PhysicalComposition
     materialComposition:
       Steel: 300
   - type: StaticPrice
-    price: 400
+    price: 75

@@ -86,6 +86,7 @@
       tags:
       - HighRiskItem
       - Multitool
+      - Wrench
     sound:
       path: /Audio/Effects/saw.ogg
       params:
