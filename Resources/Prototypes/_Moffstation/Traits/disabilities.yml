@@ -7,3 +7,11 @@
   category: Disabilities
   components:
   - type: DisarmProne
+  
+- type: trait
+  id: Uncloneable
+  name: trait-uncloneable-disability-name
+  description: trait-uncloneable-disability-desc
+  category: Disabilities
+  components:
+  - type: Uncloneable
