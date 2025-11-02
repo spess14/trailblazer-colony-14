@@ -3,14 +3,14 @@
               HorizontalExpand="True"
               Margin="10 10 10 10"
               xmlns:controls="clr-namespace:Content.Client.UserInterface.Controls">
-    <RichTextLabel Name="SkillPriorityPointsLabel"
+    <RichTextLabel Name="SkillPassionPointsLabel"
                    HorizontalExpand="True"
                    HorizontalAlignment="Right" />
-    <controls:TableContainer Name="SkillPriorityContainer"
+    <controls:TableContainer Name="SkillPassionContainer"
                              Columns="2"
                              HorizontalExpand="True"
                              Margin="5 0">
-        <RichTextLabel Text="{Loc 'skills-prioritymenu-skills'}" HorizontalAlignment="Center"/>
-        <RichTextLabel Text="{Loc 'skills-prioritymenu-priorities'}" HorizontalAlignment="Center"/>
+        <RichTextLabel Text="{Loc 'skills-passionmenu-skills'}" HorizontalAlignment="Center"/>
+        <RichTextLabel Text="{Loc 'skills-passionmenu-priorities'}" HorizontalAlignment="Center"/>
     </controls:TableContainer>
 </BoxContainer>
