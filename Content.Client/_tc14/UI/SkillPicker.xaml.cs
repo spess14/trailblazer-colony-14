@@ -44,7 +44,7 @@ public sealed partial class SkillPicker : BoxContainer
                 Value = 0,
                 IsValid = val => val is >= 0 and <= 3,
             };
-            //passionSpinBox.SetButtons([-1], [1]);
+            passionSpinBox.InitDefaultButtons();
             passionSpinBox.ValueChanged += _ => UpdatePassions();
             SkillPassionContainer.AddChild(passionSpinBox);
         }
