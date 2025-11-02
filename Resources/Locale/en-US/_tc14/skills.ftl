@@ -16,3 +16,6 @@ skills-13to16 = Expert
 skills-17to19 = Master
 skills-20 = Absolute Master
 skills-unknown = Unknown
+
+skills-prioritymenu-skills = [bold]Skills[/bold]
+skills-prioritymenu-priorities = [bold]Priorities[/bold]

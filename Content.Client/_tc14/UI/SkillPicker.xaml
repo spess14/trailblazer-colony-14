@@ -1,0 +1,16 @@
+<BoxContainer xmlns="https://spacestation14.io"
+              Orientation="Vertical"
+              HorizontalExpand="True"
+              Margin="10 10 10 10"
+              xmlns:controls="clr-namespace:Content.Client.UserInterface.Controls">
+    <RichTextLabel Name="SkillPriorityPointsLabel"
+                   HorizontalExpand="True"
+                   HorizontalAlignment="Right" />
+    <controls:TableContainer Name="SkillPriorityContainer"
+                             Columns="2"
+                             HorizontalExpand="True"
+                             Margin="5 0">
+        <RichTextLabel Text="{Loc 'skills-prioritymenu-skills'}" HorizontalAlignment="Center"/>
+        <RichTextLabel Text="{Loc 'skills-prioritymenu-priorities'}" HorizontalAlignment="Center"/>
+    </controls:TableContainer>
+</BoxContainer>
