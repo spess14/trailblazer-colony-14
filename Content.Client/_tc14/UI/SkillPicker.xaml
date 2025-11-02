@@ -1,16 +1,13 @@
 <BoxContainer xmlns="https://spacestation14.io"
               Orientation="Vertical"
-              HorizontalExpand="True"
-              Margin="10 10 10 10"
-              xmlns:controls="clr-namespace:Content.Client.UserInterface.Controls">
+              xmlns:controls="clr-namespace:Content.Client.UserInterface.Controls"
+              SeparationOverride="5">
     <RichTextLabel Name="SkillPassionPointsLabel"
-                   HorizontalExpand="True"
-                   HorizontalAlignment="Right" />
+                   HorizontalAlignment="Left" />
     <controls:TableContainer Name="SkillPassionContainer"
                              Columns="2"
-                             HorizontalExpand="True"
-                             Margin="5 0">
+                             HorizontalAlignment="Left">
         <RichTextLabel Text="{Loc 'skills-passionmenu-skills'}" HorizontalAlignment="Center"/>
-        <RichTextLabel Text="{Loc 'skills-passionmenu-priorities'}" HorizontalAlignment="Center"/>
+        <RichTextLabel Text="{Loc 'skills-passionmenu-passions'}" HorizontalAlignment="Center"/>
     </controls:TableContainer>
 </BoxContainer>
