@@ -137,12 +137,6 @@
                         <humanoid:MarkingPicker Name="Markings" IgnoreCategories="Hair,FacialHair" />
                     </ScrollContainer>
                 </BoxContainer>
-                <BoxContainer Name="SkillsTab" Orientation="Vertical" Margin="10">
-                    <!-- Skills -->
-                    <ScrollContainer VerticalExpand="True">
-                        <tc14:SkillPicker Name="Skills" Orientation="Vertical" />
-                    </ScrollContainer>
-                </BoxContainer>
             </TabContainer>
         </BoxContainer>
         <!-- Right side -->
