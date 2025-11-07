@@ -334,6 +334,9 @@ namespace Content.Server.Database
                         .Select(t => new Trait {TraitName = t})
             );
 
+            profile.Passions.Clear();
+            profile.Passions.AddRange(humanoid.Passions.Select(p => new Passion {PassionName = p.Key, Value = p.Value}));
+
             profile.Loadouts.Clear();
 
             foreach (var (role, loadouts) in humanoid.Loadouts)

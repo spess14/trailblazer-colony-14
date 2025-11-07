@@ -65,6 +65,10 @@ namespace Content.Server.Database
                 .HasIndex(p => new {HumanoidProfileId = p.ProfileId, p.TraitName})
                 .IsUnique();
 
+            modelBuilder.Entity<Passion>()
+                .HasIndex(p => new {HumanoidProfileId = p.ProfileId, p.PassionName})
+                .IsUnique();
+
             modelBuilder.Entity<ProfileRoleLoadout>()
                 .HasOne(e => e.Profile)
                 .WithMany(e => e.Loadouts)
