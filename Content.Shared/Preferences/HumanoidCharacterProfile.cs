@@ -499,7 +499,7 @@ namespace Content.Shared.Preferences
             if (!_traitPreferences.SequenceEqual(other._traitPreferences)) return false;
             if (!Loadouts.SequenceEqual(other.Loadouts)) return false;
             if (FlavorText != other.FlavorText) return false;
-            if (Passions != other.Passions) return false;
+            if (!Passions.SequenceEqual(other.Passions)) return false;
             return Appearance.MemberwiseEquals(other.Appearance);
         }
 
