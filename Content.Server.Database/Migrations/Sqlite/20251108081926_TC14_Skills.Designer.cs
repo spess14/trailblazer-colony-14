@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Content.Server.Database.Migrations.Sqlite
 {
     [DbContext(typeof(SqliteServerDbContext))]
-    [Migration("20251108070809_TC14_Skills_Final")]
-    partial class TC14_Skills_Final
+    [Migration("20251108081926_TC14_Skills")]
+    partial class TC14_Skills
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

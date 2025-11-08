@@ -32,9 +32,10 @@ namespace Content.Server.Database.Migrations.Postgres
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_passion_profile_id",
+                name: "IX_passion_profile_id_passion_name",
                 table: "passion",
-                column: "profile_id");
+                columns: new[] { "profile_id", "passion_name" },
+                unique: true);
         }
 
         /// <inheritdoc />
