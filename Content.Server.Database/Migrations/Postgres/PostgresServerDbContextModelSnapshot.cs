@@ -721,7 +721,8 @@ namespace Content.Server.Database.Migrations.Postgres
                     b.HasKey("Id")
                         .HasName("PK_passion");
 
-                    b.HasIndex("ProfileId");
+                    b.HasIndex("ProfileId", "PassionName")
+                        .IsUnique();
 
                     b.ToTable("passion", (string)null);
                 });
