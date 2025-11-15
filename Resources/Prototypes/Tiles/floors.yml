@@ -235,7 +235,7 @@
 - type: tile
   id: FloorWood
   name: tiles-wood
-  sprite: /Textures/Tiles/wood.png
+  sprite: /Textures/_tc14/Tiles/wood.png # Trailblazer /Textures/Tiles/wood.png < /Textures/_tc14/Tiles/wood.png
   variants: 4
   placementVariants:
   - 1.0
@@ -1843,7 +1843,7 @@
 - type: tile
   id: FloorWoodTile
   name: tiles-wood2
-  sprite: /Textures/Tiles/wood_tile.png
+  sprite: /Textures/_tc14/Tiles/wood_pattern.png # Trailblazer /Textures/Tiles/wood_tile.png < /Textures/_tc14/Tiles/wood_pattern.png
   variants: 4
   placementVariants:
   - 1.0
@@ -2046,7 +2046,7 @@
 - type: tile
   id: FloorWoodLarge
   name: tiles-wood-large
-  sprite: /Textures/Tiles/wood_large.png
+  sprite: /Textures/_tc14/Tiles/wood_large.png # /Textures/Tiles/wood_large.png < /Textures/_tc14/Tiles/wood_large.png
   variants: 4
   placementVariants:
   - 1.0

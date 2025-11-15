@@ -17,7 +17,7 @@
         layer:
         - MachineLayer
   - type: Sprite
-    sprite: Structures/Machines/workbench.rsi
+    sprite: /Textures/_tc14/Structures/Machines/workbench.rsi
     layers:
     - state: workbench
   - type: Lathe
@@ -125,7 +125,7 @@
     anchored: true
   - type: Pullable
   - type: Sprite
-    sprite: Structures/Machines/earlyresearchbench.rsi
+    sprite: /Textures/_tc14/Structures/Machines/earlyresearchbench.rsi
     layers:
     - state: earlyresearchbench
   - type: Construction

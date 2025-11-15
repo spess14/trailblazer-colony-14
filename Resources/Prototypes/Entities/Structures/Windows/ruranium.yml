@@ -5,9 +5,9 @@
   components:
   - type: Sprite
     drawdepth: WallTops
-    sprite: Structures/Windows/reinforced_uranium_window.rsi
+    sprite: /Textures/_tc14/Structures/Windows/reinforced_uranium_window.rsi # Trailblazer: Structures/Windows/reinforced_uranium_window.rsi < /Textures/_tc14/Structures/Windows/reinforced_uranium_window.rsi
   - type: Icon
-    sprite: Structures/Windows/reinforced_uranium_window.rsi
+    sprite: /Textures/_tc14/Structures/Windows/reinforced_uranium_window.rsi # Trailblazer: Structures/Windows/reinforced_uranium_window.rsi < /Textures/_tc14/Structures/Windows/reinforced_uranium_window.rsi
   - type: Damageable
     damageContainer: StructuralInorganic
     damageModifierSet: RGlass
@@ -37,6 +37,7 @@
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
   - type: IconSmooth
+    key: walls # Trailblazer
     base: ruwindow
   - type: Construction
     graph: Window
@@ -122,7 +123,7 @@
   components:
   - type: Sprite
     drawdepth: WallTops
-    sprite: Structures/Windows/reinforced_uranium_diagonal.rsi
+    sprite: /Textures/_tc14/Structures/Windows/reinforced_uranium_diagonal.rsi # Trailblazer: Structures/Windows/reinforced_uranium_diagonal.rsi < /Textures/_tc14/Structures/Windows/reinforced_uranium_diagonal.rsi
     state: state0
   - type: Tag
     tags:
@@ -130,7 +131,7 @@
     - Window
   - type: IconSmooth
     mode: Diagonal
-    key: windows
+    key: walls # Trailblazer: windows < walls
     base: state
   - type: Icon
     sprite: Structures/Windows/reinforced_uranium_diagonal.rsi

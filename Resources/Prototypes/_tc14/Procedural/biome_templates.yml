@@ -38,7 +38,7 @@
   # Sparse vegetation
   - !type:BiomeDecalLayer
     allowedTiles:
-    - FloorPlanetGrass
+    - TC14FloorPlanetGrass
     divisions: 2
     threshold: -0.50
     noise:
@@ -51,7 +51,7 @@
     - BushDThree
   - !type:BiomeDecalLayer
     allowedTiles:
-    - FloorPlanetGrass
+    - TC14FloorPlanetGrass
     noise:
       seed: 0
       noiseType: OpenSimplex2
@@ -65,7 +65,7 @@
   # Dense vegetation
   - !type:BiomeDecalLayer
     allowedTiles:
-    - FloorPlanetGrass
+    - TC14FloorPlanetGrass
     divisions: 1
     threshold: -0.35
     noise:
@@ -92,7 +92,7 @@
       fractalType: FBm
       frequency: 1
     allowedTiles:
-    - FloorPlanetGrass
+    - TC14FloorPlanetGrass
     entities:
     - OverworldMiscSpawner
   - !type:BiomeEntityLayer
@@ -103,7 +103,7 @@
       fractalType: FBm
       frequency: 2
     allowedTiles:
-    - FloorPlanetGrass
+    - TC14FloorPlanetGrass
     entities:
     - FloraTree
     - FloraTreeLarge
@@ -115,15 +115,15 @@
       fractalType: FBm
       frequency: 2
     allowedTiles:
-    - FloorPlanetGrass
-    - FloorPlanetDirt
+    - TC14FloorPlanetGrass
+    - TC14FloorPlanetDirt
     entities:
     - RuinsRoomMarker
   # Rock formations
   - !type:BiomeEntityLayer
     allowedTiles:
-    - FloorPlanetGrass
-    - FloorPlanetDirt
+    - TC14FloorPlanetGrass
+    - TC14FloorPlanetDirt
     threshold: -0.30
     noise:
       seed: 0
@@ -135,14 +135,14 @@
       cellularDistanceFunction: Euclidean
       cellularReturnType: Distance2
     entities:
-    - WallRock
+    - TCWallRock
   - !type:BiomeDummyLayer
     id: Loot
   # Water
   - !type:BiomeEntityLayer
     allowedTiles:
-    - FloorPlanetGrass
-    - FloorPlanetDirt
+    - TC14FloorPlanetGrass
+    - TC14FloorPlanetDirt
     threshold: 0.95
     noise:
       seed: 3
@@ -156,17 +156,17 @@
   # Fill remainder with dirt.
   - !type:BiomeTileLayer
     threshold: -1.0
-    tile: FloorPlanetDirt
+    tile: TC14FloorPlanetDirt
   - !type:BiomeTileLayer
     threshold: -0.90
-    tile: FloorPlanetGrass
+    tile: TC14FloorPlanetGrass
     noise:
       seed: 0
       frequency: 0.02
       fractalType: None
   # Water sand
   - !type:BiomeTileLayer
-    tile: FloorPlanetDirt
+    tile: TC14FloorPlanetDirt
     threshold: 0.95
     noise:
       seed: 3
@@ -177,7 +177,7 @@
       octaves: 1
   # Rock formation sand
   - !type:BiomeTileLayer
-    tile: FloorPlanetDirt
+    tile: TC14FloorPlanetDirt
     threshold: -0.30
     noise:
       seed: 0

@@ -93,7 +93,11 @@ public sealed class SoilManagerSystem : EntitySystem
         var tileDef = (ContentTileDefinition)_tileDefinitionManager[tileRef.Tile.TypeId];
         if (tileDef.ID != "FloorPlanetGrass" &&
             tileDef.ID !=
-            "FloorPlanetDirt") //TODO hardcoding tiledefs like this is absolutely terrible and should never be done, yet I do it anyway because I might be stupid
+            "FloorPlanetDirt" &&
+            tileDef.ID !=
+            "TC14FloorGrass" &&
+            tileDef.ID !=
+            "TC14FloorDirt") //TODO hardcoding tiledefs like this is absolutely terrible and should never be done, yet I do it anyway because I might be stupid
             return;
         if (!_tileDefinitionManager.TryGetDefinition("FloorPlanetStone", out var stoneDef))
             return;
