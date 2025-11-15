@@ -80,21 +80,24 @@ namespace Content.Client.IconSmoothing
 
         private void SetCornerLayers(Entity<SpriteComponent?> sprite, IconSmoothComponent component)
         {
-            _sprite.LayerMapRemove(sprite, CornerLayers.SE);
-            _sprite.LayerMapRemove(sprite, CornerLayers.NE);
-            _sprite.LayerMapRemove(sprite, CornerLayers.NW);
-            _sprite.LayerMapRemove(sprite, CornerLayers.SW);
-
+            // Frontier: Allow overlays on entities using CornerLayers smoothing - don't remove layers, adjust existing ones or create new ones.
             var state0 = $"{component.StateBase}0";
-            _sprite.LayerMapSet(sprite, CornerLayers.SE, _sprite.AddRsiLayer(sprite, state0));
-            _sprite.LayerSetDirOffset(sprite, CornerLayers.SE, DirectionOffset.None);
-            _sprite.LayerMapSet(sprite, CornerLayers.NE, _sprite.AddRsiLayer(sprite, state0));
-            _sprite.LayerSetDirOffset(sprite, CornerLayers.NE, DirectionOffset.CounterClockwise);
-            _sprite.LayerMapSet(sprite, CornerLayers.NW, _sprite.AddRsiLayer(sprite, state0));
-            _sprite.LayerSetDirOffset(sprite, CornerLayers.NW, DirectionOffset.Flip);
-            _sprite.LayerMapSet(sprite, CornerLayers.SW, _sprite.AddRsiLayer(sprite, state0));
-            _sprite.LayerSetDirOffset(sprite, CornerLayers.SW, DirectionOffset.Clockwise);
+            SetCornerLayerState(sprite, CornerLayers.SE, DirectionOffset.None, state0);
+            SetCornerLayerState(sprite, CornerLayers.NE, DirectionOffset.CounterClockwise, state0);
+            SetCornerLayerState(sprite, CornerLayers.NW, DirectionOffset.Flip, state0);
+            SetCornerLayerState(sprite, CornerLayers.SW, DirectionOffset.Clockwise, state0);
         }
+        // Frontier: set layer function to remove redundancy
+        private void SetCornerLayerState(Entity<SpriteComponent?> sprite, CornerLayers corner, DirectionOffset offset, string state)
+        {
+            if (_sprite.LayerMapTryGet(sprite, corner, out var index, false))
+                _sprite.LayerSetRsiState(sprite, index, state);
+            else
+                _sprite.LayerMapSet(sprite, corner, _sprite.AddRsiLayer(sprite, state));
+
+            _sprite.LayerSetDirOffset(sprite, corner, offset);
+        }
+        // End Frontier: set layer function to remove redundancy
 
         private void OnShutdown(EntityUid uid, IconSmoothComponent component, ComponentShutdown args)
         {

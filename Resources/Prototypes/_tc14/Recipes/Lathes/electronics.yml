@@ -2,3 +2,8 @@
   parent: BaseCircuitboardRecipe
   id: PortableGeneratorCPacmanMachineCircuitboard
   result: PortableGeneratorCPacmanMachineCircuitboard
+
+- type: latheRecipe
+  parent: BaseCircuitboardRecipe
+  id: RecyclerCrudeCircuitboard
+  result: RecyclerCrudeCircuitboard

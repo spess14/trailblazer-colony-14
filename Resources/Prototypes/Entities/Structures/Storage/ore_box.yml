@@ -36,7 +36,7 @@
   # orebox-specific
   - type: Sprite
     noRot: true
-    sprite: /Textures/Structures/Storage/orebox.rsi
+    sprite: /Textures/_tc14/Structures/Storage/orebox.rsi # Trailblazer: Textures/Structures/Storage/orebox.rsi < /Textures/_tc14/Structures/Storage/orebox.rsi
     layers:
     - state: orebox
     - state: orebox-top
