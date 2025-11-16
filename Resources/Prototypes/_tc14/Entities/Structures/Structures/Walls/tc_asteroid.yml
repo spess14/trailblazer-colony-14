@@ -48,19 +48,15 @@
   - type: OreVein
     oreChance: 1.0
     currentOre: OreCoal
+  - type: Icon
+    sprite: _tc14/Structures/Walls/Ore/stone_coal.rsi
+    state: full
+  - type: MiningScannerViewable
   - type: Sprite
-    layers:
-    - map: [ "enum.CornerLayers.SE" ]
-      state: stone0
-    - map: [ "enum.CornerLayers.SW" ]
-      state: stone0
-    - map: [ "enum.CornerLayers.NE" ]
-      state: stone0
-    - map: [ "enum.CornerLayers.NW" ]
-      state: stone0
-    - state: rock_coal
-      sprite: Structures/Walls/rock.rsi
-      map: [ "enum.MiningScannerVisualLayers.Overlay" ]
+    sprite: _tc14/Structures/Walls/Ore/stone_coal.rsi
+  - type: IconSmooth
+    key: walls
+    base: stone
 
 - type: entity
   id: TCWallRockGold
@@ -71,19 +67,15 @@
   - type: OreVein
     oreChance: 1.0
     currentOre: OreGold
+  - type: Icon
+    sprite: _tc14/Structures/Walls/Ore/stone_gold.rsi
+    state: full
+  - type: MiningScannerViewable
   - type: Sprite
-    layers:
-    - map: [ "enum.CornerLayers.SE" ]
-      state: stone0
-    - map: [ "enum.CornerLayers.SW" ]
-      state: stone0
-    - map: [ "enum.CornerLayers.NE" ]
-      state: stone0
-    - map: [ "enum.CornerLayers.NW" ]
-      state: stone0
-    - state: rock_gold
-      sprite: Structures/Walls/rock.rsi
-      map: [ "enum.MiningScannerVisualLayers.Overlay" ]
+    sprite: _tc14/Structures/Walls/Ore/stone_gold.rsi
+  - type: IconSmooth
+    key: walls
+    base: stone
 
 - type: entity
   id: TCWallRockDiamond
@@ -94,19 +86,15 @@
   - type: OreVein
     oreChance: 1.0
     currentOre: OreDiamond
+  - type: Icon
+    sprite: _tc14/Structures/Walls/Ore/stone_diamond.rsi
+    state: full
+  - type: MiningScannerViewable
   - type: Sprite
-    layers:
-    - map: [ "enum.CornerLayers.SE" ]
-      state: stone0
-    - map: [ "enum.CornerLayers.SW" ]
-      state: stone0
-    - map: [ "enum.CornerLayers.NE" ]
-      state: stone0
-    - map: [ "enum.CornerLayers.NW" ]
-      state: stone0
-    - state: rock_diamond
-      sprite: Structures/Walls/rock.rsi
-      map: [ "enum.MiningScannerVisualLayers.Overlay" ]
+    sprite: _tc14/Structures/Walls/Ore/stone_diamond.rsi
+  - type: IconSmooth
+    key: walls
+    base: stone
 
 - type: entity
   id: TCWallRockPlasma
@@ -117,19 +105,15 @@
   - type: OreVein
     oreChance: 1.0
     currentOre: OrePlasma
+  - type: Icon
+    sprite: _tc14/Structures/Walls/Ore/stone_plasma.rsi
+    state: full
+  - type: MiningScannerViewable
   - type: Sprite
-    layers:
-    - map: [ "enum.CornerLayers.SE" ]
-      state: stone0
-    - map: [ "enum.CornerLayers.SW" ]
-      state: stone0
-    - map: [ "enum.CornerLayers.NE" ]
-      state: stone0
-    - map: [ "enum.CornerLayers.NW" ]
-      state: stone0
-    - state: rock_phoron
-      sprite: Structures/Walls/rock.rsi
-      map: [ "enum.MiningScannerVisualLayers.Overlay" ]
+    sprite: _tc14/Structures/Walls/Ore/stone_plasma.rsi
+  - type: IconSmooth
+    key: walls
+    base: stone
 
 - type: entity
   id: TCWallRockQuartz
@@ -140,19 +124,15 @@
   - type: OreVein
     oreChance: 1.0
     currentOre: OreSpaceQuartz
+  - type: Icon
+    sprite: _tc14/Structures/Walls/Ore/stone_quartz.rsi
+    state: full
+  - type: MiningScannerViewable
   - type: Sprite
-    layers:
-    - map: [ "enum.CornerLayers.SE" ]
-      state: stone0
-    - map: [ "enum.CornerLayers.SW" ]
-      state: stone0
-    - map: [ "enum.CornerLayers.NE" ]
-      state: stone0
-    - map: [ "enum.CornerLayers.NW" ]
-      state: stone0
-    - state: rock_quartz
-      sprite: Structures/Walls/rock.rsi
-      map: [ "enum.MiningScannerVisualLayers.Overlay" ]
+    sprite: _tc14/Structures/Walls/Ore/stone_quartz.rsi
+  - type: IconSmooth
+    key: walls
+    base: stone
 
 - type: entity
   id: TCWallRockSilver
@@ -163,19 +143,15 @@
   - type: OreVein
     oreChance: 1.0
     currentOre: OreSilver
+  - type: Icon
+    sprite: _tc14/Structures/Walls/Ore/stone_silver.rsi
+    state: full
+  - type: MiningScannerViewable
   - type: Sprite
-    layers:
-    - map: [ "enum.CornerLayers.SE" ]
-      state: stone0
-    - map: [ "enum.CornerLayers.SW" ]
-      state: stone0
-    - map: [ "enum.CornerLayers.NE" ]
-      state: stone0
-    - map: [ "enum.CornerLayers.NW" ]
-      state: stone0
-    - state: rock_silver
-      sprite: Structures/Walls/rock.rsi
-      map: [ "enum.MiningScannerVisualLayers.Overlay" ]
+    sprite: _tc14/Structures/Walls/Ore/stone_silver.rsi
+  - type: IconSmooth
+    key: walls
+    base: stone
 
 # Yes I know it drops steel but we may get smelting at some point
 - type: entity
@@ -187,19 +163,15 @@
   - type: OreVein
     oreChance: 1.0
     currentOre: OreSteel
+  - type: Icon
+    sprite: _tc14/Structures/Walls/Ore/stone_tin.rsi
+    state: full
+  - type: MiningScannerViewable
   - type: Sprite
-    layers:
-    - map: [ "enum.CornerLayers.SE" ]
-      state: stone0
-    - map: [ "enum.CornerLayers.SW" ]
-      state: stone0
-    - map: [ "enum.CornerLayers.NE" ]
-      state: stone0
-    - map: [ "enum.CornerLayers.NW" ]
-      state: stone0
-    - state: rock_tin
-      sprite: Structures/Walls/rock.rsi
-      map: [ "enum.MiningScannerVisualLayers.Overlay" ]
+    sprite: _tc14/Structures/Walls/Ore/stone_tin.rsi
+  - type: IconSmooth
+    key: walls
+    base: stone
 
 - type: entity
   id: TCWallRockUranium
@@ -210,19 +182,15 @@
   - type: OreVein
     oreChance: 1.0
     currentOre: OreUranium
+  - type: Icon
+    sprite: _tc14/Structures/Walls/Ore/stone_uranium.rsi
+    state: full
+  - type: MiningScannerViewable
   - type: Sprite
-    layers:
-    - map: [ "enum.CornerLayers.SE" ]
-      state: stone0
-    - map: [ "enum.CornerLayers.SW" ]
-      state: stone0
-    - map: [ "enum.CornerLayers.NE" ]
-      state: stone0
-    - map: [ "enum.CornerLayers.NW" ]
-      state: stone0
-    - state: rock_uranium
-      sprite: Structures/Walls/rock.rsi
-      map: [ "enum.MiningScannerVisualLayers.Overlay" ]
+    sprite: _tc14/Structures/Walls/Ore/stone_uranium.rsi
+  - type: IconSmooth
+    key: walls
+    base: stone
 
 - type: entity
   id: TCWallRockBananium
@@ -233,19 +201,15 @@
   - type: OreVein
     oreChance: 1.0
     currentOre: OreBananium
+  - type: Icon
+    sprite: _tc14/Structures/Walls/Ore/stone_bananium.rsi
+    state: full
+  - type: MiningScannerViewable
   - type: Sprite
-    layers:
-    - map: [ "enum.CornerLayers.SE" ]
-      state: stone0
-    - map: [ "enum.CornerLayers.SW" ]
-      state: stone0
-    - map: [ "enum.CornerLayers.NE" ]
-      state: stone0
-    - map: [ "enum.CornerLayers.NW" ]
-      state: stone0
-    - state: rock_bananium
-      sprite: Structures/Walls/rock.rsi
-      map: [ "enum.MiningScannerVisualLayers.Overlay" ]
+    sprite: _tc14/Structures/Walls/Ore/stone_bananium.rsi
+  - type: IconSmooth
+    key: walls
+    base: stone
 
 - type: entity
   id: TCWallRockArtifactFragment
@@ -256,19 +220,15 @@
   - type: OreVein
     oreChance: 1.0
     currentOre: OreArtifactFragment
+  - type: Icon
+    sprite: _tc14/Structures/Walls/Ore/stone_artifact_fragment.rsi
+    state: full
+  - type: MiningScannerViewable
   - type: Sprite
-    layers:
-    - map: [ "enum.CornerLayers.SE" ]
-      state: stone0
-    - map: [ "enum.CornerLayers.SW" ]
-      state: stone0
-    - map: [ "enum.CornerLayers.NE" ]
-      state: stone0
-    - map: [ "enum.CornerLayers.NW" ]
-      state: stone0
-    - state: rock_artifact_fragment
-      sprite: Structures/Walls/rock.rsi
-      map: [ "enum.MiningScannerVisualLayers.Overlay" ]
+    sprite: _tc14/Structures/Walls/Ore/stone_artifact_fragment.rsi
+  - type: IconSmooth
+    key: walls
+    base: stone
 
 - type: entity
   id: TCWallRockSalt
@@ -279,17 +239,12 @@
   - type: OreVein
     oreChance: 1.0
     currentOre: OreSalt
+  - type: Icon
+    sprite: _tc14/Structures/Walls/Ore/stone_salt.rsi
+    state: full
+  - type: MiningScannerViewable
   - type: Sprite
-    layers:
-    - map: [ "enum.CornerLayers.SE" ]
-      state: stone0
-    - map: [ "enum.CornerLayers.SW" ]
-      state: stone0
-    - map: [ "enum.CornerLayers.NE" ]
-      state: stone0
-    - map: [ "enum.CornerLayers.NW" ]
-      state: stone0
-    - state: rock_salt
-      sprite: Structures/Walls/rock.rsi
-      map: [ "enum.MiningScannerVisualLayers.Overlay" ]
-#  id: WallRockSalt
+    sprite: _tc14/Structures/Walls/Ore/stone_salt.rsi
+  - type: IconSmooth
+    key: walls
+    base: stone
