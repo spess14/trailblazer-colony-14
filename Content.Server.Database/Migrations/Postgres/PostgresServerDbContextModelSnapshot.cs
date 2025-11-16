@@ -718,8 +718,14 @@ namespace Content.Server.Database.Migrations.Postgres
                         .HasColumnType("integer")
                         .HasColumnName("profile_id");
 
+                    b.Property<int>("Value")
+                        .HasColumnType("integer")
+                        .HasColumnName("value");
+
                     b.HasKey("Id")
                         .HasName("PK_passion");
+
+                    b.HasIndex("ProfileId");
 
                     b.HasIndex("ProfileId", "PassionName")
                         .IsUnique();

@@ -66,6 +66,9 @@ namespace Content.Server.Database
                 .IsUnique();
 
             modelBuilder.Entity<Passion>()
+                .HasIndex(j => j.ProfileId);
+
+            modelBuilder.Entity<Passion>()
                 .HasIndex(p => new {HumanoidProfileId = p.ProfileId, p.PassionName})
                 .IsUnique();
 
@@ -474,7 +477,7 @@ namespace Content.Server.Database
         public int Id { get; set; }
         public Profile Profile { get; set; } = null!;
         public int ProfileId { get; set; }
-        public int Value;
+        public int Value { get; set; }
 
         [MaxLength(128)]
         public string PassionName { get; set; } = null!;
