@@ -16,7 +16,7 @@ using NpgsqlTypes;
 namespace Content.Server.Database.Migrations.Postgres
 {
     [DbContext(typeof(PostgresServerDbContext))]
-    [Migration("20251108081935_TC14_Skills")]
+    [Migration("20251116192627_TC14_Skills")]
     partial class TC14_Skills
     {
         /// <inheritdoc />
@@ -721,8 +721,14 @@ namespace Content.Server.Database.Migrations.Postgres
                         .HasColumnType("integer")
                         .HasColumnName("profile_id");
 
+                    b.Property<int>("Value")
+                        .HasColumnType("integer")
+                        .HasColumnName("value");
+
                     b.HasKey("Id")
                         .HasName("PK_passion");
+
+                    b.HasIndex("ProfileId");
 
                     b.HasIndex("ProfileId", "PassionName")
                         .IsUnique();
