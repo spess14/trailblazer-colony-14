@@ -1049,6 +1049,7 @@
   minLimit: 0
   loadouts:
   - AtmosphericTechnicianWintercoat
+  - AtmosphericTechnicianOuterVest # Moffstation - (Nox+Cent Loadout Improvements)
 
 - type: loadoutGroup
   id: AtmosphericTechnicianBackpack
