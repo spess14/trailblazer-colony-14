@@ -32,14 +32,16 @@ public sealed class BatteryDrainerSystem : SharedBatteryDrainerSystem
         SubscribeLocalEvent<BatteryDrainerComponent, NinjaBatteryChangedEvent>(OnBatteryChanged);
     }
 
+    // Imp - Start
     /// <summary>
     ///  Imp add. Allow entities who are a battery to use themselves as the battery for this component
     /// </summary>
     private void OnStartup(Entity<BatteryDrainerComponent> ent, ref ComponentStartup args)
     {
-        if (ent.Comp.BatteryUid == null && TryComp<BatteryComponent>(ent.Owner, out _))
+        if (ent.Comp.BatteryUid == null && (HasComp<BatteryComponent>(ent.Owner) || HasComp<PredictedBatteryComponent>(ent.Owner)))
             ent.Comp.BatteryUid = ent.Owner;
     }
+    // Imp - End
 
     /// <summary>
     /// Start do after for draining a power source.
@@ -55,7 +57,7 @@ public sealed class BatteryDrainerSystem : SharedBatteryDrainerSystem
         // handles even if battery is full so you can actually see the poup
         args.Handled = true;
 
-        if (_battery.IsFull(battery))
+        if (!HasComp<PredictedBatteryComponent>(battery) && _battery.IsFull(battery)) // Moffstation - Hack to get the predicted component working for this, remove the first condition if a fix happens
         {
             _popup.PopupEntity(Loc.GetString("battery-drainer-full"), uid, uid, PopupType.Medium);
             return;
@@ -106,9 +108,9 @@ public sealed class BatteryDrainerSystem : SharedBatteryDrainerSystem
         var required = battery.MaxCharge - _predictedBattery.GetCharge((comp.BatteryUid.Value, battery));
         // higher tier storages can charge more
         // IMP EDIT START- why the fuck does draintime affecting the amount drained go undocumented!!!
-        var maxDrained = comp.FullDrain ?
-            pnb.MaxSupply * comp.DrainTime :
-            required;
+        var maxDrained = comp.FullDrain
+            ? pnb.MaxSupply * comp.DrainTime
+            : required;
         // IMP EDIT END
         var input = Math.Min(Math.Min(available, required / comp.DrainEfficiency), maxDrained);
         if (!_battery.TryUseCharge((target, targetBattery), input))
@@ -122,12 +124,6 @@ public sealed class BatteryDrainerSystem : SharedBatteryDrainerSystem
         Spawn("EffectSparks", Transform(target).Coordinates);
         _audio.PlayPvs(comp.SparkSound, target);
         _popup.PopupEntity(Loc.GetString("battery-drainer-success", ("battery", target)), uid, uid);
-
-        // IMP ADD- god this code is a mess. the bool return is only ever used to check if this should repeat
-        // we dont want that if we're draining the full thing so whatever
-        if (comp.FullDrain)
-            return false;
-// IMP ADD END
 
         // repeat the doafter until battery is full
         return !_predictedBattery.IsFull((comp.BatteryUid.Value, battery));
