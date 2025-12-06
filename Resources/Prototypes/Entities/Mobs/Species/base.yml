@@ -206,6 +206,7 @@
     - FootstepSound
     - DoorBumpOpener
     - AnomalyHost
+  - type: PlayerSkills # TC14
 
 - type: entity
   save: false

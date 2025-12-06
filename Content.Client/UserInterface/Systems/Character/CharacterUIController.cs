@@ -6,6 +6,7 @@ using Content.Client.UserInterface.Controls;
 using Content.Client.UserInterface.Systems.Character.Controls;
 using Content.Client.UserInterface.Systems.Character.Windows;
 using Content.Client.UserInterface.Systems.Objectives.Controls;
+using Content.Shared._tc14.Skills.Systems;
 using Content.Shared.Input;
 using Content.Shared.Mind;
 using Content.Shared.Mind.Components;
@@ -33,6 +34,7 @@ public sealed class CharacterUIController : UIController, IOnStateEntered<Gamepl
 
     [UISystemDependency] private readonly CharacterInfoSystem _characterInfo = default!;
     [UISystemDependency] private readonly SpriteSystem _sprite = default!;
+    [UISystemDependency] private readonly PlayerSkillsSystem _skills = default!;
 
     public override void Initialize()
     {
@@ -123,6 +125,7 @@ public sealed class CharacterUIController : UIController, IOnStateEntered<Gamepl
         CharacterButton.Pressed = true;
     }
 
+    // TC14: added skills info
     private void CharacterUpdated(CharacterData data)
     {
         if (_window == null)
@@ -130,7 +133,7 @@ public sealed class CharacterUIController : UIController, IOnStateEntered<Gamepl
             return;
         }
 
-        var (entity, job, objectives, briefing, entityName) = data;
+        var (entity, job, objectives, briefing, entityName, skills) = data;
 
         _window.SpriteView.SetEntity(entity);
 
@@ -140,6 +143,7 @@ public sealed class CharacterUIController : UIController, IOnStateEntered<Gamepl
         _window.SubText.Text = job;
         _window.Objectives.RemoveAllChildren();
         _window.ObjectivesLabel.Visible = objectives.Any();
+        _window.Skills.RemoveAllChildren();
 
         foreach (var (groupId, conditions) in objectives)
         {
@@ -178,6 +182,20 @@ public sealed class CharacterUIController : UIController, IOnStateEntered<Gamepl
             }
 
             _window.Objectives.AddChild(objectiveControl);
+        }
+
+        foreach (var (skillId, skillExp) in skills)
+        {
+            if (!_prototypeManager.Resolve(skillId, out var prototype))
+                continue;
+            var skillText = new FormattedMessage();
+            skillText.TryAddMarkup(Loc.GetString("character-info-skill-text",
+                ("skill", Loc.GetString(prototype.Name)),
+                    ("level", Loc.GetString(_skills.GetVerbalLevelDesc(skillExp)))),
+                out _);
+            var skillLabel = new RichTextLabel();
+            skillLabel.SetMessage(skillText);
+            _window.Skills.AddChild(skillLabel);
         }
 
         if (briefing != null)

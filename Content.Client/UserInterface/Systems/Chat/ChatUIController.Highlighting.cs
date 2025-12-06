@@ -127,6 +127,7 @@ public sealed partial class ChatUIController : IOnSystemChanged<CharacterInfoSys
         _highlights.Sort((x, y) => y.Length.CompareTo(x.Length));
     }
 
+    // TC14: have to void the skills from the character data here
     private void OnCharacterUpdated(CharacterData data)
     {
         // If _charInfoIsAttach is false then the opening of the character panel was the one
@@ -134,7 +135,7 @@ public sealed partial class ChatUIController : IOnSystemChanged<CharacterInfoSys
         if (!_charInfoIsAttach)
             return;
 
-        var (_, job, _, _, entityName) = data;
+        var (_, job, _, _, entityName, _) = data;
 
         // Mark this entity's name as our character name for the "UpdateHighlights" function.
         var newHighlights = "@" + entityName;

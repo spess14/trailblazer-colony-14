@@ -1,6 +1,7 @@
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Numerics;
+using Content.Shared._tc14.Skills.Systems;
 using Content.Shared.ActionBlocker;
 using Content.Shared.Actions.Events;
 using Content.Shared.Administration.Components;
@@ -63,6 +64,8 @@ public abstract class SharedMeleeWeaponSystem : EntitySystem
     [Dependency] protected readonly SharedPopupSystem PopupSystem = default!;
     [Dependency] protected readonly SharedTransformSystem TransformSystem = default!;
     [Dependency] private   readonly SharedStaminaSystem _stamina = default!;
+
+    [Dependency] private readonly PlayerSkillsSystem _skills = default!; // TC14: implement finesse skill
 
     private const int AttackMask = (int) (CollisionGroup.MobMask | CollisionGroup.Opaque);
 
@@ -813,6 +816,10 @@ public abstract class SharedMeleeWeaponSystem : EntitySystem
         {
             chance += malus.Malus;
         }
+
+        // TC14: implement finesse skill
+        var skillDiff = _skills.GetSkillLevel("SkillFinesse", disarmer) - _skills.GetSkillLevel("SkillFinesse", disarmed);
+        chance -= skillDiff * 0.025f; // You gain 2.5% chance for each level of finesse above your opponent - but you lose chance if your opponent is more skilled.
 
         return Math.Clamp(chance, 0f, 1f);
     }

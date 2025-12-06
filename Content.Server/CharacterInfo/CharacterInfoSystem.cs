@@ -1,6 +1,7 @@
 ﻿using Content.Server.Mind;
 using Content.Server.Roles;
 using Content.Server.Roles.Jobs;
+using Content.Shared._tc14.Skills.Systems;
 using Content.Shared.CharacterInfo;
 using Content.Shared.Objectives;
 using Content.Shared.Objectives.Components;
@@ -14,6 +15,7 @@ public sealed class CharacterInfoSystem : EntitySystem
     [Dependency] private readonly MindSystem _minds = default!;
     [Dependency] private readonly RoleSystem _roles = default!;
     [Dependency] private readonly SharedObjectivesSystem _objectives = default!;
+    [Dependency] private readonly PlayerSkillsSystem _skills = default!;
 
     public override void Initialize()
     {
@@ -22,6 +24,7 @@ public sealed class CharacterInfoSystem : EntitySystem
         SubscribeNetworkEvent<RequestCharacterInfoEvent>(OnRequestCharacterInfoEvent);
     }
 
+    // TC14: added skills info
     private void OnRequestCharacterInfoEvent(RequestCharacterInfoEvent msg, EntitySessionEventArgs args)
     {
         if (!args.SenderSession.AttachedEntity.HasValue
@@ -33,6 +36,7 @@ public sealed class CharacterInfoSystem : EntitySystem
         var objectives = new Dictionary<string, List<ObjectiveInfo>>();
         var jobTitle = Loc.GetString("character-info-no-profession");
         string? briefing = null;
+        var skills = _skills.GetSkills(entity)!;
         if (_minds.TryGetMind(entity, out var mindId, out var mind))
         {
             // Get objectives
@@ -56,6 +60,6 @@ public sealed class CharacterInfoSystem : EntitySystem
             briefing = _roles.MindGetBriefing(mindId);
         }
 
-        RaiseNetworkEvent(new CharacterInfoEvent(GetNetEntity(entity), jobTitle, objectives, briefing), args.SenderSession);
+        RaiseNetworkEvent(new CharacterInfoEvent(GetNetEntity(entity), jobTitle, objectives, briefing, skills), args.SenderSession);
     }
 }
