@@ -18,7 +18,7 @@
             <Label Name="ObjectivesLabel" Access="Public" Text="{Loc 'character-info-objectives-label'}" HorizontalAlignment="Center"/>
             <BoxContainer Orientation="Vertical" Name="Objectives" Access="Public"/>
             <cc:Placeholder Name="RolePlaceholder" Access="Public" PlaceholderText="{Loc 'character-info-roles-antagonist-text'}"/>
-            <Label Name="SkillsLabel" Access="Public" Text="{Loc 'character-info-skills-label'}" HorizontalAlignment="Center"/>
+            <Label Name="SkillsLabel" Visible="False" Access="Public" Text="{Loc 'character-info-skills-label'}" HorizontalAlignment="Center"/>
             <BoxContainer Orientation="Vertical" Name="Skills" Access="Public"/>
         </BoxContainer>
     </ScrollContainer>
