@@ -41,18 +41,6 @@ public sealed partial class CCVars
         CVarDef.Create("ic.id_job_length", 30, CVar.SERVER | CVar.REPLICATED);
 
     /// <summary>
-    ///     Sets the maximum length for flavor text (character descriptions).
-    /// </summary>
-    public static readonly CVarDef<int> MaxFlavorTextLength =
-        CVarDef.Create("ic.flavor_text_length", 512, CVar.SERVER | CVar.REPLICATED);
-
-    /// <summary>
-    ///     Sets the maximum character length of a job on an ID.
-    /// </summary>
-    public static readonly CVarDef<int> MaxIdJobLength =
-        CVarDef.Create("ic.id_job_length", 30, CVar.SERVER | CVar.REPLICATED);
-
-    /// <summary>
     ///     Adds a period at the end of a sentence if the sentence ends in a letter.
     /// </summary>
     public static readonly CVarDef<bool> ChatPunctuation =

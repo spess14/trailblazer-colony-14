@@ -1,5 +1,6 @@
 using Content.Shared._tc14.Skills.Components;
 using Content.Shared._tc14.Skills.Systems;
+using Content.Shared.Destructible;
 using Content.Shared.Mining;
 using Content.Shared.Mining.Components;
 using Content.Shared.Random;

@@ -88,12 +88,6 @@ public sealed class RoleBanCommand : IConsoleCommand
                 return;
         }
 
-        if (!_proto.HasIndex<JobPrototype>(job))
-        {
-            shell.WriteError(Loc.GetString("cmd-roleban-job-parse", ("job", job)));
-            return;
-        }
-
         var located = await _locator.LookupIdByNameOrIdAsync(target);
         if (located == null)
         {

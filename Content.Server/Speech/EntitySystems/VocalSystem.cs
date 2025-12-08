@@ -2,7 +2,6 @@ using Content.Server.Actions;
 using Content.Server.Chat.Systems;
 using Content.Shared.Chat;
 using Content.Shared.Chat.Prototypes;
-using Content.Shared.Cloning.Events;
 using Content.Shared.Humanoid;
 using Content.Shared.Speech;
 using Content.Shared.Speech.Components;

@@ -55,9 +55,3 @@ public enum BatteryWeaponFireModeVisuals : byte
 {
     State
 }
-
-[Serializable, NetSerializable]
-public enum BatteryWeaponFireModeVisuals : byte
-{
-    State
-}

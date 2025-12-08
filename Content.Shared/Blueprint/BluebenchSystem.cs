@@ -94,11 +94,11 @@ public sealed class BluebenchSystem : EntitySystem
         if (component.MaterialProgress[type] == 0)
             return false;
 
-        var stackCount = _stackSystem.GetCount(used, stack);
+        var stackCount = _stackSystem.GetCount((used, stack));
         var toInsert = Math.Clamp(component.MaterialProgress[type], 1, stackCount);
 
         component.MaterialProgress[type] -= toInsert;
-        _stackSystem.SetCount(used, stackCount - toInsert, stack);
+        _stackSystem.SetCount((used, stack), stackCount - toInsert);
 
         return true;
     }
