@@ -4,11 +4,6 @@
   id: Spear
   description: Definition of a Classic. Keeping murder affordable since 200,000 BCE.
   components:
-  - type: Tool
-    qualities:
-    - Slicing
-    - Screwing
-    speedModifier: 0.35
   - type: EmbeddableProjectile
     offset: -0.15,0.0
   - type: ThrowingAngle
@@ -17,6 +12,7 @@
   - type: Tag
     tags:
     - Spear
+    - ScurretWearable
   - type: Fixtures
     fixtures:
       fix1:
@@ -222,7 +218,7 @@
 
 - type: entity
   name: sharkminnow tooth spear
-  parent: Spear 
+  parent: Spear
   id: SpearSharkMinnow
   description: A spear with a sharkminnow tooth as a tip.
   components:

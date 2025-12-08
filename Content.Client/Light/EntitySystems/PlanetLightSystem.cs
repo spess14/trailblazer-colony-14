@@ -1,4 +1,3 @@
-using Content.Client._tc14.Roofing;
 using Content.Shared.CCVar;
 using Robust.Client.Graphics;
 using Robust.Shared.Configuration;
@@ -49,7 +48,6 @@ public sealed class PlanetLightSystem : EntitySystem
 
         _overlayMan.AddOverlay(new BeforeLightTargetOverlay());
         _overlayMan.AddOverlay(new RoofOverlay(EntityManager));
-        //_overlayMan.AddOverlay(new RoofingOverlay());
         _overlayMan.AddOverlay(new TileEmissionOverlay(EntityManager));
         _overlayMan.AddOverlay(new LightBlurOverlay());
         _overlayMan.AddOverlay(new SunShadowOverlay());

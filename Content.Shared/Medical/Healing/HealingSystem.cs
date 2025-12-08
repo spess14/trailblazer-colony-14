@@ -3,7 +3,8 @@ using Content.Shared.Administration.Logs;
 using Content.Shared.Body.Components;
 using Content.Shared.Body.Systems;
 using Content.Shared.Chemistry.EntitySystems;
-using Content.Shared.Damage;
+using Content.Shared.Damage.Components;
+using Content.Shared.Damage.Systems;
 using Content.Shared.Database;
 using Content.Shared.DoAfter;
 using Content.Shared.FixedPoint;
@@ -78,22 +79,18 @@ public sealed class HealingSystem : EntitySystem
         if (healing.ModifyBloodLevel != 0 && bloodstream != null)
             _bloodstreamSystem.TryModifyBloodLevel((target.Owner, bloodstream), healing.ModifyBloodLevel);
 
-        // TC14: increase topical healing based on user's medical skill.
-        // 75% healing on level 0, 100% on level 5, 175% on level 20.
-        var healed = _damageable.TryChangeDamage(target.Owner, healing.Damage * _damageable.UniversalTopicalsHealModifier * (0.75 + _skills.GetSkillLevel("SkillMedical", args.User) * 0.05), true, origin: args.Args.User);
-
-        if (healed == null && healing.BloodlossModifier != 0)
+        if (!_damageable.TryChangeDamage(target.Owner, healing.Damage * _damageable.UniversalTopicalsHealModifier * (0.75 + _skills.GetSkillLevel("SkillMedical", args.User) * 0.05), out var healed, true, origin: args.Args.User) && healing.BloodlossModifier != 0)
             return;
 
-        var total = healed?.GetTotal() ?? FixedPoint2.Zero;
+        var total = healed.GetTotal();
 
         // Re-verify that we can heal the damage.
         var dontRepeat = false;
         if (TryComp<StackComponent>(args.Used.Value, out var stackComp))
         {
-            _stacks.Use(args.Used.Value, 1, stackComp);
+            _stacks.ReduceCount((args.Used.Value, stackComp), 1);
 
-            if (_stacks.GetCount(args.Used.Value, stackComp) <= 0)
+            if (_stacks.GetCount((args.Used.Value, stackComp)) <= 0)
                 dontRepeat = true;
         }
         else

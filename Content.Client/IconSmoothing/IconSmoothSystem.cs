@@ -84,6 +84,7 @@ namespace Content.Client.IconSmoothing
             _sprite.LayerMapRemove(sprite, CornerLayers.NE);
             _sprite.LayerMapRemove(sprite, CornerLayers.NW);
             _sprite.LayerMapRemove(sprite, CornerLayers.SW);
+
             var state0 = $"{component.StateBase}0";
             _sprite.LayerMapSet(sprite, CornerLayers.SE, _sprite.AddRsiLayer(sprite, state0));
             _sprite.LayerSetDirOffset(sprite, CornerLayers.SE, DirectionOffset.None);
@@ -94,7 +95,6 @@ namespace Content.Client.IconSmoothing
             _sprite.LayerMapSet(sprite, CornerLayers.SW, _sprite.AddRsiLayer(sprite, state0));
             _sprite.LayerSetDirOffset(sprite, CornerLayers.SW, DirectionOffset.Clockwise);
         }
-
 
         private void OnShutdown(EntityUid uid, IconSmoothComponent component, ComponentShutdown args)
         {

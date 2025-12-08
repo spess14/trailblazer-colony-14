@@ -1,7 +1,11 @@
 {
     "version": 1,
     "license": "CC-BY-SA-3.0",
+<<<<<<<< HEAD:Resources/Textures/_tc14/Objects/Weapons/rifle.rsi/meta.json
+    "copyright": "Created by Rajonas",
+========
     "copyright": "Sprited for Space Station 14 by august-sun (GitHub)/augustsun (Discord).",
+>>>>>>>> upstream/stable:Resources/Textures/Objects/Weapons/Guns/Rifles/estoc.rsi/meta.json
     "size": {
         "x": 32,
         "y": 32
