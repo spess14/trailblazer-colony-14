@@ -26,10 +26,9 @@
     sprite: Structures/Machines/seed_extractor.rsi
     state: seedextractor-off
   stackRequirements:
-    Steel: 20
+    Steel: 30
     Glass: 10
     Plastic: 5
-    Capacitor: 3
     Cable: 10
   outputRecipes:
   - HydroponicsTrayMachineCircuitboard

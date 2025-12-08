@@ -1,34 +1,4 @@
 {
-<<<<<<<< HEAD:Resources/Textures/Clothing/Head/Hardsuits/basic.rsi/meta.json
-    "version": 1,
-    "license": "CC-BY-SA-3.0",
-    "copyright": "Taken from tgstation at commit https://github.com/tgstation/tgstation/commit/40d89d11ea4a5cb81d61dc1018b46f4e7d32c62a. equipped-HELMET-dog modified from equipped-HELMET by Sparlight (GitHub).",
-    "size": {
-        "x": 32,
-        "y": 32
-    },
-    "states": [
-        {
-            "name": "icon"
-        },
-        {
-            "name": "equipped-HELMET",
-            "directions": 4
-        },
-        {
-            "name": "equipped-HELMET-dog",
-            "directions": 4
-        },
-        {
-            "name": "inhand-left",
-            "directions": 4
-        },
-        {
-            "name": "inhand-right",
-            "directions": 4
-        }
-    ]
-========
   "version": 1,
   "license": "CC-BY-SA-3.0",
   "copyright": "Taken from tgstation at commit https://github.com/tgstation/tgstation/commit/5a73e8f825ff279e82949b9329783a9e3070e2da | In hand sprites sprited by PuroSlavKing (Github) for Space Station 14, recoloured by momochitters",
@@ -53,5 +23,4 @@
       "directions": 4
     }
   ]
->>>>>>>> upstream/stable:Resources/Textures/Clothing/Neck/Scarfs/PrideScarfs/aroace.rsi/meta.json
 }

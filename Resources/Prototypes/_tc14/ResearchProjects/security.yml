@@ -29,9 +29,8 @@
     sprite: Objects/Weapons/Melee/stunbaton.rsi
     state: stunbaton_off
   stackRequirements:
-    Capacitor: 3
-    Steel: 10
-    Plastic: 5 # :godo:
+    Steel: 15
+    Plastic: 5
   outputRecipes:
   - Flash
   - Stunbaton

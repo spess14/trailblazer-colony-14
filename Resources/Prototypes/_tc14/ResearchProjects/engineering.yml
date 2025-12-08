@@ -32,10 +32,9 @@
     sprite: Structures/Machines/protolathe.rsi
     state: icon
   stackRequirements:
-    Steel: 10
+    Steel: 15
     Glass: 5
     Plastic: 10
-    Capacitor: 3
     Cable: 10
   outputRecipes:
   - ProtolatheMachineCircuitboard

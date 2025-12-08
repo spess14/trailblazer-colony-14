@@ -1,11 +1,7 @@
 {
   "version": 1,
   "license": "CC-BY-SA-3.0",
-<<<<<<<< HEAD:Resources/Textures/Objects/Specific/Chapel/communistmanifesto.rsi/meta.json
-  "copyright": "Originally drawn by @Trosling (Discord)",
-========
   "copyright": "Base made by superfreak9111 on discord for Space Station 14, recoloured by momochitters",
->>>>>>>> upstream/stable:Resources/Textures/Clothing/Neck/Cloaks/aroace.rsi/meta.json
   "size": {
     "x": 32,
     "y": 32
@@ -28,4 +24,3 @@
     }
   ]
 }
-
