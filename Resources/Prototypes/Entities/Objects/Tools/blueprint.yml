@@ -38,6 +38,7 @@
     providedRecipes:
     - Fulton
     - FultonBeacon
+    - FultonBeacon
   - type: Tag
     tags:
     - BlueprintAutolathe

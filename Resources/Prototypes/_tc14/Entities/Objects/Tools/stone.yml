@@ -116,8 +116,6 @@
     interfaces:
       enum.TransferAmountUiKey.Key:
         type: TransferAmountBoundUserInterface
-  - type: Drink
-    solution: mortar
   - type: GrindOnDoAfter
     solution: mortar
     itemSlot: mortar

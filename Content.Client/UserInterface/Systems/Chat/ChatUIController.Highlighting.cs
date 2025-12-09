@@ -116,8 +116,9 @@ public sealed partial class ChatUIController : IOnSystemChanged<CharacterInfoSys
                 keyword = EndDoubleQuote.Replace(keyword, "(?<!\\w)");
             }
 
-            // Make sure any name tagged as ours gets highlighted only when others say it.
-            keyword = StartAtSign.Replace(keyword, "(?<=(?<=/name.*)|(?<=,.*\"\".*))");
+            // Make sure the character's name is highlighted only when mentioned directly (eg. it's said by someone),
+            // for example in 'Name Surname says, "..."' 'Name Surname' won't be highlighted.
+            keyword = StartAtSign.Replace(keyword, @"(?<=(?<=^.?OOC:.*:.*)|(?<=,.*"".*)|(?<=\n.*))");
 
             _highlights.Add(keyword);
         }
@@ -127,7 +128,6 @@ public sealed partial class ChatUIController : IOnSystemChanged<CharacterInfoSys
         _highlights.Sort((x, y) => y.Length.CompareTo(x.Length));
     }
 
-    // TC14: have to void the skills from the character data here
     private void OnCharacterUpdated(CharacterData data)
     {
         // If _charInfoIsAttach is false then the opening of the character panel was the one

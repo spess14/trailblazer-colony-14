@@ -8,7 +8,7 @@
   - type: MachineBoard
     prototype: PortableGeneratorCPacman
     stackRequirements:
-      Capacitor: 1
+      Steel: 2
       Cable: 5
   - type: PhysicalComposition
     materialComposition:

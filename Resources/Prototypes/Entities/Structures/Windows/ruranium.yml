@@ -1,13 +1,13 @@
 - type: entity
   id: ReinforcedUraniumWindow
   name: reinforced uranium window
-  parent: WindowRCDResistant
+  parent: [BaseDeltaPressureReinforcedPlasma, WindowRCDResistant]
   components:
   - type: Sprite
     drawdepth: WallTops
-    sprite: /Textures/_tc14/Structures/Windows/reinforced_uranium_window.rsi # Trailblazer: Structures/Windows/reinforced_uranium_window.rsi < /Textures/_tc14/Structures/Windows/reinforced_uranium_window.rsi
+    sprite: Structures/Windows/reinforced_uranium_window.rsi
   - type: Icon
-    sprite: /Textures/_tc14/Structures/Windows/reinforced_uranium_window.rsi # Trailblazer: Structures/Windows/reinforced_uranium_window.rsi < /Textures/_tc14/Structures/Windows/reinforced_uranium_window.rsi
+    sprite: Structures/Windows/reinforced_uranium_window.rsi
   - type: Damageable
     damageContainer: StructuralInorganic
     damageModifierSet: RGlass
@@ -37,7 +37,6 @@
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
   - type: IconSmooth
-    key: walls # Trailblazer
     base: ruwindow
   - type: Construction
     graph: Window
@@ -56,7 +55,7 @@
 
 - type: entity
   id: UraniumReinforcedWindowDirectional
-  parent: WindowDirectionalRCDResistant
+  parent: [BaseDeltaPressureReinforcedPlasmaQuarter, WindowDirectionalRCDResistant]
   name: directional reinforced uranium window
   description: Don't smudge up the glass down there.
   placement:
@@ -123,7 +122,7 @@
   components:
   - type: Sprite
     drawdepth: WallTops
-    sprite: /Textures/_tc14/Structures/Windows/reinforced_uranium_diagonal.rsi # Trailblazer: Structures/Windows/reinforced_uranium_diagonal.rsi < /Textures/_tc14/Structures/Windows/reinforced_uranium_diagonal.rsi
+    sprite: Structures/Windows/reinforced_uranium_diagonal.rsi
     state: state0
   - type: Tag
     tags:
@@ -131,7 +130,7 @@
     - Window
   - type: IconSmooth
     mode: Diagonal
-    key: walls # Trailblazer: windows < walls
+    key: windows
     base: state
   - type: Icon
     sprite: Structures/Windows/reinforced_uranium_diagonal.rsi

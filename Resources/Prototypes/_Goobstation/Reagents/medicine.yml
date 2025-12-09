@@ -10,7 +10,7 @@
     Medicine:
       metabolismRate: 1
       effects:
-      - !type:ModifyBleedAmount
+      - !type:ModifyBleed
         amount: -5
       - !type:EvenHealthChange
         damage:

@@ -1,5 +1,0 @@
-﻿- type: stack
-  id: ArtifactFragment
-  name: stack-artifact-fragment
-  spawn: ArtifactFragment1
-  maxCount: 30

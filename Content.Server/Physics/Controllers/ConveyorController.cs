@@ -38,22 +38,16 @@ public sealed class ConveyorController : SharedConveyorController
     {
         _signalSystem.EnsureSinkPorts(uid, component.ReversePort, component.ForwardPort, component.OffPort);
 
-        // TC14: For objects that have conveyors that begin on.
-        if (component.StartsReversed) { component.State = ConveyorState.Reverse; }
+        if (PhysicsQuery.TryComp(uid, out var physics))
+        {
+            var shape = new PolygonShape();
+            shape.SetAsBox(0.55f, 0.55f);
 
-        if (!PhysicsQuery.TryComp(uid, out var physics))
-            return; // Short-Circuit
+            _fixtures.TryCreateFixture(uid, shape, ConveyorFixture,
+                collisionLayer: (int) (CollisionGroup.LowImpassable | CollisionGroup.MidImpassable |
+                                       CollisionGroup.Impassable), hard: false, body: physics);
 
-        var shape = new PolygonShape();
-        shape.SetAsBox(0.55f, 0.55f);
-
-        _fixtures.TryCreateFixture(uid,
-            shape,
-            ConveyorFixture,
-            collisionLayer: (int)(CollisionGroup.LowImpassable | CollisionGroup.MidImpassable |
-                                  CollisionGroup.Impassable),
-            hard: false,
-            body: physics);
+        }
     }
 
     private void OnConveyorShutdown(EntityUid uid, ConveyorComponent component, ComponentShutdown args)
@@ -135,11 +129,7 @@ public sealed class ConveyorController : SharedConveyorController
         if (beltTileRef != null)
         {
             Intersecting.Clear();
-            Lookup.GetLocalEntitiesIntersecting(beltTileRef.Value.GridUid,
-                beltTileRef.Value.GridIndices,
-                Intersecting,
-                0f,
-                flags: LookupFlags.Dynamic | LookupFlags.Sundries | LookupFlags.Approximate);
+            Lookup.GetLocalEntitiesIntersecting(beltTileRef.Value.GridUid, beltTileRef.Value.GridIndices, Intersecting, 0f, flags: LookupFlags.Dynamic | LookupFlags.Sundries | LookupFlags.Approximate);
 
             foreach (var entity in Intersecting)
             {
