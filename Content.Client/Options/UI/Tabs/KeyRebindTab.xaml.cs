@@ -188,7 +188,6 @@ namespace Content.Client.Options.UI.Tabs
             AddButton(ContentKeyFunctions.SaveItemLocation);
 
             AddHeader("ui-options-header-interaction-adv");
-            AddButton(ContentKeyFunctions.SmartEquipSuitStorage);
             AddButton(ContentKeyFunctions.SmartEquipBackpack);
             AddButton(ContentKeyFunctions.SmartEquipBelt);
             AddButton(ContentKeyFunctions.SmartEquipPocket1);
@@ -272,51 +271,6 @@ namespace Content.Client.Options.UI.Tabs
             AddButton(ContentKeyFunctions.InspectEntity);
             AddButton(ContentKeyFunctions.InspectServerComponent);
             AddButton(ContentKeyFunctions.InspectClientComponent);
-
-            AddHeader("ui-options-header-text-cursor");
-            AddButton(EngineKeyFunctions.TextCursorLeft);
-            AddButton(EngineKeyFunctions.TextCursorRight);
-            AddButton(EngineKeyFunctions.TextCursorUp);
-            AddButton(EngineKeyFunctions.TextCursorDown);
-            AddButton(EngineKeyFunctions.TextCursorWordLeft);
-            AddButton(EngineKeyFunctions.TextCursorWordRight);
-            AddButton(EngineKeyFunctions.TextCursorBegin);
-            AddButton(EngineKeyFunctions.TextCursorEnd);
-
-            AddHeader("ui-options-header-text-cursor-select");
-            AddButton(EngineKeyFunctions.TextCursorSelect);
-            AddButton(EngineKeyFunctions.TextCursorSelectLeft);
-            AddButton(EngineKeyFunctions.TextCursorSelectRight);
-            AddButton(EngineKeyFunctions.TextCursorSelectUp);
-            AddButton(EngineKeyFunctions.TextCursorSelectDown);
-            AddButton(EngineKeyFunctions.TextCursorSelectWordLeft);
-            AddButton(EngineKeyFunctions.TextCursorSelectWordRight);
-            AddButton(EngineKeyFunctions.TextCursorSelectBegin);
-            AddButton(EngineKeyFunctions.TextCursorSelectEnd);
-
-            AddHeader("ui-options-header-text-edit");
-            AddButton(EngineKeyFunctions.TextBackspace);
-            AddButton(EngineKeyFunctions.TextDelete);
-            AddButton(EngineKeyFunctions.TextWordBackspace);
-            AddButton(EngineKeyFunctions.TextWordDelete);
-            AddButton(EngineKeyFunctions.TextNewline);
-            AddButton(EngineKeyFunctions.TextSubmit);
-            AddButton(EngineKeyFunctions.MultilineTextSubmit);
-            AddButton(EngineKeyFunctions.TextSelectAll);
-            AddButton(EngineKeyFunctions.TextCopy);
-            AddButton(EngineKeyFunctions.TextCut);
-            AddButton(EngineKeyFunctions.TextPaste);
-
-            AddHeader("ui-options-header-text-chat");
-            AddButton(EngineKeyFunctions.TextHistoryPrev);
-            AddButton(EngineKeyFunctions.TextHistoryNext);
-            AddButton(EngineKeyFunctions.TextReleaseFocus);
-            AddButton(EngineKeyFunctions.TextScrollToBottom);
-
-            AddHeader("ui-options-header-text-other");
-            AddButton(EngineKeyFunctions.TextTabComplete);
-            AddButton(EngineKeyFunctions.TextCompleteNext);
-            AddButton(EngineKeyFunctions.TextCompletePrev);
 
             AddHeader("ui-options-header-text-cursor");
             AddButton(EngineKeyFunctions.TextCursorLeft);
