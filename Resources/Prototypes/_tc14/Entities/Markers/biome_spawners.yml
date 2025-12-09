@@ -7,18 +7,21 @@
     layers:
     - sprite: Objects/Tools/rock.rsi
       state: "rock"
-  - type: RandomSpawner
-    prototypes:
-    - RockItem
-    - BushForage
-    rarePrototypes:
-    - SpawnMobCow
-    - SpawnMobCatGeneric
-    - SpawnMobButterfly
-    - SpawnMobBee
-    - SpawnMobGoat
-    - SpawnMobMonkey
-    - SpawnMobMouse
-    - SpawnMobReindeerBuck
-    - SpawnMobReindeerDoe
-    offset: 0.5
+  - type: EntityTableSpawner
+    table: !type:AllSelector
+      children:
+      - !type:GroupSelector
+        children:
+        - id: RockItem
+        - id: BushForage
+      - !type:GroupSelector
+        prob: 0.05
+        children:
+        - id: SpawnMobCow
+        - id: SpawnMobCatGeneric
+        - id: SpawnMobGoat
+        - id: SpawnMobMonkey
+        - id: SpawnMobMouse
+        - id: SpawnMobScurret
+        - id: SpawnMobReindeerBuck
+        - id: SpawnMobReindeerDoe
