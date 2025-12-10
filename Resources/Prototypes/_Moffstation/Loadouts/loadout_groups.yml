@@ -191,6 +191,13 @@
   - DetectiveSecWebbing
   - DetectiveSecWebbingAlt
 
+- type: loadoutGroup
+  id: DetectiveSidearm
+  name: loadout-group-detective-sidearm
+  loadouts:
+  - DetectivePistolInspector
+  - DetectivePistolPM
+
 ## Cargo
 # Salvage Specialist
 - type: loadoutGroup
