@@ -233,6 +233,7 @@
   loadouts:
   - StationEngineerHardhatYellow
   - AtmosphericTechnicianHardhatBlue
+  - AtmosphericTechnicianYellowCap
 
 - type: loadoutGroup
   id: AtmosPDA
