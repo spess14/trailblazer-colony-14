@@ -32,6 +32,7 @@
   parent: BaseToolRecipe
   id: Screwdriver
   result: Screwdriver
+  #TC14: doesn't take plastic
   materials:
     Steel: 200
   icon:

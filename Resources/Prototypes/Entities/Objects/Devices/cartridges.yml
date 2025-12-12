@@ -25,15 +25,13 @@
       state: book_icon
   - type: NotekeeperCartridge
 
-
 - type: entity
-  parent: BaseItem
+  parent: BasePDACartridge
   id: NanoTaskCartridge
   name: NanoTask cartridge
   description: A program that allows you to keep a list of tasks to do.
   components:
   - type: Sprite
-    sprite: Objects/Devices/cartridge.rsi
     state: cart-nav
   - type: Cartridge
     programName: nano-task-program-name

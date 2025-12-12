@@ -29,6 +29,7 @@ public sealed class BlueprintSystem : EntitySystem
         SubscribeLocalEvent<BlueprintComponent, ExaminedEvent>(OnBlueprintExamine);
     }
 
+    //TC14: research system
     private void OnBlueprintExamine(Entity<BlueprintComponent> ent, ref ExaminedEvent args)
     {
         if (!args.IsInDetailsRange)

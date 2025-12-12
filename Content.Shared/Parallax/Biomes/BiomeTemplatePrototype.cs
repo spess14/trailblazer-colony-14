@@ -15,6 +15,7 @@ public sealed partial class BiomeTemplatePrototype : IPrototype
     [DataField("layers")]
     public List<IBiomeLayer> Layers = new();
 
+    //TC14: needed for oregen
     [DataField("markerLayers")]
     public List<ProtoId<BiomeMarkerLayerPrototype>> MarkerLayers = new();
 }

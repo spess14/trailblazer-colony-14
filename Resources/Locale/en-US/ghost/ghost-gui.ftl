@@ -1,8 +1,6 @@
 ghost-gui-return-to-body-button = Return to body
 ghost-gui-ghost-warp-button = Ghost Warp
 ghost-gui-ghost-roles-button = Ghost Roles ({$count})
-ghost-gui-respawn-button-ready = Respawn
-ghost-gui-respawn-button-cooldown = Respawn ({$time}s)
 ghost-gui-toggle-ghost-visibility-popup-on = Enabled visibility of ghosts.
 ghost-gui-toggle-ghost-visibility-popup-off = Disabled visibility of ghosts.
 ghost-gui-toggle-lighting-manager-popup-normal = Lighting normal.

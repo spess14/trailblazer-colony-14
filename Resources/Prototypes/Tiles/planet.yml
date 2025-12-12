@@ -8,7 +8,6 @@
   - 1.0
   - 1.0
   - 1.0
-  soilPrototypeName: DirtItem1
   isSubfloor: true
   footstepSounds:
     collection: FootstepAsteroid
@@ -66,7 +65,6 @@
   - 1.0
   - 1.0
   - 1.0
-  soilPrototypeName: DirtItem1
   edgeSpritePriority: 1
   edgeSprites:
     SouthEast: /Textures/Tiles/Planet/Grass/single_edge.png

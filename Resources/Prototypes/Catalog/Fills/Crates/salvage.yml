@@ -35,7 +35,7 @@
     containers:
       entity_storage: !type:AllSelector
         children:
-        # Normal (10%)
+          # Normal (10%)
         - id: OxygenTankFilled
           prob: 0.1
         - id: SheetPlasma

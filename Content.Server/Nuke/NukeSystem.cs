@@ -2,7 +2,6 @@ using Content.Server.AlertLevel;
 using Content.Server.Audio;
 using Content.Server.Chat.Systems;
 using Content.Server.Explosion.EntitySystems;
-using Content.Server.Kitchen.Components;
 using Content.Server.Pinpointer;
 using Content.Server.Popups;
 using Content.Server.Station.Systems;
