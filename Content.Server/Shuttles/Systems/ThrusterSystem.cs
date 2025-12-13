@@ -235,8 +235,6 @@ public sealed class ThrusterSystem : EntitySystem
 
     private void OnThrusterInit(EntityUid uid, ThrusterComponent component, ComponentInit args)
     {
-        component.NextFire = _timing.CurTime + component.FireCooldown;
-
         _ambient.SetAmbience(uid, false);
 
         if (!component.Enabled)

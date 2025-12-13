@@ -98,7 +98,6 @@ namespace Content.Server.Ghost
             SubscribeNetworkEvent<GhostReturnToBodyRequest>(OnGhostReturnToBodyRequest);
             SubscribeNetworkEvent<GhostWarpToTargetRequestEvent>(OnGhostWarpToTargetRequest);
             SubscribeNetworkEvent<GhostnadoRequestEvent>(OnGhostnadoRequest);
-            SubscribeNetworkEvent<GhostRespawnRequestEvent>(OnGhostRespawnRequest);
 
             SubscribeLocalEvent<GhostComponent, BooActionEvent>(OnActionPerform);
             SubscribeLocalEvent<GhostComponent, ToggleGhostHearingActionEvent>(OnGhostHearingAction);
@@ -336,26 +335,6 @@ namespace Content.Server.Ghost
 
             // If there is a ghostnado happening you almost definitely wanna join it, so we automatically follow instead of just warping.
             _followerSystem.StartFollowingEntity(uid, target);
-        }
-
-        private void OnGhostRespawnRequest(GhostRespawnRequestEvent msg, EntitySessionEventArgs args)
-        {
-            if (args.SenderSession.AttachedEntity is not {} uid
-                || !_ghostQuery.HasComp(uid))
-            {
-                Log.Warning($"User {args.SenderSession.Name} tried to respawn without being a ghost.");
-                return;
-            }
-
-            var ghost = _ghostQuery.GetComponent(uid);
-
-            if (ghost.TimeOfDeath + TimeSpan.FromSeconds(_configurationManager.GetCVar(CCVars.RespawnCooldown)) >= _gameTiming.CurTime)
-            {
-                Log.Warning($"User {args.SenderSession.Name} tried to respawn before respawn cooldown expired.");
-                return;
-            }
-
-            _gameTicker.Respawn(args.SenderSession);
         }
 
         private void WarpTo(EntityUid uid, EntityUid target)

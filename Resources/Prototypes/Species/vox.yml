@@ -1,6 +1,7 @@
 - type: species
   id: Vox
   name: species-name-vox
+  #TC14: they're not ready for the planetside
   roundStart: false
   prototype: MobVox
   sprites: MobVoxSprites

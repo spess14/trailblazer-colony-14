@@ -19,10 +19,10 @@
   - type: Sprite
     sprite: Objects/Specific/Chemistry/vial.rsi
     layers:
-    - state: vial-1
-    - state: vial-1-1
-      map: ["enum.SolutionContainerLayers.Fill"]
-      visible: false
+      - state: vial-1
+      - state: vial-1-1
+        map: ["enum.SolutionContainerLayers.Fill"]
+        visible: false
   - type: Appearance
   - type: SolutionContainerVisuals
     maxFillLevels: 6
