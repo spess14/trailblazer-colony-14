@@ -1,6 +1,5 @@
 using System.Numerics;
 using System.Threading;
-using Content.Server._Moffstation.Administration.Components; // Moffstation - Add Extra Sign Smites
 using Content.Server.Atmos.EntitySystems;
 using Content.Server.Body.Systems;
 using Content.Server.Electrocution;
