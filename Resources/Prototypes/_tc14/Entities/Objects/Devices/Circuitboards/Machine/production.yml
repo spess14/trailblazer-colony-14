@@ -31,6 +31,6 @@
       Steel: 15
   - type: PhysicalComposition
     materialComposition:
-      Steel: 300
+      Steel: 100
   - type: StaticPrice
     price: 75

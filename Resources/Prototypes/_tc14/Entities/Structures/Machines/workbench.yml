@@ -25,6 +25,7 @@
     materialUseMultiplier: 1.5
     staticPacks:
     - ToolsWorkbench
+    - ElectronicsWorkbench
     - PartsStatic
     - AtmosStatic
     - CablesStatic
