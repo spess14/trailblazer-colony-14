@@ -102,7 +102,11 @@
   - type: Item
 #    size: Small # Moffstation - Moved to `EmergencyGasTankBase`
     sprite: _Moffstation/Objects/Tanks/emergency.rsi
-#    storedRotation: -45 # Moffstation - Moved to `EmergencyGasTankBase`
+# Moffstation - Begin - Moved to `EmergencyGasTankBase`
+#    storedSprite:
+#      state: storage
+#      sprite: Objects/Tanks/emergency.rsi
+# Moffstation - End
 # Moffstation - Start
 #  - type: GasTank
 #    air:
@@ -136,11 +140,14 @@
   name: emergency nitrogen tank
   description: An easily portable tank for emergencies. Contains very little nitrogen, rated for survival use only. It can hold 0.66 L of gas.
   components:
-   # Moffstation - Start
+  # Moffstation - Start
 #  - type: Sprite
 #    sprite: Objects/Tanks/emergency_red.rsi
 #  - type: Item
 #    sprite: Objects/Tanks/emergency_red.rsi
+#    storedSprite:
+#      state: storage
+#      sprite: Objects/Tanks/emergency_red.rsi
 #  - type: Clothing
 #    sprite: Objects/Tanks/emergency_red.rsi
   - type: GasTankVisuals
@@ -157,6 +164,9 @@
     sprite: _Moffstation/Objects/Tanks/emergency_extended.rsi
   - type: Item
     sprite: _Moffstation/Objects/Tanks/emergency_extended.rsi
+    storedSprite:
+      state: storage
+      sprite: Objects/Tanks/emergency_extended.rsi
   - type: GasTank
     air:
       volume: 1.5
@@ -179,6 +189,9 @@
 #    sprite: Objects/Tanks/emergency_extended_red.rsi
 #  - type: Item
 #    sprite: Objects/Tanks/emergency_extended_red.rsi
+#    storedSprite:
+#      state: storage
+#      sprite: Objects/Tanks/emergency_extended_red.rsi
 #  - type: Clothing
 #    sprite: Objects/Tanks/emergency_extended_red.rsi
   - type: GasTankVisuals
@@ -195,6 +208,9 @@
     sprite: _Moffstation/Objects/Tanks/emergency_double.rsi
   - type: Item
     sprite: _Moffstation/Objects/Tanks/emergency_double.rsi
+    storedSprite:
+      state: storage
+      sprite: Objects/Tanks/emergency_double.rsi
   - type: GasTank
     air:
       volume: 2.5
@@ -222,6 +238,9 @@
 #    sprite: Objects/Tanks/emergency_double_red.rsi
 #  - type: Item
 #    sprite: Objects/Tanks/emergency_double_red.rsi
+#    storedSprite:
+#      state: storage
+#      sprite: Objects/Tanks/emergency_double_red.rsi
 #  - type: Clothing
 #    sprite: Objects/Tanks/emergency_double_red.rsi
   - type: GasTankVisuals
@@ -238,6 +257,9 @@
     sprite: Objects/Tanks/emergency_clown.rsi
   - type: Item
     sprite: Objects/Tanks/emergency_clown.rsi
+    storedSprite:
+      state: storage
+      sprite: Objects/Tanks/emergency_clown.rsi
   - type: Clothing
     sprite: Objects/Tanks/emergency_clown.rsi
 
