@@ -132,6 +132,7 @@
     excludedInhandLayers: # No stripes on small tank inhand sprites.
     - StripeMiddle
     - StripeLow
+    hasStoredSprite: true
 # Moffstation - End
 
 - type: entity
@@ -164,9 +165,11 @@
     sprite: _Moffstation/Objects/Tanks/emergency_extended.rsi
   - type: Item
     sprite: _Moffstation/Objects/Tanks/emergency_extended.rsi
-    storedSprite:
-      state: storage
-      sprite: Objects/Tanks/emergency_extended.rsi
+  # Moffstation - Begin - Paintable tanks
+#    storedSprite:
+#      state: storage
+#      sprite: Objects/Tanks/emergency_extended.rsi
+  # Moffstation - end
   - type: GasTank
     air:
       volume: 1.5
@@ -176,6 +179,7 @@
   # Moffstation - Start
   - type: GasTankVisuals
     visuals: Oxygen
+    hasStoredSprite: true
   # Moffstation - End
 
 - type: entity
@@ -208,9 +212,11 @@
     sprite: _Moffstation/Objects/Tanks/emergency_double.rsi
   - type: Item
     sprite: _Moffstation/Objects/Tanks/emergency_double.rsi
-    storedSprite:
-      state: storage
-      sprite: Objects/Tanks/emergency_double.rsi
+  # Moffstation - Begin - Paintable tanks
+  #    storedSprite:
+  #      state: storage
+  #      sprite: Objects/Tanks/emergency_extended.rsi
+  # Moffstation - end
   - type: GasTank
     air:
       volume: 2.5
@@ -225,6 +231,7 @@
   # Moffstation - Start
   - type: GasTankVisuals
     visuals: Oxygen
+    hasStoredSprite: true
   # Moffstation - End
 
 - type: entity

@@ -70,9 +70,6 @@
   components:
   - type: Item
     size: Small
-    storedSprite:
-      state: storage
-      sprite: Objects/Tanks/emergency.rsi
   - type: GasTank
     air:
       volume: 0.66
