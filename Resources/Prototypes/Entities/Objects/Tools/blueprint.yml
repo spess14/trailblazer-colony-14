@@ -24,46 +24,32 @@
 
 - type: entity
   parent: BaseBlueprint
-  id: BlueprintEmpty
-  components:
-  - type: StaticPrice
-    price: 10 # just to change the proto somehow
-
-- type: entity
-  parent: BaseBlueprint
   id: BlueprintFulton
-  suffix: fulton
+  name: fulton blueprint
+  description: A blueprint with a schematic of a fulton. It can be inserted into an autolathe.
   components:
   - type: Blueprint
     providedRecipes:
     - Fulton
     - FultonBeacon
-    - FultonBeacon
-  - type: Tag
-    tags:
-    - BlueprintAutolathe
 
 - type: entity
   parent: BaseBlueprint
   id: BlueprintSeismicCharge
-  suffix: seismic charge
+  name: seismic charge blueprint
+  description: A blueprint with a schematic of a seismic charge. It can be inserted into an autolathe.
   components:
   - type: Blueprint
     providedRecipes:
     - SeismicCharge
-  - type: Tag
-    tags:
-    - BlueprintAutolathe
 
 - type: entity
   parent: BaseBlueprint
   id: BlueprintDoubleEmergencyTank
-  suffix: double tanks
+  name: double emergency tank blueprint
+  description: A blueprint with a schematic of a double emergency tank. It can be inserted into an autolathe.
   components:
   - type: Blueprint
     providedRecipes:
     - DoubleEmergencyOxygenTank
     - DoubleEmergencyNitrogenTank
-  - type: Tag
-    tags:
-    - BlueprintAutolathe

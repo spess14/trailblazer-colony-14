@@ -90,13 +90,6 @@
   name: blueprint workbench
   description: A table with tools made out of whatever you could find, yet sufficient for basic research.
   components:
-  - type: Bluebench
-    availablePrototypes:
-    - BasicSecurityResearch
-    - BasicChemistryResearch
-    - CommonElectricityResearch
-    - BasicMedicineResearch
-    - CommonBotanyResearch
   - type: Appearance
   - type: Fixtures
     fixtures:
@@ -130,9 +123,3 @@
   - type: Construction
     graph: Table
     node: Workbench
-  - type: ActivatableUI
-    key: enum.BluebenchUiKey.Key
-  - type: UserInterface
-    interfaces:
-      enum.BluebenchUiKey.Key:
-        type: BluebenchBoundUserInterface
