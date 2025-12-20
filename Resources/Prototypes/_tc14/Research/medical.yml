@@ -1,0 +1,49 @@
+- type: researchEntry
+  id: ResearchMedicine
+  name: tc-research-medicine-name
+  description: tc-research-medicine-desc
+  discipline: DisciplineMedical
+  icon:
+    sprite: Objects/Specific/Medical/medical.rsi
+    state: brutepack
+  unlockedRecipes:
+  - Brutepack
+  - Ointment
+  - Gauze
+  - Scalpel
+  - Retractor
+  - Cautery
+  - Drill
+  - Saw
+  - Hemostat
+  - Defibrillator
+
+- type: researchEntry
+  id: ResearchTideChem
+  name: tc-research-tidechem-name
+  description: tc-research-tidechem-desc
+  discipline: DisciplineMedical
+  icon:
+    sprite: Objects/Specific/Chemistry/beaker.rsi
+    state: beaker
+  unlockedRecipes:
+  - Beaker
+  - LargeBeaker
+  - Syringe
+  - PillCanister
+  - Jug
+  - ChemistryEmptyBottle01
+
+- type: researchEntry
+  id: ResearchChemistry
+  name: tc-research-chemistry-name
+  description: tc-research-chemistry-desc
+  discipline: DisciplineMedical
+  icon:
+    sprite: Clothing/Eyes/Glasses/science.rsi
+    state: icon
+  unlockedRecipes:
+  - ClothingEyesGlassesChemical
+  - HotplateMachineCircuitboard
+  - ChemDispenserMachineCircuitboard
+  - ChemMasterMachineCircuitboard

@@ -1,0 +1,26 @@
+- type: researchEntry
+  id: ResearchAgriculture
+  name: tc-research-agriculture-name
+  description: tc-research-agriculture-desc
+  discipline: DisciplineBiosocial
+  icon:
+    sprite: Objects/Specific/Hydroponics/tomato.rsi
+    state: produce
+  unlockedRecipes:
+  - HydroponicsToolMiniHoe
+  - HydroponicsToolScythe
+  - HydroponicsToolHatchet
+  - HydroponicsToolSpade
+  - HydroponicsToolClippers
+
+- type: researchEntry
+  id: ResearchBotany
+  name: tc-research-agriculture-name
+  description: tc-research-agriculture-desc
+  discipline: DisciplineBiosocial
+  icon:
+    sprite: Structures/Machines/seed_extractor.rsi
+    state: seedextractor-off
+  unlockedRecipes:
+  - HydroponicsTrayMachineCircuitboard
+  - SeedExtractorMachineCircuitboard
