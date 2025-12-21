@@ -123,3 +123,10 @@
   - type: Construction
     graph: Table
     node: Workbench
+  - type: ResearchTable
+  - type: ActivatableUI
+    key: enum.ResearchTableUiKey.Key
+  - type: UserInterface
+    interfaces:
+      enum.ResearchTableUiKey.Key:
+        type: ResearchTableBoundUserInterface

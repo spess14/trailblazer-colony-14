@@ -1,0 +1,25 @@
+<Control xmlns="https://spacestation14.io"
+         SetSize="64 64">
+    <PanelContainer Name="ResearchItemBorder"
+                    VerticalExpand="True"
+                    HorizontalExpand="True"
+                    StyleIdentifier="ResearchItemBorder"
+                    SetSize="64 64">
+        <Button Name="ResearchItemButton"
+                HorizontalExpand="True"
+                VerticalExpand="True"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                Margin="0"
+                StyleIdentifier="ResearchItemButton"
+                SetSize="60 60">
+            <BoxContainer Name="ResearchItemDisplay"
+                          HorizontalAlignment="Center"
+                          VerticalAlignment="Center">
+                <EntityPrototypeView Name="ResearchItemEntView"
+                                     Scale="1.5 1.5"
+                                     SetSize="48 48"/>
+            </BoxContainer>
+        </Button>
+    </PanelContainer>
+</Control>
