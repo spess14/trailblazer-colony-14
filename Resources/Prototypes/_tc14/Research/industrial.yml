@@ -3,9 +3,7 @@
   name: tc-research-electricity-name
   description: tc-research-electricity-desc
   discipline: DisciplineIndustrial
-  icon:
-    sprite: Structures/Power/smes.rsi
-    state: smes
+  iconPrototype: SMESBasic
   unlockedRecipes:
   - DoorElectronics
   - SignalTimerElectronics
@@ -24,9 +22,7 @@
   name: tc-research-fabrication-name
   description: tc-research-fabrication-desc
   discipline: DisciplineIndustrial
-  icon:
-    sprite: Structures/Machines/protolathe.rsi
-    state: icon
+  iconPrototype: Protolathe
   unlockedRecipes:
   - ProtolatheMachineCircuitboard
   - AutolatheMachineCircuitboard

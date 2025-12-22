@@ -3,9 +3,7 @@
   name: tc-research-medicine-name
   description: tc-research-medicine-desc
   discipline: DisciplineMedical
-  icon:
-    sprite: Objects/Specific/Medical/medical.rsi
-    state: brutepack
+  iconPrototype: Brutepack
   unlockedRecipes:
   - Brutepack
   - Ointment
@@ -23,9 +21,7 @@
   name: tc-research-tidechem-name
   description: tc-research-tidechem-desc
   discipline: DisciplineMedical
-  icon:
-    sprite: Objects/Specific/Chemistry/beaker.rsi
-    state: beaker
+  iconPrototype: Beaker
   unlockedRecipes:
   - Beaker
   - LargeBeaker
@@ -39,9 +35,7 @@
   name: tc-research-chemistry-name
   description: tc-research-chemistry-desc
   discipline: DisciplineMedical
-  icon:
-    sprite: Clothing/Eyes/Glasses/science.rsi
-    state: icon
+  iconPrototype: ClothingEyesGlassesChemical
   unlockedRecipes:
   - ClothingEyesGlassesChemical
   - HotplateMachineCircuitboard

@@ -3,9 +3,7 @@
   name: tc-research-training-name
   description: tc-research-training-desc
   discipline: DisciplineMilitary
-  icon:
-    sprite: Objects/Misc/handcuffs.rsi
-    state: handcuff
+  iconPrototype: Handcuffs
   unlockedRecipes:
   - Handcuffs
   - TargetClown
@@ -19,9 +17,7 @@
   name: tc-research-nonlethal-name
   description: tc-research-nonlethal-desc
   discipline: DisciplineMilitary
-  icon:
-    sprite: Objects/Weapons/Melee/stunbaton.rsi
-    state: stunbaton_off
+  iconPrototype: Stunbaton
   unlockedRecipes:
   - Flash
   - Stunbaton

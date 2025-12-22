@@ -3,9 +3,7 @@
   name: tc-research-rnd-name
   description: tc-research-rnd-desc
   discipline: DisciplineExperimental
-  icon:
-    sprite: Objects/Specific/Xenoarchaeology/xeno_artifacts.rsi
-    state: ano13
+  iconPrototype: ComplexXenoArtifact
   unlockedRecipes:
   - NodeScanner
   - TechDiskComputerCircuitboard

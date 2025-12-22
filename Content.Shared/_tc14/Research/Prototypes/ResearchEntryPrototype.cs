@@ -27,10 +27,10 @@ public sealed partial class ResearchEntryPrototype : IPrototype
     public LocId Description;
 
     /// <summary>
-    /// Icon of the research - probably one of the unlockable items.
+    /// Entity prototype of the research.
     /// </summary>
-    [DataField]
-    public SpriteSpecifier Icon = default!;
+    [DataField(required: true)]
+    public EntProtoId IconPrototype;
 
     /// <summary>
     /// The research discipline this research belongs to. Also defines the type of research points you'll need.

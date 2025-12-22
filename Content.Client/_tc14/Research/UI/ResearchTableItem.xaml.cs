@@ -18,7 +18,7 @@ public sealed partial class ResearchTableItem : Control
         RobustXamlLoader.Load(this);
         IoCManager.InjectDependencies(this);
         _proto = proto;
-        ResearchItemEntView.SetPrototype("FoodBurgerBacon");
+        ResearchItemEntView.SetPrototype(_proto.IconPrototype);
         if (!_protoMan.Resolve(_proto.Discipline, out var discipline))
             return;
         ResearchItemBorder.ModulateSelfOverride = discipline.Color;

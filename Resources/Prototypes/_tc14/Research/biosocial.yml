@@ -3,9 +3,7 @@
   name: tc-research-agriculture-name
   description: tc-research-agriculture-desc
   discipline: DisciplineBiosocial
-  icon:
-    sprite: Objects/Specific/Hydroponics/tomato.rsi
-    state: produce
+  iconPrototype: FoodTomato
   unlockedRecipes:
   - HydroponicsToolMiniHoe
   - HydroponicsToolScythe
@@ -18,9 +16,7 @@
   name: tc-research-agriculture-name
   description: tc-research-agriculture-desc
   discipline: DisciplineBiosocial
-  icon:
-    sprite: Structures/Machines/seed_extractor.rsi
-    state: seedextractor-off
+  iconPrototype: SeedExtractor
   unlockedRecipes:
   - HydroponicsTrayMachineCircuitboard
   - SeedExtractorMachineCircuitboard
