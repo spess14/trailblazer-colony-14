@@ -11,21 +11,21 @@ public sealed partial class ResearchTableItem : Control
 {
     [Dependency] private readonly IPrototypeManager _protoMan = default!;
 
-    private ResearchEntryPrototype _proto = default!;
+    public ResearchEntryPrototype proto = default!;
+    private ResearchDisciplinePrototype _disciplineProto = default!;
+
+    public Action? OnButtonClicked = default!;
 
     public ResearchTableItem(ResearchEntryPrototype proto)
     {
         RobustXamlLoader.Load(this);
         IoCManager.InjectDependencies(this);
-        _proto = proto;
-        ResearchItemEntView.SetPrototype(_proto.IconPrototype);
-        if (!_protoMan.Resolve(_proto.Discipline, out var discipline))
+        this.proto = proto;
+        ResearchItemButton.OnPressed += _ => OnButtonClicked?.Invoke();
+        ResearchItemEntView.SetPrototype(this.proto.IconPrototype);
+        if (!_protoMan.Resolve(this.proto.Discipline, out var discipline))
             return;
-        ResearchItemBorder.ModulateSelfOverride = discipline.Color;
-    }
-
-    public void SetDisabled(bool disable)
-    {
-        ResearchItemButton.Disabled = disable;
+        _disciplineProto = discipline;
+        ResearchItemBorder.ModulateSelfOverride = _disciplineProto.Color;
     }
 }
