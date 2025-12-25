@@ -92,9 +92,17 @@ namespace Content.Shared.Maps
         [DataField("itemDrop", customTypeSerializer:typeof(PrototypeIdSerializer<EntityPrototype>))]
         public string ItemDropPrototypeName { get; private set; } = "FloorTileItemSteel";
 
-        //TC14: determines what drops when you dig soil
-        [DataField(customTypeSerializer:typeof(PrototypeIdSerializer<EntityPrototype>))]
-        public string? SoilPrototypeName { get; private set; }
+        /// <summary>
+        /// TC14: determines what drops when you dig soil
+        /// </summary>
+        [DataField]
+        public EntProtoId? SoilPrototypeName { get; private set; }
+
+        /// <summary>
+        /// TC14: can this tile be chiseled into stone?
+        /// </summary>
+        [DataField]
+        public bool IsChiselable;
 
         // TODO rename data-field in yaml
         /// <summary>

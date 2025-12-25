@@ -12,6 +12,7 @@ using Robust.Shared.Network;
 using Robust.Shared.Physics;
 using Robust.Shared.Physics.Components;
 using Robust.Shared.Physics.Systems;
+using Robust.Shared.Prototypes;
 
 namespace Content.Shared._tc14.Tiles;
 
@@ -27,6 +28,8 @@ public sealed class SoilManagerSystem : EntitySystem
     [Dependency] private readonly SharedToolSystem _tool = default!;
     [Dependency] private readonly TileSystem _tile = default!;
     [Dependency] private readonly INetManager _net = default!;
+
+    private static readonly ProtoId<ToolQualityPrototype> ChiselingQuality = "Chiseling";
 
     /// <inheritdoc/>
     public override void Initialize()
@@ -69,7 +72,7 @@ public sealed class SoilManagerSystem : EntitySystem
             2f / ent.Comp.SpeedModifier,
             new SoilDigEvent
             {
-                SoilPrototypeName = tileDef.SoilPrototypeName,
+                SoilPrototypeName = tileDef.SoilPrototypeName.Value,
             },
             null,
             null,
@@ -86,18 +89,12 @@ public sealed class SoilManagerSystem : EntitySystem
     {
         if (!TryComp<ToolComponent>(ent, out var tool))
             return;
-        if (!_tool.HasQuality(ent, "Chiseling", tool))
+        if (!_tool.HasQuality(ent, ChiselingQuality, tool))
             return;
         if (!GetInteractedWithTileDef(ref args, out var tileRef))
             return;
         var tileDef = (ContentTileDefinition)_tileDefinitionManager[tileRef.Tile.TypeId];
-        if (tileDef.ID != "FloorPlanetGrass" &&
-            tileDef.ID !=
-            "FloorPlanetDirt" &&
-            tileDef.ID !=
-            "TC14FloorPlanetGrass" &&
-            tileDef.ID !=
-            "TC14FloorPlanetDirt") //TODO hardcoding tiledefs like this is absolutely terrible and should never be done, yet I do it anyway because I might be stupid
+        if (!tileDef.IsChiselable)
             return;
         if (!_tileDefinitionManager.TryGetDefinition("FloorPlanetStone", out var stoneDef))
             return;

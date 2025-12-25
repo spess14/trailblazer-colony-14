@@ -20,7 +20,7 @@
   id: TC14FloorPlanetGrass
   footstepSounds:
     collection: FootstepGrass
-  name: tiles-grass
+  name: tiles-grass-floor
   sprite: /Textures/_tc14/Tiles/Planet/Grass/grass.png
   variants: 6
   placementVariants:
@@ -47,10 +47,11 @@
   itemDrop: FloorTileItemGrass
   indestructible: true
   weather: true
+  isChiselable: true
 
 - type: tile
   id: TC14FloorPlanetDirt
-  name: tiles-dirt
+  name: tiles-dirt-floor
   footstepSounds:
     collection: FootstepAsteroid
   sprite: /Textures/_tc14/Tiles/Planet/Dirt/cavedrought.png
@@ -88,3 +89,4 @@
   heatCapacity: 10000
   weather: true
   indestructible: true
+  isChiselable: true
