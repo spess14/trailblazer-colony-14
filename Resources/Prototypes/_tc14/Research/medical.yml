@@ -4,6 +4,7 @@
   description: tc-research-medicine-desc
   discipline: DisciplineMedical
   iconPrototype: Brutepack
+  gridLocation: -1,0
   unlockedRecipes:
   - Brutepack
   - Ointment
@@ -22,6 +23,7 @@
   description: tc-research-tidechem-desc
   discipline: DisciplineMedical
   iconPrototype: Beaker
+  gridLocation: -1,1
   unlockedRecipes:
   - Beaker
   - LargeBeaker
@@ -36,6 +38,7 @@
   description: tc-research-chemistry-desc
   discipline: DisciplineMedical
   iconPrototype: ClothingEyesGlassesChemical
+  gridLocation: -1,2
   unlockedRecipes:
   - ClothingEyesGlassesChemical
   - HotplateMachineCircuitboard

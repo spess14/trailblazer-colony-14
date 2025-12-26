@@ -21,7 +21,7 @@ public sealed partial class ResearchTableComponent : Component
     /// List of technologies that are researched and can be printed.
     /// </summary>
     [DataField, AutoNetworkedField]
-    public HashSet<ProtoId<ResearchEntryPrototype>> ResearchedTechs;
+    public HashSet<ProtoId<ResearchEntryPrototype>> ResearchedTechs = [];
 
     /// <summary>
     /// Time at which the table will be able to make another blueprint.

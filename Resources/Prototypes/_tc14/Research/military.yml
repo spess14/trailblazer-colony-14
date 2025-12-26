@@ -4,6 +4,7 @@
   description: tc-research-training-desc
   discipline: DisciplineMilitary
   iconPrototype: Handcuffs
+  gridLocation: 0,-1
   unlockedRecipes:
   - Handcuffs
   - TargetClown
@@ -18,6 +19,7 @@
   description: tc-research-nonlethal-desc
   discipline: DisciplineMilitary
   iconPrototype: Stunbaton
+  gridLocation: 0,-2
   unlockedRecipes:
   - Flash
   - Stunbaton

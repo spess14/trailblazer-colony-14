@@ -1,6 +1,5 @@
 using Content.Shared.Research.Prototypes;
 using Robust.Shared.Prototypes;
-using Robust.Shared.Utility;
 
 namespace Content.Shared._tc14.Research.Prototypes;
 
@@ -43,6 +42,12 @@ public sealed partial class ResearchEntryPrototype : IPrototype
     /// </summary>
     [DataField]
     public int Points = 100;
+
+    /// <summary>
+    /// Where on the research tree grid should this entry be located?
+    /// </summary>
+    [DataField]
+    public Vector2i GridLocation = Vector2i.Zero;
 
     /// <summary>
     /// Which researches need to be done first before this one opens?

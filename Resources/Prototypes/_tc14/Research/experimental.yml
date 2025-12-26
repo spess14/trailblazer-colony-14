@@ -4,6 +4,7 @@
   description: tc-research-rnd-desc
   discipline: DisciplineExperimental
   iconPrototype: ComplexXenoArtifact
+  gridLocation: 3,0
   unlockedRecipes:
   - NodeScanner
   - TechDiskComputerCircuitboard

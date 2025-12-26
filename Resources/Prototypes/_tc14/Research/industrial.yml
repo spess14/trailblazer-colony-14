@@ -4,6 +4,7 @@
   description: tc-research-electricity-desc
   discipline: DisciplineIndustrial
   iconPrototype: SMESBasic
+  gridLocation: 0,0
   unlockedRecipes:
   - DoorElectronics
   - SignalTimerElectronics
@@ -23,6 +24,7 @@
   description: tc-research-fabrication-desc
   discipline: DisciplineIndustrial
   iconPrototype: Protolathe
+  gridLocation: 0,1
   unlockedRecipes:
   - ProtolatheMachineCircuitboard
   - AutolatheMachineCircuitboard
