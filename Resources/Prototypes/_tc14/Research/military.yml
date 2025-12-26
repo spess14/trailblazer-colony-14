@@ -1,7 +1,6 @@
 - type: researchEntry
   id: ResearchTraining
   name: tc-research-training-name
-  description: tc-research-training-desc
   discipline: DisciplineMilitary
   iconPrototype: Handcuffs
   gridLocation: 0,-1
@@ -16,7 +15,6 @@
 - type: researchEntry
   id: ResearchNonLethal
   name: tc-research-nonlethal-name
-  description: tc-research-nonlethal-desc
   discipline: DisciplineMilitary
   iconPrototype: Stunbaton
   gridLocation: 0,-2

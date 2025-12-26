@@ -1,7 +1,6 @@
 - type: researchEntry
   id: ResearchAgriculture
   name: tc-research-agriculture-name
-  description: tc-research-agriculture-desc
   discipline: DisciplineBiosocial
   iconPrototype: FoodTomato
   gridLocation: 1,0
@@ -15,7 +14,6 @@
 - type: researchEntry
   id: ResearchBotany
   name: tc-research-agriculture-name
-  description: tc-research-agriculture-desc
   discipline: DisciplineBiosocial
   iconPrototype: SeedExtractor
   gridLocation: 1,1

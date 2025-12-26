@@ -1,7 +1,6 @@
 - type: researchEntry
   id: ResearchMedicine
   name: tc-research-medicine-name
-  description: tc-research-medicine-desc
   discipline: DisciplineMedical
   iconPrototype: Brutepack
   gridLocation: -1,0
@@ -20,7 +19,6 @@
 - type: researchEntry
   id: ResearchTideChem
   name: tc-research-tidechem-name
-  description: tc-research-tidechem-desc
   discipline: DisciplineMedical
   iconPrototype: Beaker
   gridLocation: -1,1
@@ -35,7 +33,6 @@
 - type: researchEntry
   id: ResearchChemistry
   name: tc-research-chemistry-name
-  description: tc-research-chemistry-desc
   discipline: DisciplineMedical
   iconPrototype: ClothingEyesGlassesChemical
   gridLocation: -1,2

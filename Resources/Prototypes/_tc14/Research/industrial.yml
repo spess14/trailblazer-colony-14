@@ -1,7 +1,6 @@
 - type: researchEntry
   id: ResearchElectricity
   name: tc-research-electricity-name
-  description: tc-research-electricity-desc
   discipline: DisciplineIndustrial
   iconPrototype: SMESBasic
   gridLocation: 0,0
@@ -21,7 +20,6 @@
 - type: researchEntry
   id: ResearchFabrication
   name: tc-research-fabrication-name
-  description: tc-research-fabrication-desc
   discipline: DisciplineIndustrial
   iconPrototype: Protolathe
   gridLocation: 0,1

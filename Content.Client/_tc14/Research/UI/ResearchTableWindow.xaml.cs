@@ -33,6 +33,7 @@ public sealed partial class ResearchTableWindow : FancyWindow
         IoCManager.InjectDependencies(this);
         _sprite = _entMan.System<SpriteSystem>();
 
+        ResearchTreeRecenterButton.OnPressed += RecenterTree;
         ResearchItemResearchButton.OnPressed += _ => { _onResearchButtonClicked?.Invoke(); };
         ResearchItemPrintButton.OnPressed += _ => { _onPrintButtonClicked?.Invoke(); };
         _onResearchButtonClicked += ResearchItem;
@@ -58,6 +59,12 @@ public sealed partial class ResearchTableWindow : FancyWindow
         throw new NotImplementedException();
     }
 
+    private void RecenterTree(BaseButton.ButtonEventArgs buttonEventArgs)
+    {
+        // ReSharper disable once PossibleLossOfFraction
+        ResearchTreeScrollContainer.SetScrollValue(ResearchTreeDragContainer.SetSize/4 + Vector2.One*(_gridScale/2)); // I have no idea why, I have no idea how, but SetSize/2 is NOT the control's center. WHY IS THIS HAPPENING
+    }
+
     private ResearchTableItem CreateResearchItem(ResearchEntryPrototype prototype)
     {
         var button = new ResearchTableItem(prototype);
@@ -67,8 +74,13 @@ public sealed partial class ResearchTableWindow : FancyWindow
             UpdateResearchItemSidePanel(button.proto);
         };
         _grid.Add(prototype.GridLocation, prototype.ID);
-        LayoutContainer.SetPosition(button, prototype.GridLocation * _gridScale);
+        LayoutContainer.SetPosition(button, GridCoordsToControlCoords(prototype.GridLocation));
         return button;
+    }
+
+    private Vector2 GridCoordsToControlCoords(Vector2i gridCoords)
+    {
+        return ResearchTreeDragContainer.SetSize/2+ gridCoords * _gridScale;
     }
 
     private void UpdateResearchItemSidePanel(ProtoId<ResearchEntryPrototype>? researchId = null)

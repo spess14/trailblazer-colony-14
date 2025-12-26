@@ -20,12 +20,6 @@ public sealed partial class ResearchEntryPrototype : IPrototype
     public LocId Name;
 
     /// <summary>
-    /// Description of the research. Ideally not a meme, but an actual explanation about what this does.
-    /// </summary>
-    [DataField]
-    public LocId Description;
-
-    /// <summary>
     /// Entity prototype of the research.
     /// </summary>
     [DataField(required: true)]
