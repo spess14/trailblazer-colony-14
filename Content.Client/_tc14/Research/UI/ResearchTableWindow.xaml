@@ -44,7 +44,7 @@
                     <Label Name="ResearchItemDisciplineName"/>
                 </BoxContainer>
                 <Label Name="ResearchItemPointsNeeded"
-                       Text="{Loc 'research-table-pointsneeded'}"/>
+                       Text="{Loc 'research-table-pointsneeded-notenough'}"/>
                 <BoxContainer Name="ResearchItemButtons"
                               HorizontalAlignment="Center">
                     <Button Name="ResearchItemResearchButton"
