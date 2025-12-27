@@ -21,8 +21,9 @@ public sealed partial class ResearchTableWindow : FancyWindow
 
     private EntityUid _entity;
     private ProtoId<ResearchEntryPrototype>? _selectedResearch;
-    private Dictionary<Vector2i, ProtoId<ResearchEntryPrototype>> _grid = new();
+    private Dictionary<Vector2i, ResearchEntryPrototype> _grid = new();
     private int _gridScale = 96; // 1.5x size of ResearchTableItem
+    private Vector2 _maxPoint = Vector2.One;
 
     private Action? _onResearchButtonClicked;
     private Action? _onPrintButtonClicked;
@@ -38,12 +39,18 @@ public sealed partial class ResearchTableWindow : FancyWindow
         ResearchItemPrintButton.OnPressed += _ => { _onPrintButtonClicked?.Invoke(); };
         _onResearchButtonClicked += ResearchItem;
         _onPrintButtonClicked += PrintBlueprint;
-
-        // Fill research tree
         var prototypes = _protoMan.EnumeratePrototypes<ResearchEntryPrototype>();
         foreach (var prototype in prototypes)
         {
-            var button = CreateResearchItem(prototype);
+            _grid.Add(prototype.GridLocation, prototype);
+            _maxPoint.X = Math.Max(_maxPoint.X, prototype.GridLocation.X);
+            _maxPoint.Y = Math.Max(_maxPoint.Y, prototype.GridLocation.Y);
+        }
+        _maxPoint += Vector2.One; // off by one :(
+        ResearchTreeDragContainer.SetSize = _gridScale * _maxPoint;
+        foreach (var pair in _grid)
+        {
+            CreateResearchItem(pair.Value);
         }
         UpdateResearchItemSidePanel();
         UpdatePoints();
@@ -62,7 +69,7 @@ public sealed partial class ResearchTableWindow : FancyWindow
     private void RecenterTree(BaseButton.ButtonEventArgs buttonEventArgs)
     {
         // ReSharper disable once PossibleLossOfFraction
-        ResearchTreeScrollContainer.SetScrollValue(ResearchTreeDragContainer.SetSize/4 + Vector2.One*(_gridScale/2)); // I have no idea why, I have no idea how, but SetSize/2 is NOT the control's center. WHY IS THIS HAPPENING
+        ResearchTreeScrollContainer.SetScrollValue(ResearchTreeDragContainer.SetSize/4); // I have no idea why, I have no idea how, but SetSize/2 is NOT the control's center. WHY IS THIS HAPPENING
     }
 
     private ResearchTableItem CreateResearchItem(ResearchEntryPrototype prototype)
@@ -73,14 +80,13 @@ public sealed partial class ResearchTableWindow : FancyWindow
         {
             UpdateResearchItemSidePanel(button.proto);
         };
-        _grid.Add(prototype.GridLocation, prototype.ID);
         LayoutContainer.SetPosition(button, GridCoordsToControlCoords(prototype.GridLocation));
         return button;
     }
 
     private Vector2 GridCoordsToControlCoords(Vector2i gridCoords)
     {
-        return ResearchTreeDragContainer.SetSize/2+ gridCoords * _gridScale;
+        return gridCoords * _gridScale;
     }
 
     private void UpdateResearchItemSidePanel(ProtoId<ResearchEntryPrototype>? researchId = null)

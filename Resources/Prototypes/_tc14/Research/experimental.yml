@@ -3,7 +3,7 @@
   name: tc-research-rnd-name
   discipline: DisciplineExperimental
   iconPrototype: ComplexXenoArtifact
-  gridLocation: 3,0
+  gridLocation: 7,0
   unlockedRecipes:
   - NodeScanner
   - TechDiskComputerCircuitboard
