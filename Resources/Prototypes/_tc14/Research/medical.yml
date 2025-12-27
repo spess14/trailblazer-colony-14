@@ -22,6 +22,8 @@
   discipline: DisciplineMedical
   iconPrototype: Beaker
   gridLocation: 2,1
+  dependencies:
+  - ResearchMedicine
   unlockedRecipes:
   - Beaker
   - LargeBeaker
@@ -36,6 +38,9 @@
   discipline: DisciplineMedical
   iconPrototype: ClothingEyesGlassesChemical
   gridLocation: 2,2
+  dependencies:
+  - ResearchTideChem
+  - ResearchElectricity
   unlockedRecipes:
   - ClothingEyesGlassesChemical
   - HotplateMachineCircuitboard

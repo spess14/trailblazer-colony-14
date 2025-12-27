@@ -23,6 +23,8 @@
   discipline: DisciplineIndustrial
   iconPrototype: Protolathe
   gridLocation: 0,1
+  dependencies:
+  - ResearchElectricity
   unlockedRecipes:
   - ProtolatheMachineCircuitboard
   - AutolatheMachineCircuitboard

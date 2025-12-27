@@ -18,6 +18,8 @@
   discipline: DisciplineMilitary
   iconPrototype: Stunbaton
   gridLocation: 3,2
+  dependencies:
+  - ResearchTraining
   unlockedRecipes:
   - Flash
   - Stunbaton

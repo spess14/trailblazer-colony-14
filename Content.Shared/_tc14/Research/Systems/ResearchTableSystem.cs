@@ -26,4 +26,9 @@ public sealed class ResearchTableSystem : EntitySystem
             ent.Comp.StoredPoints.TryAdd(discipline.ID, 0);
         }
     }
+
+    public bool IsResearched(ProtoId<ResearchEntryPrototype> entry, EntityUid uid, ResearchTableComponent? comp = null)
+    {
+        return Resolve(uid, ref comp) && comp.ResearchedTechs.Contains(entry);
+    }
 }

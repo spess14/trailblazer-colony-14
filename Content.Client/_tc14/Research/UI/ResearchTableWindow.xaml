@@ -5,22 +5,16 @@
     <BoxContainer Name="ResearchTableBoxContainer"
                   Margin="10"
                   SeparationOverride="5">
-        <BoxContainer Orientation="Vertical">
-            <PanelContainer Name="ResearchTreeBackground"
-                            StyleClasses="PanelDark"
-                            MinSize="800 800">
-                <ScrollContainer Name="ResearchTreeScrollContainer">
-                    <LayoutContainer Name="ResearchTreeDragContainer"
-                                     StyleClasses="PanelDark"
-                                     RectClipContent="True"
-                                     SetSize="1600 1600"/>
-                </ScrollContainer>
-            </PanelContainer>
-            <Button Name="ResearchTreeRecenterButton"
-                    Text="Recenter"
-                    HorizontalExpand="False"
-                    HorizontalAlignment="Center"/>
-        </BoxContainer>
+        <PanelContainer Name="ResearchTreeBackground"
+                        StyleClasses="PanelDark"
+                        MinSize="800 800">
+            <ScrollContainer Name="ResearchTreeScrollContainer">
+                <LayoutContainer Name="ResearchTreeDragContainer"
+                                 StyleClasses="PanelDark"
+                                 RectClipContent="True"
+                                 SetSize="1600 1600"/>
+            </ScrollContainer>
+        </PanelContainer>
         <BoxContainer Name="ResearchTableSidePanel"
                          VerticalAlignment="Top"
                          HorizontalExpand="True"
