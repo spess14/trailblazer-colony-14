@@ -35,6 +35,7 @@ public sealed partial class ResearchTableWindow : FancyWindow
         _sprite = _entMan.System<SpriteSystem>();
         _researchSystem = _entMan.System<ResearchTableSystem>();
 
+        ResearchTreeDragContainer.GridScale = _gridScale;
         ResearchItemResearchButton.OnPressed += _ => { _onResearchButtonClicked?.Invoke(); };
         ResearchItemPrintButton.OnPressed += _ => { _onPrintButtonClicked?.Invoke(); };
         _onResearchButtonClicked += ResearchItem;
@@ -74,7 +75,7 @@ public sealed partial class ResearchTableWindow : FancyWindow
         {
             UpdateResearchItemSidePanel(button.proto);
         };
-        LayoutContainer.SetPosition(button, GridCoordsToControlCoords(prototype.GridLocation));
+        LayoutContainer.SetPosition(button, GridCoordsToControlCoords(prototype.GridLocation, true));
         return button;
     }
 
@@ -82,7 +83,7 @@ public sealed partial class ResearchTableWindow : FancyWindow
     {
         var ret = gridCoords * _gridScale;
         if (isCenter)
-            ret += new Vector2i(_gridScale/2, _gridScale/2);
+            ret += new Vector2i(_gridScale/6, _gridScale/6);
         return ret;
     }
 
