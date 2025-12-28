@@ -1,5 +1,6 @@
 <controls:FancyWindow xmlns="https://spacestation14.io"
                       xmlns:controls="clr-namespace:Content.Client.UserInterface.Controls"
+                      xmlns:ui="clr-namespace:Content.Client._tc14.Research.UI"
                       Title="{Loc 'research-table-ui-name'}"
                       SetSize="1200 900">
     <BoxContainer Name="ResearchTableBoxContainer"
@@ -9,10 +10,7 @@
                         StyleClasses="PanelDark"
                         MinSize="800 800">
             <ScrollContainer Name="ResearchTreeScrollContainer">
-                <LayoutContainer Name="ResearchTreeDragContainer"
-                                 StyleClasses="PanelDark"
-                                 RectClipContent="True"
-                                 SetSize="1600 1600"/>
+                <ui:ResearchTreeContainer Name="ResearchTreeDragContainer"/>
             </ScrollContainer>
         </PanelContainer>
         <BoxContainer Name="ResearchTableSidePanel"
