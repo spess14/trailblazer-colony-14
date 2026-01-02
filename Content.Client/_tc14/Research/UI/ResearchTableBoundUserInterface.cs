@@ -35,7 +35,8 @@ public sealed class ResearchTableBoundUserInterface : BoundUserInterface
     {
         base.UpdateState(state);
 
-        if (state is not ResearchTableState)
+        if (state is not ResearchTableState rState)
             return;
+        _window.UpdateResearchDependencies(rState.ResearchedTechs);
     }
 }

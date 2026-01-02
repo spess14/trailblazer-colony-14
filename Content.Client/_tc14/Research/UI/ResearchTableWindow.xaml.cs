@@ -55,16 +55,6 @@ public sealed partial class ResearchTableWindow : FancyWindow
         UpdatePoints();
     }
 
-    private void PrintBlueprint()
-    {
-        throw new NotImplementedException();
-    }
-
-    private void ResearchItem()
-    {
-        throw new NotImplementedException();
-    }
-
     private ResearchTableItem CreateResearchItem(ResearchEntryPrototype prototype)
     {
         var button = new ResearchTableItem(prototype);
@@ -73,6 +63,7 @@ public sealed partial class ResearchTableWindow : FancyWindow
         {
             UpdateResearchItemSidePanel(button.proto);
         };
+        button.SetEnabled(prototype.Dependencies.Count == 0);
         LayoutContainer.SetPosition(button, GridCoordsToControlCoords(prototype.GridLocation, true));
         return button;
     }
@@ -132,6 +123,20 @@ public sealed partial class ResearchTableWindow : FancyWindow
             box.AddChild(icon);
             box.AddChild(label);
             ResearchTablePointsDisplay.AddChild(box);
+        }
+    }
+
+    public void UpdateResearchDependencies(HashSet<ProtoId<ResearchEntryPrototype>> researched)
+    {
+        foreach (var child in ResearchTreeDragContainer.Children.OfType<ResearchTableItem>())
+        {
+            if (child.proto.Dependencies.Count == 0)
+            {
+                child.SetEnabled(true);
+                continue;
+            }
+
+            child.SetEnabled(child.proto.Dependencies.All(researched.Contains));
         }
     }
 

@@ -28,4 +28,9 @@ public sealed partial class ResearchTableItem : Control
         _disciplineProto = discipline;
         ResearchItemBorder.ModulateSelfOverride = _disciplineProto.Color;
     }
+
+    public void SetEnabled(bool value)
+    {
+        ResearchItemButton.Disabled = !value;
+    }
 }
