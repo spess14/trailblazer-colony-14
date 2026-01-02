@@ -1,8 +1,10 @@
 using Content.Shared._tc14.Research;
+using JetBrains.Annotations;
 using Robust.Client.UserInterface;
 
 namespace Content.Client._tc14.Research.UI;
 
+[UsedImplicitly]
 public sealed class ResearchTableBoundUserInterface : BoundUserInterface
 {
     [ViewVariables]
@@ -18,6 +20,15 @@ public sealed class ResearchTableBoundUserInterface : BoundUserInterface
 
         _window = this.CreateWindow<ResearchTableWindow>();
         _window.SetEntity(Owner);
+
+        _window.OnResearchButtonClicked += id =>
+        {
+            SendMessage(new ResearchTableTechResearchedMessage(id));
+        };
+        _window.OnPrintButtonClicked += id =>
+        {
+            SendMessage(new ResearchTablePrintBlueprint(id));
+        };
     }
 
     protected override void UpdateState(BoundUserInterfaceState state)

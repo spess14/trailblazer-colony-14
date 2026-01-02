@@ -25,8 +25,8 @@ public sealed partial class ResearchTableWindow : FancyWindow
     private int _gridScale = 96; // 1.5x size of ResearchTableItem
     private Vector2 _maxPoint = Vector2.One;
 
-    private Action? _onResearchButtonClicked;
-    private Action? _onPrintButtonClicked;
+    public Action<ProtoId<ResearchEntryPrototype>>? OnResearchButtonClicked;
+    public Action<ProtoId<ResearchEntryPrototype>>? OnPrintButtonClicked;
 
     public ResearchTableWindow()
     {
@@ -36,10 +36,8 @@ public sealed partial class ResearchTableWindow : FancyWindow
         _researchSystem = _entMan.System<ResearchTableSystem>();
 
         ResearchTreeDragContainer.GridScale = _gridScale;
-        ResearchItemResearchButton.OnPressed += _ => { _onResearchButtonClicked?.Invoke(); };
-        ResearchItemPrintButton.OnPressed += _ => { _onPrintButtonClicked?.Invoke(); };
-        _onResearchButtonClicked += ResearchItem;
-        _onPrintButtonClicked += PrintBlueprint;
+        ResearchItemResearchButton.OnPressed += _ => { OnResearchButtonClicked?.Invoke(_selectedResearch ?? ""); };
+        ResearchItemPrintButton.OnPressed += _ => { OnPrintButtonClicked?.Invoke(_selectedResearch ?? ""); };
         var prototypes = _protoMan.EnumeratePrototypes<ResearchEntryPrototype>();
         foreach (var prototype in prototypes)
         {
