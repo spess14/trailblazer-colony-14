@@ -23,11 +23,11 @@ public sealed class ResearchTableBoundUserInterface : BoundUserInterface
 
         _window.OnResearchButtonClicked += id =>
         {
-            SendMessage(new ResearchTableTechResearchedMessage(id));
+            SendPredictedMessage(new ResearchTableTechResearchedMessage(id));
         };
         _window.OnPrintButtonClicked += id =>
         {
-            SendMessage(new ResearchTablePrintBlueprint(id));
+            SendPredictedMessage(new ResearchTablePrintBlueprint(id));
         };
     }
 

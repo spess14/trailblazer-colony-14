@@ -106,6 +106,7 @@ public sealed partial class ResearchTableWindow : FancyWindow
             ("neededPoints", prototype.Points)
         );
         ResearchItemResearchButton.Disabled = storedPoints[disciplineProto.ID] < prototype.Points || researched.Contains(prototype.ID);
+        ResearchItemPrintButton.Disabled = !researched.Contains(prototype.ID);
         ResearchItemName.Text = Loc.GetString(prototype.Name);
         ResearchItemDisciplineIcon.Texture = _sprite.Frame0(disciplineProto.Icon);
         ResearchItemDisciplineName.Text = Loc.GetString(disciplineProto.Name);
