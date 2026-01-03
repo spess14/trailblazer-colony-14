@@ -133,10 +133,11 @@ public sealed partial class ResearchTableWindow : FancyWindow
         }
     }
 
-    private void UpdateResearchDependencies(HashSet<ProtoId<ResearchEntryPrototype>> researched)
+    private void UpdateResearchItems(HashSet<ProtoId<ResearchEntryPrototype>> researched)
     {
         foreach (var child in ResearchTreeDragContainer.Children.OfType<ResearchTableItem>())
         {
+            child.SetResearched(researched.Contains(child.proto));
             if (child.proto.Dependencies.Count == 0)
             {
                 child.SetEnabled(true);
@@ -149,7 +150,7 @@ public sealed partial class ResearchTableWindow : FancyWindow
 
     public void UpdateState(ResearchTableState state)
     {
-        UpdateResearchDependencies(state.ResearchedTechs);
+        UpdateResearchItems(state.ResearchedTechs);
         UpdatePoints(state.StoredPoints);
         UpdateResearchItemSidePanel(state.StoredPoints, state.ResearchedTechs);
         _lastState = state;

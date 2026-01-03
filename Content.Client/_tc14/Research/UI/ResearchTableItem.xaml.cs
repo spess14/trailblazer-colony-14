@@ -33,4 +33,9 @@ public sealed partial class ResearchTableItem : Control
     {
         ResearchItemButton.Disabled = !value;
     }
+
+    public void SetResearched(bool value)
+    {
+        ResearchItemCheckmark.Visible = value;
+    }
 }
