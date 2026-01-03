@@ -5,6 +5,7 @@
   icon:
     sprite: Interface/Misc/research_disciplines.rsi
     state: arsenal
+  priority: 1
 
 - type: researchDiscipline
   id: DisciplineMedical
@@ -13,6 +14,7 @@
   icon:
     sprite: Interface/Misc/research_disciplines.rsi
     state: biochemical
+  priority: 2
 
 - type: researchDiscipline
   id: DisciplineBiosocial
@@ -21,6 +23,7 @@
   icon:
     sprite: Interface/Misc/research_disciplines.rsi
     state: civilianservices
+  priority: 3
 
 - type: researchDiscipline
   id: DisciplineExperimental
@@ -29,6 +32,7 @@
   icon:
     sprite: Interface/Misc/research_disciplines.rsi
     state: experimental
+  priority: 0
 
 - type: researchDiscipline
   id: DisciplineIndustrial
@@ -37,3 +41,4 @@
   icon:
     sprite: Interface/Misc/research_disciplines.rsi
     state: industrial
+  priority: 4

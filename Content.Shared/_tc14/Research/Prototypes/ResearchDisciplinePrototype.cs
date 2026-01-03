@@ -30,4 +30,10 @@ public sealed partial class ResearchDisciplinePrototype : IPrototype
     /// </summary>
     [DataField("icon")]
     public SpriteSpecifier Icon = default!;
+
+    /// <summary>
+    /// Determines the display priority in menus, descending order.
+    /// </summary>
+    [DataField]
+    public int Priority;
 }

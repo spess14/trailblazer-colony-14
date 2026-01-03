@@ -8,7 +8,7 @@ namespace Content.Client._tc14.Research.UI;
 public sealed class ResearchTableBoundUserInterface : BoundUserInterface
 {
     [ViewVariables]
-    private ResearchTableWindow _window = default!;
+    private ResearchTableWindow? _window = default!;
 
     public ResearchTableBoundUserInterface(EntityUid owner, Enum uiKey) : base(owner, uiKey)
     {
@@ -37,6 +37,6 @@ public sealed class ResearchTableBoundUserInterface : BoundUserInterface
 
         if (state is not ResearchTableState rState)
             return;
-        _window.UpdateResearchDependencies(rState.ResearchedTechs);
+        _window?.UpdateState(rState);
     }
 }
