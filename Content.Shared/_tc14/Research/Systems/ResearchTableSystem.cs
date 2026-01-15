@@ -36,7 +36,7 @@ public sealed class ResearchTableSystem : EntitySystem
         UpdateUi(ent);
     }
 
-    private void UpdateUi(Entity<ResearchTableComponent> ent)
+    public void UpdateUi(Entity<ResearchTableComponent> ent)
     {
         if (!_uiSystem.HasUi(ent, ResearchTableUiKey.Key))
             return;

@@ -47,6 +47,7 @@ public sealed class TCResearchPointSourceSystem : EntitySystem
             }
             pointsDeposited += pair.Value;
             Dirty(args.Target.Value, tableComp);
+            _researchTableSystem.UpdateUi((args.Target.Value, tableComp));
         }
         _popup.PopupClient(pointsDeposited == 0
                 ? Loc.GetString("observation-kit-deposit-nothing")
