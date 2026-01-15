@@ -15,6 +15,7 @@ public sealed class TCResearchPointSourceSystem : EntitySystem
     [Dependency] private readonly IPrototypeManager _protoMan = default!;
     [Dependency] private readonly IEntityManager _entMan = default!;
     [Dependency] private readonly SharedPopupSystem _popup = default!;
+    [Dependency] private readonly ResearchTableSystem _researchTableSystem = default!;
 
     /// <inheritdoc/>
     public override void Initialize()
@@ -45,6 +46,7 @@ public sealed class TCResearchPointSourceSystem : EntitySystem
                 tableComp.StoredPoints.Add(pair.Key, pair.Value);
             }
             pointsDeposited += pair.Value;
+            Dirty(args.Target.Value, tableComp);
         }
         _popup.PopupClient(pointsDeposited == 0
                 ? Loc.GetString("observation-kit-deposit-nothing")

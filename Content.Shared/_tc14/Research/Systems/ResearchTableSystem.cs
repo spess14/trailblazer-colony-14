@@ -80,7 +80,6 @@ public sealed class ResearchTableSystem : EntitySystem
         return pointAmount >= points;
     }
 
-    // TODO validate and subtract points
     public void ResearchEntry(ProtoId<ResearchEntryPrototype> entry, EntityUid uid, ResearchTableComponent? comp = null)
     {
         if (!Resolve(uid, ref comp) ||

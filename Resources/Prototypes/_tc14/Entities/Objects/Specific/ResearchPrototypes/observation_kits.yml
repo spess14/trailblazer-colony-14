@@ -15,4 +15,6 @@
     quickEquip: false
     slots:
     - Belt
+  - type: TCResearchPointSource
+    hasExamine: true
   - type: ObservationKit
