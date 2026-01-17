@@ -197,3 +197,119 @@
   - OrePlasma
   - OreUranium
   - OreArtifactFragment
+
+- type: biomeTemplate
+  id: SnowyBiome
+  layers:
+  - !type:BiomeEntityLayer
+    threshold: 0.4
+    noise:
+      seed: 0
+      noiseType: OpenSimplex2
+      fractalType: FBm
+      frequency: 1
+    allowedTiles:
+    - FloorSnow
+    entities:
+    - OverworldMiscSpawner
+  - !type:BiomeEntityLayer
+    threshold: 0.5
+    noise:
+      seed: 0
+      noiseType: OpenSimplex2
+      fractalType: FBm
+      frequency: 2
+    allowedTiles:
+    - FloorSnow
+    entities:
+    - FloraTree
+    - FloraTreeLarge
+    - FloraTreeSnow
+    - FloraTreeConifer
+  - !type:BiomeEntityLayer
+    threshold: 0.85
+    noise:
+      seed: 0
+      noiseType: OpenSimplex2
+      fractalType: FBm
+      frequency: 2
+    allowedTiles:
+    - FloorSnow
+    entities:
+    - RuinsRoomMarker
+  # Rock formations
+  - !type:BiomeEntityLayer
+    allowedTiles:
+    - TC14FloorPlanetDirt
+    threshold: -0.30
+    noise:
+      seed: 0
+      noiseType: Cellular
+      frequency: 0.05
+      lacunarity: 2
+      fractalType: FBm
+      octaves: 5
+      cellularDistanceFunction: Euclidean
+      cellularReturnType: Distance2
+    entities:
+    - TCWallRock
+  - !type:BiomeDummyLayer
+    id: Loot
+  # Water
+  - !type:BiomeEntityLayer
+    allowedTiles:
+    - FloorSnow
+    threshold: 0.95
+    noise:
+      seed: 3
+      noiseType: OpenSimplex2
+      frequency: 0.003
+      lacunarity: 1.50
+      fractalType: Ridged
+      octaves: 1
+    entities:
+    - FloorWaterEntity
+  # Fill remainder with dirt.
+  - !type:BiomeTileLayer
+    threshold: -1.0
+    tile: FloorSnow
+  - !type:BiomeTileLayer
+    threshold: -0.90
+    tile: FloorSnow
+    noise:
+      seed: 0
+      frequency: 0.02
+      fractalType: None
+  # Ice rivers
+  - !type:BiomeTileLayer
+    tile: FloorIce
+    threshold: 0.95
+    noise:
+      seed: 3
+      noiseType: OpenSimplex2
+      frequency: 0.003
+      lacunarity: 1.50
+      fractalType: Ridged
+      octaves: 1
+  # Rock formation sand
+  - !type:BiomeTileLayer
+    tile: TC14FloorPlanetDirt
+    threshold: -0.30
+    noise:
+      seed: 0
+      noiseType: Cellular
+      frequency: 0.05
+      lacunarity: 2
+      fractalType: FBm
+      octaves: 5
+      cellularDistanceFunction: Euclidean
+      cellularReturnType: Distance2
+  markerLayers:
+  - OreIron
+  - OreCoal
+  - OreQuartz
+  - OreGold
+  - OreSilver
+  - OrePlasma
+  - OreUranium
+  - OreArtifactFragment

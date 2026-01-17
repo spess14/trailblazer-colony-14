@@ -128,6 +128,8 @@
   heatCapacity: 10000
   weather: true
   indestructible: true
+  # TC14: snow can be chiseled
+  isChiselable: true
 
 # Ice
 - type: tile

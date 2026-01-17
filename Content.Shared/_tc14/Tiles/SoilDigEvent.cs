@@ -8,6 +8,6 @@ namespace Content.Shared._tc14.Tiles;
 [Serializable, NetSerializable]
 public sealed partial class SoilDigEvent : SimpleDoAfterEvent
 {
-    [DataField("soilDrop", customTypeSerializer: typeof(PrototypeIdSerializer<EntityPrototype>))]
-    public string SoilPrototypeName;
+    [DataField]
+    public EntProtoId SoilPrototypeName;
 }

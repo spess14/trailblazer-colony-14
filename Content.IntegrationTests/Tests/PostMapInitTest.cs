@@ -103,6 +103,7 @@ namespace Content.IntegrationTests.Tests
             "Exo",
             "Snowball",
             "Planet",
+            "WinterPlanet",
         };
 
         private static readonly ProtoId<EntityCategoryPrototype> DoNotMapCategory = "DoNotMap";
