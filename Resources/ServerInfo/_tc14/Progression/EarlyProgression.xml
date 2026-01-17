@@ -38,7 +38,7 @@
   <Box>
     <GuideEntityEmbed Entity="Workbench"/>
     <GuideEntityEmbed Entity="Smeltery"/>
-    <GuideEntityEmbed Entity="BlueprintWorkbench"/>
+    <GuideEntityEmbed Entity="ResearchWorkbench"/>
   </Box>
 
   Finally, some research will require you to make plastic. Simple bioplastic can be made by mixing cornmeal and fat 5:2 and heating it up.

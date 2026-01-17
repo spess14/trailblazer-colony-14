@@ -13,7 +13,7 @@
 
 - type: researchEntry
   id: ResearchBotany
-  name: tc-research-agriculture-name
+  name: tc-research-botany-name
   discipline: DisciplineBiosocial
   iconPrototype: SeedExtractor
   gridLocation: 1,1

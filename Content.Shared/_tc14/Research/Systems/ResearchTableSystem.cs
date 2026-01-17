@@ -18,7 +18,6 @@ public sealed class ResearchTableSystem : EntitySystem
     {
         base.Initialize();
 
-        SubscribeLocalEvent<ResearchTableComponent, ComponentInit>(OnInit);
         SubscribeLocalEvent<ResearchTableComponent, ResearchTableTechResearchedMessage>(OnResearchMessage);
         SubscribeLocalEvent<ResearchTableComponent, BeforeActivatableUIOpenEvent>(OnBeforeUiOpened);
     }
@@ -42,16 +41,6 @@ public sealed class ResearchTableSystem : EntitySystem
             return;
         var state = new ResearchTableState(ent.Comp.StoredPoints, ent.Comp.ResearchedTechs);
         _uiSystem.SetUiState(ent.Owner, ResearchTableUiKey.Key, state);
-    }
-
-    private void OnInit(Entity<ResearchTableComponent> ent, ref ComponentInit args)
-    {
-        var disciplines = _protoMan.EnumeratePrototypes<ResearchDisciplinePrototype>();
-        disciplines = disciplines.OrderByDescending(d => d.Priority);
-        foreach (var discipline in disciplines)
-        {
-            ent.Comp.StoredPoints.TryAdd(discipline.ID, 1000);
-        }
     }
 
     public bool IsResearched(ProtoId<ResearchEntryPrototype> entry, EntityUid uid, ResearchTableComponent? comp = null)

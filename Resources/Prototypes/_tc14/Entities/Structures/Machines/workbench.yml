@@ -86,9 +86,9 @@
   - type: Pullable
 
 - type: entity
-  id: BlueprintWorkbench
+  id: ResearchWorkbench
   parent: BaseMachine
-  name: blueprint workbench
+  name: research workbench
   description: A table with tools made out of whatever you could find, yet sufficient for basic research.
   components:
   - type: Appearance
@@ -123,8 +123,14 @@
     - state: earlyresearchbench
   - type: Construction
     graph: Table
-    node: Workbench
+    node: researchbench
   - type: ResearchTable
+    storedPoints:
+      DisciplineMilitary: 0
+      DisciplineMedical: 0
+      DisciplineBiosocial: 0
+      DisciplineExperimental: 0
+      DisciplineIndustrial: 0
   - type: ActivatableUI
     key: enum.ResearchTableUiKey.Key
   - type: UserInterface
