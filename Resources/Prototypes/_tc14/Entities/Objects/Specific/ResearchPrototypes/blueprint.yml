@@ -1,0 +1,8 @@
+- type: entity
+  parent: BaseBlueprint
+  id: TCBlueprint
+  components:
+  - type: Blueprint
+    # Has to be filled, we overwrite this anyway
+    providedRecipes:
+    - RRD

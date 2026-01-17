@@ -112,4 +112,11 @@ public sealed class BlueprintSystem : EntitySystem
 
         return recipes;
     }
+
+    //TC14: research rework
+    public void SetBlueprintRecipes(Entity<BlueprintComponent> ent, HashSet<ProtoId<LatheRecipePrototype>> recipes)
+    {
+        var comp = ent.Comp;
+        comp.ProvidedRecipes = recipes;
+    }
 }
