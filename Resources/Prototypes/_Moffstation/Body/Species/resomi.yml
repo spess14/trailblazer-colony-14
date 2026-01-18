@@ -231,7 +231,7 @@
 
 - type: entity
   parent:
-  - AppearanceVox
+  - AppearanceResomi
   - BaseSpeciesMobOrganic
   id: MobResomi
   name: Urist McChicken
