@@ -1,5 +1,5 @@
 - type: entity
-  parent: BaseHumanOrgan
+  parent: OrganBase
   id: BaseVampireOrgan
   abstract: true
   categories: [ HideSpawnMenu ]

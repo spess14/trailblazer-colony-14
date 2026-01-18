@@ -111,7 +111,7 @@
       - !type:HealthChange
         damage:
           types:
-            Heat: 0.05
+            Heat: 0.5 # MOFFSTATION CHANGE - Increases slime water damage by 5x
       - !type:PopupMessage
         type: Local
         visualType: Large
