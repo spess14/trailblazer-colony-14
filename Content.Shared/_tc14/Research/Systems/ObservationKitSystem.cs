@@ -44,6 +44,7 @@ public sealed class ObservationKitSystem : EntitySystem
             }
             pointsCollected += pair.Value;
         }
+        Dirty(ent, ent.Comp);
         _popup.PopupClient(pointsCollected == 0
                 ? Loc.GetString("observation-kit-gather-nothing")
                 : Loc.GetString("observation-kit-gather-collected", ("points", pointsCollected)),

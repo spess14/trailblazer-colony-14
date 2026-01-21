@@ -3,6 +3,7 @@ using Content.Shared.Examine;
 using Content.Shared.Interaction;
 using Content.Shared.Popups;
 using Robust.Shared.Prototypes;
+using Robust.Shared.Timing;
 
 namespace Content.Shared._tc14.Research.Systems;
 
@@ -16,6 +17,7 @@ public sealed class TCResearchPointSourceSystem : EntitySystem
     [Dependency] private readonly IEntityManager _entMan = default!;
     [Dependency] private readonly SharedPopupSystem _popup = default!;
     [Dependency] private readonly ResearchTableSystem _researchTableSystem = default!;
+    [Dependency] private readonly IGameTiming _gameTiming = default!;
 
     /// <inheritdoc/>
     public override void Initialize()
@@ -46,9 +48,9 @@ public sealed class TCResearchPointSourceSystem : EntitySystem
                 tableComp.StoredPoints.Add(pair.Key, pair.Value);
             }
             pointsDeposited += pair.Value;
-            Dirty(args.Target.Value, tableComp);
-            _researchTableSystem.UpdateUi((args.Target.Value, tableComp));
         }
+        Dirty(args.Target.Value, tableComp);
+        _researchTableSystem.UpdateUi((args.Target.Value, tableComp));
         _popup.PopupClient(pointsDeposited == 0
                 ? Loc.GetString("observation-kit-deposit-nothing")
                 : Loc.GetString("observation-kit-deposit-collected", ("points", pointsDeposited)),

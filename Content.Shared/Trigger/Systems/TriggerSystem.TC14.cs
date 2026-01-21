@@ -38,5 +38,6 @@ public sealed partial class TriggerSystem
                 pointSourceComp.StoredPoints.Add(pair.Key, pair.Value);
             }
         }
+        Dirty(ent, pointSourceComp);
     }
 }
