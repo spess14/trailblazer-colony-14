@@ -29,12 +29,3 @@
       DisciplineBiosocial: 1000000
       DisciplineExperimental: 1000000
       DisciplineIndustrial: 1000000
-
-- type: entity
-  abstract: true
-  parent: BaseResearchPrototypeItem
-  id: BaseMilitaryResearchPrototypeItemBasic
-  components:
-  - type: AddResearchPointsOnTrigger
-    points:
-      DisciplineMilitary: 20

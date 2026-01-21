@@ -24,9 +24,14 @@ public sealed partial class TCResearchPointSourceComponent : Component
     public bool HasExamine;
 
     /// <summary>
-    /// Does this item need to be examined using an observation kit first?
-    /// Used for research prototypes, since those need to go through a researcher first.
+    /// Can you observe this using the observation kit?
     /// </summary>
     [DataField, AutoNetworkedField]
-    public bool RequiresExamination;
+    public bool CanBeObserved = true;
+
+    /// <summary>
+    /// Does this item destroy itself when observed via the observation kit?
+    /// </summary>
+    [DataField, AutoNetworkedField]
+    public bool DestructOnObservation = true;
 }

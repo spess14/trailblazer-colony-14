@@ -1,6 +1,7 @@
 using Content.Shared._tc14.Research.Components;
 using Content.Shared.Interaction;
 using Content.Shared.Popups;
+using Robust.Shared.Network;
 
 namespace Content.Shared._tc14.Research.Systems;
 
@@ -26,7 +27,8 @@ public sealed class ObservationKitSystem : EntitySystem
         if (args.Target is null ||
             !args.CanReach ||
             !_entMan.TryGetComponent<TCResearchPointSourceComponent>(args.Target, out var targetPointsComp) ||
-            !_entMan.TryGetComponent<TCResearchPointSourceComponent>(ent, out var kitPointsComp))
+            !_entMan.TryGetComponent<TCResearchPointSourceComponent>(ent, out var kitPointsComp) ||
+            !targetPointsComp.CanBeObserved)
             return;
         var pointsCollected = 0;
         foreach (var pair in targetPointsComp.StoredPoints)
@@ -46,5 +48,9 @@ public sealed class ObservationKitSystem : EntitySystem
                 ? Loc.GetString("observation-kit-gather-nothing")
                 : Loc.GetString("observation-kit-gather-collected", ("points", pointsCollected)),
             args.User);
+        if (!targetPointsComp.DestructOnObservation || pointsCollected <= 0)
+            return;
+        PredictedQueueDel(args.Target);
+        args.Handled = true;
     }
 }

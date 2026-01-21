@@ -1,10 +1,13 @@
 - type: entity
-  name: knife prototype
-  parent: [BaseMilitaryResearchPrototypeItemBasic, CombatKnife]
+  name: prototype knife
+  parent: [BaseResearchPrototypeItem, CombatKnife]
   id: KnifePrototype
-  description: The grip is
+  description: The grip is uncomfortable, and the blade is flimsy...
   components:
   - type: TriggerOnMeleeHit
+  - type: AddResearchPointsOnTrigger
+    points:
+      DisciplineMilitary: 20
   - type: Damageable
     damageContainer: Inorganic
   - type: RandomChanceTriggerCondition

@@ -17,4 +17,6 @@
     - Belt
   - type: TCResearchPointSource
     hasExamine: true
+    canBeObserved: false
+    destructOnObservation: false
   - type: ObservationKit
