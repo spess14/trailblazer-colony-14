@@ -1,5 +1,8 @@
 using Content.Shared._tc14.Research.Components;
+using Content.Shared._tc14.Trigger.Components.Conditions;
 using Content.Shared._tc14.Trigger.Components.Effects;
+using Content.Shared.Damage.Systems;
+using Robust.Shared.Network;
 
 namespace Content.Shared.Trigger.Systems;
 
@@ -9,10 +12,20 @@ namespace Content.Shared.Trigger.Systems;
 /// </summary>
 public sealed partial class TriggerSystem
 {
+
     // ReSharper disable once InconsistentNaming
     private void InitializeTC14()
     {
         SubscribeLocalEvent<AddResearchPointsOnTriggerComponent, TriggerEvent>(HandleAddResearchPointsOnTrigger);
+        SubscribeLocalEvent<TriggerOnDamageComponent, DamageChangedEvent>(OnDamageTrigger);
+    }
+
+    private void OnDamageTrigger(Entity<TriggerOnDamageComponent> ent, ref DamageChangedEvent args)
+    {
+        // Destructible system is unpredicted, and I really have no time to come up with a better solution.
+        if (!args.DamageIncreased || _net.IsClient)
+            return;
+        Trigger(ent.Owner, args.Origin, ent.Comp.KeyOut);
     }
 
     private void HandleAddResearchPointsOnTrigger(Entity<AddResearchPointsOnTriggerComponent> ent, ref TriggerEvent args)
