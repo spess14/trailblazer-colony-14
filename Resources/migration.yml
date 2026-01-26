@@ -795,3 +795,6 @@ RightHandSkeleton: OrganSkeletonPersonHandRight
 RightLegHuman: OrganHumanLegRight
 TorsoSkeleton: OrganSkeletonPersonTorso
 RightArmSkeleton: OrganSkeletonPersonArmRight
+
+# Moffstation - 2026-01-19
+CrayonBox: CrayonBoxFilled
