@@ -3,14 +3,6 @@
   id: BaseResearchPrototypeItem
   components:
   - type: TCResearchPointSource
-  - type: AddResearchPointsOnTrigger
-    # TODO this is just for testing, properly balance this
-    points:
-      DisciplineMilitary: 100
-      DisciplineMedical: 100
-      DisciplineBiosocial: 100
-      DisciplineExperimental: 100
-      DisciplineIndustrial: 100
 
 - type: entity
   parent: BaseItem
