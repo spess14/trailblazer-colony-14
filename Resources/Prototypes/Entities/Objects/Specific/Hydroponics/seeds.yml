@@ -42,7 +42,7 @@
     # TC14: add research data to seeds
     - type: TCResearchPointSource
       storedPoints:
-        DisciplineBiosocial: 20
+        DisciplineBiosocial: 10
 
 - type: entity
   parent: SeedBase
