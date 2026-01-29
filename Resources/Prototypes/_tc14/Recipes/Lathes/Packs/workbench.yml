@@ -35,3 +35,11 @@
   - FreezerElectronics
   - PortableGeneratorCPacmanMachineCircuitboard
   - RecyclerCrudeCircuitboard
+
+- type: latheRecipePack
+  id: PrototypesWorkbench
+  recipes:
+  - FlimsyKnife
+  - SkeletonModel
+  - Electrodes
+  - ObservationKit

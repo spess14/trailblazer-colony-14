@@ -1,0 +1,21 @@
+- type: entity
+  name: observation kit
+  parent: BaseItem
+  id: ObservationKit
+  description: A handheld device capable of collecting research data from prototypes.
+  components:
+  - type: Sprite
+    sprite: _tc14/Objects/Devices/observation_kit.rsi
+    state: icon
+  - type: Item
+    size: Small
+  - type: Clothing
+    sprite: _tc14/Objects/Devices/observation_kit.rsi
+    quickEquip: false
+    slots:
+    - Belt
+  - type: TCResearchPointSource
+    hasExamine: true
+    canBeObserved: false
+    destructOnObservation: false
+  - type: ObservationKit

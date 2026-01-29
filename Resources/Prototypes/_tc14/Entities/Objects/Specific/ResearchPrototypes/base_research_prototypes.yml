@@ -1,0 +1,23 @@
+- type: entity
+  abstract: true
+  id: BaseResearchPrototypeItem
+  components:
+  - type: TCResearchPointSource
+
+- type: entity
+  parent: BaseItem
+  id: TCResearchDisk
+  name: research points disk (a lot)
+  suffix: DEBUG
+  description: A disk for the research table containing a lot of points.
+  components:
+  - type: Sprite
+    sprite: Objects/Specific/Research/researchdisk.rsi
+    state: icon
+  - type: TCResearchPointSource
+    storedPoints:
+      DisciplineMilitary: 1000000
+      DisciplineMedical: 1000000
+      DisciplineBiosocial: 1000000
+      DisciplineExperimental: 1000000
+      DisciplineIndustrial: 1000000

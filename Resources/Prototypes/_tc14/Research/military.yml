@@ -1,0 +1,27 @@
+- type: researchEntry
+  id: ResearchTraining
+  name: tc-research-training-name
+  discipline: DisciplineMilitary
+  iconPrototype: Handcuffs
+  gridLocation: 3,1
+  unlockedRecipes:
+  - Handcuffs
+  - TargetClown
+  - TargetHuman
+  - TargetSyndicate
+  - Zipties
+  - CombatKnife
+
+- type: researchEntry
+  id: ResearchNonLethal
+  name: tc-research-nonlethal-name
+  discipline: DisciplineMilitary
+  iconPrototype: Stunbaton
+  gridLocation: 3,2
+  dependencies:
+  - ResearchTraining
+  unlockedRecipes:
+  - Flash
+  - Stunbaton
+  - RiotShield
+  - WeaponDisabler

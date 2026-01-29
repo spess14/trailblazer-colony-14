@@ -1,4 +1,3 @@
-using Content.Shared.Examine;
 using Content.Shared.IdentityManagement;
 using Content.Shared.Interaction;
 using Content.Shared.Lathe;
@@ -9,7 +8,6 @@ using Content.Shared.Whitelist;
 using Robust.Shared.Containers;
 using Robust.Shared.Prototypes;
 using System.Linq;
-using Robust.Shared.Utility;
 
 namespace Content.Shared.Research.Systems;
 
@@ -18,7 +16,6 @@ public sealed class BlueprintSystem : EntitySystem
     [Dependency] private readonly SharedContainerSystem _container = default!;
     [Dependency] private readonly EntityWhitelistSystem _entityWhitelist = default!;
     [Dependency] private readonly SharedPopupSystem _popup = default!;
-    [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
 
     /// <inheritdoc/>
     public override void Initialize()
@@ -26,35 +23,6 @@ public sealed class BlueprintSystem : EntitySystem
         SubscribeLocalEvent<BlueprintReceiverComponent, ComponentStartup>(OnStartup);
         SubscribeLocalEvent<BlueprintReceiverComponent, AfterInteractUsingEvent>(OnAfterInteract);
         SubscribeLocalEvent<BlueprintReceiverComponent, LatheGetRecipesEvent>(OnGetRecipes);
-        SubscribeLocalEvent<BlueprintComponent, ExaminedEvent>(OnBlueprintExamine);
-    }
-
-    //TC14: research system
-    private void OnBlueprintExamine(Entity<BlueprintComponent> ent, ref ExaminedEvent args)
-    {
-        if (!args.IsInDetailsRange)
-            return;
-
-        using (args.PushGroup(nameof(BlueprintComponent)))
-        {
-            var formatted = new FormattedMessage();
-            formatted.PushNewline();
-            formatted.AddText(Loc.GetString("blueprint-contains"));
-            formatted.PushNewline();
-
-            var recipes = ent.Comp.ProvidedRecipes;
-
-            foreach (var recipe in recipes)
-            {
-                if (!_prototypeManager.Resolve(recipe, out var recipePrototype) || !_prototypeManager.Resolve(recipePrototype.Result, out var prototype))
-                    continue;
-
-                formatted.AddText(Loc.GetString(prototype.Name));
-                formatted.PushNewline();
-            }
-
-            args.PushMessage(formatted);
-        }
     }
 
     private void OnStartup(Entity<BlueprintReceiverComponent> ent, ref ComponentStartup args)
@@ -143,5 +111,12 @@ public sealed class BlueprintSystem : EntitySystem
         }
 
         return recipes;
+    }
+
+    //TC14: research rework
+    public void SetBlueprintRecipes(Entity<BlueprintComponent> ent, HashSet<ProtoId<LatheRecipePrototype>> recipes)
+    {
+        var comp = ent.Comp;
+        comp.ProvidedRecipes = recipes;
     }
 }

@@ -16,12 +16,12 @@
     entity: Smeltery
 
 - type: constructionGraph
-  id: BlueprintWorkbench
+  id: ResearchWorkbench
   start: start
   graph:
   - node: start
     edges:
-    - to: bluebench
+    - to: researchbench
       completed:
       - !type:SnapToGrid
         southRotation: true
@@ -29,5 +29,5 @@
       - material: WoodPlank
         amount: 10
         doAfter: 5
-  - node: bluebench
-    entity: BlueprintWorkbench
+  - node: researchbench
+    entity: ResearchWorkbench

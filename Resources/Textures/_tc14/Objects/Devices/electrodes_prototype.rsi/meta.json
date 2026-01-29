@@ -1,0 +1,14 @@
+{
+   "version": 1,
+   "license" : "CC-BY-4.0",
+   "copyright" : "Made from part_electronic_electrode_depleted taken from https://github.com/malcolmriley/unused-textures, edited by murphyneko",
+   "size" : {
+      "x" : 32,
+      "y" : 32
+   },
+    "states": [
+        {
+            "name": "icon"
+        }
+    ]
+}

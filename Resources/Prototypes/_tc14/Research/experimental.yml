@@ -1,0 +1,11 @@
+- type: researchEntry
+  id: ResearchRnd
+  name: tc-research-rnd-name
+  discipline: DisciplineExperimental
+  iconPrototype: ComplexXenoArtifact
+  gridLocation: 11,0
+  unlockedRecipes:
+  - NodeScanner
+  - TechDiskComputerCircuitboard
+  - AnalysisComputerCircuitboard
+  - ArtifactAnalyzerMachineCircuitboard

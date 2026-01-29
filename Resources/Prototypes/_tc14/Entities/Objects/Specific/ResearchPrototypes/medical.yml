@@ -1,0 +1,24 @@
+- type: entity
+  name: skeleton model
+  parent: [BaseResearchPrototypeItem, BaseTarget]
+  id: SkeletonModel
+  description: Right out of the biology classroom.
+  suffix: Research Proto
+  components:
+  - type: Sprite
+    sprite: Mobs/Species/Skeleton/parts.rsi
+    state: full
+  - type: TriggerOnDamage
+  - type: AddResearchPointsOnTrigger
+    points:
+      DisciplineMedical: 25
+  - type: RandomChanceTriggerCondition
+    successChance: 0.2
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 100
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]

@@ -1,0 +1,33 @@
+<Document>
+  # Research
+  Surprise: you do not have the whole compendium of all sentients' knowledge of the past millenniums. However, you know a thing or two: to reproduce some technology, you just need to conduct some experiments.
+
+  First of all, you have to store all the technobabble somewhere.
+  <Box>
+    <GuideEntityEmbed Entity="ResearchWorkbench"/>
+  </Box>
+
+  Research Workbench stores your research: if it's destroyed, your settlement also rolls back to the stone age.
+  Each research entry has different disciplines: your PhD in biology won't help as much with electricity.
+  To get research points, you need another storage of technobabble - this time, you will be the one writing it.
+  <Box>
+    <GuideEntityEmbed Entity="ObservationKit"/>
+  </Box>
+
+  Finally, you'll need something you can observe for points. These are either prototypes or regular items.
+  In order to actually generate points from the prototype, you will need to experiment with it - I'm sure you'll figure it out.
+  Be careful - you will DESTROY the item you're observing. Also, most prototypes are rather fragile - you can (and probably will) break them during experimentation.
+  <Box>
+    <GuideEntityEmbed Entity="FlimsyKnife"/>
+    <GuideEntityEmbed Entity="SkeletonModel"/>
+    <GuideEntityEmbed Entity="ElectrodesPrototype"/>
+    <GuideEntityEmbed Entity="TomatoSeeds"/>
+  </Box>
+
+  The rest is simple: use the observation kit on the prototype/item with points, then use the observation kit on your nearest Research Workbench.
+  <Box>
+    <GuideEntityEmbed Entity="BlueprintFulton"/>
+  </Box>
+
+  To use your blueprint, simply click it on the nearest workbench or lathe, which will add the recipe to that workstation.
+</Document>

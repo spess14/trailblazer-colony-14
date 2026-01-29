@@ -1,0 +1,44 @@
+- type: researchDiscipline
+  id: DisciplineMilitary
+  name: tc-discipline-military
+  color: "#dc373b"
+  icon:
+    sprite: Interface/Misc/research_disciplines.rsi
+    state: arsenal
+  priority: 1
+
+- type: researchDiscipline
+  id: DisciplineMedical
+  name: tc-discipline-medical
+  color: "#449ae6"
+  icon:
+    sprite: Interface/Misc/research_disciplines.rsi
+    state: biochemical
+  priority: 2
+
+- type: researchDiscipline
+  id: DisciplineBiosocial
+  name: tc-discipline-biosocial
+  color: "#7ecd48"
+  icon:
+    sprite: Interface/Misc/research_disciplines.rsi
+    state: civilianservices
+  priority: 3
+
+- type: researchDiscipline
+  id: DisciplineExperimental
+  name: tc-discipline-experimental
+  color: "#9a6ef0"
+  icon:
+    sprite: Interface/Misc/research_disciplines.rsi
+    state: experimental
+  priority: 0
+
+- type: researchDiscipline
+  id: DisciplineIndustrial
+  name: tc-discipline-industrial
+  color: "#eeac34"
+  icon:
+    sprite: Interface/Misc/research_disciplines.rsi
+    state: industrial
+  priority: 4

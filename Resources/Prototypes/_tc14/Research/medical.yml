@@ -1,0 +1,48 @@
+- type: researchEntry
+  id: ResearchMedicine
+  name: tc-research-medicine-name
+  discipline: DisciplineMedical
+  iconPrototype: Brutepack
+  gridLocation: 2,0
+  unlockedRecipes:
+  - Brutepack
+  - Ointment
+  - Gauze
+  - Scalpel
+  - Retractor
+  - Cautery
+  - Drill
+  - Saw
+  - Hemostat
+  - Defibrillator
+
+- type: researchEntry
+  id: ResearchTideChem
+  name: tc-research-tidechem-name
+  discipline: DisciplineMedical
+  iconPrototype: Beaker
+  gridLocation: 2,1
+  dependencies:
+  - ResearchMedicine
+  unlockedRecipes:
+  - Beaker
+  - LargeBeaker
+  - Syringe
+  - PillCanister
+  - Jug
+  - ChemistryEmptyBottle01
+
+- type: researchEntry
+  id: ResearchChemistry
+  name: tc-research-chemistry-name
+  discipline: DisciplineMedical
+  iconPrototype: ClothingEyesGlassesChemical
+  gridLocation: 2,2
+  dependencies:
+  - ResearchTideChem
+  - ResearchElectricity
+  unlockedRecipes:
+  - ClothingEyesGlassesChemical
+  - HotplateMachineCircuitboard
+  - ChemDispenserMachineCircuitboard
+  - ChemMasterMachineCircuitboard

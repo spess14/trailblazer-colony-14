@@ -1,5 +1,6 @@
 - type: entity
-  parent: BaseItem
+  # TC14: add BaseResearchPrototypeItem as parent
+  parent: [BaseItem, BaseResearchPrototypeItem]
   id: SeedBase
   abstract: true
   components:
@@ -38,6 +39,10 @@
           tags:
           - Book
     - type: PhysicalComposition
+    # TC14: add research data to seeds
+    - type: TCResearchPointSource
+      storedPoints:
+        DisciplineBiosocial: 10
 
 - type: entity
   parent: SeedBase

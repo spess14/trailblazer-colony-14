@@ -49,10 +49,10 @@
   - !type:TileNotBlocked
 
 - type: construction
-  id: BlueprintWorkbench
-  graph: BlueprintWorkbench
+  id: ResearchWorkbench
+  graph: ResearchWorkbench
   startNode: start
-  targetNode: bluebench
+  targetNode: researchbench
   category: construction-category-structures
   objectType: Structure
   placementMode: SnapgridCenter

@@ -59,6 +59,7 @@ public sealed partial class TriggerSystem : EntitySystem
         InitializeTimer();
         InitializeSpawn();
         InitializeVoice();
+        InitializeTC14(); // TC14: add our own TriggerSystem partial
     }
 
     /// <summary>

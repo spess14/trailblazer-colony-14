@@ -1,0 +1,34 @@
+- type: researchEntry
+  id: ResearchElectricity
+  name: tc-research-electricity-name
+  discipline: DisciplineIndustrial
+  iconPrototype: SMESBasic
+  gridLocation: 0,0
+  unlockedRecipes:
+  - DoorElectronics
+  - SignalTimerElectronics
+  - APCElectronics
+  - SMESMachineCircuitboard
+  - SubstationMachineCircuitboard
+  - WallmountSubstationElectronics
+  - CellRechargerCircuitboard
+  - WeaponCapacitorRechargerCircuitboard
+  - PortableGeneratorCPacmanMachineCircuitboard
+  - PowerCellSmall
+  - PowerCellMedium
+
+- type: researchEntry
+  id: ResearchFabrication
+  name: tc-research-fabrication-name
+  discipline: DisciplineIndustrial
+  iconPrototype: Protolathe
+  gridLocation: 0,1
+  dependencies:
+  - ResearchElectricity
+  unlockedRecipes:
+  - ProtolatheMachineCircuitboard
+  - AutolatheMachineCircuitboard
+  - CircuitImprinterMachineCircuitboard
+  - ExosuitFabricatorMachineCircuitboard
+  - CutterMachineCircuitboard
+  - BorgChargerCircuitboard
