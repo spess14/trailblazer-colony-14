@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Content.Server.Database.Migrations.Sqlite
 {
     [DbContext(typeof(SqliteServerDbContext))]
-    [Migration("20260120200455_BanRefactor")]
+    [Migration("20260124000001_BanRefactor")]
     partial class BanRefactor
     {
         /// <inheritdoc />

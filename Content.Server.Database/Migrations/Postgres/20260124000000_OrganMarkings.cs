@@ -1,16 +1,18 @@
-﻿using Microsoft.EntityFrameworkCore.Migrations;
+﻿using System.Text.Json;
+using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
-namespace Content.Server.Database.Migrations.Sqlite
+namespace Content.Server.Database.Migrations.Postgres
 {
+    // Moffstation - Renamed from `20260118084622` because we managed to make a moff-only DB change at the same time that upstream made some DB changes.
     /// <inheritdoc />
     public partial class OrganMarkings : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.AddColumn<byte[]>(
+            migrationBuilder.AddColumn<JsonDocument>(
                 name: "organ_markings",
                 table: "profile",
                 type: "jsonb",

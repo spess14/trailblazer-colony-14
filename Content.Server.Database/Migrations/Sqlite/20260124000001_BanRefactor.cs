@@ -1,13 +1,11 @@
 ﻿using System;
-using Content.Shared.Database;
 using Microsoft.EntityFrameworkCore.Migrations;
-using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
-using NpgsqlTypes;
 
 #nullable disable
 
-namespace Content.Server.Database.Migrations.Postgres
+namespace Content.Server.Database.Migrations.Sqlite
 {
+    // Moffstation - Renamed from `20260120200455` because we managed to make a moff-only DB change at the same time that upstream made some DB changes.
     /// <inheritdoc />
     public partial class BanRefactor : Migration
     {
@@ -18,20 +16,20 @@ namespace Content.Server.Database.Migrations.Postgres
                 name: "ban",
                 columns: table => new
                 {
-                    ban_id = table.Column<int>(type: "integer", nullable: false)
-                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
-                    type = table.Column<byte>(type: "smallint", nullable: false),
-                    playtime_at_note = table.Column<TimeSpan>(type: "interval", nullable: false),
-                    ban_time = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
-                    expiration_time = table.Column<DateTime>(type: "timestamp with time zone", nullable: true),
-                    reason = table.Column<string>(type: "text", nullable: false),
-                    severity = table.Column<int>(type: "integer", nullable: false),
-                    banning_admin = table.Column<Guid>(type: "uuid", nullable: true),
-                    last_edited_by_id = table.Column<Guid>(type: "uuid", nullable: true),
-                    last_edited_at = table.Column<DateTime>(type: "timestamp with time zone", nullable: true),
-                    exempt_flags = table.Column<int>(type: "integer", nullable: false),
-                    auto_delete = table.Column<bool>(type: "boolean", nullable: false),
-                    hidden = table.Column<bool>(type: "boolean", nullable: false)
+                    ban_id = table.Column<int>(type: "INTEGER", nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    type = table.Column<byte>(type: "INTEGER", nullable: false),
+                    playtime_at_note = table.Column<TimeSpan>(type: "TEXT", nullable: false),
+                    ban_time = table.Column<DateTime>(type: "TEXT", nullable: false),
+                    expiration_time = table.Column<DateTime>(type: "TEXT", nullable: true),
+                    reason = table.Column<string>(type: "TEXT", nullable: false),
+                    severity = table.Column<int>(type: "INTEGER", nullable: false),
+                    banning_admin = table.Column<Guid>(type: "TEXT", nullable: true),
+                    last_edited_by_id = table.Column<Guid>(type: "TEXT", nullable: true),
+                    last_edited_at = table.Column<DateTime>(type: "TEXT", nullable: true),
+                    exempt_flags = table.Column<int>(type: "INTEGER", nullable: false),
+                    auto_delete = table.Column<bool>(type: "INTEGER", nullable: false),
+                    hidden = table.Column<bool>(type: "INTEGER", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -55,15 +53,14 @@ namespace Content.Server.Database.Migrations.Postgres
                 name: "ban_address",
                 columns: table => new
                 {
-                    ban_address_id = table.Column<int>(type: "integer", nullable: false)
-                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
-                    address = table.Column<NpgsqlInet>(type: "inet", nullable: false),
-                    ban_id = table.Column<int>(type: "integer", nullable: false)
+                    ban_address_id = table.Column<int>(type: "INTEGER", nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    address = table.Column<string>(type: "TEXT", nullable: false),
+                    ban_id = table.Column<int>(type: "INTEGER", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_ban_address", x => x.ban_address_id);
-                    table.CheckConstraint("AddressNotIPv6MappedIPv4", "NOT inet '::ffff:0.0.0.0/96' >>= address");
                     table.ForeignKey(
                         name: "FK_ban_address_ban_ban_id",
                         column: x => x.ban_id,
@@ -76,11 +73,11 @@ namespace Content.Server.Database.Migrations.Postgres
                 name: "ban_hwid",
                 columns: table => new
                 {
-                    ban_hwid_id = table.Column<int>(type: "integer", nullable: false)
-                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
-                    hwid = table.Column<byte[]>(type: "bytea", nullable: false),
-                    hwid_type = table.Column<int>(type: "integer", nullable: false),
-                    ban_id = table.Column<int>(type: "integer", nullable: false)
+                    ban_hwid_id = table.Column<int>(type: "INTEGER", nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    hwid = table.Column<byte[]>(type: "BLOB", nullable: false),
+                    hwid_type = table.Column<int>(type: "INTEGER", nullable: false),
+                    ban_id = table.Column<int>(type: "INTEGER", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -97,10 +94,10 @@ namespace Content.Server.Database.Migrations.Postgres
                 name: "ban_player",
                 columns: table => new
                 {
-                    ban_player_id = table.Column<int>(type: "integer", nullable: false)
-                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
-                    user_id = table.Column<Guid>(type: "uuid", nullable: false),
-                    ban_id = table.Column<int>(type: "integer", nullable: false)
+                    ban_player_id = table.Column<int>(type: "INTEGER", nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    user_id = table.Column<Guid>(type: "TEXT", nullable: false),
+                    ban_id = table.Column<int>(type: "INTEGER", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -117,11 +114,11 @@ namespace Content.Server.Database.Migrations.Postgres
                 name: "ban_role",
                 columns: table => new
                 {
-                    ban_role_id = table.Column<int>(type: "integer", nullable: false)
-                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
-                    role_type = table.Column<string>(type: "text", nullable: false),
-                    role_id = table.Column<string>(type: "text", nullable: false),
-                    ban_id = table.Column<int>(type: "integer", nullable: false)
+                    ban_role_id = table.Column<int>(type: "INTEGER", nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    role_type = table.Column<string>(type: "TEXT", nullable: false),
+                    role_id = table.Column<string>(type: "TEXT", nullable: false),
+                    ban_id = table.Column<int>(type: "INTEGER", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -138,10 +135,10 @@ namespace Content.Server.Database.Migrations.Postgres
                 name: "ban_round",
                 columns: table => new
                 {
-                    ban_round_id = table.Column<int>(type: "integer", nullable: false)
-                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
-                    ban_id = table.Column<int>(type: "integer", nullable: false),
-                    round_id = table.Column<int>(type: "integer", nullable: false)
+                    ban_round_id = table.Column<int>(type: "INTEGER", nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    ban_id = table.Column<int>(type: "INTEGER", nullable: false),
+                    round_id = table.Column<int>(type: "INTEGER", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -164,11 +161,11 @@ namespace Content.Server.Database.Migrations.Postgres
                 name: "unban",
                 columns: table => new
                 {
-                    unban_id = table.Column<int>(type: "integer", nullable: false)
-                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
-                    ban_id = table.Column<int>(type: "integer", nullable: false),
-                    unbanning_admin = table.Column<Guid>(type: "uuid", nullable: true),
-                    unban_time = table.Column<DateTime>(type: "timestamp with time zone", nullable: false)
+                    unban_id = table.Column<int>(type: "INTEGER", nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    ban_id = table.Column<int>(type: "INTEGER", nullable: false),
+                    unbanning_admin = table.Column<Guid>(type: "TEXT", nullable: true),
+                    unban_time = table.Column<DateTime>(type: "TEXT", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -241,12 +238,6 @@ namespace Content.Server.Database.Migrations.Postgres
                 unique: true);
 
             migrationBuilder.Sql("""
-                CREATE INDEX "IX_ban_address_address"
-                    ON ban_address
-                    USING gist
-                    (address inet_ops)
-                    INCLUDE (ban_id);
-
                 CREATE UNIQUE INDEX "IX_ban_hwid_hwid_ban_id"
                     ON ban_hwid
                     (hwid_type, hwid, ban_id);
@@ -256,22 +247,16 @@ namespace Content.Server.Database.Migrations.Postgres
                     (address, ban_id);
                 """);
 
-            migrationBuilder.Sql($"""
-                -- REMOVE:
-                -- TRUNCATE ban RESTART IDENTITY CASCADE;
-
+            migrationBuilder.Sql("""
                 --
                 -- Insert game bans
                 --
                 INSERT INTO
                 	ban	(ban_id, type, playtime_at_note, ban_time, expiration_time, reason, severity, banning_admin, last_edited_by_id, last_edited_at, exempt_flags, auto_delete, hidden)
                 SELECT
-                	server_ban_id, {(int)BanType.Server}, playtime_at_note, ban_time, expiration_time, reason, severity, banning_admin, last_edited_by_id, last_edited_at, exempt_flags, auto_delete, hidden
+                	server_ban_id, 0, playtime_at_note, ban_time, expiration_time, reason, severity, banning_admin, last_edited_by_id, last_edited_at, exempt_flags, auto_delete, hidden
                 FROM
                 	server_ban;
-
-                -- Update ID sequence to be after newly inserted IDs.
-                SELECT setval('ban_ban_id_seq', (SELECT MAX(ban_id) FROM ban));
 
                 -- Insert ban player records.
                 INSERT INTO
@@ -310,7 +295,6 @@ namespace Content.Server.Database.Migrations.Postgres
                 	ban_id, unbanning_admin, unban_time
                 FROM server_unban;
 
-
                 -- Insert ban round records.
                 INSERT INTO
                 	ban_round (round_id, ban_id)
@@ -334,12 +318,10 @@ namespace Content.Server.Database.Migrations.Postgres
                 -- and that code is now gone, expecting the DB to do it.
 
                 -- Create a table to store IDs to merge.
-                CREATE TEMPORARY TABLE /*IF NOT EXISTS*/ _role_ban_import_merge_map (merge_id INTEGER, server_role_ban_id INTEGER UNIQUE) ON COMMIT DROP;
-                -- TRUNCATE _role_ban_import_merge_map;
+                CREATE TEMPORARY TABLE _role_ban_import_merge_map (merge_id INTEGER, server_role_ban_id INTEGER UNIQUE);
 
                 -- Create a table to store merged IDs -> new ban IDs
-                CREATE TEMPORARY TABLE /*IF NOT EXISTS*/ _role_ban_import_id_map (ban_id INTEGER UNIQUE, merge_id INTEGER UNIQUE) ON COMMIT DROP;
-                -- TRUNCATE _role_ban_import_id_map;
+                CREATE TEMPORARY TABLE _role_ban_import_id_map (ban_id INTEGER UNIQUE, merge_id INTEGER UNIQUE);
 
                 -- Calculate merged role bans.
                 INSERT INTO
@@ -358,10 +340,10 @@ namespace Content.Server.Database.Migrations.Postgres
                 			AND main.address IS NOT DISTINCT FROM sub.address
                 			AND main.hwid IS NOT DISTINCT FROM sub.hwid
                 			AND main.hwid_type IS NOT DISTINCT FROM sub.hwid_type
-                			AND date_trunc('second', main.ban_time, 'utc') = date_trunc('second', sub.ban_time, 'utc')
+                			AND main.ban_time = sub.ban_time
                 			AND (
                 				(main.expiration_time IS NULL) = (sub.expiration_time IS NULL)
-                				OR date_trunc('minute', main.expiration_time, 'utc') = date_trunc('minute', sub.expiration_time, 'utc')
+                				OR main.expiration_time = sub.expiration_time
                 			)
                 			AND main.round_id IS NOT DISTINCT FROM sub.round_id
                 			AND main.severity IS NOT DISTINCT FROM sub.severity
@@ -378,11 +360,10 @@ namespace Content.Server.Database.Migrations.Postgres
                 ON main_unban.ban_id = main.server_role_ban_id;
 
                 -- Assign new ban IDs for merged IDs.
-                INSERT INTO
+                INSERT OR IGNORE INTO
                 	_role_ban_import_id_map
                 SELECT
-                	DISTINCT ON (merge_id)
-                	nextval('ban_ban_id_seq'),
+                	merge_id + (SELECT seq FROM sqlite_sequence WHERE name = 'ban'),
                 	merge_id
                 FROM
                 	_role_ban_import_merge_map;
@@ -393,7 +374,7 @@ namespace Content.Server.Database.Migrations.Postgres
                 INSERT INTO
                 	ban	(ban_id, type, playtime_at_note, ban_time, expiration_time, reason, severity, banning_admin, last_edited_by_id, last_edited_at, exempt_flags, auto_delete, hidden)
                 SELECT
-                	im.ban_id, {(int)BanType.Role}, playtime_at_note, ban_time, expiration_time, reason, severity, banning_admin, last_edited_by_id, last_edited_at, 0, FALSE, hidden
+                	im.ban_id, 1, playtime_at_note, ban_time, expiration_time, reason, severity, banning_admin, last_edited_by_id, last_edited_at, 0, FALSE, hidden
                 FROM
                 	_role_ban_import_id_map im
                 INNER JOIN _role_ban_import_merge_map mm
@@ -448,7 +429,9 @@ namespace Content.Server.Database.Migrations.Postgres
                 INSERT INTO
                 	ban_role (role_type, role_id, ban_id)
                 SELECT
-                	split_part(role_id, ':', 1), split_part(role_id, ':', 2), im.ban_id
+                	substr(role_id, 1, instr(role_id, ':')-1),
+                	substr(role_id, instr(role_id, ':')+1),
+                	im.ban_id
                 FROM
                 	_role_ban_import_id_map im
                 INNER JOIN _role_ban_import_merge_map mm
@@ -505,25 +488,6 @@ namespace Content.Server.Database.Migrations.Postgres
 
             migrationBuilder.DropTable(
                 name: "server_ban");
-
-            migrationBuilder.Sql($"""
-                CREATE OR REPLACE FUNCTION send_server_ban_notification()
-                    RETURNS trigger AS $$
-                    BEGIN
-                        PERFORM pg_notify(
-                            'ban_notification',
-                            json_build_object('ban_id', NEW.ban_id)::text
-                        );
-                        RETURN NEW;
-                    END;
-                    $$ LANGUAGE plpgsql;
-
-                CREATE TRIGGER notify_on_server_ban_insert
-                    AFTER INSERT ON ban
-                    FOR EACH ROW
-                    WHEN (NEW.type = {(int)BanType.Server})
-                    EXECUTE FUNCTION send_server_ban_notification();
-                """);
         }
 
         /// <inheritdoc />

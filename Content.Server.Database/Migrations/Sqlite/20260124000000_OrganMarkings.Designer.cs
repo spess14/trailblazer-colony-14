@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Content.Server.Database.Migrations.Sqlite
 {
     [DbContext(typeof(SqliteServerDbContext))]
-    [Migration("20260118084622_OrganMarkings")]
+    [Migration("20260124000000_OrganMarkings")]
     partial class OrganMarkings
     {
         /// <inheritdoc />
