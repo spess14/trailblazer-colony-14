@@ -3,7 +3,7 @@
   name: tc-research-electricity-name
   discipline: DisciplineIndustrial
   iconPrototype: SMESBasic
-  gridLocation: 0,0
+  gridLocation: 0,1
   unlockedRecipes:
   - DoorElectronics
   - SignalTimerElectronics
@@ -22,7 +22,7 @@
   name: tc-research-fabrication-name
   discipline: DisciplineIndustrial
   iconPrototype: Protolathe
-  gridLocation: 0,1
+  gridLocation: 1,1
   dependencies:
   - ResearchElectricity
   unlockedRecipes:

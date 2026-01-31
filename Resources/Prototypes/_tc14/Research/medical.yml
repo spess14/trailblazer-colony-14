@@ -3,7 +3,7 @@
   name: tc-research-medicine-name
   discipline: DisciplineMedical
   iconPrototype: Brutepack
-  gridLocation: 2,0
+  gridLocation: 0,0
   unlockedRecipes:
   - Brutepack
   - Ointment
@@ -21,7 +21,7 @@
   name: tc-research-tidechem-name
   discipline: DisciplineMedical
   iconPrototype: Beaker
-  gridLocation: 2,1
+  gridLocation: 1,0
   dependencies:
   - ResearchMedicine
   unlockedRecipes:
@@ -37,7 +37,7 @@
   name: tc-research-chemistry-name
   discipline: DisciplineMedical
   iconPrototype: ClothingEyesGlassesChemical
-  gridLocation: 2,2
+  gridLocation: 2,0
   dependencies:
   - ResearchTideChem
   - ResearchElectricity
