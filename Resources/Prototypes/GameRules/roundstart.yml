@@ -61,7 +61,6 @@
 - type: entity
   parent: BaseGameRule
   id: DummyNonAntagChance
-  abstract: true  # Moffstation - antag weight
   components:
   - type: SubGamemodes
     rules:
@@ -437,13 +436,13 @@
 - type: entity
   id: DummyNonAntag
   parent: BaseGameRule
-  abstract: true # Moffstation - Antag weight
   components:
   - type: GameRule
     minPlayers: 5
   - type: AntagSelection
     selectionTime: IntraPlayerSpawn # Pre-selection before jobs; assignment doesn't really matter though, we only care about the pre-selection to block other antags.
     removeUponFailedSpawn: false
+    useWeights: false # Moffstation - Antag Weights
     definitions:
     - prefRoles: [ InitialInfected, Traitor, Thief, HeadRev ]
       max: 2
