@@ -584,7 +584,7 @@ public sealed partial class AntagSelectionSystem : GameRuleSystem<AntagSelection
         {
             // Moffstation - Begin - Use LoadoutAwareEquip function to equip Roleloadout and Starting gear, this allows custom loadouts for antags.
             var profile = (HumanoidCharacterProfile) _pref.GetPreferences(session.UserId).SelectedCharacter;
-            _loadout.LoadoutAwareEquip(player, session, gear, def.RoleLoadout, profile);
+            _loadout.LoadoutAwareEquip(antag, session, gear, def.RoleLoadout, profile);
             // Moffstation - End
 
             var curMind = session.GetMind();
@@ -607,7 +607,7 @@ public sealed partial class AntagSelectionSystem : GameRuleSystem<AntagSelection
         }
         else // Moffstation Start - Moved to else statement so starting gear doesn't get duplicated
         {
-            _loadout.Equip(player, gear, def.RoleLoadout);
+            _loadout.Equip(antag, gear, def.RoleLoadout);
         }
         // Moffstation End
 
