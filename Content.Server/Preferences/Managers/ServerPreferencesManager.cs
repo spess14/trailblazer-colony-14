@@ -5,7 +5,9 @@ using System.Threading;
 using System.Threading.Tasks;
 using Content.Server._CD.Records;
 using Content.Server.Database;
+using Content.Shared.Body;
 using Content.Shared._CD.Records;
+using Content.Shared._tc14.Skills.Prototypes;
 using Content.Shared.Body;
 using Content.Shared.CCVar;
 using Content.Shared.Construction.Prototypes;
@@ -133,7 +135,7 @@ namespace Content.Server.Preferences.Managers
 
                     if (parsed is null) continue;
 
-                    markingsList.Add(parsed.Value);
+                    markingsList.Add(parsed);
                 }
 
                 if (Marking.ParseFromDbString($"{profile.HairName}@{profile.HairColor}") is { } facialMarking)
@@ -174,11 +176,12 @@ namespace Content.Server.Preferences.Managers
                 loadouts[role.RoleName] = loadout;
             }
 
+            var passions = profile.Passions.ToDictionary(p=>(ProtoId<SkillPrototype>)p.PassionName, p=>p.Value);
+
             return new HumanoidCharacterProfile(
                 profile.CharacterName,
                 profile.FlavorText,
                 species,
-                profile.CDProfile?.Height ?? 1.0f, // Moffstation - CD Height
                 profile.Age,
                 sex,
                 gender,
@@ -194,7 +197,8 @@ namespace Content.Server.Preferences.Managers
                 antags.ToHashSet(),
                 traits.ToHashSet(),
                 loadouts,
-                cdRecords // Moffstation - Add CD Profile
+                cdRecords,
+                passions
             );
         }
 
