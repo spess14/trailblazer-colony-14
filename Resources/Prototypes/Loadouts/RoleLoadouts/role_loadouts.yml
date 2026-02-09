@@ -143,6 +143,7 @@
 
 - type: roleLoadout
   id: JobChaplain
+  canCustomizeName: true
   groups:
   - GroupTankHarness
   - ChaplainPDA # Moffstation - Additional job title loadouts
