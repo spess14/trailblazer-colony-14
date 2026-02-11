@@ -87,9 +87,9 @@
   description: A lightweight hardsuit designed for industrial EVA in zero gravity.
   components:
   - type: Sprite
-    sprite: Clothing/OuterClothing/Hardsuits/spatio.rsi
+    sprite: _Moffstation/Clothing/OuterClothing/Hardsuits/spatio.rsi # Moffstation
   - type: Clothing
-    sprite: Clothing/OuterClothing/Hardsuits/spatio.rsi
+    sprite: _Moffstation/Clothing/OuterClothing/Hardsuits/spatio.rsi # Moffstation
   - type: PressureProtection
     highPressureMultiplier: 0.7
     lowPressureMultiplier: 1000
@@ -112,7 +112,7 @@
     - Hardsuit
     - WhitelistChameleon
     - HardsuitSpatio
-    - CorgiWearable
+    #- CorgiWearable #Moffstation - I HATE CORGI SPRITES
 
 #Salvage Hardsuit
 - type: entity
@@ -122,9 +122,9 @@
   description: A special suit that protects against hazardous, low pressure environments. Has reinforced plating for wildlife encounters.
   components:
   - type: Sprite
-    sprite: Clothing/OuterClothing/Hardsuits/salvage.rsi
+    sprite: _Moffstation/Clothing/OuterClothing/Hardsuits/salvage.rsi # Moffstation
   - type: Clothing
-    sprite: Clothing/OuterClothing/Hardsuits/salvage.rsi
+    sprite: _Moffstation/Clothing/OuterClothing/Hardsuits/salvage.rsi # Moffstation
   - type: PressureProtection
     highPressureMultiplier: 0.5
     lowPressureMultiplier: 1000
@@ -147,7 +147,7 @@
     clothingPrototype: ClothingHeadHelmetHardsuitSalvage
   - type: Tag
     tags:
-    - CorgiWearable
+    #- CorgiWearable # Moffstation - I HATE CORGI SPRITES
     - Hardsuit
     - WhitelistChameleon
 
@@ -159,9 +159,9 @@
   description: A lightweight hardsuit, adorned with a patchwork of thick, chitinous goliath hide.
   components:
   - type: Sprite
-    sprite: Clothing/OuterClothing/Hardsuits/goliath.rsi
+    sprite: _Moffstation/Clothing/OuterClothing/Hardsuits/goliath.rsi # Moffstation
   - type: Clothing
-    sprite: Clothing/OuterClothing/Hardsuits/goliath.rsi
+    sprite: _Moffstation/Clothing/OuterClothing/Hardsuits/goliath.rsi # Moffstation
   - type: PressureProtection
     highPressureMultiplier: 0.5
     lowPressureMultiplier: 1000
@@ -187,7 +187,7 @@
     node: hardsuitGoliath
   - type: Tag
     tags:
-    - CorgiWearable
+    #- CorgiWearable #Moffstation - I HATE CORGI SPRITES
     - Hardsuit
     - WhitelistChameleon
 
@@ -199,15 +199,15 @@
   description: Fire. Heat. These things forge great weapons, they also forge great salvagers.
   components:
   - type: Sprite
-    sprite: Clothing/OuterClothing/Hardsuits/maxim.rsi
+    sprite: _Moffstation/Clothing/OuterClothing/Hardsuits/maxim.rsi # Moffstation
   - type: Clothing
-    sprite: Clothing/OuterClothing/Hardsuits/maxim.rsi
+    sprite: _Moffstation/Clothing/OuterClothing/Hardsuits/maxim.rsi # Moffstation
   - type: PressureProtection
     highPressureMultiplier: 0.02
     lowPressureMultiplier: 1000
   - type: ClothingSpeedModifier
-    walkModifier: 1.0
-    sprintModifier: 1.0
+    walkModifier: 0.8 # Moffstation
+    sprintModifier: 0.8 # Moffstation
   - type: Armor
     modifiers:
       coefficients:
@@ -513,9 +513,9 @@
   categories: [ DoNotMap ]
   components:
   - type: Sprite
-    sprite: Clothing/OuterClothing/Hardsuits/luxury.rsi
+    sprite: _Moffstation/Clothing/OuterClothing/Hardsuits/luxury.rsi # Moffstation
   - type: Clothing
-    sprite: Clothing/OuterClothing/Hardsuits/luxury.rsi
+    sprite: _Moffstation/Clothing/OuterClothing/Hardsuits/luxury.rsi # Moffstation
   - type: PressureProtection
     highPressureMultiplier: 0.5
     lowPressureMultiplier: 1000
