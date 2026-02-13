@@ -24,6 +24,11 @@
   - FloorDirt
   - PlatingRCD
   - FloorHullReinforced
+  # TC14 - Begin - allow to place tiles on planets
+  - TC14FloorPlanetGrass
+  - TC14FloorPlanetDirt
+  - FloorPlanetStone
+  # TC14 - End
 
 - type: tile
   id: FloorSteel

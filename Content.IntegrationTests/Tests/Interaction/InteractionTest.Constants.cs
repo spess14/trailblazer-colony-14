@@ -10,8 +10,6 @@ public abstract partial class InteractionTest
     // Tiles
     protected const string Floor = "FloorSteel";
     protected const string FloorItem = "FloorTileItemSteel";
-    //TC14: we use rock as plating
-    protected const string Rock = "FloorPlanetStone";
     protected const string Plating = "Plating";
     protected const string PlatingRCD = "PlatingRCD";
     protected const string Lattice = "Lattice";
