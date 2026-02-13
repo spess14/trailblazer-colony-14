@@ -11,7 +11,7 @@ public sealed partial class SkillPrototype : IPrototype
 {
     /// <inheritdoc/>
     [IdDataField]
-    public string ID { get; } = default!;
+    public string ID { get; private set; } = default!;
 
     /// <summary>
     /// Skill name, localized. This will be visible to the player.

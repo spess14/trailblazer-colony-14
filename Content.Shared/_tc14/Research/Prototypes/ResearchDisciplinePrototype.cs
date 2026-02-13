@@ -11,7 +11,7 @@ public sealed partial class ResearchDisciplinePrototype : IPrototype
 {
     /// <inheritdoc/>
     [IdDataField]
-    public string ID { get; } = default!;
+    public string ID { get; private set; } = default!;
 
     /// <summary>
     /// Player-facing name, color not included.
