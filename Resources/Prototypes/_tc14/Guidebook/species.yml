@@ -51,3 +51,8 @@
   id: TCVox
   name: species-name-vox
   text: "/ServerInfo/_tc14/Mobs/Vox.xml"
+
+- type: guideEntry
+  id: TCVulpkanin
+  name: species-name-vulpkanin
+  text: "/ServerInfo/_tc14/Mobs/Vulpkanin.xml"

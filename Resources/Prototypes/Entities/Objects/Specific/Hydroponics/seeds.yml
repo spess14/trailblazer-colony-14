@@ -1,6 +1,6 @@
 - type: entity
   # TC14: add BaseResearchPrototypeItem as parent
-  parent: [BaseItem, BaseResearchPrototypeItem]
+  parent: [ BaseItem, BasePaperLabelable, BaseResearchPrototypeItem ] #TODO: Add sprites for different types of paper, replace BasePaperLabelable with BasePaperLabelableVisualized
   id: SeedBase
   abstract: true
   components:
@@ -24,20 +24,6 @@
       size: Tiny
     - type: StaticPrice
       price: 20
-    - type: ItemSlots
-    - type: ContainerContainer
-      containers:
-        paper_label: !type:ContainerSlot
-    - type: PaperLabel
-      labelSlot:
-        insertVerbText: comp-paper-label-insert
-        ejectVerbText: comp-paper-label-eject
-        whitelist:
-          components:
-          - Paper
-        blacklist:
-          tags:
-          - Book
     - type: PhysicalComposition
     # TC14: add research data to seeds
     - type: TCResearchPointSource

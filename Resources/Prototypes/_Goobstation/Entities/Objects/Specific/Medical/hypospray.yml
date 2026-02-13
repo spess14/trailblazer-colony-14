@@ -20,8 +20,3 @@
         reagents:
         - ReagentId: Cura
           Quantity: 5
-  - type: Hypospray
-    solutionName: pen
-    transferAmount: 5
-    onlyAffectsMobs: false
-    injectOnly: true
