@@ -41,7 +41,7 @@
     East: /Textures/_tc14/Tiles/Planet/Grass/double_edge_E.png
     North: /Textures/_tc14/Tiles/Planet/Grass/double_edge_N.png
     West: /Textures/_tc14/Tiles/Planet/Grass/double_edge_W.png
-  baseTurf: TC14FloorDirt
+  baseTurf: TC14FloorPlanetDirt
   isSubfloor: true
   heatCapacity: 10000
   itemDrop: FloorTileItemGrass
