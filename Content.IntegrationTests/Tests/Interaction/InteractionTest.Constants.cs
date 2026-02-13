@@ -13,7 +13,9 @@ public abstract partial class InteractionTest
     //TC14: we use rock as plating
     protected const string Rock = "FloorPlanetStone";
     protected const string Plating = "Plating";
+    protected const string PlatingRCD = "PlatingRCD";
     protected const string Lattice = "Lattice";
+    protected const string PlatingBrass = "PlatingBrass";
 
     // Structures
     protected const string Airlock = "Airlock";
