@@ -26,11 +26,6 @@
       - tag: Rock
         name: construction-graph-tag-rock
         doAfter: 2
-    - to: mortar
-      steps:
-      - material: WoodPlank
-        amount: 1
-        doAfter: 0.5
   - node: chisel
     entity: Chisel
   - node: longhandle
@@ -45,5 +40,3 @@
     entity: StonePickaxe
   - node: shovel
     entity: StoneShovel
-  - node: mortar
-    entity: Mortar

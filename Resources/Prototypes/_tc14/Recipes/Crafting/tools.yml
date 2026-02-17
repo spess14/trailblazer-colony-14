@@ -37,11 +37,3 @@
   targetNode: shovel
   category: construction-category-tools
   objectType: Item
-
-- type: construction
-  id: mortar
-  graph: WoodenHandleTools
-  startNode: start
-  targetNode: mortar
-  category: construction-category-tools
-  objectType: Item

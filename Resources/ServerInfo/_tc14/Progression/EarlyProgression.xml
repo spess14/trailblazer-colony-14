@@ -19,7 +19,7 @@
     <GuideEntityEmbed Entity="StonePickaxe"/>
     <GuideEntityEmbed Entity="StoneShovel"/>
     <GuideEntityEmbed Entity="Chisel"/>
-    <GuideEntityEmbed Entity="Mortar"/>
+    <GuideEntityEmbed Entity="MortarAndPestleMakeshift"/>
   </Box>
 
   With basic tools and materials, you should look for a place to settle. It is recommended to settle in a place with moderate temperature and flowing water nearby.
@@ -45,7 +45,7 @@
   <Box>
     <GuideEntityEmbed Entity="FoodCorn"/>
     <GuideEntityEmbed Entity="FoodMeat"/>
-    <GuideEntityEmbed Entity="Mortar"/>
+    <GuideEntityEmbed Entity="MortarAndPestleMakeshift"/>
     <GuideEntityEmbed Entity="Campfire"/>
   </Box>
 </Document>
