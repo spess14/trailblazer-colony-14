@@ -5,9 +5,9 @@
   description: A heavy brick.
   components:
   - type: Sprite
-    sprite: Objects/Materials/bricks.rsi
+    sprite: _tc14/Objects/Materials/bricks.rsi
   - type: Item
-    sprite: Objects/Materials/bricks.rsi
+    sprite: _tc14/Objects/Materials/bricks.rsi
     size: Normal
   - type: Damageable
     damageContainer: Inorganic

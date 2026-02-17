@@ -1,0 +1,47 @@
+- type: constructionGraph
+  id: WallTorch
+  start: start
+  graph:
+  - node: start
+    edges:
+    - to: WallTorch
+      steps:
+      - material: WoodPlank
+        amount: 1
+        doAfter: 2.0
+  - node: WallTorch
+    entity: WallTorch
+    edges:
+    - to: start
+      steps:
+      - tool: Screwing
+        doAfter: 2.0
+      completed:
+      - !type:SpawnPrototype
+        prototype: MaterialWoodPlank1
+        amount: 1
+      - !type:DeleteEntity { }
+
+- type: constructionGraph
+  id: FloorTorch
+  start: start
+  graph:
+  - node: start
+    edges:
+    - to: FloorTorch
+      steps:
+      - material: WoodPlank
+        amount: 1
+        doAfter: 2.0
+  - node: FloorTorch
+    entity: FloorTorch
+    edges:
+    - to: start
+      steps:
+      - tool: Screwing
+        doAfter: 2.0
+      completed:
+      - !type:SpawnPrototype
+        prototype: MaterialWoodPlank1
+        amount: 1
+      - !type:DeleteEntity { }

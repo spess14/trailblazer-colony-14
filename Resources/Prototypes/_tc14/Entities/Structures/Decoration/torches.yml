@@ -76,7 +76,7 @@
   suffix: floor
   components:
     - type: Sprite
-      sprite: Structures/Decoration/torches.rsi
+      sprite: _tc14/Structures/Decoration/torches.rsi
       layers:
         - state: torch_unlit
           map: [ enum.ExpendableLightVisualLayers.Base ]
@@ -119,7 +119,7 @@
   suffix: wall
   components:
   - type: Sprite
-    sprite: Structures/Decoration/torches.rsi
+    sprite: _tc14/Structures/Decoration/torches.rsi
     layers:
       - state: wall_torch_unlit
         map: [ enum.ExpendableLightVisualLayers.Base ]

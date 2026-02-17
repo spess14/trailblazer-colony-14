@@ -1,0 +1,7 @@
+- type: lobbyBackground
+  id: Campfire
+  background: /Textures/_tc14/LobbyScreens/campfire.webp
+
+- type: lobbyBackground
+  id: Rimblazer
+  background: /Textures/_tc14/LobbyScreens/rimblazer.webp

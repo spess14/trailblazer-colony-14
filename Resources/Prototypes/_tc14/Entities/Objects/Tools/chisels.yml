@@ -17,7 +17,7 @@
     qualities:
     - Chiseling
     useSound:
-      path: /Audio/Items/chisel_use.ogg
+      path: /Audio/_tc14/Items/chisel_use.ogg
   - type: Construction
     graph: WoodenHandleTools
     node: chisel
