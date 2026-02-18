@@ -1,24 +1,22 @@
-<p align="center"> <img alt="Moff Station" height="400" src="https://raw.githubusercontent.com/moff-station/moff-station-14/021b361c1c512675ca61592108ec87093d1f28b0/Resources/Textures/_Moffstation/Logo/logo.png" /></p>
+<p align="center"> <img alt="Space Station 14" width="880" height="300" src="https://raw.githubusercontent.com/space-wizards/asset-dump/de329a7898bb716b9d5ba9a0cd07f38e61f1ed05/github-logo.svg" /></p>
 
-Moffstation is a fork of upstream Space Station 14 (Wizard's Den) with a focus on silly antics and custom content, all in an MRP environment.
+[![Build Status](https://ci.arson.gg/job/Trailblazer/lastBuild/badge/icon)](https://ci.arson.gg/job/Trailblazer/lastBuild/)
 
-This is not the official Space Station 14 repository.
+Trailblazer Colony 14 is a fork of Space Station 14 focused on setting up a colony on a remote planet.
 
-Space Station 14 is a remake of SS13 that runs on Robust Toolbox, a homegrown engine written in C#.
+Space Station 14 is a remake of SS13 that runs on [Robust Toolbox](https://github.com/space-wizards/RobustToolbox), a homegrown engine written in C#.
 
-## Upstream Links
+## Links
 
-[Website](https://spacestation14.com/) | [Discord](https://discord.ss14.io/) | [Forum](https://forum.spacestation14.com/) | [Mastodon](https://mastodon.gamedev.place/@spacestation14) | [Patreon](https://www.patreon.com/spacestation14) | [Steam](https://store.steampowered.com/app/1255460/Space_Station_14/) | [Standalone Download](https://spacestation14.com/about/nightlies/)
-
-</div>
+[Steam](https://store.steampowered.com/app/1255460/Space_Station_14/) | [Standalone Download](https://spacestation14.io/about/nightlies/)
 
 ## Documentation/Wiki
 
-Upstream's [docs site](https://docs.spacestation14.io/) has documentation on SS14s content, engine, game design and more.
+SS14 [docs site](https://docs.spacestation14.io/) has documentation on SS14s content, engine, game design and more.
 
 ## Contributing
 
-We are happy to accept contributions from anybody. Note that because Moffstation is a fork of upstream Space Station 14, we will not accept any contributions that do not follow both upstream's [contribution guidelines](https://docs.spacestation14.com/en/general-development/codebase-info/pull-request-guidelines.html) and our own [contribution guidelines](CONTRIBUTING.md).
+We are happy to accept contributions from anybody, just make sure your changes and pull requests are in accordance with the [contribution guidelines](https://docs.spacestation14.com/en/general-development/codebase-info/pull-request-guidelines.html).
 
 ## Building
 
@@ -30,7 +28,7 @@ We are happy to accept contributions from anybody. Note that because Moffstation
 
 ## License
 
-All code for the content repository is licensed under [MIT](https://github.com/moff-station/moff-station-14/blob/master/LICENSE.TXT) unless stated otherwise, following the conditions within [LICENSE.TXT](https://raw.githubusercontent.com/moff-station/moff-station-14/refs/heads/master/LICENSE.TXT).
+All code for the both SS14 and TC14 is licensed under [MIT](https://github.com/space-wizards/space-station-14/blob/master/LICENSE.TXT).
 
 Most assets are licensed under [CC-BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/) unless stated otherwise. Assets have their license and the copyright in the metadata file. [Example](https://github.com/space-wizards/space-station-14/blob/master/Resources/Textures/Objects/Tools/crowbar.rsi/meta.json).
 

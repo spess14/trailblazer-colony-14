@@ -1,27 +1,4 @@
 - type: gameMapPool
   id: DefaultMapPool
   maps:
-  - Bagel
-  - Box
-  - Fland
-  - Marathon
-  - Oasis
-  - Packed
-  - Plasma
-  - Reach
-  - Exo
-  - Snowball
-  # Moffstation - Start - Our Maps
-  - Amber
-  - Omega
-  - Meta
-  - Frezon
- # - Waterjug
-  - Prime
-  - Barratry
-  - Scylla
-  - Aspid
-  - Elkridge
-  - Wapiti
-  - Skeld
-  # Moffstation - End
+  - Planet # it's almost as if we're having a planetary fork here :godo:
