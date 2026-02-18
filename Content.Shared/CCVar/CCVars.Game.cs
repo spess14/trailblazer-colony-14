@@ -360,7 +360,7 @@ public sealed partial class CCVars
     ///     The prototype to use for secret weights.
     /// </summary>
     public static readonly CVarDef<string> SecretWeightPrototype =
-        CVarDef.Create("game.secret_weight_prototype", "Secret", CVar.SERVERONLY);
+        CVarDef.Create("game.secret_weight_prototype", "SecretUpstream", CVar.SERVERONLY);
 
     /// <summary>
     ///     The id of the sound collection to randomly choose a sound from and play when the round ends.

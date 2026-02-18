@@ -39,23 +39,23 @@ public sealed class MoffCCVars
     ///     Makes map votes roll over until the map in question gets selected
     /// </summary>
     public static readonly CVarDef<bool> MapVotesRollOver =
-        CVarDef.Create("votekick.map_votes_rollover", true, CVar.SERVERONLY);
+        CVarDef.Create("votekick.map_votes_rollover", false, CVar.SERVERONLY);
 
     /// <summary>
     ///     Automatically starts a new map vote at the end of each round
     /// </summary>
     public static readonly CVarDef<bool> AutoStartMapVote =
-        CVarDef.Create("votekick.auto_start_map_vote", true, CVar.SERVERONLY);
+        CVarDef.Create("votekick.auto_start_map_vote", false, CVar.SERVERONLY);
 
     /// <summary>
     ///     If false, prevents the previous played map from appearing in votes or being selected
     /// </summary>
     public static readonly CVarDef<bool> AllowDoublePickMap =
-        CVarDef.Create("votekick.allow_double_pick_map", false, CVar.SERVERONLY);
+        CVarDef.Create("votekick.allow_double_pick_map", true, CVar.SERVERONLY);
 
     /// <summary>
     ///     How many maps appear in the map vote
     /// </summary>
     public static readonly CVarDef<int> MapVoteCount =
-        CVarDef.Create("votekick.map_vote_count", 3, CVar.SERVERONLY);
+        CVarDef.Create("votekick.map_vote_count", 1, CVar.SERVERONLY);
 }
