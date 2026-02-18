@@ -1,0 +1,20 @@
+- type: entity
+  id: RRD
+  parent: BaseItem
+  name: RRD
+  description: The rapid roofing device can be used to quickly place and remove roofing.
+  components:
+  - type: RRD
+  - type: Sprite
+    sprite: _tc14/Objects/Tools/rrd.rsi
+    state: rrd
+  - type: Item
+    size: Normal
+  - type: Clothing
+    sprite: Objects/Tools/rcd.rsi
+    quickEquip: false
+    slots:
+    - Belt
+  - type: PhysicalComposition
+    materialComposition:
+      Steel: 600

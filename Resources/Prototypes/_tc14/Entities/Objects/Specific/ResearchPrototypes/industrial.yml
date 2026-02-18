@@ -1,0 +1,42 @@
+- type: entity
+  parent: [BaseItem, BaseResearchPrototypeItem]
+  id: ElectrodesPrototype
+  name: pair of electrodes
+  suffix: Research Proto
+  description: Maybe get some insuls before using them..?
+  components:
+  - type: Sprite
+    sprite: _tc14/Objects/Devices/electrodes_prototype.rsi
+    state: icon
+  - type: UseDelay
+    delay: 5.0
+  - type: TriggerOnUse
+  - type: ShockOnTrigger
+    damage: 5
+    duration: 3
+    targetUser: true
+  - type: AddResearchPointsOnTrigger
+    points:
+      DisciplineIndustrial: 20
+  - type: DamageOnTrigger
+    damage:
+      types:
+        Structural: 20
+  - type: RandomChanceTriggerCondition
+    successChance: 0.5
+  - type: EmitSoundOnTrigger
+    sound:
+      collection: sparks
+      params:
+        variation: 0.250
+  - type: Damageable
+    damageContainer: StructuralInorganic
+    damageModifierSet: Metallic
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 100
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]

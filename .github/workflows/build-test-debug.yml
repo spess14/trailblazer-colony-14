@@ -10,12 +10,8 @@ on:
 
 jobs:
   build:
-    if: github.actor != 'PJBot' && github.event.pull_request.draft == false
-    strategy:
-      matrix:
-        os: [ubuntu-latest]
-
-    runs-on: ${{ matrix.os }}
+    if: github.event.pull_request.draft == false
+    runs-on: ubuntu-latest
 
     steps:
     - name: Checkout Master

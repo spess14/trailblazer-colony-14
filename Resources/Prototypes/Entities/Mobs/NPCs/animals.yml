@@ -3810,7 +3810,7 @@
   - type: MeleeWeapon
     damage:
       types:
-        Piercing: 22
+        Piercing: 11 # TC14: reduce reindeer damage: halved
     animation: WeaponArcFist
   - type: NPCRetaliation
   - type: FactionException
@@ -3831,7 +3831,7 @@
   - type: MeleeWeapon
     damage:
       types:
-        Blunt: 15
+        Blunt: 8 # TC14: reduce reindeer damage: halved
     animation: WeaponArcFist
   - type: Sprite
     drawdepth: Mobs

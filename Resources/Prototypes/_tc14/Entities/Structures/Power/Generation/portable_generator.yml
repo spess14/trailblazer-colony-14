@@ -1,0 +1,61 @@
+- type: entity
+  name: C.P.A.C.M.A.N.-type portable generator
+  description: |-
+    A small generator capable of providing some power.
+    Runs off coal and is rated for up to 8 kW.
+    Rated ages 3 and up.
+  parent: PortableGeneratorBase
+  id: PortableGeneratorCPacman
+  suffix: Coal, 8 kW
+  components:
+  - type: Sprite
+    layers:
+    - state: portgen4
+      map: [ "enum.GeneratorVisualLayers.Body" ]
+    - state: portgen4on_unlit
+      map: [ "enum.GeneratorVisualLayers.Unlit" ]
+      shader: unshaded
+      visible: false
+  - type: GenericVisualizer
+    visuals:
+      enum.GeneratorVisuals.Running:
+        enum.GeneratorVisualLayers.Body:
+          True: { state: portgen4on }
+          False: { state: portgen4 }
+        enum.GeneratorVisualLayers.Unlit:
+          True: { visible: true }
+          False: { visible: false }
+  - type: Machine
+    board: PortableGeneratorCPacmanMachineCircuitboard
+  - type: FuelGenerator
+    targetPower: 5000
+    minTargetPower: 4000
+    optimalPower: 8000
+    maxTargetPower: 8000
+    optimalBurnRate: 0.05
+    fuelEfficiencyConstant: 0.3
+  - type: SolidFuelGeneratorAdapter
+    fuelMaterial: Coal
+    multiplier: 0.01
+  - type: MaterialStorage
+    storageLimit: 3000
+    materialWhiteList: [ Coal ]
+  - type: PortableGenerator
+    startChance: 0.8
+  - type: NodeContainer
+    examinable: true
+    nodes:
+      output:
+        !type:CableDeviceNode
+        nodeGroupID: Apc
+  - type: PowerMonitoringDevice
+    group: Generator
+    loadNode: output
+    sprite: Structures/Power/Generation/portable_generator.rsi
+    state: portgen4
+  - type: PowerSupplier
+    voltage: Apc
+    supplyRampTolerance: 2000
+  - type: GeneratorExhaustGas
+    gasType: CarbonDioxide
+    moleRatio: 4

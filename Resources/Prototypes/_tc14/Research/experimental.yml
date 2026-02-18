@@ -1,0 +1,12 @@
+# Not yet available - besides, we do not have vanilla R&D capabilities
+# - type: researchEntry
+#   id: ResearchRnd
+#   name: tc-research-rnd-name
+#   discipline: DisciplineExperimental
+#   iconPrototype: ComplexXenoArtifact
+#   gridLocation: 11,0
+#   unlockedRecipes:
+#   - NodeScanner
+#   - TechDiskComputerCircuitboard
+#   - AnalysisComputerCircuitboard
+#   - ArtifactAnalyzerMachineCircuitboard

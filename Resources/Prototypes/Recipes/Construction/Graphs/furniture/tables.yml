@@ -228,6 +228,12 @@
             - tool: Prying
               doAfter: 1
 
+        - to: Workbench
+          steps:
+          - material: Steel
+            amount: 2
+            doAfter: 1
+
         - to: TableCarpet
           steps:
             - material: Cloth
@@ -451,3 +457,6 @@
         steps:
         - tool: Anchoring
           doAfter: 1
+
+    - node: Workbench
+      entity: Workbench

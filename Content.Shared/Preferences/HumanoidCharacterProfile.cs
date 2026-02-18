@@ -1,6 +1,7 @@
 using System.IO;
 using System.Linq;
 using System.Text.RegularExpressions;
+using Content.Shared._tc14.Skills.Prototypes;
 using Content.Shared.CCVar;
 using Content.Shared.GameTicking;
 using Content.Shared.Humanoid;
@@ -63,6 +64,14 @@ namespace Content.Shared.Preferences
         /// </summary>
         [DataField]
         private HashSet<ProtoId<TraitPrototype>> _traitPreferences = new();
+
+        /// <summary>
+        /// TC14: player passions
+        /// </summary>
+        [DataField]
+        private Dictionary<ProtoId<SkillPrototype>, int> _passions = new();
+
+        public IReadOnlyDictionary<ProtoId<SkillPrototype>, int> Passions => _passions;
 
         /// <summary>
         /// <see cref="_loadouts"/>
@@ -138,6 +147,7 @@ namespace Content.Shared.Preferences
         public PlayerProvidedCharacterRecords? CDCharacterRecords;
         // Moffstation End
 
+        // TC14: add passions
         public HumanoidCharacterProfile(
             string name,
             string flavortext,
@@ -153,7 +163,8 @@ namespace Content.Shared.Preferences
             HashSet<ProtoId<AntagPrototype>> antagPreferences,
             HashSet<ProtoId<TraitPrototype>> traitPreferences,
             Dictionary<string, RoleLoadout> loadouts,
-            PlayerProvidedCharacterRecords? cdCharacterRecords) // Moffstation - CD Profile
+            PlayerProvidedCharacterRecords? cdCharacterRecords, // Moffstation - CD Profile
+            Dictionary<ProtoId<SkillPrototype>, int> passions)
         {
             Name = name;
             FlavorText = flavortext;
@@ -170,6 +181,7 @@ namespace Content.Shared.Preferences
             _traitPreferences = traitPreferences;
             _loadouts = loadouts;
             CDCharacterRecords = cdCharacterRecords; // Moffstation - CD Profile
+            _passions = passions;
 
             var hasHighPrority = false;
             foreach (var (key, value) in _jobPriorities)
@@ -186,6 +198,7 @@ namespace Content.Shared.Preferences
             }
         }
 
+        // TC14: add passions
         /// <summary>Copy constructor</summary>
         public HumanoidCharacterProfile(HumanoidCharacterProfile other)
             : this(other.Name,
@@ -202,7 +215,8 @@ namespace Content.Shared.Preferences
                 new HashSet<ProtoId<AntagPrototype>>(other.AntagPreferences),
                 new HashSet<ProtoId<TraitPrototype>>(other.TraitPreferences),
                 new Dictionary<string, RoleLoadout>(other.Loadouts),
-                other.CDCharacterRecords) // Moffstation - CD Profile
+                other.CDCharacterRecords, // Moffstation - CD Profile
+                new Dictionary<ProtoId<SkillPrototype>, int>(other.Passions))
         {
         }
 
@@ -291,6 +305,12 @@ namespace Content.Shared.Preferences
                 Height = height, // Moffstation - CD Height
                 Appearance = HumanoidCharacterAppearance.Random(species, sex),
             };
+        }
+
+        //TC14: add skills
+        public HumanoidCharacterProfile WithSkills(Dictionary<ProtoId<SkillPrototype>, int> passions)
+        {
+            return new(this) { _passions = passions };
         }
 
         public HumanoidCharacterProfile WithName(string name)
@@ -490,6 +510,15 @@ namespace Content.Shared.Preferences
         }
         // Moffstation End
 
+        // TC14: add passions
+        public HumanoidCharacterProfile WithPassions(Dictionary<ProtoId<SkillPrototype>, int> dict)
+        {
+            return new(this)
+            {
+                _passions = dict,
+            };
+        }
+
         public string Summary =>
             Loc.GetString(
                 "humanoid-character-profile-summary",
@@ -498,6 +527,7 @@ namespace Content.Shared.Preferences
                 ("age", Age)
             );
 
+        // TC14: add passions
         public bool MemberwiseEquals(HumanoidCharacterProfile other)
         {
             if (Name != other.Name) return false;
@@ -517,9 +547,11 @@ namespace Content.Shared.Preferences
             if (CDCharacterRecords != null && other.CDCharacterRecords != null &&
                 !CDCharacterRecords.MemberwiseEquals(other.CDCharacterRecords)) return false;
             // Moffstation End
+            if (!Passions.SequenceEqual(other.Passions)) return false;
             return Appearance.Equals(other.Appearance);
         }
 
+        // TC14: add passions
         public void EnsureValid(ICommonSession session, IDependencyCollection collection)
         {
             var configManager = collection.Resolve<IConfigurationManager>();
@@ -636,6 +668,19 @@ namespace Content.Shared.Preferences
                 if (hasHighPrio)
                     priorities[key] = JobPriority.Medium;
                 hasHighPrio = true;
+            }
+
+            // TC14: validate passions
+            // TODO unhardcode the passion limit of 5 - there is a cvar for it
+            var passionSum = 0;
+            foreach (var pair in Passions)
+            {
+                if (passionSum + pair.Value > 5)
+                {
+                    _passions[pair.Key] = 5 - passionSum;
+                }
+
+                passionSum += _passions[pair.Key];
             }
 
             var antags = AntagPreferences
@@ -770,6 +815,7 @@ namespace Content.Shared.Preferences
             return obj is HumanoidCharacterProfile other && Equals(other);
         }
 
+        // TC14: add passions
         public override int GetHashCode()
         {
             var hashCode = new HashCode();
@@ -786,6 +832,7 @@ namespace Content.Shared.Preferences
             hashCode.Add(Appearance);
             hashCode.Add((int)SpawnPriority);
             hashCode.Add((int)PreferenceUnavailable);
+            hashCode.Add(Passions);
             return hashCode.ToHashCode();
         }
 

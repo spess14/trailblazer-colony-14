@@ -1,0 +1,56 @@
+- type: entity
+  id: Smeltery
+  parent: BaseMachine
+  name: smeltery
+  description: Ore goes in, ingots come out.
+  components:
+  - type: Appearance
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.4,-0.4,0.4,0.4"
+        density: 190
+        mask:
+        - MachineMask
+        layer:
+        - MachineLayer
+  - type: Sprite
+    sprite: _tc14/Structures/Machines/smeltery.rsi
+    layers:
+    - state: icon
+      map: [ "enum.LatheVisualLayers.IsRunning" ]
+  - type: Lathe
+    idleState: icon
+    runningState: working
+    timeMultiplier: 0.5 #some recipes use it, some don't for some reason
+    materialUseMultiplier: 2.0 #this is a furnace, of course it sucks
+    defaultProductionAmount: 10
+    staticPacks:
+    - OreSmelting
+  - type: MaterialStorage
+    ignoreColor: true
+    whitelist:
+      tags:
+      - Ore
+  - type: Construction
+    graph: Smeltery
+    node: smeltery
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 100
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: ActivatableUI
+    key: enum.LatheUiKey.Key
+  - type: UserInterface
+    interfaces:
+      enum.LatheUiKey.Key:
+        type: LatheBoundUserInterface
+  - type: Transform
+    anchored: true
+  - type: Pullable

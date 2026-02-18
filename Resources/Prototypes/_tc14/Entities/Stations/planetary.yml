@@ -1,0 +1,13 @@
+- type: entity
+  id: PlanetaryColony
+  parent:
+  - BaseStation
+  - BaseStationNews
+  - BaseStationJobsSpawning
+  - BaseStationGateway
+  - BaseStationAlertLevels
+  - BaseStationAllEventsEligible
+  - BaseStationNanotrasen
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Transform

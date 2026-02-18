@@ -1,0 +1,13 @@
+- type: entity
+  parent: MarkerBase
+  id: SpawnMobScurret
+  name: Scurret Spawner
+  components:
+  - type: Sprite
+    layers:
+    - state: green
+    - state: scurret
+      sprite: Mobs/Animals/scurret/scurret.rsi
+  - type: ConditionalSpawner
+    prototypes:
+    - MobEmotionalSupportScurret

@@ -1,0 +1,49 @@
+# SPDX-FileCopyrightText: 2024 BombasterDS <115770678+BombasterDS@users.noreply.github.com>
+# SPDX-License-Identifier: MIT
+# TC14: We have received permission to use this code under the MIT license from bombasterDS. The code has been cherry-picked to only contain the parts we have permission to use.
+
+- type: startingGear
+  id: HelldiverGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitHelldiver
+    belt: WeaponPistolHelldiver
+    ears: ClothingHeadsetHelldiver
+    gloves: ClothingHandsGlovesHelldiver
+    neck: ClothingNeckCloakHelldiver
+    mask: ClothingMaskNeckGaiter
+    eyes: ClothingEyesGlassesSunglasses
+    head: ClothingHeadHelmetHelldiver
+    outerClothing: ClothingOuterArmorHelldiver
+    shoes: ClothingBootsHelldiver
+    id: HelldiverPDA
+    pocket1: ToolDebug
+    pocket2: DeathAcidifierImplanter
+    suitstorage: WeaponRifleHelldiver
+    back: ClothingBeltHelldiverWebbingFilled
+
+- type: entity
+  parent: ClothingBeltHelldiverWebbing
+  id: ClothingBeltHelldiverWebbingFilled
+  suffix: Filled
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:NestedSelector
+        tableId: HelldiverBeltFillTable
+
+- type: entityTable
+  id: HelldiverBeltFillTable
+  table: !type:AllSelector
+    children:
+    - id: MagazineRifleHelldiver
+      amount: !type:ConstantNumberSelector
+        value: 8
+    - id: MagazinePistolHelldiver
+      amount: !type:ConstantNumberSelector
+        value: 8
+    - id: HelldiverGrenade
+      amount: !type:ConstantNumberSelector
+        value: 4
+    - id: HelldiverStim
+      amount: !type:ConstantNumberSelector
+        value: 4

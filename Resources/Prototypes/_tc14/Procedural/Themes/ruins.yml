@@ -1,0 +1,261 @@
+- type: dungeonRoom
+  id: RuinBuilding_a
+  size: 7,7
+  atlas: /Maps/_tc14/ruins.yml
+  offset: 0,0
+  ignoreTile: FloorShuttleOrange
+  tags:
+  - PlanetRuin
+
+- type: dungeonRoom
+  id: RuinBuilding_b
+  size: 7,7
+  atlas: /Maps/_tc14/ruins.yml
+  offset: 8,0
+  ignoreTile: FloorShuttleOrange
+  tags:
+  - PlanetRuin
+
+- type: dungeonRoom
+  id: RuinBuilding_c
+  size: 7,7
+  atlas: /Maps/_tc14/ruins.yml
+  offset: 16,0
+  ignoreTile: FloorShuttleOrange
+  tags:
+  - PlanetRuin
+
+- type: dungeonRoom
+  id: RuinBuilding_d
+  size: 7,7
+  atlas: /Maps/_tc14/ruins.yml
+  offset: 24,0
+  ignoreTile: FloorShuttleOrange
+  tags:
+  - PlanetRuin
+
+- type: dungeonRoom
+  id: RuinBar_a
+  size: 7,7
+  atlas: /Maps/_tc14/ruins.yml
+  offset: 0,8
+  ignoreTile: FloorShuttleOrange
+  tags:
+  - PlanetRuin
+
+- type: dungeonRoom
+  id: RuinBar_b
+  size: 7,7
+  atlas: /Maps/_tc14/ruins.yml
+  offset: 8,8
+  ignoreTile: FloorShuttleOrange
+  tags:
+  - PlanetRuin
+
+- type: dungeonRoom
+  id: RuinBar_c
+  size: 7,7
+  atlas: /Maps/_tc14/ruins.yml
+  offset: 16,8
+  ignoreTile: FloorShuttleOrange
+  tags:
+  - PlanetRuin
+
+- type: dungeonRoom
+  id: RuinBar_d
+  size: 7,7
+  atlas: /Maps/_tc14/ruins.yml
+  offset: 24,8
+  ignoreTile: FloorShuttleOrange
+  tags:
+  - PlanetRuin
+
+- type: dungeonRoom
+  id: RuinKitchen_a
+  size: 7,7
+  atlas: /Maps/_tc14/ruins.yml
+  offset: 0,16
+  ignoreTile: FloorShuttleOrange
+  tags:
+  - PlanetRuin
+
+- type: dungeonRoom
+  id: RuinKitchen_b
+  size: 7,7
+  atlas: /Maps/_tc14/ruins.yml
+  offset: 8,16
+  ignoreTile: FloorShuttleOrange
+  tags:
+  - PlanetRuin
+
+- type: dungeonRoom
+  id: RuinKitchen_c
+  size: 7,7
+  atlas: /Maps/_tc14/ruins.yml
+  offset: 16,16
+  ignoreTile: FloorShuttleOrange
+  tags:
+  - PlanetRuin
+
+- type: dungeonRoom
+  id: RuinKitchen_d
+  size: 7,7
+  atlas: /Maps/_tc14/ruins.yml
+  offset: 24,16
+  ignoreTile: FloorShuttleOrange
+  tags:
+  - PlanetRuin
+
+- type: dungeonRoom
+  id: RuinToilet_a
+  size: 7,7
+  atlas: /Maps/_tc14/ruins.yml
+  offset: 0,24
+  ignoreTile: FloorShuttleOrange
+  tags:
+  - PlanetRuin
+
+- type: dungeonRoom
+  id: RuinToilet_b
+  size: 7,7
+  atlas: /Maps/_tc14/ruins.yml
+  offset: 8,24
+  ignoreTile: FloorShuttleOrange
+  tags:
+  - PlanetRuin
+
+- type: dungeonRoom
+  id: RuinToilet_c
+  size: 7,7
+  atlas: /Maps/_tc14/ruins.yml
+  offset: 16,24
+  ignoreTile: FloorShuttleOrange
+  tags:
+  - PlanetRuin
+
+- type: dungeonRoom
+  id: RuinToilet_d
+  size: 7,7
+  atlas: /Maps/_tc14/ruins.yml
+  offset: 24,24
+  ignoreTile: FloorShuttleOrange
+  tags:
+  - PlanetRuin
+
+- type: dungeonRoom
+  id: RuinTheater_a
+  size: 7,7
+  atlas: /Maps/_tc14/ruins.yml
+  offset: 0,32
+  ignoreTile: FloorShuttleOrange
+  tags:
+  - PlanetRuin
+
+- type: dungeonRoom
+  id: RuinTheater_b
+  size: 7,7
+  atlas: /Maps/_tc14/ruins.yml
+  offset: 8,32
+  ignoreTile: FloorShuttleOrange
+  tags:
+  - PlanetRuin
+
+- type: dungeonRoom
+  id: RuinTheater_c
+  size: 7,7
+  atlas: /Maps/_tc14/ruins.yml
+  offset: 16,32
+  ignoreTile: FloorShuttleOrange
+  tags:
+  - PlanetRuin
+
+- type: dungeonRoom
+  id: RuinTheater_d
+  size: 7,7
+  atlas: /Maps/_tc14/ruins.yml
+  offset: 24,32
+  ignoreTile: FloorShuttleOrange
+  tags:
+  - PlanetRuin
+
+- type: dungeonRoom
+  id: RuinArmory_a
+  size: 7,7
+  atlas: /Maps/_tc14/ruins.yml
+  offset: 0,40
+  ignoreTile: FloorShuttleOrange
+  tags:
+  - PlanetRuin
+
+- type: dungeonRoom
+  id: RuinArmory_b
+  size: 7,7
+  atlas: /Maps/_tc14/ruins.yml
+  offset: 8,40
+  ignoreTile: FloorShuttleOrange
+  tags:
+  - PlanetRuin
+
+- type: dungeonRoom
+  id: RuinArmory_c
+  size: 7,7
+  atlas: /Maps/_tc14/ruins.yml
+  offset: 16,40
+  ignoreTile: FloorShuttleOrange
+  tags:
+  - PlanetRuin
+
+- type: dungeonRoom
+  id: RuinArmory_d
+  size: 7,7
+  atlas: /Maps/_tc14/ruins.yml
+  offset: 24,40
+  ignoreTile: FloorShuttleOrange
+  tags:
+  - PlanetRuin
+
+- type: dungeonRoom
+  id: RuinMedical_a
+  size: 7,7
+  atlas: /Maps/_tc14/ruins.yml
+  offset: 0,48
+  ignoreTile: FloorShuttleOrange
+  tags:
+  - PlanetRuin
+
+- type: dungeonRoom
+  id: RuinMedical_b
+  size: 7,7
+  atlas: /Maps/_tc14/ruins.yml
+  offset: 8,48
+  ignoreTile: FloorShuttleOrange
+  tags:
+  - PlanetRuin
+
+- type: dungeonRoom
+  id: RuinMedical_c
+  size: 7,7
+  atlas: /Maps/_tc14/ruins.yml
+  offset: 16,48
+  ignoreTile: FloorShuttleOrange
+  tags:
+  - PlanetRuin
+
+- type: dungeonRoom
+  id: RuinMedical_d
+  size: 7,7
+  atlas: /Maps/_tc14/ruins.yml
+  offset: 24,48
+  ignoreTile: FloorShuttleOrange
+  tags:
+  - PlanetRuin
+
+- type: entity
+  id: RuinsRoomMarker
+  parent: BaseRoomMarker
+  name: Ruins marker
+  components:
+  - type: RoomFill
+    roomWhitelist:
+      tags:
+      - PlanetRuin

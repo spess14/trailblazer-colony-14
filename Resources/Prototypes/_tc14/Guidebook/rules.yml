@@ -1,0 +1,132 @@
+- type: guideEntry
+  id: TCRuleset
+  name: guide-entry-rules
+  ruleEntry: true
+  priority: -5
+  text: "/ServerInfo/_tc14/ServerRules/TCRules.xml"
+  children:
+  - 0-0
+  - 0-1
+  - 0-2
+  - 0-3
+  - 0-4
+  - 0-5
+  - 0-6
+  - 0-7
+  - 0-8
+  - 0-9
+  - 0-10
+
+- type: guideEntry
+  id: 0-0
+  name: guide-entry-rules-0-0
+  ruleEntry: true
+  text: "/ServerInfo/_tc14/ServerRules/CoreRules/0-0.xml"
+
+- type: guideEntry
+  id: 0-1
+  name: guide-entry-rules-0-1
+  ruleEntry: true
+  text: "/ServerInfo/_tc14/ServerRules/CoreRules/0-1.xml"
+
+- type: guideEntry
+  id: 0-2
+  name: guide-entry-rules-0-2
+  ruleEntry: true
+  text: "/ServerInfo/_tc14/ServerRules/CoreRules/0-2.xml"
+
+- type: guideEntry
+  id: 0-3
+  name: guide-entry-rules-0-3
+  ruleEntry: true
+  text: "/ServerInfo/_tc14/ServerRules/CoreRules/0-3.xml"
+
+- type: guideEntry
+  id: 0-4
+  name: guide-entry-rules-0-4
+  ruleEntry: true
+  text: "/ServerInfo/_tc14/ServerRules/CoreRules/0-4.xml"
+
+- type: guideEntry
+  id: 0-5
+  name: guide-entry-rules-0-5
+  ruleEntry: true
+  text: "/ServerInfo/_tc14/ServerRules/CoreRules/0-5.xml"
+
+- type: guideEntry
+  id: 0-6
+  name: guide-entry-rules-0-6
+  ruleEntry: true
+  text: "/ServerInfo/_tc14/ServerRules/CoreRules/0-6.xml"
+
+- type: guideEntry
+  id: 0-7
+  name: guide-entry-rules-0-7
+  ruleEntry: true
+  text: "/ServerInfo/_tc14/ServerRules/CoreRules/0-7.xml"
+
+- type: guideEntry
+  id: 0-8
+  name: guide-entry-rules-0-8
+  ruleEntry: true
+  text: "/ServerInfo/_tc14/ServerRules/CoreRules/0-8.xml"
+
+- type: guideEntry
+  id: 0-9
+  name: guide-entry-rules-0-9
+  ruleEntry: true
+  text: "/ServerInfo/_tc14/ServerRules/CoreRules/0-9.xml"
+
+- type: guideEntry
+  id: 0-10
+  name: guide-entry-rules-0-10
+  ruleEntry: true
+  text: "/ServerInfo/_tc14/ServerRules/CoreRules/0-10.xml"
+
+- type: guideEntry
+  id: 1-0
+  name: guide-entry-rules-1-0
+  ruleEntry: true
+  text: "/ServerInfo/_tc14/ServerRules/RoleplayRules/1-0.xml"
+
+- type: guideEntry
+  id: 1-1
+  name: guide-entry-rules-1-1
+  ruleEntry: true
+  text: "/ServerInfo/_tc14/ServerRules/RoleplayRules/1-1.xml"
+
+- type: guideEntry
+  id: 1-2
+  name: guide-entry-rules-1-2
+  ruleEntry: true
+  text: "/ServerInfo/_tc14/ServerRules/RoleplayRules/1-2.xml"
+
+- type: guideEntry
+  id: 1-3
+  name: guide-entry-rules-1-3
+  ruleEntry: true
+  text: "/ServerInfo/_tc14/ServerRules/RoleplayRules/1-3.xml"
+
+- type: guideEntry
+  id: 1-4
+  name: guide-entry-rules-1-4
+  ruleEntry: true
+  text: "/ServerInfo/_tc14/ServerRules/RoleplayRules/1-4.xml"
+
+- type: guideEntry
+  id: 1-5
+  name: guide-entry-rules-1-5
+  ruleEntry: true
+  text: "/ServerInfo/_tc14/ServerRules/RoleplayRules/1-5.xml"
+
+- type: guideEntry
+  id: 1-6
+  name: guide-entry-rules-1-6
+  ruleEntry: true
+  text: "/ServerInfo/_tc14/ServerRules/RoleplayRules/1-6.xml"
+
+- type: guideEntry
+  id: 1-7
+  name: guide-entry-rules-1-7
+  ruleEntry: true
+  text: "/ServerInfo/_tc14/ServerRules/RoleplayRules/1-7.xml"

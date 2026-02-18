@@ -1,0 +1,25 @@
+{
+  "version": 1,
+  "license": "CC-BY-NC-SA-4.0",
+  "copyright": "Flaking rock by Killerqu00, rock recolored from uranium ore by Killerqu00",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+        "name": "rock"
+    },
+    {
+        "name": "flakingrock"
+    },
+    {
+        "name": "rock-inhand-right",
+        "directions": 4
+    },
+    {
+        "name": "rock-inhand-left",
+        "directions": 4
+    }
+  ]
+}

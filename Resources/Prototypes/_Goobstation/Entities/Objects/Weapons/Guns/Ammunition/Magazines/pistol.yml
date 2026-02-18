@@ -1,0 +1,45 @@
+- type: entity
+  id: BulletPistolHelldiver
+  name: bullet (9x20mm HP)
+  parent: BaseBullet
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Projectile
+    damage:
+      types:
+        Piercing: 5
+        Blunt: 10
+
+- type: entity
+  id: CartridgePistolHelldiver
+  name: cartridge (9x20mm HP)
+  parent: BaseCartridgePistol
+  components:
+  - type: CartridgeAmmo
+    proto: BulletPistolHelldiver
+
+- type: entity
+  id: MagazinePistolHelldiver
+  name: pistol magazine (9x20mm HP)
+  parent: BaseMagazinePistol
+  components:
+  - type: BallisticAmmoProvider
+    proto: CartridgePistolHelldiver
+    capacity: 15
+  - type: Sprite
+    sprite: _tc14/Objects/Weapons/Ammunition/Magazine/pistol.rsi
+    layers:
+    - state: base
+      map: [ "enum.GunVisualLayers.Base" ]
+    - state: mag-1
+      map: [ "enum.GunVisualLayers.Mag" ]
+  - type: Item
+    size: Tiny
+    inhandVisuals:
+      left:
+      - state: inhand-left-mag
+      right:
+      - state: inhand-right-mag
+  - type: Tag
+    tags:
+    - MagazinePistolHelldiver

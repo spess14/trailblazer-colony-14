@@ -1,0 +1,27 @@
+- type: entity
+  name: random overworld misc spawner
+  id: OverworldMiscSpawner
+  parent: MarkerBase
+  components:
+  - type: Sprite
+    layers:
+    - sprite: Objects/Tools/rock.rsi
+      state: "rock"
+  - type: EntityTableSpawner
+    table: !type:AllSelector
+      children:
+      - !type:GroupSelector
+        children:
+        - id: RockItem
+        - id: BushForage
+      - !type:GroupSelector
+        prob: 0.05
+        children:
+        - id: SpawnMobCow
+        - id: SpawnMobCatGeneric
+        - id: SpawnMobGoat
+        - id: SpawnMobMonkey
+        - id: SpawnMobMouse
+        - id: SpawnMobScurret
+        - id: SpawnMobReindeerBuck
+        - id: SpawnMobReindeerDoe

@@ -24,6 +24,10 @@
   - type: Damageable
     damageContainer: Inorganic
     damageModifierSet: Metallic
+  # TC14: we have our own recipe for soil
+  - type: Construction
+    graph: PlanetSoil
+    node: soil
   - type: Destructible
     thresholds:
     - trigger:
@@ -64,9 +68,9 @@
   name: fungal soil
   description: A mix of organic matter and fungal root creating a soil to grow your plant in space. Seems to be dry.
   components:
-  - type: Construction
-    graph: Soil
-    node: fungalSoil
+  # - type: Construction
+  #   graph: Soil
+  #   node: fungalSoil
   - type: Sprite
     sprite: Structures/Hydroponics/misc.rsi
     state: fungal_soil

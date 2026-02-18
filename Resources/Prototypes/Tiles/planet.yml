@@ -110,6 +110,11 @@
     West: /Textures/Tiles/Planet/Snow/snow_double_edge_west.png
   footstepSounds:
     collection: FootstepSnow
+  heatCapacity: 10000
+  weather: true
+  indestructible: true
+  # TC14: snow can be chiseled
+  isChiselable: true
 
 # Ice
 - type: tile

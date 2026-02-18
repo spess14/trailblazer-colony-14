@@ -1,0 +1,22 @@
+- type: entity
+  name: cura auto-injector
+  parent: [ ChemicalMedipen, BaseSyndicateContraband ]
+  id: HelldiverStim
+  description: A single-use Cura auto-injector manufactured by Permacura Biopharma. Non-addictive.
+  components:
+  - type: Sprite
+    sprite: _tc14/Objects/Specific/Medical/stim.rsi
+    layers:
+    - state: stimpen
+      map: [ "enum.SolutionContainerLayers.Fill" ]
+  - type: SolutionContainerVisuals
+    maxFillLevels: 1
+    changeColor: false
+    emptySpriteName: stimpen_empty
+  - type: SolutionContainerManager
+    solutions:
+      pen:
+        maxVol: 5
+        reagents:
+        - ReagentId: Cura
+          Quantity: 5

@@ -152,8 +152,12 @@ namespace Content.IntegrationTests.Tests
             "Aspid",
             "Elkridge",
             "Wapiti",
-            "Skeld"
+            "Skeld",
             // Moffstation - End
+            // TC14 - Begin - Planetmaps
+            "Planet",
+            "WinterPlanet",
+            // TC14 - End
         };
 
         private static readonly ProtoId<EntityCategoryPrototype> DoNotMapCategory = "DoNotMap";

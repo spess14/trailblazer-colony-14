@@ -1,0 +1,39 @@
+- type: construction
+  id: chisel
+  graph: WoodenHandleTools
+  startNode: start
+  targetNode: chisel
+  category: construction-category-tools
+  objectType: Item
+
+- type: construction
+  id: handle
+  graph: WoodenHandleTools
+  startNode: start
+  targetNode: handle
+  category: construction-category-materials
+  objectType: Item
+
+- type: construction
+  id: longhandle
+  graph: WoodenHandleTools
+  startNode: start
+  targetNode: longhandle
+  category: construction-category-materials
+  objectType: Item
+
+- type: construction
+  id: pickaxe
+  graph: WoodenHandleTools
+  startNode: start
+  targetNode: pickaxe
+  category: construction-category-tools
+  objectType: Item
+
+- type: construction
+  id: shovel
+  graph: WoodenHandleTools
+  startNode: start
+  targetNode: shovel
+  category: construction-category-tools
+  objectType: Item

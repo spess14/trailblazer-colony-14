@@ -1,0 +1,24 @@
+# I have to add "TC" to each ID, because ignoredPrototypes.yml does not ignore the prototypes for some reason?
+
+- type: guideEntry
+  id: TC14
+  name: guide-entry-tc14
+  priority: -20
+  text: "/ServerInfo/_tc14/TrailblazerColony14.xml"
+
+- type: guideEntry
+  id: TCChemicals
+  name: guide-entry-chemicals
+  text: "/ServerInfo/_tc14/Chemicals.xml"
+  children:
+  - Elements
+  - Medicine
+  - Narcotics
+  - Pyrotechnic
+  - Toxins
+  - Foods
+  - Botanical
+  - Biological
+  - Special
+  - Others
+  filterEnabled: True

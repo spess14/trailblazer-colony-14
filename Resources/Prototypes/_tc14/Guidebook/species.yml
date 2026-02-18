@@ -1,0 +1,59 @@
+- type: guideEntry
+  id: TCSpecies
+  name: guide-entry-species
+  text: "/ServerInfo/_tc14/Mobs/Species.xml"
+  children:
+    - TCArachnid
+    - TCDiona
+    - TCDwarf
+    - TCHuman
+    - TCMoth
+    - TCReptilian
+    - TCSlimePerson
+    - TCVox
+    - TCVulpkanin
+
+- type: guideEntry
+  id: TCArachnid
+  name: species-name-arachnid
+  text: "/ServerInfo/_tc14/Mobs/Arachnid.xml"
+
+- type: guideEntry
+  id: TCDiona
+  name: species-name-diona
+  text: "/ServerInfo/_tc14/Mobs/Diona.xml"
+
+- type: guideEntry
+  id: TCDwarf
+  name: species-name-dwarf
+  text: "/ServerInfo/_tc14/Mobs/Dwarf.xml"
+
+- type: guideEntry
+  id: TCHuman
+  name: species-name-human
+  text: "/ServerInfo/_tc14/Mobs/Human.xml"
+
+- type: guideEntry
+  id: TCMoth
+  name: species-name-moth
+  text: "/ServerInfo/_tc14/Mobs/Moth.xml"
+
+- type: guideEntry
+  id: TCReptilian
+  name: species-name-reptilian
+  text: "/ServerInfo/_tc14/Mobs/Reptilian.xml"
+
+- type: guideEntry
+  id: TCSlimePerson
+  name: species-name-slime
+  text: "/ServerInfo/_tc14/Mobs/SlimePerson.xml"
+
+- type: guideEntry
+  id: TCVox
+  name: species-name-vox
+  text: "/ServerInfo/_tc14/Mobs/Vox.xml"
+
+- type: guideEntry
+  id: TCVulpkanin
+  name: species-name-vulpkanin
+  text: "/ServerInfo/_tc14/Mobs/Vulpkanin.xml"

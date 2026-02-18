@@ -1,0 +1,13 @@
+- type: entity
+  parent: [ EncryptionKey ]
+  id: EncryptionKeyHelldiver
+  name: helldiver encryption key
+  description: An encryption key used by Super Earth's elite forces.
+  components:
+  - type: Sprite
+    layers:
+    - state: crypt_red
+  - type: EncryptionKey
+    channels:
+    - Helldiver
+    defaultChannel: Helldiver

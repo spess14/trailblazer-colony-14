@@ -1,3 +1,4 @@
+using Content.Shared._tc14.Input;
 using Content.Shared.Input;
 using Robust.Shared.Input;
 
@@ -131,6 +132,9 @@ namespace Content.Client.Input
             common.AddFunction(ContentKeyFunctions.OpenDecalSpawnWindow);
             common.AddFunction(ContentKeyFunctions.OpenAdminMenu);
             common.AddFunction(ContentKeyFunctions.OpenGuidebook);
+
+            // TC14 inputs
+            common.AddFunction(ForkKeyFunctions.ToggleRoofOverlay);
         }
     }
 }

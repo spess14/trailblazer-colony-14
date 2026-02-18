@@ -1,0 +1,209 @@
+- type: marking
+  id: ZetaHairLongSpikehair
+  bodyPart: Hair
+  sprites:
+  - sprite: _n14/Mobs/Customization/hair.rsi
+    state: long_spikehair
+
+- type: marking
+  id: ZetaHairNerfish
+  bodyPart: Hair
+  sprites:
+  - sprite: _n14/Mobs/Customization/hair.rsi
+    state: nerfish
+
+- type: marking
+  id: ZetaHairPlantpoofs
+  bodyPart: Hair
+  sprites:
+  - sprite: _n14/Mobs/Customization/hair.rsi
+    state: plantish_poofs
+
+- type: marking
+  id: ZetaHairRattyRoyalty
+  bodyPart: Hair
+  sprites:
+  - sprite: _n14/Mobs/Customization/hair.rsi
+    state: ratty_royalty
+
+- type: marking
+  id: ZetaHairShortMessy
+  bodyPart: Hair
+  sprites:
+  - sprite: _n14/Mobs/Customization/hair.rsi
+    state: short_and_messy
+
+- type: marking
+  id: ZetaHairShortSpikehair
+  bodyPart: Hair
+  sprites:
+  - sprite: _n14/Mobs/Customization/hair.rsi
+    state: short_spikehair
+
+- type: marking
+  id: ZetaHairSpikehawk
+  bodyPart: Hair
+  sprites:
+  - sprite: _n14/Mobs/Customization/hair.rsi
+    state: spikehawk
+
+- type: marking
+  id: ZetaHairPolitical
+  bodyPart: Hair
+  sprites:
+  - sprite: _n14/Mobs/Customization/hair.rsi
+    state: the_political
+
+- type: marking
+  id: ZetaHairZetaBasicBraids
+  bodyPart: Hair
+  sprites:
+  - sprite: _n14/Mobs/Customization/hair.rsi
+    state: zeta_basic_braids
+
+- type: marking
+  id: ZetaHairQuadspike
+  bodyPart: Hair
+  sprites:
+  - sprite: _n14/Mobs/Customization/hair.rsi
+    state: quadspike
+
+- type: marking
+  id: ZetaHairJohnny
+  bodyPart: Hair
+  sprites:
+    - sprite: _n14/Mobs/Customization/hair.rsi
+      state: the_johnny
+
+- type: marking
+  id: ZetaHairMattedSpikes
+  bodyPart: Hair
+  sprites:
+    - sprite: _n14/Mobs/Customization/hair.rsi
+      state: matted_spikes
+
+- type: marking
+  id: ZetaHairManageableMess
+  bodyPart: Hair
+  sprites:
+    - sprite: _n14/Mobs/Customization/hair.rsi
+      state: manageable_mess
+
+- type: marking
+  id: ZetaHairPoofed
+  bodyPart: Hair
+  sprites:
+    - sprite: _n14/Mobs/Customization/hair.rsi
+      state: poofed
+
+- type: marking
+  id: ZetaHairOverShoulderBraids
+  bodyPart: Hair
+  sprites:
+    - sprite: _n14/Mobs/Customization/hair.rsi
+      state: over_shoulder_braids
+
+- type: marking
+  id: ZetaHairMonk
+  bodyPart: Hair
+  sprites:
+    - sprite: _n14/Mobs/Customization/hair.rsi
+      state: monk
+
+- type: marking
+  id: ZetaHairMiniMattedSpikes
+  bodyPart: Hair
+  sprites:
+    - sprite: _n14/Mobs/Customization/hair.rsi
+      state: mini_matted_spikes
+
+- type: marking
+  id: ZetaHairNaturalMessShort
+  bodyPart: Hair
+  sprites:
+    - sprite: _n14/Mobs/Customization/hair.rsi
+      state: natural_mess_short
+
+- type: marking
+  id: ZetaHairNaturalMessLong
+  bodyPart: Hair
+  sprites:
+    - sprite: _n14/Mobs/Customization/hair.rsi
+      state: natural_mess_long
+
+- type: marking
+  id: ZetaHairFrontSpikes
+  bodyPart: Hair
+  sprites:
+    - sprite: _n14/Mobs/Customization/hair.rsi
+      state: front_spikes
+
+- type: marking
+  id: ZetaHairMessyPonytail
+  bodyPart: Hair
+  sprites:
+    - sprite: _n14/Mobs/Customization/hair.rsi
+      state: messy_ponytail
+
+- type: marking
+  id: ZetaHairFaded
+  bodyPart: Hair
+  sprites:
+    - sprite: _n14/Mobs/Customization/hair.rsi
+      state: faded
+
+- type: marking
+  id: ZetaHairHalfsies
+  bodyPart: Hair
+  sprites:
+    - sprite: _n14/Mobs/Customization/hair.rsi
+      state: halfsies
+
+- type: marking
+  id: ZetaHairPorcupine
+  bodyPart: Hair
+  sprites:
+    - sprite: _n14/Mobs/Customization/hair.rsi
+      state: porcupine
+
+- type: marking
+  id: ZetaHairHalfShavedBraids
+  bodyPart: Hair
+  sprites:
+    - sprite: _n14/Mobs/Customization/hair.rsi
+      state: half_shaved_braids
+
+- type: marking
+  id: ZetaHairLoneTail
+  bodyPart: Hair
+  sprites:
+    - sprite: _n14/Mobs/Customization/hair.rsi
+      state: lone_tail
+
+- type: marking
+  id: ZetaHairRadical
+  bodyPart: Hair
+  sprites:
+    - sprite: _n14/Mobs/Customization/hair.rsi
+      state: radical
+
+- type: marking
+  id: ZetaHairTunnelSnake
+  bodyPart: Hair
+  sprites:
+    - sprite: _n14/Mobs/Customization/hair.rsi
+      state: tunnel_snake
+
+- type: marking
+  id: ZetaHairOverTheShoulder
+  bodyPart: Hair
+  sprites:
+    - sprite: _n14/Mobs/Customization/hair.rsi
+      state: over_the_shoulder
+
+- type: marking
+  id: ZetaHairStandardAsymmetry
+  bodyPart: Hair
+  sprites:
+    - sprite: _n14/Mobs/Customization/hair.rsi
+      state: standard_asymmetry

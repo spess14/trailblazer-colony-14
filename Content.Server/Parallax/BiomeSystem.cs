@@ -1016,6 +1016,11 @@ public sealed partial class BiomeSystem : SharedBiomeSystem
         SetSeed(mapUid, biome, seed.Value, false);
         SetTemplate(mapUid, biome, biomeTemplate, false);
         AddComp(mapUid, biome, true);
+        //TC14: make ores generate on map planets
+        foreach (var marker in biomeTemplate.MarkerLayers)
+        {
+            AddMarkerLayer(mapUid, biome, marker);
+        }
         Dirty(mapUid, biome, metadata);
 
         var gravity = EnsureComp<GravityComponent>(mapUid);

@@ -1,0 +1,21 @@
+- type: entity
+  parent: GrenadeBase
+  id: HelldiverGrenade
+  name: G-12 High Explosive
+  description: A high explosive grenade which damages lightly armored targets. Creates high damage over a small area when detonated.
+  components:
+  - type: Sprite
+    sprite: _tc14/Objects/Weapons/grenade.rsi
+  - type: Item
+    size: Tiny
+  - type: ExplodeOnTrigger
+  - type: Explosive
+    explosionType: Default
+    maxIntensity: 120
+    intensitySlope: 3
+    totalIntensity: 120
+    canCreateVacuum: false
+  - type: TimerTrigger
+    delay: 4
+  - type: TimerTriggerVisuals
+    unprimedSprite: icon

@@ -2,6 +2,7 @@ using System.Globalization; // Moffstation
 using System.IO;
 using System.Linq;
 using System.Numerics;
+using Content.Client._tc14.UI;
 using Content.Client.Humanoid;
 using Content.Client.Lobby.UI.Loadouts;
 using Content.Client.Lobby.UI.Roles;
@@ -10,6 +11,7 @@ using Content.Client.Players.PlayTimeTracking;
 using Content.Client.Stylesheets;
 using Content.Client.Sprite;
 using Content.Client.UserInterface.Systems.Guidebook;
+using Content.Shared._tc14.Skills.Prototypes;
 using Content.Shared.Body;
 using Content.Shared.CCVar;
 using Content.Shared.Clothing;
@@ -110,6 +112,9 @@ namespace Content.Client.Lobby.UI
         // CD: Record editor
         private readonly RecordEditorGui _recordsTab;
 
+        // TC14: add passions
+        private SkillPicker? _skillPicker;
+
         private static readonly ProtoId<GuideEntryPrototype> DefaultSpeciesGuidebook = "Species";
 
         public event Action<List<ProtoId<GuideEntryPrototype>>>? OnOpenGuidebook;
@@ -118,6 +123,7 @@ namespace Content.Client.Lobby.UI
 
         private MarkingsViewModel _markingsModel = new();
 
+        // TC14: add passions
         public HumanoidProfileEditor(
             IClientPreferencesManager preferencesManager,
             IConfigurationManager configurationManager,
@@ -404,6 +410,29 @@ namespace Content.Client.Lobby.UI
 
             UpdateSpeciesGuidebookIcon();
             IsDirty = false;
+        }
+
+        // TC14: add passions
+        public void RefreshSkills()
+        {
+            if (_skillPicker != null || Profile is null)
+                return;
+
+            _skillPicker = new SkillPicker(Profile.Passions);
+            TabContainer.AddChild(_skillPicker);
+            TabContainer.SetTabTitle(TabContainer.ChildCount - 1, Loc.GetString("skills-passionmenu-name"));
+
+            _skillPicker.OnPassionsChanged += OnPassionsChange;
+        }
+
+        // TC14: add passions
+        private void OnPassionsChange(Dictionary<ProtoId<SkillPrototype>, int> content)
+        {
+            if (Profile is null)
+                return;
+
+            Profile = Profile.WithSkills(content);
+            SetDirty();
         }
 
         /// <summary>
@@ -725,6 +754,7 @@ namespace Content.Client.Lobby.UI
                 _preferencesManager.Preferences?.SelectedCharacterIndex);
         }
 
+        // TC14: add passions
         /// <summary>
         /// Sets the editor to the specified profile with the specified slot.
         /// </summary>
@@ -757,6 +787,8 @@ namespace Content.Client.Lobby.UI
             RefreshTraits();
             RefreshFlavorText();
             ReloadPreview();
+
+            RefreshSkills();
 
             if (Profile != null)
             {

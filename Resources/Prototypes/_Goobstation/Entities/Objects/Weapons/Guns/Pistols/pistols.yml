@@ -1,0 +1,40 @@
+- type: entity
+  name: P-2 Peacemaker
+  parent: [ BaseWeaponPistol, BaseSecurityContraband ]
+  id: WeaponPistolHelldiver
+  description: The SEAF standard pistol - offering a high rate of fire, generous capacity, and fast reloading.
+  components:
+  - type: Sprite
+    sprite: _tc14/Objects/Weapons/pistol.rsi
+    layers:
+    - state: base
+      map: [ "enum.GunVisualLayers.Base" ]
+    - state: mag-0
+      map: [ "enum.GunVisualLayers.Mag" ]
+  - type: Clothing
+    sprite: _tc14/Objects/Weapons/pistol.rsi
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: MagazinePistolHelldiver
+        insertSound: /Audio/Weapons/Guns/MagIn/pistol_magin.ogg
+        ejectSound: /Audio/Weapons/Guns/MagOut/pistol_magout.ogg
+        priority: 2
+        whitelist:
+          tags:
+          - MagazinePistolHelldiver
+        whitelistFailPopup: gun-magazine-whitelist-fail
+      gun_chamber:
+        name: Chamber
+        startingItem: CartridgePistolHelldiver
+        priority: 1
+        whitelist:
+          tags:
+          - CartridgePistolHelldiver
+  - type: Gun
+    fireRate: 15
+    availableModes:
+    - SemiAuto
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/mk58.ogg

@@ -1,0 +1,26 @@
+# SPDX-FileCopyrightText: 2024 BombasterDS <115770678+BombasterDS@users.noreply.github.com>
+# SPDX-License-Identifier: MIT
+# TC14: We have received permission to use this code under the MIT license from bombasterDS. The code has been cherry-picked to only contain the parts we have permission to use.
+
+- type: entity
+  parent: SalvagePDA
+  id: HelldiverPDA
+  name: Helldiver PDA
+  description: Smells like corpses of insects and androids.
+  components:
+  - type: Sprite
+    sprite: _Goobstation/Objects/Devices/pda.rsi
+  - type: Appearance
+    appearanceDataInit:
+      enum.PdaVisuals.PdaType: !type:String pda-heccd
+  - type: Pda
+    id: HelldiverIDCard
+  - type: PdaBorderColor
+    borderColor: "#272727"
+    accentVColor: "#cec100"
+  - type: Icon
+    sprite: _Goobstation/Objects/Devices/pda.rsi
+    state: pda-heccd
+  - type: Tag # Ignore Chameleon tags, this is too cool 4 u
+    tags:
+    - DoorBumpOpener

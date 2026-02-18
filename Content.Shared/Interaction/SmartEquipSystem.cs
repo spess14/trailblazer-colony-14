@@ -7,6 +7,7 @@ using Content.Shared.Inventory;
 using Content.Shared.Popups;
 using Content.Shared.Stacks;
 using Content.Shared.Storage;
+using Content.Shared.Weapons.Ranged.Components;
 using Content.Shared.Storage.EntitySystems;
 using Content.Shared.Whitelist;
 using Robust.Shared.Containers;
@@ -182,7 +183,8 @@ public sealed class SmartEquipSystem : EntitySystem
         }
 
         // case 3 (itemslot item):
-        if (TryComp<ItemSlotsComponent>(slotItem, out var slots))
+        // TC14: Don't eject magazines on smartequip
+        if (TryComp<ItemSlotsComponent>(slotItem, out var slots) && !TryComp<GunComponent>(slotItem, out var gun))
         {
             if (handItem == null)
             {

@@ -1,0 +1,34 @@
+- type: guideEntry
+  id: TCNewPlayer
+  name: guide-entry-newplayer
+  priority: -10
+  text: "/ServerInfo/_tc14/NewPlayer/NewPlayer.xml"
+  children:
+  - TCControls
+  - TCCharacterCreation
+
+- type: guideEntry
+  id: TCControls
+  name: guide-entry-controls
+  text: "/ServerInfo/_tc14/NewPlayer/Controls/Controls.xml"
+  # children:
+  # - TCRadio
+
+# does not exist yet
+# - type: guideEntry
+#   id: TCRadio
+#   name: guide-entry-radio
+#   text: "/ServerInfo/_tc14/NewPlayer/Controls/Radio.xml"
+
+- type: guideEntry
+  id: TCCharacterCreation
+  name: guide-entry-charactercreation
+  text: "/ServerInfo/_tc14/NewPlayer/CharacterCreation.xml"
+  children:
+  - TCYourFirstCharacter
+  - TCSpecies
+
+- type: guideEntry
+  id: TCYourFirstCharacter
+  name: guide-entry-yourfirstcharacter
+  text: "/ServerInfo/_tc14/NewPlayer/YourFirstCharacter.xml"

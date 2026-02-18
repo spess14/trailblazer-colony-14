@@ -99,6 +99,18 @@ namespace Content.Shared.Maps
         [DataField("itemDrop", customTypeSerializer:typeof(PrototypeIdSerializer<EntityPrototype>))]
         public string ItemDropPrototypeName { get; private set; } = "FloorTileItemSteel";
 
+        /// <summary>
+        /// TC14: determines what drops when you dig soil
+        /// </summary>
+        [DataField]
+        public EntProtoId? SoilPrototypeName { get; private set; }
+
+        /// <summary>
+        /// TC14: can this tile be chiseled into stone?
+        /// </summary>
+        [DataField]
+        public bool IsChiselable;
+
         // TODO rename data-field in yaml
         /// <summary>
         /// Whether or not the tile is exposed to the map's atmosphere.
@@ -121,8 +133,9 @@ namespace Content.Shared.Maps
 
         /// <summary>
         /// Can weather affect this tile.
+        /// TC14: changed to "true" by default - roofing system is supposed to handle such interactions instead.
         /// </summary>
-        [DataField("weather")] public bool Weather = false;
+        [DataField("weather")] public bool Weather = true;
 
         /// <summary>
         /// Is this tile immune to RCD deconstruct.
@@ -138,5 +151,12 @@ namespace Content.Shared.Maps
         {
             TileId = id;
         }
+    }
+
+    [Flags]
+    public enum TileFlag : byte
+    {
+        None = 0,
+        Roof = 1 << 0,
     }
 }

@@ -1,0 +1,68 @@
+# Oh yeah, it's all coming together.
+
+- type: entity
+  name: stone shovel
+  parent: BaseItem
+  id: StoneShovel
+  description: A crude handmade tool for digging and moving dirt.
+  components:
+  - type: Sprite
+    sprite: Objects/Tools/stoneshovel.rsi
+    state: icon
+  - type: MeleeWeapon
+    wideAnimationRotation: 45
+    damage:
+      types:
+        Blunt: 10
+    soundHit:
+      collection: MetalThud
+  - type: Construction
+    graph: WoodenHandleTools
+    node: shovel
+  - type: Item
+    size: Normal
+    sprite: Objects/Tools/stoneshovel.rsi
+  - type: StaticPrice
+    price: 25
+  - type: Shovel
+
+- type: entity
+  name: stone pickaxe
+  parent: BaseItem
+  id: StonePickaxe
+  description: A crude stone pickaxe.
+  components:
+  - type: Tag
+    tags:
+    - Pickaxe
+  - type: Sprite
+    sprite: Objects/Tools/stonepickaxe.rsi
+    state: pickaxe
+  - type: MeleeWeapon
+    attackRate: 0.5
+    wideAnimationRotation: -135
+    soundHit:
+      path: "/Audio/Weapons/smash.ogg"
+      params:
+        volume: -3
+    damage:
+      groups:
+        Brute: 5
+  - type: Construction
+    graph: WoodenHandleTools
+    node: pickaxe
+  - type: Wieldable
+  - type: IncreaseDamageOnWield
+    damage:
+      groups:
+        Brute: 6
+      types:
+        Structural: 15
+  - type: Item
+    size: Normal
+    shape:
+    - 0,0,2,0
+    - 1,1,1,2
+    sprite: Objects/Tools/stonepickaxe.rsi
+    storedRotation: -45
+  - type: UseDelay

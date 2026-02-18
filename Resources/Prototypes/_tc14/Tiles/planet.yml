@@ -1,0 +1,92 @@
+﻿- type: tile
+  id: FloorPlanetStone
+  name: tiles-stone-floor
+  sprite: /Textures/_tc14/Tiles/Planet/stone.rsi/stone.png
+  variants: 4
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  isSubfloor: true
+  footstepSounds:
+    collection: FootstepAsteroid
+  heatCapacity: 10000
+  weather: true
+  indestructible: true
+
+# Grass and Dirt courtesy of CrystallEdge, artist is TheShuEd
+- type: tile
+  id: TC14FloorPlanetGrass
+  footstepSounds:
+    collection: FootstepGrass
+  name: tiles-grass-floor
+  sprite: /Textures/_tc14/Tiles/Planet/Grass/grass.png
+  variants: 6
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  soilPrototypeName: DirtItem1
+  edgeSpritePriority: 4
+  edgeSprites:
+    SouthEast: /Textures/_tc14/Tiles/Planet/Grass/single_edge_SE.png
+    NorthEast: /Textures/_tc14/Tiles/Planet/Grass/single_edge_NE.png
+    NorthWest: /Textures/_tc14/Tiles/Planet/Grass/single_edge_NW.png
+    SouthWest: /Textures/_tc14/Tiles/Planet/Grass/single_edge_SW.png
+    South: /Textures/_tc14/Tiles/Planet/Grass/double_edge_S.png
+    East: /Textures/_tc14/Tiles/Planet/Grass/double_edge_E.png
+    North: /Textures/_tc14/Tiles/Planet/Grass/double_edge_N.png
+    West: /Textures/_tc14/Tiles/Planet/Grass/double_edge_W.png
+  baseTurf: TC14FloorPlanetDirt
+  isSubfloor: true
+  heatCapacity: 10000
+  itemDrop: FloorTileItemGrass
+  indestructible: true
+  weather: true
+  isChiselable: true
+
+- type: tile
+  id: TC14FloorPlanetDirt
+  name: tiles-dirt-floor
+  footstepSounds:
+    collection: FootstepAsteroid
+  sprite: /Textures/_tc14/Tiles/Planet/Dirt/cavedrought.png
+  variants: 16
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  soilPrototypeName: DirtItem1
+  edgeSpritePriority: 1
+  edgeSprites:
+    SouthEast: /Textures/_tc14/Tiles/Planet/Dirt/single_edge_SE.png
+    NorthEast: /Textures/_tc14/Tiles/Planet/Dirt/single_edge_NE.png
+    NorthWest: /Textures/_tc14/Tiles/Planet/Dirt/single_edge_NW.png
+    SouthWest: /Textures/_tc14/Tiles/Planet/Dirt/single_edge_SW.png
+    South: /Textures/_tc14/Tiles/Planet/Dirt/double_edge_S.png
+    East: /Textures/_tc14/Tiles/Planet/Dirt/double_edge_E.png
+    North: /Textures/_tc14/Tiles/Planet/Dirt/double_edge_N.png
+    West: /Textures/_tc14/Tiles/Planet/Dirt/double_edge_W.png
+  baseTurf: FloorPlanetStone
+  isSubfloor: true
+  heatCapacity: 10000
+  weather: true
+  indestructible: true
+  isChiselable: true

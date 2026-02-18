@@ -1,0 +1,22 @@
+- type: gameMap
+  id: Planet
+  mapName: 'Planet'
+  mapPath: /Maps/planet.yml
+  minPlayers: 0
+  maxRandomOffset: 0
+  randomRotation: false
+  stations:
+    Evacpod:
+      stationProto: PlanetaryColony
+      components:
+        - type: StationBiome
+          biome: OverworldBiome
+          mapLightColor: '#D8B059'
+        - type: StationNameSetup
+          mapNameTemplate: '{0} Planet ??? {1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: 'X'
+        - type: StationJobs
+          availableJobs:
+            Passenger: [ -1, -1 ]

@@ -19,6 +19,8 @@
             <BoxContainer Orientation="Vertical" Name="Objectives" Access="Public"/>
             <BoxContainer Orientation="Vertical" Name="Minds" Access="Public"/> <!-- Starlight - Collective Mind -->
             <cc:Placeholder Name="RolePlaceholder" Access="Public" PlaceholderText="{Loc 'character-info-roles-antagonist-text'}"/>
+            <Label Name="SkillsLabel" Visible="False" Access="Public" Text="{Loc 'character-info-skills-label'}" HorizontalAlignment="Center"/>
+            <BoxContainer Orientation="Vertical" Name="Skills" Access="Public"/>
         </BoxContainer>
     </ScrollContainer>
 </windows:CharacterWindow>

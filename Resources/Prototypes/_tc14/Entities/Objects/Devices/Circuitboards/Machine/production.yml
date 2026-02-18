@@ -1,0 +1,36 @@
+- type: entity
+  id: PortableGeneratorCPacmanMachineCircuitboard
+  parent: BaseMachineCircuitboard
+  name: C.P.A.C.M.A.N.-type portable generator machine board
+  components:
+  - type: Sprite
+    state: engineering
+  - type: MachineBoard
+    prototype: PortableGeneratorCPacman
+    stackRequirements:
+      Steel: 2
+      Cable: 5
+  - type: PhysicalComposition
+    materialComposition:
+      Glass: 200
+    chemicalComposition:
+      Silicon: 20
+  - type: StaticPrice
+    price: 40
+
+- type: entity
+  id: RecyclerCrudeCircuitboard
+  parent: BaseMachineCircuitboard
+  name: crude recycler machine board
+  components:
+  - type: Sprite
+    state: engineering
+  - type: MachineBoard
+    prototype: RecyclerCrude
+    stackRequirements:
+      Steel: 15
+  - type: PhysicalComposition
+    materialComposition:
+      Steel: 100
+  - type: StaticPrice
+    price: 75

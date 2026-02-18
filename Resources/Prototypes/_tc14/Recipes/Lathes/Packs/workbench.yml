@@ -1,0 +1,45 @@
+- type: latheRecipePack
+  id: ToolsWorkbench
+  recipes:
+  - Wirecutter
+  - Screwdriver
+  - Welder
+  - Wrench
+  - CrowbarGreen
+  - Multitool
+  - NetworkConfigurator
+  - Signaller
+  - SprayPainter
+  - FlashlightLantern
+  - HandheldGPSBasic
+  - TRayScanner
+  - UtilityBelt
+  - ClothingHeadHatWelding
+  - ClothingHeadHatCone
+  - CheapLighter
+  - RRD
+
+- type: latheRecipePack
+  id: ElectronicsWorkbench
+  recipes:
+  - IntercomElectronics
+  - DoorElectronics
+  - MailingUnitElectronics
+  - SignalTimerElectronics
+  - APCElectronics
+  - SMESMachineCircuitboard
+  - SubstationMachineCircuitboard
+  - WallmountSubstationElectronics
+  - CellRechargerCircuitboard
+  - WeaponCapacitorRechargerCircuitboard
+  - FreezerElectronics
+  - PortableGeneratorCPacmanMachineCircuitboard
+  - RecyclerCrudeCircuitboard
+
+- type: latheRecipePack
+  id: PrototypesWorkbench
+  recipes:
+  - FlimsyKnife
+  - SkeletonModel
+  - Electrodes
+  - ObservationKit

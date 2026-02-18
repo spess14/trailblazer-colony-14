@@ -1,0 +1,36 @@
+# SPDX-FileCopyrightText: 2024 BombasterDS <115770678+BombasterDS@users.noreply.github.com>
+#
+# SPDX-License-Identifier: MIT
+# TC14: We have received permission to use this code under the MIT license from bombasterDS. The code has been cherry-picked to only contain the parts we have permission to use.
+- type: entity
+  parent: [ ClothingHeadHelmetRaid ]
+  id: ClothingHeadHelmetHelldiver
+  name: B-01 Tactical Helmet
+  description: This helmet is the Super Earth Standard Issue, made from the same titanium alloy as the Destroyer's hull.
+  components:
+  - type: BreathMask
+  - type: Sprite
+    sprite: _Goobstation/Textures/Helmets/helldiver.rsi
+  - type: Clothing
+    sprite: _Goobstation/Textures/Helmets/helldiver.rsi
+  - type: TemperatureProtection
+    heatingCoefficient: 0.1
+    coolingCoefficient: 0.1
+  - type: HideLayerClothing
+    slots:
+    - Hair
+    - FacialHair
+    - HeadTop
+    - HeadSide
+  - type: GasTank
+    outputPressure: 21.3
+    air:
+      # 31 minutes
+      volume: 5
+      moles:
+      - 2.051379050 # oxygen
+      temperature: 293.15
+  - type: UseDelay
+    delays:
+      gasTank:
+        length: 1.0

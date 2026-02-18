@@ -1,0 +1,6 @@
+- type: stack
+  name: stack-stone-brick
+  id: BrickStone
+  icon: { sprite: "/Textures/Objects/Materials/bricks.rsi", state: brick }
+  spawn: BrickStone1
+  maxCount: 30

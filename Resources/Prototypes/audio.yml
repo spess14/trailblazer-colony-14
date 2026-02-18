@@ -75,11 +75,11 @@
   priority: 1
 
 - type: ambientMusic
-  id: Mining
+  id: Planet
   sound:
     params:
       volume: -12
-    collection: AmbienceMining
+    collection: AmbiencePlanet
   rules: OnMapGrid
   fadeIn: true
   interruptable: true
@@ -157,42 +157,50 @@
     - /Audio/Ambience/ambinice.ogg
 
 - type: soundCollection
-  id: AmbienceMining
+  id: AmbiencePlanet
   files:
-    - /Audio/Ambience/ambicave.ogg
-    - /Audio/Ambience/ambidanger.ogg
-    - /Audio/Ambience/ambidanger2.ogg
-    - /Audio/Ambience/ambilava1.ogg
-    - /Audio/Ambience/ambilava2.ogg
-    - /Audio/Ambience/ambilava3.ogg
-    - /Audio/Ambience/ambimaint1.ogg
-    - /Audio/Ambience/ambimine.ogg
-    - /Audio/Ambience/ambiruin.ogg
-    - /Audio/Ambience/ambiruin2.ogg
-    - /Audio/Ambience/ambiruin3.ogg
-    - /Audio/Ambience/ambiruin4.ogg
-    - /Audio/Ambience/ambiruin5.ogg
-    - /Audio/Ambience/ambiruin6.ogg
-    - /Audio/Ambience/ambiruin7.ogg
-    - /Audio/Ambience/voyage_neverending.ogg
-    - /Audio/Ambience/unanchored.ogg
+  - /Audio/_tc14/Rimworld/A_Place_of_Our_Own.ogg
+  - /Audio/_tc14/Rimworld/Back_to_Work.ogg
+  - /Audio/_tc14/Rimworld/Blue.ogg
+  - /Audio/_tc14/Rimworld/Bright_Side_of_Life.ogg
+  - /Audio/_tc14/Rimworld/Carry_On.ogg
+  - /Audio/_tc14/Rimworld/Fair_Glade.ogg
+  - /Audio/_tc14/Rimworld/Far_Away.ogg
+  - /Audio/_tc14/Rimworld/Hold_On.ogg
+  - /Audio/_tc14/Rimworld/Honor.ogg
+  - /Audio/_tc14/Rimworld/Lone_Hunter.ogg
+  - /Audio/_tc14/Rimworld/Long_Way_Home.ogg
+  - /Audio/_tc14/Rimworld/Lovely_Day.ogg
+  - /Audio/_tc14/Rimworld/Move.ogg
+  - /Audio/_tc14/Rimworld/Muffalo.ogg
+  - /Audio/_tc14/Rimworld/My_Friend.ogg
+  - /Audio/_tc14/Rimworld/On_the_Road.ogg
+  - /Audio/_tc14/Rimworld/One_Thousand_Stars.ogg
+  - /Audio/_tc14/Rimworld/Rimmas.ogg
+  - /Audio/_tc14/Rimworld/Rise.ogg
+  - /Audio/_tc14/Rimworld/Rustic_Ranching.ogg
+  - /Audio/_tc14/Rimworld/Serene_Night.ogg
+  - /Audio/_tc14/Rimworld/Solitude.ogg
+  - /Audio/_tc14/Rimworld/Spacekattommy.ogg
+  - /Audio/_tc14/Rimworld/Sunlight.ogg
+  - /Audio/_tc14/Rimworld/United.ogg
 
 - type: soundCollection
   id: AmbienceRuins
   files:
-    - /Audio/Ambience/ambicave.ogg
-    - /Audio/Ambience/ambidanger.ogg
-    - /Audio/Ambience/ambidanger2.ogg
-    - /Audio/Ambience/ambimaint1.ogg
-    - /Audio/Ambience/ambimine.ogg
-    - /Audio/Ambience/ambimystery.ogg
-    - /Audio/Ambience/ambiruin.ogg
-    - /Audio/Ambience/ambiruin2.ogg
-    - /Audio/Ambience/ambiruin3.ogg
-    - /Audio/Ambience/ambiruin4.ogg
-    - /Audio/Ambience/ambiruin5.ogg
-    - /Audio/Ambience/ambiruin6.ogg
-    - /Audio/Ambience/ambiruin7.ogg
+  - /Audio/Ambience/ambicave.ogg
+  - /Audio/Ambience/ambidanger.ogg
+  - /Audio/Ambience/ambidanger2.ogg
+  - /Audio/Ambience/ambimaint1.ogg
+  - /Audio/Ambience/ambimine.ogg
+  - /Audio/Ambience/ambimystery.ogg
+  - /Audio/Ambience/ambiruin.ogg
+  - /Audio/Ambience/ambiruin2.ogg
+  - /Audio/Ambience/ambiruin3.ogg
+  - /Audio/Ambience/ambiruin4.ogg
+  - /Audio/Ambience/ambiruin5.ogg
+  - /Audio/Ambience/ambiruin6.ogg
+  - /Audio/Ambience/ambiruin7.ogg
 
 - type: soundCollection
   id: AmbienceSpace

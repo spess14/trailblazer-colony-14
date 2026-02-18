@@ -1,0 +1,15 @@
+- type: entity
+  parent: [ ClothingShoesMilitaryBase ]
+  id: ClothingBootsHelldiver
+  name: helldiver combat boots
+  description: Super Earth Standard Issue combat boots.
+  components:
+  - type: Sprite
+    sprite: Clothing/Shoes/Boots/combatboots.rsi
+  - type: Clothing
+    sprite: Clothing/Shoes/Boots/combatboots.rsi
+  - type: NoSlip
+  - type: Tag
+    tags:
+    - WhitelistChameleon
+    - Kangaroo

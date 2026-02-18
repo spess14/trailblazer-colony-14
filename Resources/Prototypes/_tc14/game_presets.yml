@@ -1,0 +1,10 @@
+- type: gamePreset
+  id: PlanetSurvival
+  alias:
+  - psurvival
+  - main
+  name: planet-survival-title
+  showInVote: true # secret
+  description: planet-survival-description
+  rules:
+  - PlanetaryStationGameRule

@@ -1,0 +1,138 @@
+- type: entity
+  id: BaseTorch
+  abstract: true
+  name: torch
+  description: A flaming torch for lighting an area.
+  placement:
+    mode: SnapgridCenter
+  components:
+  - type: Transform
+    anchored: true
+  - type: Clickable
+  - type: Damageable
+    damageModifierSet: Wood
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 50
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: PointLight
+    enabled: false
+    color: "#E25822"
+    radius: 1.0
+    energy: 5.0
+    netsync: false
+  - type: LightBehaviour
+    behaviours:
+    - !type:RandomizeBehaviour # immediately make it bright and flickery
+      id: turn_on
+      interpolate: Nearest
+      minDuration: 0.02
+      maxDuration: 0.06
+      startValue: 6.0
+      endValue: 9.0
+      property: Energy
+      isLooped: true
+    - !type:FadeBehaviour # have the radius start small and get larger as it starts to burn
+        id: turn_on
+        maxDuration: 8.0
+        startValue: 1.0
+        endValue: 6.0
+    - !type:RandomizeBehaviour # weaker flicker as it fades out
+        id: fade_out
+        interpolate: Nearest
+        minDuration: 0.02
+        maxDuration: 0.06
+        startValue: 4.0
+        endValue: 8.0
+        property: Energy
+        isLooped: true
+    - !type:FadeBehaviour # fade out radius as it burns out
+        id: fade_out
+        maxDuration: 4.0
+        startValue: 6.0
+        endValue: 1.0
+  - type: ExpendableLight
+    refuelMaterialID: WoodPlank
+    refuelMaterialTime: 410
+    refuelMaximumDuration: 1025
+    glowDuration: 205
+    fadeOutDuration: 4
+    iconStateSpent: torch_unlit
+    turnOnBehaviourID: turn_on
+    fadeOutBehaviourID: fade_out
+    # Sounds legit nuff
+    litSound:
+      path: /Audio/Items/Flare/flare_on.ogg
+  - type: Animateable
+  - type: InteractionOutline
+
+- type: entity
+  parent: BaseTorch
+  id: FloorTorch
+  suffix: floor
+  components:
+    - type: Sprite
+      sprite: Structures/Decoration/torches.rsi
+      layers:
+        - state: torch_unlit
+          map: [ enum.ExpendableLightVisualLayers.Base ]
+        - state: torch_lit
+          map: [ enum.ExpendableLightVisualLayers.Glow ]
+          color: "#FFFFFF"
+          visible: false
+          shader: unshaded
+        - state: torch_unlit
+          map: [ enum.ExpendableLightVisualLayers.Overlay ]
+    - type: Appearance
+    - type: Construction
+      graph: FloorTorch
+      node: FloorTorch
+    - type: NameModifier
+      baseName: torch
+    - type: Physics
+      bodyType: Static
+    - type: Fixtures
+      fixtures:
+        fix1:
+          shape:
+            !type:PhysShapeAabb
+            bounds: "-0.45,-0.45,0.45,0.45"
+          density: 60
+          mask:
+            - MachineMask
+          layer:
+            - MidImpassable
+            - LowImpassable
+    - type: Pullable
+    - type: Transform
+      anchored: true
+    - type: Anchorable
+      delay: 2
+
+- type: entity
+  parent: BaseTorch
+  id: WallTorch
+  suffix: wall
+  components:
+  - type: Sprite
+    sprite: Structures/Decoration/torches.rsi
+    layers:
+      - state: wall_torch_unlit
+        map: [ enum.ExpendableLightVisualLayers.Base ]
+      - state: wall_torch_lit
+        map: [ enum.ExpendableLightVisualLayers.Glow ]
+        color: "#FFFFFF"
+        visible: false
+        shader: unshaded
+      - state: wall_torch_unlit
+        map: [ enum.ExpendableLightVisualLayers.Overlay ]
+  - type: Appearance
+  - type: Construction
+    graph: WallTorch
+    node: WallTorch
+  - type: NameModifier
+    baseName: torch

@@ -1,0 +1,13 @@
+- type: reaction
+  id: BioPlastic
+  impact: Low
+  quantized: true
+  minTemp: 374
+  reactants:
+    Fat:
+      amount: 2
+    Cornmeal:
+      amount: 5
+  effects:
+  - !type:SpawnEntity
+    entity: SheetPlastic1

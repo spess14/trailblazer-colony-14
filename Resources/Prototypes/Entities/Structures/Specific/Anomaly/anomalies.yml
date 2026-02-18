@@ -1042,7 +1042,7 @@
     departureSound: /Audio/Items/hiss.ogg
   - type: Tag
     tags:
-      - SpookyFog
+    - SpookyFog
   - type: DamageOnInteract
     damage:
       types:
@@ -1085,8 +1085,8 @@
   - type: TechAnomaly
   - type: DeviceLinkSource
     ports:
-      - Pulse
-      - Timer
+    - Pulse
+    - Timer
 
 - type: entity
   id: AnomalyTechBeam
@@ -1113,7 +1113,7 @@
     lifetime: 2.3
   - type: Tag
     tags:
-      - HideContextMenu
+    - HideContextMenu
 
 - type: entity
   id: AnomalySanta

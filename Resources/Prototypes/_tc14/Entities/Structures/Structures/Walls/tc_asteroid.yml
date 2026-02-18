@@ -1,0 +1,250 @@
+#TODO: Someone should probably move the ore vein prototypes into their own file, or otherwise split this up in some way. This should not be 1.5k lines long.
+
+# Anyway
+# See WallRock variants for the remappings.
+
+# Rocks and ore veins
+- type: entity
+  id: TCWallRock
+  parent: BaseWall
+  name: rock
+  suffix: planetmap
+  components:
+  - type: Transform
+    noRot: true
+  - type: SoundOnGather
+  - type: Gatherable
+    toolWhitelist:
+      tags:
+      - Pickaxe
+  - type: Damageable
+    damageContainer: StructuralInorganic
+    damageModifierSet: Metallic
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 150
+      behaviors:
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+  - type: Icon
+    sprite: _tc14/Structures/Walls/stone.rsi
+    state: full
+  - type: MiningScannerViewable
+  - type: Sprite
+    sprite: _tc14/Structures/Walls/stone.rsi
+  - type: IconSmooth
+    key: walls
+    base: stone
+
+# Ore veins
+- type: entity
+  id: TCWallRockCoal
+  parent: TCWallRock
+  description: An ore vein rich with coal.
+  suffix: Coal
+  components:
+  - type: OreVein
+    oreChance: 1.0
+    currentOre: OreCoal
+  - type: Icon
+    sprite: _tc14/Structures/Walls/Ore/stone_coal.rsi
+    state: full
+  - type: MiningScannerViewable
+  - type: Sprite
+    sprite: _tc14/Structures/Walls/Ore/stone_coal.rsi
+  - type: IconSmooth
+    key: walls
+    base: stone
+
+- type: entity
+  id: TCWallRockGold
+  parent: TCWallRock
+  description: An ore vein rich with gold.
+  suffix: Gold
+  components:
+  - type: OreVein
+    oreChance: 1.0
+    currentOre: OreGold
+  - type: Icon
+    sprite: _tc14/Structures/Walls/Ore/stone_gold.rsi
+    state: full
+  - type: MiningScannerViewable
+  - type: Sprite
+    sprite: _tc14/Structures/Walls/Ore/stone_gold.rsi
+  - type: IconSmooth
+    key: walls
+    base: stone
+
+- type: entity
+  id: TCWallRockDiamond
+  parent: TCWallRock
+  description: An ore vein rich with diamonds.
+  suffix: Diamond
+  components:
+  - type: OreVein
+    oreChance: 1.0
+    currentOre: OreDiamond
+  - type: Icon
+    sprite: _tc14/Structures/Walls/Ore/stone_diamond.rsi
+    state: full
+  - type: MiningScannerViewable
+  - type: Sprite
+    sprite: _tc14/Structures/Walls/Ore/stone_diamond.rsi
+  - type: IconSmooth
+    key: walls
+    base: stone
+
+- type: entity
+  id: TCWallRockPlasma
+  parent: TCWallRock
+  description: An ore vein rich with plasma.
+  suffix: Plasma
+  components:
+  - type: OreVein
+    oreChance: 1.0
+    currentOre: OrePlasma
+  - type: Icon
+    sprite: _tc14/Structures/Walls/Ore/stone_plasma.rsi
+    state: full
+  - type: MiningScannerViewable
+  - type: Sprite
+    sprite: _tc14/Structures/Walls/Ore/stone_plasma.rsi
+  - type: IconSmooth
+    key: walls
+    base: stone
+
+- type: entity
+  id: TCWallRockQuartz
+  parent: TCWallRock
+  description: An ore vein rich with quartz.
+  suffix: Quartz
+  components:
+  - type: OreVein
+    oreChance: 1.0
+    currentOre: OreSpaceQuartz
+  - type: Icon
+    sprite: _tc14/Structures/Walls/Ore/stone_quartz.rsi
+    state: full
+  - type: MiningScannerViewable
+  - type: Sprite
+    sprite: _tc14/Structures/Walls/Ore/stone_quartz.rsi
+  - type: IconSmooth
+    key: walls
+    base: stone
+
+- type: entity
+  id: TCWallRockSilver
+  parent: TCWallRock
+  description: An ore vein rich with silver.
+  suffix: Silver
+  components:
+  - type: OreVein
+    oreChance: 1.0
+    currentOre: OreSilver
+  - type: Icon
+    sprite: _tc14/Structures/Walls/Ore/stone_silver.rsi
+    state: full
+  - type: MiningScannerViewable
+  - type: Sprite
+    sprite: _tc14/Structures/Walls/Ore/stone_silver.rsi
+  - type: IconSmooth
+    key: walls
+    base: stone
+
+# Yes I know it drops steel but we may get smelting at some point
+- type: entity
+  id: TCWallRockTin
+  parent: TCWallRock
+  description: An ore vein rich with tin.
+  suffix: Tin
+  components:
+  - type: OreVein
+    oreChance: 1.0
+    currentOre: OreSteel
+  - type: Icon
+    sprite: _tc14/Structures/Walls/Ore/stone_tin.rsi
+    state: full
+  - type: MiningScannerViewable
+  - type: Sprite
+    sprite: _tc14/Structures/Walls/Ore/stone_tin.rsi
+  - type: IconSmooth
+    key: walls
+    base: stone
+
+- type: entity
+  id: TCWallRockUranium
+  parent: TCWallRock
+  description: An ore vein rich with uranium.
+  suffix: Uranium
+  components:
+  - type: OreVein
+    oreChance: 1.0
+    currentOre: OreUranium
+  - type: Icon
+    sprite: _tc14/Structures/Walls/Ore/stone_uranium.rsi
+    state: full
+  - type: MiningScannerViewable
+  - type: Sprite
+    sprite: _tc14/Structures/Walls/Ore/stone_uranium.rsi
+  - type: IconSmooth
+    key: walls
+    base: stone
+
+- type: entity
+  id: TCWallRockBananium
+  parent: TCWallRock
+  description: An ore vein rich with bananium.
+  suffix: Bananium
+  components:
+  - type: OreVein
+    oreChance: 1.0
+    currentOre: OreBananium
+  - type: Icon
+    sprite: _tc14/Structures/Walls/Ore/stone_bananium.rsi
+    state: full
+  - type: MiningScannerViewable
+  - type: Sprite
+    sprite: _tc14/Structures/Walls/Ore/stone_bananium.rsi
+  - type: IconSmooth
+    key: walls
+    base: stone
+
+- type: entity
+  id: TCWallRockArtifactFragment
+  parent: TCWallRock
+  description: A rock wall. What's that sticking out of it?
+  suffix: Artifact Fragment
+  components:
+  - type: OreVein
+    oreChance: 1.0
+    currentOre: OreArtifactFragment
+  - type: Icon
+    sprite: _tc14/Structures/Walls/Ore/stone_artifact_fragment.rsi
+    state: full
+  - type: MiningScannerViewable
+  - type: Sprite
+    sprite: _tc14/Structures/Walls/Ore/stone_artifact_fragment.rsi
+  - type: IconSmooth
+    key: walls
+    base: stone
+
+- type: entity
+  id: TCWallRockSalt
+  parent: TCWallRock
+  description: An ore vein rich with salt.
+  suffix: Salt
+  components:
+  - type: OreVein
+    oreChance: 1.0
+    currentOre: OreSalt
+  - type: Icon
+    sprite: _tc14/Structures/Walls/Ore/stone_salt.rsi
+    state: full
+  - type: MiningScannerViewable
+  - type: Sprite
+    sprite: _tc14/Structures/Walls/Ore/stone_salt.rsi
+  - type: IconSmooth
+    key: walls
+    base: stone

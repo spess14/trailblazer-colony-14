@@ -1,0 +1,68 @@
+- type: entity
+  id: Campfire
+  parent: BaseStructure
+  name: campfire
+  description: What can be better than a late evening under the sky with guitar and friends?
+  components:
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.45,-0.45,0.45,0.45"
+        density: 60
+        mask:
+        - MachineMask
+        layer:
+        - MidImpassable
+        - LowImpassable
+      itemcollide:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.14,-0.05,0.15,0.25"
+        layer:
+        - HighImpassable
+        hard: false
+      fix2:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.14,-0.05,0.15,0.25"
+        mask:
+        - TabletopMachineMask
+        layer:
+        - TabletopMachineLayer
+  - type: Sprite
+    noRot: true
+    sprite: Structures/Decoration/bonfire.rsi
+    layers:
+    - state: bonfire
+    - state: burning
+  - type: PointLight
+    radius: 5
+    energy: 3
+    color: "#FFC90C"
+  - type: FueledHeater
+    solutionHeatPerSecond: 100
+    entityHeatPerSecond: 750
+  - type: Damageable
+    damageContainer: StructuralInorganic
+    damageModifierSet: Wood
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 50
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: Construction
+    graph: Campfire
+    node: campfire
+  - type: ItemPlacer
+  - type: PlaceableSurface
+  - type: AmbientSound
+    volume: -5
+    range: 5
+    sound:
+      path: /Audio/Ambience/Objects/fireplace.ogg
+  - type: AlwaysHot

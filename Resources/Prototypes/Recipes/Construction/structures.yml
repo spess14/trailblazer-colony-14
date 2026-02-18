@@ -1305,18 +1305,6 @@
     - !type:TileNotBlocked
 
 - type: construction
-  id: FungalSoil
-  graph: Soil
-  startNode: start
-  targetNode: fungalSoil
-  category: construction-category-structures
-  objectType: Structure
-  placementMode: SnapgridCenter
-  canBuildInImpassable: false
-  conditions:
-    - !type:TileNotBlocked
-
-- type: construction
   id: StationAiCore
   graph: StationAiCore
   startNode: start
@@ -1354,3 +1342,17 @@
   canBuildInImpassable: false
   conditions:
   - !type:TileNotBlocked
+
+
+# TC14: we have our own soil craft
+# - type: construction
+#   id: FungalSoil
+#   graph: Soil
+#   startNode: start
+#   targetNode: fungalSoil
+#   category: construction-category-structures
+#   objectType: Structure
+#   placementMode: SnapgridCenter
+#   canBuildInImpassable: false
+#   conditions:
+#     - !type:TileNotBlocked

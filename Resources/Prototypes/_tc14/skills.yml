@@ -1,0 +1,30 @@
+- type: skill
+  id: SkillFinesse
+  name: skill-finesse
+  priority: 7
+
+# - type: skill
+#   id: SkillPrecision
+#   name: skill-precision
+
+# - type: skill
+#   id: SkillFarming
+#   name: skill-farming
+
+# - type: skill
+#   id: SkillCreating
+#   name: skill-creating
+
+# - type: skill
+#   id: SkillResearch
+#   name: skill-research
+
+- type: skill
+  id: SkillMedical
+  name: skill-medical
+  priority: 3
+
+- type: skill
+  id: SkillExcavation
+  name: skill-excavation
+  priority: 6

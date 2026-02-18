@@ -1,0 +1,27 @@
+- type: entity
+  abstract: true
+  parent: BaseItem
+  id: DirtItem
+  name: dirt
+  description: A pile of dirt. If you are holding this, you should probably wash your hands afterwards.
+  components:
+  - type: Sprite
+    sprite: _tc14/Objects/Materials/materials.rsi
+    state: dirt
+  - type: Item
+    sprite: _tc14/Objects/Materials/materials.rsi
+  - type: Material
+  - type: Stack
+    stackType: Dirt
+    baseLayer: dirt
+
+- type: entity
+  parent: DirtItem
+  id: DirtItem1
+  name: dirt
+  suffix: Single
+  components:
+  - type: Sprite
+    state: dirt
+  - type: Stack
+    count: 1

@@ -1,0 +1,25 @@
+- type: entity
+  parent: Hellpod
+  id: HellpodFlying
+  suffix: Flying
+  components:
+  - type: Sprite
+    sprite: _Goobstation/Textures/Entities/Structures/Specific/hellpod_flight.rsi
+    layers:
+    - state: base
+
+- type: entity
+  parent: CrateGeneric
+  id: Hellpod
+  name: Hellpod
+  components:
+  - type: Sprite
+    noRot: false
+    sprite: _Goobstation/Textures/Entities/Structures/Specific/hellpod.rsi
+    layers:
+    - state: base
+    - state: closed
+      map: [ "enum.StorageVisualLayers.Door" ]
+  - type: EntityStorage
+    airtight: false
+    capacity: 5

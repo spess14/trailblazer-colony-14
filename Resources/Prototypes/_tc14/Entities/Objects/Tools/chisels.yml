@@ -1,0 +1,28 @@
+- type: entity
+  name: chisel
+  parent: BaseItem
+  id: Chisel
+  description: Main tool of any architect. Can also expose stone under dirt, allowing you to place flooring.
+  components:
+  - type: EmitSoundOnLand
+    sound:
+      path: /Audio/Items/wirecutter_drop.ogg
+  - type: MeleeWeapon
+    wideAnimationRotation: -135
+    damage:
+      types:
+        Piercing: 1 #RAAAAH AIM FOR THE EYEBALLS
+    attackRate: 3
+  - type: Tool
+    qualities:
+    - Chiseling
+    useSound:
+      path: /Audio/Items/chisel_use.ogg
+  - type: Construction
+    graph: WoodenHandleTools
+    node: chisel
+  - type: Item
+    sprite: Objects/Tools/chisel.rsi
+  - type: Sprite
+    sprite: Objects/Tools/chisel.rsi
+    state: icon

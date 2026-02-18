@@ -1,0 +1,18 @@
+- type: guideEntry
+  id: TCProgression
+  name: guide-entry-progression
+  priority: -1
+  text: "/ServerInfo/_tc14/Progression/Progression.xml"
+  children:
+  - TCEarlyProgression
+  - TCResearch
+
+- type: guideEntry
+  id: TCEarlyProgression
+  name: guide-entry-progression-early
+  text: "/ServerInfo/_tc14/Progression/EarlyProgression.xml"
+
+- type: guideEntry
+  id: TCResearch
+  name: guide-entry-research
+  text: "/ServerInfo/_tc14/Progression/Research.xml"

@@ -1,0 +1,16 @@
+- type: constructionGraph
+  id: PlanetSoil
+  start: start
+  graph:
+  - node: start
+    edges:
+    - to: soil
+      completed:
+      - !type:SnapToGrid
+        southRotation: true
+      steps:
+      - material: Dirt
+        amount: 5
+        doAfter: 1
+  - node: soil
+    entity: hydroponicsSoil

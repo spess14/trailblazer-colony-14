@@ -1,0 +1,81 @@
+- type: entity
+  parent: BaseItem
+  id: RockItem
+  name: rock
+  description: Bash two of those together and see what happens.
+  components:
+  - type: Sprite
+    sprite: Objects/Tools/rock.rsi
+    state: "rock"
+  - type: Item
+    sprite: Objects/Tools/rock.rsi
+    size: Normal
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 100
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: Tool
+    qualities:
+    - Hammering
+    useSound:
+      path: /Audio/Effects/Footsteps/largethud.ogg
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: FlimsyMetallic
+  - type: Construction
+    graph: Rock
+    node: start
+  - type: MeleeWeapon
+    wideAnimationRotation: -135
+    damage:
+      types:
+        Blunt: 7
+  - type: Tag
+    tags:
+    - Rock
+
+- type: entity
+  parent: BaseKnife
+  id: FlakingRock
+  name: flaking rock
+  description: Sharp rock, quite a neat tool!
+  components:
+  - type: Sprite
+    sprite: Objects/Tools/rock.rsi
+    state: "flakingrock"
+  - type: Item
+    sprite: Objects/Tools/rock.rsi
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 100
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: FlimsyMetallic
+  - type: Construction
+    graph: Rock
+    node: flakingRock
+  - type: Sharp
+    butcherDelayModifier: 2.5 # this sucks
+  - type: Tool
+    qualities:
+    - Slicing
+    speedModifier: 0.5
+  - type: MeleeWeapon
+    attackRate: 1.5
+    damage:
+      types:
+        Slash: 5
+  - type: Tag
+    tags:
+    - FlakingRock
+
+

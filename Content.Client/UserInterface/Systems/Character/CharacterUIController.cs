@@ -10,6 +10,7 @@ using Content.Client.UserInterface.Systems.Character.Controls;
 using Content.Client.UserInterface.Systems.Character.Windows;
 using Content.Client.UserInterface.Systems.Objectives.Controls;
 using Content.Shared._Moffstation.Objectives; // Moffstation
+using Content.Shared._tc14.Skills.Systems;
 using Content.Shared.Input;
 using Content.Shared.Mind;
 using Content.Shared.Mind.Components;
@@ -39,6 +40,7 @@ public sealed class CharacterUIController : UIController, IOnStateEntered<Gamepl
 
     [UISystemDependency] private readonly CharacterInfoSystem _characterInfo = default!;
     [UISystemDependency] private readonly SpriteSystem _sprite = default!;
+    [UISystemDependency] private readonly PlayerSkillsSystem _skills = default!;
 
     public override void Initialize()
     {
@@ -129,6 +131,7 @@ public sealed class CharacterUIController : UIController, IOnStateEntered<Gamepl
         CharacterButton.Pressed = true;
     }
 
+    // TC14: added skills info
     private void CharacterUpdated(CharacterData data)
     {
         if (_window == null)
@@ -136,7 +139,7 @@ public sealed class CharacterUIController : UIController, IOnStateEntered<Gamepl
             return;
         }
 
-        var (entity, job, objectives, minds, briefing, entityName) = data; // Starlight - Collective Mind - Added minds variable.
+        var (entity, job, objectives, minds, briefing, entityName, skills) = data; // Starlight - Collective Mind - Added minds variable.
 
         _window.SpriteView.SetEntity(entity);
 
@@ -147,6 +150,7 @@ public sealed class CharacterUIController : UIController, IOnStateEntered<Gamepl
         _window.Objectives.RemoveAllChildren();
         _window.ObjectivesLabel.Visible = objectives.Any();
         _window.Minds.RemoveAllChildren(); // Starlight - Collective Mind
+        _window.Skills.RemoveAllChildren();
 
         foreach (var (groupId, conditions) in objectives)
         {
@@ -248,6 +252,30 @@ public sealed class CharacterUIController : UIController, IOnStateEntered<Gamepl
             _window.Objectives.AddChild(mindsControl);
         }
         // Starlight - End
+
+        // ReSharper disable once ConditionIsAlwaysTrueOrFalseAccordingToNullableAPIContract
+        // This inspection lies to you. It will be null if you're controlling an entity without PlayerSkillsComponent.
+        if (skills is null)
+        {
+            _window.SkillsLabel.Visible = false;
+        }
+        else
+        {
+            _window.SkillsLabel.Visible = true;
+            foreach (var (skillId, skillExp) in skills)
+            {
+                if (!_prototypeManager.Resolve(skillId, out var prototype))
+                    continue;
+                var skillText = new FormattedMessage();
+                skillText.TryAddMarkup(Loc.GetString("character-info-skill-text",
+                        ("skill", Loc.GetString(prototype.Name)),
+                        ("level", Loc.GetString(_skills.GetVerbalLevelDesc(skillExp)))),
+                    out _);
+                var skillLabel = new RichTextLabel();
+                skillLabel.SetMessage(skillText);
+                _window.Skills.AddChild(skillLabel);
+            }
+        }
 
         if (briefing != null)
         {

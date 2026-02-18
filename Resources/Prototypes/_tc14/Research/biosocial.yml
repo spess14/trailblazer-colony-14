@@ -1,0 +1,25 @@
+- type: researchEntry
+  id: ResearchAgriculture
+  name: tc-research-agriculture-name
+  discipline: DisciplineBiosocial
+  iconPrototype: FoodTomato
+  gridLocation: 0,2
+  unlockedRecipes:
+  - HydroponicsToolMiniHoe
+  - HydroponicsToolScythe
+  - HydroponicsToolHatchet
+  - HydroponicsToolSpade
+  - HydroponicsToolClippers
+
+- type: researchEntry
+  id: ResearchBotany
+  name: tc-research-botany-name
+  discipline: DisciplineBiosocial
+  iconPrototype: SeedExtractor
+  gridLocation: 1,2
+  dependencies:
+  - ResearchAgriculture
+  - ResearchElectricity
+  unlockedRecipes:
+  - HydroponicsTrayMachineCircuitboard
+  - SeedExtractorMachineCircuitboard

@@ -1,0 +1,127 @@
+- type: entity
+  id: RecyclerCrude
+  parent: [ BaseMachine, ConstructibleMachine ]
+  name: crude recycler
+  description: A crude crushing machine used to recycle small items very inefficiently.
+  components:
+  - type: ApcPowerReceiver
+    powerLoad: 0
+    needsPower: false
+  - type: AmbientSound
+    enabled: true
+    volume: -8
+    range: 5
+    sound:
+      # TODO: https://freesound.org/people/derjuli/sounds/448133/ CC-NC-
+      path: /Audio/Ambience/Objects/circular_saw.ogg
+  - type: Machine
+    board: RecyclerCrudeCircuitboard
+  - type: Fixtures
+    fixtures:
+      brrt:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.15,-0.25,0.15,0.15"
+        hard: false
+        layer:
+        - MachineMask #FullTileLayer (also for inconvenience)
+      collision:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.49,-0.49,0.49,0.49"
+        hard: true
+        mask:
+        - Impassable
+        layer:
+        - Opaque
+        - BulletImpassable
+      conveyor:
+        shape: !type:PolygonShape
+          vertices:
+          - -0.55,-0.55
+          - 0.55,-0.55
+          - 0.55,0.55
+          - -0.55,0.55
+        layer:
+        - Impassable
+        - MidImpassable
+        - LowImpassable
+        hard: False
+  - type: DeviceLinkSink
+    ports:
+      - Forward
+      - Reverse
+      - Off
+  - type: Transform
+    anchored: true
+    noRot: false
+  - type: Sprite
+    drawdepth: Doors
+    sprite: _tc14/Structures/Machines/recycler_crude.rsi
+    layers:
+    - state: grinder-o1
+      map: ["enum.RecyclerVisualLayers.Main"]
+  - type: Appearance
+  - type: RecyclerVisuals
+  - type: CollideMaterialReclaimer
+  - type: MaterialReclaimer
+    enabled: true
+    powered: true
+    scaleProcessSpeed: false #instant!
+    reclaimSolutions: false
+    minimumProcessDuration: 5
+    whitelist:
+      components:
+      - PhysicalComposition
+      - MobState
+      - SpaceGarbage
+      tags:
+      - Trash
+      - Recyclable
+    blacklist:
+      components:
+      - Material
+      - Pda
+      - IdCard
+      tags:
+      - HighRiskItem
+      - Multitool
+      - Wrench
+    sound:
+      path: /Audio/Effects/saw.ogg
+      params:
+        volume: -3
+    cutOffSound: false
+  - type: MaterialStorage
+    insertOnInteract: false
+  - type: Conveyor
+    powered: true
+    startsReversed: true
+  - type: Rotatable
+  - type: Repairable
+    doAfterDelay: 5
+    fuelCost: 25
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 30
+      behaviors:
+      - !type:DoActsBehavior
+        acts: ["Breakage"]
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalBreak
+  - type: InteractionPopup
+    successChance: 1.0
+    interactSuccessString: petting-success-recycler
+    interactFailureString: petting-failure-generic
+    interactSuccessSound:
+      path: /Audio/Items/drill_hit.ogg
+  - type: SpookySpeaker
+    speakChance: 0.1
+    cooldown: 120
+    messageSet: SpookySpeakerMessagesRecycler
+  - type: Speech
+    speechVerb: Robotic
+    speechSounds: SyndieBorg

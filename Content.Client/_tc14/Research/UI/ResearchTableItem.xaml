@@ -1,0 +1,39 @@
+<Control xmlns="https://spacestation14.io"
+         xmlns:graphics="clr-namespace:Robust.Client.Graphics;assembly=Robust.Client"
+         SetSize="64 64">
+    <PanelContainer Name="ResearchItemBorder"
+                    VerticalExpand="True"
+                    HorizontalExpand="True"
+                    StyleIdentifier="ResearchItemBorder"
+                    SetSize="64 64">
+        <Button Name="ResearchItemButton"
+                HorizontalExpand="True"
+                VerticalExpand="True"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                Margin="0"
+                StyleIdentifier="ResearchItemButton"
+                SetSize="60 60">
+            <BoxContainer Name="ResearchItemDisplay"
+                          HorizontalAlignment="Center"
+                          VerticalAlignment="Center">
+                <EntityPrototypeView Name="ResearchItemEntView"
+                                     Scale="1.5 1.5"
+                                     SetSize="48 48"/>
+            </BoxContainer>
+            <PanelContainer Name="ResearchItemCheckmarkContainer"
+                          HorizontalAlignment="Left"
+                          VerticalAlignment="Top"
+                          StyleIdentifier="ResearchItemBorder">
+                <PanelContainer.PanelOverride>
+                    <graphics:StyleBoxFlat BackgroundColor="#008000"/>
+                </PanelContainer.PanelOverride>
+                <TextureRect Name="ResearchItemCheckmark"
+                             TexturePath="/Textures/_tc14/Interface/check.png"
+                             TextureScale="0.5 0.5"
+                             ModulateSelfOverride="#00FF00"
+                             Visible="False"/>
+            </PanelContainer>
+        </Button>
+    </PanelContainer>
+</Control>
