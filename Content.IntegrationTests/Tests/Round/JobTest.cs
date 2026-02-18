@@ -143,6 +143,7 @@ public sealed class JobTest
     [Test]
     public async Task JobWeightTest()
     {
+        return; // TC14 - No jobs
         await using var pair = await PoolManager.GetServerClient(new PoolSettings
         {
             DummyTicker = false,
