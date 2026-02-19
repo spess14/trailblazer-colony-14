@@ -1,7 +1,7 @@
 <Document>
   # Species
 
-  Nanotrasen employs a variety of sapient species.
+  Andromeda XIV expedition has a variety of species.
 
   <Box>
   <GuideEntityEmbed Entity="AppearanceArachnid" Caption="Arachnid"/>
@@ -13,10 +13,12 @@
   <GuideEntityEmbed Entity="AppearanceMoth" Caption="Moth Person"/>
   <GuideEntityEmbed Entity="AppearanceReptilian" Caption="Reptilian"/>
   <GuideEntityEmbed Entity="AppearanceSlimePerson" Caption="Slime Person"/>
-  <GuideEntityEmbed Entity="AppearanceVox" Caption="Vox"/>
+  <!--<GuideEntityEmbed Entity="AppearanceVox" Caption="Vox"/>-->
+    <GuideEntityEmbed Entity="AppearanceVulpkanin" Caption="Vulpkanin"/>
   </Box>
   <Box>
-    <GuideEntityEmbed Entity="AppearanceVulpkanin" Caption="Vulpkanin"/>
+    <GuideEntityEmbed Entity="AppearanceAvali" Caption="Avali"/>
+    <GuideEntityEmbed Entity="AppearanceResomi" Caption="Resomi"/>
   </Box>
 
 </Document>

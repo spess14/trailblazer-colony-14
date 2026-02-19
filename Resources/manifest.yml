@@ -1,7 +1,5 @@
-﻿# Moffstation - Start - we using our own for all this stuff
-defaultWindowTitle: Moff Station
-windowIconSet: /Textures/_Moffstation/Logo/icon
-splashLogo: /Textures/_Moffstation/Logo/logo.png
-# Moffstation - End
+﻿defaultWindowTitle: Trailblazer Colony 14
+windowIconSet: /Textures/Logo/icon
+splashLogo: /Textures/Logo/logo.png
 
 # PJB PLEASE

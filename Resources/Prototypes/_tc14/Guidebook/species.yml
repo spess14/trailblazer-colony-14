@@ -12,6 +12,8 @@
     - TCSlimePerson
     - TCVox
     - TCVulpkanin
+    - TCAvali
+    - TCResomi
 
 - type: guideEntry
   id: TCArachnid
@@ -57,3 +59,13 @@
   id: TCVulpkanin
   name: species-name-vulpkanin
   text: "/ServerInfo/_tc14/Mobs/Vulpkanin.xml"
+
+- type: guideEntry
+  id: TCAvali
+  name: species-name-avali
+  text: "/ServerInfo/_tc14/Mobs/Avali.xml"
+
+- type: guideEntry
+  id: TCResomi
+  name: species-name-resomi
+  text: "/ServerInfo/_tc14/Mobs/Resomi.xml"

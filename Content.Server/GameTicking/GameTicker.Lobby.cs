@@ -72,8 +72,8 @@ namespace Content.Server.GameTicking
                                     Loc.GetString("game-ticker-no-map-selected"));
             }
 
-            var gmTitle = (Decoy == null) ? Loc.GetString(preset.ModeTitle) : Loc.GetString(Decoy.ModeTitle);
-            var desc = (Decoy == null) ? Loc.GetString(preset.Description) : Loc.GetString(Decoy.Description);
+            var gmTitle = Loc.GetString(preset.ModeTitle);
+            var desc = Loc.GetString(preset.Description);
             return Loc.GetString(
                 RunLevel == GameRunLevel.PreRoundLobby
                     ? "game-ticker-get-info-preround-text"
@@ -107,7 +107,7 @@ namespace Content.Server.GameTicking
 
         private TickerLobbyInfoEvent GetInfoMsg()
         {
-            return new(GetInfoText());
+            return new (GetInfoText());
         }
 
         private void UpdateLateJoinStatus()
@@ -153,14 +153,10 @@ namespace Content.Server.GameTicking
             var status = ready ? PlayerGameStatus.ReadyToPlay : PlayerGameStatus.NotReadyToPlay;
             foreach (var playerUserId in _playerGameStatuses.Keys)
             {
-                if (!_playerManager.TryGetSessionById(playerUserId, out var playerSession) || _playerGameStatuses[playerUserId] == status)  // Moffstation - Ready manifest
+                _playerGameStatuses[playerUserId] = status;
+                if (!_playerManager.TryGetSessionById(playerUserId, out var playerSession))
                     continue;
-                _playerGameStatuses[playerUserId] = status; // Moffstation - Ready Manifest
                 RaiseNetworkEvent(GetStatusMsg(playerSession), playerSession.Channel);
-                // Moffstation - Start - Ready manifest
-                var ev = new PlayerToggleReadyEvent(playerSession);
-                RaiseLocalEvent(ref ev);
-                // Moffstation - End
             }
         }
 
@@ -177,21 +173,9 @@ namespace Content.Server.GameTicking
                 return;
             }
 
-            // Moffstation - Ready manifest
             var status = ready ? PlayerGameStatus.ReadyToPlay : PlayerGameStatus.NotReadyToPlay;
-            // No need to update anything or raise events if the player is already (un)readied
-            if (_playerGameStatuses[player.UserId] == status)
-            {
-                return;
-            }
-            // Moffstatation - End
-
             _playerGameStatuses[player.UserId] = ready ? PlayerGameStatus.ReadyToPlay : PlayerGameStatus.NotReadyToPlay;
             RaiseNetworkEvent(GetStatusMsg(player), player.Channel);
-            // Moffstation - Start - Ready Manifest
-            var ev = new PlayerToggleReadyEvent(player);
-            RaiseLocalEvent(ref ev);
-            // Moffstation - End
             // update server info to reflect new ready count
             UpdateInfoText();
         }
@@ -202,9 +186,4 @@ namespace Content.Server.GameTicking
         public bool UserHasJoinedGame(NetUserId userId)
             => PlayerGameStatuses.TryGetValue(userId, out var status) && status == PlayerGameStatus.JoinedGame;
     }
-
-    // Moffstation - Start - Ready Manifest
-    [ByRefEvent]
-    public record struct PlayerToggleReadyEvent(ICommonSession PlayerSession);
-    // Moffstation - End
 }
