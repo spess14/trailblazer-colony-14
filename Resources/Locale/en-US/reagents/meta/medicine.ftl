@@ -93,7 +93,7 @@ reagent-name-oculine = oculine
 reagent-desc-oculine = A simple saline compound used to treat the eyes via ingestion.
 
 reagent-name-ethylredoxrazine = ethylredoxrazine
-reagent-desc-ethylredoxrazine = Neutralises the effects of alcohol in the blood stream. Though it is commonly needed, it is rarely requested.
+reagent-desc-ethylredoxrazine = Neutralises alcohol in the blood stream. Though it is commonly needed, it is rarely requested.
 
 reagent-name-cognizine = cognizine
 reagent-desc-cognizine = A mysterious chemical which is able to make any non-sentient creature sentient.
@@ -154,5 +154,5 @@ reagent-desc-potassium-iodide = Will reduce the damaging effects of radiation by
 reagent-name-haloperidol = haloperidol
 reagent-desc-haloperidol = Removes most stimulating and hallucinogenic drugs. Reduces druggy effects and jitteriness. Causes drowsiness.
 
-reagent-name-warfarin = warfarin
-reagent-desc-warfarin = Commonly used as an anticoagulant medication. Causes blood to have difficulty forming clots. Can cause internal bleeding when overdosed.
+reagent-name-heparin = heparin
+reagent-desc-heparin = Commonly used as an anticoagulant medication. Causes blood to have difficulty forming clots. Can cause internal bleeding when overdosed.

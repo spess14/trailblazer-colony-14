@@ -1,0 +1,65 @@
+# Weapons
+- type: listing # not gonna make this zookeeper only because I Said So.
+  id: UplinkSniperElephant
+  name: uplink-sniper-elephant-name
+  description: uplink-sniper-elephant-desc
+  productEntity: WeaponSniperElephant
+  discountCategory: rareDiscounts
+  discountDownTo:
+    Telecrystal: 6
+  cost:
+    Telecrystal: 8
+  categories:
+  - UplinkWeaponry
+
+- type: listing
+  id: UplinkHyperEutacticBlade
+  name: uplink-hypereutatic-blade-moff-name
+  description: uplink-hypereutatic-blade-moff-desc
+  icon:
+    sprite: Objects/Weapons/Melee/hypereutactic_blade.rsi
+    state: icon
+  discountCategory: veryRareDiscounts
+  discountDownTo:
+    Telecrystal: 6
+  productEntity: HyperEutacticBlade
+  cost:
+    Telecrystal: 12
+  categories:
+  - UplinkWeaponry
+
+# Wearables
+
+- type: listing
+  id: UplinkClothingShoesSkatesSyndicate
+  name: uplink-clothing-rocket-skates-name
+  description: uplink-clothing-rocket-skates-desc
+  productEntity: ClothingShoesSkatesSyndicate
+  discountCategory: rareDiscounts
+  discountDownTo:
+    Telecrystal: 1
+  cost:
+    Telecrystal: 2
+  categories:
+  - UplinkWearables
+
+# Other
+
+- type: listing
+  id: UplinkSuperSurplusBundle
+  name: uplink-super-surplus-bundle-name
+  description: uplink-super-surplus-bundle-desc
+  productEntity: CrateSyndicateSuperSurplusBundle
+  cost:
+    Telecrystal: 40
+  categories:
+  - UplinkDisruption
+  conditions:
+  - !type:StoreWhitelistCondition
+    blacklist:
+      tags:
+      - NukeOpsUplink
+  - !type:BuyerWhitelistCondition
+    blacklist:
+      components:
+      - SurplusBundle

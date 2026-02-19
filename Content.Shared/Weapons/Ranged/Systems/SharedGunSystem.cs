@@ -1,5 +1,6 @@
 using System.Diagnostics.CodeAnalysis;
 using System.Numerics;
+using Content.Shared._Moffstation.Weapons.Ranged.Components; // Moffstation
 using Content.Shared.ActionBlocker;
 using Content.Shared.Actions;
 using Content.Shared.Administration.Logs;
@@ -48,6 +49,7 @@ public abstract partial class SharedGunSystem : EntitySystem
     [Dependency] private readonly SharedCombatModeSystem _combatMode = default!;
     [Dependency] private readonly SharedHandsSystem _hands = default!;
     [Dependency] private readonly UseDelaySystem _useDelay = default!;
+    [Dependency] private readonly SharedStaminaSystem _stamina = default!; // Moffstation
     [Dependency] protected readonly DamageableSystem Damageable = default!;
     [Dependency] protected readonly ExamineSystemShared Examine = default!;
     [Dependency] protected readonly IGameTiming Timing = default!;
@@ -412,6 +414,15 @@ public abstract partial class SharedGunSystem : EntitySystem
         if (!userImpulse || !TryComp<PhysicsComponent>(user, out var userPhysics))
             return true;
 
+        // Moffstation - Start
+        var kicked = TryRecoilKick(gun, (user, userPhysics), fromCoordinates, toCoordinates.Value);
+
+        // Don't apply both recoil kick and shooter impulse.
+        // TODO Once https://github.com/space-wizards/space-station-14/pull/37971 is merged, recoil kick could be implemented using that and the impulse below to unify the two.
+        if (kicked)
+            return true;
+        // Moffstation - End
+
         var shooterEv = new ShooterImpulseEvent();
         RaiseLocalEvent(user, ref shooterEv);
 
@@ -419,6 +430,47 @@ public abstract partial class SharedGunSystem : EntitySystem
             CauseImpulse(fromCoordinates, toCoordinates.Value, (user, userPhysics));
         return true;
     }
+
+    // Moffstation - Start
+    /// <summary>
+    /// Tries to apply the effects of <see cref="GunComponent.RecoilKick"/>. Returns true if the effects is applied,
+    /// false otherwise.
+    /// </summary>
+    private bool TryRecoilKick(
+        GunComponent gun,
+        Entity<PhysicsComponent> user,
+        EntityCoordinates fromCoordinates,
+        EntityCoordinates toCoordinates
+    )
+    {
+        if (gun.RecoilKick is not { } kick ||
+            kick.Impulse <= 0.0f ||
+            !TryComp<RecoilKickSusceptibleComponent>(user, out var suscept))
+            return false;
+
+        var attempt = new RecoilKickAttemptEvent();
+        RaiseLocalEvent(user, ref attempt);
+        if (attempt.ImpulseEffectivenessFactor == 0.0f)
+            return false;
+        var speed = kick.Impulse * attempt.ImpulseEffectivenessFactor * user.Comp.InvMass / suscept.MassFactor;
+
+        var fromMap = TransformSystem.ToMapCoordinates(fromCoordinates).Position;
+        var toMap = TransformSystem.ToMapCoordinates(toCoordinates).Position;
+        var shotDirection = (fromMap - toMap).Normalized();
+
+        ThrowingSystem.TryThrow(
+            user,
+            // Change the magnitude of `shotDirection` because the length _is_ actually used to determine flight time.
+            shotDirection * _Moffstation.Weapons.Ranged.Components.RecoilKick.FlyTime * speed,
+            speed,
+            doSpin: false
+        );
+
+        _stamina.TakeStaminaDamage(user, speed * kick.StaminaMultiplier);
+
+        return true;
+    }
+    // Moffstation - End
 
     public void Shoot(
         Entity<GunComponent> gun,

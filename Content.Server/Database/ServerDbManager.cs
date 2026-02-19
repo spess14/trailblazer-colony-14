@@ -16,6 +16,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using Npgsql;
 using Prometheus;
+using Robust.Shared.Asynchronous;
 using Robust.Shared.Configuration;
 using Robust.Shared.ContentPack;
 using Robust.Shared.Network;
@@ -35,14 +36,12 @@ namespace Content.Server.Database
         Task<bool> HasPendingModelChanges();
 
         #region Preferences
-        Task<Preference> InitPrefsAsync(
+        Task<PlayerPreferences> InitPrefsAsync(
             NetUserId userId,
             HumanoidCharacterProfile defaultProfile,
             CancellationToken cancel);
 
         Task SaveSelectedCharacterIndexAsync(NetUserId userId, int index);
-
-        Task MakeCharacterSlotLegacyAsync(NetUserId userId, int slot);
 
         Task SaveCharacterSlotAsync(NetUserId userId, HumanoidCharacterProfile? profile, int slot);
 
@@ -52,7 +51,7 @@ namespace Content.Server.Database
 
         // Single method for two operations for transaction.
         Task DeleteSlotAndSetSelectedIndex(NetUserId userId, int deleteSlot, int newSlot);
-        Task<Preference?> GetPlayerPreferencesAsync(NetUserId userId, CancellationToken cancel);
+        Task<PlayerPreferences?> GetPlayerPreferencesAsync(NetUserId userId, CancellationToken cancel);
         #endregion
 
         #region User Ids
@@ -309,6 +308,13 @@ namespace Content.Server.Database
 
         #endregion
 
+        #region AntagWeights
+
+        Task<int> GetAntagWeight(NetUserId userId);
+        Task<bool> SetAntagWeight(NetUserId userId, int weight);
+
+        #endregion
+
         #region DB Notifications
 
         void SubscribeToNotifications(Action<DatabaseNotification> handler);
@@ -373,6 +379,7 @@ namespace Content.Server.Database
         [Dependency] private readonly IConfigurationManager _cfg = default!;
         [Dependency] private readonly IResourceManager _res = default!;
         [Dependency] private readonly ILogManager _logMgr = default!;
+        [Dependency] private readonly ITaskManager _task = default!;
         [Dependency] private readonly ISerializationManager _serialization = default!;
 
         private ServerDbBase _db = default!;
@@ -405,11 +412,11 @@ namespace Content.Server.Database
             {
                 case "sqlite":
                     SetupSqlite(out var contextFunc, out var inMemory);
-                    _db = new ServerDbSqlite(contextFunc, inMemory, _cfg, _synchronous, opsLog, _serialization);
+                    _db = new ServerDbSqlite(contextFunc, inMemory, _cfg, _synchronous, opsLog, _task, _serialization);
                     break;
                 case "postgres":
                     var (pgOptions, conString) = CreatePostgresOptions();
-                    _db = new ServerDbPostgres(pgOptions, conString, _cfg, opsLog, notifyLog, _serialization);
+                    _db = new ServerDbPostgres(pgOptions, conString, _cfg, opsLog, notifyLog, _task, _serialization);
                     break;
                 default:
                     throw new InvalidDataException($"Unknown database engine {engine}.");
@@ -426,7 +433,7 @@ namespace Content.Server.Database
             _db.Shutdown();
         }
 
-        public Task<Preference> InitPrefsAsync(
+        public Task<PlayerPreferences> InitPrefsAsync(
             NetUserId userId,
             HumanoidCharacterProfile defaultProfile,
             CancellationToken cancel)
@@ -439,12 +446,6 @@ namespace Content.Server.Database
         {
             DbWriteOpsMetric.Inc();
             return RunDbCommand(() => _db.SaveSelectedCharacterIndexAsync(userId, index));
-        }
-
-        public Task MakeCharacterSlotLegacyAsync(NetUserId userId, int slot)
-        {
-            DbWriteOpsMetric.Inc();
-            return RunDbCommand(() => _db.MakeCharacterSlotLegacyAsync(userId, slot));
         }
 
         public Task SaveCharacterSlotAsync(NetUserId userId, HumanoidCharacterProfile? profile, int slot)
@@ -471,7 +472,7 @@ namespace Content.Server.Database
             return RunDbCommand(() => _db.SaveConstructionFavoritesAsync(userId, constructionFavorites));
         }
 
-        public Task<Preference?> GetPlayerPreferencesAsync(NetUserId userId, CancellationToken cancel)
+        public Task<PlayerPreferences?> GetPlayerPreferencesAsync(NetUserId userId, CancellationToken cancel)
         {
             DbReadOpsMetric.Inc();
             return RunDbCommand(() => _db.GetPlayerPreferencesAsync(userId, cancel));
@@ -977,6 +978,20 @@ namespace Content.Server.Database
             DbWriteOpsMetric.Inc();
             return RunDbCommand(() => _db.CleanIPIntelCache(range));
         }
+
+        // Moffstation - Start - Weighted Antags
+        public Task<int> GetAntagWeight(NetUserId userId)
+        {
+            DbReadOpsMetric.Inc();
+            return RunDbCommand(() => _db.GetAntagWeight(userId));
+        }
+
+        public Task<bool> SetAntagWeight(NetUserId userId, int weight)
+        {
+            DbWriteOpsMetric.Inc();
+            return RunDbCommand(() => _db.SetAntagWeight(userId, weight));
+        }
+        // Moffstation - End - Weighted Antags
 
         public void SubscribeToNotifications(Action<DatabaseNotification> handler)
         {

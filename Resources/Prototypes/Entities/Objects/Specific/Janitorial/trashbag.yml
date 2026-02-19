@@ -12,8 +12,10 @@
     maxItemSize: Normal
     grid:
     - 0,0,7,5
-    quickInsert: true
-    areaInsert: true
+# Moffstation - Start
+#    quickInsert: true
+#    areaInsert: true
+# Moffstation - End
     storageOpenSound:
       collection: trashBagRustle
     storageInsertSound:
@@ -21,6 +23,10 @@
     whitelist:
       tags:
         - Trash
+  # Moffstation - Start
+  - type: QuickPickup
+  - type: AreaPickup
+  # Moffstation - End
   - type: UseDelay
     delay: 0.5
   - type: Tag
@@ -60,9 +66,11 @@
     maxItemSize: Huge
     grid:
     - 0,0,19,9
-    quickInsert: true
-    areaInsert: true
-    areaInsertRadius: 5
+  # Moffstation - Start
+  - type: QuickPickup
+  - type: AreaPickup
+    radius: 5
+  # Moffstation - End
 
 - type: entity
   parent: TrashBag

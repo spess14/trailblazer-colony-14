@@ -59,6 +59,9 @@
       limit: 1
       required: true
       default: [ VoxTail ]
+    enum.HumanoidVisualLayers.TailOverlay:
+      limit: 1
+      required: false
     enum.HumanoidVisualLayers.UndergarmentTop:
       limit: 1
       required: false
@@ -179,7 +182,7 @@
       amount: 5
   - type: Destructible
     thresholds:
-    - trigger:
+    - trigger: # Moffstation start - reimplement gibbing and ashing
         !type:DamageTypeTrigger
         damageType: Blunt
         damage: 400
@@ -200,7 +203,7 @@
         popupMessage: bodyburn-vox-text-others
       - !type:PlaySoundBehavior
         sound:
-          collection: MeatLaserImpact
+          collection: MeatLaserImpact # Moffstation end
     - trigger:
         !type:DamageTypeTrigger
         damageType: Radiation
@@ -248,6 +251,7 @@
     damage:
       types:
         Slash: 5 # Reduce?
+  - type: Wagging
 
 - type: entity
   parent: OrganBase

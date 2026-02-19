@@ -13,7 +13,7 @@
   description: A special hardsuit helmet designed for working in low-pressure, high thermal environments.
   components:
   - type: Sprite
-    sprite: Clothing/Head/Hardsuits/atmospherics.rsi
+    sprite: _Moffstation/Clothing/Head/Hardsuits/atmospherics.rsi # Moffstation
     layers:
     - state: icon
     - state: icon-unshaded
@@ -39,9 +39,14 @@
       head-reptilian:
       - state: equipped-head-light-reptilian
         shader: unshaded
-      head-dog:
-      - state: equipped-head-light-dog
+      #head-dog: # Moffstation - Start
+      #- state: equipped-head-light-dog
+      #  shader: unshaded # Moffstation - End
+      # Moffstation - Start - Add Hardsuits for Resomi.
+      head-resomi:
+      - state: equipped-head-light-resomi
         shader: unshaded
+      # Moffstation - End - Add Hardsuits for Resomi.
   - type: Clothing
     clothingVisuals:
       head:
@@ -60,12 +65,20 @@
       - state: equipped-head-reptilian
       - state: equipped-head-unshaded-reptilian
         shader: unshaded
-      head-dog:
-      - state: equipped-head-dog
-      - state: equipped-head-unshaded-dog
+      #head-dog: # Moffstation - Start
+      #- state: equipped-head-dog
+      #- state: equipped-head-unshaded-dog
+      #  shader: unshaded # Moffstation - End
+      # Moffstation - Start - Add Hardsuits for Resomi.
+      head-resomi:
+      - state: equipped-head-resomi
+      - state: equipped-head-unshaded-resomi
         shader: unshaded
+      # Moffstation - End - Add Hardsuits for Resomi.
   - type: PointLight
-    color: "#adffe6"
+    color: "DarkKhaki" # Moffstation - Start
+    radius: 5
+    energy: 1 # Moffstation - End
   - type: PressureProtection
     highPressureMultiplier: 0.08
     lowPressureMultiplier: 1000
@@ -87,7 +100,7 @@
   description: An engineering hardsuit helmet designed for working in low-pressure, high radioactive environments.
   components:
   - type: Sprite
-    sprite: Clothing/Head/Hardsuits/engineering.rsi
+    sprite: _Moffstation/Clothing/Head/Hardsuits/engineering.rsi # Moffstation
     layers:
     - state: icon
     - state: icon-unshaded
@@ -113,9 +126,14 @@
       head-reptilian:
       - state: equipped-head-light-reptilian
         shader: unshaded
-      head-dog:
-      - state: equipped-head-light-dog
+      #head-dog: # Moffstation - Start
+      #- state: equipped-head-light-dog
+      #  shader: unshaded # Moffstation - End
+      # Moffstation - Start - Add Hardsuits for Resomi.
+      head-resomi:
+      - state: equipped-head-light-resomi
         shader: unshaded
+      # Moffstation - End - Add Hardsuits for Resomi.
   - type: Clothing
     clothingVisuals:
       head:
@@ -134,18 +152,26 @@
       - state: equipped-head-reptilian
       - state: equipped-head-unshaded-reptilian
         shader: unshaded
-      head-dog:
-      - state: equipped-head-dog
-      - state: equipped-head-unshaded-dog
+      #head-dog: # Moffstation - Start
+      #- state: equipped-head-dog
+      #- state: equipped-head-unshaded-dog
+      #  shader: unshaded # Moffstation - End
+      # Moffstation - Start - Add Hardsuits for Resomi.
+      head-resomi:
+      - state: equipped-head-resomi
+      - state: equipped-head-unshaded-resomi
         shader: unshaded
+      # Moffstation - End - Add Hardsuits for Resomi.
   - type: PointLight
-    color: "#ffdbad"
+    color: "DarkKhaki" # Moffstation - Start
+    radius: 5
+    energy: 1 # Moffstation - End
   - type: PressureProtection
     highPressureMultiplier: 0.1
     lowPressureMultiplier: 1000
   - type: Tag
     tags:
-    - CorgiWearable
+    #- CorgiWearable # Moffstation
     - WhitelistChameleon
 
 #Spationaut Hardsuit
@@ -156,7 +182,7 @@
   description: A sturdy helmet designed for complex industrial operations in space.
   components:
   - type: Sprite
-    sprite: Clothing/Head/Hardsuits/spatiohelm.rsi
+    sprite: _Moffstation/Clothing/Head/Hardsuits/spatiohelm.rsi # Moffstation
     layers:
     - state: icon
     - state: icon-unshaded
@@ -181,8 +207,87 @@
       head-reptilian:
       - state: equipped-head-light-reptilian
         shader: unshaded
-      head-dog:
-      - state: equipped-head-light-dog
+      #head-dog: # Moffstation - Start
+      #- state: equipped-head-light-dog
+      #  shader: unshaded # Moffstation - End
+      # Moffstation - Start - Add Hardsuits for Resomi.
+      head-resomi:
+      - state: equipped-head-light-resomi
+        shader: unshaded
+      # Moffstation - End - Add Hardsuits for Resomi.
+  - type: Clothing
+    clothingVisuals:
+      head:
+      - state: equipped-head
+      - state: equipped-head-unshaded
+        shader: unshaded
+      head-vox:
+      - state: equipped-head-vox
+      - state: equipped-head-unshaded-vox
+        shader: unshaded
+      head-vulpkanin:
+      - state: equipped-head-vulpkanin
+      - state: equipped-head-unshaded-vulpkanin
+        shader: unshaded
+      head-reptilian:
+      - state: equipped-head-reptilian
+      - state: equipped-head-unshaded-reptilian
+        shader: unshaded
+      #head-dog: # Moffstation - Start
+      #- state: equipped-head-dog
+      #- state: equipped-head-unshaded-dog
+      #  shader: unshaded # Moffstation - End
+      # Moffstation - Start - Add Hardsuits for Resomi.
+      head-resomi:
+      - state: equipped-head-resomi
+      - state: equipped-head-unshaded-resomi
+        shader: unshaded
+      # Moffstation - End - Add Hardsuits for Resomi.
+  - type: PointLight
+    radius: 6
+    energy: 1 #Moffstation
+    color: SandyBrown #Moffstation
+  - type: PressureProtection
+    highPressureMultiplier: 0.72
+    lowPressureMultiplier: 1000
+  - type: Tag
+    tags:
+    # - CorgiWearable   #Moffstation - Corgi Sprites SUCK!!
+    - WhitelistChameleon
+
+#Salvage Hardsuit
+- type: entity
+  parent: [ ClothingHeadHardsuitBase, ClothingHeadSuitWithLightBase ]
+  id: ClothingHeadHelmetHardsuitSalvage
+  name: salvage hardsuit helmet
+  description: A special helmet designed for work in a hazardous, low pressure environment. Has reinforced plating for wildlife encounters and dual floodlights.
+  components:
+  # Moffstation - Start
+  - type: Sprite
+    sprite: _Moffstation/Clothing/Head/Hardsuits/salvage.rsi
+    layers:
+    - state: icon
+    - state: icon-unshaded
+      shader: unshaded
+    - state: light-overlay
+      visible: false
+      shader: unshaded
+      map: [ "light" ]
+  - type: HandheldLight
+    addPrefix: false
+  - type: ToggleableVisuals
+    clothingVisuals:
+      head:
+      - state: equipped-head-light
+        shader: unshaded
+      head-vox:
+      - state: equipped-head-light-vox
+        shader: unshaded
+      head-vulpkanin:
+      - state: equipped-head-light-vulpkanin
+        shader: unshaded
+      head-reptilian:
+      - state: equipped-head-light-reptilian
         shader: unshaded
   - type: Clothing
     clothingVisuals:
@@ -202,37 +307,14 @@
       - state: equipped-head-reptilian
       - state: equipped-head-unshaded-reptilian
         shader: unshaded
-      head-dog:
-      - state: equipped-head-dog
-      - state: equipped-head-unshaded-dog
-        shader: unshaded
-  - type: PointLight
-    radius: 6
-  - type: PressureProtection
-    highPressureMultiplier: 0.72
-    lowPressureMultiplier: 1000
-  - type: Tag
-    tags:
-    - CorgiWearable
-    - WhitelistChameleon
-
-#Salvage Hardsuit
-- type: entity
-  parent: [ ClothingHeadHardsuitBase, ClothingHeadSuitWithLightBase ]
-  id: ClothingHeadHelmetHardsuitSalvage
-  name: salvage hardsuit helmet
-  description: A special helmet designed for work in a hazardous, low pressure environment. Has reinforced plating for wildlife encounters and dual floodlights.
-  components:
-  - type: Sprite
-    sprite: Clothing/Head/Hardsuits/salvage.rsi
-  - type: Clothing
-    sprite: Clothing/Head/Hardsuits/salvage.rsi
+  # Moffstation - End
   - type: PressureProtection
     highPressureMultiplier: 0.525
     lowPressureMultiplier: 1000
   - type: PointLight
     radius: 7
     energy: 3
+    color: sandybrown #Moffstation
   - type: Tag
     tags:
     - CorgiWearable
@@ -246,7 +328,7 @@
   description: A sturdy hardsuit helmet, infused with a goliath's hide and an eerie, unblinking eye cut from its mass.
   components:
   - type: Sprite
-    sprite: Clothing/Head/Hardsuits/goliathhelm.rsi
+    sprite: _Moffstation/Clothing/Head/Hardsuits/goliathhelm.rsi # Moffstation
     layers:
     - state: icon
     - state: icon-unshaded
@@ -268,9 +350,9 @@
       head-reptilian:
       - state: equipped-head-light-reptilian
         shader: unshaded
-      head-dog:
-      - state: equipped-head-light-dog
-        shader: unshaded
+      #head-dog: #Moffstation - Start - I HATE CORGI SPRITES
+      #- state: equipped-head-light-dog
+      #  shader: unshaded #Moffstation - End - I HATE CORGI SPRITES
   - type: Clothing
     clothingVisuals:
       head:
@@ -285,32 +367,34 @@
       - state: equipped-head-reptilian
       - state: equipped-head-unshaded-reptilian
         shader: unshaded
-      head-dog:
-      - state: equipped-head-dog
-      - state: equipped-head-unshaded-dog
-        shader: unshaded
-  - type: PointLight
+      #head-dog: #Moffstation - Start - I HATE CORGI SPRITES
+      #- state: equipped-head-dog
+      #- state: equipped-head-unshaded-dog
+      #  shader: unshaded #Moffstation - End - I HATE CORGI SPRITES
+  - type: PointLight #Moffstation - start
     radius: 6
+    energy: 3
+    color: crimson #Moffstation - End
   - type: PressureProtection
     highPressureMultiplier: 0.72
     lowPressureMultiplier: 1000
   - type: Tag
     tags:
-    - CorgiWearable
+    #- CorgiWearable # Moffstation - I HATE CORGI SPRITES
     - WhitelistChameleon
 
 #Maxim Hardsuit
 - type: entity
-  parent: ClothingHeadHardsuitBase
+  parent: [ ClothingHeadHelmetHardsuitSpatio ] # Moffstation
   id: ClothingHeadHelmetHardsuitMaxim
   categories: [ HideSpawnMenu ]
   name: salvager maxim helmet
   description: A predication of decay washes over your mind.
   components:
   - type: Sprite
-    sprite: Clothing/Head/Hardsuits/maxim.rsi
+    sprite: _Moffstation/Clothing/Head/Hardsuits/maxim.rsi # Moffstation
   - type: Clothing
-    sprite: Clothing/Head/Hardsuits/maxim.rsi
+    sprite: _Moffstation/Clothing/Head/Hardsuits/maxim.rsi # Moffstation
   - type: PressureProtection
     highPressureMultiplier: 0.08
     lowPressureMultiplier: 1000
@@ -321,6 +405,10 @@
         Slash: 0.9
         Piercing: 0.9
         Heat: 0.9
+  - type: PointLight
+    radius: 5
+    energy: 2
+    color: plum #Moffstation
 
 #Security Hardsuit
 - type: entity
@@ -427,7 +515,7 @@
   description: Special hardsuit helmet, made for the chief engineer of the station.
   components:
   - type: Sprite
-    sprite: Clothing/Head/Hardsuits/engineering-white.rsi
+    sprite: _Moffstation/Clothing/Head/Hardsuits/engineering-white.rsi # Moffstation
     layers:
     - state: icon
     - state: icon-unshaded
@@ -453,8 +541,88 @@
       head-reptilian:
       - state: equipped-head-light-reptilian
         shader: unshaded
-      head-dog:
-      - state: equipped-head-light-dog
+      #head-dog: # Moffstation - Start
+      #- state: equipped-head-light-dog
+      #  shader: unshaded # Moffstation - End
+      # Moffstation - Start - Add Hardsuits for Resomi.
+      head-resomi:
+      - state: equipped-head-light-resomi
+        shader: unshaded
+      # Moffstation - End - Add Hardsuits for Resomi.
+  - type: Clothing
+    clothingVisuals:
+      head:
+      - state: equipped-head
+      - state: equipped-head-unshaded
+        shader: unshaded
+      head-vox:
+      - state: equipped-head-vox
+      - state: equipped-head-unshaded-vox
+        shader: unshaded
+      head-vulpkanin:
+      - state: equipped-head-vulpkanin
+      - state: equipped-head-unshaded-vulpkanin
+        shader: unshaded
+      head-reptilian:
+      - state: equipped-head-reptilian
+      - state: equipped-head-unshaded-reptilian
+        shader: unshaded
+      #head-dog: # Moffstation - Start
+      #- state: equipped-head-dog
+      #- state: equipped-head-unshaded-dog
+      #  shader: unshaded # Moffstation - End
+      # Moffstation - Start - Add Hardsuits for Resomi.
+      head-resomi:
+      - state: equipped-head-resomi
+      - state: equipped-head-unshaded-resomi
+        shader: unshaded
+      # Moffstation - End - Add Hardsuits for Resomi.
+  - type: PointLight
+    color: "SandyBrown" # Moffstation - Start
+    radius: 7
+    energy: 2 # Moffstation - End
+  - type: PressureProtection
+    highPressureMultiplier: 0.08
+    lowPressureMultiplier: 1000
+  - type: FireProtection
+    reduction: 0.2
+  - type: Tag
+    tags:
+    #- CorgiWearable # Moffstation
+    - WhitelistChameleon
+
+#Chief Medical Officer's Hardsuit
+- type: entity
+  parent: [ ClothingHeadHardsuitBase, ClothingHeadSuitWithLightBase ]
+  id: ClothingHeadHelmetHardsuitMedical
+  name: chief medical officer's hardsuit helmet
+  description: Lightweight medical hardsuit helmet that doesn't restrict your head movements.
+  components:
+  - type: Sprite
+    sprite: _Moffstation/Clothing/Head/Hardsuits/medicalhelm.rsi # Moffstation
+    layers:
+    - state: icon
+    - state: icon-unshaded
+      shader: unshaded
+    - state: light-overlay
+      visible: false
+      shader: unshaded
+      map: [ "light" ]
+  - type: HandheldLight
+    addPrefix: false
+  - type: ToggleableVisuals
+    clothingVisuals:
+      head:
+      - state: equipped-head-light
+        shader: unshaded
+      head-vox:
+      - state: equipped-head-light-vox
+        shader: unshaded
+      head-vulpkanin:
+      - state: equipped-head-light-vulpkanin
+        shader: unshaded
+      head-reptilian:
+      - state: equipped-head-light-reptilian
         shader: unshaded
   - type: Clothing
     clothingVisuals:
@@ -474,41 +642,16 @@
       - state: equipped-head-reptilian
       - state: equipped-head-unshaded-reptilian
         shader: unshaded
-      head-dog:
-      - state: equipped-head-dog
-      - state: equipped-head-unshaded-dog
-        shader: unshaded
   - type: PointLight
-    color: "#daffad"
-  - type: PressureProtection
-    highPressureMultiplier: 0.08
-    lowPressureMultiplier: 1000
-  - type: FireProtection
-    reduction: 0.2
-  - type: Tag
-    tags:
-    - CorgiWearable
-    - WhitelistChameleon
-
-#Chief Medical Officer's Hardsuit
-- type: entity
-  parent: [ ClothingHeadHardsuitBase, ClothingHeadSuitWithLightBase ]
-  id: ClothingHeadHelmetHardsuitMedical
-  name: chief medical officer's hardsuit helmet
-  description: Lightweight medical hardsuit helmet that doesn't restrict your head movements.
-  components:
-  - type: Sprite
-    sprite: Clothing/Head/Hardsuits/medical.rsi
-  - type: Clothing
-    sprite: Clothing/Head/Hardsuits/medical.rsi
-  - type: PointLight
-    color: "#adf1ff"
+    color: "DodgerBlue"
+    radius: 5
+    energy: 2 # Moffstation - End
   - type: PressureProtection
     highPressureMultiplier: 0.6
     lowPressureMultiplier: 1000
   - type: Tag
     tags:
-    - CorgiWearable
+    #- CorgiWearable #Moffstation
     - WhitelistChameleon
 
 #Research Director's Hardsuit
@@ -558,16 +701,16 @@
 
 #Luxury Mining Hardsuit
 - type: entity
-  parent: [ ClothingHeadHardsuitBase, ClothingHeadSuitWithLightBase ]
+  parent: [ ClothingHeadHelmetHardsuitSalvage ]
   id: ClothingHeadHelmetHardsuitLuxury #DO NOT MAP - https://github.com/space-wizards/space-station-14/pull/19738#issuecomment-1703486738
   name: luxury mining hardsuit helmet
   description: A refurbished mining hardsuit helmet, fitted with satin cushioning and an extra (non-functioning) antenna, because you're that extra.
   categories: [ DoNotMap ]
   components:
   - type: Sprite
-    sprite: Clothing/Head/Hardsuits/luxury.rsi
+    sprite: _Moffstation/Clothing/Head/Hardsuits/luxury.rsi # Moffstation
   - type: Clothing
-    sprite: Clothing/Head/Hardsuits/luxury.rsi
+    sprite: _Moffstation/Clothing/Head/Hardsuits/luxury.rsi # Moffstation
   - type: PressureProtection
     highPressureMultiplier: 0.525
     lowPressureMultiplier: 1000
@@ -760,16 +903,16 @@
 
 #Pirate EVA Suit (Deep Space EVA Suit)
 - type: entity
-  parent: ClothingHeadHardsuitBase
+  parent: [ClothingHeadHardsuitBase, ClothingHeadSuitWithLightBase]
   id: ClothingHeadHelmetHardsuitPirateEVA
   name: deep space EVA helmet
   suffix: Pirate
   description: A deep space EVA helmet, very heavy but provides good protection.
   components:
   - type: Sprite
-    sprite: Clothing/Head/Hardsuits/pirateeva.rsi
+    sprite: _Moffstation/Clothing/Head/Hardsuits/swashbuckler.rsi # Moffstation - Pirates
   - type: Clothing
-    sprite: Clothing/Head/Hardsuits/pirateeva.rsi
+    sprite: _Moffstation/Clothing/Head/Hardsuits/swashbuckler.rsi # Moffstation - Pirates
   - type: PressureProtection
     highPressureMultiplier: 0.3
     lowPressureMultiplier: 1000
@@ -777,7 +920,7 @@
 #Pirate Captain Hardsuit
 - type: entity
   parent: [ ClothingHeadHardsuitBase, ClothingHeadSuitWithLightBase ]
-  id: ClothingHeadHelmetHardsuitPirateCap
+  id: ClothingHeadHelmetHardsuitPirateCapUpstream # Moffstation - Use our own
   name: pirate captain's hardsuit helmet
   suffix: Pirate
   description: A special hardsuit helmet, made for the captain of a pirate ship.

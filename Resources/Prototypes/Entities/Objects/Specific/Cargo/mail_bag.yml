@@ -19,13 +19,16 @@
     maxItemSize: Normal
     grid:
     - 0,0,4,3
-    quickInsert: true
-    areaInsert: true
+  # Moffstation - Start
+#    quickInsert: true
+#    areaInsert: true
+    # Moffstation - End
     whitelist:
       components:
       - Paper
       - Delivery
       tags:
+      - MailCapsule #Moffstation - Advanced Mail Utilities
       - Document
       - Paper
   - type: Dumpable
@@ -33,3 +36,7 @@
     tags:
     - ScurretWearable
     - CorgiWearable
+  # Moffstation - Start
+  - type: QuickPickup
+  - type: AreaPickup
+  # Moffstation - End

@@ -1,0 +1,30 @@
+- type: entity
+  name: Blackbox shotgun
+  parent: BaseWeaponShotgun
+  id: WeaponShotgunBlackbox
+  description: An old yet faithful design, and a favorite among irregular forces of many worlds. Uses .50 shotgun shells.
+  components:
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Shotguns/blunderbuss.rsi
+  - type: Gun
+    fireRate: 1
+  - type: AmmoCounter
+  - type: ContainerContainer
+    containers:
+      ballistic-ammo: !type:Container
+  - type: BallisticAmmoSelfRefiller
+    autoRefillRate: 8s
+    affectedByEmp: true
+
+- type: entity # Kammerer in independent colors, for use by mercenaries and pirates.
+  parent: WeaponShotgunKammerer
+  id: WeaponShotgunKammererOld
+  suffix: Old
+  description: "A beaten-up pump-action shotgun. A model originating from Old Earth, this weapon features original wooden furniture, commonly found on the black market. A choke on the muzzle keeps the spread tight, improving long-range performance but requiring more careful aim.\nLoads seven .50 shells."
+  components:
+  - type: Item
+    sprite: _Moffstation/Objects/Weapons/Guns/Shotguns/pump_old_inhands_64x.rsi
+  - type: Sprite
+    sprite: _Moffstation/Objects/Weapons/Guns/Shotguns/pump_old.rsi
+  - type: Clothing
+    sprite: _Moffstation/Objects/Weapons/Guns/Shotguns/pump_old.rsi

@@ -1120,10 +1120,11 @@
   - UplinkExplosives
 
 - type: listing
-  id: UplinkSyndimovCircuitBoard
+  id: UplinkSyndimovCircuitKit
   name: uplink-syndimov-law-name
   description: uplink-syndimov-law-desc
-  productEntity: SyndimovCircuitBoard
+  icon: { sprite: /Textures/Objects/Storage/boxicons.rsi, state: syndicate_circuit }
+  productEntity: SyndimovCircuitKit
   discountCategory: usualDiscounts
   discountDownTo:
     Telecrystal: 6
@@ -1739,15 +1740,20 @@
   description: uplink-hardsuit-syndieelite-desc
   icon: { sprite: /Textures/Clothing/OuterClothing/Hardsuits/syndieelite.rsi, state: icon }
   productEntity: ClothingBackpackDuffelSyndicateEliteHardsuitBundle
+  # Moffstation - Start - Readd hardsuits to uplink
+  discountCategory: rareDiscounts
+  discountDownTo:
+    Telecrystal: 7
   cost:
     Telecrystal: 12
   categories:
   - UplinkWearables
-  conditions:
-  - !type:StoreWhitelistCondition
-    whitelist:
-      tags:
-      - NukeOpsUplink
+#  conditions:
+#  - !type:StoreWhitelistCondition
+#    whitelist:
+#      tags:
+#      - NukeOpsUplink
+  # Moffstation - End
 
 - type: listing
   id: UplinkClothingOuterHardsuitJuggernaut
@@ -1755,15 +1761,20 @@
   description: uplink-clothing-outer-hardsuit-juggernaut-desc
   icon: { sprite: /Textures/Structures/Storage/Crates/syndicate.rsi, state: icon }
   productEntity: CrateCybersunJuggernautBundle
+  # Moffstation - Start - Readd hardsuits to uplink
+  discountCategory: rareDiscounts
+  discountDownTo:
+    Telecrystal: 8
   cost:
     Telecrystal: 12
   categories:
   - UplinkWearables
-  conditions:
-  - !type:StoreWhitelistCondition
-    whitelist:
-      tags:
-      - NukeOpsUplink
+#  conditions:
+#  - !type:StoreWhitelistCondition
+#    whitelist:
+#      tags:
+#      - NukeOpsUplink
+  # Moffstation - End
 
 - type: listing
   id: UplinkClothingEyesHudSyndicate
@@ -1849,14 +1860,14 @@
   description: uplink-cat-ears-desc
   productEntity: ClothingHeadHatCatEars
   cost:
-    Telecrystal: 26
+    Telecrystal: 5 # Moffstation
   categories:
   - UplinkPointless
   conditions:
   - !type:BuyerWhitelistCondition
     blacklist:
       components:
-      - SurplusBundle
+      #- SurplusBundle # Moffstation - Cat Ears in Surplus is Funny
 
 - type: listing
   id: UplinkOutlawHat
@@ -1937,7 +1948,7 @@
   description: uplink-balloon-desc
   productEntity: BalloonSyn
   cost:
-    Telecrystal: 20
+    Telecrystal: 1 # Moffstation
   categories:
   - UplinkPointless
   conditions:

@@ -207,6 +207,15 @@
         },
         {
             "name": "zookeeper"
+        },
+        {
+            "name": "centcomexec"
+        },
+        {
+            "name": "centcomofficer"
+        },
+        {
+            "name": "centcomrep"
         }
     ]
 }

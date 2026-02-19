@@ -4,35 +4,39 @@
   id: JobChiefMedicalOfficer
   groups:
   - GroupTankHarness
+  - ChiefMedicalOfficerPDA #Moffstation - New PDAs
   - ChiefMedicalOfficerHead
   - MedicalMask
   - ChiefMedicalOfficerJumpsuit
-  - MedicalBackpack
+  - ChiefMedicalOfficerBackpack # Moffstation - Department Heads can wear any bag from their department
   - ChiefMedicalOfficerOuterClothing
   - ChiefMedicalOfficerNeck
   - ChiefMedicalOfficerShoes
-  - Glasses
+  - ChemistEyewear # Moffstation - Medical eyewear - CMO gets chemist because it includes the normal medical huds as well
   - SurvivalMedical
   - Trinkets
-#  - ChiefMedicalOfficerJobTrinkets
+  #  - ChiefMedicalOfficerJobTrinkets
   - GroupSpeciesBreathToolMedical
+  - PersonalItemsJobAgnostic # Umbra
 
 - type: roleLoadout
   id: JobMedicalDoctor
   groups:
   - GroupTankHarness
+  - MedicalDoctorPDA # Moffstation - Additional job title loadouts
   - MedicalDoctorHead
   - MedicalMask
   - MedicalDoctorJumpsuit
   - MedicalBackpack
   - MedicalDoctorOuterClothing
   - MedicalShoes
-  - MedicalDoctorPDA
-  - Glasses
+  # - MedicalDoctorPDA # Moffstation - Moved up in list for title loadouts
+  - MedicalEyewear # Moffstation - Medical eyewear
   - SurvivalMedical
   - Trinkets
-#  - MedicalDoctorJobTrinkets
+  #  - MedicalDoctorJobTrinkets
   - GroupSpeciesBreathToolMedical
+  - PersonalItemsJobAgnostic # Umbra
 
 - type: roleLoadout
   id: JobMedicalIntern
@@ -43,36 +47,41 @@
   - Glasses
   - SurvivalMedical
   - Trinkets
-#  - MedicalInternJobTrinkets
+  #  - MedicalInternJobTrinkets
   - GroupSpeciesBreathToolMedical
+  - PersonalItemsJobAgnostic # Umbra
 
 - type: roleLoadout
   id: JobChemist
   groups:
   - GroupTankHarness
+  - ChemistryPDA # Moffstation - Additional job title loadouts
   - MedicalMask
   - ChemistJumpsuit
   - ChemistBackpack
   - ChemistOuterClothing
-  - MedicalShoes
-  - Glasses
+  - ChemistShoes
+  - ChemistEyewear # Moffstation - Medical Eyewear
   - SurvivalMedical
   - Trinkets
-#  - ChemistJobTrinkets
+  #  - ChemistJobTrinkets
   - GroupSpeciesBreathToolMedical
+  - PersonalItemsJobAgnostic # Umbra
 
 - type: roleLoadout
   id: JobParamedic
   groups:
   - GroupTankHarness
+  - ParamedicPDA # Moffstation - Additional job title loadouts
   - ParamedicHead
   - MedicalMask
   - ParamedicJumpsuit
   - MedicalBackpack
   - ParamedicOuterClothing
   - ParamedicShoes
-  - Glasses
+  - MedicalEyewear # Moffstation - Medical eyewear
   - SurvivalMedical
   - Trinkets
-#  - ParamedicJobTrinkets
+  #  - ParamedicJobTrinkets
   - GroupSpeciesBreathToolMedical
+  - PersonalItemsJobAgnostic # Umbra

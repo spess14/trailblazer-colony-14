@@ -18,11 +18,11 @@
     - id: MouseMigration
     - id: PowerGridCheck
     - id: RandomSentience
-    - id: SlimesSpawn
+    #- id: SlimesSpawn # Moffstation - Move to pests table
     - id: SolarFlare
-    - id: SnakeSpawn
-    - id: SpiderClownSpawn
-    - id: SpiderSpawn
+    #- id: SnakeSpawn # Moffstation - Move to pests table
+    #- id: SpiderClownSpawn # Moffstation - Move to pests table
+    #- id: SpiderSpawn # Moffstation - Move to pests table
     - id: VentClog
 
 - type: entityTable
@@ -46,8 +46,13 @@
     - id: ZombieOutbreak
     - id: LoneOpsSpawn
     - id: WizardSpawn
+    - id: EeepEvent # imp
     - !type:NestedSelector
       tableId: DerelictBorgEventTable
+    # Moffstation - Start - Moffstation ghostrole antags
+    - id: SyndicateListeningOutpostSpawn
+    - id: PirateCorsairSpawn
+    # Moffstation - End
 
 - type: entityTable
   id: DerelictBorgEventTable #For Derelict Borg spawns
@@ -192,7 +197,7 @@
     weight: 6.5
     earliestStart: 40
     reoccurrenceDelay: 20
-    minimumPlayers: 20
+    minimumPlayers: 30  # Moffstation - Tune down antags
     duration: null
   - type: SpaceSpawnRule
     spawnDistance: 0
@@ -276,7 +281,7 @@
     duration: null
     earliestStart: 20
     reoccurrenceDelay: 20
-    minimumPlayers: 15
+    minimumPlayers: 20  # Moffstation - Tune down antags
   - type: ParadoxCloneRule
     objectiveBlacklist:
       tags:
@@ -284,6 +289,7 @@
   - type: AntagObjectives
     objectives:
     - ParadoxCloneKillObjective
+    - ParadoxCloneCoexistObjective  # Moffstation - Paradox clone free agents
     - ParadoxCloneLivingObjective
   - type: AntagRandomSpawn # TODO: improve spawning so they only start in maints
   - type: AntagSelection
@@ -326,7 +332,7 @@
     duration: 1
     earliestStart: 30
     reoccurrenceDelay: 60
-    minimumPlayers: 30
+    minimumPlayers: 30  # Moffstation - Tune down antags
   - type: AntagSelection
     agentName: wizard-round-end-name
     definitions:
@@ -338,6 +344,7 @@
       startingGear: WizardBlueGear
       roleLoadout:
       - RoleSurvivalExtended
+      - JobWizard   # Moffstation - Enable custom wizard name/loadout
       briefing:
         text: wizard-role-greeting
         color: Turquoise
@@ -458,15 +465,17 @@
     earliestStart: 20
     minimumPlayers: 15
     weight: 5
-    duration: 60
+    duration: 30 # Moffstation - used as delay
   - type: VentCrittersRule
     entries:
-    - id: MobAdultSlimesBlueAngry
+    # Moffstation - Start - Make mobs smash stuff
+    - id: MobAdultSlimesBlueAngrySmasher
       prob: 0.02
-    - id: MobAdultSlimesGreenAngry
+    - id: MobAdultSlimesGreenAngrySmasher
       prob: 0.02
-    - id: MobAdultSlimesYellowAngry
+    - id: MobAdultSlimesYellowAngrySmasher
       prob: 0.02
+    # Moffstation - End
 
 - type: entity
   id: SnakeSpawn
@@ -479,15 +488,17 @@
     earliestStart: 20
     minimumPlayers: 15
     weight: 5
-    duration: 60
+    duration: 30 # Moffstation - used as delay
   - type: VentCrittersRule
     entries:
-    - id: MobPurpleSnake
+    # Moffstation - Start - Make mobs smash stuff
+    - id: MobPurpleSnakeSmasher
       prob: 0.02
-    - id: MobSmallPurpleSnake
+    - id: MobSmallPurpleSnakeSmasher
       prob: 0.02
-    - id: MobCobraSpace
+    - id: MobCobraSpaceSmasher
       prob: 0.02
+    # Moffstation - End
 
 - type: entity
   id: SpiderSpawn
@@ -500,11 +511,13 @@
     earliestStart: 20
     minimumPlayers: 15
     weight: 5
-    duration: 60
+    duration: 30 # Moffstation - used as delay
   - type: VentCrittersRule
     entries:
-    - id: MobGiantSpiderAngry
+    # Moffstation - Start - Make mobs smash stuff
+    - id: MobGiantSpiderAngrySmasher
       prob: 0.05
+    # Moffstation - End
 
 - type: entity
   id: SpiderClownSpawn
@@ -517,10 +530,10 @@
     earliestStart: 20
     minimumPlayers: 20
     weight: 1.5
-    duration: 60
+    duration: 30 # Moffstation - used as delay
   - type: VentCrittersRule
     entries:
-    - id: MobClownSpider
+    - id: MobClownSpiderSmasher # Moffstation - Make mobs smash stuff
       prob: 0.05
 
 - type: entity
@@ -566,7 +579,7 @@
   - type: StationEvent
     earliestStart: 35
     weight: 5.5
-    minimumPlayers: 20
+    minimumPlayers: 30 # Moffstation - Tune down antags
     duration: null # LoneOpsSpawn needs an infinite duration so that it inherits the NukeOpsRule things of an actually appropriate end screen (not always "Neutral outcome!") and... ending the game if the station is nuked.
   - type: RuleGrids
   - type: LoadMapRule
@@ -582,6 +595,7 @@
       startingGear: SyndicateLoneOperativeGearFull
       roleLoadout:
       - RoleSurvivalNukie
+      - JobNukeops  # Moffstation - Enable custom nukie name/loadout
       components:
       - type: NukeOperative
       - type: RandomMetadata
@@ -604,7 +618,7 @@
   - type: StationEvent
     earliestStart: 30
     weight: 8
-    minimumPlayers: 15
+    minimumPlayers: 25  # Moffstation - Tune down antags
     maxOccurrences: 1 # can only happen once per round
     startAnnouncement: station-event-communication-interception
     startAudio:

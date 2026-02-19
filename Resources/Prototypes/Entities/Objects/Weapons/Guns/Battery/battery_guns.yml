@@ -595,7 +595,7 @@
       path: /Audio/Weapons/Guns/Gunshots/taser2.ogg
   - type: BatteryAmmoProvider
     proto: BulletDisablerSmg
-    fireCost: 25
+    fireCost: 33.3 # Moffstation - Disabler nerf
   - type: MagazineVisuals
     magState: mag
     steps: 5

@@ -360,7 +360,7 @@ public sealed partial class CCVars
     ///     The prototype to use for secret weights.
     /// </summary>
     public static readonly CVarDef<string> SecretWeightPrototype =
-        CVarDef.Create("game.secret_weight_prototype", "Secret", CVar.SERVERONLY);
+        CVarDef.Create("game.secret_weight_prototype", "SecretUpstream", CVar.SERVERONLY);
 
     /// <summary>
     ///     The id of the sound collection to randomly choose a sound from and play when the round ends.
@@ -418,4 +418,12 @@ public sealed partial class CCVars
     /// </remarks>
     public static readonly CVarDef<int> TileStackLimit =
         CVarDef.Create("game.tile_stack_limit", 5, CVar.SERVER | CVar.REPLICATED);
+
+    // Moffstation - Begin
+    /// <summary>
+    /// if true, the player count check for rules will be based on the number of players readied, versus the total number in the lobby.
+    /// </summary>
+    public static readonly CVarDef<bool>
+        GameRulesCountReadied = CVarDef.Create("game.rules_count_readied", false, CVar.SERVERONLY);
+    // Moffstation - End
 }

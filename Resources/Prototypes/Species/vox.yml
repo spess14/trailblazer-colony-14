@@ -5,7 +5,7 @@
   roundStart: false
   prototype: MobVox
   dollPrototype: AppearanceVox
-  skinColoration: VoxFeathers
+  skinColoration: Hues # Moffstation - Give Vox their colours.
   defaultSkinTone: "#6c741d"
   maleFirstNames: NamesVox
   femaleFirstNames: NamesVox

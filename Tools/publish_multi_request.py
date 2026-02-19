@@ -15,8 +15,8 @@ RELEASE_DIR = "release"
 # CONFIGURATION PARAMETERS
 # Forks should change these to publish to their own infrastructure.
 #
-ROBUST_CDN_URL = "https://xiv.ar-iss.net/"
-FORK_ID = "trailblazer"
+ROBUST_CDN_URL = "https://robustcdn.these.moths.gay/"
+FORK_ID = "moffstation"
 
 def main():
     parser = argparse.ArgumentParser()

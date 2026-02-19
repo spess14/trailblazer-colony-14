@@ -24,6 +24,7 @@ using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
 using System.Linq;
+using Content.Shared.Damage.Systems; //Moffstation - recycler damage change
 using Content.Shared.Gibbing;
 using Content.Shared.Humanoid;
 
@@ -40,6 +41,7 @@ public sealed class MaterialReclaimerSystem : SharedMaterialReclaimerSystem
     [Dependency] private readonly PopupSystem _popup = default!;
     [Dependency] private readonly SharedSolutionContainerSystem _solutionContainer = default!;
     [Dependency] private readonly GibbingSystem _gibbing = default!;
+    [Dependency] private readonly DamageableSystem _damage = default!; //Moffstation - recycler damage change
     [Dependency] private readonly PuddleSystem _puddle = default!;
     [Dependency] private readonly StackSystem _stack = default!;
     [Dependency] private readonly SharedMindSystem _mind = default!;
@@ -190,10 +192,10 @@ public sealed class MaterialReclaimerSystem : SharedMaterialReclaimerSystem
         if (CanGib(uid, item, component))
         {
             var logImpact = HasComp<HumanoidProfileComponent>(item) ? LogImpact.Extreme : LogImpact.Medium;
-            _adminLogger.Add(LogType.Gib, logImpact, $"{ToPrettyString(item):victim} was gibbed by {ToPrettyString(uid):entity} ");
-            if (component.ReclaimSolutions)
-                SpawnChemicalsFromComposition(uid, item, completion, false, component, xform);
-            _gibbing.Gib(item);
+            //Moffstation - recycler damage change - begin
+            _adminLogger.Add(LogType.Damaged, logImpact, $"{ToPrettyString(item):victim} was ground by {ToPrettyString(uid):entity} ");
+            _damage.TryChangeDamage(item, component.DamageOnGrind, true);
+            //Moffstation - end
             _appearance.SetData(uid, RecyclerVisuals.Bloody, true);
         }
         else
@@ -202,7 +204,10 @@ public sealed class MaterialReclaimerSystem : SharedMaterialReclaimerSystem
                 SpawnChemicalsFromComposition(uid, item, completion, true, component, xform);
         }
 
-        QueueDel(item);
+        //Moffstation - recycler damage change - begin
+        if(!CanGib(uid, item, component))
+            QueueDel(item);
+        //Moffstation - end
     }
 
     private void SpawnMaterialsFromComposition(EntityUid reclaimer,

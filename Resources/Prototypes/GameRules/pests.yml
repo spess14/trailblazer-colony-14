@@ -7,6 +7,13 @@
     - id: SnailMigrationLowPop
     - id: CockroachMigration
     - id: MouseMigration
+    # Moffstation - Start - Extra vent critters
+    - id: MothroachMigration
+    - id: WhimperletMigration
+    - id: ScurretMigration
+    - id: ReptileMigration
+    - id: MammalMigration
+    # Moffstation - End
 
 - type: entityTable
   id: SpicyPestEventsTable
@@ -14,6 +21,17 @@
     children:
     - id: KingRatMigration
     - id: SnailMigration
+    # Moffstation - Start - Extra vent critters
+    - id: SlimesSpawn
+    - id: SnakeSpawn
+    - id: SpiderClownSpawn
+    - id: SpiderSpawn
+    - id: CarpMigration
+    - id: SyndiSoliderMigration
+    - id: HostileGorillaMigration
+    - id: SyndyCatMigration
+    - id: FleshMigration
+    # Moffstation - End
 
 # events
 
@@ -27,7 +45,7 @@
       path: /Audio/Announcements/attention.ogg
     earliestStart: 15
     weight: 6
-    duration: 50
+    duration: 30 # Moffstation - used as delay
   - type: VentCrittersRule
     entries:
     - id: MobMouse
@@ -50,7 +68,7 @@
       path: /Audio/Announcements/attention.ogg
     earliestStart: 15
     weight: 6
-    duration: 50
+    duration: 30 # Moffstation - used as delay
     minimumPlayers: 30 # Hopefully this is enough for the Rat King's potential Army (it was not, raised from 15 -> 30)
   - type: VentCrittersRule
     entries:
@@ -75,7 +93,7 @@
     startAudio:
       path: /Audio/Announcements/attention.ogg
     weight: 6
-    duration: 50
+    duration: 30 # Moffstation - used as delay
   - type: VentCrittersRule
     entries:
     - id: MobCockroach
@@ -94,7 +112,7 @@
     startAudio:
       path: /Audio/Announcements/attention.ogg
     weight: 6
-    duration: 50
+    duration: 30 # Moffstation - used as delay
   - type: VentCrittersRule
     entries:
     - id: MobSnail
@@ -114,7 +132,7 @@
       path: /Audio/Announcements/attention.ogg
     earliestStart: 15
     weight: 6
-    duration: 50
+    duration: 30 # Moffstation - used as delay
     minimumPlayers: 30
   - type: VentCrittersRule
     entries:
@@ -125,4 +143,4 @@
     - id: MobSnailMoth
       prob: 0.002
     - id: MobSnailInstantDeath
-      prob: 0.00001 #  ~ 1:2000 snails
+      prob: 0.00005 #  ~ 1:2000 snails  # Moffstation - change it to make it actually around 1 in 2000

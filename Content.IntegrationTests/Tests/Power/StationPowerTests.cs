@@ -34,6 +34,7 @@ public sealed class StationPowerTests
         "Snowball",
         "Reach",
         "Exo",
+        "Frezon", // Moffstation
     ];
 
     [Explicit]

@@ -60,6 +60,20 @@ namespace Content.Server.Database
                 .HasIndex(p => new {p.Slot, PrefsId = p.PreferenceId})
                 .IsUnique();
 
+            // CD: CD Character Data
+            modelBuilder.Entity<CDModel.CDProfile>()
+                .HasOne(p => p.Profile)
+                .WithOne(p => p.CDProfile)
+                .HasForeignKey<CDModel.CDProfile>(p => p.ProfileId)
+                .IsRequired();
+
+            modelBuilder.Entity<CDModel.CharacterRecordEntry>()
+                .HasOne(e => e.CDProfile)
+                .WithMany(e => e.CharacterRecordEntries)
+                .HasForeignKey(e => e.CDProfileId)
+                .IsRequired();
+            // END CD
+
             modelBuilder.Entity<Antag>()
                 .HasIndex(p => new {HumanoidProfileId = p.ProfileId, p.AntagName})
                 .IsUnique();
@@ -292,6 +306,14 @@ namespace Content.Server.Database
                 .Property(p => p.Type)
                 .HasDefaultValue(HwidType.Legacy);
 
+            // Moffstation - Start - Weighted Antags
+            modelBuilder.Entity<MoffModel.MoffPlayer>()
+                .HasOne(mp => mp.Player)
+                .WithOne(p => p.MoffPlayer)
+                .HasForeignKey<MoffModel.MoffPlayer>(mp => mp.PlayerUserId)
+                .HasPrincipalKey<Player>(p => p.UserId);
+            // Moffstation - End
+
             modelBuilder.Entity<ConnectionLog>()
                 .OwnsOne(p => p.HWId)
                 .Property(p => p.Hwid)
@@ -359,6 +381,8 @@ namespace Content.Server.Database
 
         public int PreferenceId { get; set; }
         public Preference Preference { get; set; } = null!;
+
+        public CDModel.CDProfile? CDProfile { get; set; } // Moffstation - Add CD Profile
     }
 
     public class Job
@@ -539,6 +563,9 @@ namespace Content.Server.Database
         public List<Ban> AdminServerBansCreated { get; set; } = null!;
         public List<Ban> AdminServerBansLastEdited { get; set; } = null!;
         public List<RoleWhitelist> JobWhitelists { get; set; } = null!;
+
+        // Moffstation - Weighted Antags
+        public MoffModel.MoffPlayer? MoffPlayer { get; set; } = new();
     }
 
     [Table("whitelist")]

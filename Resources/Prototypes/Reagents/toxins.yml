@@ -72,15 +72,16 @@
         effectProto: StatusEffectDrowsiness
         time: 4
         type: Update
-      - !type:HealthChange
+      # Moffstation start - Make ChloralHydrate sleep
+      - !type:GenericStatusEffect
         conditions:
         - !type:ReagentCondition
           reagent: ChloralHydrate
-          min: 20
-        damage:
-          types:
-            Poison: 1.5
-
+          min: 26
+        key: ForcedSleep
+        component: ForcedSleeping
+        type: Add
+      # Moffstation End - Make ChloralHydrate sleep
 - type: reagent
   id: GastroToxin
   name: reagent-name-gastrotoxin
@@ -129,6 +130,7 @@
   contrabandSeverity: Major
   flavor: acid
   color: "#a1000b"
+  worksOnTheDead: true # Moffstation - Acids burn
   boilingPoint: 78.2 # This isn't a real chemical...
   meltingPoint: -19.4
   plantMetabolism:
@@ -174,6 +176,7 @@
   desc: reagent-desc-ferrochromic-acid
   flavor: sour
   color: "#48b3b8"
+  worksOnTheDead: true # Moffstation - Acids burn
   physicalDesc: reagent-physical-desc-ferrous
   metabolisms:
     Bloodstream:
@@ -196,6 +199,7 @@
   contrabandSeverity: Minor
   flavor: acid
   color: "#5050ff"
+  worksOnTheDead: true # Moffstation - Acids burn
   boilingPoint: 165
   meltingPoint: -87
   reactiveEffects:
@@ -237,6 +241,7 @@
   - Chemist
   flavor: acid
   color: "#BF8C00"
+  worksOnTheDead: true # Moffstation - Acids burn
   recognizable: true
   boilingPoint: 337.0
   meltingPoint: 10.31

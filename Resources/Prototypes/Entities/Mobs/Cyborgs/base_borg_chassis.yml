@@ -34,7 +34,7 @@
     baseWalkSpeed : 2.5
     baseSprintSpeed : 4.5
   - type: Sprite
-    sprite: Mobs/Silicon/chassis.rsi
+    sprite: _Moffstation/Mobs/Silicon/Chassis/generic.rsi # Moffstation - Early merge of Borg RSI fix
   - type: RotationVisuals
     horizontalRotation: 90
   - type: MobState
@@ -259,6 +259,9 @@
   id: BaseBorgChassis
   components:
   - type: IonStormTarget
+  # Moffstation - Begin (Remove Inherent Gravity) - give magboots effect to cyborgs, but not xenoborgs to prevent a new meta strategy.
+  - type: Magboots
+  # Moffstation - End
 
 - type: entity
   abstract: true

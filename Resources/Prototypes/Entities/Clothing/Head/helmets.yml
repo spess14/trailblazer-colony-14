@@ -29,26 +29,56 @@
 
 #Basic Helmet (Security Helmet)
 - type: entity
-  parent: [ClothingHeadHelmetArmoredBase, BaseSecurityContraband]
+  parent: [ClothingHeadHelmetArmoredBase, FoldableHelmetBase, BaseSecurityContraband] # Moffstation - (Foldable Helmets)
   id: ClothingHeadHelmetBasic
-  name: helmet
-  description: Standard security gear. Protects the head from impacts.
+  # Moffstation - Begin (New Security Helmets)
+  name: security helmet
+  description: A modern, tight helmet, it provides decent protection against most forms of attack, and comes with a detachable visor. A staple of the classic security officer look.
   components:
   - type: Sprite
-    sprite: Clothing/Head/Helmets/security.rsi
+    sprite: _Moffstation/Clothing/Head/Helmets/security.rsi
+    layers:
+    - state: raised-icon
+    - state: lowered-icon
+      visible: false
+      map: [ "visor" ]
   - type: Clothing
-    sprite: Clothing/Head/Helmets/security.rsi
+    sprite: _Moffstation/Clothing/Head/Helmets/security.rsi
+    equippedPrefix: raised
+  - type: Item
+    heldPrefix: raised
+  - type: ToggleableVisuals
+    spriteLayer: visor
+    clothingVisuals:
+      head:
+      - state: lowered-equipped-HELMET
+      head-vox:
+      - state: lowered-equipped-HELMET-vox
+    inhandVisuals:
+      left:
+      - state: lowered-inhand-left
+      right:
+      - state: lowered-inhand-right
+  - type: Appearance
+  - type: ItemToggle
+    predictable: false
+    verbToggleOn: item-toggle-lower-visor
+    verbToggleOff: item-toggle-raise-visor
+  # Moffstation - End
   - type: Tag
     tags:
     - WhitelistChameleon
     - SecurityHelmet
-  - type: HideLayerClothing
-    layers:
-      Hair: HEAD
+  # Moffstation - Begin (Foldable Helmets)
+  #- type: HideLayerClothing
+  #  slots: [ ]
+  #  layers:
+  #    Hair: HEAD
+  # Moffstation - End
 
 #Mercenary Helmet
 - type: entity
-  parent: [ ClothingHeadHelmetArmoredBase, BaseMajorContraband ]
+  parent: [ ClothingHeadHelmetArmoredBase, FoldableHelmetBase, BaseMajorContraband ] # Moffstation - (Foldable Helmets)
   id: ClothingHeadHelmetMerc
   name: mercenary helmet
   description: The combat helmet is commonly used by mercenaries, is strong, light and smells like gunpowder and the jungle.
@@ -57,9 +87,11 @@
     sprite: Clothing/Head/Helmets/merc_helmet.rsi
   - type: Clothing
     sprite: Clothing/Head/Helmets/merc_helmet.rsi
-  - type: HideLayerClothing
-    layers:
-      Hair: HEAD
+  # Moffstation - Begin (Foldable Helmets)
+  #- type: HideLayerClothing
+  #  layers:
+  #    Hair: HEAD
+  # Moffstation - End
 
 #SWAT Helmet
 - type: entity
@@ -105,7 +137,7 @@
 
 #Light Riot Helmet
 - type: entity
-  parent: [ClothingHeadHelmetBase, BaseSecurityContraband]
+  parent: [ClothingHeadHelmetBase, FoldableHelmetBase, BaseSecurityContraband] # Moffstation - (Foldable Helmets)
   id: ClothingHeadHelmetRiot
   name: light riot helmet
   description: It's a helmet specifically designed to protect against close range attacks.
@@ -121,9 +153,11 @@
         Blunt: 0.8
         Slash: 0.8
         Piercing: 0.95
-  - type: HideLayerClothing
-    layers:
-      Hair: HEAD
+  # Moffstation - Begin (Foldable Helmets)
+  #- type: HideLayerClothing
+  #  layers:
+  #    Hair: HEAD
+  # Moffstation - End
 
 #Bombsuit Helmet
 - type: entity
@@ -297,9 +331,9 @@
   description: An atmos fire helmet, able to keep the user cool in any situation.
   components:
   - type: Sprite
-    sprite: Clothing/Head/Helmets/atmos_firehelmet.rsi
+    sprite: _Moffstation/Clothing/Head/Helmets/atmos_firehelmet.rsi # Moffstation
   - type: Clothing
-    sprite: Clothing/Head/Helmets/atmos_firehelmet.rsi
+    sprite: _Moffstation/Clothing/Head/Helmets/atmos_firehelmet.rsi # Moffstation
     quickEquip: true
   - type: IngestionBlocker
   - type: TemperatureProtection
@@ -315,12 +349,16 @@
     tags:
     - WhitelistChameleon
     - FireHelmet
-    - CorgiWearable
+    #- CorgiWearable #Moffstation
   - type: HideLayerClothing
     layers:
       Hair: HEAD
       Snout: HEAD
   - type: BreathMask
+  - type: PointLight # Moffstation - Start
+    color: "LemonChiffon"
+    radius: 4
+    energy: 1 # Moffstation - End
 
 #Chitinous Helmet
 - type: entity
@@ -474,7 +512,7 @@
 
 #Justice Helmet
 - type: entity
-  parent: ClothingHeadHelmetBasic
+  parent: [ClothingHeadHelmetArmoredBase, FoldableHelmetBase, BaseSecurityContraband] # Moffstation - (Foldable Helmets)
   id: ClothingHeadHelmetJustice
   name: justice helm
   description: Advanced security gear. Protects the station from ne'er-do-wells.
@@ -542,9 +580,17 @@
   - type: Construction
     graph: HelmetJustice
     node: helmet
-  - type: HideLayerClothing
-    layers:
-      Hair: HEAD
+  # Moffstation - Begin (Foldable Helmets)
+  #- type: HideLayerClothing
+  #  layers:
+  #    Hair: HEAD
+  # Moffstation - End
+  # Moffstation - Begin (Foldable Security Helmet)
+  - type: Tag
+    tags:
+    - WhitelistChameleon
+    - SecurityHelmet
+  # Moffstation - End
 
 - type: entity
   parent: ClothingHeadHelmetJustice

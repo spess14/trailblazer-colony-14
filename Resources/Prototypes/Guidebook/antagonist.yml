@@ -12,6 +12,10 @@
   - Zombies
   - Xenoborgs
   - MinorAntagonists
+  - BloodBrothers # Harmony
+  - Conspirators # Harmony
+  - Pirates # Moffstation
+  - Eeeps # imp
 
 - type: guideEntry
   id: Traitors

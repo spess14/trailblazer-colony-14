@@ -1,5 +1,6 @@
 using System.Linq;
 using System.Numerics;
+using System.Text;  // Moffstation
 using Content.Server.Announcements;
 using Content.Server.Discord;
 using Content.Server.GameTicking.Events;
@@ -24,6 +25,12 @@ using Robust.Shared.Network;
 using Robust.Shared.Player;
 using Robust.Shared.Random;
 using Robust.Shared.Utility;
+// Goob Station - End of Round Screen
+using Content.Shared._Goob.LastWords;
+using Content.Shared.Damage.Components;
+using Content.Shared.FixedPoint;
+using Content.Shared.Mobs;
+using Content.Shared.Mobs.Components;
 
 namespace Content.Server.GameTicking
 {
@@ -348,6 +355,15 @@ namespace Content.Server.GameTicking
             return total;
         }
 
+        // Moffstation - Start - Player count calculated depending on cvar
+        public int DynamicPlayerCount()
+        {
+            return _cfg.GetCVar(CCVars.GameRulesCountReadied)
+                ? ReadyPlayerCount()
+                : _playerManager.PlayerCount;
+        }
+        // Moffstation - End
+
         public void StartRound(bool force = false)
         {
 #if EXCEPTION_TOLERANCE
@@ -564,6 +580,23 @@ namespace Content.Server.GameTicking
 
                 var roles = _roles.MindGetAllRoleInfo(mindId);
 
+                // Goobstation - Start - Cool player manifest
+                var lastWords = "";
+                var mobState = MobState.Invalid;
+                var damagePerGroup = new Dictionary<string, FixedPoint2>();
+                if (TryComp<LastWordsComponent>(mindId, out var lastWordsComponent)
+                    && !TerminatingOrDeleted(entity))
+                {
+                    lastWords = lastWordsComponent.LastWords;
+
+                    if (TryComp<MobStateComponent>(entity, out var mobStateComp) && mobState is { } _)
+                        mobState = mobStateComp.CurrentState;
+
+                    if (TryComp<DamageableComponent>(entity, out var damageableComp))
+                        damagePerGroup = damageableComp.DamagePerGroup;
+                }
+                // Goobstation - End
+
                 var playerEndRoundInfo = new RoundEndMessageEvent.RoundEndPlayerInfo()
                 {
                     // Note that contentPlayerData?.Name sticks around after the player is disconnected.
@@ -580,7 +613,11 @@ namespace Content.Server.GameTicking
                     JobPrototypes = roles.Where(role => !role.Antagonist).Select(role => role.Prototype).ToArray(),
                     AntagPrototypes = roles.Where(role => role.Antagonist).Select(role => role.Prototype).ToArray(),
                     Observer = observer,
-                    Connected = connected
+                    Connected = connected,
+                    // Goob Station - End of Round Screen
+                    LastWords = lastWords,
+                    EntMobState = mobState,
+                    DamagePerGroup = damagePerGroup
                 };
                 listOfPlayerInfo.Add(playerEndRoundInfo);
             }
@@ -759,6 +796,22 @@ namespace Content.Server.GameTicking
 
             return true;
         }
+
+        // Moffstation - Start - SetCountdown Command
+        public bool SetCountdown(TimeSpan time)
+        {
+            if (_runLevel != GameRunLevel.PreRoundLobby) // must be in preround
+                return false;
+
+            _roundStartTime = _gameTiming.CurTime + time;
+            RaiseNetworkEvent(new TickerLobbyCountdownEvent(_roundStartTime, Paused));
+            _chatManager.DispatchServerAnnouncement(
+                Loc.GetString("game-ticker-set-countdown", ("seconds", time.TotalSeconds))
+            );
+
+            return true;
+        }
+        // Moffstation - End
 
         private void UpdateRoundFlow(float frameTime)
         {
@@ -996,5 +1049,40 @@ namespace Content.Server.GameTicking
             Text += text;
             _doNewLine = true;
         }
+
+        // Moffstation - Start - Added line wrapping for end of round screen
+        public void AddLineWrapping(string text, int linewidth = 50, char separator = ' ')
+        {
+            AddLine(WrapString(text, linewidth, separator));
+        }
+
+        public string WrapString(string text, int linewidth = 50, char separator = ' ')
+        {
+            var wholeString = new StringBuilder();
+            var words = text.Split(separator);
+            var line = "";
+            foreach (var word in words)
+            {
+                line += word + separator;
+
+                // If there's a linebreak within the word, reset the line
+                if (word.Contains("\n"))
+                {
+                    wholeString.Append(line);
+                    line = "";
+                    continue;
+                }
+
+                // Otherwise, check if the length has been met
+                if (line.Length > linewidth)
+                {
+                    wholeString.AppendLine(line);
+                    line = "";
+                }
+            }
+            wholeString.AppendLine(line);
+            return wholeString.ToString();
+        }
+        // Moffstation - End - Added line wrapping for end of round screen
     }
 }

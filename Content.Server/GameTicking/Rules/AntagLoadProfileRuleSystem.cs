@@ -3,6 +3,7 @@ using Content.Server.GameTicking.Rules.Components;
 using Content.Server.Humanoid;
 using Content.Server.Preferences.Managers;
 using Content.Shared.Body;
+using Content.Shared.DetailExaminable;
 using Content.Shared.Humanoid;
 using Content.Shared.Humanoid.Prototypes;
 using Content.Shared.Preferences;
@@ -16,6 +17,7 @@ public sealed class AntagLoadProfileRuleSystem : GameRuleSystem<AntagLoadProfile
     [Dependency] private readonly IPrototypeManager _proto = default!;
     [Dependency] private readonly IServerPreferencesManager _prefs = default!;
     [Dependency] private readonly SharedVisualBodySystem _visualBody = default!;
+    [Dependency] private readonly MetaDataSystem _metaData = default!;  // Moffstation
 
     public override void Initialize()
     {
@@ -36,7 +38,7 @@ public sealed class AntagLoadProfileRuleSystem : GameRuleSystem<AntagLoadProfile
 
         if (profile?.Species is not { } speciesId || !_proto.Resolve(speciesId, out var species))
         {
-            species = _proto.Index<SpeciesPrototype>(HumanoidCharacterProfile.DefaultSpecies);
+            species = _proto.Index(HumanoidCharacterProfile.DefaultSpecies);
         }
 
         if (ent.Comp.SpeciesOverride != null
@@ -45,11 +47,19 @@ public sealed class AntagLoadProfileRuleSystem : GameRuleSystem<AntagLoadProfile
             species = _proto.Index(ent.Comp.SpeciesOverride.Value);
         }
 
-        args.Entity = Spawn(species.Prototype);
+        args.Entity = Spawn(species.Prototype, args.Coords);
         if (profile?.WithSpecies(species.ID) is { } humanoidProfile)
         {
             _visualBody.ApplyProfileTo(args.Entity.Value, humanoidProfile);
             _humanoidProfile.ApplyProfileTo(args.Entity.Value, humanoidProfile);
+            // Moffstation - Start - Preserve character info option
+            if (ent.Comp.PreserveName)
+            {
+                _metaData.SetEntityName(args.Entity.Value, humanoidProfile.Name);
+                var details = EnsureComp<DetailExaminableComponent>(args.Entity.Value);
+                details.Content = humanoidProfile.FlavorText;
+            }
+            // Moffstation - End
         }
     }
 }

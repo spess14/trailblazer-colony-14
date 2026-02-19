@@ -1,0 +1,25 @@
+# Joke Joke's ID
+- type: entity
+  parent: PirateIDCard
+  id: JokeJokeIDCard
+  name: joke joke ID card
+  components:
+  - type: PresetIdCard
+    name: Joke Joke
+  - type: Tag #  Ignore Chameleon tags
+    tags:
+    - DoorBumpOpener
+
+# Prisoner ID
+- type: entity
+  parent: PrisonerIDCard
+  id: PrisonerIDCardPerma
+  name: prisoner ID card
+  suffix: Perma, DO NOT MAP
+  components:
+    - type: GenpopIdCard
+      crime: "[CLASSIFIED]"    # Maybe we could randomize this in the future? maybe even set it in loadouts?
+    - type: ExpireIdCard
+      permanent: true
+    - type: PresetIdCard
+      job: Prisoner

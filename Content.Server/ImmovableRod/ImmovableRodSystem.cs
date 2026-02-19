@@ -1,10 +1,14 @@
 using Content.Server.Destructible;
 using Content.Server.Polymorph.Components;
 using Content.Server.Popups;
+using Content.Shared.Administration.Logs;
 using Content.Shared.Body;
 using Content.Shared.Damage.Systems;
+using Content.Shared.Database;
 using Content.Shared.Examine;
 using Content.Shared.Gibbing;
+using Content.Shared.Item; // Moffstation
+using Content.Shared.Maps; // Moffstation
 using Content.Shared.Popups;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Map;
@@ -28,6 +32,8 @@ public sealed class ImmovableRodSystem : EntitySystem
     [Dependency] private readonly DestructibleSystem _destructible = default!;
     [Dependency] private readonly SharedTransformSystem _transform = default!;
     [Dependency] private readonly SharedMapSystem _map = default!;
+    [Dependency] private readonly ISharedAdminLogManager _adminLogger = default!;
+    [Dependency] private readonly TileSystem _tile = default!;  // Moffstation - Immovable rod changes
 
     public override void Update(float frameTime)
     {
@@ -36,6 +42,13 @@ public sealed class ImmovableRodSystem : EntitySystem
         // we are deliberately including paused entities. rod hungers for all
         foreach (var (rod, trans) in EntityQuery<ImmovableRodComponent, TransformComponent>(true))
         {
+            // Moffstation - Start - Immovable rod changes
+            if (trans.GridUid != null && rod.PryTiles)
+            {
+                _tile.PryTile((Vector2i)trans.Coordinates.Position, trans.GridUid.Value);
+            }
+            // Moffstation - End
+
             if (!rod.DestroyTiles)
                 continue;
 
@@ -94,7 +107,9 @@ public sealed class ImmovableRodSystem : EntitySystem
         {
             // oh god.
             var coords = Transform(uid).Coordinates;
+
             _popup.PopupCoordinates(Loc.GetString("immovable-rod-collided-rod-not-good"), coords, PopupType.LargeCaution);
+            _adminLogger.Add(LogType.Gib, LogImpact.Low, $"{ToPrettyString(uid)} and {ToPrettyString(ent)} created singularity at X:{coords.X} Y:{coords.Y}");
 
             Del(uid);
             Del(ent);
@@ -125,9 +140,22 @@ public sealed class ImmovableRodSystem : EntitySystem
                 return;
             }
 
-            _gibbing.Gib(ent);
+            var coords = Transform(uid).Coordinates;
+            _adminLogger.Add(LogType.Gib, LogImpact.Low, $"Entity {ToPrettyString(uid)} gibbed {ToPrettyString(ent)} at X:{coords.X} Y:{coords.Y}");
+
+            _gibbing.Gib(ent, dropGiblets: true); // Moffstation - Allow organs to drop
             return;
         }
+
+        // Moffstation - Start - Rods drop peoples stuff
+        if (component.PreserveItems && HasComp<ItemComponent>(ent))
+        {
+            var scatterVector = _random.NextAngle()
+                .ToVec() * (component.FlingVelocity + _random.NextFloat(-component.FlingVariation,  component.FlingVariation));
+            _physics.ApplyLinearImpulse(ent, scatterVector);
+            return;
+        }
+        // Moffstation - End
 
         _destructible.DestroyEntity(ent);
     }

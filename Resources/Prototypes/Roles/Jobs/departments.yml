@@ -12,7 +12,7 @@
   id: Civilian
   name: department-Civilian
   description: department-Civilian-description
-  color: "#9FED58"
+  color: "#639137"  # Moffstation - Colored job list
   weight: -10
   roles:
   - Bartender
@@ -78,7 +78,7 @@
   id: Engineering
   name: department-Engineering
   description: department-Engineering-description
-  color: "#EFB341"
+  color: "#f39f27"  # Moffstation - Colored job list
   roles:
   - AtmosphericTechnician
   - ChiefEngineer
@@ -89,7 +89,7 @@
   id: Medical
   name: department-Medical
   description: department-Medical-description
-  color: "#52B4E9"
+  color: "#57b8f0"  # Moffstation - Colored job list
   roles:
   - Chemist
   - ChiefMedicalOfficer
@@ -110,6 +110,7 @@
   - SecurityOfficer
   - Detective
   - Warden
+  - Prisoner # CD - Custom role
 
 - type: department
   id: Science
@@ -125,7 +126,7 @@
   id: Silicon
   name: department-Silicon
   description: department-Silicon-description
-  color: "#D381C9"
+  color: "#5cc896"  # Moffstation - Colored job list
   roles:
   - Borg
   - StationAi
@@ -134,7 +135,7 @@
   id: Specific
   name: department-Specific
   description: department-Specific-description
-  color: "#9FED58"
+  color: "#639137"  # Moffstation - Colored job list
   weight: 10
   roles:
   - Reporter

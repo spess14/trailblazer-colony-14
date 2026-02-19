@@ -281,6 +281,12 @@
   components:
   - type: EntityTableContainerFill
     containers:
-      entity_storage:
-        id: MobMothroach
-        amount: 4
+      # Moffstation - Start - Add Rosie and Deathshead Mothroaches
+      entity_storage: !type:GroupSelector
+        rolls: 4
+        children:
+        - id: MobMothroach
+          weight: 2
+        - id: MobMothroachRosy
+        - id: MobMothroachDeathshead
+      # Moffstation - End

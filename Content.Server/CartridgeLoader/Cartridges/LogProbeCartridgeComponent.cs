@@ -1,3 +1,4 @@
+using Content.Shared._CD.CartridgeLoader.Cartridges; // CD
 using Content.Shared.CartridgeLoader.Cartridges;
 ﻿using Content.Shared.Paper;
 using Robust.Shared.Audio;
@@ -48,4 +49,9 @@ public sealed partial class LogProbeCartridgeComponent : Component
     /// </summary>
     [DataField(customTypeSerializer: typeof(TimeOffsetSerializer)), AutoPausedField]
     public TimeSpan NextPrintAllowed = TimeSpan.Zero;
+
+    /// CD: The last scanned NanoChat data, if any
+    /// </summary>
+    [DataField]
+    public NanoChatData? ScannedNanoChatData;
 }

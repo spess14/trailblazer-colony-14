@@ -69,6 +69,7 @@
     tags:
     - PetWearable
     - WhitelistChameleon
+    - MesonGoggles # Moffstation - Meson Sunglasses
 
 - type: entity
   parent: ClothingEyesBase
@@ -143,6 +144,7 @@
     sprite: Clothing/Eyes/Glasses/sunglasses.rsi
   - type: Tag
     tags:
+    - SunglassesCheap # Moffstation - Medical Sunglasses
     - HamsterWearable
     - PetWearable
     - WhitelistChameleon
@@ -249,6 +251,7 @@
   - type: GroupExamine
   - type: IdentityBlocker
     coverage: EYES
+  - type: ThermalSight
 
 - type: entity
   parent: ClothingEyesBase

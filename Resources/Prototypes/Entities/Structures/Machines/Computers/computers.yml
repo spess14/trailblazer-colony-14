@@ -283,7 +283,7 @@
     allowedFlags:
       - Hide
       - HideLabel
-    hideOnInit: true
+    # hideOnInit: true # Moffstation - Revert IFF changes
   - type: ActivatableUI
     key: enum.IFFConsoleUiKey.Key
   - type: UserInterface
@@ -361,22 +361,40 @@
     color: "#1f8c28"
   - type: Computer
     board: MedicalRecordsComputerCircuitboard
+  # Moffstation - Begin - CD Records
+  - type: CharacterRecordConsole
+    consoleType: Medical
+  - type: UserInterface
+    interfaces:
+      enum.CharacterRecordConsoleKey.Key:
+        type: CharacterRecordConsoleBoundUserInterface
+  - type: ActivatableUI
+    key: enum.CharacterRecordConsoleKey.Key
+    # Moffstation - End
 
 - type: entity
   parent: BaseComputerAiAccess
   id: ComputerCriminalRecords
-  name: criminal records computer
-  description: This can be used to check criminal records. Only security can modify them.
+  # Moffstation - Begin - CD Records
+  name: security records computer
+  description: This can be used to access security records.
+  # Moffstation - End
   components:
+  # We need to have both a CriminalRecordsConsole and CharacterRecordConsole
+  # component to be able to set wanted status.
   - type: CriminalRecordsConsole
   - type: UserInterface
     interfaces:
-      enum.CriminalRecordsConsoleKey.Key:
-        type: CriminalRecordsConsoleBoundUserInterface
+      # Moffstation - Begin - CD Records
+      enum.CharacterRecordConsoleKey.Key:
+        type: CharacterRecordConsoleBoundUserInterface
+      # Moffstation - End
       enum.WiresUiKey.Key:
         type: WiresBoundUserInterface
-  - type: ActivatableUI
-    key: enum.CriminalRecordsConsoleKey.Key
+  # Moffstation - Begin - CD Records
+#  - type: ActivatableUI
+#    key: enum.CriminalRecordsConsoleKey.Key
+  # Moffstation - End
   - type: Sprite
     layers:
     - map: ["computerLayerBody"]
@@ -400,22 +418,32 @@
   - type: GuideHelp
     guides:
     - CriminalRecords
+  # Moffstation - Begin - CD Records
+  - type: CharacterRecordConsole
+    consoleType: Security
+  - type: ActivatableUI
+    key: enum.CharacterRecordConsoleKey.Key
+  # Moffstation - End
 
 - type: entity
   parent: BaseComputerAiAccess
   id: ComputerStationRecords
-  name: station records computer
-  description: This can be used to check station records.
+  # Moffstation - Begin - CD Records
+  name: employment records computer
+  description: This can be used to check employment records.
+  # Moffstation - End
   components:
   - type: GeneralStationRecordConsole
   - type: UserInterface
     interfaces:
-        enum.GeneralStationRecordConsoleKey.Key:
-          type: GeneralStationRecordConsoleBoundUserInterface
-        enum.WiresUiKey.Key:
-          type: WiresBoundUserInterface
+      # Moffstation - Begin - CD Records
+      enum.CharacterRecordConsoleKey.Key:
+        type: CharacterRecordConsoleBoundUserInterface
+      enum.WiresUiKey.Key:
+        type: WiresBoundUserInterface
+  # Moffstation - End
   - type: ActivatableUI
-    key: enum.GeneralStationRecordConsoleKey.Key
+    key: enum.CharacterRecordConsoleKey.Key # Moffstation - CD Records
   - type: PointLight
     radius: 1.5
     energy: 4.0
@@ -425,6 +453,10 @@
   - type: GuideHelp
     guides:
     - Forensics
+  # Moffstation - Begin - CD Records
+  - type: CharacterRecordConsole
+    consoleType: Employment
+  # Moffstation - End
 
 - type: entity
   parent: BaseComputerAiAccess
@@ -934,7 +966,7 @@
     account: Engineering
     announcementChannel: Engineering
     removeLimitAccess: [ "ChiefEngineer" ]
-    mode: SendToPrimary
+    mode: PrintSlip # Moffstation - Acquisition slips
   - type: ActiveRadio
     channels:
     - Engineering
@@ -967,7 +999,7 @@
     account: Medical
     announcementChannel: Medical
     removeLimitAccess: [ "ChiefMedicalOfficer" ]
-    mode: SendToPrimary
+    mode: PrintSlip # Moffstation - Acquisition slips
   - type: ActiveRadio
     channels:
     - Medical
@@ -1000,7 +1032,7 @@
     account: Science
     announcementChannel: Science
     removeLimitAccess: [ "ResearchDirector" ]
-    mode: SendToPrimary
+    mode: PrintSlip # Moffstation - Acquisition slips
   - type: ActiveRadio
     channels:
     - Science
@@ -1033,7 +1065,7 @@
     account: Security
     announcementChannel: Security
     removeLimitAccess: [ "HeadOfSecurity" ]
-    mode: SendToPrimary
+    mode: PrintSlip # Moffstation - Acquisition slips
   - type: ActiveRadio
     channels:
     - Security
@@ -1066,7 +1098,7 @@
     account: Service
     announcementChannel: Service
     removeLimitAccess: [ "HeadOfPersonnel" ]
-    mode: SendToPrimary
+    mode: PrintSlip # Moffstation - Acquisition slips
   - type: ActiveRadio
     channels:
     - Service
@@ -1318,7 +1350,11 @@
     deviceNetId: Wired
     receiveFrequencyId: SurveillanceCamera
     transmitFrequencyId: SurveillanceCamera
-  - type: WiredNetworkConnection
+  # Moffstation - Listening outpost remote camera viewing
+  #- type: WiredNetworkConnection
+  - type: WirelessNetworkConnection
+    range: 200
+  # Moffstation - End
   - type: DeviceNetworkRequiresPower
   - type: SurveillanceCameraMonitor
   - type: ActivatableUI

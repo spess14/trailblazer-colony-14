@@ -167,6 +167,7 @@
       - id: WristwatchGold
       - id: RubberStampGreytide
       - id: MysteryLighterBox
+      - id: CrayonInfinite  # Moffstation - infinite crayon in maints loot
 
 - type: entity
   name: Maint Loot Spawner
@@ -282,6 +283,7 @@
     - !type:GroupSelector
       weight: 2
       children:
+      - id: FoolboxFilled   # Moffstation - Added Foolbox to maints
       - id: Binoculars
       - id: LanternFlash
       - id: PowerCellHigh
@@ -355,6 +357,7 @@
       - id: SawImprov
       - id: HydroponicsToolMiniHoe
       - id: ClothingHandsKnuckleDusters
+      - id: WeaponRifleLeverMagnum # Moffstation - (Crestfall Repeater) - We want it to be rare maints loot, but it's not Syndicate contrband, so it goes here. This table is extremely rarely picked, so it's a good choice for our purposes.
       - !type:NestedSelector
         tableId: AllToyWeaponsTable
 

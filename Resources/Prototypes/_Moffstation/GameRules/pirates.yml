@@ -1,0 +1,80 @@
+- type: entity
+  abstract: true
+  parent: BaseGameRule
+  id: BasePiratesRule
+  components:
+  - type: PiratesRule
+  - type: LoadGridRule
+    gridPath: /Maps/_Moffstation/Nonstations/pirate-cove.yml
+    minimumDistance: 750
+    maximumDistance: 1000
+  - type: RuleGrids
+  - type: AntagSelection
+  - type: AntagLoadProfileRule
+  - type: DynamicRuleCost
+    cost: 150
+
+- type: entity
+  parent: BasePiratesRule
+  id: Pirates
+  components:
+  - type: LoadMapRule
+    gridPath: /Maps/_Moffstation/Shuttles/shuttle-sp-scurvydog.yml
+  - type: GameRule
+    minPlayers: 40
+  - type: AntagSelection
+    selectionTime: PrePlayerSpawn
+    definitions:
+    - prefRoles: [ PirateCaptain ]
+      fallbackRoles: [ PirateCrew ]
+      spawnerPrototype: SpawnPointPirateCaptain
+      startingGear: PirateCaptainGear
+      roleLoadout:
+      - RoleSurvivalNukie
+      - JobPirateCaptain
+      briefing:
+        text: pirate-role-greeting
+        color: "#a15608"
+        sound:
+          path: "/Audio/Ambience/Antag/pirate_start.ogg"
+          params:
+            volume: -12
+      components:
+      - type: Pirate
+      - type: RandomMetadata
+        nameSegments:
+        - Adjectives
+        nameFormat: name-format-pirate-captain
+      - type: NpcFactionMember
+        factions:
+        - Pirate
+      mindRoles:
+      - MindRolePirateCaptain
+    - prefRoles: [ PirateCrew ]
+      fallbackRoles: [ PirateCaptain ]
+      spawnerPrototype: SpawnPointPirateCrew
+      min: 4
+      max: 4
+      startingGear: PirateGear
+      roleLoadout:
+      - RoleSurvivalNukie
+      - JobPirateCrew
+      briefing:
+        text: pirate-role-greeting
+        color: "#a15608"
+        sound:
+          path: "/Audio/Ambience/Antag/pirate_start.ogg"
+          params:
+            volume: -12
+      components:
+      - type: Pirate
+      - type: RandomMetadata
+        nameSegments:
+        - NamesFirst
+        - Adjectives
+        nameFormat: name-format-pirate-crew
+      - type: NpcFactionMember
+        factions:
+        - Pirate
+      mindRoles:
+      - MindRolePirate

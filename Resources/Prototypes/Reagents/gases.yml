@@ -47,7 +47,7 @@
       - !type:Oxygenate
         conditions:
         - !type:MetabolizerTypeCondition
-          type: [ Human, Animal, Rat, Plant, Arachnid, Moth ]
+          type: [ Human, Animal, Rat, Plant, Arachnid, Moth, Avali, Resomi ] # Moffstation
       # Convert Oxygen into CO2.
       - !type:ModifyLungGas
         conditions:
@@ -324,9 +324,10 @@
           type: [ Slime ]
           inverted: true
         ignoreResistances: true
+        scaling: true
         damage:
           types:
-            Poison: 0.25
+            Poison: 1
 
 - type: reagent
   id: Frezon

@@ -1,4 +1,5 @@
 using System.Numerics;
+using Content.Shared._CD.Records;
 using Content.Shared._tc14.Skills.Prototypes;
 using Content.Shared.Humanoid.Markings;
 using Content.Shared.Humanoid.Prototypes;
@@ -80,13 +81,21 @@ public sealed partial class HumanoidCharacterProfileV1
     [DataField]
     public PreferenceUnavailableMode PreferenceUnavailable;
 
+    // Moffstation Start - CD Profile
+    [DataField("cosmaticDriftCharacterHeight")]
+    public float Height = 1f;
+
+    [DataField("cosmaticDriftCharacterRecords")]
+    public PlayerProvidedCharacterRecords? CDCharacterRecords;
+    // Moffstation End
+
     // TC14: add passions
     [DataField]
     public Dictionary<ProtoId<SkillPrototype>, int> Passions;
 
     public HumanoidCharacterProfile ToV2()
     {
-        return new(Name, FlavorText, Species, Age, Sex, Gender, Appearance.ToV2(Species), SpawnPriority, JobPriorities, PreferenceUnavailable, AntagPreferences, TraitPreferences, Loadouts, Passions);
+        return new(Name, FlavorText, Species, Height, Age, Sex, Gender, Appearance.ToV2(Species), SpawnPriority, JobPriorities, PreferenceUnavailable, AntagPreferences, TraitPreferences, Loadouts, CDCharacterRecords, Passions);
     }
 }
 

@@ -71,7 +71,7 @@
 - type: entity
   name: captain's sabre
   parent: [ BaseSword, BaseCommandContraband ]
-  id: CaptainSabre
+  id: CaptainSabreUpstream # Moffstation - YML declutter
   description: A ceremonial weapon belonging to the captain of the station.
   components:
   - type: Sprite
@@ -96,11 +96,13 @@
     tags:
     - CaptainSabre
   - type: DisarmMalus
-  - type: SentienceTarget
-    flavorKind: station-event-random-sentience-flavor-inanimate
-    weight: 0.0002 # 5,000 times less likely than 1 regular animal
-  - type: PirateAccent
-    # not putting a BlockMovement component here cause that's funny.
+  # Moffstation - Begin (Persona Saber)
+#  - type: SentienceTarget
+#    flavorKind: station-event-random-sentience-flavor-inanimate
+#    weight: 0.0002 # 5,000 times less likely than 1 regular animal
+#  - type: PirateAccent
+#    # not putting a BlockMovement component here cause that's funny.
+  # Moffstation - End
   - type: StealTarget
     stealGroup: CaptainSword
 

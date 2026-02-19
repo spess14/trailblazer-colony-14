@@ -84,7 +84,7 @@
       - !type:HealthChange
         damage:
           types:
-            Heat: 0.05 #Same as slime species
+            Heat: 0.75 # MOFFSTATION CHANGE - Increases slime water damage by 5x
       - !type:PopupMessage
         type: Local
         messages: [ "slime-hurt-by-water-popup" ]
@@ -125,8 +125,10 @@
     name: ghost-role-information-slimes-name
     description: ghost-role-information-slimes-description
     rules: ghost-role-information-nonantagonist-rules
-    raffle:
-      settings: short
+    # Moffstation - Begin (No Raffle for Minor Ghostroles)
+    #raffle:
+    #  settings: short
+    # Moffstation - End
   - type: Speech
     speechVerb: Slime
     speechSounds: Slime
@@ -163,9 +165,9 @@
         - SimpleHostile
     - type: GhostRole
       description: ghost-role-information-angry-slimes-description
-      rules: ghost-role-information-angry-slimes-rules
+      rules: ghost-role-information-freeagent-rules # Moffstation - Free agent vent critters
       mindRoles:
-      - MindRoleGhostRoleTeamAntagonist
+      - MindRoleGhostRoleFreeAgent  # Moffstation - Free agent vent critters
       raffle:
         settings: short
 
@@ -203,9 +205,9 @@
         - SimpleHostile
     - type: GhostRole
       description: ghost-role-information-angry-slimes-description
-      rules: ghost-role-information-angry-slimes-rules
+      rules: ghost-role-information-freeagent-rules # Moffstation - Free agent vent critters
       mindRoles:
-      - MindRoleGhostRoleTeamAntagonist
+      - MindRoleGhostRoleFreeAgent  # Moffstation - Free agent vent critters
       raffle:
         settings: short
 
@@ -242,8 +244,8 @@
         - SimpleHostile
     - type: GhostRole
       description: ghost-role-information-angry-slimes-description
-      rules: ghost-role-information-angry-slimes-rules
+      rules: ghost-role-information-freeagent-rules # Moffstation - Free agent vent critters
       mindRoles:
-      - MindRoleGhostRoleTeamAntagonist
+      - MindRoleGhostRoleFreeAgent  # Moffstation - Free agent vent critters
       raffle:
         settings: short

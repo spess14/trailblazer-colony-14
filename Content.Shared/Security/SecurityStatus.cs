@@ -15,6 +15,10 @@
 public enum SecurityStatus : byte
 {
     None,
+    // Harmony additional status
+    Monitor,
+    // Harmony additional status
+    Search,
     Suspected,
     Wanted,
     Hostile,

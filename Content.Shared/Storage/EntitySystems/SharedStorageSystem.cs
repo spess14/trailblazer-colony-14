@@ -1,6 +1,8 @@
 using System.Collections.Frozen;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
+using Content.Shared._Moffstation.Storage; // Moffstation
+using Content.Shared._Moffstation.Storage.EntitySystems; // Moffstation
 using Content.Shared.ActionBlocker;
 using Content.Shared.Administration.Logs;
 using Content.Shared.CCVar;
@@ -72,6 +74,10 @@ public abstract class SharedStorageSystem : EntitySystem
     [Dependency] protected readonly SharedUserInterfaceSystem UI = default!;
     [Dependency] private   readonly TagSystem _tag = default!;
     [Dependency] protected readonly UseDelaySystem UseDelay = default!;
+    // Moffstation - Start
+    [Dependency] private   readonly AreaPickupSystem _areaPickup = default!;
+    [Dependency] private   readonly QuickPickupSystem _quickPickup = default!;
+    // Moffstation - End
 
     private EntityQuery<ItemComponent> _itemQuery;
     private EntityQuery<StackComponent> _stackQuery;
@@ -146,7 +152,7 @@ public abstract class SharedStorageSystem : EntitySystem
         SubscribeLocalEvent<StorageComponent, InteractUsingEvent>(OnInteractUsing, after: new[] { typeof(ItemSlotsSystem) });
         SubscribeLocalEvent<StorageComponent, ActivateInWorldEvent>(OnActivate);
         SubscribeLocalEvent<StorageComponent, OpenStorageImplantEvent>(OnImplantActivate);
-        SubscribeLocalEvent<StorageComponent, AfterInteractEvent>(AfterInteract);
+        // SubscribeLocalEvent<StorageComponent, AfterInteractEvent>(AfterInteract); // Moffstation
         SubscribeLocalEvent<StorageComponent, DestructionEventArgs>(OnDestroy);
         SubscribeLocalEvent<StorageComponent, BoundUserInterfaceMessageAttempt>(OnBoundUIAttempt);
         SubscribeLocalEvent<StorageComponent, BoundUIOpenedEvent>(OnBoundUIOpen);
@@ -154,8 +160,13 @@ public abstract class SharedStorageSystem : EntitySystem
         SubscribeLocalEvent<StorageComponent, EntInsertedIntoContainerMessage>(OnEntInserted);
         SubscribeLocalEvent<StorageComponent, EntRemovedFromContainerMessage>(OnEntRemoved);
         SubscribeLocalEvent<StorageComponent, ContainerIsInsertingAttemptEvent>(OnInsertAttempt);
-        SubscribeLocalEvent<StorageComponent, AreaPickupDoAfterEvent>(OnDoAfter);
+        // SubscribeLocalEvent<StorageComponent, AreaPickupDoAfterEvent>(OnDoAfter); // Moffstation
         SubscribeLocalEvent<StorageComponent, GotReclaimedEvent>(OnReclaimed);
+        // Moffstation - Start
+        SubscribeLocalEvent<StorageComponent, QuickPickupEvent>(OnQuickPickup);
+        SubscribeLocalEvent<StorageComponent, BeforeAreaPickupEvent>(OnBeforeAreaPickup);
+        SubscribeLocalEvent<StorageComponent, AreaPickupDoAfterEvent>(OnAreaPickupDoAfter);
+        // Moffstation - End
 
         SubscribeLocalEvent<MetaDataComponent, StackCountChangedEvent>(OnStackCountChanged);
 
@@ -212,7 +223,7 @@ public abstract class SharedStorageSystem : EntitySystem
 
     private void OnMapInit(Entity<StorageComponent> entity, ref MapInitEvent args)
     {
-        UseDelay.SetLength(entity.Owner, entity.Comp.QuickInsertCooldown, QuickInsertUseDelayID);
+        // UseDelay.SetLength(entity.Owner, entity.Comp.QuickInsertCooldown, QuickInsertUseDelayID); // Moffstation
         UseDelay.SetLength(entity.Owner, entity.Comp.OpenUiCooldown, OpenUiUseDelayID);
     }
 
@@ -233,8 +244,10 @@ public abstract class SharedStorageSystem : EntitySystem
             SavedLocations = component.SavedLocations,
             Whitelist = component.Whitelist,
             Blacklist = component.Blacklist,
+            /* Moffstation - Start - These methods are in a separate component
             QuickInsert = component.QuickInsert,
             AreaInsert = component.AreaInsert,
+            */ // Moffstation - End
             StorageInsertSound = component.StorageInsertSound,
             StorageRemoveSound = component.StorageRemoveSound,
             StorageOpenSound = component.StorageOpenSound,
@@ -367,13 +380,17 @@ public abstract class SharedStorageSystem : EntitySystem
         var targetComp = EnsureComp<StorageComponent>(target);
         targetComp.Grid = new List<Box2i>(source.Comp.Grid);
         targetComp.MaxItemSize = source.Comp.MaxItemSize;
+        /* Moffstation - Start - These methods are in a separate component
         targetComp.QuickInsert = source.Comp.QuickInsert;
         targetComp.QuickInsertCooldown = source.Comp.QuickInsertCooldown;
+        */ // Moffstation - End
         targetComp.OpenUiCooldown = source.Comp.OpenUiCooldown;
         targetComp.ClickInsert = source.Comp.ClickInsert;
         targetComp.OpenOnActivate = source.Comp.OpenOnActivate;
+        /* Moffstation - Start - These methods are in a separate component
         targetComp.AreaInsert = source.Comp.AreaInsert;
         targetComp.AreaInsertRadius = source.Comp.AreaInsertRadius;
+        */ // Moffstation - End
         targetComp.Whitelist = source.Comp.Whitelist;
         targetComp.Blacklist = source.Comp.Blacklist;
         targetComp.StorageInsertSound = source.Comp.StorageInsertSound;
@@ -556,6 +573,7 @@ public abstract class SharedStorageSystem : EntitySystem
         args.Handled = true;
     }
 
+    /* Moffstation - Start - Quick and Area pickup behavior moved to independent components.
     /// <summary>
     /// Allows a user to pick up entities by clicking them, or pick up all entities in a certain radius
     /// around a click.
@@ -708,6 +726,60 @@ public abstract class SharedStorageSystem : EntitySystem
 
         args.Handled = true;
     }
+    */
+
+    private void OnQuickPickup(Entity<StorageComponent> entity, ref QuickPickupEvent args)
+    {
+        if (args.Handled)
+            return;
+
+        // Copy event fields because the lambda doesn't like capturing `ref` values.
+        var user = args.User;
+        var pickedUp = args.PickedUp;
+        args.Handled = _quickPickup.TryDoQuickPickup(
+            args,
+            () => PlayerInsertEntityInWorld(entity.AsNullable(), user, pickedUp)
+        );
+    }
+
+    private void OnBeforeAreaPickup(Entity<StorageComponent> entity, ref BeforeAreaPickupEvent args)
+    {
+        if (args.Handled)
+            return;
+
+        args.Handled = _areaPickup.DoBeforeAreaPickup(
+            ref args,
+            insertedEntity => CanInsert(entity, insertedEntity, out _, entity, insertedEntity)
+        );
+    }
+
+    private void OnAreaPickupDoAfter(Entity<StorageComponent> entity, ref AreaPickupDoAfterEvent args)
+    {
+        if (args.Handled ||
+            args.Cancelled)
+            return;
+
+        // Copy event fields because the lambda doesn't like capturing `ref` values.
+        var user = args.User;
+
+        // Don't play the insertion sound if the user has the silent tag.
+        var insertionSound = _prototype.TryIndex(entity.Comp.SilentStorageUserTag, out var silentTag) && _tag.HasTag(args.User, silentTag)
+            ? null
+            : entity.Comp.StorageInsertSound;
+
+        args.Handled = _areaPickup.TryDoAreaPickup(
+            ref args,
+            entity.Owner,
+            insertionSound,
+            entityToPickUp => PlayerInsertEntityInWorld(
+                entity.AsNullable(),
+                user,
+                entityToPickUp,
+                playSound: false
+            )
+        );
+    }
+    // Moffsation - End
 
     private void OnReclaimed(EntityUid uid, StorageComponent storageComp, GotReclaimedEvent args)
     {

@@ -2,6 +2,7 @@ using System.Linq;
 using Content.Shared.Administration.Logs;
 using Content.Shared.Audio;
 using Content.Shared.Body;
+using Content.Shared.Damage.Components; //Moffstation - recycler damage change
 using Content.Shared.Database;
 using Content.Shared.Emag.Systems;
 using Content.Shared.Examine;
@@ -213,6 +214,7 @@ public abstract class SharedMaterialReclaimerSystem : EntitySystem
                component.Enabled &&
                !component.Broken &&
                HasComp<BodyComponent>(victim) &&
+               HasComp<DamageableComponent>(victim) && //Moffstation - recycler damage change
                _emag.CheckFlag(uid, EmagType.Interaction);
     }
 

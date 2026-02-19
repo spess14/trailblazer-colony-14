@@ -8,19 +8,28 @@ using System.Text.Json;
 using System.Threading;
 using System.Threading.Tasks;
 using Content.Server.Administration.Logs;
-using Content.Server.Administration.Managers;
-using Content.Shared._tc14.Skills.Prototypes;
 using Content.Shared.Administration.Logs;
+using Content.Shared.Body;
 using Content.Shared.Construction.Prototypes;
 using Content.Shared.Database;
 using Content.Shared.Humanoid;
+using Content.Shared.Humanoid.Markings;
 using Content.Shared.Preferences;
+using Content.Shared.Preferences.Loadouts;
 using Content.Shared.Roles;
+using Content.Shared.Traits;
 using Microsoft.EntityFrameworkCore;
+using Robust.Shared.Asynchronous;
+using Robust.Shared.Enums;
 using Robust.Shared.Network;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization.Manager;
 using Robust.Shared.Utility;
+
+// CD: imports
+using Content.Server._CD.Records;
+using Content.Shared._CD.Records;
+using Content.Shared._tc14.Skills.Prototypes;
 
 namespace Content.Server.Database
 {
@@ -28,34 +37,56 @@ namespace Content.Server.Database
     {
         private readonly ISawmill _opsLog;
         public event Action<DatabaseNotification>? OnNotificationReceived;
+        private readonly ITaskManager _task;
         private readonly ISerializationManager _serialization;
 
         /// <param name="opsLog">Sawmill to trace log database operations to.</param>
-        public ServerDbBase(ISawmill opsLog, ISerializationManager serialization)
+        public ServerDbBase(ISawmill opsLog, ITaskManager taskManager, ISerializationManager serialization)
         {
+            _task = taskManager;
             _serialization = serialization;
             _opsLog = opsLog;
         }
 
         #region Preferences
-        public async Task<Preference?> GetPlayerPreferencesAsync(
+        public async Task<PlayerPreferences?> GetPlayerPreferencesAsync(
             NetUserId userId,
             CancellationToken cancel = default)
         {
             await using var db = await GetDb(cancel);
 
-            return await db.DbContext
+            var prefs = await db.DbContext
                 .Preference
                 .Include(p => p.Profiles).ThenInclude(h => h.Jobs)
                 .Include(p => p.Profiles).ThenInclude(h => h.Antags)
                 .Include(p => p.Profiles).ThenInclude(h => h.Traits)
-                .Include(p => p.Profiles).ThenInclude(h => h.Passions)
+                // CD: Store CD info
+                .Include(p => p.Profiles)
+                    .ThenInclude(h => h.CDProfile)
+                    .ThenInclude(cd => cd != null ? cd.CharacterRecordEntries : null)
+                // END CD
                 .Include(p => p.Profiles)
                     .ThenInclude(h => h.Loadouts)
                     .ThenInclude(l => l.Groups)
                     .ThenInclude(group => group.Loadouts)
                 .AsSplitQuery()
                 .SingleOrDefaultAsync(p => p.UserId == userId.UserId, cancel);
+
+            if (prefs is null)
+                return null;
+
+            var maxSlot = prefs.Profiles.Max(p => p.Slot) + 1;
+            var profiles = new Dictionary<int, HumanoidCharacterProfile>(maxSlot);
+            foreach (var profile in prefs.Profiles)
+            {
+                profiles[profile.Slot] = await ConvertProfiles(profile);
+            }
+
+            var constructionFavorites = new List<ProtoId<ConstructionPrototype>>(prefs.ConstructionFavorites.Count);
+            foreach (var favorite in prefs.ConstructionFavorites)
+                constructionFavorites.Add(new ProtoId<ConstructionPrototype>(favorite));
+
+            return new PlayerPreferences(profiles, prefs.SelectedCharacterSlot, Color.FromHex(prefs.AdminOOCColor), constructionFavorites);
         }
 
         public async Task SaveSelectedCharacterIndexAsync(NetUserId userId, int index)
@@ -63,30 +94,6 @@ namespace Content.Server.Database
             await using var db = await GetDb();
 
             await SetSelectedCharacterSlotAsync(userId, index, db.DbContext);
-
-            await db.DbContext.SaveChangesAsync();
-        }
-
-        /// <summary>
-        /// Only intended for use in unit tests - drops the organ marking data from a profile in the given slot
-        /// </summary>
-        /// <param name="userId">The user whose profile to modify</param>
-        /// <param name="slot">The slot index to modify</param>
-        public async Task MakeCharacterSlotLegacyAsync(NetUserId userId, int slot)
-        {
-            await using var db = await GetDb();
-
-            var oldProfile = await db.DbContext.Profile
-                .Include(p => p.Preference)
-                .Where(p => p.Preference.UserId == userId.UserId)
-                .AsSplitQuery()
-                .SingleOrDefaultAsync(h => h.Slot == slot);
-
-            if (oldProfile == null)
-                return;
-
-            oldProfile.OrganMarkings = null;
-            oldProfile.Markings = JsonSerializer.SerializeToDocument(new List<string>());
 
             await db.DbContext.SaveChangesAsync();
         }
@@ -103,12 +110,15 @@ namespace Content.Server.Database
             }
 
             var oldProfile = db.DbContext.Profile
+                // Moffstation Start - Add CD Profile
+                .Include(p => p.CDProfile) // CD: Store CD info
+                    .ThenInclude(cd => cd != null ? cd.CharacterRecordEntries : null)
+                // Moffstation End
                 .Include(p => p.Preference)
                 .Where(p => p.Preference.UserId == userId.UserId)
                 .Include(p => p.Jobs)
                 .Include(p => p.Antags)
                 .Include(p => p.Traits)
-                .Include(p => p.Passions)
                 .Include(p => p.Loadouts)
                     .ThenInclude(l => l.Groups)
                     .ThenInclude(group => group.Loadouts)
@@ -143,7 +153,7 @@ namespace Content.Server.Database
             db.Profile.Remove(profile);
         }
 
-        public async Task<Preference> InitPrefsAsync(NetUserId userId, HumanoidCharacterProfile defaultProfile)
+        public async Task<PlayerPreferences> InitPrefsAsync(NetUserId userId, HumanoidCharacterProfile defaultProfile)
         {
             await using var db = await GetDb();
 
@@ -162,7 +172,7 @@ namespace Content.Server.Database
 
             await db.DbContext.SaveChangesAsync();
 
-            return prefs;
+            return new PlayerPreferences(new[] { new KeyValuePair<int, HumanoidCharacterProfile>(0, defaultProfile) }, 0, Color.FromHex(prefs.AdminOOCColor), []);
         }
 
         public async Task DeleteSlotAndSetSelectedIndex(NetUserId userId, int deleteSlot, int newSlot)
@@ -207,6 +217,140 @@ namespace Content.Server.Database
             prefs.SelectedCharacterSlot = newSlot;
         }
 
+        private static TValue? TryDeserialize<TValue>(JsonDocument document) where TValue : class
+        {
+            try
+            {
+                return document.Deserialize<TValue>();
+            }
+            catch (JsonException)
+            {
+                return null;
+            }
+        }
+
+        private async Task<HumanoidCharacterProfile> ConvertProfiles(Profile profile)
+        {
+
+            var jobs = profile.Jobs.ToDictionary(j => new ProtoId<JobPrototype>(j.JobName), j => (JobPriority) j.Priority);
+            var antags = profile.Antags.Select(a => new ProtoId<AntagPrototype>(a.AntagName));
+            var traits = profile.Traits.Select(t => new ProtoId<TraitPrototype>(t.TraitName));
+
+            var sex = Sex.Male;
+            if (Enum.TryParse<Sex>(profile.Sex, true, out var sexVal))
+                sex = sexVal;
+
+            var spawnPriority = (SpawnPriorityPreference) profile.SpawnPriority;
+
+            var gender = sex == Sex.Male ? Gender.Male : Gender.Female;
+            if (Enum.TryParse<Gender>(profile.Gender, true, out var genderVal))
+                gender = genderVal;
+
+
+            var markings =
+                new Dictionary<ProtoId<OrganCategoryPrototype>, Dictionary<HumanoidVisualLayers, List<Marking>>>();
+
+            if (profile.OrganMarkings?.RootElement is { } element)
+            {
+                var data = element.ToDataNode();
+                markings = _serialization
+                    .Read<Dictionary<ProtoId<OrganCategoryPrototype>, Dictionary<HumanoidVisualLayers, List<Marking>>>>(
+                        data,
+                        notNullableOverride: true);
+            }
+            else if (profile.Markings is { } profileMarkings && TryDeserialize<List<string>>(profileMarkings) is { } markingsRaw)
+            {
+                List<Marking> markingsList = new();
+
+                foreach (var marking in markingsRaw)
+                {
+                    var parsed = Marking.ParseFromDbString(marking);
+
+                    if (parsed is null) continue;
+
+                    markingsList.Add(parsed.Value);
+                }
+
+                if (Marking.ParseFromDbString($"{profile.HairName}@{profile.HairColor}") is { } facialMarking)
+                    markingsList.Add(facialMarking);
+
+                if (Marking.ParseFromDbString($"{profile.HairName}@{profile.HairColor}") is { } hairMarking)
+                    markingsList.Add(hairMarking);
+
+                var completion = new TaskCompletionSource();
+                _task.RunOnMainThread(() =>
+                {
+                    var markingManager = IoCManager.Resolve<MarkingManager>();
+
+                    try
+                    {
+                        markings = markingManager.ConvertMarkings(markingsList, profile.Species);
+                        completion.SetResult();
+                    }
+                    catch (Exception ex)
+                    {
+                        completion.TrySetException(ex);
+                    }
+                });
+                await completion.Task;
+            }
+
+            // CD: get character records or create default records
+            var cdRecords = profile.CDProfile?.CharacterRecords != null
+                ? RecordsSerialization.Deserialize(profile.CDProfile.CharacterRecords, profile.CDProfile.CharacterRecordEntries)
+                : PlayerProvidedCharacterRecords.DefaultRecords();
+
+            var loadouts = new Dictionary<string, RoleLoadout>();
+
+            var passions = profile.Passions.ToDictionary(p=>(ProtoId<SkillPrototype>)p.PassionName, p=>p.Value);
+
+            foreach (var role in profile.Loadouts)
+            {
+                var loadout = new RoleLoadout(role.RoleName)
+                {
+                    EntityName = role.EntityName,
+                };
+
+                foreach (var group in role.Groups)
+                {
+                    var groupLoadouts = loadout.SelectedLoadouts.GetOrNew(group.GroupName);
+                    foreach (var profLoadout in group.Loadouts)
+                    {
+                        groupLoadouts.Add(new Loadout()
+                        {
+                            Prototype = profLoadout.LoadoutName,
+                        });
+                    }
+                }
+
+                loadouts[role.RoleName] = loadout;
+            }
+
+            return new HumanoidCharacterProfile(
+                profile.CharacterName,
+                profile.FlavorText,
+                profile.Species,
+                profile.CDProfile?.Height ?? 1.0f, // Moffstation - CD Height
+                profile.Age,
+                sex,
+                gender,
+                new HumanoidCharacterAppearance
+                (
+                    Color.FromHex(profile.EyeColor),
+                    Color.FromHex(profile.SkinColor),
+                    markings
+                ),
+                spawnPriority,
+                jobs,
+                (PreferenceUnavailableMode) profile.PreferenceUnavailable,
+                antags.ToHashSet(),
+                traits.ToHashSet(),
+                loadouts,
+                cdRecords,
+                passions// Moffstation - Add CD Profile
+            );
+        }
+
         private Profile ConvertProfiles(HumanoidCharacterProfile humanoid, int slot, Profile? profile = null)
         {
             profile ??= new Profile();
@@ -228,7 +372,7 @@ namespace Content.Server.Database
             var legacyMarkings = appearance.Markings
                 .SelectMany(organ => organ.Value.Values)
                 .SelectMany(i => i)
-                .Select(marking => marking.ToString())
+                .Select(marking => marking.ToLegacyDbString())
                 .ToList();
             var flattenedMarkings = appearance.Markings.SelectMany(it => it.Value)
                 .ToDictionary(kvp => kvp.Key, kvp => kvp.Value);
@@ -263,8 +407,17 @@ namespace Content.Server.Database
                         .Select(t => new Trait {TraitName = t})
             );
 
-            profile.Passions.Clear();
-            profile.Passions.AddRange(humanoid.Passions.Select(p => new Passion {PassionName = p.Key, Value = p.Value}));
+            // CD: CD Character Data
+            profile.CDProfile ??= new CDModel.CDProfile();
+            profile.CDProfile.Height = humanoid.Height;
+            // There are JsonIgnore annotations to ensure that entries are not stored as JSON.
+            profile.CDProfile.CharacterRecords = JsonSerializer.SerializeToDocument(humanoid.CDCharacterRecords ?? PlayerProvidedCharacterRecords.DefaultRecords());
+            if (humanoid.CDCharacterRecords != null)
+            {
+                profile.CDProfile.CharacterRecordEntries.Clear();
+                profile.CDProfile.CharacterRecordEntries.AddRange(RecordsSerialization.GetEntries(humanoid.CDCharacterRecords));
+            }
+            // END CD
 
             profile.Loadouts.Clear();
 
@@ -1619,6 +1772,45 @@ INSERT INTO player_round (players_id, rounds_id) VALUES ({players[player]}, {id}
             await db.DbContext.IPIntelCache
                 .Where(w => w.Time <= cutoffTime)
                 .ExecuteDeleteAsync();
+
+            await db.DbContext.SaveChangesAsync();
+            return true;
+        }
+
+        #endregion
+
+        #region AntagWeights
+        // Moffstation - Everything in this region is moff
+
+        public async Task<int> GetAntagWeight(NetUserId userId, CancellationToken cancel = default)
+        {
+            await using var db = await GetDb(cancel);
+            var player = await db.DbContext.Player.Include(player => player.MoffPlayer)
+                .SingleOrDefaultAsync(p => p.UserId == userId, cancel);
+            return player?.MoffPlayer?.AntagWeight ?? 1;
+        }
+
+        public async Task<bool> SetAntagWeight(NetUserId userId, int weight)
+        {
+            await using var db = await GetDb();
+
+            var player = await db.DbContext.Player
+                .Include(player => player.MoffPlayer)
+                .SingleOrDefaultAsync(p => p.UserId == userId);
+
+            if (player is null)
+                return false;
+
+            if (player.MoffPlayer == null)
+            {
+                player.MoffPlayer = new MoffModel.MoffPlayer
+                {
+                    PlayerUserId = userId,
+                    AntagWeight = weight,
+                };
+            } else {
+                player.MoffPlayer.AntagWeight = weight;
+            }
 
             await db.DbContext.SaveChangesAsync();
             return true;

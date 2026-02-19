@@ -108,15 +108,17 @@
   color: "#2d5708"
   metabolisms:
     Bloodstream:
+      metabolismRate: 0.05 # Moffstation - Make Ethylredoxrazine neutralize alcohol in metabolism
       effects:
       - !type:ModifyStatusEffect
         effectProto: StatusEffectDrunk
         time: 6.0
         type: Remove
-      - !type:HealthChange
-        damage:
-          types:
-            Poison: -0.5
+      # Moffstation - Begin - Make Ethylredoxrazine neutralize alcohol in metabolism
+      - !type:AdjustReagent
+        reagent: Ethanol
+        amount: -5
+      # Moffstation - End
 
 - type: reagent
   id: Arithrazine
@@ -1153,6 +1155,7 @@
   physicalDesc: reagent-physical-desc-holy
   flavor: holy
   color: "#91C3F7"
+  # Moffstation - Start - Making holywater hurt vampires
   metabolisms:
     Digestion:
       effects:
@@ -1162,6 +1165,8 @@
         conditions:
         - !type:TotalDamageCondition
           max: 50
+        - !type:MetabolizerTypeCondition
+          type: [ Vampire ]
         damage:
           types:
             Blunt: -0.2
@@ -1169,6 +1174,18 @@
             Heat: -0.2
             Shock: -0.2
             Cold: -0.2
+      - !type:HealthChange
+        conditions:
+        - !type:MetabolizerTypeCondition
+          type: [ Vampire ]
+        damage:
+          types:
+            Holy: 1.0
+      - !type:Ignite
+        conditions:
+        - !type:MetabolizerTypeCondition
+          type: [ Vampire ]
+  # Moffstation - End - Making holywater hurt vampires
   reactiveEffects:
     Extinguish:
       methods: [ Touch ]
@@ -1520,12 +1537,17 @@
       - !type:AdjustReagent
         reagent: MindbreakerToxin
         amount: -3.0
+      # Moffstation Start - Phenylpiperidine (Fentanyl)
+      - !type:AdjustReagent
+        reagent: Phenylpiperidine
+        amount: -3.0
+      # Moffstation End
 
 - type: reagent
-  id: Warfarin
-  name: reagent-name-warfarin
+  id: Heparin
+  name: reagent-name-heparin
   group: Medicine
-  desc: reagent-desc-warfarin
+  desc: reagent-desc-heparin
   physicalDesc: reagent-physical-desc-thin
   allowedDepartments:
   - Medical
@@ -1541,6 +1563,6 @@
       - !type:ModifyBleed
         conditions:
         - !type:ReagentCondition
-          reagent: Warfarin
+          reagent: Heparin
           min: 15
         amount: 0.25

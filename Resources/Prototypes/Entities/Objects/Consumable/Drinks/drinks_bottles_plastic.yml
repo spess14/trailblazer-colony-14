@@ -23,6 +23,10 @@
   - type: Tag
     tags:
     - DrinkBottle # Needed to fit in the soda dispenser, needs a better name
+  # Moffstation - Start - Bottle Flipping
+  - type: LandUpright
+    chance: 0.05
+  # Moffstation - End
 
 - type: entity
   abstract: true
@@ -71,6 +75,12 @@
     sprite: Objects/Consumable/Drinks/waterbottle.rsi
   - type: Label
     currentLabel: reagent-name-water
+  # Moffstation - Begin (Survival Box Improvements)
+  - type: Tag
+    tags:
+    - SurvivalBoxInsertable
+    - DrinkBottle
+  # Moffstation - End
 
 # Large Plastic Bottles
 
@@ -90,6 +100,12 @@
     currentLabel: reagent-name-cola
   - type: Sprite
     sprite: Objects/Consumable/Drinks/colabottle.rsi
+  # Moffstation - Begin (Survival Box Improvements)
+  - type: Tag
+    tags:
+    - SurvivalBoxInsertable
+    - DrinkBottle
+  # Moffstation - End
 
 - type: entity
   parent: [DrinkVisualsAllFilled, DrinkBottlePlasticBaseFull]

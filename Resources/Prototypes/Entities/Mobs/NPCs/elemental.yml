@@ -413,6 +413,7 @@
       - id: ReagentSlimeNorepinephricAcid
       - id: ReagentSlimeEphedrine
       - id: ReagentSlimeRobustHarvest
+      - id: ReagentSlimePhenylpiperidine # Moffstation
 
 - type: entity
   id: ReagentSlimeBeer

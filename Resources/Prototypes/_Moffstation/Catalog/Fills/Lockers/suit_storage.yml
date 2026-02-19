@@ -1,0 +1,34 @@
+﻿## Softsuits
+
+## Hardsuits
+
+# Buccaneer hardsuit
+- type: entity
+  parent: SuitStorageBase
+  id: SuitStoragePirateBuccaneer
+  suffix: Buccaneer
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      entity_storage:
+        !type:AllSelector
+        children:
+        - id: ClothingHandsGlovesCombat
+        - id: ClothingMaskGasPirate
+        - id: ClothingOuterHardsuitPirateBuccaneer
+        - id: DoubleEmergencyOxygenTankFilled
+        - id: DoubleEmergencyNitrogenTankFilled
+
+# Ranger hardsuits
+- type: entity
+  id: SuitStorageRanger
+  parent: SuitStorageBase
+  suffix: Ranger
+  components:
+  - type: StorageFill
+    contents:
+    - id: OxygenTankFilled
+    - id: ClothingOuterHardsuitRanger
+    - id: ClothingMaskBreath
+  - type: AccessReader
+    access: [["Security"]]

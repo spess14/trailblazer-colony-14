@@ -1,4 +1,5 @@
-﻿using Content.Shared._tc14.Skills.Prototypes;
+using Content.Shared._Starlight.CollectiveMind; // Starlight - Collective Mind
+using Content.Shared._tc14.Skills.Prototypes;
 using Content.Shared.CharacterInfo;
 using Content.Shared.FixedPoint;
 using Content.Shared.Objectives;
@@ -36,7 +37,7 @@ public sealed class CharacterInfoSystem : EntitySystem
     private void OnCharacterInfoEvent(CharacterInfoEvent msg, EntitySessionEventArgs args)
     {
         var entity = GetEntity(msg.NetEntity);
-        var data = new CharacterData(entity, msg.JobTitle, msg.Objectives, msg.Briefing, Name(entity), msg.Skills);
+        var data = new CharacterData(entity, msg.JobTitle, msg.Objectives, msg.CollectiveMinds, msg.Briefing, Name(entity), msg.Skills); // Starlight - Collective Mind - Add data entry for collective minds.
 
         OnCharacterUpdate?.Invoke(data);
     }
@@ -53,6 +54,7 @@ public sealed class CharacterInfoSystem : EntitySystem
         EntityUid Entity,
         string Job,
         Dictionary<string, List<ObjectiveInfo>> Objectives,
+        Dictionary<CollectiveMindPrototype, CollectiveMindMemberData>? CollectiveMinds, // Starlight - Collective Mind - Collective mind data entry.
         string? Briefing,
         string EntityName,
         Dictionary<ProtoId<SkillPrototype>, FixedPoint2> Skills

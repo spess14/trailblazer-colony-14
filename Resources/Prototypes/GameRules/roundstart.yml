@@ -16,7 +16,7 @@
 
 - type: entity
   parent: BaseGameRule
-  id: SubGamemodesRule
+  id: SubGamemodesRuleUpstream  # Moffstation - Moved to our namespace
   components:
   - type: SubGamemodes
     rules:
@@ -24,18 +24,18 @@
       prob: 0.5
     - id: SubWizard
       prob: 0.05
-    - id: Xenoborgs
+    - id: SubXenoborgs
       prob: 0.05
 
 - type: entity
   parent: BaseGameRule
-  id: SubGamemodesRuleNoWizard
+  id: SubGamemodesRuleNoWizardUpstream # Moffstation - Use our own version
   components:
   - type: SubGamemodes
     rules:
     - id: Thief
       prob: 0.5
-    - id: Xenoborgs
+    - id: SubXenoborgs
       prob: 0.05
 
 - type: entity
@@ -138,7 +138,7 @@
   id: Nukeops
   components:
   - type: GameRule
-    minPlayers: 20
+    minPlayers: 30 # Moffstation - Bumped up the min players for nukeops.
   - type: LoadMapRule
     mapPath: /Maps/Nonstations/nukieplanet.yml
   - type: AntagSelection
@@ -150,6 +150,7 @@
       startingGear: SyndicateCommanderGearFull
       roleLoadout:
       - RoleSurvivalNukie
+      - JobNukeopsCommander   # Moffstation - Enable custom nukie name/loadout
       components:
       - type: NukeOperative
       - type: RandomMetadata
@@ -167,6 +168,7 @@
       startingGear: SyndicateOperativeMedicFull
       roleLoadout:
       - RoleSurvivalNukie
+      - JobNukeopsMedic   # Moffstation - Enable custom nukie name/loadout
       components:
       - type: NukeOperative
       - type: RandomMetadata
@@ -186,6 +188,7 @@
       startingGear: SyndicateOperativeGearFull
       roleLoadout:
       - RoleSurvivalNukie
+      - JobNukeops  # Moffstation - Enable custom nukie name/loadout
       components:
       - type: NukeOperative
       - type: RandomMetadata
@@ -303,6 +306,11 @@
   components:
   - type: GameRule
     minPlayers: 15
+    # Moffstation - Begin - Delay revs so that everyone spawning at the arrivals terminal doesn't end the round
+    delay:
+      min: 300
+      max: 300
+    # Moffstation - End
   - type: RevolutionaryRule
   - type: AntagSelection
     selectionTime: IntraPlayerSpawn
@@ -367,6 +375,7 @@
       spawnerPrototype: SpawnPointGhostWizard
       roleLoadout:
        - RoleSurvivalExtended
+       - JobWizard    # Moffstation - Enable custom wizard name/loadout
       briefing:
         text: wizard-role-greeting
         color: Turquoise
@@ -393,7 +402,7 @@
   parent: BaseGameRule
   components:
   - type: GameRule
-    minPlayers: 20
+    minPlayers: 25 # Moffstation - Bumped up the min players for zombies
     delay:
       min: 600
       max: 900
@@ -422,6 +431,46 @@
   - type: DynamicRuleCost
     cost: 200
 
+- type: entity
+  abstract: true
+  parent: BaseGameRule
+  id: BaseXenoborgsRule
+  components:
+  - type: XenoborgsRule
+  - type: RuleGrids
+  - type: LoadMapRule
+    gridPath: /Maps/Shuttles/mothership.yml
+
+- type: entity
+  parent: BaseXenoborgsRule
+  id: Xenoborgs
+  components:
+  - type: GameRule
+    minPlayers: 30
+  - type: AntagMultipleRoleSpawner
+    antagRoleToPrototypes:
+      MothershipCore: [ MothershipCore ]
+      Xenoborg: [ XenoborgEngi, XenoborgHeavy, XenoborgScout, XenoborgStealth ]
+    pickAndTake: true
+  - type: AntagSelection
+    selectionTime: PrePlayerSpawn
+    definitions:
+    - prefRoles: [ MothershipCore ]
+      fallbackRoles: [ Xenoborg ]
+      spawnerPrototype: SpawnPointGhostRoleMothershipCore
+      mindRoles:
+      - MindRoleMothershipCore
+    - prefRoles: [ Xenoborg ]
+      fallbackRoles: [ MothershipCore ]
+      spawnerPrototype: SpawnPointGhostRoleXenoborg
+      mindRoles:
+      - MindRoleXenoborg
+      min: 4
+      max: 4
+  - type: DynamicRuleCost
+    cost: 200
+
+
 # This rule makes the chosen players unable to get other antag rules, as a way to prevent metagaming job rolls.
 # Put this before antags assigned to station jobs, but after non-job antags (NukeOps/Wiz).
 - type: entity
@@ -433,6 +482,7 @@
   - type: AntagSelection
     selectionTime: IntraPlayerSpawn # Pre-selection before jobs; assignment doesn't really matter though, we only care about the pre-selection to block other antags.
     removeUponFailedSpawn: false
+    useWeights: false # Moffstation - Antag Weights
     definitions:
     - prefRoles: [ InitialInfected, Traitor, Thief, HeadRev ]
       max: 2
@@ -452,6 +502,10 @@
         tableId: ModerateAntagEventsTable
       - !type:NestedSelector
         tableId: CargoGiftsTable
+      # Moffstation Start - Cargo Packing Error
+      - !type:NestedSelector
+        tableId: CargoPackingErrorTable
+      # Moffstation End - Cargo Packing Error
       - !type:NestedSelector
         tableId: CalmPestEventsTable
       - !type:NestedSelector
@@ -467,6 +521,10 @@
       tableId: BasicAntagEventsTable
     - !type:NestedSelector
       tableId: CargoGiftsTable
+    # Moffstation Start - Cargo Packing Error
+    - !type:NestedSelector
+      tableId: CargoPackingErrorTable
+    # Moffstation End - Cargo Packing Error
     - !type:NestedSelector
       tableId: CalmPestEventsTable
     - !type:NestedSelector
@@ -474,8 +532,14 @@
 
 - type: entityTable
   id: SpaceTrafficControlTable
-  table: !type:NestedSelector # we need to pass a list of rules, since rules have further restrictions to consider via StationEventComp
-    tableId: UnknownShuttlesHostileTable
+  # Moffstation - Begin - Wrecks as space traffic events
+  table: !type:AllSelector # we need to pass a list of rules, since rules have further restrictions to consider via StationEventComp
+    children:
+      - !type:NestedSelector
+        tableId: UnknownShuttlesHostileTable
+      - !type:NestedSelector
+        tableId: WreckEventTable
+  # Moffstation - End
 
 - type: entity
   id: BasicStationEventScheduler
@@ -506,8 +570,8 @@
   parent: BaseGameRule                  # we can remerge this with the other schedulers, but it will silently fail due to that limitation without a separate scheduler to balance atm.
   components:
   - type: BasicStationEventScheduler
-    minimumTimeUntilFirstEvent: 2700 # 45 mins #shows up like half way through shift.
-    maximumSpanUntilFirstEvent: 900 # At longest takes an hour to show up.
+    minimumTimeUntilFirstEvent: 1200 # 20 minutes # Moffstation - They show up earlier now
+    maximumSpanUntilFirstEvent: 1400 # At longest takes an hour to show up. # Moffstation - compensate for earlier first apperance time
     minMaxEventTiming:
       min: 1200 # 20 mins
       max: 7200 # 120 mins # you probably arent getting a second visitor shuttle in one round, but it is possible.
@@ -545,3 +609,7 @@
     - id: BasicDecalDirtMonospaceVariationPass
       prob: 0.50
       orGroup: monospaceDecals
+    # Moffstation - Start - Stowaways
+    - id: Stowaways
+      prob: 0.20
+    # Moffstation - End

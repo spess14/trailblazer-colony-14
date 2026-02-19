@@ -2,30 +2,36 @@
 - type: roleLoadout
   id: JobCaptain
   groups:
+  - CaptainPDA #Moffstation - New PDAs
   - CaptainHead
   - CaptainNeck
   - CaptainJumpsuit
   - CaptainBackpack
   - CaptainOuterClothing
+  - CaptainEyewear # Moffstation - Eyepatches!
   - Survival
   - Trinkets
   #- CaptainJobTrinkets
   - GroupSpeciesBreathTool
+  - PersonalItemsJobAgnostic # Umbra
 
 - type: roleLoadout
   id: JobHeadOfPersonnel
   groups:
   - GroupTankHarness
+  - HopPDA #Moffstation - New PDAs
   - HoPHead
   - HoPNeck
   - HoPJumpsuit
   - HoPBackpack
   - HoPOuterClothing
-  - Glasses
+# - Glasses # Moffstation - Eyepatches!
+  - HopEyewear # Moffstation - Eyepatches!
   - Survival
   - Trinkets
   #- HoPJobTrinkets
   - GroupSpeciesBreathTool
+  - PersonalItemsJobAgnostic # Umbra
 
 # Silicons
 - type: roleLoadout
@@ -43,6 +49,7 @@
   id: JobPassenger
   groups:
   - GroupTankHarness
+  - PassengerPDA # Moffstation - Additional job title loadouts
   - PassengerJumpsuit
   - CommonBackpack
   - PassengerNeck
@@ -55,25 +62,30 @@
   - Trinkets
   #- PassengerJobTrinkets
   - GroupSpeciesBreathTool
+  - PersonalItemsJobAgnostic # Umbra
 
 - type: roleLoadout
   id: JobBartender
   groups:
   - GroupTankHarness
+  - BartenderPDA # Moffstation - Additional job title loadouts
   - BartenderHead
   - BartenderJumpsuit
   - CommonBackpack
   - BartenderOuterClothing
-  - Glasses
+# - Glasses # Moffstation - Eyepatches!
+  - BartenderEyewear # Moffstation - Eyepatches!
   - Survival
   - Trinkets
   - BartenderJobTrinkets
   - GroupSpeciesBreathTool
+  - PersonalItemsJobAgnostic # Umbra
 
 - type: roleLoadout
   id: JobServiceWorker
   groups:
   - GroupTankHarness
+  - ServiceWorkerPDA # Moffstation - Additional job title loadouts
   - BartenderJumpsuit
   - CommonBackpack
   - Glasses
@@ -81,11 +93,13 @@
   - Trinkets
   #- ServiceWorkerJobTrinkets
   - GroupSpeciesBreathTool
+  - PersonalItemsJobAgnostic # Umbra
 
 - type: roleLoadout
   id: JobChef
   groups:
   - GroupTankHarness
+  - ChefPDA # Moffstation - Additional job title loadouts
   - ChefHead
   - ChefMask
   - ChefJumpsuit
@@ -96,11 +110,13 @@
   - Trinkets
   #- ChefJobTrinkets
   - GroupSpeciesBreathTool
+  - PersonalItemsJobAgnostic # Umbra
 
 - type: roleLoadout
   id: JobLibrarian
   groups:
   - GroupTankHarness
+  - LibrarianPDA # Moffstation - Additional job title loadouts
   - LibrarianJumpsuit
   - CommonBackpack
   - Glasses
@@ -108,11 +124,13 @@
   - Trinkets
   #- LibrarianJobTrinkets
   - GroupSpeciesBreathTool
+  - PersonalItemsJobAgnostic # Umbra
 
 - type: roleLoadout
   id: JobLawyer
   groups:
   - GroupTankHarness
+  - LawyerPDA # Moffstation - Additional job title loadouts
   - LawyerNeck
   - LawyerJumpsuit
   - CommonBackpack
@@ -121,11 +139,14 @@
   - Trinkets
   #- LawyerJobTrinkets
   - GroupSpeciesBreathTool
+  - PersonalItemsJobAgnostic # Umbra
 
 - type: roleLoadout
   id: JobChaplain
+  canCustomizeName: true
   groups:
   - GroupTankHarness
+  - ChaplainPDA # Moffstation - Additional job title loadouts
   - ChaplainHead
   - ChaplainMask
   - ChaplainNeck
@@ -138,11 +159,13 @@
   - Trinkets
   #- ChaplainJobTrinkets
   - GroupSpeciesBreathTool
+  - PersonalItemsJobAgnostic # Umbra
 
 - type: roleLoadout
   id: JobJanitor
   groups:
   - GroupTankHarness
+  - JanitorPDA # Moffstation - Additional job title loadouts
   - JanitorHead
   - JanitorJumpsuit
   - JanitorGloves
@@ -153,11 +176,13 @@
   - Trinkets
   - JanitorJobTrinkets
   - GroupSpeciesBreathTool
+  - PersonalItemsJobAgnostic # Umbra
 
 - type: roleLoadout
   id: JobBotanist
   groups:
   - GroupTankHarness
+  - BotanistPDA # Moffstation - Additional job title loadouts
   - BotanistHead
   - BotanistJumpsuit
   - BotanistBackpack
@@ -167,13 +192,17 @@
   - Trinkets
   #- BotanistJobTrinkets
   - GroupSpeciesBreathTool
+  - PersonalItemsJobAgnostic # Umbra
 
 - type: roleLoadout
   id: JobClown
   canCustomizeName: true
   groups:
   - GroupTankHarness
+  - ClownPDA # Moffstation - Additional job title loadouts
   - ClownHead
+  - ClownMask # Moffstation - Masks in the Loadout
+  - TheatreNeck # Moffstation - Add the Ruffle to the loadout
   - ClownJumpsuit
   - ClownBackpack
   - ClownOuterClothing
@@ -182,29 +211,37 @@
   - SurvivalClown
   - Trinkets
   - ClownJobTrinkets
+  - PersonalItemsJobAgnostic # Umbra
 
 - type: roleLoadout
   id: JobMime
   canCustomizeName: true
   groups:
   - GroupTankHarness
+  - MimePDA # Moffstation - Additional job title loadouts
   - MimeHead
   - MimeMask
+  - TheatreNeck # Moffstation - Adds the Ruffle to the Loadout
   - MimeJumpsuit
   - MimeBackpack
   - MimeOuterClothing
   - MimeBelt
+  - MimeShoes # Moffstation
   - Glasses
   - SurvivalMime
   - Trinkets
   #- MimeJobTrinkets
+  - PersonalItemsJobAgnostic # Umbra
 
 - type: roleLoadout
   id: JobMusician
   canCustomizeName: true
   groups:
   - GroupTankHarness
+  - MusicianPDA # Moffstation - Additional job title loadouts
+  - MusicianHead # Moffstation - Musician Loadout Options
   - MusicianJumpsuit
+  - MusicianShoes # Moffstation - Musician loadout Options
   - CommonBackpack
   - MusicianOuterClothing
   - Glasses
@@ -213,16 +250,18 @@
   #- MusicianJobTrinkets
   - Instruments
   - GroupSpeciesBreathTool
+  - PersonalItemsJobAgnostic # Umbra
 
 # Cargo
 - type: roleLoadout
   id: JobQuartermaster
   groups:
   - GroupTankHarness
+  - QuartermasterPDA #Moffstation - New PDAs
   - QuartermasterHead
   - QuartermasterNeck
   - QuartermasterJumpsuit
-  - CargoTechnicianBackpack
+  - QuartermasterBackpack # Moffstation - Department Heads can wear any bag from their department
   - QuartermasterOuterClothing
   - QuartermasterShoes
   - Glasses
@@ -230,27 +269,31 @@
   - Trinkets
   #- QuartermasterJobTrinkets
   - GroupSpeciesBreathTool
+  - PersonalItemsJobAgnostic # Umbra
 
 - type: roleLoadout
   id: JobCargoTechnician
   groups:
   - GroupTankHarness
+  - CargoTechnicianID # Moffstation - Additional job title loadouts
   - CargoTechnicianHead
   - CargoTechnicianJumpsuit
   - CargoTechnicianBackpack
   - CargoTechnicianOuterClothing
   - CargoTechnicianShoes
-  - CargoTechnicianID
+# - CargoTechnicianID # Moffstation - Moved up in list
   - Glasses
   - Survival
   - Trinkets
   #- CargoTechnicianJobTrinkets
   - GroupSpeciesBreathTool
+  - PersonalItemsJobAgnostic # Umbra
 
 - type: roleLoadout
   id: JobSalvageSpecialist
   groups:
   - GroupTankHarness
+  - SalvagePDA # Moffstation - Additional job title loadouts
   - SalvageSpecialistBackpack
   - SalvageSpecialistOuterClothing
   - SalvageSpecialistShoes
@@ -259,22 +302,26 @@
   - Trinkets
   #- SalvageSpecialistJobTrinkets
   - GroupSpeciesBreathTool
+  - PersonalItemsJobAgnostic # Umbra
 
 # Engineering
 - type: roleLoadout
   id: JobChiefEngineer
   groups:
   - GroupTankHarness
+  - ChiefEngineerPDA #Moffstation - New PDAs
   - ChiefEngineerHead
   - ChiefEngineerJumpsuit
-  - StationEngineerBackpack
+  - ChiefEngineerBackpack # Moffstation - Department Heads can wear any bag from their department
   - ChiefEngineerNeck
   - ChiefEngineerOuterClothing
   - ChiefEngineerShoes
+  - EngineeringEyewear # Moffstation - Eyepatches!
   - SurvivalExtended
   - Trinkets
   #- ChiefEngineerJobTrinkets
   - GroupSpeciesBreathTool
+  - PersonalItemsJobAgnostic # Umbra
 
 - type: roleLoadout
   id: JobTechnicalAssistant
@@ -286,40 +333,49 @@
   - Trinkets
   #- TechnicalAssistantJobTrinkets
   - GroupSpeciesBreathTool
+  - PersonalItemsJobAgnostic # Umbra
 
 - type: roleLoadout
   id: JobStationEngineer
   groups:
   - GroupTankHarness
+  - StationEngineerID # Moffstation - Additional job title loadouts
   - StationEngineerHead
   - StationEngineerJumpsuit
   - StationEngineerBackpack
   - StationEngineerOuterClothing
   - StationEngineerShoes
-  - StationEngineerID
+#  - StationEngineerID # Moffstation - Moved up in list
+  - EngineeringEyewear # Moffstation - Eyepatches!
   - SurvivalExtended
   - Trinkets
   #- StationEngineerJobTrinkets
   - GroupSpeciesBreathTool
+  - PersonalItemsJobAgnostic # Umbra
 
 - type: roleLoadout
   id: JobAtmosphericTechnician
   groups:
   - GroupTankHarness
+  - AtmosPDA # Moffstation - Additional job title loadouts
+  - AtmosphericTechnicianHead # Moffstation - (Work Gear for Atmos) - This contains their new hardhats.
   - AtmosphericTechnicianJumpsuit
   - AtmosphericTechnicianBackpack
   - AtmosphericTechnicianOuterClothing
   - AtmosphericTechnicianShoes
+  - EngineeringEyewear # Moffstation - Eyepatches!
   - SurvivalExtended
   - Trinkets
   #- AtmosphericTechnicianJobTrinkets
   - GroupSpeciesBreathTool
+  - PersonalItemsJobAgnostic # Umbra
 
 # Science
 - type: roleLoadout
   id: JobResearchDirector
   groups:
   - GroupTankHarness
+  - ResearchDirectorPDA #Moffstation - New PDAs
   - ResearchDirectorHead
   - ResearchDirectorNeck
   - ResearchDirectorJumpsuit
@@ -327,16 +383,19 @@
   - ResearchDirectorOuterClothing
   - ScientistGloves
   - ResearchDirectorShoes
-  - Glasses
+# - Glasses # Moffstation - Eyepatches!
+  - ScienceEyewear # Moffstation - Eyepatches!
   - Survival
   - Trinkets
   #- ResearchDirectorJobTrinkets
   - GroupSpeciesBreathTool
+  - PersonalItemsJobAgnostic # Umbra
 
 - type: roleLoadout
   id: JobScientist
   groups:
   - GroupTankHarness
+  - ScientistPDA # Moffstation - Additional job title loadouts
   - ScientistHead
   - ScientistNeck
   - ScientistJumpsuit
@@ -344,12 +403,14 @@
   - ScientistOuterClothing
   - ScientistGloves
   - ScientistShoes
-  - ScientistPDA
-  - Glasses
+# - ScientistPDA # Moffstation - Moved up in list
+# - Glasses # Moffstation - Eyepatches!
+  - ScienceEyewear # Moffstation - Eyepatches!
   - Survival
   - Trinkets
   #- ScientistJobTrinkets
   - GroupSpeciesBreathTool
+  - PersonalItemsJobAgnostic # Umbra
 
 - type: roleLoadout
   id: JobResearchAssistant
@@ -362,11 +423,13 @@
   - Trinkets
   #- ResearchAssistantJobTrinkets
   - GroupSpeciesBreathTool
+  - PersonalItemsJobAgnostic # Umbra
 
 # Security
 - type: roleLoadout
   id: JobHeadOfSecurity
   groups:
+  - HeadofSecurityPDA #Moffstation - New PDAs
   - HeadofSecurityHead
   - HeadofSecurityNeck
   - HeadofSecurityJumpsuit
@@ -374,53 +437,66 @@
   - SecurityBelt
   - HeadofSecurityOuterClothing
   - SecurityShoes
+  - SecurityEyewear # Moffstation - Eyepatches!
   - SurvivalSecurity
   - Trinkets
   - HeadofSecurityJobTrinkets
   - GroupSpeciesBreathToolSecurity
+  - PersonalItemsJobAgnostic # Umbra
 
 - type: roleLoadout
   id: JobWarden
   groups:
+  - WardenPDA # Moffstation - Additional job title loadouts
   - WardenHead
   - WardenJumpsuit
   - SecurityBackpack
   - SecurityBelt
   - WardenOuterClothing
   - SecurityShoes
+  - SecurityEyewear # Moffstation - Eyepatches!
   - SurvivalSecurity
   - Trinkets
   - WardenJobTrinkets
   - GroupSpeciesBreathToolSecurity
+  - PersonalItemsJobAgnostic # Umbra
 
 - type: roleLoadout
   id: JobSecurityOfficer
   groups:
+  - SecurityPDA # Moffstation - Additional job title loadouts
   - SecurityHead
   - SecurityJumpsuit
   - SecurityBackpack
   - SecurityOuterClothing
   - SecurityShoes
-  - SecurityPDA
+# - SecurityPDA # Moffstation - Moved up in list
   - SecurityBelt
+  - SecurityEyewear # Moffstation - Eyepatches!
   - SurvivalSecurity
   - Trinkets
   - SecurityJobTrinkets
   - GroupSpeciesBreathToolSecurity
+  - PersonalItemsJobAgnostic # Umbra
 
 - type: roleLoadout
   id: JobDetective
   groups:
+  - DetectivePDA # Moffstation - Additional job title loadouts
   - DetectiveHead
   - DetectiveNeck
   - DetectiveJumpsuit
   - SecurityBackpack
   - DetectiveOuterClothing
+  - DetectiveBelt # Moffstation - Detective loadout changes
   - SecurityShoes
+  - DetectiveEyewear # Moffstation - Eyepatches!
+  - DetectiveSidearm # Moffstation - (PM Pistol) - With the new PM, detective needs a loadout to select which sidearm they want.
   - SurvivalSecurity
   - Trinkets
   - DetectiveJobTrinkets
   - GroupSpeciesBreathToolSecurity
+  - PersonalItemsJobAgnostic # Umbra
 
 - type: roleLoadout
   id: JobSecurityCadet
@@ -431,12 +507,14 @@
   - Trinkets
   #- SecurityCadetJobTrinkets
   - GroupSpeciesBreathToolSecurity
+  - PersonalItemsJobAgnostic # Umbra
 
 # Wildcards
 - type: roleLoadout
   id: JobReporter
   groups:
   - GroupTankHarness
+  - ReporterPDA # Moffstation - Additional job title loadouts
   - ReporterJumpsuit
   - CommonBackpack
   - Glasses
@@ -444,11 +522,13 @@
   - Trinkets
   #- ReporterJobTrinkets
   - GroupSpeciesBreathTool
+  - PersonalItemsJobAgnostic # Umbra
 
 - type: roleLoadout
   id: JobPsychologist
   groups:
   - GroupTankHarness
+  - PsychologistPDA # Moffstation - Additional job title loadouts
   - PsychologistJumpsuit
   - MedicalBackpack
   - Glasses
@@ -456,6 +536,7 @@
   - Trinkets
   #- PsychologistJobTrinkets
   - GroupSpeciesBreathTool
+  - PersonalItemsJobAgnostic # Umbra
 
 # These loadouts are used for non-crew spawns, like off-station antags and event mobs
 # They will be used without player configuration, thus they will only ever apply what is forced by MinLimit

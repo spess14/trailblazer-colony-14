@@ -13,6 +13,7 @@ using System.Linq;
 using System.Text;
 using Content.Server.Objectives.Commands;
 using Content.Shared.CCVar;
+using Content.Shared._DV.CustomObjectiveSummary; // DeltaV
 using Content.Shared.Prototypes;
 using Content.Shared.Roles.Jobs;
 using Robust.Server.Player;
@@ -120,14 +121,14 @@ public sealed class ObjectivesSystem : SharedObjectivesSystem
                 // add space between the start text and player list
                 result.AppendLine();
 
-                AddSummary(result, agent, minds);
+                AddSummary(result, agent, minds, ev);   // Moffstation - Custom objective summary
             }
 
             ev.AddLine(result.AppendLine().ToString());
         }
     }
 
-    private void AddSummary(StringBuilder result, string agent, List<(EntityUid, string)> minds)
+    private void AddSummary(StringBuilder result, string agent, List<(EntityUid, string)> minds, RoundEndTextAppendEvent ev) // Moffstation - custom objective summary
     {
         var agentSummaries = new List<(string summary, float successRate, int completedObjectives)>();
 
@@ -210,6 +211,13 @@ public sealed class ObjectivesSystem : SharedObjectivesSystem
             }
 
             var successRate = totalObjectives > 0 ? (float) completedObjectives / totalObjectives : 0f;
+            // Moffstation - Start - Pinktexting
+            if (TryComp<CustomObjectiveSummaryComponent>(mindId, out var customComp) && customComp.ObjectiveSummary != "")
+            {
+                var customObjective = Loc.GetString("custom-objective-format", ("line", ev.WrapString(customComp.ObjectiveSummary)));
+                agentSummary.AppendLine(customObjective);
+            }
+            // Moffstation - End
             agentSummaries.Add((agentSummary.ToString(), successRate, completedObjectives));
         }
 
@@ -222,12 +230,13 @@ public sealed class ObjectivesSystem : SharedObjectivesSystem
         }
     }
 
-    public EntityUid? GetRandomObjective(EntityUid mindId, MindComponent mind, ProtoId<WeightedRandomPrototype> objectiveGroupProto, float maxDifficulty)
+    // Moffstation - Objective Picker - make sure to use our yield break implementation and take upstream changes
+    public IEnumerable<EntityUid> GetRandomObjectives(EntityUid mindId, MindComponent mind, ProtoId<WeightedRandomPrototype> objectiveGroupProto, float maxDifficulty)
     {
         if (!_prototypeManager.TryIndex(objectiveGroupProto, out var groupsProto))
         {
             Log.Error($"Tried to get a random objective, but can't index WeightedRandomPrototype {objectiveGroupProto}");
-            return null;
+            yield break; // Moffstation - Objective Picker
         }
 
         // Make a copy of the weights so we don't trash the prototype by removing entries
@@ -238,7 +247,7 @@ public sealed class ObjectivesSystem : SharedObjectivesSystem
             if (!_prototypeManager.TryIndex<WeightedRandomPrototype>(groupName, out var group))
             {
                 Log.Error($"Couldn't index objective group prototype {groupName}");
-                return null;
+                yield break; // Moffstation - Objective Picker
             }
 
             var objectives = group.Weights.ShallowClone();
@@ -248,12 +257,19 @@ public sealed class ObjectivesSystem : SharedObjectivesSystem
                     continue;
 
                 if (objectiveComp.Difficulty <= maxDifficulty && TryCreateObjective((mindId, mind), objectiveProto, out var objective))
-                    return objective;
+                    yield return objective.Value; // Moffstation - Objective Picker
             }
         }
 
-        return null;
+        // return null; // Moffstation - Objective Picker
     }
+
+    // Moffstation - Start - Objective Picker: This is rewritten to use our IEnumerable version for maintainability
+    public EntityUid? GetRandomObjective(EntityUid mindId, MindComponent mind, ProtoId<WeightedRandomPrototype> objectiveGroupProto, float maxDifficulty)
+    {
+        return GetRandomObjectives(mindId, mind, objectiveGroupProto, maxDifficulty).Single();
+    }
+    // Moffstation - End
 
     /// <summary>
     /// Returns whether a target is considered 'in custody' (cuffed on the shuttle).

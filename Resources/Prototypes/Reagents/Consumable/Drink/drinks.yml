@@ -433,6 +433,17 @@
       effects:
       - !type:SatiateThirst
         factor: 4
+        # Moffstation start - Allow avali to drink ammonia
+        conditions:
+        - !type:MetabolizerTypeCondition
+          type: [ Avali ]
+          inverted: true
+      - !type:SatiateThirst
+        factor: 1
+        conditions:
+        - !type:MetabolizerTypeCondition
+          type: [ Avali ]
+        # Moffstation end
     Respiration:
       effects:
       - !type:HealthChange

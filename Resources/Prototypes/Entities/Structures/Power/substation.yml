@@ -30,6 +30,11 @@
     supplyRampTolerance: 5000
     supplyRampRate: 1000
   - type: StationInfiniteBatteryTarget
+  # Impstation - Start
+  - type: AccessReader
+    access: [["Engineering"]]
+  - type: ActivatableUIRequiresAccess 
+  # Impstation - End
 
   # Interface
   - type: BatteryInterface
@@ -250,12 +255,12 @@
   - type: ContainerFill
     containers:
       board: [ WallmountSubstationElectronics ]
-      manipulator: [ MicroManipulatorStockPart ]
+      capacitor: [ CapacitorStockPart ] #moffstation - Revert machine parts
       powercell: [ PowerCellSmall ]
   - type: ContainerContainer
     containers:
       board: !type:Container
-      manipulator: !type:Container
+      capacitor: !type:Container #moffstation - Revert machine parts
       powercell: !type:Container
 
       # Construction Frame

@@ -332,6 +332,7 @@
     - type: Tag
       tags:
         - Mop
+        - CleaningRag # Moffstation - Give service borgs some love
     - type: Fiber
       fiberColor: fibers-white
     - type: DnaSubstanceTrace

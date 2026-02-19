@@ -136,14 +136,18 @@ SalvagePartsT4Spawner: SalvageLootSpawner
 SalvagePartsT3Spawner: SalvageLootSpawner
 SalvagePartsT3T4Spawner: SalvageLootSpawner
 SalvagePartsT2Spawner: SalvageLootSpawner
-#SuperCapacitorStockPart: CapacitorStockPart
-#QuadraticCapacitorStockPart: CapacitorStockPart
-#NanoManipulatorStockPart: MicroManipulatorStockPart
+#Moffstation - Revert machine parts - Start
+SuperCapacitorStockPart: CapacitorStockPart
+QuadraticCapacitorStockPart: CapacitorStockPart
+NanoManipulatorStockPart: MicroManipulatorStockPart
+#Moffstation - Revert machine parts - End
 PicoManipulatorStockPart: MicroManipulatorStockPart
 FemtoManipulatorStockPart: MicroManipulatorStockPart
-#AdvancedMatterBinStockPart: MatterBinStockPart
-#SuperMatterBinStockPart: MatterBinStockPart
-#BluespaceMatterBinStockPart: MatterBinStockPart
+#Moffstation - Revert machine parts - Start
+AdvancedMatterBinStockPart: MatterBinStockPart
+SuperMatterBinStockPart: MatterBinStockPart
+BluespaceMatterBinStockPart: MatterBinStockPart
+#Moffstation - Revert machine parts - End
 AnsibleSubspaceStockPart: null
 FilterSubspaceStockPart: null
 AmplifierSubspaceStockPart: null
@@ -639,8 +643,10 @@ SuitStorageBasic: SuitStorageEVA
 ClothingNeckCloakMiner: null
 
 # 2025-05-22
-MatterBinStockPart: MicroManipulatorStockPart
-CapacitorStockPart: MicroManipulatorStockPart
+#moffstation - Revert machine parts - Start
+#MatterBinStockPart: MicroManipulatorStockPart
+#CapacitorStockPart: MicroManipulatorStockPart
+#moffstation - Revert machine parts - End
 
 # 2025-05-26 Turrets
 WeaponEnergyTurretStation: WeaponEnergyTurretSecurity
@@ -733,6 +739,12 @@ BibleSatanic: null
 ClothingBeltAssault: ClothingBeltMilitaryWebbing
 WarpPointBombing: null
 
+# Moffstation - 2025-10-14 - Remove Offmed
+CrateFreezerIVBag: null
+IVStand: null
+TourniquetOffbrand: Tourniquet
+IVBagBlood: Bloodpack
+
 # 2025-10-13
 ToyGriffin: ToyFigurineGriffin
 ToyOwlman: ToyFigurineOwlman
@@ -777,12 +789,18 @@ LeftArmHuman: OrganHumanArmLeft
 LeftArmSkeleton: OrganSkeletonPersonArmLeft
 LeftHandSkeleton: OrganSkeletonPersonHandLeft
 LeftLegHuman: OrganHumanLegLeft
+LeftFootHuman: OrganHumanFootLeft # Moffstation
 LeftLegSkeleton: OrganSkeletonPersonLegLeft
 RightArmHuman: OrganHumanArmRight
+RightHandHuman: OrganHumanHandRight # Moffstation
 RightHandSkeleton: OrganSkeletonPersonHandRight
 RightLegHuman: OrganHumanLegRight
+TorsoHuman: OrganHumanTorso # Moffstation
 TorsoSkeleton: OrganSkeletonPersonTorso
 RightArmSkeleton: OrganSkeletonPersonArmRight
+
+# Moffstation - 2026-01-25
+PirateChestSecureFulton: CratePirateFulton
 
 # 2026-01-19
 TowelColorPurple: null

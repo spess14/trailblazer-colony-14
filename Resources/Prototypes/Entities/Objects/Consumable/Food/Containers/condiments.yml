@@ -74,6 +74,7 @@
   - type: Tag
     tags:
       - Packet
+      - Condiment # Moffstation - Give service borgs some love
   - type: ExaminableSolution
     exactVolume: true
 
@@ -408,6 +409,7 @@
   - type: Tag
     tags:
       - Coldsauce
+      - Condiment # Moffstation - Give service borgs some love
 
 - type: entity
   parent: BaseFoodCondimentBottle
@@ -434,6 +436,7 @@
   - type: Tag
     tags:
       - Enzyme
+      - Condiment # Moffstation - Give service borgs some love
 
 - type: entity
   parent: BaseFoodCondimentBottle
@@ -457,6 +460,11 @@
       visible: true
   - type: Icon
     state: bottle-vinegar
+# Moffstation - Start - Give service borgs some love
+  - type: Tag
+    tags:
+    - Condiment
+# Moffstation - End
 
 - type: entity
   parent: BaseFoodCondimentBottle
@@ -483,6 +491,7 @@
   - type: Tag
     tags:
       - Hotsauce
+      - Condiment # Moffstation - Give service borgs some love
 
 - type: entity
   parent: BaseFoodCondimentBottle
@@ -509,6 +518,7 @@
   - type: Tag
     tags:
       - Ketchup
+      - Condiment # Moffstation - Give service borgs some love
 
 - type: entity
   parent: BaseFoodCondimentBottle
@@ -536,6 +546,7 @@
   - type: Tag
     tags:
       - BBQsauce
+      - Condiment # Moffstation - Give service borgs some love
 
 # Shakers
 
@@ -603,6 +614,7 @@
   - type: Tag
     tags:
       - SaltShaker
+      - Condiment # Moffstation - Give service borgs some love
 
 - type: entity
   parent: BaseFoodShaker
@@ -623,3 +635,4 @@
   - type: Tag
     tags:
       - PepperShaker
+      - Condiment # Moffstation - Give service borgs some love

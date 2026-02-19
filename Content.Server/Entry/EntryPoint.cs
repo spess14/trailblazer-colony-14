@@ -1,3 +1,4 @@
+using Content.Server._Moffstation.Antag;
 using Content.Server.Acz;
 using Content.Server.Administration;
 using Content.Server.Administration.Logs;
@@ -80,6 +81,7 @@ namespace Content.Server.Entry
         [Dependency] private readonly ServerInfoManager _serverInfo = default!;
         [Dependency] private readonly ServerUpdateManager _updateManager = default!;
         [Dependency] private readonly ServerFeedbackManager _feedbackManager = null!;
+        [Dependency] private readonly WeightedAntagManager _weightedAntags = default!; // Moffstation
 
         public override void PreInit()
         {
@@ -172,6 +174,7 @@ namespace Content.Server.Entry
             _multiServerKick.Initialize();
             _cvarCtrl.Initialize();
             _feedbackManager.Initialize();
+            _weightedAntags.Initialize();
         }
 
         public override void Update(ModUpdateLevel level, FrameEventArgs frameEventArgs)
@@ -203,6 +206,7 @@ namespace Content.Server.Entry
             {
                 _playTimeTracking.Shutdown();
                 _dbManager.Shutdown();
+                _weightedAntags.Shutdown(); // Moffstation - Weighted antags
             }
 
             _serverApi.Shutdown();

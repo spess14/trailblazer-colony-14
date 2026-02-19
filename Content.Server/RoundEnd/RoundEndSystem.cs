@@ -10,6 +10,8 @@ using Content.Server.Screens.Components;
 using Content.Server.Shuttles.Components;
 using Content.Server.Shuttles.Systems;
 using Content.Server.Station.Systems;
+using Content.Server.Voting.Managers; // Moffstation
+using Content.Shared._Moffstation.CCVar; // Moffstation - auto map votes on round start
 using Content.Shared.Database;
 using Content.Shared.DeviceNetwork;
 using Content.Shared.GameTicking;
@@ -20,6 +22,7 @@ using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
 using Content.Shared.DeviceNetwork.Components;
 using Content.Shared.Station.Components;
+using Content.Shared.Voting;   // Moffstation - auto map votes on round start
 using Timer = Robust.Shared.Timing.Timer;
 
 namespace Content.Server.RoundEnd
@@ -41,6 +44,7 @@ namespace Content.Server.RoundEnd
         [Dependency] private readonly EmergencyShuttleSystem _shuttle = default!;
         [Dependency] private readonly SharedAudioSystem _audio = default!;
         [Dependency] private readonly StationSystem _stationSystem = default!;
+        [Dependency] private readonly IVoteManager _voteManager = default!; // Moffstation - needed for auto map votes
 
         public TimeSpan DefaultCooldownDuration { get; set; } = TimeSpan.FromSeconds(30);
 
@@ -357,6 +361,10 @@ namespace Content.Server.RoundEnd
         {
             if (_gameTicker.RunLevel != GameRunLevel.PostRound) return;
             Reset();
+            // Moffstation - Start - Auto start map vote on round restart
+            if (_cfg.GetCVar(MoffCCVars.AutoStartMapVote))
+                _voteManager.CreateStandardVote(null, StandardVoteType.Map);
+            // Moffstation - End
             _gameTicker.RestartRound();
         }
 
@@ -379,7 +387,7 @@ namespace Content.Server.RoundEnd
             // Check if we should auto-call.
             int mins = _autoCalledBefore ? _cfg.GetCVar(CCVars.EmergencyShuttleAutoCallExtensionTime)
                                         : _cfg.GetCVar(CCVars.EmergencyShuttleAutoCallTime);
-            if (mins != 0 && _gameTiming.CurTime - AutoCallStartTime > TimeSpan.FromMinutes(mins))
+            if (mins != 0 && _gameTiming.CurTime - _gameTicker.RoundStartTimeSpan - AutoCallStartTime > TimeSpan.FromMinutes(mins)) // Moffstation - fix roundstart recalls
             {
                 if (!_shuttle.EmergencyShuttleArrived && ExpectedCountdownEnd is null)
                 {

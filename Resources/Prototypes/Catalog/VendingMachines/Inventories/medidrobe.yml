@@ -32,6 +32,7 @@
     ClothingShoesColorBlue: 2
     ClothingShoesColorWhite: 2
     ClothingShoesBootsWinterMed: 2
+    ClothingUniformJumpskirtNurse: 2 # MOFFSTATION - Adds nurse outfit
   contrabandInventory:
     ClothingUniformJumpskirtOfLife: 1
     ToyFigurineMedicalDoctor: 1

@@ -1,4 +1,7 @@
 using System.Linq;
+using Content.Client._Starlight.UserInterface.Controls; // Starlight - Collective Mind
+using Content.Client._DV.CustomObjectiveSummary; // DeltaV
+using Content.Client._Moffstation.ObjectivePicker; // Moffstation
 using Content.Client.CharacterInfo;
 using Content.Client.Gameplay;
 using Content.Client.Stylesheets;
@@ -6,6 +9,7 @@ using Content.Client.UserInterface.Controls;
 using Content.Client.UserInterface.Systems.Character.Controls;
 using Content.Client.UserInterface.Systems.Character.Windows;
 using Content.Client.UserInterface.Systems.Objectives.Controls;
+using Content.Shared._Moffstation.Objectives; // Moffstation
 using Content.Shared._tc14.Skills.Systems;
 using Content.Shared.Input;
 using Content.Shared.Mind;
@@ -31,6 +35,8 @@ public sealed class CharacterUIController : UIController, IOnStateEntered<Gamepl
     [Dependency] private readonly IEntityManager _ent = default!;
     [Dependency] private readonly IPlayerManager _player = default!;
     [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
+    [Dependency] private readonly CustomObjectiveSummaryUIController _objectiveSummary = default!; // DeltaV
+    [Dependency] private readonly ObjectivePickerUIController _objectivePicker = default!; // Moffstation
 
     [UISystemDependency] private readonly CharacterInfoSystem _characterInfo = default!;
     [UISystemDependency] private readonly SpriteSystem _sprite = default!;
@@ -133,7 +139,7 @@ public sealed class CharacterUIController : UIController, IOnStateEntered<Gamepl
             return;
         }
 
-        var (entity, job, objectives, briefing, entityName, skills) = data;
+        var (entity, job, objectives, minds, briefing, entityName, skills) = data; // Starlight - Collective Mind - Added minds variable.
 
         _window.SpriteView.SetEntity(entity);
 
@@ -143,6 +149,7 @@ public sealed class CharacterUIController : UIController, IOnStateEntered<Gamepl
         _window.SubText.Text = job;
         _window.Objectives.RemoveAllChildren();
         _window.ObjectivesLabel.Visible = objectives.Any();
+        _window.Minds.RemoveAllChildren(); // Starlight - Collective Mind
         _window.Skills.RemoveAllChildren();
 
         foreach (var (groupId, conditions) in objectives)
@@ -183,6 +190,68 @@ public sealed class CharacterUIController : UIController, IOnStateEntered<Gamepl
 
             _window.Objectives.AddChild(objectiveControl);
         }
+        // Begin DeltaV Additions - Custom objective summary
+        switch (objectives.Count)
+        {
+            case > 0:
+            {
+                var button = new Button
+                {
+                    Text = Loc.GetString("custom-objective-button-text"),
+                    Margin = new Thickness(0, 10, 0, 10)
+                };
+                button.OnPressed += _ => _objectiveSummary.OpenWindow();
+
+                _window.Objectives.AddChild(button);
+                break;
+            }
+        // End DeltaV Additions
+        // Moffstation - Start - Objective Picker
+            case 0:
+            {
+                if (!_ent.TryGetComponent<MindContainerComponent>(_player.LocalEntity, out var container)
+                    || container.Mind is null)
+                    break;
+
+                if (!_ent.HasComponent<PotentialObjectivesComponent>(container.Mind))
+                    break;
+
+                var objectivePickerButton = new Button
+                {
+                    Text = Loc.GetString("objective-picker-button"),
+                    Margin = new Thickness(0, 10, 0, 10)
+                };
+                objectivePickerButton.OnPressed += _ => UIManager.GetUIController<ObjectivePickerUIController>().EnsureWindow();
+                objectivePickerButton.OnPressed += _ => _window.Close();
+
+                _window.Objectives.AddChild(objectivePickerButton);
+                break;
+            }
+        }
+        // Moffstation - End
+
+        // Starlight - Start - Collective Mind
+        if (minds != null && minds.Count > 0)
+        {
+            var mindsControl = new CharacterMindsControl
+            {
+                Orientation = BoxContainer.LayoutOrientation.Vertical,
+            };
+            var mindDescriptionMessage = new FormattedMessage();
+            mindDescriptionMessage.AddText("Available collective minds:");
+            foreach (var mindPrototype in minds)
+            {
+                mindDescriptionMessage.AddText("\n");
+                mindDescriptionMessage.PushColor(mindPrototype.Key.Color);
+                mindDescriptionMessage.AddText($"{mindPrototype.Key.LocalizedName}: +{mindPrototype.Key.KeyCode}");
+                mindDescriptionMessage.AddText($" (Number {mindPrototype.Value.MindId})");
+                mindDescriptionMessage.Pop();
+
+            }
+            mindsControl.Description.SetMessage(mindDescriptionMessage);
+            _window.Objectives.AddChild(mindsControl);
+        }
+        // Starlight - End
 
         // ReSharper disable once ConditionIsAlwaysTrueOrFalseAccordingToNullableAPIContract
         // This inspection lies to you. It will be null if you're controlling an entity without PlayerSkillsComponent.

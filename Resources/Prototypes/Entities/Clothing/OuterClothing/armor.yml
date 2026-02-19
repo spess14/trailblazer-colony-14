@@ -98,9 +98,9 @@
   description: A hard-boiled private investigator's armored vest.
   components:
   - type: Sprite
-    sprite: Clothing/OuterClothing/Vests/detvest.rsi
+    sprite: _Moffstation/Clothing/OuterClothing/Armor/detvest.rsi #  sprite: Clothing/OuterClothing/Vests/detvest.rsi  Moffstation - (New Detective Outfits)
   - type: Clothing
-    sprite: Clothing/OuterClothing/Vests/detvest.rsi
+    sprite: _Moffstation/Clothing/OuterClothing/Armor/detvest.rsi #  sprite: Clothing/OuterClothing/Vests/detvest.rsi  Moffstation - (New Detective Outfits)
 
 - type: entity
   parent: [ ClothingOuterBaseMedium, AllowSuitStorageClothing ]
@@ -126,9 +126,9 @@
   description: An armored chestpiece that provides protection whilst still offering maximum mobility and flexibility. Issued only to the station's finest.
   components:
   - type: Sprite
-    sprite: Clothing/OuterClothing/Armor/captain_carapace.rsi
+    sprite: _Moffstation/Clothing/OuterClothing/Armor/captain_carapace.rsi # Moffstation - Command Outfit Resprite
   - type: Clothing
-    sprite: Clothing/OuterClothing/Armor/captain_carapace.rsi
+    sprite: _Moffstation/Clothing/OuterClothing/Armor/captain_carapace.rsi # Moffstation - Command Outfit Resprite
   - type: Tag
     tags:
     - CorgiWearable
@@ -147,7 +147,7 @@
 
 #Web vest
 - type: entity
-  parent: [ClothingOuterArmorBase, ClothingOuterStorageBase, BaseSyndicateContraband]
+  parent: [ BaseSyndicateContraband, ClothingOuterArmorBase, ClothingOuterStorageBase ] # Moffstation - Fix contra status
   id: ClothingOuterVestWeb
   name: web vest
   description: A synthetic armor vest. This one has added webbing and ballistic plates.
@@ -168,7 +168,7 @@
 
 #Elite web vest
 - type: entity
-  parent: [ClothingOuterArmorBase, AllowSuitStorageClothing, BaseSyndicateContraband]
+  parent: [ BaseSyndicateContraband, ClothingOuterArmorBase, AllowSuitStorageClothing ] # Moffstation - Fix contra status
   id: ClothingOuterVestWebElite
   name: elite web vest
   description: A synthetic armor vest. This one has added webbing and heat resistant fibers.

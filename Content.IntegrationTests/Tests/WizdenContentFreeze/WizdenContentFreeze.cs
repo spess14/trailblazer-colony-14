@@ -15,7 +15,7 @@ public sealed class WizdenContentFreeze
     ///
     /// https://github.com/space-wizards/space-station-14/issues/8524
     /// </summary>
-    [Test]
+//    [Test] // Moffstation - Turn off content freeze test
     public async Task MicrowaveRecipesFreezeTest()
     {
         await using var pair = await PoolManager.GetServerClient();

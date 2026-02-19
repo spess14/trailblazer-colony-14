@@ -8,6 +8,9 @@ using Robust.Shared.Serialization.Markdown.Value;
 using Robust.Shared.Timing;
 using Robust.Shared.Audio;
 using Content.Shared.GameTicking.Prototypes;
+// Goob Station - Round End Screen
+using Content.Shared.Mobs;
+using Content.Shared.FixedPoint;
 
 namespace Content.Shared.GameTicking
 {
@@ -191,6 +194,14 @@ namespace Content.Shared.GameTicking
             public bool Observer;
 
             public bool Connected;
+
+            // Goobstation - Start - cool player manifest
+            public string? LastWords;
+
+            public MobState EntMobState;
+
+            public Dictionary<string, FixedPoint2> DamagePerGroup;
+            // Goobstation - End
         }
 
         public string GamemodeTitle { get; }

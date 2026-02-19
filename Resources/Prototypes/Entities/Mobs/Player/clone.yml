@@ -16,6 +16,7 @@
   # traits
   - BlackAndWhiteOverlay
   - Clumsy
+  - DisarmProne # Moffstation - Add feeble trait
   - ImpairedMobility
   # - LegsParalyzed (you get healed)
   - LightweightDrunk
@@ -25,6 +26,7 @@
   - Paracusia
   - PermanentBlindness
   - Snoring
+  - Uncloneable # Moffstation - Add uncloneable (wait, how are clones supposed to get uncloneable??)
   - Unrevivable
   # accents
   - Accentless

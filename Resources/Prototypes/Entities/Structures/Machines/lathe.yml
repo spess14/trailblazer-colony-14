@@ -54,6 +54,11 @@
   - type: PowerState
     idlePowerDraw: 150
     workingPowerDraw: 1000
+  # Moffstation - Start
+  - type: DeviceLinkSink
+    ports:
+    - LatheEnqueueAgain
+  # Moffstation - End
 
 # a lathe that can be sped up with space lube / slowed down with glue
 - type: entity
@@ -212,6 +217,7 @@
     - Janitor
     - Instruments
     - Equipment
+    - WirelessCameraHandheld # MOFFSTATION CHANGE - Adds wireless handheld camera
   - type: EmagLatheRecipes
     emagDynamicPacks:
     - SecurityAmmo
@@ -325,7 +331,7 @@
 
 - type: entity
   id: Biofabricator
-  parent: BaseLathe
+  parent: BaseLatheLube #Moffstation
   name: biocube fabricator
   description: Produces animal cubes using biomass.
   components:
@@ -472,6 +478,7 @@
     - MedicalClothingStatic
     - EmptyMedkitsStatic
     - SurgeryStatic
+    - AACTabletStatic # Moffstation - AAC tablet
     dynamicPacks:
     - Chemistry
   - type: Machine
@@ -517,6 +524,16 @@
     - Scarves
     - Carpets
     - Bedsheets
+    # Moffstation - Start - Moffstation clothes!
+    - MoffstationClothingCargo
+    - MoffstationClothingCommand
+    - MoffstationClothingMedical
+    - MoffstationClothingScience
+    - MoffstationClothingSecurity
+    - MoffstationClothingService
+    - MoffstationClothingEngineering
+    - MoffstationCostumes
+    # Moffstation - End
   - type: EmagLatheRecipes
     emagStaticPacks:
     - ClothingCentComm
@@ -527,7 +544,7 @@
 
 - type: entity
   id: Biogenerator
-  parent: BaseLathe
+  parent: BaseLatheLube #Moffstation
   name: biogenerator
   description: Converts plants into biomass, which can be used to construct useful items.
   components:

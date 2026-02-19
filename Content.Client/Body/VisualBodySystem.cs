@@ -195,6 +195,14 @@ public sealed class VisualBodySystem : SharedVisualBodySystem
                     _sprite.LayerSetSprite(target, layerId, rsi);
                 }
 
+                // CD Addition, originally written by beck for Impstation. check if there's a shader defined in the markingPrototype's shader datafield, and if there is...
+                if (proto.Shader != null)
+                {
+                    // use spriteComponent's layersetshader function to set the layer's shader to that which is specified.
+                    CompOrNull<SpriteComponent>(target)?.LayerSetShader(layerId, proto.Shader);
+                }
+                // end CD Addition
+
                 if (marking.MarkingColors is not null && i < marking.MarkingColors.Count)
                     _sprite.LayerSetColor(target, layerId, marking.MarkingColors[i]);
                 else
