@@ -18,7 +18,7 @@
   - PersonalItemAngelPiano
   - PersonalItemArieApple
   - PersonalItemAsterGuitar
-  - PersonalItemAuroraPin
+#  - PersonalItemAuroraPin - Remove moffstation personal item
   - PersonalItemAzumeGuitar
   - PersonalItemBintendoHat
   - PersonalItemBoxcarGlasses
@@ -65,7 +65,7 @@
   - PersonalItemPeedeeAvatar
   - PersonalItemPeriwinkleFace
   - PersonalItemPilkmanPlushie
-  - PersonalItemRemiaPin
+#  - PersonalItemRemiaPin - TC14 - Remove moffstation personal item
   - PersonalItemRoseHeadphones
   - PersonalItemRufflerMask
   - PersonalItemRykerPen

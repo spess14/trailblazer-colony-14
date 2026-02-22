@@ -14,4 +14,7 @@
 - /Prototypes/_Impstation/Guidebook
 - /Prototypes/_Harmony/Guidebook
 # TC14 - End
+# TC14 - Begin - Remove personal items from Moffstation
+- /Prototypes/_Moffstation/PersonalItems
+# TC14 - End
 - /Prototypes/lobbyscreens.yml
