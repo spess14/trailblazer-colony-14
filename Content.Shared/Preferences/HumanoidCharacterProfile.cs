@@ -69,9 +69,12 @@ namespace Content.Shared.Preferences
         /// TC14: player passions
         /// </summary>
         [DataField]
-        private Dictionary<ProtoId<SkillPrototype>, int> _passions = new();
+        private Dictionary<ProtoId<SkillPrototype>, int>? _passions = new();
 
-        public IReadOnlyDictionary<ProtoId<SkillPrototype>, int> Passions => _passions;
+        /// <summary>
+        /// TC14: player passions
+        /// </summary>
+        public IReadOnlyDictionary<ProtoId<SkillPrototype>, int>? Passions => _passions;
 
         /// <summary>
         /// <see cref="_loadouts"/>
@@ -216,7 +219,7 @@ namespace Content.Shared.Preferences
                 new HashSet<ProtoId<TraitPrototype>>(other.TraitPreferences),
                 new Dictionary<string, RoleLoadout>(other.Loadouts),
                 other.CDCharacterRecords, // Moffstation - CD Profile
-                new Dictionary<ProtoId<SkillPrototype>, int>(other.Passions))
+                new Dictionary<ProtoId<SkillPrototype>, int>(other.Passions ?? new Dictionary<ProtoId<SkillPrototype>, int>())) // TC14 - Passions
         {
         }
 
@@ -547,7 +550,7 @@ namespace Content.Shared.Preferences
             if (CDCharacterRecords != null && other.CDCharacterRecords != null &&
                 !CDCharacterRecords.MemberwiseEquals(other.CDCharacterRecords)) return false;
             // Moffstation End
-            if (!Passions.SequenceEqual(other.Passions)) return false;
+            if (Passions != null && other.Passions != null && !Passions.SequenceEqual(other.Passions)) return false; // TC14 - Passions
             return Appearance.Equals(other.Appearance);
         }
 
@@ -670,18 +673,30 @@ namespace Content.Shared.Preferences
                 hasHighPrio = true;
             }
 
-            // TC14: validate passions
+            // TC14 - Begin - validate passions
             // TODO unhardcode the passion limit of 5 - there is a cvar for it
             var passionSum = 0;
-            foreach (var pair in Passions)
+            if (Passions is null)
             {
-                if (passionSum + pair.Value > 5)
+                _passions = new Dictionary<ProtoId<SkillPrototype>, int>();
+                foreach (var skillProto in prototypeManager.EnumeratePrototypes<SkillPrototype>())
                 {
-                    _passions[pair.Key] = 5 - passionSum;
+                    _passions.Add(skillProto.ID, 0);
                 }
-
-                passionSum += _passions[pair.Key];
             }
+            else
+            {
+                foreach (var pair in Passions)
+                {
+                    if (passionSum + pair.Value > 5)
+                    {
+                        _passions?[pair.Key] = 5 - passionSum;
+                    }
+
+                    passionSum += _passions?[pair.Key] ?? 0;
+                }
+            }
+            // TC14 - End
 
             var antags = AntagPreferences
                 .Where(id => prototypeManager.TryIndex(id, out var antag) && antag.SetPreference)

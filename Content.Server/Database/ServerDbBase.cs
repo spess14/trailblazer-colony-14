@@ -60,6 +60,7 @@ namespace Content.Server.Database
                 .Include(p => p.Profiles).ThenInclude(h => h.Jobs)
                 .Include(p => p.Profiles).ThenInclude(h => h.Antags)
                 .Include(p => p.Profiles).ThenInclude(h => h.Traits)
+                .Include(p => p.Profiles).ThenInclude(h => h.Passions) // TC14 - Passions
                 // CD: Store CD info
                 .Include(p => p.Profiles)
                     .ThenInclude(h => h.CDProfile)
@@ -119,6 +120,7 @@ namespace Content.Server.Database
                 .Include(p => p.Jobs)
                 .Include(p => p.Antags)
                 .Include(p => p.Traits)
+                .Include(p => p.Passions) // TC14 - Passions
                 .Include(p => p.Loadouts)
                     .ThenInclude(l => l.Groups)
                     .ThenInclude(group => group.Loadouts)
@@ -418,6 +420,11 @@ namespace Content.Server.Database
                 profile.CDProfile.CharacterRecordEntries.AddRange(RecordsSerialization.GetEntries(humanoid.CDCharacterRecords));
             }
             // END CD
+            // TC14 - Begin - Save passion data
+            profile.Passions.Clear();
+            if (humanoid.Passions is not null)
+                profile.Passions.AddRange(humanoid.Passions.Select(p => new Passion {PassionName = p.Key, Value = p.Value}));
+            // TC14 - End
 
             profile.Loadouts.Clear();
 

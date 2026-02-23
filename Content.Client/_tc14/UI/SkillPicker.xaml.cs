@@ -23,7 +23,7 @@ public sealed partial class SkillPicker : BoxContainer
     private Dictionary<ProtoId<SkillPrototype>, SpinBox> _spinBoxes = new();
     public Action<Dictionary<ProtoId<SkillPrototype>, int>>? OnPassionsChanged;
 
-    public SkillPicker(IReadOnlyDictionary<ProtoId<SkillPrototype>, int> passions)
+    public SkillPicker(IReadOnlyDictionary<ProtoId<SkillPrototype>, int>? passions)
     {
         RobustXamlLoader.Load(this);
         IoCManager.InjectDependencies(this);
@@ -36,8 +36,9 @@ public sealed partial class SkillPicker : BoxContainer
         UpdatePassions();
     }
 
-    private void BuildEntries(IReadOnlyDictionary<ProtoId<SkillPrototype>, int> passions)
+    private void BuildEntries(IReadOnlyDictionary<ProtoId<SkillPrototype>, int>? passions)
     {
+        passions ??= new Dictionary<ProtoId<SkillPrototype>, int>();
         foreach (var skill in _skills)
         {
             var skillNameLabel = new RichTextLabel

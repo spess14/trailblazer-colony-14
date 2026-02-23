@@ -40,6 +40,7 @@ public sealed class PlayerSkillsSystem : EntitySystem
         var skills = GetSkills(uid);
         if (skills is null)
             return;
+        passions ??= new Dictionary<ProtoId<SkillPrototype>, int>();
         foreach (var skillProto in skills.Keys)
         {
             passions.TryGetValue(skillProto, out var passionPoints);
