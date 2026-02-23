@@ -295,6 +295,7 @@
   - type: Tag
     tags:
     - Gauze
+    - SurvivalBoxInsertable # TC14 - Survival box improvements
   - type: Sprite
     state: gauze
   - type: Item

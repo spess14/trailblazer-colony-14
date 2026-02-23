@@ -9,12 +9,14 @@
     containers:
       storagebase: !type:AllSelector
         children:
-        - id: ClothingMaskBreath
-        - id: EmergencyOxygenTankFilled
-        - id: EmergencyMedipen
+        # TC14 - Begin - Survival box changes
         - id: Flare
-        - id: BookHowToSurvive # Moffstation - Chefs rejoice, Nutribrick removed
         - id: DrinkWaterBottleFull
+        - id: Flare
+        - id: EmergencyMedipen
+        - id: BookTrailblazer # Moffstation - Chefs rejoice, Nutribrick removed
+        - id: Gauze
+        # TC14 - End
   - type: Sprite
     layers:
     - state: internals
@@ -29,12 +31,14 @@
     containers:
       storagebase: !type:AllSelector
         children:
-        - id: ClothingMaskBreath
-        - id: EmergencyNitrogenTankFilled
-        - id: EmergencyMedipen
+        # TC14 - Begin - Survival box changes
         - id: Flare
-        - id: BookHowToSurvive # Moffstation - Chefs rejoice, Nutribrick removed
         - id: DrinkWaterBottleFull
+        - id: Flare
+        - id: EmergencyMedipen
+        - id: BookTrailblazer # Moffstation - Chefs rejoice, Nutribrick removed
+        - id: Gauze
+        # TC14 - End
   - type: Sprite
     layers:
     - state: internals

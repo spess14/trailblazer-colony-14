@@ -1,0 +1,28 @@
+- type: entity
+  id: BookTrailblazer
+  parent: BaseGuidebook
+  name: trailblazer guide
+  description: Every single participant of the Andromeda XIV expedition received that book.
+  components:
+  - type: Sprite
+    layers:
+    - state: paper
+    - state: cover_old
+      color: "#6c4718"
+    - state: decor_wingette
+      color: "#b5913c"
+    - state: icon_glow
+      color: red
+    - state: icon_wrench
+    - state: overlay_blood
+  - type: GuideHelp
+    guides:
+    - TCProgression
+  # Moffstation - Start - replace survivalbox nutribrick with guidebook
+  - type: Item
+    size: Small
+  - type: Tag
+    tags:
+    - Book
+    - SurvivalBoxInsertable
+# Moffstation - End
