@@ -65,7 +65,7 @@ jobs:
       - name: Package client
         run: dotnet run --project Content.Packaging client --log-build --no-wipe-release
 
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v3 # TC14 - temporary switched to v3 due to GHES not supporting v4
         with:
           name: binlogs
           path: release/*.binlog
