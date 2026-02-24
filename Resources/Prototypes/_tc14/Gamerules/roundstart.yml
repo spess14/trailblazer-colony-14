@@ -2,4 +2,4 @@
   parent: BaseGameRule
   id: PlanetaryStationGameRule
   components:
-  - type: PlanetBecomesStationRule
+  - type: BluespaceLockerRule
