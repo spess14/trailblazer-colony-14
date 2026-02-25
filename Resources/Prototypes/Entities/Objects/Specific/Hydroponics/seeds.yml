@@ -25,10 +25,18 @@
     - type: StaticPrice
       price: 20
     - type: PhysicalComposition
-    # TC14: add research data to seeds
+    # TC14 - Begin - add research data to seeds
     - type: TCResearchPointSource
       storedPoints:
         DisciplineBiosocial: 10
+    # TC14 - End
+    # TC14 - Begin - juice seeds for oil
+    - type: Extractable
+      juiceSolution:
+        reagents:
+        - ReagentId: Oil
+          Quantity: 3
+    # TC14 - End
 
 - type: entity
   parent: SeedBase

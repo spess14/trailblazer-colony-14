@@ -167,9 +167,9 @@
       plastic:
         reagents:
         - ReagentId: Oil
-          Quantity: 5
+          Quantity: 1 # TC14 - divide by 5 to avoid duping
         - ReagentId: Phosphorus
-          Quantity: 5
+          Quantity: 1 # TC14 - divide by 5 to avoid duping
         canReact: false
 
 - type: entity

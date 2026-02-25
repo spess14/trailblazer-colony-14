@@ -78,7 +78,7 @@
       amount: 2
   effects:
     - !type:SpawnEntity
-      entity: SheetPlastic1
+      entity: SheetPlastic5 # TC14 - increase by 5 to make it viable
 
 - type: reaction
   id: FlashFreezeIce
