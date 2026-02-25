@@ -2,7 +2,7 @@
   id: BioPlastic
   impact: Low
   quantized: true
-  minTemp: 374
+  minTemp: 350
   reactants:
     Fat:
       amount: 2

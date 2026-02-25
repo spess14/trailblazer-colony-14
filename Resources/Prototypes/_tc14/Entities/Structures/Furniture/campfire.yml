@@ -59,6 +59,7 @@
     graph: Campfire
     node: campfire
   - type: ItemPlacer
+    maxEntities: 0
   - type: PlaceableSurface
   - type: AmbientSound
     volume: -5
