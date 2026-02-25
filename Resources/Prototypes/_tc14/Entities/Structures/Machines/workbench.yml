@@ -1,6 +1,41 @@
 - type: entity
+  abstract: true
+  id: BaseLatheRecipeProvider
+  components:
+  - type: Lathe
+    staticPacks:
+    - ToolsStatic
+    - ElectronicsStatic
+    - PartsStatic
+    - AtmosStatic
+    - CablesStatic
+    - PaperworkStatic
+    - TowelsStatic
+    - CargoStatic
+    - MaterialsStatic
+    - RollerBedsStatic
+    - LightsStatic
+    - ServiceStatic
+    - TopicalsStatic
+    - ClothingCivilian
+    - ClothingCargo
+    - ClothingCommand
+    - ClothingEngineering
+    - ClothingMedical
+    - ClothingScience
+    - ClothingSecurity
+    - ClothingService
+    - ClothingSyndie
+    - WinterCoats
+    - Ties
+    - Scarves
+    - TCTools
+    - TCStructures
+    - TCPrototypes
+
+- type: entity
   id: Workbench
-  parent: BaseMachine
+  parent: [BaseMachine, BaseLatheRecipeProvider]
   name: workbench
   description: This fancy crafting table can make so much tools!
   components:
@@ -23,36 +58,12 @@
   - type: Lathe
     idleState: workbench
     materialUseMultiplier: 1.5
-    staticPacks:
-    - ToolsWorkbench
-    - ElectronicsWorkbench
-    - PrototypesWorkbench
-    - PartsStatic
-    - AtmosStatic
-    - CablesStatic
-    - CargoStatic
-    - MaterialsStatic
-    - RollerBedsStatic
-    - LightsStatic
-    - ServiceStatic
-    - ClothingCivilian
-    - ClothingCargo
-    - ClothingCommand
-    - ClothingEngineering
-    - ClothingMedical
-    - ClothingScience
-    - ClothingSecurity
-    - ClothingService
-    - ClothingSyndie
-    - WinterCoats
-    - Ties
-    - Scarves
   - type: BlueprintReceiver
     whitelist:
       tags:
       - BlueprintAutolathe
   - type: Construction
-    graph: Table
+    graph: Workbench
     node: Workbench
   - type: MaterialStorage
     whitelist:

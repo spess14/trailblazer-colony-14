@@ -1,0 +1,13 @@
+- type: constructionGraph
+  id: Workbench
+  start: start
+  graph:
+  - node: start
+    edges:
+    - to: Workbench
+      steps:
+      - material: WoodPlank
+        amount: 5
+        doAfter: 1
+  - node: Workbench
+    entity: Workbench

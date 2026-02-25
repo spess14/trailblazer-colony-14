@@ -1,43 +1,16 @@
 - type: latheRecipePack
-  id: ToolsWorkbench
+  id: TCTools
   recipes:
-  - Wirecutter
-  - Screwdriver
-  - Welder
-  - Wrench
-  - CrowbarGreen
-  - Multitool
-  - NetworkConfigurator
-  - Signaller
-  - SprayPainter
-  - FlashlightLantern
-  - HandheldGPSBasic
-  - TRayScanner
-  - UtilityBelt
-  - ClothingHeadHatWelding
-  - ClothingHeadHatCone
   - CheapLighter
   - RRD
 
 - type: latheRecipePack
-  id: ElectronicsWorkbench
+  id: TCStructures
   recipes:
-  - IntercomElectronics
-  - DoorElectronics
-  - MailingUnitElectronics
-  - SignalTimerElectronics
-  - APCElectronics
-  - SMESMachineCircuitboard
-  - SubstationMachineCircuitboard
-  - WallmountSubstationElectronics
-  - CellRechargerCircuitboard
-  - WeaponCapacitorRechargerCircuitboard
-  - FreezerElectronics
-  - PortableGeneratorCPacmanMachineCircuitboard
   - RecyclerCrudeCircuitboard
 
 - type: latheRecipePack
-  id: PrototypesWorkbench
+  id: TCPrototypes
   recipes:
   - FlimsyKnife
   - SkeletonModel

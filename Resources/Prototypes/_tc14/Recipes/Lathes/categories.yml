@@ -1,3 +1,7 @@
 - type: latheCategory
   id: Prototypes
   name: lathe-category-prototypes
+
+- type: latheCategory
+  id: Topicals
+  name: lathe-category-topicals

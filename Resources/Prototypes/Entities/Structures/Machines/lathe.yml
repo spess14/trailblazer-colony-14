@@ -97,7 +97,7 @@
 
 - type: entity
   id: Autolathe
-  parent: BaseLatheLube
+  parent: [BaseLatheLube, BaseLatheRecipeProvider] # TC14 - sync workbench + lathe crafts
   name: autolathe
   description: It produces basic items using metal and glass. Has the ability to process blueprints to print new recipes.
   components:
@@ -128,21 +128,23 @@
     runningState: building
     unlitIdleState: unlit
     unlitRunningState: unlit-building
-    staticPacks:
-    - ToolsStatic
-    - PartsStatic
-    - AtmosStatic
-    - CablesStatic
-    - PaperworkStatic
-    - TowelsStatic
-    - CargoStatic
-    - MaterialsStatic
-    - BasicChemistryStatic
-    - RollerBedsStatic
-    - LightsStatic
-    - ServiceStatic
-    - PowerCellsStatic
-    - ElectronicsStatic
+    # TC14 - Begin - sync workbench + lathe crafts
+#    staticPacks:
+#    - ToolsStatic
+#    - PartsStatic
+#    - AtmosStatic
+#    - CablesStatic
+#    - PaperworkStatic
+#    - TowelsStatic
+#    - CargoStatic
+#    - MaterialsStatic
+#    - BasicChemistryStatic
+#    - RollerBedsStatic
+#    - LightsStatic
+#    - ServiceStatic
+#    - PowerCellsStatic
+#    - ElectronicsStatic
+    # TC14 - End
   - type: EmagLatheRecipes
     emagStaticPacks:
     - SecurityAmmoStatic

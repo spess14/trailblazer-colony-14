@@ -2,12 +2,9 @@
   id: ResearchMedicine
   name: tc-research-medicine-name
   discipline: DisciplineMedical
-  iconPrototype: Brutepack
+  iconPrototype: Defibrillator
   gridLocation: 0,0
   unlockedRecipes:
-  - Brutepack
-  - Ointment
-  - Gauze
   - Scalpel
   - Retractor
   - Cautery

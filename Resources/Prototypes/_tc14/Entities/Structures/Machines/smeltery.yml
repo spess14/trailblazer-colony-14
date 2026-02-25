@@ -24,8 +24,8 @@
   - type: Lathe
     idleState: icon
     runningState: working
-    timeMultiplier: 0.5 #some recipes use it, some don't for some reason
-    materialUseMultiplier: 2.0 #this is a furnace, of course it sucks
+    timeMultiplier: 2.0
+    materialUseMultiplier: 1.5 #worse than ore processor
     defaultProductionAmount: 10
     staticPacks:
     - OreSmelting
