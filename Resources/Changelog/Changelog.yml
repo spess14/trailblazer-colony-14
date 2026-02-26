@@ -1,12 +1,4 @@
 ﻿Entries:
-- author: Princess-Cheeseballs
-  changes:
-  - message: Incendiary rounds now deal a mix of pierce damage and heat damage instead
-      of primarily heat damage.
-    type: Tweak
-  id: 9035
-  time: '2025-10-05T08:38:36.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/39204
 - author: Centronias
   changes:
   - message: Stirring is once again prioritized over drinking. No longer will your
@@ -3990,3 +3982,10 @@
   id: 9545
   time: '2026-02-26T17:45:58.0000000+00:00'
   url: https://github.com/space-wizards/space-station-14/pull/43030
+- author: OrbitSystem07
+  changes:
+  - message: The uplink now properly states the capacity of the hypodart.
+    type: Fix
+  id: 9546
+  time: '2026-02-26T19:00:11.0000000+00:00'
+  url: https://github.com/space-wizards/space-station-14/pull/43035
