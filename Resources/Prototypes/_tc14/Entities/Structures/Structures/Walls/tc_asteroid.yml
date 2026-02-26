@@ -1,9 +1,3 @@
-#TODO: Someone should probably move the ore vein prototypes into their own file, or otherwise split this up in some way. This should not be 1.5k lines long.
-
-# Anyway
-# See WallRock variants for the remappings.
-
-# Rocks and ore veins
 - type: entity
   id: TCWallRock
   parent: BaseWall
@@ -245,6 +239,25 @@
   - type: MiningScannerViewable
   - type: Sprite
     sprite: _tc14/Structures/Walls/Ore/stone_salt.rsi
+  - type: IconSmooth
+    key: walls
+    base: stone
+
+- type: entity
+  id: TCWallRockSulfur
+  parent: TCWallRock
+  description: An ore vein rich with sulfur.
+  suffix: Sulfur
+  components:
+  - type: OreVein
+    oreChance: 1.0
+    currentOre: OreSulfur
+  - type: Icon
+    sprite: _tc14/Structures/Walls/Ore/stone_sulfur.rsi
+    state: full
+  - type: MiningScannerViewable
+  - type: Sprite
+    sprite: _tc14/Structures/Walls/Ore/stone_sulfur.rsi
   - type: IconSmooth
     key: walls
     base: stone

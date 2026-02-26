@@ -1,5 +1,3 @@
-# I have to add "TC" to each ID, because ignoredPrototypes.yml does not ignore the prototypes for some reason?
-
 - type: guideEntry
   id: TC14
   name: guide-entry-tc14

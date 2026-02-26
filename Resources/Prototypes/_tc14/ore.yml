@@ -1,0 +1,11 @@
+- type: ore
+  id: OreRockPlain
+  oreEntity: RockItem
+  minOreYield: 0
+  maxOreYield: 1
+
+- type: ore
+  id: OreSulfur
+  oreEntity: SulfurOre1
+  minOreYield: 1
+  maxOreYield: 2

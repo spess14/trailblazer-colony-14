@@ -5,10 +5,10 @@
   description: Bash two of those together and see what happens.
   components:
   - type: Sprite
-    sprite: Objects/Tools/rock.rsi
+    sprite: _tc14/Objects/Items/rock.rsi
     state: "rock"
   - type: Item
-    sprite: Objects/Tools/rock.rsi
+    sprite: _tc14/Objects/Items/rock.rsi
     size: Normal
   - type: Destructible
     thresholds:
@@ -45,10 +45,10 @@
   description: Sharp rock, quite a neat tool!
   components:
   - type: Sprite
-    sprite: Objects/Tools/rock.rsi
+    sprite: _tc14/Objects/Items/rock.rsi
     state: "flakingrock"
   - type: Item
-    sprite: Objects/Tools/rock.rsi
+    sprite: _tc14/Objects/Items/rock.rsi
   - type: Destructible
     thresholds:
     - trigger:

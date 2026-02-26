@@ -1,0 +1,6 @@
+- type: stack
+  parent: BaseMediumStack
+  id: SulfurOre
+  name: stack-sulfur-ore
+  icon: { sprite: _tc14/Objects/Materials/materials.rsi, state: sulfur }
+  spawn: SulfurOre1

@@ -196,7 +196,7 @@
   - OreSilver
   - OrePlasma
   - OreUranium
-  - OreArtifactFragment
+  - OreSulfur
 
 - type: biomeTemplate
   id: SnowyBiome
@@ -312,4 +312,4 @@
   - OreSilver
   - OrePlasma
   - OreUranium
-  - OreArtifactFragment
+  - OreSulfur

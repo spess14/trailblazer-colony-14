@@ -1,0 +1,14 @@
+- type: biomeMarkerLayer
+  id: OreSulfur
+  entityMask:
+    TCWallRock: TCWallRockSulfur
+    AsteroidRock: TCWallRockSulfur
+    WallRock: TCWallRockSulfur
+    WallRockBasalt: TCWallRockSulfur
+    WallRockChromite: TCWallRockSulfur
+    WallRockSand: TCWallRockSulfur
+    WallRockSnow: TCWallRockSulfur
+  maxCount: 30
+  minGroupSize: 8
+  maxGroupSize: 12
+  radius: 4

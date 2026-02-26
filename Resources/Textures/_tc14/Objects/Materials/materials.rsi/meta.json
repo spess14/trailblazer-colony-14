@@ -4,11 +4,14 @@
     "x": 32,
     "y": 32
   },
-  "license": "CC-BY-NC-SA-3.0",
-  "copyright": "Made by Killerqu00",
+  "license": "CC-BY-SA-3.0",
+  "copyright": "Recolored from ash.png by murphyneko",
   "states": [
     {
       "name": "dirt"
+    },
+    {
+      "name": "sulfur"
     }
   ]
 }
