@@ -43,15 +43,15 @@
 
   Finally, some research will require you to make plastic. You have 2 options.
 
-  First option: bioplastic. Simple bioplastic can be made by mixing cornmeal and fat 5:2 and heating it up to ~350K, which can be done at a campfire.
-  Second option requires you to mix oil, ash and sulfuric acid 5:3:2 and heat them up to 374K - a campfire won't be enough for that, you'll need a hotplate.
+  First option: bioplastic. Simple bioplastic can be made by mixing cornmeal and fat 5:2 and heating it up to ~350K, which can be done at a bonfire.
+  Second option requires you to mix oil, ash and sulfuric acid 5:3:2 and heat them up to 374K - a bonfire won't be enough for that, you'll need a hotplate.
 
   Oil can be acquired from grinding seeds, ash is gained by overheating oil or burning paper, and sulfuric acid components can be gained by electrolysis and grinding sulfur ore.
   If you are confused about any of the steps, check the "Chemicals" tab - it contains most chemical reactions.
   <Box>
     <GuideEntityEmbed Entity="MortarAndPestleMakeshift"/>
     <GuideEntityEmbed Entity="HandheldJuicerMakeshift"/>
-    <GuideEntityEmbed Entity="Campfire"/>
+    <GuideEntityEmbed Entity="Bonfire"/>
     <GuideEntityEmbed Entity="ChemistryHotplate"/>
   </Box>
   <Box>

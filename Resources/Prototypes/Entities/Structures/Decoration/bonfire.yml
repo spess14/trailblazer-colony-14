@@ -14,6 +14,13 @@
         layer:
         - Opaque
         - BulletImpassable
+      itemcollide:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.14,-0.05,0.15,0.25"
+        layer:
+        - HighImpassable
+        hard: false
   - type: Sprite
     noRot: true
     sprite: Structures/Decoration/bonfire.rsi
@@ -45,6 +52,14 @@
     temperature: 700
     ignited: true
   - type: RequireProjectileTarget
+  # TC14 - Begin - Add solution/entity heating to the bonfire
+  - type: ItemPlacer
+    maxEntities: 0
+  - type: PlaceableSurface
+  - type: FueledHeater
+    solutionHeatPerSecond: 100
+    entityHeatPerSecond: 750
+  # TC14 - End
 
 - type: entity
   parent: BaseBonfire
