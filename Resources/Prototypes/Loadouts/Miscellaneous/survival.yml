@@ -221,7 +221,7 @@
   - !type:GroupLoadoutEffect
     proto: EffectSpeciesVox
   equipment:
-    suitstorage: NitrogenTankFilled
+    suitstorage: NitrogenRecycler # TC14 - Vox gas recycler
 
 # Full EVA Tank, Any Species
 - type: loadout

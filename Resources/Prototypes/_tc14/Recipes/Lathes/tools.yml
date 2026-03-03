@@ -17,3 +17,13 @@
   icon:
     sprite: _tc14/Objects/Tools/rrd.rsi
     state: rrd
+
+- type: latheRecipe
+  parent: BaseToolRecipe
+  id: NitrogenRecycler
+  result: NitrogenRecycler
+  materials:
+    Steel: 1000
+  icon:
+    sprite: _tc14/Clothing/SuitStorage/gasrecycler.rsi
+    state: icon

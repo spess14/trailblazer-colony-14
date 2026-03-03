@@ -124,6 +124,7 @@ namespace Content.Server.Atmos.EntitySystems
         public GasMixture? RemoveAir(Entity<GasTankComponent> gasTank, float amount)
         {
             var gas = gasTank.Comp.Air?.Remove(amount);
+            if (gasTank.Comp.IsInfinite) AssumeAir(gasTank, gas!); // TC14 - Vox gas recycler
             CheckStatus(gasTank);
             return gas;
         }

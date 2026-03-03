@@ -1,0 +1,30 @@
+- type: entity
+  id: NitrogenRecycler
+  parent: BaseItem
+  name: nitrogen recycler
+  description: Scrubs nitrogen from the atmosphere, allowing those who breathe only nitrogen to not die in planetary conditions.
+  components:
+  - type: GasTank
+    outputPressure: 21.3
+    air:
+      volume: 5
+      moles:
+        Nitrogen: 2.051379050
+      temperature: 293.15
+    isInfinite: true
+  - type: Sprite
+    sprite: _tc14/Clothing/SuitStorage/gasrecycler.rsi
+    state: icon
+  - type: Item
+    size: Huge
+  - type: Clothing
+    sprite: _tc14/Clothing/SuitStorage/gasrecycler.rsi
+    stripDelay: 10
+    equipDelay: 5
+    quickEquip: false
+    slots:
+    - suitStorage
+  - type: UseDelay
+    delays:
+      gasTank:
+        length: 1.0

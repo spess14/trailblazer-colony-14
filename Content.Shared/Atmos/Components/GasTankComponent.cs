@@ -117,4 +117,9 @@ public sealed partial class GasTankComponent : Component, IGasMixtureHolder
         {
             Params = AudioParams.Default.WithVolume(-5f),
         };
+
+    // TC14 - Begin - Vox gas recycler
+    [DataField, AutoNetworkedField]
+    public bool IsInfinite;
+    // TC14 - End
 }

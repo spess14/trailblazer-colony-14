@@ -3,6 +3,7 @@
   recipes:
   - CheapLighter
   - RRD
+  - NitrogenRecycler
 
 - type: latheRecipePack
   id: TCStructures

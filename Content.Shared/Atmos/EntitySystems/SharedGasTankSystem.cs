@@ -95,6 +95,7 @@ public abstract class SharedGasTankSystem : EntitySystem
 
     private void OnGetAlternativeVerb(EntityUid uid, GasTankComponent component, GetVerbsEvent<AlternativeVerb> args)
     {
+        if (component.IsInfinite) return; // TC14 - Vox gas recycler; it's an infinite gas tank. Opening a valve on it is a bad idea.
         if (!args.CanAccess || !args.CanInteract || args.Hands == null)
             return;
 
