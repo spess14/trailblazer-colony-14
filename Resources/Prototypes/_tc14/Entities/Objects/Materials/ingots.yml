@@ -1,0 +1,32 @@
+- type: entity
+  parent: IngotBase
+  id: IngotSteel
+  name: steel ingot
+  description: A big ingot made out of steel.
+  components:
+  - type: Sprite
+    sprite: _tc14/Objects/Materials/ingots.rsi
+    state: steel
+  - type: Item
+    sprite: _tc14/Objects/Materials/ingots.rsi
+  - type: MeleeWeapon
+    damage:
+      types:
+        Blunt: 5
+  - type: PhysicalComposition
+    materialComposition:
+      Steel: 500
+
+- type: entity
+  parent: IngotSteel
+  id: IngotMoltenSteel
+  name: molten steel ingot
+  description: Heated steel ingot. Don't touch it without smithing gloves!
+  components:
+  - type: Sprite
+    state: molten-steel
+  - type: MeleeWeapon
+    damage:
+      types:
+        Blunt: 5
+        Heat: 5
