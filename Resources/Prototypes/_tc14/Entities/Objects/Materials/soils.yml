@@ -52,3 +52,6 @@
     state: clay-lump
   - type: Stack
     count: 1
+  - type: Construction
+    graph: Brick
+    node: start
