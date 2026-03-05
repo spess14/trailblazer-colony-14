@@ -25,3 +25,30 @@
     state: dirt
   - type: Stack
     count: 1
+
+- type: entity
+  parent: BaseItem
+  id: ClayLump
+  name: clay lump
+  description: A small piece of clay.
+  components:
+  - type: Sprite
+    sprite: _tc14/Objects/Materials/materials.rsi
+    state: clay-lump
+  - type: Item
+    sprite: _tc14/Objects/Materials/materials.rsi
+  - type: Material
+  - type: Stack
+    stackType: Clay
+    baseLayer: clay-lump
+
+- type: entity
+  parent: ClayLump
+  id: ClayLump1
+  name: clay lump
+  suffix: Single
+  components:
+  - type: Sprite
+    state: clay-lump
+  - type: Stack
+    count: 1

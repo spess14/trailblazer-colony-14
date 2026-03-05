@@ -4,3 +4,10 @@
   icon: { sprite: "/Textures/_tc14/Objects/Materials/materials.rsi", state: dirt }
   spawn: DirtItem1
   maxCount: 30
+
+- type: stack
+  name: stack-clay
+  id: Clay
+  icon: { sprite: "/Textures/_tc14/Objects/Materials/materials.rsi", state: clay-lump }
+  spawn: ClayLump1
+  maxCount: 30
