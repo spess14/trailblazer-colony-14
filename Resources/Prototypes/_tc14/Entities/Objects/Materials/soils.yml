@@ -37,21 +37,13 @@
     state: clay-lump
   - type: Item
     sprite: _tc14/Objects/Materials/materials.rsi
-  - type: Material
-  - type: Stack
-    stackType: Clay
-    baseLayer: clay-lump
-
-- type: entity
-  parent: ClayLump
-  id: ClayLump1
-  name: clay lump
-  suffix: Single
-  components:
-  - type: Sprite
-    state: clay-lump
-  - type: Stack
-    count: 1
+  - type: Temperature
+    currentTemperature: 290
+  - type: TemperatureDamage
+  - type: InternalTemperature
+    conductivity: 1
+    thickness: 0.02
+    area: 2
   - type: Construction
     graph: Brick
     node: start

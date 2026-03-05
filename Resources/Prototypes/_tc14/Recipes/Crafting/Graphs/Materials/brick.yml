@@ -23,7 +23,6 @@
   start: start
   graph:
   - node: start
-    entity: ClayLump1
     edges:
     - to: brick
       steps:
