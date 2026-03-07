@@ -1,4 +1,6 @@
+using Content.Shared._tc14.Damage.Components;
 using Content.Shared.Damage.Components;
+using Content.Shared.Inventory;
 using Robust.Shared.Containers;
 using Robust.Shared.Timing;
 
@@ -9,6 +11,7 @@ public sealed class DamageOnHoldingSystem : EntitySystem
     [Dependency] private readonly SharedContainerSystem _container = default!;
     [Dependency] private readonly DamageableSystem _damageableSystem = default!;
     [Dependency] private readonly IGameTiming _timing = default!;
+    [Dependency] private readonly InventorySystem _inventorySystem = default!; // TC14 - add smithing gloves
 
     public override void Initialize()
     {
@@ -39,7 +42,10 @@ public sealed class DamageOnHoldingSystem : EntitySystem
                 continue;
             if (_container.TryGetContainingContainer((uid, null, null), out var container))
             {
-                _damageableSystem.TryChangeDamage(container.Owner, component.Damage, origin: uid);
+                // TC14 - Begin - add smithing gloves
+                if (!_inventorySystem.TryGetInventoryEntity<DamageOnHoldingProtectionComponent>(container.Owner, out _))
+                    _damageableSystem.TryChangeDamage(container.Owner, component.Damage, origin: uid);
+                // TC14 - End
             }
             component.NextDamage = _timing.CurTime + TimeSpan.FromSeconds(component.Interval);
         }

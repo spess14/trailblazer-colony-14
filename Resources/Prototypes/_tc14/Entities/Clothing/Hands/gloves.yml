@@ -1,0 +1,13 @@
+- type: entity
+  parent: ClothingHandsBase
+  id: ClothingHandsGlovesSmithing
+  name: smithing gloves
+  description: Protects your hands from hot objects harming your hands.
+  components:
+  - type: FingerprintMask
+  - type: Sprite
+    sprite: _tc14/Clothing/Hands/Gloves/smith.rsi
+  - type: Clothing
+    sprite: _tc14/Clothing/Hands/Gloves/smith.rsi
+  # TODO add fibers
+  - type: DamageOnHoldingProtection

@@ -30,3 +30,7 @@
       types:
         Blunt: 5
         Heat: 5
+  - type: DamageOnHolding
+    damage:
+      types:
+        Heat: 10
