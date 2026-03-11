@@ -3,8 +3,8 @@ concurrency: commit_action
 on:
   pull_request_target:
     types: [closed]
-env:
-  MERGED_PR: ${{ github.event.number }}
+  workflow_dispatch:
+
 jobs:
   changelog:
     if: github.event.pull_request.merged == true
@@ -38,7 +38,7 @@ jobs:
     - name: Commit Changelog
       run: |
         git add *.yml
-        git commit -m "${{ vars.CHANGELOG_MESSAGE }} (#${{ env.MERGED_PR }})"
+        git commit -m "${{ vars.CHANGELOG_MESSAGE }}"
         git push
       continue-on-error: true
 
