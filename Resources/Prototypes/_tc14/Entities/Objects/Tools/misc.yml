@@ -1,0 +1,34 @@
+- type: entity
+  parent: BaseItem
+  id: Hammer
+  name: hammer
+  description: Works great for... Well, hammering. It's in the name.
+  components:
+  - type: Sprite
+    sprite: _tc14/Objects/Tools/hammer.rsi
+    state: "hammer"
+  - type: Item
+    sprite: _tc14/Objects/Items/hammer.rsi
+    size: Small
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 200
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: Tool
+    qualities:
+    - Hammering
+    speedModifier: 2
+    useSound:
+      path: /Audio/Effects/Footsteps/largethud.ogg
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: FlimsyMetallic
+  - type: MeleeWeapon
+    wideAnimationRotation: -135
+    damage:
+      types:
+        Blunt: 8

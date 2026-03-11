@@ -27,3 +27,14 @@
   icon:
     sprite: _tc14/Clothing/SuitStorage/gasrecycler.rsi
     state: icon
+
+- type: latheRecipe
+  parent: BaseToolRecipe
+  id: Hammer
+  result: Hammer
+  materials:
+    Steel: 200
+    Wood: 100
+  icon:
+    sprite: _tc14/Objects/Tools/hammer.rsi
+    state: hammer
