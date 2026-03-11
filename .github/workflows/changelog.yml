@@ -31,8 +31,7 @@ jobs:
         pip install pyyaml python-dateutil
 
     - name: Update Changelog
-      working-directory: Tools/_Moffstation
-      run: python changelog_update.py
+      run: python Tools/_Moffstation/changelog_update.py
       continue-on-error: true
 
     - name: Commit Changelog
