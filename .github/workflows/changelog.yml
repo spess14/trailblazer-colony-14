@@ -22,8 +22,8 @@ jobs:
         git config --global user.name "${{ vars.CHANGELOG_USER }}"
         git config --global user.email "${{ vars.CHANGELOG_EMAIL }}"
 
-    - name: Install GitHub CLI
-      run: sudo apt install gh
+    - name: Authenticate Github CLI
+      run: echo "${{ secrets.GITHUB_TOKEN }}" | gh auth login --with-token
 
     - name: Setup Python
       run: |
