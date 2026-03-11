@@ -7,7 +7,7 @@ on:
 
 jobs:
   changelog:
-    if: github.event.pull_request.merged == true
+    if: github.event.pull_request.merged == true || github.event.pull_request == null
     runs-on: ubuntu-latest
     permissions:
       contents: write
