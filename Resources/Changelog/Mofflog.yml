@@ -4169,6 +4169,15 @@ Entries:
   id: 1138
   time: '2026-03-10T21:57:33.000'
   url: https://github.com/moff-station/moff-station-14/pull/1138
+- author: Dave
+  changes:
+  - message: New Service Borg Sprites & Displacements
+    type: add
+  - message: Borg & Borgshort hat offsets to be centered
+    type: tweak
+  id: 1142
+  time: '2026-03-11T18:09:58.000'
+  url: https://github.com/moff-station/moff-station-14/pull/1142
 - author: DuckManZach
   changes:
   - message: Added Changelog!
