@@ -4185,5 +4185,12 @@ Entries:
   id: 1143
   time: '2026-03-11T03:44:52.000'
   url: https://github.com/moff-station/moff-station-14/pull/1143
+- author: Nyxilath
+  changes:
+  - message: Hairflower chameleon options now functional.
+    type: fix
+  id: 1145
+  time: '2026-03-12T18:13:37.000'
+  url: https://github.com/moff-station/moff-station-14/pull/1145
 Name: Mofflog
 Order: -2
