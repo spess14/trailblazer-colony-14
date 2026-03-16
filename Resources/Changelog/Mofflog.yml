@@ -4231,6 +4231,14 @@ Entries:
   url: https://github.com/moff-station/moff-station-14/pull/1149
 - author: Nyxilath
   changes:
+  - message: Thieves now are assigned 3 minutes into shift rather than roundstart,
+      as a temporary workaround.
+    type: tweak
+  id: 1151
+  time: '2026-03-16T20:07:26.000'
+  url: https://github.com/moff-station/moff-station-14/pull/1151
+- author: Nyxilath
+  changes:
   - message: Feeble targets can shove other targets again.
     type: tweak
   - message: You can no longer instant cuff feeble targets.
