@@ -4273,5 +4273,12 @@ Entries:
   id: 1162
   time: '2026-03-18T17:06:50.000'
   url: https://github.com/moff-station/moff-station-14/pull/1162
+- author: Nyxilath
+  changes:
+  - message: Tech Disk Printer sfx has been changed.
+    type: tweak
+  id: 1163
+  time: '2026-03-19T01:50:24.000'
+  url: https://github.com/moff-station/moff-station-14/pull/1163
 Name: Mofflog
 Order: -2
