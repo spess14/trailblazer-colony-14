@@ -4260,6 +4260,13 @@ Entries:
   url: https://github.com/moff-station/moff-station-14/pull/1151
 - author: Nyxilath
   changes:
+  - message: Ports Set-Examine from Umbra, enabling dynamic character examine text.
+    type: add
+  id: 1152
+  time: '2026-03-21T17:49:51.000'
+  url: https://github.com/moff-station/moff-station-14/pull/1152
+- author: Nyxilath
+  changes:
   - message: Feeble targets can shove other targets again.
     type: tweak
   - message: You can no longer instant cuff feeble targets.
