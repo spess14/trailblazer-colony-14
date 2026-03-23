@@ -4192,6 +4192,14 @@ Entries:
   url: https://github.com/moff-station/moff-station-14/pull/1138
 - author: Nyxilath
   changes:
+  - message: Syndicate high command will now occasionally redspace in contraband dead
+      drops
+    type: add
+  id: 1139
+  time: '2026-03-23T17:36:04.000'
+  url: https://github.com/moff-station/moff-station-14/pull/1139
+- author: Nyxilath
+  changes:
   - message: Initial infected now possess zombie blood.
     type: tweak
   - message: Zombie blood is now infectious.
