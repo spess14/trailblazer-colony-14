@@ -4310,5 +4310,12 @@ Entries:
   id: 1163
   time: '2026-03-19T01:50:24.000'
   url: https://github.com/moff-station/moff-station-14/pull/1163
+- author: DuckManZach
+  changes:
+  - message: Channel indicators speech bubbles will now show up
+    type: fix
+  id: 1171
+  time: '2026-03-23T16:54:39.000'
+  url: https://github.com/moff-station/moff-station-14/pull/1171
 Name: Mofflog
 Order: -2
