@@ -4325,5 +4325,12 @@ Entries:
   id: 1171
   time: '2026-03-23T16:54:39.000'
   url: https://github.com/moff-station/moff-station-14/pull/1171
+- author: Centronias
+  changes:
+  - message: Set examine no longer respects arbitrary formatting input.
+    type: fix
+  id: 1174
+  time: '2026-03-27T16:52:15.000'
+  url: https://github.com/moff-station/moff-station-14/pull/1174
 Name: Mofflog
 Order: -2
