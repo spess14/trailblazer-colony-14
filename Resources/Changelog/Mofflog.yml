@@ -4334,6 +4334,16 @@ Entries:
   url: https://github.com/moff-station/moff-station-14/pull/1174
 - author: Centronias
   changes:
+  - message: Thieves can now be assigned when spawning at arrivals again.
+    type: fix
+  - message: Thieves are now selected at round start again, as opposed to a bit after
+      roundstart.
+    type: tweak
+  id: 1175
+  time: '2026-03-27T21:30:42.000'
+  url: https://github.com/moff-station/moff-station-14/pull/1175
+- author: Centronias
+  changes:
   - message: Tourists (minor mayhem antags) can roll again after silently being removed
       two months ago.
     type: fix
