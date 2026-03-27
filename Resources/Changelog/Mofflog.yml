@@ -4332,5 +4332,18 @@ Entries:
   id: 1174
   time: '2026-03-27T16:52:15.000'
   url: https://github.com/moff-station/moff-station-14/pull/1174
+- author: Centronias
+  changes:
+  - message: Tourists (minor mayhem antags) can roll again after silently being removed
+      two months ago.
+    type: fix
+  - message: Derelict service borgs can actually roll now.
+    type: fix
+  - message: Ninjas can now advertise the station to tourists while messing with the
+      comms console.
+    type: fix
+  id: 1178
+  time: '2026-03-27T20:51:11.000'
+  url: https://github.com/moff-station/moff-station-14/pull/1178
 Name: Mofflog
 Order: -2
