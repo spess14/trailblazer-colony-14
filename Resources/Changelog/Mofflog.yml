@@ -3525,6 +3525,19 @@ Entries:
   id: 992
   time: '2026-01-27T18:09:15.000'
   url: https://github.com/moff-station/moff-station-14/pull/992
+- author: Centronias
+  changes:
+  - message: 'Added modular HUDs: flexible, modular eyewear which lets you put together
+      the infinity stones of eyewear.'
+    type: add
+  - message: Replaced a bunch of preexisting HUDs with modular HUDs.
+    type: tweak
+  - message: Flipped variants of HUD eye patches have been removed from loadouts.
+      Select the non-flipped one and flip it when you spawn in instead.
+    type: remove
+  id: 996
+  time: '2026-03-31T19:34:57.000'
+  url: https://github.com/moff-station/moff-station-14/pull/996
 - author: Dave
   changes:
   - message: missing sprites
