@@ -4198,6 +4198,17 @@ Entries:
   id: 1139
   time: '2026-03-23T17:36:04.000'
   url: https://github.com/moff-station/moff-station-14/pull/1139
+- author: Tortosaur
+  changes:
+  - message: Medical and Paramedic's belts loadouts are now more job appropiate.
+    type: tweak
+  - message: Chemists now have a belt which can hold jugs. Rejoice!
+    type: add
+  - message: Chemist Bag was moved into the ChemDrobe.
+    type: tweak
+  id: 1140
+  time: '2026-03-31T18:20:38.000'
+  url: https://github.com/moff-station/moff-station-14/pull/1140
 - author: Nyxilath
   changes:
   - message: Initial infected now possess zombie blood.
