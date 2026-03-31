@@ -4374,5 +4374,15 @@ Entries:
   id: 1183
   time: '2026-03-30T17:48:51.000'
   url: https://github.com/moff-station/moff-station-14/pull/1183
+- author: Jona-K
+  changes:
+  - message: The Flying Dutchman now has hands again!
+    type: fix
+  - message: The Flying Dutchman now has a description and name in the ghost role
+      menu.
+    type: fix
+  id: 1184
+  time: '2026-03-31T17:53:30.000'
+  url: https://github.com/moff-station/moff-station-14/pull/1184
 Name: Mofflog
 Order: -2
