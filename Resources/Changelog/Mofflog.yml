@@ -4415,5 +4415,12 @@ Entries:
   id: 1184
   time: '2026-03-31T17:53:30.000'
   url: https://github.com/moff-station/moff-station-14/pull/1184
+- author: Jona-K
+  changes:
+  - message: Hos Carapace Nolonger has any internal storage
+    type: tweak
+  id: 1185
+  time: '2026-04-01T05:14:57.000'
+  url: https://github.com/moff-station/moff-station-14/pull/1185
 Name: Mofflog
 Order: -2
