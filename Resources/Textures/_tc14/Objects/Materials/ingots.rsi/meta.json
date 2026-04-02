@@ -1,0 +1,41 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "Steel recolored from ingots.rsi by murphyneko",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "steel"
+    },
+    {
+      "name": "steel-inhand-left",
+      "directions": 4
+    },
+    {
+      "name": "steel-inhand-right",
+      "directions": 4
+    },
+    {
+      "name": "molten-steel",
+      "delays": [
+        [
+          0.1,
+          0.1,
+          0.1,
+          0.1
+        ]
+      ]
+    },
+    {
+      "name": "molten-steel-inhand-left",
+      "directions": 4
+    },
+    {
+      "name": "molten-steel-inhand-right",
+      "directions": 4
+    }
+  ]
+}

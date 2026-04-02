@@ -4,6 +4,7 @@
   - CheapLighter
   - RRD
   - NitrogenRecycler
+  - Hammer
 
 - type: latheRecipePack
   id: TCStructures
@@ -17,3 +18,8 @@
   - SkeletonModel
   - Electrodes
   - ObservationKit
+
+- type: latheRecipePack
+  id: TCClothing
+  recipes:
+  - ClothingBeltSheath

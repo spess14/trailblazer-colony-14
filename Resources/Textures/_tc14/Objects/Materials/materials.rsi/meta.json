@@ -5,13 +5,16 @@
     "y": 32
   },
   "license": "CC-BY-SA-3.0",
-  "copyright": "Recolored from ash.png by murphyneko",
+  "copyright": "Dirt and sulfur recolored from ash.png by murphyneko, clay-lump made by murphyneko",
   "states": [
     {
       "name": "dirt"
     },
     {
       "name": "sulfur"
+    },
+    {
+      "name": "clay-lump"
     }
   ]
 }

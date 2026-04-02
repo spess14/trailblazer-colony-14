@@ -29,6 +29,7 @@
     defaultProductionAmount: 10
     staticPacks:
     - OreSmelting
+    - TCSmithing
   - type: MaterialStorage
     ignoreColor: true
     whitelist:

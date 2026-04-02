@@ -13,13 +13,25 @@
   - CombatKnife
 
 - type: researchEntry
+  id: ResearchSmithing
+  name: tc-research-smithing-name
+  discipline: DisciplineMilitary
+  iconPrototype: CP14WorkbenchAnvilItem
+  gridLocation: 1,3
+  dependencies:
+  - ResearchTraining
+  unlockedRecipes:
+  - ClothingHandsGlovesSmithing
+  - CP14WorkbenchAnvilItem
+
+- type: researchEntry
   id: ResearchNonLethal
   name: tc-research-nonlethal-name
   discipline: DisciplineMilitary
   iconPrototype: Stunbaton
-  gridLocation: 1,3
+  gridLocation: 2,3
   dependencies:
-  - ResearchTraining
+  - ResearchSmithing
   unlockedRecipes:
   - Flash
   - Stunbaton

@@ -1,0 +1,21 @@
+- type: latheRecipe
+  id: IngotMoltenSteel
+  result: IngotMoltenSteel
+  completetime: 1.25 # 5x steel sheet
+  materials:
+    RawIron: 500
+    Coal: 150
+
+- type: latheRecipe
+  id: ClothingHandsGlovesSmithing
+  result: ClothingHandsGlovesSmithing
+  completetime: 1
+  materials:
+    Steel: 100
+
+- type: latheRecipe
+  id: CP14WorkbenchAnvilItem
+  result: CP14WorkbenchAnvilItem
+  completetime: 3
+  materials:
+    Steel: 1500

@@ -1,0 +1,15 @@
+- type: constructionGraph
+  id: Anvil
+  start: start
+  graph:
+  - node: start
+    edges:
+    - to: anvil
+      steps:
+      - tag: AnvilItem
+        icon:
+          sprite: _CP14/Structures/Specific/Blacksmith/anvil.rsi
+          state: icon
+        name: construction-graph-tag-anvil
+  - node: anvil
+    entity: CP14WorkbenchAnvilPlaced

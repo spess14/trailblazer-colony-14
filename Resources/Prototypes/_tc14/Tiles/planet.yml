@@ -15,6 +15,23 @@
   weather: true
   indestructible: true
 
+- type: tile
+  id: FloorPlanetClay
+  name: tiles-clay-floor
+  sprite: /Textures/_tc14/Tiles/Planet/clay.rsi/clay.png
+  variants: 4
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  soilPrototypeName: ClayLump
+  isSubfloor: true
+  footstepSounds:
+    collection: FootstepGrass
+  weather: true
+  indestructible: true
+
 # Grass and Dirt courtesy of CrystallEdge, artist is TheShuEd
 - type: tile
   id: TC14FloorPlanetGrass

@@ -6,6 +6,7 @@
   children:
   - TCEarlyProgression
   - TCResearch
+  - TCSmithing
 
 - type: guideEntry
   id: TCEarlyProgression
@@ -16,3 +17,8 @@
   id: TCResearch
   name: guide-entry-research
   text: "/ServerInfo/_tc14/Progression/Research.xml"
+
+- type: guideEntry
+  id: TCSmithing
+  name: guide-entry-smithing
+  text: "/ServerInfo/_tc14/Progression/Smithing.xml"

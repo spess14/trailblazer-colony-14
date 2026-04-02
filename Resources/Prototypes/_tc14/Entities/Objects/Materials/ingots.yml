@@ -1,0 +1,199 @@
+- type: entity
+  abstract: true
+  id: BaseMoltenItem
+  components:
+  - type: MeleeWeapon
+    damage:
+      types:
+        Blunt: 5
+        Heat: 5
+  - type: DamageOnHolding
+    damage:
+      types:
+        Heat: 10
+  - type: TriggerOnSpawn
+  - type: TimerTrigger
+    delay: 30
+    examinable: false
+    popup: null
+  - type: SpawnOnTrigger
+    predicted: true
+    keysIn:
+    - timer
+  - type: DeleteOnTrigger
+    keysIn:
+    - timer
+
+- type: entity
+  parent: IngotBase
+  id: IngotSteel
+  name: steel ingot
+  description: A big ingot made out of steel.
+  components:
+  - type: Sprite
+    sprite: _tc14/Objects/Materials/ingots.rsi
+    state: steel
+  - type: Item
+    sprite: _tc14/Objects/Materials/ingots.rsi
+  - type: MeleeWeapon
+    damage:
+      types:
+        Blunt: 5
+  - type: PhysicalComposition
+    materialComposition:
+      Steel: 500
+
+- type: entity
+  parent: [IngotSteel, BaseMoltenItem]
+  id: IngotMoltenSteel
+  name: molten steel ingot
+  description: Don't touch it without smithing gloves!
+  components:
+  - type: Construction
+    graph: Smithing
+    node: start
+  - type: Sprite
+    state: molten-steel
+  - type: SpawnOnTrigger
+    proto: IngotSteel
+
+- type: entity
+  parent: IngotSteel
+  id: IngotFlattenedSteel
+  name: flattened steel ingot
+  description: A steel ingot, squished.
+  components:
+  - type: Sprite
+    sprite: _tc14/Objects/Materials/smithing.rsi
+    state: flattened-steel
+  - type: Item
+    sprite: _tc14/Objects/Materials/smithing.rsi
+
+- type: entity
+  parent: [IngotFlattenedSteel, BaseMoltenItem]
+  id: IngotFlattenedMoltenSteel
+  name: flattened molten steel ingot
+  description: Don't touch it without smithing gloves!
+  components:
+  - type: Construction
+    graph: Smithing
+    node: flat
+  - type: Sprite
+    state: flattened-molten-steel
+  - type: SpawnOnTrigger
+    proto: IngotFlattenedSteel
+
+- type: entity
+  parent: IngotFlattenedSteel
+  id: LongSteelRod
+  name: long steel rod
+  description: A long steel rod.
+  components:
+  - type: Sprite
+    state: long-steel-rod
+
+- type: entity
+  parent: [IngotFlattenedMoltenSteel, BaseMoltenItem]
+  id: LongMoltenSteelRod
+  name: long molten steel rod
+  description: Don't touch it without smithing gloves!
+  components:
+  - type: Construction
+    graph: Smithing
+    node: longrod
+  - type: Sprite
+    state: long-molten-steel-rod
+  - type: SpawnOnTrigger
+    proto: LongSteelRod
+
+- type: entity
+  parent: IngotFlattenedSteel
+  id: SteelBlade
+  name: steel blade
+  description: A steel blade.
+  components:
+  - type: Sprite
+    state: steel-blade
+
+- type: entity
+  parent: [IngotFlattenedMoltenSteel, BaseMoltenItem]
+  id: MoltenSteelBlade
+  name: molten steel blade
+  description: Don't touch it without smithing gloves!
+  components:
+  - type: Construction
+    graph: Smithing
+    node: blade
+  - type: Sprite
+    state: molten-steel-blade
+  - type: SpawnOnTrigger
+    proto: SteelBlade
+
+- type: entity
+  parent: IngotFlattenedSteel
+  id: SteelPlate
+  name: steel plate
+  description: A steel plate.
+  components:
+  - type: Sprite
+    state: steel-plate
+
+- type: entity
+  parent: [IngotFlattenedMoltenSteel, BaseMoltenItem]
+  id: MoltenSteelPlate
+  name: molten steel plate
+  description: Don't touch it without smithing gloves!
+  components:
+  - type: Construction
+    graph: Smithing
+    node: plate
+  - type: Sprite
+    state: molten-steel-plate
+  - type: SpawnOnTrigger
+    proto: SteelPlate
+
+- type: entity
+  parent: IngotFlattenedSteel
+  id: SteelRod
+  name: steel rod
+  description: A steel rod.
+  components:
+  - type: Sprite
+    state: steel-rod
+
+- type: entity
+  parent: [IngotFlattenedMoltenSteel, BaseMoltenItem]
+  id: MoltenSteelRod
+  name: molten steel rod
+  description: Don't touch it without smithing gloves!
+  components:
+  - type: Construction
+    graph: Smithing
+    node: rod
+  - type: Sprite
+    state: molten-steel-rod
+  - type: SpawnOnTrigger
+    proto: SteelRod
+
+- type: entity
+  parent: IngotFlattenedSteel
+  id: SmallSteelIngot
+  name: small steel ingot
+  description: A small steel ingot.
+  components:
+  - type: Sprite
+    state: small-steel
+
+- type: entity
+  parent: [IngotFlattenedMoltenSteel, BaseMoltenItem]
+  id: SmallMoltenSteelIngot
+  name: small molten steel ingot
+  description: Don't touch it without smithing gloves!
+  components:
+  - type: Construction
+    graph: Smithing
+    node: small
+  - type: Sprite
+    state: small-molten-steel
+  - type: SpawnOnTrigger
+    proto: SmallSteelIngot

@@ -1,0 +1,54 @@
+- type: entity
+  parent: BaseItem
+  abstract: true
+  id: BaseSmithingItemHead
+  description: Just add a handle to make it into a weapon.
+  components:
+  - type: Sprite
+    sprite: _tc14/Objects/Misc/weapon-parts.rsi
+  - type: Item
+    size: Normal
+    sprite: _tc14/Objects/Misc/weapon-parts.rsi
+  - type: Construction
+    graph: Smithing
+
+- type: entity
+  parent: BaseSmithingItemHead
+  id: ClaymoreBlade
+  name: claymore blade
+  components:
+  - type: Sprite
+    state: claymore-blade
+  - type: Construction
+    node: claymore
+
+- type: entity
+  parent: BaseSmithingItemHead
+  id: KatanaBlade
+  name: katana blade
+  components:
+  - type: Sprite
+    state: katana-blade
+  - type: Construction
+    node: katana
+
+- type: entity
+  parent: BaseSmithingItemHead
+  id: SabreBlade
+  name: sabre blade
+  components:
+  - type: Sprite
+    state: sabre-blade
+  - type: Construction
+    node: sabre
+
+- type: entity
+  parent: BaseSmithingItemHead
+  id: SledgehammerHead
+  name: sledge head
+  components:
+  - type: Sprite
+    state: sledge-head
+  - type: Construction
+    node: sledgehammer
+

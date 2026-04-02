@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "Cut out from corresponding weapons in Objects/Weapons/Melee, which are taken from tgstation",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "katana-blade"
+    },
+    {
+      "name": "claymore-blade"
+    },
+    {
+      "name": "sabre-blade"
+    },
+    {
+      "name": "sledge-head"
+    }
+  ]
+}

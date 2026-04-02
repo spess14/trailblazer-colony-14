@@ -1,0 +1,88 @@
+- type: entity
+  id: CP14WorkbenchAnvilPlaced
+  suffix: Structure
+  parent: BaseStructure
+  name: anvil
+  description: A big piece of metal that allows you to turn square pieces of metal into pieces of metal in other, more useful shapes.
+  components:
+  - type: Rotatable
+    rotateWhileAnchored: true
+  - type: InteractionOutline
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.45,-0.45,0.45,0.45"
+        density: 55
+        mask: # tables should collide with other tables
+        - TableMask
+        layer:
+        - TableLayer
+  - type: PlaceableSurface
+  - type: Clickable
+  - type: Sprite
+    snapCardinals: false
+    sprite: _CP14/Structures/Specific/Blacksmith/anvil.rsi
+    state: icon
+  - type: Icon
+    sprite: _CP14/Structures/Specific/Blacksmith/anvil.rsi
+    state: icon
+  - type: Damageable
+    damageContainer: StructuralInorganic
+    damageModifierSet: StructuralMetallic
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 250
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalBreak
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: Construction
+    graph: Anvil
+    node: anvil
+  - type: Tag
+    tags:
+    - Anvil
+
+- type: entity
+  id: CP14WorkbenchAnvilItem
+  suffix: Item
+  parent: BaseItem
+  name: anvil
+  description: A big piece of metal that allows you to turn square pieces of metal into pieces of metal in other, more useful shapes.
+  components:
+  - type: Item
+    size: Ginormous
+  - type: Sprite
+    snapCardinals: false
+    sprite: _CP14/Structures/Specific/Blacksmith/anvil.rsi
+    state: icon
+  - type: Icon
+    sprite: _CP14/Structures/Specific/Blacksmith/anvil.rsi
+    state: icon
+  - type: Damageable
+    damageContainer: StructuralInorganic
+    damageModifierSet: StructuralMetallic
+  - type: MultiHandedItem
+  - type: HeldSpeedModifier
+    walkModifier: 0.75
+    sprintModifier: 0.75
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 250
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalBreak
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: Tag
+    tags:
+    - AnvilItem

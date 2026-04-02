@@ -1,0 +1,21 @@
+<Document>
+  # Smithing
+  In order to unlock smithing, research the research entry with the same name.
+
+  Smithing allows you to create various weaponry and armor out of steel. In order to begin, you need 2 main things, both of which are unlocked via research: anvil and smithing gloves.
+  <Box>
+    <GuideEntityEmbed Entity="CP14WorkbenchAnvilItem"/>
+    <GuideEntityEmbed Entity="ClothingHandsGlovesSmithing"/>
+  </Box>
+
+  The actual process of smithing requires that you place metal on the anvil. Smithing gloves are required in order to be able to hold molten metal.
+  There are also 2 main tools used in smithing: hammer and chisel.
+
+  In order to begin smithing, get a molten steel ingot from the smeltery, place it on an anvil, then apply tools in the correct order to make the item you need.
+  Keep in mind that molten items will eventually cool down, meaning you have to start over.
+  When you smith the end result, it will automatically be in cooled form.
+  In order to complete a weapon, add a handle to the smithed blade, or follow construction instructions otherwise.
+
+  In order to make an item from the molten steel ingot, you need to use a tool three times - either the hammer or the chisel.
+  Feel free to experiment with various outcomes - see what you can make!
+</Document>

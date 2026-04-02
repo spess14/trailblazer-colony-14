@@ -25,3 +25,25 @@
     state: dirt
   - type: Stack
     count: 1
+
+- type: entity
+  parent: BaseItem
+  id: ClayLump
+  name: clay lump
+  description: A small piece of clay.
+  components:
+  - type: Sprite
+    sprite: _tc14/Objects/Materials/materials.rsi
+    state: clay-lump
+  - type: Item
+    sprite: _tc14/Objects/Materials/materials.rsi
+  - type: Temperature
+    currentTemperature: 290
+  - type: TemperatureDamage
+  - type: InternalTemperature
+    conductivity: 1
+    thickness: 0.02
+    area: 2
+  - type: Construction
+    graph: Brick
+    node: start

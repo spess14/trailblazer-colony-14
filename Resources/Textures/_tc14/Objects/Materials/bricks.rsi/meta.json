@@ -1,12 +1,29 @@
 {
   "version": 1,
-  "license": "CC-BY-NC-4.0",
-  "copyright": "Made by murphyneko",
+  "license": "CC-BY-SA-3.0",
+  "copyright": "Recolored from ingots.rsi by murphyneko",
   "size": {
     "x": 32,
     "y": 32
   },
   "states": [
+    {
+      "name": "stonebrick"
+    },
+    {
+      "name": "stonebrick_2"
+    },
+    {
+      "name": "stonebrick_3"
+    },
+    {
+      "name": "stonebrick-inhand-left",
+      "directions": 4
+    },
+    {
+      "name": "stonebrick-inhand-right",
+      "directions": 4
+    },
     {
       "name": "brick"
     },

@@ -17,3 +17,15 @@
     entity: BrickStone1
   - node: flakingRock
     entity: FlakingRock
+
+- type: constructionGraph
+  id: Brick
+  start: start
+  graph:
+  - node: start
+    edges:
+    - to: brick
+      steps:
+      - minTemperature: 335
+  - node: brick
+    entity: BrickClay1

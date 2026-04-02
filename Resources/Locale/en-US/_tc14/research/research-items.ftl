@@ -1,5 +1,6 @@
 # Military
 tc-research-training-name = Training
+tc-research-smithing-name = Smithing
 tc-research-nonlethal-name = Non-Lethals
 
 # Medical

@@ -1,4 +1,11 @@
 # Please keep this list within Alphabetical Order!
+
+- type: Tag
+  id: Anvil
+
+- type: Tag
+  id: AnvilItem
+
 - type: Tag
   id: FlakingRock
 

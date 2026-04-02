@@ -1,0 +1,43 @@
+# We cannot use start as a startNode, because the first construction step is a tool step.
+# I hate ConstructionSystem.
+# TODO write some kind of fix to ConstructionSystem because even with a different startnode it completely disregards the node entity itself, meaning the construction entry provides zero useful info. AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+
+#- type: construction
+#  id: SmithedSteelPike
+#  graph: Smithing
+#  startNode: longrod
+#  targetNode: s-pike
+#  category: construction-category-weapons
+#  objectType: Item
+#
+#- type: construction
+#  id: SmithedKatana
+#  graph: Smithing
+#  startNode: katana
+#  targetNode: s-katana
+#  category: construction-category-weapons
+#  objectType: Item
+#
+#- type: construction
+#  id: SmithedSabre
+#  graph: Smithing
+#  startNode: sabre
+#  targetNode: s-sabre
+#  category: construction-category-weapons
+#  objectType: Item
+#
+#- type: construction
+#  id: SmithedLongsword
+#  graph: Smithing
+#  startNode: longsword
+#  targetNode: s-longsword
+#  category: construction-category-weapons
+#  objectType: Item
+#
+#- type: construction
+#  id: SmithedSledgehammer
+#  graph: Smithing
+#  startNode: sledgehammer
+#  targetNode: s-sledgehammer
+#  category: construction-category-weapons
+#  objectType: Item

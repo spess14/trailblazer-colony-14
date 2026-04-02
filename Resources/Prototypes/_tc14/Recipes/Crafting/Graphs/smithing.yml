@@ -1,0 +1,137 @@
+- type: constructionGraph
+  id: Smithing
+  start: start
+  graph:
+  # Molten steel
+  - node: start
+    entity: IngotMoltenSteel
+    edges:
+    - to: flat
+      conditions:
+      - !type:HasAnvilAtTile {}
+      steps:
+      - tool: Hammering
+        doAfter: 2
+    - to: rod
+      conditions:
+      - !type:HasAnvilAtTile { }
+      steps:
+      - tool: Chiseling
+        doAfter: 2
+  # Initial items
+  - node: rod
+    entity: MoltenSteelRod
+    edges:
+    - to: longrod
+      conditions:
+      - !type:HasAnvilAtTile { }
+      steps:
+      - tool: Hammering
+        doAfter: 2
+    - to: blade
+      conditions:
+      - !type:HasAnvilAtTile { }
+      steps:
+      - tool: Chiseling
+        doAfter: 2
+  - node: flat
+    entity: IngotFlattenedMoltenSteel
+    edges:
+    - to: plate
+      conditions:
+      - !type:HasAnvilAtTile { }
+      steps:
+      - tool: Hammering
+        doAfter: 2
+    - to: small
+      conditions:
+      - !type:HasAnvilAtTile { }
+      steps:
+      - tool: Chiseling
+        doAfter: 2
+  # Intermediaries
+  - node: longrod
+    entity: LongMoltenSteelRod
+    edges:
+    - to: claymore
+      conditions:
+      - !type:HasAnvilAtTile { }
+      steps:
+      - tool: Hammering
+        doAfter: 2
+    - to: s-pike
+      conditions:
+      - !type:HasAnvilAtTile { }
+      steps:
+      - tool: Chiseling
+        doAfter: 2
+  - node: blade
+    entity: MoltenSteelBlade
+    edges:
+    - to: sabre
+      conditions:
+      - !type:HasAnvilAtTile { }
+      steps:
+      - tool: Hammering
+        doAfter: 2
+    - to: katana
+      conditions:
+      - !type:HasAnvilAtTile { }
+      steps:
+      - tool: Chiseling
+        doAfter: 2
+  - node: plate
+    entity: MoltenSteelPlate
+  - node: small
+    entity: SmallMoltenSteelIngot
+    edges:
+    - to: sledgehammer
+      conditions:
+      - !type:HasAnvilAtTile { }
+      steps:
+      - tool: Chiseling
+        doAfter: 2
+  # Results
+  - node: claymore
+    entity: ClaymoreBlade
+    edges:
+    - to: s-longsword
+      steps:
+      - tag: Handle
+        name: construction-graph-tag-handle
+        doAfter: 1
+  - node: katana
+    entity: KatanaBlade
+    edges:
+    - to: s-katana
+      steps:
+      - tag: Handle
+        name: construction-graph-tag-handle
+        doAfter: 1
+  - node: sabre
+    entity: SabreBlade
+    edges:
+    - to: s-sabre
+      steps:
+      - tag: Handle
+        name: construction-graph-tag-handle
+        doAfter: 1
+  - node: sledgehammer
+    entity: SledgehammerHead
+    edges:
+    - to: s-sledgehammer
+      steps:
+      - tag: Handle
+        name: construction-graph-tag-handle
+        doAfter: 1
+  # Weapons
+  - node: s-pike
+    entity: SmithedSteelPike
+  - node: s-katana
+    entity: SmithedKatana
+  - node: s-sabre
+    entity: SmithedSabre
+  - node: s-longsword
+    entity: SmithedLongsword
+  - node: s-sledgehammer
+    entity: SmithedSledgehammer
