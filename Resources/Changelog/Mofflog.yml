@@ -4422,5 +4422,13 @@ Entries:
   id: 1185
   time: '2026-04-01T05:14:57.000'
   url: https://github.com/moff-station/moff-station-14/pull/1185
+- author: Centronias
+  changes:
+  - message: Modular HUDs will no longer partially render when in non-eye slots (ie.
+      pockets)
+    type: fix
+  id: 1188
+  time: '2026-04-02T03:12:23.000'
+  url: https://github.com/moff-station/moff-station-14/pull/1188
 Name: Mofflog
 Order: -2
