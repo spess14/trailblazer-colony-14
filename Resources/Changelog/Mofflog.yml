@@ -4430,5 +4430,12 @@ Entries:
   id: 1188
   time: '2026-04-02T03:12:23.000'
   url: https://github.com/moff-station/moff-station-14/pull/1188
+- author: Centronias
+  changes:
+  - message: Beer HUD variants can once again be used to examine the contents of liquids.
+    type: fix
+  id: 1190
+  time: '2026-04-02T18:01:46.000'
+  url: https://github.com/moff-station/moff-station-14/pull/1190
 Name: Mofflog
 Order: -2
