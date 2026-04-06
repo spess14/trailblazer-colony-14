@@ -4,6 +4,9 @@
   name: rock
   suffix: planetmap
   components:
+  - type: OreVein
+    oreChance: 0.5
+    currentOre: OreRockPlain
   - type: Transform
     noRot: true
   - type: SoundOnGather

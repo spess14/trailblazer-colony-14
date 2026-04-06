@@ -8,7 +8,7 @@
   completetime: 2
   materials:
     Steel: 200
-    Plastic: 50
+    # Plastic: 50 # TC14 - remove plastic requirement
 
 - type: latheRecipe
   abstract: true
@@ -32,9 +32,6 @@
   parent: BaseToolRecipe
   id: Screwdriver
   result: Screwdriver
-  #TC14: doesn't take plastic
-  materials:
-    Steel: 200
   icon:
     sprite: Objects/Tools/screwdriver.rsi
     state: screwdriver-map

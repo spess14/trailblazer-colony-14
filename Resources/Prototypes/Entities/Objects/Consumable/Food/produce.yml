@@ -206,6 +206,7 @@
   - type: Produce
     seedId: towercap
   - type: Log
+    spawnCount: 4 # TC14 - double plank output from logs
 
 - type: entity
   name: steel-cap log
