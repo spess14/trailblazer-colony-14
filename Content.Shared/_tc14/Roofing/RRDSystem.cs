@@ -38,7 +38,7 @@ public sealed class RRDSystem : EntitySystem
 
         component.IsPlacingRoof = !component.IsPlacingRoof;
         var message = component.IsPlacingRoof ? Loc.GetString("rrd-now-placing") : Loc.GetString("rrd-now-removing");
-        _popup.PopupPredicted(message, uid, args.User);
+        _popup.PopupClient(message, uid, args.User);
         Dirty(uid, component);
     }
 
