@@ -1,0 +1,12 @@
+- type: guideEntry
+  id: TCMechanics
+  name: guide-entry-mechanics
+  priority: -5
+  text: "/ServerInfo/_tc14/Mechanics/Mechanics.xml"
+  children:
+  - TCSkills
+
+- type: guideEntry
+  id: TCSkills
+  name: guide-entry-mechanics-skills
+  text: "/ServerInfo/_tc14/Mechanics/Skills.xml"

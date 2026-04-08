@@ -1,7 +1,8 @@
 <BoxContainer xmlns="https://spacestation14.io"
               Orientation="Vertical"
               xmlns:controls="clr-namespace:Content.Client.UserInterface.Controls"
-              SeparationOverride="5">
+              SeparationOverride="5"
+              Margin="5 5 5 5">
     <RichTextLabel Name="SkillPassionPointsLabel"
                    HorizontalAlignment="Left" />
     <controls:TableContainer Name="SkillPassionContainer"

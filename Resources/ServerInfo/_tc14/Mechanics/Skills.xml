@@ -1,0 +1,14 @@
+<Document>
+  # Skill System
+  The jobs are replaced with a skill system. Your character has a set of skills, which handles how well you perform certain types of tasks.
+
+  Each skill has various stages, going from "Barely heard of it" to "Absolute Master". You do not know your exact skill level, just an approximation.
+
+  ## Gaining Skills
+  Outside of praying, you currently cannot improve your skills in any way. This will be done in the future.
+
+  ## Passions
+  In the character creation menu, you have a tab called "Skills". There, you can distribute passion points (don't confuse them with skill points!).
+  At the start of the round, you get a certain amount of skill points for all the skills, which get distributed randomly.
+  However, by selecting more passion points in the skill, this skill will have increased priority - meaning skills with more passion points will get more skill points on average.
+</Document>
