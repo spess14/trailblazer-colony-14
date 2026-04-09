@@ -4510,5 +4510,12 @@ Entries:
   id: 1218
   time: '2026-04-09T15:48:11.000'
   url: https://github.com/moff-station/moff-station-14/pull/1218
+- author: Jona-K
+  changes:
+  - message: Security masks Nolonger Hide The Vulpikans Snout
+    type: fix
+  id: 1223
+  time: '2026-04-09T19:05:45.000'
+  url: https://github.com/moff-station/moff-station-14/pull/1223
 Name: Mofflog
 Order: -2
