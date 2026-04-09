@@ -4496,5 +4496,12 @@ Entries:
   id: 1217
   time: '2026-04-08T21:54:41.000'
   url: https://github.com/moff-station/moff-station-14/pull/1217
+- author: DuckManZach
+  changes:
+  - message: Selected markings appear at the top of the list
+    type: tweak
+  id: 1218
+  time: '2026-04-09T15:48:11.000'
+  url: https://github.com/moff-station/moff-station-14/pull/1218
 Name: Mofflog
 Order: -2
