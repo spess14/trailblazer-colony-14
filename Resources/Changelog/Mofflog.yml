@@ -4491,6 +4491,13 @@ Entries:
   url: https://github.com/moff-station/moff-station-14/pull/1207
 - author: DuckManZach
   changes:
+  - message: Flashlights now have smooth movement (and so do barstools)
+    type: tweak
+  id: 1214
+  time: '2026-04-09T15:55:21.000'
+  url: https://github.com/moff-station/moff-station-14/pull/1214
+- author: DuckManZach
+  changes:
   - message: Bring back colored departments in the job picker
     type: fix
   id: 1217
