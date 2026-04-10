@@ -4489,6 +4489,13 @@ Entries:
   id: 1207
   time: '2026-04-06T19:33:45.000'
   url: https://github.com/moff-station/moff-station-14/pull/1207
+- author: StudMuffin
+  changes:
+  - message: AI warp now work properly when used during an holocall
+    type: fix
+  id: 1209
+  time: '2026-04-10T07:04:23.000'
+  url: https://github.com/moff-station/moff-station-14/pull/1209
 - author: DuckManZach
   changes:
   - message: Flashlights now have smooth movement (and so do barstools)
