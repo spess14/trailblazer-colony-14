@@ -4496,6 +4496,13 @@ Entries:
   id: 1209
   time: '2026-04-10T07:04:23.000'
   url: https://github.com/moff-station/moff-station-14/pull/1209
+- author: StudMuffin
+  changes:
+  - message: disposal units can now be controlled by network signals.
+    type: add
+  id: 1212
+  time: '2026-04-10T18:24:17.000'
+  url: https://github.com/moff-station/moff-station-14/pull/1212
 - author: DuckManZach
   changes:
   - message: Flashlights now have smooth movement (and so do barstools)
