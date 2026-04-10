@@ -4505,6 +4505,13 @@ Entries:
   url: https://github.com/moff-station/moff-station-14/pull/1214
 - author: DuckManZach
   changes:
+  - message: Reworked the traits menu!
+    type: add
+  id: 1216
+  time: '2026-04-10T16:00:02.000'
+  url: https://github.com/moff-station/moff-station-14/pull/1216
+- author: DuckManZach
+  changes:
   - message: Bring back colored departments in the job picker
     type: fix
   id: 1217
