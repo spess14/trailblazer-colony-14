@@ -4524,6 +4524,13 @@ Entries:
   id: 1218
   time: '2026-04-09T15:48:11.000'
   url: https://github.com/moff-station/moff-station-14/pull/1218
+- author: pirakaplant
+  changes:
+  - message: Added Boston, Cak, and Scandinavian accents.
+    type: add
+  id: 1219
+  time: '2026-04-10T18:07:39.000'
+  url: https://github.com/moff-station/moff-station-14/pull/1219
 - author: Jona-K
   changes:
   - message: Security masks Nolonger Hide The Vulpikans Snout
