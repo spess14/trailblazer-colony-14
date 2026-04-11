@@ -8,12 +8,6 @@
 # - /Prototypes/Catalog/uplink_catalog.yml
 - /Prototypes/lobbyscreens.yml # Moffstation
 - /Prototypes/Recipes/Construction/Graphs/structures/soil.yml # TC14 - we have our own soil recipe
-# TC14 - Begin - Disable all guidebooks that are not ours
-- /Prototypes/Guidebook
-- /Prototypes/_Moffstation/Guidebook
-- /Prototypes/_Impstation/Guidebook
-- /Prototypes/_Harmony/Guidebook
-# TC14 - End
 # TC14 - Begin - Remove personal items from Moffstation
 - /Prototypes/_Moffstation/PersonalItems
 # TC14 - End

@@ -1,9 +1,11 @@
-- type: guideEntry
-  id: Pirates
-  name: guide-entry-pirates
-  text: "/ServerInfo/_Moffstation/Guidebook/Antagonist/Pirates.xml"
-
-- type: guideEntry
-  id: WizardDuel
-  name: guide-entry-wizard-duel
-  text: "/ServerInfo/_Moffstation/Guidebook/Antagonist/Wizard_Duel.xml"
+# TC14 - Begin - Guidebook changes
+#- type: guideEntry
+#  id: Pirates
+#  name: guide-entry-pirates
+#  text: "/ServerInfo/_Moffstation/Guidebook/Antagonist/Pirates.xml"
+#
+#- type: guideEntry
+#  id: WizardDuel
+#  name: guide-entry-wizard-duel
+#  text: "/ServerInfo/_Moffstation/Guidebook/Antagonist/Wizard_Duel.xml"
+# TC14 - End
