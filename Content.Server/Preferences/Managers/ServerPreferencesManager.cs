@@ -135,7 +135,7 @@ namespace Content.Server.Preferences.Managers
 
                     if (parsed is null) continue;
 
-                    markingsList.Add(parsed);
+                    markingsList.Add(parsed.Value);
                 }
 
                 if (Marking.ParseFromDbString($"{profile.HairName}@{profile.HairColor}") is { } facialMarking)
@@ -176,12 +176,13 @@ namespace Content.Server.Preferences.Managers
                 loadouts[role.RoleName] = loadout;
             }
 
-            var passions = profile.Passions.ToDictionary(p=>(ProtoId<SkillPrototype>)p.PassionName, p=>p.Value);
+            var passions = profile.Passions.ToDictionary(p=>(ProtoId<SkillPrototype>)p.PassionName, p=>p.Value); // TC14 - add skills
 
             return new HumanoidCharacterProfile(
                 profile.CharacterName,
                 profile.FlavorText,
                 species,
+                profile.CDProfile?.Height ?? 1.0f, // Moffstation - CD Height
                 profile.Age,
                 sex,
                 gender,
@@ -197,8 +198,8 @@ namespace Content.Server.Preferences.Managers
                 antags.ToHashSet(),
                 traits.ToHashSet(),
                 loadouts,
-                cdRecords,
-                passions
+                cdRecords, // Moffstation - Add CD Profile
+                passions // TC14 - add skills
             );
         }
 
