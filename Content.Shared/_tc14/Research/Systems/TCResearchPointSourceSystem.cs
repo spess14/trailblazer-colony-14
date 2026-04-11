@@ -17,7 +17,6 @@ public sealed class TCResearchPointSourceSystem : EntitySystem
     [Dependency] private readonly IEntityManager _entMan = default!;
     [Dependency] private readonly SharedPopupSystem _popup = default!;
     [Dependency] private readonly ResearchTableSystem _researchTableSystem = default!;
-    [Dependency] private readonly IGameTiming _gameTiming = default!;
 
     /// <inheritdoc/>
     public override void Initialize()
