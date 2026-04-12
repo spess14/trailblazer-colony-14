@@ -38,6 +38,8 @@ public sealed class WarperSystem : EntitySystem
     [Dependency] private readonly TagSystem _tags = default!;
     [Dependency] private readonly AudioSystem _audio = default!;
 
+    private const string BossTag = "Boss";
+
     public override void Initialize()
     {
         base.Initialize();
@@ -154,7 +156,7 @@ public sealed class WarperSystem : EntitySystem
             if (_mobState.IsDead(mob.Owner))
                 continue;
             // Monster is a Boss - dungeon is straight up NOT DONE.
-            if (_tags.HasTag(mob.Owner, "Boss"))
+            if (_tags.HasTag(mob.Owner, BossTag))
                 return false;
             // So if it's not a pet, not dead, not a boss,
             aliveCount++;
