@@ -16,6 +16,7 @@ public sealed class StartEndGameRulesTest
     public async Task TestAllConcurrent()
     {
         return; // TC14 - We cannot check that all gamerules work, since there are a lot of station-specific rules depending on maps
+#pragma warning disable CS0162 // Unreachable code detected
         await using var pair = await PoolManager.GetServerClient(new PoolSettings
         {
             Dirty = true,
@@ -50,5 +51,6 @@ public sealed class StartEndGameRulesTest
         });
 
         await pair.CleanReturnAsync();
+#pragma warning restore CS0162 // Unreachable code detected
     }
 }

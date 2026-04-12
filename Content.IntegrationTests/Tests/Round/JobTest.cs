@@ -144,6 +144,7 @@ public sealed class JobTest
     public async Task JobWeightTest()
     {
         return; // TC14 - No jobs
+#pragma warning disable CS0162 // Unreachable code detected
         await using var pair = await PoolManager.GetServerClient(new PoolSettings
         {
             DummyTicker = false,
@@ -171,6 +172,7 @@ public sealed class JobTest
 
         await pair.Server.WaitPost(() => ticker.RestartRound());
         await pair.CleanReturnAsync();
+#pragma warning restore CS0162 // Unreachable code detected
     }
 
     /// <summary>

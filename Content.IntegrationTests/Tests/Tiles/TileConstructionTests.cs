@@ -63,7 +63,6 @@ public sealed class TileConstructionTests : InteractionTest
     [Test]
     public async Task FloorConstructDeconstruct()
     {
-        return; //test disabled due to fake tiles - will be reenabled when true tilestacking drops
         await AssertTile(Plating);
         await AssertTile(Plating, PlayerCoords);
         AssertGridCount(1);
