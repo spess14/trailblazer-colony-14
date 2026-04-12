@@ -8,7 +8,6 @@ using Content.Server.Database;
 using Content.Shared.Body;
 using Content.Shared._CD.Records;
 using Content.Shared._tc14.Skills.Prototypes;
-using Content.Shared.Body;
 using Content.Shared.CCVar;
 using Content.Shared.Construction.Prototypes;
 using Content.Shared.Humanoid;
