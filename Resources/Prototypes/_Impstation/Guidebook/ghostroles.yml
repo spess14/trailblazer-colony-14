@@ -1,4 +1,6 @@
-- type: guideEntry
-  id: ImpTourist
-  name: guide-entry-imptourist
-  text: "/ServerInfo/_Impstation/Guidebook/Ghostroles/Tourists.xml"
+# TC14 - Begin - Guidebook changes
+#- type: guideEntry
+#  id: ImpTourist
+#  name: guide-entry-imptourist
+#  text: "/ServerInfo/_Impstation/Guidebook/Ghostroles/Tourists.xml"
+# TC14 - End

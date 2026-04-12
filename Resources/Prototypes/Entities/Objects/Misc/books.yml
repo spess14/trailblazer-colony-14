@@ -69,7 +69,7 @@
         Blunt: 1
   - type: DamageOtherOnHit
     damage:
-      types:
+      types: {}
   - type: PhysicalComposition #Moffstation - Allows for books to be recycled, you monster.
 
 - type: entity
@@ -371,9 +371,11 @@
       color: "#87011c"
     - state: icon_law
       color: "#f7d61a"
-  - type: GuideHelp
-    guides:
-    - SpaceLaw
+# TC14 - Begin - remove unneeded guides
+#  - type: GuideHelp
+#    guides:
+#    - SpaceLaw
+# TC14 - End
 
 - type: entity
   parent: BookBase

@@ -220,6 +220,10 @@
     - Instruments
     - Equipment
     - WirelessCameraHandheld # MOFFSTATION CHANGE - Adds wireless handheld camera
+    # Moffstation - Start - Modular HUDs
+    - ModularHudFrames
+    - ModularHudModules
+    # Moffstation - End
   - type: EmagLatheRecipes
     emagDynamicPacks:
     - SecurityAmmo
@@ -394,6 +398,8 @@
   - type: Lathe
     idleState: icon
     runningState: icon
+    unlitIdleState: unlit
+    unlitRunningState: unlit-building
     staticPacks:
     - SecurityEquipmentStatic
     - SecurityPracticeStatic
@@ -408,6 +414,11 @@
     - SecurityAmmo
     - SecurityWeapons
     - SecurityDisablers
+    # Moffstation - Start - Modular HUDs
+    - ModularHudFrames
+    - SecurityModularHudFrames
+    - SecurityModularHudModules
+    # Moffstation - End
   - type: EmagLatheRecipes
     emagStaticPacks:
     - SyndicateAmmoStatic
@@ -441,6 +452,8 @@
     - type: Lathe
       idleState: icon
       runningState: icon
+      unlitIdleState: unlit
+      unlitRunningState: unlit-building
       staticPacks:
       - SecurityAmmoStatic
     - type: EmagLatheRecipes
@@ -472,6 +485,8 @@
   - type: Lathe
     idleState: icon
     runningState: icon
+    unlitIdleState: unlit
+    unlitRunningState: unlit-building
     staticPacks:
     - TopicalsStatic
     - ChemistryStatic
@@ -483,6 +498,10 @@
     - AACTabletStatic # Moffstation - AAC tablet
     dynamicPacks:
     - Chemistry
+    # Moffstation - Start - Modular HUDs
+    - ModularHudFrames
+    - MedicalModularHudModules
+    # Moffstation - End
   - type: Machine
     board: MedicalTechFabCircuitboard
   - type: StealTarget

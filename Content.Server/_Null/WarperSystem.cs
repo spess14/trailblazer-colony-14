@@ -20,7 +20,7 @@ using Robust.Shared.Physics.Components;
 
 #pragma warning disable CS0618 // Type or member is obsolete
 
-namespace Content.Server._Null.Systems;
+namespace Content.Server._Null;
 
 /// <summary>
 /// This is lifted from Mining Station 14 and redesigned to be used for Vault Station's Dungeon Layers.
@@ -37,6 +37,8 @@ public sealed class WarperSystem : EntitySystem
     [Dependency] private readonly MobStateSystem _mobState = default!;
     [Dependency] private readonly TagSystem _tags = default!;
     [Dependency] private readonly AudioSystem _audio = default!;
+
+    private const string BossTag = "Boss";
 
     public override void Initialize()
     {
@@ -69,7 +71,7 @@ public sealed class WarperSystem : EntitySystem
     /// <returns>The first warper with a provided destination.</returns>
     private Entity<WarperComponent>? GetWarper(string id, bool useSourceId = false)
     {
-        foreach (var warper in EntityManager.EntityQuery<WarperComponent>())
+        foreach (var warper in EntityQuery<WarperComponent>())
         {
             if (useSourceId && warper.CurrentId == null)
                 continue;
@@ -137,7 +139,7 @@ public sealed class WarperSystem : EntitySystem
 
         var hostileFactions = warper.Comp.HostileFactions;
         int monsterCount = 0, aliveCount = 0;
-        foreach (var mob in EntityManager.EntityQuery<NpcFactionMemberComponent>())
+        foreach (var mob in EntityQuery<NpcFactionMemberComponent>())
         {
             // NPCs not on the same map - skipped
             if (Transform(mob.Owner).GridUid == Transform(warper).GridUid)
@@ -154,7 +156,7 @@ public sealed class WarperSystem : EntitySystem
             if (_mobState.IsDead(mob.Owner))
                 continue;
             // Monster is a Boss - dungeon is straight up NOT DONE.
-            if (_tags.HasTag(mob.Owner, "Boss"))
+            if (_tags.HasTag(mob.Owner, BossTag))
                 return false;
             // So if it's not a pet, not dead, not a boss,
             aliveCount++;

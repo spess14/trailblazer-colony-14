@@ -30,6 +30,8 @@
           enum.TouristCameraVisuals.LightLayer:
             True: {visible: true}
             False: {visible: false}
-    - type: GuideHelp
-      guides:
-      - ImpTourist
+# TC14 - Begin - remove unneeded guides
+#    - type: GuideHelp
+#      guides:
+#      - ImpTourist
+# TC14 - End

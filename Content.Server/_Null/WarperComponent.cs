@@ -1,4 +1,3 @@
-using Content.Server._Null.Systems;
 using Robust.Shared.Audio;
 
 namespace Content.Server._Null.Components;

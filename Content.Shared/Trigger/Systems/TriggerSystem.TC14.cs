@@ -36,7 +36,7 @@ public sealed partial class TriggerSystem
         var target = ent.Comp.TargetUser ? args.User : ent.Owner;
 
         if (target == null ||
-            !EntityManager.TryGetComponent<TCResearchPointSourceComponent>(target, out var pointSourceComp))
+            !TryComp<TCResearchPointSourceComponent>(target, out var pointSourceComp))
             return;
 
         var triggerComp = ent.Comp;

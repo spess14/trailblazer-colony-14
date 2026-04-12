@@ -1,0 +1,27 @@
+guide-entry-tc14 = Trailblazer Station 14
+guide-entry-progression = Progression
+guide-entry-progression-early = Early Progression
+guide-entry-research = Research
+guide-entry-smithing = Smithing
+guide-entry-mechanics = Mechanics
+guide-entry-mechanics-skills = Skills
+
+guide-entry-rules-0-0 = 0.0
+guide-entry-rules-0-1 = 0.1
+guide-entry-rules-0-2 = 0.2
+guide-entry-rules-0-3 = 0.3
+guide-entry-rules-0-4 = 0.4
+guide-entry-rules-0-5 = 0.5
+guide-entry-rules-0-6 = 0.6
+guide-entry-rules-0-7 = 0.7
+guide-entry-rules-0-8 = 0.8
+guide-entry-rules-0-9 = 0.9
+guide-entry-rules-0-10 = 0.10
+guide-entry-rules-1-0 = 1.0
+guide-entry-rules-1-1 = 1.1
+guide-entry-rules-1-2 = 1.2
+guide-entry-rules-1-3 = 1.3
+guide-entry-rules-1-4 = 1.4
+guide-entry-rules-1-5 = 1.5
+guide-entry-rules-1-6 = 1.6
+guide-entry-rules-1-7 = 1.7

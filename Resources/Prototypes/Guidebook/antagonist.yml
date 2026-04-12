@@ -2,20 +2,22 @@
   id: Antagonists
   name: guide-entry-antagonists
   text: "/ServerInfo/Guidebook/Antagonist/Antagonists.xml"
-  children:
-  - Traitors
-  - Thieves
-  - Revolutionaries
-  - NuclearOperatives
-  - SpaceNinja
-  - Wizard
-  - Zombies
-  - Xenoborgs
-  - MinorAntagonists
-  - BloodBrothers # Harmony
-  - Conspirators # Harmony
-  - Pirates # Moffstation
-  - Eeeps # imp
+# TC14 - Begin - remove unneeded guides
+#  children:
+#  - Traitors
+#  - Thieves
+#  - Revolutionaries
+#  - NuclearOperatives
+#  - SpaceNinja
+#  - Wizard
+#  - Zombies
+#  - Xenoborgs
+#  - MinorAntagonists
+#  - BloodBrothers # Harmony
+#  - Conspirators # Harmony
+#  - Pirates # Moffstation
+#  - Eeeps # imp
+# TC14 - End
 
 - type: guideEntry
   id: Traitors
@@ -56,6 +58,10 @@
   id: Wizard
   name: guide-entry-wizard
   text: "/ServerInfo/Guidebook/Antagonist/Wizard.xml"
+  # Moffstation - Start - Wizard Duelist; TC14 - remove unneeded guides
+#  children:
+#  - WizardDuel
+  # Moffstation - End
 
 - type: guideEntry
   id: Xenoborgs

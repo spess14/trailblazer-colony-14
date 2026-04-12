@@ -54,7 +54,7 @@ public sealed class CharacterInfoSystem : EntitySystem
         EntityUid Entity,
         string Job,
         Dictionary<string, List<ObjectiveInfo>> Objectives,
-        Dictionary<CollectiveMindPrototype, CollectiveMindMemberData>? CollectiveMinds, // Starlight - Collective Mind - Collective mind data entry.
+        Dictionary<ProtoId<CollectiveMindPrototype>, CollectiveMindMemberData>? CollectiveMinds, // Starlight - Collective Mind - Collective mind data entry.
         string? Briefing,
         string EntityName,
         Dictionary<ProtoId<SkillPrototype>, FixedPoint2> Skills

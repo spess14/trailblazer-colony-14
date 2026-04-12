@@ -40,7 +40,6 @@
   - PersonalItemFrostMedicalWebbing
   - PersonalItemGhostwoodCoat
   - PersonalItemGigsShaker
-  - PersonalItemGumboSlippers
   - PersonalItemHercynSuit
   - PersonalItemHotSauceFireExtinguisher
   - PersonalItemIchabodHead
@@ -48,15 +47,17 @@
   - PersonalItemIrisRing
   - PersonalItemJessMask
   - PersonalItemJibberPistol
+  - PersonalItemJulieFavOutfit
   - PersonalItemKatieWristBand
-  - PersonalItemKazaWreath
   - PersonalItemKazoSkates
   - PersonalItemKennyPrisonerShirt
+  - PersonalItemKethendachuakJumpskirt
   - PersonalItemKimBass
   - PersonalItemKrakatoaCloak
   - PersonalItemKylieUniform
   - PersonalItemLaeliaSpiritBox
   - PersonalItemLilithGuitar
+  - PersonalItemMachellGlove
   - PersonalItemMaleniaRing
   - PersonalItemMarvinHeadphones
   - PersonalItemMossCloak
@@ -65,6 +66,7 @@
   - PersonalItemPeedeeAvatar
   - PersonalItemPeriwinkleFace
   - PersonalItemPilkmanPlushie
+  - PersonalItemPlentJacket
 #  - PersonalItemRemiaPin - TC14 - Remove moffstation personal item
   - PersonalItemRoseHeadphones
   - PersonalItemRufflerMask
@@ -81,7 +83,7 @@
   - PersonalItemShimmyPistolCase
   - PersonalItemSiegeHalffloofMask
   - PersonalItemSigerthePlushie
-  - PersonalItemSkiesOfSunshine
+#  - PersonalItemSkiesOfSunshine - TC14 - Remove moffstation personal item
   - PersonalItemSkrikiPlush
   - PersonalItemSqueaksHampter
   - PersonalItemStellaPistol
