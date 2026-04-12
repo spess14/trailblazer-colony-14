@@ -8,7 +8,7 @@
   requirements:
   - !type:OverallPlaytimeRequirement
     time: 5h
-  guides: [ WizardDuel ]
+  # guides: [ WizardDuel ] TC14 - Remove antags
 
 # Wizard duelist starting gear
 - type: startingGear

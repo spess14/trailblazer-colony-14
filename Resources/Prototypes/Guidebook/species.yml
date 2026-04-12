@@ -4,13 +4,13 @@
   text: "/ServerInfo/Guidebook/Mobs/Species.xml"
   children:
   - Arachnid
-  - Avali # Moffstation - Avali Guidebook Entry
+  # - Avali # Moffstation - Avali Guidebook Entry; TC14 - move to our namespace
   - Diona
   - Dwarf
   - Human
   - Moth
   - Reptilian
-  - Resomi # Moffstation - Resomi Guidebook Entry
+  # - Resomi # Moffstation - Resomi Guidebook Entry; TC14 - move to our namespace
   - SlimePerson
   - Vox
   - Vulpkanin

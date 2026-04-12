@@ -371,9 +371,11 @@
       color: "#87011c"
     - state: icon_law
       color: "#f7d61a"
-  - type: GuideHelp
-    guides:
-    - SpaceLaw
+# TC14 - Begin - remove unneeded guides
+#  - type: GuideHelp
+#    guides:
+#    - SpaceLaw
+# TC14 - End
 
 - type: entity
   parent: BookBase

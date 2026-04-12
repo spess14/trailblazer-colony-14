@@ -6,7 +6,7 @@
   - Forensics
   - Defusal
   - CriminalRecords
-  - SpaceLaw
+  # - SpaceLaw - TC14 - remove unneeded guides
 
 - type: guideEntry
   id: Forensics

@@ -46,17 +46,16 @@
       params:
         volume: -3
     damage:
-      groups:
-        Brute: 5
+      types:
+        Blunt: 5
   - type: Construction
     graph: WoodenHandleTools
     node: pickaxe
   - type: Wieldable
   - type: IncreaseDamageOnWield
     damage:
-      groups:
-        Brute: 6
       types:
+        Blunt: 6
         Structural: 15
   - type: Item
     size: Normal
