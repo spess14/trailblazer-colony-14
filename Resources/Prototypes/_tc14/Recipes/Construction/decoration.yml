@@ -1,0 +1,38 @@
+- type: construction
+  id: TCWoodenSignLeft
+  graph: TCWoodenSignLeft
+  startNode: start
+  targetNode: sign
+  category: construction-category-structures
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canRotate: false
+  canBuildInImpassable: false
+  conditions:
+  - !type:TileNotBlocked
+
+- type: construction
+  id: TCWoodenSignRight
+  graph: TCWoodenSignRight
+  startNode: start
+  targetNode: sign
+  category: construction-category-structures
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canRotate: false
+  canBuildInImpassable: false
+  conditions:
+  - !type:TileNotBlocked
+
+- type: construction
+  id: TCWoodenSign
+  graph: TCWoodenSign
+  startNode: start
+  targetNode: sign
+  category: construction-category-structures
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canRotate: false
+  canBuildInImpassable: false
+  conditions:
+  - !type:TileNotBlocked

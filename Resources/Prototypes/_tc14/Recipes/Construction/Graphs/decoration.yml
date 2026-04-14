@@ -1,0 +1,41 @@
+- type: constructionGraph
+  id: TCWoodenSignLeft
+  start: start
+  graph:
+  - node: start
+    edges:
+    - to: sign
+      steps:
+      - material: WoodPlank
+        amount: 3
+        doAfter: 1
+  - node: sign
+    entity: TCWoodenSignLeft
+
+- type: constructionGraph
+  id: TCWoodenSignRight
+  start: start
+  graph:
+  - node: start
+    edges:
+    - to: sign
+      steps:
+      - material: WoodPlank
+        amount: 3
+        doAfter: 1
+  - node: sign
+    entity: TCWoodenSignRight
+
+- type: constructionGraph
+  id: TCWoodenSign
+  start: start
+  graph:
+  - node: start
+    edges:
+    - to: sign
+      steps:
+      - material: WoodPlank
+        amount: 3
+        doAfter: 1
+  - node: sign
+    entity: TCWoodenSign

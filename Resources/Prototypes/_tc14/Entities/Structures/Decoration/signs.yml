@@ -1,0 +1,32 @@
+- type: entity
+  abstract: true
+  id: BaseTCWoodenSign
+  components:
+  - type: Sign
+  - type: Construction
+    node: sign
+
+- type: entity
+  parent: [BaseTCWoodenSign, WoodenSign]
+  id: TCWoodenSignLeft
+  components:
+  - type: Construction
+    graph: TCWoodenSignLeft
+
+- type: entity
+  parent: [BaseTCWoodenSign, WoodenSignRight]
+  id: TCWoodenSignRight
+  components:
+  - type: Construction
+    graph: TCWoodenSignRight
+
+- type: entity
+  parent: [BaseTCWoodenSign, WoodenSign]
+  id: TCWoodenSign
+  description: He's not pointing anywhere.
+  components:
+  - type: Sprite
+    sprite: _tc14/Structures/Decoration/sign.rsi
+    state: sign
+  - type: Construction
+    graph: TCWoodenSign
