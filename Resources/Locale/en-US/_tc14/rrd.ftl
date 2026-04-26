@@ -4,3 +4,6 @@ rrd-no-nearby-roof = No adjacent roof found!
 rrd-no-roof-to-remove = There is no roof to remove!
 rrd-examine-constructing = This RRD is set to construct roofs.
 rrd-examine-deconstructing = This RRD is set to deconstruct roofs.
+
+roofing-overlay-off = No longer showing roofs.
+roofing-overlay-on = Now showing roofs.
