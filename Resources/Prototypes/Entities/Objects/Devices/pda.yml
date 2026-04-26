@@ -178,13 +178,22 @@
 - type: entity
   parent: BasePDA
   id: PassengerPDA
-  name: passenger PDA
-  description: Why isn't it gray?
+  name: colonist PDA # TC14 - colonist role tweaks
+  description: Standard issue PDA for all Andromeda expedition program participants. # TC14 - colonist role tweaks
   components:
   - type: Pda
     id: PassengerIDCard
   - type: PdaBorderColor
     borderColor: "#717059"
+  # TC14 - Begin - colonist role tweaks
+  - type: CartridgeLoader
+    uiKey: enum.PdaUiKey.Key
+    preinstalled:
+    - CrewManifestCartridge
+    - NotekeeperCartridge
+    - NanoTaskCartridge
+    - AstroNavCartridge
+  # TC14 - End
 
 - type: entity
   parent: BasePDA
