@@ -54,7 +54,7 @@
   suffix: Item
   parent: BaseItem
   name: anvil
-  description: A big piece of metal that allows you to turn square pieces of metal into pieces of metal in other, more useful shapes.
+  description: You could probably do some smithing on it, but you'll need to place it down first.
   components:
   - type: Item
     size: Ginormous

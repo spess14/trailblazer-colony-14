@@ -3,6 +3,8 @@
   start: start
   graph:
   - node: start
+    actions:
+    - !type:DestroyEntity { }
     edges:
     - to: anvil
       steps:
@@ -13,3 +15,12 @@
         name: construction-graph-tag-anvil
   - node: anvil
     entity: CP14WorkbenchAnvilPlaced
+    edges:
+    - to: start
+      completed:
+      - !type:SpawnPrototype
+        prototype: CP14WorkbenchAnvilItem
+        amount: 1
+      steps:
+      - tool: Screwing
+        doAfter: 1
