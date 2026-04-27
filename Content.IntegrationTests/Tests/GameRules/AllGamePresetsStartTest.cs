@@ -173,7 +173,9 @@ public sealed class AllGamePresetsStartTest : GameTest
         Assert.That(entMan.Count<MapGridComponent>(), Is.GreaterThan(0));
         Assert.That(entMan.Count<StationCentcommComponent>(), Is.EqualTo(1));
 
+        // Clear game preset and return to lobby
         await Pair.WaitCommand("golobby");
+        ticker.SetGamePreset((GamePresetPrototype) null);
         await Pair.RunUntilSynced();
 
         // Moffstation - Begin - Modifies the test to be able to handle out-of-order antags. All of upstream seems to depend on a specific order or specific set of distinct antags rolling. Moffstation has different antags, so we need the test to be a little more flexible. Woe upon ye for needing such intense shitcode to be a LITTLE more flexible.
