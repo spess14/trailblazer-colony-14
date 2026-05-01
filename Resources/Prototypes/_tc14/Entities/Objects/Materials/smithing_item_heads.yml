@@ -52,3 +52,12 @@
   - type: Construction
     node: sledgehammer
 
+- type: entity
+  parent: BaseSmithingItemHead
+  id: AxeHead
+  name: axe head
+  components:
+  - type: Sprite
+    state: axe-head
+  - type: Construction
+    node: axe

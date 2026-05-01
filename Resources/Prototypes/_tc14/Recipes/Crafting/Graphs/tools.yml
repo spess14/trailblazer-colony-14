@@ -36,7 +36,14 @@
       - tag: Rock
         name: construction-graph-tag-rock
         doAfter: 3
+    - to: axe
+      steps:
+      - tag: FlakingRock
+        name: construction-graph-tag-flaking-rock
+        doAfter: 2
   - node: pickaxe
     entity: StonePickaxe
   - node: shovel
     entity: StoneShovel
+  - node: axe
+    entity: StoneAxe

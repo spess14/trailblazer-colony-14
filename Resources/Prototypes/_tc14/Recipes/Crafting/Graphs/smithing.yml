@@ -91,6 +91,12 @@
       steps:
       - tool: Chiseling
         doAfter: 2
+    - to: axe
+      conditions:
+      - !type:HasAnvilAtTile { }
+      steps:
+      - tool: Hammering
+        doAfter: 2
   # Results
   - node: claymore
     entity: ClaymoreBlade
@@ -124,6 +130,14 @@
       - tag: Handle
         name: construction-graph-tag-handle
         doAfter: 1
+  - node: axe
+    entity: AxeHead
+    edges:
+    - to: s-axe
+      steps:
+      - tag: Handle
+        name: construction-graph-tag-handle
+        doAfter: 1
   # Weapons
   - node: s-pike
     entity: SmithedSteelPike
@@ -135,3 +149,5 @@
     entity: SmithedLongsword
   - node: s-sledgehammer
     entity: SmithedSledgehammer
+  - node: s-axe
+    entity: SmithedAxe

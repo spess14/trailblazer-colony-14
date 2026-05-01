@@ -65,3 +65,25 @@
   - type: Construction
     graph: Smithing
     node: s-sledgehammer
+
+- type: entity
+  name: smithed axe
+  parent: StoneAxe
+  id: SmithedAxe
+  components:
+  - type: Construction
+    graph: Smithing
+    node: s-axe
+  - type: Sprite
+    sprite: _tc14/Objects/Weapons/Melee/steelaxe.rsi
+  - type: MeleeWeapon
+    damage:
+      types:
+        Blunt: 5
+        Slash: 5
+        Structural: 10
+  - type: IncreaseDamageOnWield
+    damage:
+      types:
+        Slash: 5
+        Structural: 10
