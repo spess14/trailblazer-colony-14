@@ -5201,6 +5201,14 @@ Entries:
   url: https://github.com/moff-station/moff-station-14/pull/1349
 - author: Centronias
   changes:
+  - message: Removing modules from modular HUDs while the HUD is equipped will no
+      longer cause the removed module's HUD effect to linger indefinitely.
+    type: fix
+  id: 1350
+  time: '2026-05-03T18:09:39.000'
+  url: https://github.com/moff-station/moff-station-14/pull/1350
+- author: Centronias
+  changes:
   - message: Liquid gasses are no longer for sale from cargo.
     type: remove
   id: 1351
@@ -5245,6 +5253,21 @@ Entries:
   id: 1353
   time: '2026-05-03T17:33:43.000'
   url: https://github.com/moff-station/moff-station-14/pull/1353
+- author: Centronias
+  changes:
+  - message: Salvage borgs' traversal modules now include a station map
+    type: add
+  - message: Mediborgs' rescue module now includes a mass scanner and station map
+    type: add
+  - message: Engiborgs' RCD module now includes a mass scanner and station map
+    type: add
+  - message: Cyborgs' GPSes have been combined with a mass scanner to reduce the number
+      of items they have to juggle. This affects the above modules as well as the
+      generic thruster module.
+    type: tweak
+  id: 1357
+  time: '2026-05-03T18:09:39.000'
+  url: https://github.com/moff-station/moff-station-14/pull/1357
 - author: Kyle Tyo
   changes:
   - message: Borg vision should no longer "randomly" be occluded by the damage overlay.
