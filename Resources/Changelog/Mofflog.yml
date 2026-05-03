@@ -5255,6 +5255,15 @@ Entries:
   url: https://github.com/moff-station/moff-station-14/pull/1353
 - author: Centronias
   changes:
+  - message: Borg ore bags can magnetize ore like their standard counterparts.
+    type: add
+  - message: Borg ore bags' magnetization is toggleable.
+    type: add
+  id: 1356
+  time: '2026-05-03T18:51:25.000'
+  url: https://github.com/moff-station/moff-station-14/pull/1356
+- author: Centronias
+  changes:
   - message: Salvage borgs' traversal modules now include a station map
     type: add
   - message: Mediborgs' rescue module now includes a mass scanner and station map
