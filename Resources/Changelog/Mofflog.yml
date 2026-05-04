@@ -5180,6 +5180,13 @@ Entries:
   id: 1337
   time: '2026-04-27T17:43:31.000'
   url: https://github.com/moff-station/moff-station-14/pull/1337
+- author: Tortosaur
+  changes:
+  - message: Folding table is here. GET READY TO RRRRUMBLE!
+    type: add
+  id: 1338
+  time: '2026-05-04T19:16:18.000'
+  url: https://github.com/moff-station/moff-station-14/pull/1338
 - author: DuckManZach
   changes:
   - message: Scream will always come second in the action bar
