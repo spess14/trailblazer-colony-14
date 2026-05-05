@@ -151,8 +151,10 @@
   - type: MobThresholds
     thresholds:
       0: Alive
-      100: Critical
-      200: Dead
+      # TC14 - Begin - increase HP thresholds
+      200: Critical
+      300: Dead
+      # TC14 - End
   - type: MobStateActions
     actions:
       Critical:
