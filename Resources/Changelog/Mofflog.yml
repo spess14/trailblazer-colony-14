@@ -5291,5 +5291,12 @@ Entries:
   id: 1359
   time: '2026-05-03T17:51:52.000'
   url: https://github.com/moff-station/moff-station-14/pull/1359
+- author: Centronias
+  changes:
+  - message: Added All Saints' Day's personal item.
+    type: add
+  id: 1368
+  time: '2026-05-05T22:57:11.000'
+  url: https://github.com/moff-station/moff-station-14/pull/1368
 Name: Mofflog
 Order: -2
