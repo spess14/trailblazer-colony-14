@@ -5322,5 +5322,13 @@ Entries:
   id: 1369
   time: '2026-05-06T04:40:28.000'
   url: https://github.com/moff-station/moff-station-14/pull/1369
+- author: SeaWyrm
+  changes:
+  - message: Added a tiny chance that coffins and graves with skeletal remains in
+      them will have a beetle suit
+    type: add
+  id: 1373
+  time: '2026-05-06T09:13:46.000'
+  url: https://github.com/moff-station/moff-station-14/pull/1373
 Name: Mofflog
 Order: -2
