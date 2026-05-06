@@ -5307,5 +5307,13 @@ Entries:
   id: 1368
   time: '2026-05-05T22:57:11.000'
   url: https://github.com/moff-station/moff-station-14/pull/1368
+- author: Centronias
+  changes:
+  - message: PKA mods no longer require you to wield the PKA they're inserted into
+      to apply their effects.
+    type: fix
+  id: 1369
+  time: '2026-05-06T04:40:28.000'
+  url: https://github.com/moff-station/moff-station-14/pull/1369
 Name: Mofflog
 Order: -2
