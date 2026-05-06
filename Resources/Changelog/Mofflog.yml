@@ -4594,6 +4594,15 @@ Entries:
   id: 1196
   time: '2026-04-04T18:37:45.000'
   url: https://github.com/moff-station/moff-station-14/pull/1196
+- author: Dave
+  changes:
+  - message: Resprite Job Icons & The Mindshield
+    type: tweak
+  - message: New Job Icons for Moffstation-unique roles
+    type: add
+  id: 1197
+  time: '2026-05-06T01:54:26.000'
+  url: https://github.com/moff-station/moff-station-14/pull/1197
 - author: Huaqas, Centronias
   changes:
   - message: Go Fish! A new card game can be found in the Games Clean Fun Vendor!
