@@ -5324,11 +5324,35 @@ Entries:
   url: https://github.com/moff-station/moff-station-14/pull/1369
 - author: SeaWyrm
   changes:
+  - message: 'Ossuary: Gave Security back their wall recharger'
+    type: add
+  - message: 'Ossuary: Put more O2/N2 cans in maints'
+    type: add
+  - message: 'Ossuary: Gave Salvage a closet with some backup machine boards and stuff'
+    type: add
+  - message: 'Ossuary: Put meteor shielding around Salvage arm'
+    type: add
+  - message: 'Ossuary: Reworked cargo docking area'
+    type: tweak
+  - message: 'Ossuary: Removed wanted cartridge from detective''s office'
+    type: remove
+  id: 1372
+  time: '2026-05-06T09:42:45.000'
+  url: https://github.com/moff-station/moff-station-14/pull/1372
+- author: SeaWyrm
+  changes:
   - message: Added a tiny chance that coffins and graves with skeletal remains in
       them will have a beetle suit
     type: add
   id: 1373
   time: '2026-05-06T09:13:46.000'
   url: https://github.com/moff-station/moff-station-14/pull/1373
+- author: Huaqas
+  changes:
+  - message: Go Fish now lists 'Carp' correctly!
+    type: fix
+  id: 1374
+  time: '2026-05-06T09:42:45.000'
+  url: https://github.com/moff-station/moff-station-14/pull/1374
 Name: Mofflog
 Order: -2
