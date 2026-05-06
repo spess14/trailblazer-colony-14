@@ -5161,6 +5161,16 @@ Entries:
   id: 1326
   time: '2026-04-26T20:32:41.000'
   url: https://github.com/moff-station/moff-station-14/pull/1326
+- author: Tortosaur
+  changes:
+  - message: The Compound bow is here, it comes with a quiver full of carp arrows
+      ready for salvagers' hunt!
+    type: add
+  - message: New rank 2 salvager order is avalaible, a quiver full of plasma arrows.
+    type: add
+  id: 1327
+  time: '2026-05-06T10:01:03.000'
+  url: https://github.com/moff-station/moff-station-14/pull/1327
 - author: DuckManZach
   changes:
   - message: readded tourists for real this time
