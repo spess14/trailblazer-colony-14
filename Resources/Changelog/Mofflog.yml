@@ -5279,6 +5279,14 @@ Entries:
   id: 1353
   time: '2026-05-03T17:33:43.000'
   url: https://github.com/moff-station/moff-station-14/pull/1353
+- author: Tortosaur
+  changes:
+  - message: Salvage cyborg exclusive wildlife control module with a knife and a weaker
+      PKA .
+    type: add
+  id: 1355
+  time: '2026-05-07T19:05:17.000'
+  url: https://github.com/moff-station/moff-station-14/pull/1355
 - author: Centronias
   changes:
   - message: Borg ore bags can magnetize ore like their standard counterparts.
