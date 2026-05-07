@@ -1,6 +1,6 @@
 - type: entity
-  id: BaseBorgModuleMagboots
   parent: BaseBorgModule
+  id: BaseBorgModuleMagboots
   name: magboot module
   description: A cyborg module which grant the unit magboots ability.
   abstract: true
@@ -290,3 +290,30 @@
     - item: WeaponShotgunBlackbox
   - type: BorgModuleIcon
     icon: { sprite: _Moffstation/Interface/Actions/actions_borg.rsi, state: pirate-module }
+
+- type: entity
+  id: BorgModuleWildlifeControl
+  parent: [ BaseBorgModuleCargo, BaseProviderBorgModule ]
+  name: wildlife cyborg module
+  description: Designed for salvaging in a wildlife-heavy environment, this module comes with a stabbing tool and modified proto-kinetic particle accelerator to "tame" fauna from afar.
+  components:
+  - type: Sprite
+    layers:
+    - state: cargo
+    - sprite: _Moffstation/Objects/Specific/Robotics/borgmodule.rsi
+      state: icon-wildlife
+  - type: ItemBorgModule
+    hands:
+    - item: WeaponProtoKineticAcceleratorIntegrated
+    - item: SurvivalKnife
+    - hand:
+        emptyRepresentative: PKAUpgradeDamage
+        emptyLabel: borg-slot-pka-modkit-empty
+        whitelist:
+          tags:
+          - PKAUpgrade
+  - type: BorgModuleIcon
+    icon: { sprite: _Moffstation/Interface/Actions/actions_borg.rsi, state: wildlife-module }
+  - type: Tag
+    tags:
+    - BorgModuleCargo
