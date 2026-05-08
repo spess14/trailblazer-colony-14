@@ -5318,6 +5318,20 @@ Entries:
   id: 1359
   time: '2026-05-03T17:51:52.000'
   url: https://github.com/moff-station/moff-station-14/pull/1359
+- author: Tortosaur
+  changes:
+  - message: Engineering, rescue, traversal and thruster module no longer grant the
+      magboots ability.
+    type: remove
+  - message: New magboots module is now avalaible.
+    type: add
+  - message: Engineering and salvage cyborg now start with the magboots ability.
+    type: add
+  - message: New advanced traversal module is avalaible to the salvage borg.
+    type: add
+  id: 1366
+  time: '2026-05-08T22:31:40.000'
+  url: https://github.com/moff-station/moff-station-14/pull/1366
 - author: Centronias
   changes:
   - message: Added Jace Finlay's personal item.
