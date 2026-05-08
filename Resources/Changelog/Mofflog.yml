@@ -5318,6 +5318,15 @@ Entries:
   id: 1359
   time: '2026-05-03T17:51:52.000'
   url: https://github.com/moff-station/moff-station-14/pull/1359
+- author: Dave
+  changes:
+  - message: New Decabinetified sprites
+    type: add
+  - message: Briefcases & Medkits can be opened now!
+    type: add
+  id: 1361
+  time: '2026-05-08T22:55:54.000'
+  url: https://github.com/moff-station/moff-station-14/pull/1361
 - author: Tortosaur
   changes:
   - message: Engineering, rescue, traversal and thruster module no longer grant the
