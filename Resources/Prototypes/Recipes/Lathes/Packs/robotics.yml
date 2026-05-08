@@ -45,6 +45,7 @@
   - BorgModuleAdvancedMining
   - BorgModuleAdvancedAnomaly # Moffstation - Scienceborg
   - BorgModuleFoamForceGallant # Moffstation - Foam force module
+  - BorgModuleAdvancedTraversal # Moffstation - Salvborg advanced thruster
   # Moffstation - Start - specialty lite modules
   - BorgModuleConstructionGeneric
   - BorgModuleCustodialGeneric
@@ -53,6 +54,7 @@
   - BorgModuleScienceGeneric
   - BorgModuleTopicalsGeneric
   - BorgModuleWildlifeControl
+  - BorgModuleGravity
   # Moffstation - End
 
 - type: latheRecipePack
