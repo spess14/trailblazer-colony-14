@@ -1,5 +1,5 @@
 - type: entity
-  parent: BaseBowVisuals
+  parent: [ BaseBowVisuals, BaseCargoContraband ]
   id: CompoundBow
   name: Compound Bow
   description: A bow with a pulley system that lightens the draw, designed for old fashioned hunting.
@@ -8,4 +8,3 @@
     sprite: _Moffstation/Objects/Weapons/Guns/Bow/bow.rsi
   - type: UseDelay
     delay: 0.5
-    
