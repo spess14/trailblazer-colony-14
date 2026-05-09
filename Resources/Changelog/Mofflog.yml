@@ -5213,6 +5213,13 @@ Entries:
   id: 1341
   time: '2026-04-28T00:06:50.000'
   url: https://github.com/moff-station/moff-station-14/pull/1341
+- author: MissKay1994
+  changes:
+  - message: Added a new station, Lambda Station!
+    type: add
+  id: 1345
+  time: '2026-05-09T23:14:05.000'
+  url: https://github.com/moff-station/moff-station-14/pull/1345
 - author: DuckManZach
   changes:
   - message: Removed the "worn" sprite for PDAs
