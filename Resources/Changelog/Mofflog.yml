@@ -5416,6 +5416,17 @@ Entries:
   id: 1375
   time: '2026-05-06T19:44:17.000'
   url: https://github.com/moff-station/moff-station-14/pull/1375
+- author: Mae
+  changes:
+  - message: Resomi night vision can be re-enabled by toggling a syndicate or welding
+      gas mask
+    type: tweak
+  - message: Resomi night vision won't disable if flash protecting items are in their
+      pockets
+    type: fix
+  id: 1378
+  time: '2026-05-10T20:26:59.000'
+  url: https://github.com/moff-station/moff-station-14/pull/1378
 - author: Velken
   changes:
   - message: Added mechroach variation to mothroaches.
