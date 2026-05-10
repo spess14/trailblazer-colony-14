@@ -4868,6 +4868,13 @@ Entries:
   id: 1270
   time: '2026-04-16T21:18:04.000'
   url: https://github.com/moff-station/moff-station-14/pull/1270
+- author: Dave
+  changes:
+  - message: Resprites Basic Walls & Windows
+    type: add
+  id: 1273
+  time: '2026-05-10T01:26:42.000'
+  url: https://github.com/moff-station/moff-station-14/pull/1273
 - author: StudMuffin
   changes:
   - message: d4rling AI display
