@@ -5452,5 +5452,13 @@ Entries:
   id: 1383
   time: '2026-05-11T16:16:04.000'
   url: https://github.com/moff-station/moff-station-14/pull/1383
+- author: Centronias
+  changes:
+  - message: Science cyborg modules now correctly say they go into science chassis,
+      not generic ones.
+    type: fix
+  id: 1386
+  time: '2026-05-11T23:19:50.000'
+  url: https://github.com/moff-station/moff-station-14/pull/1386
 Name: Mofflog
 Order: -2
