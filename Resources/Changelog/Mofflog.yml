@@ -5416,6 +5416,15 @@ Entries:
   id: 1375
   time: '2026-05-06T19:44:17.000'
   url: https://github.com/moff-station/moff-station-14/pull/1375
+- author: DuckManZach
+  changes:
+  - message: Common radio channel can no longer be spoken over headsets.
+    type: add
+  - message: Added PDA SoS App.
+    type: add
+  id: 1376
+  time: '2026-05-12T16:42:43.000'
+  url: https://github.com/moff-station/moff-station-14/pull/1376
 - author: mayzmae
   changes:
   - message: Resomi night vision can be re-enabled by toggling a syndicate or welding
