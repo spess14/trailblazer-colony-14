@@ -5485,5 +5485,16 @@ Entries:
   id: 1388
   time: '2026-05-12T17:02:15.000'
   url: https://github.com/moff-station/moff-station-14/pull/1388
+- author: Dave
+  changes:
+  - message: new secret door sprites.
+    type: add
+  - message: windows sprites adjusted.
+    type: tweak
+  - message: rusted walls now a more rustier rusty.
+    type: tweak
+  id: 1389
+  time: '2026-05-13T00:29:14.000'
+  url: https://github.com/moff-station/moff-station-14/pull/1389
 Name: Mofflog
 Order: -2
