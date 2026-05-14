@@ -5468,6 +5468,13 @@ Entries:
   id: 1380
   time: '2026-05-08T20:07:15.000'
   url: https://github.com/moff-station/moff-station-14/pull/1380
+- author: DuckManZach
+  changes:
+  - message: touched up new job icons
+    type: tweak
+  id: 1381
+  time: '2026-05-14T18:39:46.000'
+  url: https://github.com/moff-station/moff-station-14/pull/1381
 - author: Centronias
   changes:
   - message: The respawn timer shouldn't be totally wildly wrong anymore. I hope.
