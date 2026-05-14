@@ -5476,6 +5476,15 @@ Entries:
   id: 1386
   time: '2026-05-11T23:19:50.000'
   url: https://github.com/moff-station/moff-station-14/pull/1386
+- author: DuckManZach
+  changes:
+  - message: Added moth voice sfx!
+    type: add
+  - message: Added moth emote sfx!
+    type: add
+  id: 1387
+  time: '2026-05-14T05:17:22.000'
+  url: https://github.com/moff-station/moff-station-14/pull/1387
 - author: MissKay1994
   changes:
   - message: Updated Lambda with suggested changes
