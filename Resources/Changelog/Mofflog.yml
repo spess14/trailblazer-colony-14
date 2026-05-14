@@ -5384,6 +5384,13 @@ Entries:
   id: 1369
   time: '2026-05-06T04:40:28.000'
   url: https://github.com/moff-station/moff-station-14/pull/1369
+- author: Davyei, Exbedio
+  changes:
+  - message: new command clothing!
+    type: add
+  id: 1371
+  time: '2026-05-14T06:23:14.000'
+  url: https://github.com/moff-station/moff-station-14/pull/1371
 - author: SeaWyrm
   changes:
   - message: 'Ossuary: Gave Security back their wall recharger'
