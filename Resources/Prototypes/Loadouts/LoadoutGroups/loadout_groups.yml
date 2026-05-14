@@ -201,6 +201,7 @@
   - CaptainOuterClothing
   - CaptainWintercoat
   # Moffstation - Start
+  - CaptainTrenchcoat
   - CaptainLongcoat
   - CaptainFestivecoat
   # Moffstation - End
@@ -242,6 +243,7 @@
   loadouts:
   - HoPCloak
   - HoPMantle
+  - HoPScarf # Moffstation
 
 - type: loadoutGroup
   id: HoPBackpack
@@ -990,6 +992,7 @@
   - ChiefEngineerJumpskirt
   - ChiefEngineerTurtleneck
   - ChiefEngineerTurtleneckSkirt
+  - CEFormal # Moffstation
 
 - type: loadoutGroup
   id: ChiefEngineerNeck
@@ -1172,6 +1175,7 @@
   loadouts:
   - ResearchDirectorMantle
   - ResearchDirectorCloak
+  - RdScarf # Moffstation
 
 - type: loadoutGroup
   id: ResearchDirectorJumpsuit
@@ -1340,6 +1344,7 @@
   # Moffstation - Start
   - HeadofSecurityWestern
   - HeadofSecurityFestive
+  - HeadofSecuritySummer
   # Moffstation - End
 
 - type: loadoutGroup
@@ -1349,6 +1354,7 @@
   loadouts:
   - HeadofSecurityCloak
   - HeadofSecurityMantle
+  - HOSScarf # Moffstation
 
 - type: loadoutGroup
   id: HeadofSecurityOuterClothing
@@ -1359,6 +1365,7 @@
   # Moffstation - Start
   - HeadofSecurityCarapace
   - HeadofSecurityWintercoatSmall
+  - HeadofSecuritySummerCoat
   # Moffstation - End
 - type: loadoutGroup
   id: HeadofSecurityJobTrinkets
