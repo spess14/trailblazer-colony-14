@@ -14,6 +14,8 @@
   maxLimit: 2
   loadouts:
   - PersonalItemAdelineTurtleneck
+  - PersonalItemAineBeret
+  - PersonalItemAllSaintsDayCrook
   - PersonalItemAnatolyGown
   - PersonalItemAngelPiano
   - PersonalItemArieApple
@@ -45,6 +47,7 @@
   - PersonalItemIchabodHead
   - PersonalItemIoImplanter
   - PersonalItemIrisRing
+  - PersonalItemJaceFinlayMask
   - PersonalItemJessMask
   - PersonalItemJibberPistol
   - PersonalItemJulieFavOutfit
@@ -62,6 +65,7 @@
   - PersonalItemMarvinHeadphones
   - PersonalItemMossCloak
   - PersonalItemNiahLighter
+  - PersonalItemNotafezBible
   - PersonalItemNyxilathPositronicHeart
   - PersonalItemPeedeeAvatar
   - PersonalItemPeriwinkleFace
@@ -99,3 +103,4 @@
   - PersonalItemVexMask
   - PersonalItemVivonicMantle
   - PersonalItemVortexMask
+  - PersonalItemZoeyPicture
