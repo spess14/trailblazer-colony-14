@@ -1,6 +1,7 @@
 using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
+using Content.Server._Moffstation.Antag;
 using Content.Server.Administration.Managers;
 using Content.Server.Antag.Components;
 using Content.Server.Chat.Managers;
@@ -72,6 +73,8 @@ public sealed partial class AntagSelectionSystem : GameRuleSystem<AntagSelection
     [Dependency] private readonly RoleSystem _role = default!;
     [Dependency] private readonly TransformSystem _transform = default!;
 
+    [Dependency] private readonly WeightedAntagManager _weightedAntagMan = default!; // Moffstation
+
     // arbitrary random number to give late joining some mild interest.
     public const float LateJoinRandomChance = 0.5f;
 
@@ -111,6 +114,8 @@ public sealed partial class AntagSelectionSystem : GameRuleSystem<AntagSelection
         SubscribeLocalEvent<NoJobsAvailableSpawningEvent>(OnJobNotAssigned);
         SubscribeLocalEvent<RulePlayerJobsAssignedEvent>(OnJobsAssigned);
         SubscribeLocalEvent<PlayerSpawnCompleteEvent>(OnSpawnComplete);
+
+        SubscribeLocalEvent<RoundRestartCleanupEvent>(OnRoundRestartCleanup); // Moffstation - Persist antag weights at round-end.
     }
 
     protected override void Started(EntityUid uid, AntagSelectionComponent component, GameRuleComponent gameRule, GameRuleStartedEvent args)
@@ -335,8 +340,7 @@ public sealed partial class AntagSelectionSystem : GameRuleSystem<AntagSelection
 
     private float GetWeight(ICommonSession player)
     {
-        // TODO: Actually add weights! This is placeholder for a future PR.
-        return 1f;
+        return _weightedAntagMan.GetWeight(player.UserId); // Moffstation - We have antag weights, so they can cleanly slot into here.
     }
 
     private void AssignAntags(Entity<AntagSelectionComponent> gameRule)
@@ -764,7 +768,11 @@ public sealed partial class AntagSelectionSystem : GameRuleSystem<AntagSelection
         if (prototype.StartingGear is not null)
             gear.Add(prototype.StartingGear.Value);
 
-        _loadout.Equip(antag, gear, prototype.RoleLoadout);
+        // Moffstation - Begin - Use LoadoutAwareEquip function to equip Roleloadout and Starting gear, this allows custom loadouts for antags.
+        // _loadout.Equip(antag, gear, prototype.RoleLoadout);
+        var profile = _pref.GetPreferences(player.UserId).SelectedCharacter;
+        _loadout.LoadoutAwareEquip(antag, player, gear, prototype.RoleLoadout, profile);
+        // Moffstation - End
 
         // Ensure that we have a mind for our entity!
         if (player.GetMind() is not { } mind
@@ -780,6 +788,11 @@ public sealed partial class AntagSelectionSystem : GameRuleSystem<AntagSelection
         _adminLogger.Add(LogType.AntagSelection, $"Assigned {ToPrettyString(antag):target}, mind {ToPrettyString(mind):target} as antagonist: {ToPrettyString(gameRule):user}");
 
         SendBriefing(player, prototype.Briefing);
+
+        // Moffstation - Begin - If this rule uses antag weights, "consume" the weighting, now that they've been selected.
+        if (gameRule.Comp.UseWeights)
+            _weightedAntagMan.SetWeight(player.UserId, 1);
+        // Moffstation - End
 
         var afterEv = new AfterAntagEntitySelectedEvent(player, antag, gameRule, prototype);
         RaiseLocalEvent(gameRule, ref afterEv, true);
@@ -807,6 +820,13 @@ public sealed partial class AntagSelectionSystem : GameRuleSystem<AntagSelection
         args.Minds = GetAntagIdentities(ent.AsNullable()).ToList();
         args.AgentName = Loc.GetString(name);
     }
+
+    // Moffstation - Begin - Weighted antag weights persistence
+    private void OnRoundRestartCleanup(RoundRestartCleanupEvent args)
+    {
+        _ = _weightedAntagMan.Save();
+    }
+    // Moffstation - End
 }
 
 /// <summary>
