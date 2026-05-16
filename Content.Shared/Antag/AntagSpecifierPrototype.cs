@@ -90,6 +90,14 @@ public sealed partial class AntagSpecifierPrototype : IPrototype, IInheritingPro
     [AlwaysPushInheritance]
     public ComponentRegistry Components = new();
 
+    // Moffstation - Begin
+    /// <summary>
+    /// Components which shouldn't be verified as being added to this antag in tests, because it removes itself on initialization.
+    /// </summary>
+    [DataField, AlwaysPushInheritance]
+    public HashSet<string> DoNotCheckComponents = new();
+    // Moffstation - End
+
     /// <summary>
     /// Components added to the player's mind.
     /// Do NOT use this to add role-type components. Add those as MindRoles instead

@@ -62,7 +62,7 @@ public sealed partial class AntagSelectionSystem : GameRuleSystem<AntagSelection
     [Dependency] private readonly IPlayerManager _playerManager = default!;
     [Dependency] private readonly IServerPreferencesManager _pref = default!;
     [Dependency] private readonly ISharedAdminLogManager _adminLogger = default!;
-    [Dependency] private readonly ArrivalsSystem _arrivals = default!;
+    // [Dependency] private readonly ArrivalsSystem _arrivals = default!; // Moffstation
     [Dependency] private readonly AudioSystem _audio = default!;
     [Dependency] private readonly EntityWhitelistSystem _whitelist = default!;
     [Dependency] private readonly GhostRoleSystem _ghostRole = default!;
@@ -340,7 +340,8 @@ public sealed partial class AntagSelectionSystem : GameRuleSystem<AntagSelection
 
     private float GetWeight(ICommonSession player)
     {
-        return _weightedAntagMan.GetWeight(player.UserId); // Moffstation - We have antag weights, so they can cleanly slot into here.
+        return 1f;
+        // return _weightedAntagMan.GetWeight(player.UserId); // Moffstation - We have antag weights, so they can cleanly slot into here.
     }
 
     private void AssignAntags(Entity<AntagSelectionComponent> gameRule)

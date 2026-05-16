@@ -295,7 +295,6 @@
   - type: RandomSpawnRule
     prototype: MobRevenant
 
-# TODO CENT MERGE    - JobWizard   # Moffstation - Enable custom wizard name/loadout
 - type: entity
   parent: [ BaseAntagGhostRoleRule, BaseWizardRule ]
   id: WizardSpawn
@@ -505,7 +504,6 @@
   - type: DynamicRuleCost
     cost: 200
 
-# TODO CENT MERGE    - JobNukeops  # Moffstation - Enable custom nukie name/loadout
 - type: entity
   parent: [ BaseAntagGhostRoleRule, BaseNukeopsRule ]
   id: LoneOpsSpawn

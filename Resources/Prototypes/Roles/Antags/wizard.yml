@@ -23,6 +23,7 @@
   startingGear: WizardBlueGear
   roleLoadout:
   - RoleSurvivalExtended
+  - JobWizard # Moffstation - Enable custom wizard name/loadout
   briefing:
     text: wizard-role-greeting
     color: Turquoise

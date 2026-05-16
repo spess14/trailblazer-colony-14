@@ -46,6 +46,7 @@
   - GenericTeamAntagonist # For antag ban purposes
   roleLoadout:
   - RoleSurvivalNukie
+  - JobNukeops
   components:
   - type: NukeOperative
   - type: NpcFactionMember
@@ -59,6 +60,9 @@
   - NukeopsCommander
   spawnerPrototype: SpawnPointNukeopsCommander
   startingGear: SyndicateCommanderGearFull
+  roleLoadout:
+  - RoleSurvivalNukie
+  - JobNukeopsCommander # Moffstation - Enable custom nukie name/loadout
   components:
   - type: RandomMetadata
     nameSegments:
@@ -74,6 +78,9 @@
   - NukeopsMedic
   spawnerPrototype: SpawnPointNukeopsMedic
   startingGear: SyndicateOperativeMedicFull
+  roleLoadout:
+  - RoleSurvivalNukie
+  - JobNukeopsMedic # Moffstation - Enable custom nukie name/loadout
   components:
   - type: RandomMetadata
     nameSegments:

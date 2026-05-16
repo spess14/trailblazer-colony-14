@@ -45,9 +45,6 @@
   - type: GameRule
     cancelPresetOnTooFewPlayers: false
 
-# TODO CENT MERGE:
-#      roleLoadout: [JobMothershipCore] # Moffstation
-      #roleLoadout: [JobXenoborg] # Moffstation
 - type: entity
   parent: BaseXenoborgsRule
   id: SubXenoborgs

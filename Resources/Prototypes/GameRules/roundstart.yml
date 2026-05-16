@@ -141,10 +141,6 @@
     #Balance concerns are not a valid reason to disable a species, except for high-impact Nukie-specific exploits.
     #- Vox
 
-# TODO CENT MERGE:
-# - JobNukeopsCommander   # Moffstation - Enable custom nukie name/loadout
-# - JobNukeopsMedic   # Moffstation - Enable custom nukie name/loadout
-# - JobNukeops  # Moffstation - Enable custom nukie name/loadout
 - type: entity
   parent: [ BaseNukeopsRule, BaseRoundstartAntagRule ]
   id: Nukeops
@@ -239,11 +235,11 @@
   components:
   - type: GameRule
     minPlayers: 15
-    # Moffstation - Begin - Delay revs so that everyone spawning at the arrivals terminal doesn't end the round
-    delay:
-      min: 300
-      max: 300
-    # Moffstation - End
+#    # Moffstation - Begin - Delay revs so that everyone spawning at the arrivals terminal doesn't end the round
+#    delay:
+#      min: 300
+#      max: 300
+#    # Moffstation - End
   - type: RevolutionaryRule
   - type: AntagSelection
     selectionTime: PrePlayerSpawn
@@ -289,7 +285,6 @@
   - type: AntagLoadProfileRule
     speciesOverride: Human
 
-# TODO CENT MERGE - JobWizard    # Moffstation - Enable custom wizard name/loadout
 - type: entity
   parent: [ BaseWizardRule, BaseRoundstartAntagRule ]
   id: Wizard
