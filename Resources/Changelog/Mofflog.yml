@@ -5526,6 +5526,15 @@ Entries:
   id: 1389
   time: '2026-05-13T00:29:14.000'
   url: https://github.com/moff-station/moff-station-14/pull/1389
+- author: KentoDaNeko
+  changes:
+  - message: Added a nukiesw/syndicate variation to mothroaches.
+    type: add
+  - message: More unique mothroach variants are now rarer.
+    type: tweak
+  id: 1390
+  time: '2026-05-16T03:05:08.000'
+  url: https://github.com/moff-station/moff-station-14/pull/1390
 - author: DuckManZach
   changes:
   - message: Gamemodes are now selected based on the number of readied players
