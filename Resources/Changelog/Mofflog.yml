@@ -5533,5 +5533,12 @@ Entries:
   id: 1399
   time: '2026-05-15T17:15:11.000'
   url: https://github.com/moff-station/moff-station-14/pull/1399
+- author: DuckManZach
+  changes:
+  - message: Made it so that max scale characters no longer mess with the UI
+    type: fix
+  id: 1400
+  time: '2026-05-16T01:58:18.000'
+  url: https://github.com/moff-station/moff-station-14/pull/1400
 Name: Mofflog
 Order: -2
