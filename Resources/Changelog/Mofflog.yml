@@ -5574,5 +5574,13 @@ Entries:
   id: 1407
   time: '2026-05-18T21:54:58.000'
   url: https://github.com/moff-station/moff-station-14/pull/1407
+- author: nithead10
+  changes:
+  - message: slimepeople will no longer be missing half their blood after transforming
+      back from geras.
+    type: fix
+  id: 1408
+  time: '2026-05-18T22:40:58.000'
+  url: https://github.com/moff-station/moff-station-14/pull/1408
 Name: Mofflog
 Order: -2
