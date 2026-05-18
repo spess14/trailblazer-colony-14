@@ -665,18 +665,21 @@ public abstract partial class SharedSolutionContainerSystem : EntitySystem
     /// <summary>
     ///     Adds a solution to the container, if it can fully fit.
     /// </summary>
-    /// <param name="solution">Solution we are adding to</param>
+    /// <param name="targetUid">entity holding targetSolution</param>
+    /// <param name="targetSolution">entity holding targetSolution</param>
     /// <param name="toAdd">solution being added</param>
     /// <returns>If the solution could be added.</returns>
-    public bool TryAddSolution(Entity<SolutionComponent> solution, Solution toAdd)
+    public bool TryAddSolution(Entity<SolutionComponent> soln, Solution toAdd)
     {
+        var (uid, comp) = soln;
+        var solution = comp.Solution;
+
         if (toAdd.Volume == FixedPoint2.Zero)
             return true;
-
-        if (toAdd.Volume > solution.Comp.Solution.AvailableVolume)
+        if (toAdd.Volume > solution.AvailableVolume)
             return false;
 
-        ForceAddSolution((solution, solution.Comp), toAdd);
+        ForceAddSolution(soln, toAdd);
         return true;
     }
 

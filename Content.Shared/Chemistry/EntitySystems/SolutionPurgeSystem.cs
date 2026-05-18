@@ -27,8 +27,9 @@ public sealed class SolutionPurgeSystem : EntitySystem
     {
         base.Update(frameTime);
 
-        var query = EntityQueryEnumerator<SolutionPurgeComponent, SolutionComponent>();
-        while (query.MoveNext(out var uid, out var purge, out var solution))
+        // TODO: SolutionPurgeComponent on Solution Entities!
+        var query = EntityQueryEnumerator<SolutionPurgeComponent, SolutionManagerComponent>();
+        while (query.MoveNext(out var uid, out var purge, out var manager))
         {
             if (_timing.CurTime < purge.NextPurgeTime)
                 continue;
@@ -38,9 +39,12 @@ public sealed class SolutionPurgeSystem : EntitySystem
             // Needs to be networked and dirtied so that the client can reroll it during prediction
             Dirty(uid, purge);
 
-            _solutionContainer.SplitSolutionWithout((uid, solution),
-                purge.Quantity,
-                purge.Preserve.ToArray());
+            if (_solutionContainer.TryGetSolution((uid, manager), purge.Solution, out var solution))
+            {
+                _solutionContainer.SplitSolutionWithout(solution.Value,
+                    purge.Quantity,
+                    purge.Preserve.Select(proto => proto.Id).ToArray());
+            }
         }
     }
 }
