@@ -57,10 +57,10 @@ public sealed partial class AdminSystem : EntitySystem
     [Dependency] private SharedAudioSystem _audio = default!;
     [Dependency] private StationRecordsSystem _stationRecords = default!;
     [Dependency] private TransformSystem _transform = default!;
-    [Dependency] private readonly WatchListTracker _watchList = default!;   // Moffstation
+    [Dependency] private WatchListTracker _watchList = default!;   // Moffstation
 
     // CD: for erasing records on erase ban
-    [Dependency] private readonly CharacterRecordsSystem _cdRecords = default!;
+    [Dependency] private CharacterRecordsSystem _cdRecords = default!;
 
     private readonly Dictionary<NetUserId, PlayerInfo> _playerList = new();
 
