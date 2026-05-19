@@ -63,7 +63,7 @@ public abstract class SharedLightCycleSystem : EntitySystem
         var waveLength = MathF.Max(1, (float) comp.Duration.TotalSeconds);
         var crest = MathF.Max(0f, comp.MaxLightLevel);
         var shift = MathF.Max(0f, comp.MinLightLevel);
-        return Math.Min(comp.ClipLight, CalculateCurve(time, waveLength, crest, shift, 6));
+        return Math.Min(comp.ClipLight, CalculateCurve(time, waveLength, crest, shift, 2)); // TC14 - make night shorter
     }
 
     /// <summary>
