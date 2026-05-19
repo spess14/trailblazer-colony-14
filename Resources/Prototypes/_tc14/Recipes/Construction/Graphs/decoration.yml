@@ -7,7 +7,7 @@
     - to: sign
       steps:
       - material: WoodPlank
-        amount: 3
+        amount: 4
         doAfter: 1
   - node: sign
     entity: TCWoodenSignLeft
@@ -21,7 +21,7 @@
     - to: sign
       steps:
       - material: WoodPlank
-        amount: 3
+        amount: 4
         doAfter: 1
   - node: sign
     entity: TCWoodenSignRight
@@ -35,7 +35,7 @@
     - to: sign
       steps:
       - material: WoodPlank
-        amount: 3
+        amount: 4
         doAfter: 1
   - node: sign
     entity: TCWoodenSign
