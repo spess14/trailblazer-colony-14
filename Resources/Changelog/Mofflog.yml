@@ -5653,5 +5653,14 @@ Entries:
   id: 1428
   time: '2026-05-21T21:59:47.000'
   url: https://github.com/moff-station/moff-station-14/pull/1428
+- author: Centronias
+  changes:
+  - message: Salt and Pepper bags (similar to flour bags) to the ChefVend.
+    type: add
+  - message: Salt packets from the ChefVend.
+    type: remove
+  id: 1430
+  time: '2026-05-21T22:47:41.000'
+  url: https://github.com/moff-station/moff-station-14/pull/1430
 Name: Mofflog
 Order: -2
