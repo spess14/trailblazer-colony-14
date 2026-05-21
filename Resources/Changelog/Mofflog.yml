@@ -5598,5 +5598,12 @@ Entries:
   id: 1419
   time: '2026-05-21T03:55:48.000'
   url: https://github.com/moff-station/moff-station-14/pull/1419
+- author: DuckManZach
+  changes:
+  - message: Maints doors are now color-coded by access.
+    type: add
+  id: 1424
+  time: '2026-05-21T07:12:01.000'
+  url: https://github.com/moff-station/moff-station-14/pull/1424
 Name: Mofflog
 Order: -2
