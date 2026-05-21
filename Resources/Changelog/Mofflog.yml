@@ -5662,5 +5662,12 @@ Entries:
   id: 1430
   time: '2026-05-21T22:47:41.000'
   url: https://github.com/moff-station/moff-station-14/pull/1430
+- author: DuckManZach
+  changes:
+  - message: Added new FTL sounds
+    type: add
+  id: 1431
+  time: '2026-05-21T23:09:53.000'
+  url: https://github.com/moff-station/moff-station-14/pull/1431
 Name: Mofflog
 Order: -2
