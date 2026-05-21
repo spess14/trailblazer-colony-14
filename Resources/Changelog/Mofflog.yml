@@ -5598,6 +5598,13 @@ Entries:
   id: 1408
   time: '2026-05-18T22:40:58.000'
   url: https://github.com/moff-station/moff-station-14/pull/1408
+- author: Centronias
+  changes:
+  - message: The ATS hijack beacon's store listing no longer references Moffstation.
+    type: fix
+  id: 1410
+  time: '2026-05-21T21:37:27.000'
+  url: https://github.com/moff-station/moff-station-14/pull/1410
 - author: compilatron
   changes:
   - message: Added textiles to Frezon HoP office
