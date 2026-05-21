@@ -5572,6 +5572,13 @@ Entries:
   id: 1405
   time: '2026-05-19T18:24:54.000'
   url: https://github.com/moff-station/moff-station-14/pull/1405
+- author: SeaWyrm
+  changes:
+  - message: Added corner pieces for directional windows
+    type: add
+  id: 1406
+  time: '2026-05-21T18:55:41.000'
+  url: https://github.com/moff-station/moff-station-14/pull/1406
 - author: Centronias
   changes:
   - message: The `ghostrespawn` command no longer thinks you have been dead for negative
