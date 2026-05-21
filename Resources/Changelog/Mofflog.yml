@@ -5639,5 +5639,12 @@ Entries:
   id: 1424
   time: '2026-05-21T07:12:01.000'
   url: https://github.com/moff-station/moff-station-14/pull/1424
+- author: DuckManZach
+  changes:
+  - message: Changed playercounts for pirates
+    type: tweak
+  id: 1428
+  time: '2026-05-21T21:59:47.000'
+  url: https://github.com/moff-station/moff-station-14/pull/1428
 Name: Mofflog
 Order: -2
