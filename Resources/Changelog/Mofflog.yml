@@ -5556,6 +5556,13 @@ Entries:
   id: 1391
   time: '2026-05-14T17:54:14.000'
   url: https://github.com/moff-station/moff-station-14/pull/1391
+- author: DuckManZach
+  changes:
+  - message: Added the opening shift!
+    type: add
+  id: 1394
+  time: '2026-05-22T21:13:13.000'
+  url: https://github.com/moff-station/moff-station-14/pull/1394
 - author: Callmore
   changes:
   - message: Moth noises are now played correctly.
