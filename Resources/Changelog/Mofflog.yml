@@ -5605,6 +5605,13 @@ Entries:
   id: 1408
   time: '2026-05-18T22:40:58.000'
   url: https://github.com/moff-station/moff-station-14/pull/1408
+- author: Dave
+  changes:
+  - message: New Clown Clothing Sprites!
+    type: add
+  id: 1409
+  time: '2026-05-22T20:28:25.000'
+  url: https://github.com/moff-station/moff-station-14/pull/1409
 - author: Centronias
   changes:
   - message: The ATS hijack beacon's store listing no longer references Moffstation.
@@ -5646,6 +5653,13 @@ Entries:
   id: 1424
   time: '2026-05-21T07:12:01.000'
   url: https://github.com/moff-station/moff-station-14/pull/1424
+- author: Tortosaur
+  changes:
+  - message: The Infiltrator headset now has chameleon capabilities
+    type: tweak
+  id: 1425
+  time: '2026-05-22T20:28:24.000'
+  url: https://github.com/moff-station/moff-station-14/pull/1425
 - author: Tortosaur
   changes:
   - message: Chembelts can once again store jugs and have 2 more space inside of them.
