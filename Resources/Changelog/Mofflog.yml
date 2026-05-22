@@ -5653,6 +5653,13 @@ Entries:
   id: 1426
   time: '2026-05-21T22:26:52.000'
   url: https://github.com/moff-station/moff-station-14/pull/1426
+- author: Dave
+  changes:
+  - message: Security Outfits adjusted!
+    type: tweak
+  id: 1427
+  time: '2026-05-22T19:58:27.000'
+  url: https://github.com/moff-station/moff-station-14/pull/1427
 - author: DuckManZach
   changes:
   - message: Changed playercounts for pirates
