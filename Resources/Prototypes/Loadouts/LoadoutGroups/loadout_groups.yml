@@ -474,6 +474,7 @@
   - ChaplainPlagueHat
   - ChaplainWitchHat
   - ChaplainWitchHatAlt
+  - ClownMitre # Moffstation
 
 - type: loadoutGroup
   id: ChaplainMask
@@ -481,6 +482,7 @@
   minLimit: 0
   loadouts:
   - ChaplainMask
+  - ClownMaskDefault # Moffstation
 
 - type: loadoutGroup
   id: ChaplainJumpsuit
@@ -500,6 +502,7 @@
   - ChaplainNunRobe
   - ChaplainBlackHoodie
   - ChaplainHoodie
+  - ClownRobes # Moffstation
 
 - type: loadoutGroup
   id: ChaplainNeck
@@ -629,6 +632,7 @@
   - JesterAltSuit
   # Moffstation - Begin - Clown Clothes
   - HarlequinSuit
+  - BananaSuit
   # Moffstation - End - Clown Clothes
 
 - type: loadoutGroup
@@ -660,6 +664,7 @@
   - LargeClownShoes
   - ClownSandals
   - ClownSlippers
+  - BananaShoes
   # Moffstation - End - Clown Clothes
 
 - type: loadoutGroup

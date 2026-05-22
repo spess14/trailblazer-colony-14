@@ -1637,6 +1637,12 @@
   description: It's hard for parishoners to see a banana peel on the floor when they're looking up at your glorious chapeau.
   components:
   - type: Sprite
-    sprite: Clothing/Head/Hats/mitre_clown.rsi
+    sprite: _Moffstation/Clothing/Head/Hats/mitre_clown.rsi # Moffstation
   - type: Clothing
-    sprite: Clothing/Head/Hats/mitre_clown.rsi
+    # Moffstation - Begin - New sprites
+    sprite: _Moffstation/Clothing/Head/Hats/mitre_clown.rsi
+    clothingVisuals:
+      head:
+      - state: equipped-HELMET
+        offset: "0, 0.24"
+    # Moffstation - End
