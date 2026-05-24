@@ -5711,6 +5711,13 @@ Entries:
   id: 1431
   time: '2026-05-21T23:09:53.000'
   url: https://github.com/moff-station/moff-station-14/pull/1431
+- author: Dave
+  changes:
+  - message: new mime clothing sprites!
+    type: add
+  id: 1445
+  time: '2026-05-24T23:15:37.000'
+  url: https://github.com/moff-station/moff-station-14/pull/1445
 - author: Centronias
   changes:
   - message: The round-end screen should no longer contain unlocalized antagonist
