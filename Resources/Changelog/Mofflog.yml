@@ -5563,6 +5563,15 @@ Entries:
   id: 1394
   time: '2026-05-22T21:13:13.000'
   url: https://github.com/moff-station/moff-station-14/pull/1394
+- author: Dave
+  changes:
+  - message: Adds the Cheese Eater
+    type: add
+  - message: New Rat King, Rat Servant, Mouse sprites
+    type: add
+  id: 1396
+  time: '2026-05-25T18:17:08.000'
+  url: https://github.com/moff-station/moff-station-14/pull/1396
 - author: Callmore
   changes:
   - message: Moth noises are now played correctly.
