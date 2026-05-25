@@ -5779,5 +5779,12 @@ Entries:
   id: 1452
   time: '2026-05-25T01:39:21.000'
   url: https://github.com/moff-station/moff-station-14/pull/1452
+- author: Centronias
+  changes:
+  - message: '`ghostrespawn` has been tweaked again. See if it works for you now!'
+    type: fix
+  id: 1453
+  time: '2026-05-25T06:34:01.000'
+  url: https://github.com/moff-station/moff-station-14/pull/1453
 Name: Mofflog
 Order: -2
