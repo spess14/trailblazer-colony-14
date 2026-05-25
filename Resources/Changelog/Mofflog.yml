@@ -5795,5 +5795,14 @@ Entries:
   id: 1453
   time: '2026-05-25T06:34:01.000'
   url: https://github.com/moff-station/moff-station-14/pull/1453
+- author: Centronias
+  changes:
+  - message: Candice Clown's personal item
+    type: add
+  - message: Jace Finlay's personal item now hides hair and other face layers.
+    type: tweak
+  id: 1455
+  time: '2026-05-25T18:54:03.000'
+  url: https://github.com/moff-station/moff-station-14/pull/1455
 Name: Mofflog
 Order: -2
