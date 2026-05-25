@@ -5764,5 +5764,20 @@ Entries:
   id: 1449
   time: '2026-05-24T22:51:31.000'
   url: https://github.com/moff-station/moff-station-14/pull/1449
+- author: Centronias
+  changes:
+  - message: Cyborgs can now select personal items as part of their loadout
+    type: add
+  - message: The requirement that a character's name must match a personal item's
+      owner is slightly relaxed to also allow selecting the personal item if the LOADOUT
+      name matches the personal item's owner. For example, a cyborg with a loadout
+      name override matching a personal item can use that personal item even if the
+      normal humanoid name of the profile does not match.
+    type: tweak
+  - message: Bintendo's hat can spawn on a cyborg's head if it's selected.
+    type: add
+  id: 1452
+  time: '2026-05-25T01:39:21.000'
+  url: https://github.com/moff-station/moff-station-14/pull/1452
 Name: Mofflog
 Order: -2
