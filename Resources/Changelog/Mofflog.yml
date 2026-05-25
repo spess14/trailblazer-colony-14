@@ -5795,6 +5795,13 @@ Entries:
   id: 1453
   time: '2026-05-25T06:34:01.000'
   url: https://github.com/moff-station/moff-station-14/pull/1453
+- author: Dave
+  changes:
+  - message: new cargo clothing sprites
+    type: add
+  id: 1454
+  time: '2026-05-25T19:24:46.000'
+  url: https://github.com/moff-station/moff-station-14/pull/1454
 - author: Centronias
   changes:
   - message: Candice Clown's personal item
