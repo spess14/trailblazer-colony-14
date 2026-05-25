@@ -5720,6 +5720,13 @@ Entries:
   url: https://github.com/moff-station/moff-station-14/pull/1431
 - author: Centronias
   changes:
+  - message: Added Renee Kurtzkazaltz's personal item.
+    type: add
+  id: 1433
+  time: '2026-05-25T00:40:15.000'
+  url: https://github.com/moff-station/moff-station-14/pull/1433
+- author: Centronias
+  changes:
   - message: Users with case-sensitive file systems will no longer see the blade server
       rack's rack power button as an error texture.
     type: fix
