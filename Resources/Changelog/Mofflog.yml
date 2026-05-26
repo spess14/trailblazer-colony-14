@@ -5664,6 +5664,14 @@ Entries:
   url: https://github.com/moff-station/moff-station-14/pull/1419
 - author: Tortosaur
   changes:
+  - message: Hushup bundle now comes with 5 more shells and a marked coin with a coin
+      toss mechanic.
+    type: tweak
+  id: 1420
+  time: '2026-05-26T10:36:48.000'
+  url: https://github.com/moff-station/moff-station-14/pull/1420
+- author: Tortosaur
+  changes:
   - message: Toolboxes now damage when thrown.
     type: add
   id: 1421
