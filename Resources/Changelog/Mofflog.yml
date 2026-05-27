@@ -5642,6 +5642,16 @@ Entries:
   id: 1412
   time: '2026-05-24T23:49:32.000'
   url: https://github.com/moff-station/moff-station-14/pull/1412
+- author: Tortosaur
+  changes:
+  - message: New Syndicat adoption option in the uplink, less explosions and more
+      purring!
+    type: add
+  - message: 'All Syndicats now come with a name tag :joobi3:'
+    type: tweak
+  id: 1413
+  time: '2026-05-27T19:33:53.000'
+  url: https://github.com/moff-station/moff-station-14/pull/1413
 - author: compilatron
   changes:
   - message: Added textiles to Frezon HoP office
@@ -5839,5 +5849,12 @@ Entries:
   id: 1458
   time: '2026-05-26T15:50:48.000'
   url: https://github.com/moff-station/moff-station-14/pull/1458
+- author: KentoDaNeko
+  changes:
+  - message: Minor tweak to the health alert icons
+    type: tweak
+  id: 1468
+  time: '2026-05-27T19:33:53.000'
+  url: https://github.com/moff-station/moff-station-14/pull/1468
 Name: Mofflog
 Order: -2
