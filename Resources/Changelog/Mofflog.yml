@@ -5849,6 +5849,13 @@ Entries:
   id: 1458
   time: '2026-05-26T15:50:48.000'
   url: https://github.com/moff-station/moff-station-14/pull/1458
+- author: Dave
+  changes:
+  - message: Windows are less transparent
+    type: tweak
+  id: 1461
+  time: '2026-05-27T20:22:25.000'
+  url: https://github.com/moff-station/moff-station-14/pull/1461
 - author: SillyAmy
   changes:
   - message: Changed Zoey's personal item
