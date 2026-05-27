@@ -5849,6 +5849,20 @@ Entries:
   id: 1458
   time: '2026-05-26T15:50:48.000'
   url: https://github.com/moff-station/moff-station-14/pull/1458
+- author: SillyAmy
+  changes:
+  - message: Changed Zoey's personal item
+    type: tweak
+  id: 1463
+  time: '2026-05-27T19:58:04.000'
+  url: https://github.com/moff-station/moff-station-14/pull/1463
+- author: Ivan
+  changes:
+  - message: Added Plastitaniatia Osmiatia's personal item.
+    type: add
+  id: 1464
+  time: '2026-05-27T19:58:04.000'
+  url: https://github.com/moff-station/moff-station-14/pull/1464
 - author: KentoDaNeko
   changes:
   - message: Minor tweak to the health alert icons
