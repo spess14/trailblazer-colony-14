@@ -5790,6 +5790,22 @@ Entries:
   id: 1445
   time: '2026-05-24T23:15:37.000'
   url: https://github.com/moff-station/moff-station-14/pull/1445
+- author: Centronias
+  changes:
+  - message: The AAC tablet's UI can now be resized
+    type: add
+  - message: The AAC tablet's tabs are now always visible, even when scrolling to
+      the bottom of a tab
+    type: tweak
+  - message: The AAC tablet has a new "Feelings" tab to allow speech-impaired employees
+      to let it all out.
+    type: add
+  - message: The AAC tablet has a few new "Question" and "Manners" phrases to make
+      communication a little easier.
+    type: add
+  id: 1446
+  time: '2026-05-28T20:45:05.000'
+  url: https://github.com/moff-station/moff-station-14/pull/1446
 - author: Failed
   changes: []
   id: 1447
