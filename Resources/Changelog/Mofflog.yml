@@ -5888,6 +5888,13 @@ Entries:
   url: https://github.com/moff-station/moff-station-14/pull/1464
 - author: KentoDaNeko
   changes:
+  - message: Added (Legally Distinct) Expie markings to Vulpkanin species.
+    type: add
+  id: 1466
+  time: '2026-05-28T21:55:37.000'
+  url: https://github.com/moff-station/moff-station-14/pull/1466
+- author: KentoDaNeko
+  changes:
   - message: Minor tweak to the health alert icons
     type: tweak
   id: 1468
