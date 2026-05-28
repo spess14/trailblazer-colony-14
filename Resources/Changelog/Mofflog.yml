@@ -5893,6 +5893,17 @@ Entries:
   id: 1466
   time: '2026-05-28T21:55:37.000'
   url: https://github.com/moff-station/moff-station-14/pull/1466
+- author: OrbitSystem07
+  changes:
+  - message: Allowed the Station Ai to use Lathes, Substations, Smes banks, Digital
+      Audio Workstations, and pilot shuttles.
+    type: tweak
+  - message: Added AI access and Power wires to Lathes, Substations SMES banks, and
+      Digital Audio Workstations
+    type: tweak
+  id: 1467
+  time: '2026-05-28T22:43:52.000'
+  url: https://github.com/moff-station/moff-station-14/pull/1467
 - author: KentoDaNeko
   changes:
   - message: Minor tweak to the health alert icons
