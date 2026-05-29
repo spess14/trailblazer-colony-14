@@ -38,3 +38,23 @@
   icon:
     sprite: _tc14/Objects/Tools/hammer.rsi
     state: hammer
+
+- type: latheRecipe
+  parent: BaseToolRecipe
+  id: Key
+  result: Key
+  materials:
+    Gold: 100
+  icon:
+    sprite: _tc14/Objects/Devices/key.rsi
+    state: key
+
+- type: latheRecipe
+  parent: BaseToolRecipe
+  id: Lock
+  result: Lock
+  materials:
+    Gold: 100
+  icon:
+    sprite: _tc14/Objects/Devices/lock.rsi
+    state: lock

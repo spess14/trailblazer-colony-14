@@ -5,6 +5,8 @@
   - RRD
   - NitrogenRecycler
   - Hammer
+  - Key
+  - Lock
 
 - type: latheRecipePack
   id: TCStructures

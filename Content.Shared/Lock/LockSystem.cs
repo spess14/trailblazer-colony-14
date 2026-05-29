@@ -555,5 +555,6 @@ public enum LockTypes : byte
     None, // Default state, means the lock is not restricted.
     Access, // Means there is an AccessReader currently present.
     Fingerprint, // Means there is a FingerprintReader currently present.
-    All = Access | Fingerprint,
+    Key = 4, // TC14 - add keys
+    All = Access | Fingerprint | Key, // TC14 - add keys
 }

@@ -1,4 +1,5 @@
 using System.Diagnostics.CodeAnalysis;
+using Content.Shared._tc14.Locking.Systems; // TC14 - keys and locks
 using Content.Shared.Administration.Logs;
 using Content.Shared.Alert;
 using Content.Shared.Database;
@@ -58,6 +59,16 @@ public sealed class PryingSystem : EntitySystem
     {
         if (args.Handled)
             return;
+
+        // TC14 - Start - keys and locks
+        var ev = new InteractUsingOnDoorEvent(args.User, args.Used, args.Target, args.ClickLocation);
+        RaiseLocalEvent(uid, ev, true);
+        if (ev.Handled)
+        {
+            args.Handled = true;
+            return;
+        }
+        // TC14 - End
 
         args.Handled = TryPry(uid, args.User, out _, args.Used);
     }

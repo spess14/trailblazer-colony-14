@@ -1,0 +1,21 @@
+- type: entity
+  id: Key
+  name: key
+  description: Used to open locked things, like doors.
+  parent: BaseItem
+  components:
+  - type: Sprite
+    sprite: _tc14/Objects/Devices/key.rsi
+    state: key
+  - type: PhysicalKey
+
+- type: entity
+  id: Lock
+  name: lock
+  description: Can be added to a door to lock it.
+  parent: BaseItem
+  components:
+  - type: Sprite
+    sprite: _tc14/Objects/Devices/lock.rsi
+    state: lock
+  - type: PhysicalLock
