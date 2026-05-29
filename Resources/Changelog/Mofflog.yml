@@ -5857,6 +5857,13 @@ Entries:
   id: 1455
   time: '2026-05-25T18:54:03.000'
   url: https://github.com/moff-station/moff-station-14/pull/1455
+- author: StudMuffin
+  changes:
+  - message: The SOS app now indicate the caller approximate location to security
+    type: add
+  id: 1457
+  time: '2026-05-29T18:34:03.000'
+  url: https://github.com/moff-station/moff-station-14/pull/1457
 - author: Huaqas
   changes:
   - message: Using a Chameleon Projector on a Playing Card, Hand or Deck no longer
