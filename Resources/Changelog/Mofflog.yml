@@ -5923,6 +5923,14 @@ Entries:
   id: 1464
   time: '2026-05-27T19:58:04.000'
   url: https://github.com/moff-station/moff-station-14/pull/1464
+- author: StudMuffin
+  changes:
+  - message: the investigator module, a generic borg module to let them do some detective
+      work !
+    type: add
+  id: 1465
+  time: '2026-05-31T20:29:31.000'
+  url: https://github.com/moff-station/moff-station-14/pull/1465
 - author: KentoDaNeko
   changes:
   - message: Added (Legally Distinct) Expie markings to Vulpkanin species.
