@@ -5886,6 +5886,13 @@ Entries:
   id: 1458
   time: '2026-05-26T15:50:48.000'
   url: https://github.com/moff-station/moff-station-14/pull/1458
+- author: Centronias
+  changes:
+  - message: Personal item lighters' flames are visible in icons again.
+    type: fix
+  id: 1459
+  time: '2026-05-31T19:52:30.000'
+  url: https://github.com/moff-station/moff-station-14/pull/1459
 - author: Dave
   changes:
   - message: Windows are less transparent
@@ -5941,6 +5948,13 @@ Entries:
   id: 1468
   time: '2026-05-27T19:33:53.000'
   url: https://github.com/moff-station/moff-station-14/pull/1468
+- author: Centronias
+  changes:
+  - message: Does-A-Little-Shimmy's personal item has been updated.
+    type: tweak
+  id: 1469
+  time: '2026-05-31T19:52:46.000'
+  url: https://github.com/moff-station/moff-station-14/pull/1469
 - author: Centronias
   changes:
   - message: Added James Roby's personal item.
