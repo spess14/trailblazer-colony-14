@@ -5939,5 +5939,12 @@ Entries:
   id: 1475
   time: '2026-05-29T19:20:42.000'
   url: https://github.com/moff-station/moff-station-14/pull/1475
+- author: KentoDaNeko
+  changes:
+  - message: Fixes the Expie tail clipping on the arms on the south side of the character.
+    type: fix
+  id: 1476
+  time: '2026-05-31T14:55:42.000'
+  url: https://github.com/moff-station/moff-station-14/pull/1476
 Name: Mofflog
 Order: -2
