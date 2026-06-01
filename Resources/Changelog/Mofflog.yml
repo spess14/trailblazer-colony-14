@@ -5774,6 +5774,13 @@ Entries:
   id: 1439
   time: '2026-05-24T23:49:32.000'
   url: https://github.com/moff-station/moff-station-14/pull/1439
+- author: Jona-K
+  changes:
+  - message: Moff-Patreon Panel
+    type: add
+  id: 1441
+  time: '2026-06-01T18:56:12.000'
+  url: https://github.com/moff-station/moff-station-14/pull/1441
 - author: Dave
   changes:
   - message: new Bartender & Chef Outfit Sprites
