@@ -60,7 +60,7 @@ public sealed class PryingSystem : EntitySystem
         if (args.Handled)
             return;
 
-        // TC14 - Start - keys and locks
+        // TC14 - Begin - keys and locks
         var ev = new InteractUsingOnDoorEvent(args.User, args.Used, args.Target, args.ClickLocation);
         RaiseLocalEvent(uid, ev, true);
         if (ev.Handled)
