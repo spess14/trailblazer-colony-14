@@ -6005,6 +6005,17 @@ Entries:
   id: 1476
   time: '2026-05-31T14:55:42.000'
   url: https://github.com/moff-station/moff-station-14/pull/1476
+- author: Lillian Industries
+  changes:
+  - message: Added a new ID access that freelance shuttle pilots can hide their precious
+      valuables behind!
+    type: add
+  - message: Adds the Space Traffic Control radio frequency for communication between
+      shuttles and the station!
+    type: add
+  id: 1478
+  time: '2026-06-02T18:22:51.000'
+  url: https://github.com/moff-station/moff-station-14/pull/1478
 - author: KentoDaNeko
   changes:
   - message: Updated Emergency lockers and gave them a fresher, new look!
