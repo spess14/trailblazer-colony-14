@@ -37,9 +37,8 @@
       machine_board: !type:Container
       machine_parts: !type:Container
   - type: Damageable
-    damageModifierSet: Metallic
-  - type: Injurable
     damageModifierSet: StructuralMetallic # Moffstation - Harder to break a solid frame
+  - type: Injurable
   - type: Destructible
     thresholds:
     - trigger:
