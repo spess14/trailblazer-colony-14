@@ -92,7 +92,7 @@ public abstract partial class SharedDisposalUnitSystem : EntitySystem
     private void OnSignalReceived(Entity<DisposalUnitComponent> entity, ref SignalReceivedEvent args)
     {
         if (args.Port == entity.Comp.FlushPort)
-            ToggleEngage(entity.Owner, entity.Comp);
+            ToggleEngage((entity.Owner, entity.Comp));
         else if (args.Port == entity.Comp.AutoFlushOnPort)
             entity.Comp.AutomaticEngage = true;
         else if (args.Port == entity.Comp.AutoFlushOffPort)
@@ -102,8 +102,6 @@ public abstract partial class SharedDisposalUnitSystem : EntitySystem
         Dirty(entity);
     }
     // Moffstation - End
-
-    }
 
     #region: Event handling
 

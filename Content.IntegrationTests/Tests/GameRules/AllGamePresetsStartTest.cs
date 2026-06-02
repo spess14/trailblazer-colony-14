@@ -10,6 +10,9 @@ using Content.Server.Shuttles.Components;
 using Content.Shared.Antag;
 using Content.Shared.CCVar;
 using Content.Shared.GameTicking;
+using Content.Shared.Mind;
+using Robust.Shared.GameObjects;
+using Robust.Shared.Map;
 using Robust.Shared.Map.Components;
 using Robust.Shared.Player;
 using Robust.Shared.Utility;
@@ -183,9 +186,9 @@ public sealed class AllGamePresetsStartTest : AntagTest
         }
         Action? AssertAntagInitialized(AntagSpecifierPrototype antag, ICommonSession session)
         {
-            if (!mind.TryGetMind(session, out var mindEnt, out var mindComp))
+            if (!SMind.TryGetMind(session, out var mindEnt, out var mindComp))
                 return () => Assert.Fail($"Session {session} spawned into the game as an antag but had no mind!");
-            if (!entMan.EntityExists(mindComp!.CurrentEntity))
+            if (!SEntMan.EntityExists(mindComp!.CurrentEntity))
                 return () => Assert.Fail($"Session {session} spawned into the game as an antag, but had no entity!");
             var ent = mindComp.CurrentEntity!.Value;
 
@@ -201,15 +204,15 @@ public sealed class AllGamePresetsStartTest : AntagTest
                 if (antag.DoNotCheckComponents.Contains(comp.Key))
                     continue;
 
-                if (!entMan.HasComponent(ent, comp.Value.Component.GetType()))
-                    return () => Assert.Fail($"Entity {entMan.ToPrettyString(ent)} owned by {session} failed to acquire {comp.Key} component, while becoming {antag.ID}");
+                if (!SEntMan.HasComponent(ent, comp.Value.Component.GetType()))
+                    return () => Assert.Fail($"Entity {SEntMan.ToPrettyString(ent)} owned by {session} failed to acquire {comp.Key} component, while becoming {antag.ID}");
             }
 
             // Make sure all mind components were added
             foreach (var comp in antag.MindComponents)
             {
-                if (!entMan.HasComponent(mindEnt, comp.Value.Component.GetType()))
-                    return () => Assert.Fail($"Mind {entMan.ToPrettyString(mindEnt)} owned by {session} failed to acquire {comp.Key} component, while becoming {antag.ID}");
+                if (!SEntMan.HasComponent(mindEnt, comp.Value.Component.GetType()))
+                    return () => Assert.Fail($"Mind {SEntMan.ToPrettyString(mindEnt)} owned by {session} failed to acquire {comp.Key} component, while becoming {antag.ID}");
             }
 
             if (antag.MindRoles != null)
@@ -217,7 +220,7 @@ public sealed class AllGamePresetsStartTest : AntagTest
                 foreach (var role in antag.MindRoles)
                 {
                     var condition = mindComp.MindRoleContainer.ContainedEntities.Any(x =>
-                        entMan.MetaQuery.Comp(x).EntityPrototype?.ID! == role);
+                        SEntMan.GetComponent<MetaDataComponent>(x).EntityPrototype?.ID! == role);
                     if (!condition)
                         return () => Assert.Fail($"{SToPrettyString(mindEnt)} owned by {session}, failed to acquire role {role} for antagonist {antag}");
                 }
