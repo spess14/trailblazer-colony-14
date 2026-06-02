@@ -6005,5 +6005,12 @@ Entries:
   id: 1476
   time: '2026-05-31T14:55:42.000'
   url: https://github.com/moff-station/moff-station-14/pull/1476
+- author: KentoDaNeko
+  changes:
+  - message: Updated Emergency lockers and gave them a fresher, new look!
+    type: tweak
+  id: 1482
+  time: '2026-06-02T16:54:10.000'
+  url: https://github.com/moff-station/moff-station-14/pull/1482
 Name: Mofflog
 Order: -2
