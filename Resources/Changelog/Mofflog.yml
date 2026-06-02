@@ -5767,6 +5767,13 @@ Entries:
   id: 1436
   time: '2026-05-26T21:03:17.000'
   url: https://github.com/moff-station/moff-station-14/pull/1436
+- author: StudMuffin
+  changes:
+  - message: USSP themed windows and walls for shuttles
+    type: add
+  id: 1438
+  time: '2026-06-02T22:29:21.000'
+  url: https://github.com/moff-station/moff-station-14/pull/1438
 - author: Dave
   changes:
   - message: New sprites to Various Misc Clothing Items
