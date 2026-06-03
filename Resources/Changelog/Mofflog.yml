@@ -6027,6 +6027,21 @@ Entries:
   id: 1476
   time: '2026-05-31T14:55:42.000'
   url: https://github.com/moff-station/moff-station-14/pull/1476
+- author: Centronias
+  changes:
+  - message: Added more phrases to the AAC tablet, including conjunctions and letters.
+    type: add
+  - message: The AAC tablet's "numbers" category has been moved, along with the new
+      letters, to a new tab.
+    type: tweak
+  - message: Some AAC tablet phrases of the form "I <verb>" have been changed to just
+      "verb" to enable users to combine the verb with pronouns of their choice.
+    type: tweak
+  - message: The AAC tablet now has a "search" tab.
+    type: add
+  id: 1477
+  time: '2026-06-03T19:03:48.000'
+  url: https://github.com/moff-station/moff-station-14/pull/1477
 - author: Lillian Industries
   changes:
   - message: Added a new ID access that freelance shuttle pilots can hide their precious
