@@ -6068,6 +6068,13 @@ Entries:
   id: 1482
   time: '2026-06-02T16:54:10.000'
   url: https://github.com/moff-station/moff-station-14/pull/1482
+- author: Evanski
+  changes:
+  - message: Changed the sound of the Ripley APLU to have variance.
+    type: tweak
+  id: 1486
+  time: '2026-06-03T23:30:54.000'
+  url: https://github.com/moff-station/moff-station-14/pull/1486
 - author: KentoDaNeko
   changes:
   - message: Resprited the Emergency wall lockers (O2, N2, Fire) with a fresher new
