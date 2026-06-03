@@ -5994,6 +5994,13 @@ Entries:
   id: 1470
   time: '2026-06-01T18:32:42.000'
   url: https://github.com/moff-station/moff-station-14/pull/1470
+- author: Dave
+  changes:
+  - message: new tools resprites!
+    type: add
+  id: 1472
+  time: '2026-06-03T17:51:56.000'
+  url: https://github.com/moff-station/moff-station-14/pull/1472
 - author: Centronias
   changes:
   - message: Added James Roby's personal item.
