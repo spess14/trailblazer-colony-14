@@ -6038,5 +6038,13 @@ Entries:
   id: 1482
   time: '2026-06-02T16:54:10.000'
   url: https://github.com/moff-station/moff-station-14/pull/1482
+- author: KentoDaNeko
+  changes:
+  - message: Resprited the Emergency wall lockers (O2, N2, Fire) with a fresher new
+      look!
+    type: tweak
+  id: 1488
+  time: '2026-06-03T16:00:15.000'
+  url: https://github.com/moff-station/moff-station-14/pull/1488
 Name: Mofflog
 Order: -2
