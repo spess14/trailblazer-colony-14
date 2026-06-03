@@ -4543,6 +4543,14 @@ Entries:
   id: 1185
   time: '2026-04-01T05:14:57.000'
   url: https://github.com/moff-station/moff-station-14/pull/1185
+- author: OrbitSystem07
+  changes:
+  - message: Added Remote Controlled Shells, for the Station Ai to use! Check the
+      guidebook for more information.
+    type: add
+  id: 1187
+  time: '2026-06-03T19:30:23.000'
+  url: https://github.com/moff-station/moff-station-14/pull/1187
 - author: Centronias
   changes:
   - message: Modular HUDs will no longer partially render when in non-eye slots (ie.
