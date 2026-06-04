@@ -6090,5 +6090,12 @@ Entries:
   id: 1488
   time: '2026-06-03T16:00:15.000'
   url: https://github.com/moff-station/moff-station-14/pull/1488
+- author: Dave
+  changes:
+  - message: new carpet sprites
+    type: add
+  id: 1490
+  time: '2026-06-04T15:25:51.000'
+  url: https://github.com/moff-station/moff-station-14/pull/1490
 Name: Mofflog
 Order: -2
