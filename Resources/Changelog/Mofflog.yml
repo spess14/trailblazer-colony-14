@@ -5668,6 +5668,13 @@ Entries:
   id: 1413
   time: '2026-05-27T19:33:53.000'
   url: https://github.com/moff-station/moff-station-14/pull/1413
+- author: DuckManZach
+  changes:
+  - message: Added a fancy version of screenshake.
+    type: add
+  id: 1416
+  time: '2026-06-04T20:11:31.000'
+  url: https://github.com/moff-station/moff-station-14/pull/1416
 - author: compilatron
   changes:
   - message: Added textiles to Frezon HoP office
