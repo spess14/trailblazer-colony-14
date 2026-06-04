@@ -6075,6 +6075,13 @@ Entries:
   id: 1486
   time: '2026-06-03T23:30:54.000'
   url: https://github.com/moff-station/moff-station-14/pull/1486
+- author: Dave
+  changes:
+  - message: vox hijabs & tichels tweaked
+    type: tweak
+  id: 1487
+  time: '2026-06-04T15:00:40.000'
+  url: https://github.com/moff-station/moff-station-14/pull/1487
 - author: KentoDaNeko
   changes:
   - message: Resprited the Emergency wall lockers (O2, N2, Fire) with a fresher new
