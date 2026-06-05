@@ -5572,6 +5572,13 @@ Entries:
   id: 1391
   time: '2026-05-14T17:54:14.000'
   url: https://github.com/moff-station/moff-station-14/pull/1391
+- author: Centronias
+  changes:
+  - message: A box of common radio encryption keys is now purchasable from cargo.
+    type: add
+  id: 1393
+  time: '2026-06-05T23:56:23.000'
+  url: https://github.com/moff-station/moff-station-14/pull/1393
 - author: DuckManZach
   changes:
   - message: Added the opening shift!
