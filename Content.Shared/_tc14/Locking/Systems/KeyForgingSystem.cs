@@ -17,8 +17,8 @@ public sealed partial class KeyForgingSystem : EntitySystem
 {
     [Dependency] private SharedPopupSystem _popup = default!;
     [Dependency] private SharedAudioSystem _audio = default!;
-    [Dependency] private SharedAppearanceSystem _appearance = default!;
     [Dependency] private IRobustRandom _random = default!;
+    [Dependency] private SharedAppearanceSystem _appearance = default!;
     [Dependency] private INetManager _net = default!;
 
     /// <inheritdoc/>

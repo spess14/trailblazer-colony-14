@@ -10,10 +10,10 @@ namespace Content.Shared._tc14.Chemistry.Systems;
 /// <summary>
 /// Handles <see cref="FueledHeaterComponent"/>.
 /// </summary>
-public sealed class FueledHeaterSystem : EntitySystem
+public sealed partial class FueledHeaterSystem : EntitySystem
 {
-    [Dependency] private readonly SharedSolutionContainerSystem _solution = default!;
-    [Dependency] private readonly SharedTemperatureSystem _temperature = default!;
+    [Dependency] private SharedSolutionContainerSystem _solution = default!;
+    [Dependency] private SharedTemperatureSystem _temperature = default!;
 
     public override void Update(float frameTime)
     {

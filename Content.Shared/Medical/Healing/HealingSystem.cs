@@ -32,7 +32,7 @@ public sealed partial class HealingSystem : EntitySystem
     [Dependency] private MobThresholdSystem _mobThresholdSystem = default!;
     [Dependency] private SharedPopupSystem _popupSystem = default!;
     [Dependency] private SharedSolutionContainerSystem _solutionContainerSystem = default!;
-    [Dependency] private readonly PlayerSkillsSystem _skills = default!;
+    [Dependency] private PlayerSkillsSystem _skills = default!;
 
     public override void Initialize()
     {

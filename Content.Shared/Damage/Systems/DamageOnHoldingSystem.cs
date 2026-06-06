@@ -11,7 +11,7 @@ public sealed partial class DamageOnHoldingSystem : EntitySystem
     [Dependency] private SharedContainerSystem _container = default!;
     [Dependency] private DamageableSystem _damageableSystem = default!;
     [Dependency] private IGameTiming _timing = default!;
-    [Dependency] private readonly InventorySystem _inventorySystem = default!; // TC14 - add smithing gloves
+    [Dependency] private InventorySystem _inventorySystem = default!; // TC14 - add smithing gloves
 
     public override void Initialize()
     {

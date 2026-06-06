@@ -12,7 +12,7 @@ public sealed partial class ExpendableLightSystem : VisualizerSystem<ExpendableL
     [Dependency] private PointLightSystem _pointLightSystem = default!;
     [Dependency] private SharedAudioSystem _audioSystem = default!;
     [Dependency] private LightBehaviorSystem _lightBehavior = default!;
-    [Dependency] private readonly IPrototypeManager _protoManager = default!;
+    [Dependency] private IPrototypeManager _protoManager = default!;
 
     public override void Initialize()
     {

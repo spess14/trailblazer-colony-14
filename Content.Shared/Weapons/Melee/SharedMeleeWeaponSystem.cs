@@ -1,6 +1,7 @@
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Numerics;
+using Content.Shared._ES.Camera; // ES - Screenshake
 using Content.Shared._tc14.Skills.Systems;
 using Content.Shared.ActionBlocker;
 using Content.Shared.Actions.Events;
@@ -68,10 +69,11 @@ public abstract partial class SharedMeleeWeaponSystem : EntitySystem
     [Dependency] protected SharedTransformSystem TransformSystem = default!;
     [Dependency] private SharedStaminaSystem _stamina = default!;
     [Dependency] private DamageExamineSystem _damageExamine = default!;
-
-    [Dependency] private PlayerSkillsSystem _skills = default!; // TC14: implement finesse skill
-
+    // ES START
+    [Dependency] private SharedESScreenshakeSystem _shake = default!;
+    // ES END
     [Dependency] private EntityQuery<DamageableComponent> _damageQuery = default!;
+    [Dependency] private PlayerSkillsSystem _skills = default!; // TC14: implement finesse skill
 
     private const int AttackMask = (int) (CollisionGroup.MobMask | CollisionGroup.Opaque);
 
