@@ -6118,5 +6118,12 @@ Entries:
   id: 1493
   time: '2026-06-06T01:12:26.000'
   url: https://github.com/moff-station/moff-station-14/pull/1493
+- author: DuckManZach
+  changes:
+  - message: Removed the new screenshake (for now)
+    type: remove
+  id: 1495
+  time: '2026-06-06T15:38:49.000'
+  url: https://github.com/moff-station/moff-station-14/pull/1495
 Name: Mofflog
 Order: -2
