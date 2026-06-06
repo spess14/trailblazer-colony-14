@@ -29,8 +29,9 @@
     sprite: _CP14/Structures/Specific/Blacksmith/anvil.rsi
     state: icon
   - type: Damageable
-    damageContainer: StructuralInorganic
     damageModifierSet: StructuralMetallic
+  - type: Injurable
+    damageContainer: StructuralInorganic
   - type: Destructible
     thresholds:
     - trigger:

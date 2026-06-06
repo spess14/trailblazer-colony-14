@@ -19,8 +19,9 @@
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
   - type: Damageable
-    damageContainer: Inorganic
     damageModifierSet: Diona #:godo:
+  - type: Injurable
+    damageContainer: Inorganic
   - type: Construction
     graph: WoodenHandle
     node: handle

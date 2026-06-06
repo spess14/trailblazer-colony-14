@@ -5,7 +5,6 @@
   description: Scrubs nitrogen from the atmosphere, allowing those who breathe only nitrogen to not die in planetary conditions.
   components:
   - type: GasTank
-    outputPressure: 21.3
     air:
       volume: 5
       moles:

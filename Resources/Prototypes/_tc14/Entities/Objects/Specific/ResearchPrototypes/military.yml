@@ -10,6 +10,7 @@
     points:
       DisciplineMilitary: 50
   - type: Damageable
+  - type: Injurable
     damageContainer: Inorganic
   - type: RandomChanceTriggerCondition
     successChance: 0.25
