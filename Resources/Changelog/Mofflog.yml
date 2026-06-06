@@ -6111,5 +6111,12 @@ Entries:
   id: 1490
   time: '2026-06-04T15:25:51.000'
   url: https://github.com/moff-station/moff-station-14/pull/1490
+- author: SillyAmy
+  changes:
+  - message: Fixed a typo in the description of the red slime figure
+    type: fix
+  id: 1493
+  time: '2026-06-06T01:12:26.000'
+  url: https://github.com/moff-station/moff-station-14/pull/1493
 Name: Mofflog
 Order: -2
