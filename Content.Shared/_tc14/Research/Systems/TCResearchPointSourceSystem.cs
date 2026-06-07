@@ -11,12 +11,12 @@ namespace Content.Shared._tc14.Research.Systems;
 /// Handles TCResearchPointSourceComponent.
 /// </summary>
 // ReSharper disable once InconsistentNaming
-public sealed class TCResearchPointSourceSystem : EntitySystem
+public sealed partial class TCResearchPointSourceSystem : EntitySystem
 {
-    [Dependency] private readonly IPrototypeManager _protoMan = default!;
-    [Dependency] private readonly IEntityManager _entMan = default!;
-    [Dependency] private readonly SharedPopupSystem _popup = default!;
-    [Dependency] private readonly ResearchTableSystem _researchTableSystem = default!;
+    [Dependency] private IPrototypeManager _protoMan = default!;
+    [Dependency] private IEntityManager _entMan = default!;
+    [Dependency] private SharedPopupSystem _popup = default!;
+    [Dependency] private ResearchTableSystem _researchTableSystem = default!;
 
     /// <inheritdoc/>
     public override void Initialize()

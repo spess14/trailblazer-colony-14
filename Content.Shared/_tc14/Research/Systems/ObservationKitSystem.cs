@@ -9,10 +9,10 @@ namespace Content.Shared._tc14.Research.Systems;
 /// Handles ObservationKitComponent and interaction with TCResearchPointSourceComponent.
 /// You need to add TCResearchPointSourceComponent for this to work.
 /// </summary>
-public sealed class ObservationKitSystem : EntitySystem
+public sealed partial class ObservationKitSystem : EntitySystem
 {
-    [Dependency] private readonly IEntityManager _entMan = default!;
-    [Dependency] private readonly SharedPopupSystem _popup = default!;
+    [Dependency] private IEntityManager _entMan = default!;
+    [Dependency] private SharedPopupSystem _popup = default!;
 
     /// <inheritdoc/>
     public override void Initialize()

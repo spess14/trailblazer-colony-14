@@ -9,9 +9,9 @@ namespace Content.Shared._tc14.Locking.Systems;
 /// <summary>
 /// Handles reading from a physical key.
 /// </summary>
-public sealed class KeyReaderSystem : EntitySystem
+public sealed partial class KeyReaderSystem : EntitySystem
 {
-    [Dependency] private readonly SharedHandsSystem _hands = default!;
+    [Dependency] private SharedHandsSystem _hands = default!;
 
     /// <inheritdoc/>
     public override void Initialize()

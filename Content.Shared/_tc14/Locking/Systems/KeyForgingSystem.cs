@@ -16,12 +16,12 @@ namespace Content.Shared._tc14.Locking.Systems;
 /// <summary>
 /// Handles setting the IsForged flag for both PhysicalKey and PhysicalLock.
 /// </summary>
-public sealed class KeyForgingSystem : EntitySystem
+public sealed partial class KeyForgingSystem : EntitySystem
 {
-    [Dependency] private readonly SharedPopupSystem _popup = default!;
-    [Dependency] private readonly SharedAudioSystem _audio = default!;
-    [Dependency] private readonly IRobustRandom _random = default!;
-    [Dependency] private readonly LockSystem _lock = default!;
+    [Dependency] private SharedPopupSystem _popup = default!;
+    [Dependency] private SharedAudioSystem _audio = default!;
+    [Dependency] private IRobustRandom _random = default!;
+    [Dependency] private LockSystem _lock = default!;
 
     /// <inheritdoc/>
     public override void Initialize()

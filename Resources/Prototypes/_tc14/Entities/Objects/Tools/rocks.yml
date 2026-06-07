@@ -24,8 +24,9 @@
     useSound:
       path: /Audio/Effects/Footsteps/largethud.ogg
   - type: Damageable
-    damageContainer: Inorganic
     damageModifierSet: FlimsyMetallic
+  - type: Injurable
+    damageContainer: Inorganic
   - type: Construction
     graph: Rock
     node: start
@@ -58,13 +59,12 @@
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
   - type: Damageable
-    damageContainer: Inorganic
     damageModifierSet: FlimsyMetallic
+  - type: Injurable
+    damageContainer: Inorganic
   - type: Construction
     graph: Rock
     node: flakingRock
-  - type: Sharp
-    butcherDelayModifier: 2.5 # this sucks
   - type: Tool
     qualities:
     - Slicing

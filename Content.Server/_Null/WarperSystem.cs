@@ -30,13 +30,13 @@ namespace Content.Server._Null;
 /// necessary in order to accomplish procedural-only levels.
 /// -Z
 /// </summary>
-public sealed class WarperSystem : EntitySystem
+public sealed partial class WarperSystem : EntitySystem
 {
-    [Dependency] private readonly PopupSystem _popupSystem = default!;
-    [Dependency] private readonly PhysicsSystem _physics = default!;
-    [Dependency] private readonly MobStateSystem _mobState = default!;
-    [Dependency] private readonly TagSystem _tags = default!;
-    [Dependency] private readonly AudioSystem _audio = default!;
+    [Dependency] private PopupSystem _popupSystem = default!;
+    [Dependency] private PhysicsSystem _physics = default!;
+    [Dependency] private MobStateSystem _mobState = default!;
+    [Dependency] private TagSystem _tags = default!;
+    [Dependency] private AudioSystem _audio = default!;
 
     private const string BossTag = "Boss";
 

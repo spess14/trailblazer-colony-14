@@ -6,9 +6,9 @@ using Robust.Shared.Console;
 namespace Content.Server._tc14.Skills.Commands;
 
 [AdminCommand(AdminFlags.Debug)]
-public sealed class ViewSkillsCommand : IConsoleCommand
+public sealed partial class ViewSkillsCommand : IConsoleCommand
 {
-    [Dependency] private readonly IEntityManager _entManager = default!;
+    [Dependency] private IEntityManager _entManager = default!;
 
     public string Command => "viewskills";
     public string Description => "View skills of a given entity.";
