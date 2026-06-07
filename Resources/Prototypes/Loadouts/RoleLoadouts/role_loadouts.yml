@@ -13,7 +13,7 @@
   - Trinkets
   #- CaptainJobTrinkets
   - GroupSpeciesBreathTool
-  - PersonalItemsJobAgnostic # Umbra
+  # - PersonalItemsJobAgnostic # TC14 - disable personal item loadouts # Umbra
 
 - type: roleLoadout
   id: JobHeadOfPersonnel
@@ -31,7 +31,7 @@
   - Trinkets
   #- HoPJobTrinkets
   - GroupSpeciesBreathTool
-  - PersonalItemsJobAgnostic # Umbra
+  # - PersonalItemsJobAgnostic # TC14 - disable personal item loadouts # Umbra
 
 # Silicons
 - type: roleLoadout
@@ -39,8 +39,8 @@
   nameDataset: NamesBorg
   canCustomizeName: true
   # Moffstation - Begin - Borgs can get personal items
-  groups:
-  - PersonalItemsJobAgnostic # Umbra
+  # groups:
+  # - PersonalItemsJobAgnostic # TC14 - disable personal item loadouts # Umbra
   # Moffstation - End
 
 - type: roleLoadout
@@ -67,7 +67,7 @@
   - Trinkets
   #- PassengerJobTrinkets
   - GroupSpeciesBreathTool
-  - PersonalItemsJobAgnostic # Umbra
+  # - PersonalItemsJobAgnostic # TC14 - disable personal item loadouts # Umbra
 
 - type: roleLoadout
   id: JobBartender
@@ -84,7 +84,7 @@
   - Trinkets
   - BartenderJobTrinkets
   - GroupSpeciesBreathTool
-  - PersonalItemsJobAgnostic # Umbra
+  # - PersonalItemsJobAgnostic # TC14 - disable personal item loadouts # Umbra
 
 - type: roleLoadout
   id: JobServiceWorker
@@ -99,7 +99,7 @@
   - Trinkets
   #- ServiceWorkerJobTrinkets
   - GroupSpeciesBreathTool
-  - PersonalItemsJobAgnostic # Umbra
+  # - PersonalItemsJobAgnostic # TC14 - disable personal item loadouts # Umbra
 
 - type: roleLoadout
   id: JobChef
@@ -117,7 +117,7 @@
   - Trinkets
   #- ChefJobTrinkets
   - GroupSpeciesBreathTool
-  - PersonalItemsJobAgnostic # Umbra
+  # - PersonalItemsJobAgnostic # TC14 - disable personal item loadouts # Umbra
 
 - type: roleLoadout
   id: JobLibrarian
@@ -132,7 +132,7 @@
   - Trinkets
   #- LibrarianJobTrinkets
   - GroupSpeciesBreathTool
-  - PersonalItemsJobAgnostic # Umbra
+  # - PersonalItemsJobAgnostic # TC14 - disable personal item loadouts # Umbra
 
 - type: roleLoadout
   id: JobLawyer
@@ -148,7 +148,7 @@
   - Trinkets
   #- LawyerJobTrinkets
   - GroupSpeciesBreathTool
-  - PersonalItemsJobAgnostic # Umbra
+  # - PersonalItemsJobAgnostic # TC14 - disable personal item loadouts # Umbra
 
 - type: roleLoadout
   id: JobChaplain
@@ -169,7 +169,7 @@
   - Trinkets
   #- ChaplainJobTrinkets
   - GroupSpeciesBreathTool
-  - PersonalItemsJobAgnostic # Umbra
+  # - PersonalItemsJobAgnostic # TC14 - disable personal item loadouts # Umbra
 
 - type: roleLoadout
   id: JobJanitor
@@ -187,7 +187,7 @@
   - Trinkets
   - JanitorJobTrinkets
   - GroupSpeciesBreathTool
-  - PersonalItemsJobAgnostic # Umbra
+  # - PersonalItemsJobAgnostic # TC14 - disable personal item loadouts # Umbra
 
 - type: roleLoadout
   id: JobBotanist
@@ -204,7 +204,7 @@
   - Trinkets
   #- BotanistJobTrinkets
   - GroupSpeciesBreathTool
-  - PersonalItemsJobAgnostic # Umbra
+  # - PersonalItemsJobAgnostic # TC14 - disable personal item loadouts # Umbra
 
 - type: roleLoadout
   id: JobClown
@@ -224,7 +224,7 @@
   - SurvivalClown
   - Trinkets
   - ClownJobTrinkets
-  - PersonalItemsJobAgnostic # Umbra
+  # - PersonalItemsJobAgnostic # TC14 - disable personal item loadouts # Umbra
 
 - type: roleLoadout
   id: JobMime
@@ -245,7 +245,7 @@
   - SurvivalMime
   - Trinkets
   #- MimeJobTrinkets
-  - PersonalItemsJobAgnostic # Umbra
+  # - PersonalItemsJobAgnostic # TC14 - disable personal item loadouts # Umbra
 
 - type: roleLoadout
   id: JobMusician
@@ -265,7 +265,7 @@
   #- MusicianJobTrinkets
   - Instruments
   - GroupSpeciesBreathTool
-  - PersonalItemsJobAgnostic # Umbra
+  # - PersonalItemsJobAgnostic # TC14 - disable personal item loadouts # Umbra
 
 # Cargo
 - type: roleLoadout
@@ -285,7 +285,7 @@
   - Trinkets
   #- QuartermasterJobTrinkets
   - GroupSpeciesBreathTool
-  - PersonalItemsJobAgnostic # Umbra
+  # - PersonalItemsJobAgnostic # TC14 - disable personal item loadouts # Umbra
 
 - type: roleLoadout
   id: JobCargoTechnician
@@ -304,7 +304,7 @@
   - Trinkets
   #- CargoTechnicianJobTrinkets
   - GroupSpeciesBreathTool
-  - PersonalItemsJobAgnostic # Umbra
+  # - PersonalItemsJobAgnostic # TC14 - disable personal item loadouts # Umbra
 
 - type: roleLoadout
   id: JobSalvageSpecialist
@@ -324,7 +324,7 @@
   - Trinkets
   #- SalvageSpecialistJobTrinkets
   - GroupSpeciesBreathTool
-  - PersonalItemsJobAgnostic # Umbra
+  # - PersonalItemsJobAgnostic # TC14 - disable personal item loadouts # Umbra
 
 # Engineering
 - type: roleLoadout
@@ -343,7 +343,7 @@
   - Trinkets
   #- ChiefEngineerJobTrinkets
   - GroupSpeciesBreathTool
-  - PersonalItemsJobAgnostic # Umbra
+  # - PersonalItemsJobAgnostic # TC14 - disable personal item loadouts # Umbra
 
 - type: roleLoadout
   id: JobTechnicalAssistant
@@ -355,6 +355,7 @@
   - Trinkets
   #- TechnicalAssistantJobTrinkets
   - GroupSpeciesBreathTool
+  # - PersonalItemsJobAgnostic # TC14 - disable personal item loadouts # Umbra
 
 - type: roleLoadout
   id: JobStationEngineer
@@ -372,7 +373,7 @@
   - Trinkets
   #- StationEngineerJobTrinkets
   - GroupSpeciesBreathTool
-  - PersonalItemsJobAgnostic # Umbra
+  # - PersonalItemsJobAgnostic # TC14 - disable personal item loadouts # Umbra
 
 - type: roleLoadout
   id: JobAtmosphericTechnician
@@ -389,7 +390,7 @@
   - Trinkets
   #- AtmosphericTechnicianJobTrinkets
   - GroupSpeciesBreathTool
-  - PersonalItemsJobAgnostic # Umbra
+  # - PersonalItemsJobAgnostic # TC14 - disable personal item loadouts # Umbra
 
 # Science
 - type: roleLoadout
@@ -410,7 +411,7 @@
   - Trinkets
   #- ResearchDirectorJobTrinkets
   - GroupSpeciesBreathTool
-  - PersonalItemsJobAgnostic # Umbra
+  # - PersonalItemsJobAgnostic # TC14 - disable personal item loadouts # Umbra
 
 - type: roleLoadout
   id: JobScientist
@@ -431,7 +432,7 @@
   - Trinkets
   #- ScientistJobTrinkets
   - GroupSpeciesBreathTool
-  - PersonalItemsJobAgnostic # Umbra
+  # - PersonalItemsJobAgnostic # TC14 - disable personal item loadouts # Umbra
 
 - type: roleLoadout
   id: JobResearchAssistant
@@ -444,6 +445,7 @@
   - Trinkets
   #- ResearchAssistantJobTrinkets
   - GroupSpeciesBreathTool
+  # - PersonalItemsJobAgnostic # TC14 - disable personal item loadouts # Umbra
 
 # Security
 - type: roleLoadout
@@ -462,7 +464,7 @@
   - Trinkets
   - HeadofSecurityJobTrinkets
   - GroupSpeciesBreathToolSecurity
-  - PersonalItemsJobAgnostic # Umbra
+  # - PersonalItemsJobAgnostic # TC14 - disable personal item loadouts # Umbra
 
 - type: roleLoadout
   id: JobWarden
@@ -479,7 +481,7 @@
   - Trinkets
   - WardenJobTrinkets
   - GroupSpeciesBreathToolSecurity
-  - PersonalItemsJobAgnostic # Umbra
+  # - PersonalItemsJobAgnostic # TC14 - disable personal item loadouts # Umbra
 
 - type: roleLoadout
   id: JobSecurityOfficer
@@ -497,7 +499,7 @@
   - Trinkets
   - SecurityJobTrinkets
   - GroupSpeciesBreathToolSecurity
-  - PersonalItemsJobAgnostic # Umbra
+  # - PersonalItemsJobAgnostic # TC14 - disable personal item loadouts # Umbra
 
 - type: roleLoadout
   id: JobDetective
@@ -516,7 +518,7 @@
   - Trinkets
   - DetectiveJobTrinkets
   - GroupSpeciesBreathToolSecurity
-  - PersonalItemsJobAgnostic # Umbra
+  # - PersonalItemsJobAgnostic # TC14 - disable personal item loadouts # Umbra
 
 - type: roleLoadout
   id: JobSecurityCadet
@@ -527,6 +529,7 @@
   - Trinkets
   #- SecurityCadetJobTrinkets
   - GroupSpeciesBreathToolSecurity
+  # - PersonalItemsJobAgnostic # TC14 - disable personal item loadouts # Umbra
 
 # Wildcards
 - type: roleLoadout
@@ -544,7 +547,7 @@
   - Trinkets
   #- ReporterJobTrinkets
   - GroupSpeciesBreathTool
-  - PersonalItemsJobAgnostic # Umbra
+  # - PersonalItemsJobAgnostic # TC14 - disable personal item loadouts # Umbra
 
 - type: roleLoadout
   id: JobPsychologist
@@ -559,7 +562,7 @@
   - Trinkets
   #- PsychologistJobTrinkets
   - GroupSpeciesBreathTool
-  - PersonalItemsJobAgnostic # Umbra
+  # - PersonalItemsJobAgnostic # TC14 - disable personal item loadouts # Umbra
 
 # These loadouts are used for non-crew spawns, like off-station antags and event mobs
 # They will be used without player configuration, thus they will only ever apply what is forced by MinLimit

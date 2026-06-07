@@ -17,7 +17,7 @@
   - Trinkets
   #  - ChiefMedicalOfficerJobTrinkets
   - GroupSpeciesBreathToolMedical
-  - PersonalItemsJobAgnostic # Umbra
+  # - PersonalItemsJobAgnostic # TC14 - disable personal item loadouts # Umbra
 
 - type: roleLoadout
   id: JobMedicalDoctor
@@ -36,7 +36,7 @@
   - Trinkets
   #  - MedicalDoctorJobTrinkets
   - GroupSpeciesBreathToolMedical
-  - PersonalItemsJobAgnostic # Umbra
+  # - PersonalItemsJobAgnostic # TC14 - disable personal item loadouts # Umbra
 
 - type: roleLoadout
   id: JobMedicalIntern
@@ -49,6 +49,7 @@
   - Trinkets
   #  - MedicalInternJobTrinkets
   - GroupSpeciesBreathToolMedical
+  # - PersonalItemsJobAgnostic # TC14 - disable personal item loadouts # Umbra
 
 - type: roleLoadout
   id: JobChemist
@@ -65,7 +66,7 @@
   - Trinkets
   #  - ChemistJobTrinkets
   - GroupSpeciesBreathToolMedical
-  - PersonalItemsJobAgnostic # Umbra
+  # - PersonalItemsJobAgnostic # TC14 - disable personal item loadouts # Umbra
 
 - type: roleLoadout
   id: JobParamedic
@@ -83,4 +84,4 @@
   - Trinkets
   #  - ParamedicJobTrinkets
   - GroupSpeciesBreathToolMedical
-  - PersonalItemsJobAgnostic # Umbra
+  # - PersonalItemsJobAgnostic # TC14 - disable personal item loadouts # Umbra
