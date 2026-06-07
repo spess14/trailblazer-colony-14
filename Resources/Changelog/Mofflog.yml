@@ -6132,5 +6132,12 @@ Entries:
   id: 1495
   time: '2026-06-06T15:38:49.000'
   url: https://github.com/moff-station/moff-station-14/pull/1495
+- author: Nyxilath
+  changes:
+  - message: High value target has been removed.
+    type: remove
+  id: 1496
+  time: '2026-06-07T16:39:07.000'
+  url: https://github.com/moff-station/moff-station-14/pull/1496
 Name: Mofflog
 Order: -2
