@@ -6148,6 +6148,13 @@ Entries:
   id: 1496
   time: '2026-06-07T16:39:07.000'
   url: https://github.com/moff-station/moff-station-14/pull/1496
+- author: Dave
+  changes:
+  - message: new librarian, lawyer & musician sprites
+    type: add
+  id: 1500
+  time: '2026-06-07T20:13:56.000'
+  url: https://github.com/moff-station/moff-station-14/pull/1500
 - author: OrbitSystem07
   changes:
   - message: Scientist traitors and bloodbrothers can no longer roll the supercrit
