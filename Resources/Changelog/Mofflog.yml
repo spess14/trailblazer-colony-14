@@ -6111,6 +6111,15 @@ Entries:
   id: 1490
   time: '2026-06-04T15:25:51.000'
   url: https://github.com/moff-station/moff-station-14/pull/1490
+- author: Dave
+  changes:
+  - message: job icon sprites resprited
+    type: tweak
+  - message: id cards resprited
+    type: tweak
+  id: 1491
+  time: '2026-06-07T18:05:49.000'
+  url: https://github.com/moff-station/moff-station-14/pull/1491
 - author: SillyAmy
   changes:
   - message: Fixed a typo in the description of the red slime figure
