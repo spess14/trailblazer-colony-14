@@ -6148,5 +6148,15 @@ Entries:
   id: 1496
   time: '2026-06-07T16:39:07.000'
   url: https://github.com/moff-station/moff-station-14/pull/1496
+- author: OrbitSystem07
+  changes:
+  - message: Scientist traitors and bloodbrothers can no longer roll the supercrit
+      anomalies objective
+    type: tweak
+  - message: The Kill Station Ai objective now rolls half as often
+    type: tweak
+  id: 1502
+  time: '2026-06-07T19:50:46.000'
+  url: https://github.com/moff-station/moff-station-14/pull/1502
 Name: Mofflog
 Order: -2
