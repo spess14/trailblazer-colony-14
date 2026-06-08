@@ -6148,6 +6148,15 @@ Entries:
   id: 1496
   time: '2026-06-07T16:39:07.000'
   url: https://github.com/moff-station/moff-station-14/pull/1496
+- author: Nyxilath
+  changes:
+  - message: Buck Justice now has a personalized hat!
+    type: add
+  - message: Gristle McThornbody now has his personal dogtags!
+    type: add
+  id: 1497
+  time: '2026-06-08T15:39:24.000'
+  url: https://github.com/moff-station/moff-station-14/pull/1497
 - author: Dave
   changes:
   - message: New PDA Sprites!
