@@ -6201,6 +6201,13 @@ Entries:
   id: 1504
   time: '2026-06-08T14:53:33.000'
   url: https://github.com/moff-station/moff-station-14/pull/1504
+- author: Nyxilath
+  changes:
+  - message: Various quality of life updates to Omega.
+    type: tweak
+  id: 1505
+  time: '2026-06-08T23:18:45.000'
+  url: https://github.com/moff-station/moff-station-14/pull/1505
 - author: Centronias
   changes:
   - message: Added Chelsi Astris's personal item.
