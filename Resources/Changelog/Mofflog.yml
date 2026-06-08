@@ -6222,5 +6222,12 @@ Entries:
   id: 1509
   time: '2026-06-08T20:42:10.000'
   url: https://github.com/moff-station/moff-station-14/pull/1509
+- author: Centronias
+  changes:
+  - message: Added a new Moff figurine featuring a certain pumpkin-headed trickster.
+    type: add
+  id: 1510
+  time: '2026-06-08T23:41:22.000'
+  url: https://github.com/moff-station/moff-station-14/pull/1510
 Name: Mofflog
 Order: -2
