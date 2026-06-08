@@ -6120,6 +6120,14 @@ Entries:
   id: 1491
   time: '2026-06-07T18:05:49.000'
   url: https://github.com/moff-station/moff-station-14/pull/1491
+- author: Centronias
+  changes:
+  - message: You can now view your linked Discord account with the `discordlink` console
+      command. (As of writing, there's no way to set this, however)
+    type: add
+  id: 1492
+  time: '2026-06-08T22:00:21.000'
+  url: https://github.com/moff-station/moff-station-14/pull/1492
 - author: SillyAmy
   changes:
   - message: Fixed a typo in the description of the red slime figure
