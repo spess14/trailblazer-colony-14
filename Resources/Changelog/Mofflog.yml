@@ -6162,6 +6162,13 @@ Entries:
   id: 1500
   time: '2026-06-07T20:13:56.000'
   url: https://github.com/moff-station/moff-station-14/pull/1500
+- author: Dave
+  changes:
+  - message: new ai shell sprites
+    type: add
+  id: 1501
+  time: '2026-06-08T14:27:36.000'
+  url: https://github.com/moff-station/moff-station-14/pull/1501
 - author: OrbitSystem07
   changes:
   - message: Scientist traitors and bloodbrothers can no longer roll the supercrit
