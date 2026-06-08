@@ -6193,5 +6193,19 @@ Entries:
   id: 1504
   time: '2026-06-08T14:53:33.000'
   url: https://github.com/moff-station/moff-station-14/pull/1504
+- author: Centronias
+  changes:
+  - message: Added Chelsi Astris's personal item.
+    type: add
+  id: 1506
+  time: '2026-06-08T20:42:11.000'
+  url: https://github.com/moff-station/moff-station-14/pull/1506
+- author: Centronias
+  changes:
+  - message: Added Candice Cannon's personal item.
+    type: add
+  id: 1509
+  time: '2026-06-08T20:42:10.000'
+  url: https://github.com/moff-station/moff-station-14/pull/1509
 Name: Mofflog
 Order: -2
