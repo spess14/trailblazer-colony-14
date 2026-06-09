@@ -221,6 +221,11 @@ public sealed partial class GuidebookWindow : FancyWindow, ILinkClickHandler, IA
         if (!_entries.TryGetValue(id, out var entry))
             return null;
 
+        // TC14 - Begin - Guidebook cleanup
+        if (!entry.ShowInTree)
+            return null;
+        // TC14 - End
+
         if (!addedEntries.Add(id))
         {
             // TODO GUIDEBOOK Maybe allow duplicate entries?

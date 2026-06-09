@@ -3,6 +3,7 @@
   name: guide-entry-progression
   priority: -1
   text: "/ServerInfo/_tc14/Progression/Progression.xml"
+  showInTree: true
   children:
   - TCEarlyProgression
   - TCResearch
@@ -12,13 +13,16 @@
   id: TCEarlyProgression
   name: guide-entry-progression-early
   text: "/ServerInfo/_tc14/Progression/EarlyProgression.xml"
+  showInTree: true
 
 - type: guideEntry
   id: TCResearch
   name: guide-entry-research
   text: "/ServerInfo/_tc14/Progression/Research.xml"
+  showInTree: true
 
 - type: guideEntry
   id: TCSmithing
   name: guide-entry-smithing
   text: "/ServerInfo/_tc14/Progression/Smithing.xml"
+  showInTree: true

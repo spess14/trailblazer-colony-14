@@ -3,6 +3,7 @@
   name: guide-entry-newplayer
   priority: -10
   text: "/ServerInfo/_tc14/NewPlayer/NewPlayer.xml"
+  showInTree: true
   children:
   - TCControls
   - TCCharacterCreation
@@ -11,6 +12,7 @@
   id: TCControls
   name: guide-entry-controls
   text: "/ServerInfo/_tc14/NewPlayer/Controls/Controls.xml"
+  showInTree: true
   # children:
   # - TCRadio
 
@@ -24,6 +26,7 @@
   id: TCCharacterCreation
   name: guide-entry-charactercreation
   text: "/ServerInfo/_tc14/NewPlayer/CharacterCreation.xml"
+  showInTree: true
   children:
   - TCYourFirstCharacter
   - TCSpecies
@@ -32,3 +35,4 @@
   id: TCYourFirstCharacter
   name: guide-entry-yourfirstcharacter
   text: "/ServerInfo/_tc14/NewPlayer/YourFirstCharacter.xml"
+  showInTree: true

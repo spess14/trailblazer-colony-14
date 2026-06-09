@@ -1,6 +1,4 @@
-# TC14 - Begin - Guidebook changes
-#- type: guideEntry
-#  id: Eeeps
-#  name: guide-entry-impeeeps
-#  text: "/ServerInfo/_Impstation/Guidebook/Antagonist/Eeeps.xml"
-# TC14 - End
+- type: guideEntry
+  id: Eeeps
+  name: guide-entry-impeeeps
+  text: "/ServerInfo/_Impstation/Guidebook/Antagonist/Eeeps.xml"

@@ -46,4 +46,11 @@ public class GuideEntry
     ///     If the guide is the child of some other guide, the order simply determined by the order of children in <see cref="Children"/>.
     /// </summary>
     [DataField] public int Priority = 0;
+
+    // TC14 - Begin - Guidebook cleanup
+    /// <summary>
+    /// Do we show this guidebook in the global guidebook tree? False by default so that we can only show the TC guidebook stuff.
+    /// </summary>
+    [DataField] public bool ShowInTree;
+    // TC14 - End
 }
