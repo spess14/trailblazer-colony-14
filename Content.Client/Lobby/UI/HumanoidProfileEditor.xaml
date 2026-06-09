@@ -3,8 +3,9 @@
          xmlns:humanoid="clr-namespace:Content.Client.Humanoid"
          xmlns:cc="clr-namespace:Content.Client.Administration.UI.CustomControls"
          xmlns:ui="clr-namespace:Content.Client.Lobby.UI"
-         xmlns:traits="clr-namespace:Content.Client._DV.Traits.UI"
          xmlns:profileEditorControls="clr-namespace:Content.Client.Lobby.UI.ProfileEditorControls"
+         xmlns:moffAntagUi="clr-namespace:Content.Client._Moffstation.Antags.UI"
+         xmlns:dvTraitUi="clr-namespace:Content.Client._DV.Traits.UI"
          HorizontalExpand="True">
         <!-- Left side -->
         <BoxContainer Orientation="Vertical" Margin="10 10 10 10" HorizontalExpand="True">
@@ -123,12 +124,16 @@
                         <BoxContainer Name="JobList" Orientation="Vertical" />
                     </ScrollContainer>
                 </BoxContainer>
-                <BoxContainer Orientation="Vertical" Margin="10">
-                    <!-- Antags -->
-                    <ScrollContainer VerticalExpand="True">
-                        <BoxContainer Name="AntagList" Orientation="Vertical" />
-                    </ScrollContainer>
-                </BoxContainer>
+                <!-- Moffstation - Start - Antag Factions -->
+                <!-- <BoxContainer Orientation="Vertical" Margin="10"> -->
+                <!--     ~1~ Antags @1@ -->
+                <!--     <ScrollContainer VerticalExpand="True"> -->
+                <!--         <BoxContainer Name="AntagList" Orientation="Vertical" /> -->
+                <!--     </ScrollContainer> -->
+                <!-- </BoxContainer> -->
+                <moffAntagUi:SpecialRolesTab Name="Antags"/>
+                <!-- Moffstation - End -->
+
                 <!-- DV - Traits -->
                 <!-- <BoxContainer Orientation="Vertical" Margin="10"> -->
                 <!--     ~1~ Traits @1@ -->
@@ -136,7 +141,7 @@
                 <!--         <BoxContainer Name="TraitsList" Orientation="Vertical" /> -->
                 <!--     </ScrollContainer> -->
                 <!-- </BoxContainer> -->
-                <traits:TraitsTab Name="Traits"/>
+                <dvTraitUi:TraitsTab Name="Traits"/>
                 <!-- End DV -->
                 <BoxContainer Name="MarkingsTab" Orientation="Vertical" Margin="10">
                     <!-- Markings -->
