@@ -6236,5 +6236,12 @@ Entries:
   id: 1510
   time: '2026-06-08T23:41:22.000'
   url: https://github.com/moff-station/moff-station-14/pull/1510
+- author: DuckManZach
+  changes:
+  - message: Overhauled the special roles menu!
+    type: add
+  id: 1511
+  time: '2026-06-09T04:54:25.000'
+  url: https://github.com/moff-station/moff-station-14/pull/1511
 Name: Mofflog
 Order: -2
