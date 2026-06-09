@@ -6179,6 +6179,13 @@ Entries:
   id: 1498
   time: '2026-06-07T20:36:49.000'
   url: https://github.com/moff-station/moff-station-14/pull/1498
+- author: Nyxilath
+  changes:
+  - message: Elkridge has been updated to the latest version.
+    type: tweak
+  id: 1499
+  time: '2026-06-09T16:14:11.000'
+  url: https://github.com/moff-station/moff-station-14/pull/1499
 - author: Dave
   changes:
   - message: new librarian, lawyer & musician sprites
