@@ -6250,5 +6250,12 @@ Entries:
   id: 1511
   time: '2026-06-09T04:54:25.000'
   url: https://github.com/moff-station/moff-station-14/pull/1511
+- author: DuckManZach
+  changes:
+  - message: Added Dove Station!
+    type: add
+  id: 1516
+  time: '2026-06-10T13:01:32.000'
+  url: https://github.com/moff-station/moff-station-14/pull/1516
 Name: Mofflog
 Order: -2
