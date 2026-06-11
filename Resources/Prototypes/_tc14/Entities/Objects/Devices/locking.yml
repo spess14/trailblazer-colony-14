@@ -4,9 +4,60 @@
   description: Used to open locked things, like doors.
   parent: BaseItem
   components:
+  - type: Appearance
   - type: Sprite
     sprite: _tc14/Objects/Devices/key.rsi
-    state: key
+    # uhm. yeah.
+    layers:
+    - state: key
+    - map: [ "enum.PhysicalKeyVisuals.A" ]
+      state: "key1"
+      visible: false
+    - map: [ "enum.PhysicalKeyVisuals.B" ]
+      state: "key2"
+      visible: false
+    - map: [ "enum.PhysicalKeyVisuals.C" ]
+      state: "key3"
+      visible: false
+    - map: [ "enum.PhysicalKeyVisuals.D" ]
+      state: "key4"
+      visible: false
+    - map: [ "enum.PhysicalKeyVisuals.E" ]
+      state: "key5"
+      visible: false
+    - map: [ "enum.PhysicalKeyVisuals.F" ]
+      state: "key6"
+      visible: false
+    - map: [ "enum.PhysicalKeyVisuals.G" ]
+      state: "key7"
+      visible: false
+    - map: [ "enum.PhysicalKeyVisuals.H" ]
+      state: "key8"
+      visible: false
+    - map: [ "enum.PhysicalKeyVisuals.I" ]
+      state: "key9"
+      visible: false
+    - map: [ "enum.PhysicalKeyVisuals.J" ]
+      state: "key10"
+      visible: false
+    - map: [ "enum.PhysicalKeyVisuals.K" ]
+      state: "key11"
+      visible: false
+    - map: [ "enum.PhysicalKeyVisuals.L" ]
+      state: "key12"
+      visible: false
+    - map: [ "enum.PhysicalKeyVisuals.M" ]
+      state: "key13"
+      visible: false
+    - map: [ "enum.PhysicalKeyVisuals.N" ]
+      state: "key14"
+      visible: false
+    - map: [ "enum.PhysicalKeyVisuals.O" ]
+      state: "key15"
+      visible: false
+    - map: [ "enum.PhysicalKeyVisuals.P" ]
+      state: "key16"
+      visible: false
   - type: PhysicalKey
 
 - type: entity

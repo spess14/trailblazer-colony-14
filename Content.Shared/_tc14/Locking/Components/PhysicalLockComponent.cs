@@ -1,3 +1,4 @@
+using Content.Shared._tc14.Locking.Systems;
 using Robust.Shared.GameStates;
 
 namespace Content.Shared._tc14.Locking.Components;
@@ -5,7 +6,7 @@ namespace Content.Shared._tc14.Locking.Components;
 /// <summary>
 /// Used for the lock *item* that is supposed to read from a <see cref="PhysicalKeyComponent"/>.
 /// </summary>
-[RegisterComponent, NetworkedComponent, AutoGenerateComponentState]
+[RegisterComponent, NetworkedComponent, AutoGenerateComponentState, Access(typeof(KeyForgingSystem))]
 public sealed partial class PhysicalLockComponent : Component
 {
     /// <summary>
