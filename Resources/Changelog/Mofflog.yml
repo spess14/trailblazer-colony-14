@@ -6229,6 +6229,15 @@ Entries:
   id: 1506
   time: '2026-06-08T20:42:11.000'
   url: https://github.com/moff-station/moff-station-14/pull/1506
+- author: Nyxilath
+  changes:
+  - message: generic dog tags are now a selectable trinket for players to use.
+    type: add
+  - message: personal neckslot items are no longer able to be chosen for chameleon.
+    type: fix
+  id: 1508
+  time: '2026-06-12T18:38:57.000'
+  url: https://github.com/moff-station/moff-station-14/pull/1508
 - author: Centronias
   changes:
   - message: Added Candice Cannon's personal item.
