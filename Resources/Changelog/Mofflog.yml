@@ -6219,6 +6219,16 @@ Entries:
   id: 1502
   time: '2026-06-07T19:50:46.000'
   url: https://github.com/moff-station/moff-station-14/pull/1502
+- author: Nyxilath
+  changes:
+  - message: Snowball has been derotated from Moffstation.
+    type: remove
+  - message: Moffstation maps have had their minimum playercounts standardized into
+      categorical ranges.
+    type: tweak
+  id: 1503
+  time: '2026-06-12T19:54:54.000'
+  url: https://github.com/moff-station/moff-station-14/pull/1503
 - author: Tezzaide
   changes: []
   id: 1504
