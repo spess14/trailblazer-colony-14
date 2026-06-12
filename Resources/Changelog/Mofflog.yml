@@ -6111,6 +6111,15 @@ Entries:
   id: 1488
   time: '2026-06-03T16:00:15.000'
   url: https://github.com/moff-station/moff-station-14/pull/1488
+- author: DuckManZach
+  changes:
+  - message: Added interaction particles to add clarity to what people are doing
+    type: add
+  - message: Many electrical things will spark when damaged
+    type: add
+  id: 1489
+  time: '2026-06-12T19:03:18.000'
+  url: https://github.com/moff-station/moff-station-14/pull/1489
 - author: Dave
   changes:
   - message: new carpet sprites
