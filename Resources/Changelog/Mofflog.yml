@@ -6299,5 +6299,12 @@ Entries:
   id: 1517
   time: '2026-06-11T00:10:00.000'
   url: https://github.com/moff-station/moff-station-14/pull/1517
+- author: DuckManZach
+  changes:
+  - message: Interaction particles no longer play when opening the strip menu
+    type: fix
+  id: 1523
+  time: '2026-06-13T14:00:11.000'
+  url: https://github.com/moff-station/moff-station-14/pull/1523
 Name: Mofflog
 Order: -2
