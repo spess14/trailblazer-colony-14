@@ -60,16 +60,6 @@ public sealed partial class PryingSystem : EntitySystem
         if (args.Handled)
             return;
 
-        // TC14 - Begin - keys and locks
-        var ev = new InteractUsingOnDoorEvent(args.User, args.Used, args.Target, args.ClickLocation);
-        RaiseLocalEvent(uid, ev, true);
-        if (ev.Handled)
-        {
-            args.Handled = true;
-            return;
-        }
-        // TC14 - End
-
         args.Handled = TryPry(uid, args.User, out _, args.Used);
     }
 

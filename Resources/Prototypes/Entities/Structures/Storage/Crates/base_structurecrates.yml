@@ -71,6 +71,7 @@
     containers:
       - entity_storage
   - type: RequireProjectileTarget
+  - type: PhysicalLockTarget # TC14 - keys and locks
 
 - type: entity
   parent: CrateGeneric

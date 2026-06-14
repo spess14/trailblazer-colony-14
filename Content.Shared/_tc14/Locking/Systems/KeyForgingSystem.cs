@@ -1,15 +1,12 @@
 using Content.Shared._tc14.Locking.Components;
-using Content.Shared.Doors.Components;
+using Content.Shared.Examine;
 using Content.Shared.Interaction;
-using Content.Shared.Lock;
 using Content.Shared.Popups;
 using JetBrains.Annotations;
 using Robust.Shared.Audio;
 using Robust.Shared.Audio.Systems;
-using Robust.Shared.Map;
 using Robust.Shared.Network;
 using Robust.Shared.Random;
-using Robust.Shared.Utility;
 
 namespace Content.Shared._tc14.Locking.Systems;
 
@@ -20,7 +17,6 @@ public sealed partial class KeyForgingSystem : EntitySystem
 {
     [Dependency] private SharedPopupSystem _popup = default!;
     [Dependency] private SharedAudioSystem _audio = default!;
-    [Dependency] private LockSystem _lock = default!;
     [Dependency] private SharedAppearanceSystem _appearance = default!;
     [Dependency] private IRobustRandom _random = default!;
     [Dependency] private INetManager _net = default!;
@@ -32,7 +28,22 @@ public sealed partial class KeyForgingSystem : EntitySystem
 
         SubscribeLocalEvent<PhysicalLockComponent, InteractUsingEvent>(OnInteractedWithLock);
         SubscribeLocalEvent<PhysicalKeyComponent, InteractUsingEvent>(OnInteractedWithKey);
-        SubscribeLocalEvent<DoorComponent, InteractUsingOnDoorEvent>(OnAddingLock);
+        SubscribeLocalEvent<PhysicalKeyComponent, ExaminedEvent>(KeyOnExamine);
+        SubscribeLocalEvent<PhysicalLockComponent, ExaminedEvent>(LockOnExamine);
+    }
+
+    private void LockOnExamine(Entity<PhysicalLockComponent> ent, ref ExaminedEvent args)
+    {
+        args.PushMarkup(Loc.GetString(ent.Comp.IsForged
+            ? "lockkey-examine-lock-forged"
+            : "lockkey-examine-lock-unforged"));
+    }
+
+    private void KeyOnExamine(Entity<PhysicalKeyComponent> ent, ref ExaminedEvent args)
+    {
+        args.PushMarkup(Loc.GetString(ent.Comp.IsForged
+            ? "lockkey-examine-key-forged"
+            : "lockkey-examine-key-unforged"));
     }
 
     [PublicAPI]
@@ -54,26 +65,6 @@ public sealed partial class KeyForgingSystem : EntitySystem
     {
         ent.Comp.IsForged = true;
         ent.Comp.AllowedKey = key;
-    }
-
-    private void OnAddingLock(Entity<DoorComponent> ent, ref InteractUsingOnDoorEvent args)
-    {
-        if (!TryComp<PhysicalLockComponent>(args.Used, out var physLockComp) || HasComp<KeyReaderComponent>(ent))
-            return;
-
-        if (!physLockComp.IsForged)
-        {
-            _popup.PopupClient(Loc.GetString("lockkey-locking-unforged"), args.User);
-            return;
-        }
-
-        var lockComp = EnsureComp<LockComponent>(ent);
-        var physReader = EnsureComp<KeyReaderComponent>(ent);
-        physReader.AllowedKey = physLockComp.AllowedKey;
-        _lock.Unlock(ent, args.User, lockComp);
-        _popup.PopupClient(Loc.GetString("lockkey-locking-success"), args.User);
-        args.Handled = true;
-        PredictedQueueDel(args.Used);
     }
 
     // TODO refactor PhysicalKey and PhysicalLock into one component
@@ -172,45 +163,5 @@ public sealed partial class KeyForgingSystem : EntitySystem
         _popup.PopupClient(Loc.GetString("lockkey-forging-lock-copy-success"), user);
         Dirty(usedLockEnt);
         _audio.PlayPredicted(new SoundPathSpecifier("/Audio/_tc14/Items/chisel_use.ogg"), usedLockEnt.Owner, user);
-    }
-}
-
-/// <summary>
-/// This is an event to work around the duplicate subscription with the PryingSystem.
-/// </summary>
-[PublicAPI]
-public sealed class InteractUsingOnDoorEvent : HandledEntityEventArgs
-{
-    /// <summary>
-    ///     Entity that triggered the interaction.
-    /// </summary>
-    public EntityUid User { get; }
-
-    /// <summary>
-    ///     Entity that the user used to interact.
-    /// </summary>
-    public EntityUid Used { get; }
-
-    /// <summary>
-    ///     Entity that was interacted on.
-    /// </summary>
-    public EntityUid Target { get; }
-
-    /// <summary>
-    ///     The original location that was clicked by the user.
-    /// </summary>
-    public EntityCoordinates ClickLocation { get; }
-
-    public InteractUsingOnDoorEvent(EntityUid user, EntityUid used, EntityUid target, EntityCoordinates clickLocation)
-    {
-        // Interact using should not have the same used and target.
-        // That should be a use-in-hand event instead.
-        // If this is not the case, can lead to bugs (e.g., attempting to merge a item stack into itself).
-        DebugTools.Assert(used != target);
-
-        User = user;
-        Used = used;
-        Target = target;
-        ClickLocation = clickLocation;
     }
 }

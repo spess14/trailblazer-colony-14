@@ -97,6 +97,7 @@
     stateDoorClosed: generic_door
   - type: StaticPrice
     price: 75
+  - type: PhysicalLockTarget # TC14 - keys and locks
 
 # steel closet base (that can be constructed/deconstructed)
 - type: entity

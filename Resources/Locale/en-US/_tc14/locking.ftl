@@ -13,3 +13,8 @@ lockkey-forging-key-copy-success = The key is now forged to copy this key.
 lockkey-no-key = You need to be holding a key to open this!
 lockkey-not-forged = You cannot open doors with an unforged key!
 lockkey-reader-fail = This key doesn't fit!
+
+lockkey-examine-key-forged = This key is already forged.
+lockkey-examine-key-unforged = This key is not yet forged.
+lockkey-examine-lock-forged = This lock is already forged.
+lockkey-examine-lock-unforged = This lock is not yet forged.
