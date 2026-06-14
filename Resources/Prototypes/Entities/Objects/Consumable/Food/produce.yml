@@ -209,7 +209,7 @@
   - type: Produce
     seedId: towercap
   - type: ToolRefinable
-    qualityNeeded: Sawing
+    qualityNeeded: Slicing # TC14 - slicing is enough
     refineResult:
     - id: MaterialWoodPlank1
       amount: 4 # TC14 - double plank output from logs
@@ -231,7 +231,7 @@
   - type: Produce
     seedId: steelcap
   - type: ToolRefinable
-    qualityNeeded: Sawing
+    qualityNeeded: Slicing # TC14 - slicing is enough
     refineResult:
     - id: SheetSteel1
 
