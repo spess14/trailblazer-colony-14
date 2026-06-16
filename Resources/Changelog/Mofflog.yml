@@ -6314,6 +6314,13 @@ Entries:
   id: 1524
   time: '2026-06-15T05:33:14.000'
   url: https://github.com/moff-station/moff-station-14/pull/1524
+- author: DuckManZach
+  changes:
+  - message: Required playtimes are now displayed for antags that havent been unlocked.
+    type: fix
+  id: 1525
+  time: '2026-06-16T19:33:04.000'
+  url: https://github.com/moff-station/moff-station-14/pull/1525
 - author: Nyxilath
   changes:
   - message: Loadout eyewear options have been simplified.
