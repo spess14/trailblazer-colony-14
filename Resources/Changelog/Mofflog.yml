@@ -6353,5 +6353,19 @@ Entries:
   id: 1531
   time: '2026-06-16T17:42:45.000'
   url: https://github.com/moff-station/moff-station-14/pull/1531
+- author: Dave
+  changes:
+  - message: new PAI sprites
+    type: add
+  id: 1533
+  time: '2026-06-16T22:42:48.000'
+  url: https://github.com/moff-station/moff-station-14/pull/1533
+- author: Dave
+  changes:
+  - message: Resomi jumpsuits, outerclothing, inhands & feet now displace better
+    type: fix
+  id: 1534
+  time: '2026-06-16T22:42:48.000'
+  url: https://github.com/moff-station/moff-station-14/pull/1534
 Name: Mofflog
 Order: -2
