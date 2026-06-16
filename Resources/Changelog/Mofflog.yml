@@ -6314,6 +6314,20 @@ Entries:
   id: 1524
   time: '2026-06-15T05:33:14.000'
   url: https://github.com/moff-station/moff-station-14/pull/1524
+- author: Nyxilath
+  changes:
+  - message: Loadout eyewear options have been simplified.
+    type: tweak
+  - message: HUD modules no longer spawn in eyewear, but rather spawn in department
+      drobes and lockers.
+    type: tweak
+  - message: Short-sighted now starts with a prescription HUD module instead of a
+      secondary pair of glasses. Make sure to select a modular glasses option in loadout,
+      or visit a drobe if you forget!
+    type: tweak
+  id: 1526
+  time: '2026-06-16T17:42:45.000'
+  url: https://github.com/moff-station/moff-station-14/pull/1526
 - author: OrbitSystem07
   changes:
   - message: Shells now have two module slots, and start with a tool module
@@ -6325,5 +6339,12 @@ Entries:
   id: 1529
   time: '2026-06-15T05:10:00.000'
   url: https://github.com/moff-station/moff-station-14/pull/1529
+- author: KamTheSythe
+  changes:
+  - message: Plasma is now pink on the gas analyzer.
+    type: tweak
+  id: 1531
+  time: '2026-06-16T17:42:45.000'
+  url: https://github.com/moff-station/moff-station-14/pull/1531
 Name: Mofflog
 Order: -2
