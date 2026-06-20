@@ -17,7 +17,7 @@
     soundHit:
       collection: MetalThud
   - type: Construction
-    graph: WoodenHandleTools
+    graph: Shovel
     node: shovel
   - type: Item
     size: Normal
@@ -49,7 +49,7 @@
       types:
         Blunt: 5
   - type: Construction
-    graph: WoodenHandleTools
+    graph: Pickaxe
     node: pickaxe
   - type: Wieldable
   - type: IncreaseDamageOnWield
@@ -83,7 +83,7 @@
     sprite: _tc14/Objects/Weapons/Melee/stoneaxe.rsi
     state: axe
   - type: Construction
-    graph: WoodenHandleTools
+    graph: Axe
     node: axe
   - type: MeleeWeapon
     wideAnimationRotation: -135

@@ -11,7 +11,7 @@
     wideAnimationRotation: -135
     damage:
       types:
-        Piercing: 1 #RAAAAH AIM FOR THE EYEBALLS
+        Piercing: 1
     attackRate: 3
   - type: Tool
     qualities:
@@ -19,7 +19,7 @@
     useSound:
       path: /Audio/_tc14/Items/chisel_use.ogg
   - type: Construction
-    graph: WoodenHandleTools
+    graph: Chisel
     node: chisel
   - type: Item
     sprite: Objects/Tools/chisel.rsi

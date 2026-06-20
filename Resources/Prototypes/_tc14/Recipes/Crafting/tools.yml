@@ -1,6 +1,6 @@
 - type: construction
   id: chisel
-  graph: WoodenHandleTools
+  graph: Chisel
   startNode: start
   targetNode: chisel
   category: construction-category-tools
@@ -8,23 +8,15 @@
 
 - type: construction
   id: handle
-  graph: WoodenHandleTools
+  graph: WoodenHandle
   startNode: start
   targetNode: handle
   category: construction-category-materials
   objectType: Item
 
 - type: construction
-  id: longhandle
-  graph: WoodenHandleTools
-  startNode: start
-  targetNode: longhandle
-  category: construction-category-materials
-  objectType: Item
-
-- type: construction
   id: pickaxe
-  graph: WoodenHandleTools
+  graph: Pickaxe
   startNode: start
   targetNode: pickaxe
   category: construction-category-tools
@@ -32,7 +24,7 @@
 
 - type: construction
   id: shovel
-  graph: WoodenHandleTools
+  graph: Shovel
   startNode: start
   targetNode: shovel
   category: construction-category-tools
@@ -40,7 +32,7 @@
 
 - type: construction
   id: axe
-  graph: WoodenHandleTools
+  graph: Axe
   startNode: start
   targetNode: axe
   category: construction-category-tools

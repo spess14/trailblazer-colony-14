@@ -23,7 +23,7 @@
   - type: Injurable
     damageContainer: Inorganic
   - type: Construction
-    graph: WoodenHandleTools
+    graph: WoodenHandle
     node: handle
   - type: Tag
     tags:
@@ -32,19 +32,3 @@
     damage:
       types:
         Blunt: 5
-
-- type: entity
-  parent: WoodenHandle
-  id: LongWoodenHandle
-  name: long wooden handle
-  description: Comfortable to hold, but pretty long.
-  components:
-  - type: Sprite
-    state: "long-wooden-handle"
-  - type: Construction
-    graph: WoodenHandleTools
-    node: longhandle
-  - type: MeleeWeapon
-    damage:
-      types:
-        Blunt: 7

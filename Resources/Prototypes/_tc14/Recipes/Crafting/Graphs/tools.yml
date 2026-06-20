@@ -1,5 +1,5 @@
 - type: constructionGraph
-  id: WoodenHandleTools
+  id: WoodenHandle
   start: start
   graph:
   - node: start
@@ -8,42 +8,110 @@
       steps:
       - material: WoodPlank
         amount: 2
-        doAfter: 3
+        doAfter: 1
   - node: handle
     entity: WoodenHandle
+
+- type: constructionGraph
+  id: Chisel
+  start: start
+  graph:
+  - node: start
     edges:
     - to: chisel
-      steps:
-      - tool: Slicing
-        doAfter: 1
-    - to: longhandle
       steps:
       - tag: Handle
         name: construction-graph-tag-handle
         doAfter: 1
-    - to: pickaxe
-      steps:
-      - tag: Rock
-        name: construction-graph-tag-rock
-        doAfter: 2
+        icon:
+          sprite: _tc14/Objects/Misc/handles.rsi
+          state: "wooden-handle"
+      - tag: FlakingRock
+        name: construction-graph-tag-flaking-rock
+        doAfter: 1
+        icon:
+          sprite: _tc14/Objects/Items/rock.rsi
+          state: "flakingrock"
   - node: chisel
     entity: Chisel
-  - node: longhandle
-    entity: LongWoodenHandle
+
+- type: constructionGraph
+  id: Pickaxe
+  start: start
+  graph:
+  - node: start
+    edges:
+    - to: pickaxe
+      steps:
+      - tag: Handle
+        name: construction-graph-tag-handle
+        doAfter: 1
+        icon:
+          sprite: _tc14/Objects/Misc/handles.rsi
+          state: "wooden-handle"
+      - tag: Rock
+        name: construction-graph-tag-rock
+        doAfter: 1
+        icon:
+          sprite: _tc14/Objects/Items/rock.rsi
+          state: "rock"
+  - node: pickaxe
+    entity: StonePickaxe
+
+- type: constructionGraph
+  id: Shovel
+  start: start
+  graph:
+  - node: start
     edges:
     - to: shovel
       steps:
+      - tag: Handle
+        name: construction-graph-tag-handle
+        doAfter: 1
+        icon:
+          sprite: _tc14/Objects/Misc/handles.rsi
+          state: "wooden-handle"
+      - tag: Handle
+        name: construction-graph-tag-handle
+        doAfter: 1
+        icon:
+          sprite: _tc14/Objects/Misc/handles.rsi
+          state: "wooden-handle"
       - tag: Rock
         name: construction-graph-tag-rock
-        doAfter: 3
-    - to: axe
-      steps:
-      - tag: FlakingRock
-        name: construction-graph-tag-flaking-rock
-        doAfter: 2
-  - node: pickaxe
-    entity: StonePickaxe
+        doAfter: 1
+        icon:
+          sprite: _tc14/Objects/Items/rock.rsi
+          state: "rock"
   - node: shovel
     entity: StoneShovel
+
+- type: constructionGraph
+  id: Axe
+  start: start
+  graph:
+  - node: start
+    edges:
+    - to: axe
+      steps:
+      - tag: Handle
+        name: construction-graph-tag-handle
+        doAfter: 1
+        icon:
+          sprite: _tc14/Objects/Misc/handles.rsi
+          state: "wooden-handle"
+      - tag: Handle
+        name: construction-graph-tag-handle
+        doAfter: 1
+        icon:
+          sprite: _tc14/Objects/Misc/handles.rsi
+          state: "wooden-handle"
+      - tag: Rock
+        name: construction-graph-tag-rock
+        doAfter: 1
+        icon:
+          sprite: _tc14/Objects/Items/rock.rsi
+          state: "rock"
   - node: axe
     entity: StoneAxe
