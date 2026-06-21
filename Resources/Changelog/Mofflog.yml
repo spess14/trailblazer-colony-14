@@ -6335,6 +6335,13 @@ Entries:
   id: 1526
   time: '2026-06-16T17:42:45.000'
   url: https://github.com/moff-station/moff-station-14/pull/1526
+- author: Dave
+  changes:
+  - message: Adds Grays as a new roundstart species!
+    type: add
+  id: 1527
+  time: '2026-06-21T00:47:47.000'
+  url: https://github.com/moff-station/moff-station-14/pull/1527
 - author: OrbitSystem07
   changes:
   - message: Shells now have two module slots, and start with a tool module
@@ -6374,6 +6381,13 @@ Entries:
   id: 1536
   time: '2026-06-17T20:31:49.000'
   url: https://github.com/moff-station/moff-station-14/pull/1536
+- author: Dave
+  changes:
+  - message: new material sprites!
+    type: add
+  id: 1537
+  time: '2026-06-21T00:47:47.000'
+  url: https://github.com/moff-station/moff-station-14/pull/1537
 - author: OrbitSystem07
   changes:
   - message: Borgs brains and Ais no longer get automatically destroyed in large enough
