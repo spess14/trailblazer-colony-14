@@ -73,12 +73,13 @@ def get_files_to_publish() -> Iterable[str]:
     for file in os.listdir(RELEASE_DIR):
         yield os.path.join(RELEASE_DIR, file)
 
-
+# Moffstation - Start - For some reason publish wasnt working... maybe this will fix it?
 def get_engine_version() -> str:
-    proc = subprocess.run(["git", "describe","--tags", "--abbrev=0"], stdout=subprocess.PIPE, cwd="RobustToolbox", check=True, encoding="UTF-8")
-    tag = proc.stdout.strip()
-    assert tag.startswith("v")
-    return tag[1:] # Cut off v prefix.
+    tree = ET.parse(os.path.join("RobustToolbox", "MSBuild", "Robust.Engine.Version.props"))
+    version = tree.getroot().find(".//Version").text
+    assert version is not None
+    return version
+# Moffstation - End
 
 
 if __name__ == '__main__':
