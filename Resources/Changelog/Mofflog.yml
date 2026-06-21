@@ -6299,6 +6299,14 @@ Entries:
   id: 1517
   time: '2026-06-11T00:10:00.000'
   url: https://github.com/moff-station/moff-station-14/pull/1517
+- author: Laggy
+  changes:
+  - message: Syndicate vent soldiers have had their loadouts adjusted, and only spawn
+      when taken as a ghostrole.
+    type: tweak
+  id: 1520
+  time: '2026-06-21T02:24:30.000'
+  url: https://github.com/moff-station/moff-station-14/pull/1520
 - author: DuckManZach
   changes:
   - message: Interaction particles no longer play when opening the strip menu
