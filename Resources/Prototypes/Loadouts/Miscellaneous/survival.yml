@@ -20,10 +20,10 @@
     - Reptilian
     - Vulpkanin
     # Moffstation - Begin
-    - Dwarf
     - Resomi
     - Gray
     # Moffstation - End
+    - Thaven
 
 - type: loadoutEffectGroup
   id: EffectSpeciesVox
