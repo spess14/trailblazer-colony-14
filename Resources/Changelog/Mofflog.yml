@@ -6382,5 +6382,12 @@ Entries:
   id: 1541
   time: '2026-06-18T17:21:27.000'
   url: https://github.com/moff-station/moff-station-14/pull/1541
+- author: Nyxilath
+  changes:
+  - message: Xenoarch throw effect now features a shockwave effect.
+    type: tweak
+  id: 1549
+  time: '2026-06-21T00:22:52.000'
+  url: https://github.com/moff-station/moff-station-14/pull/1549
 Name: Mofflog
 Order: -2
