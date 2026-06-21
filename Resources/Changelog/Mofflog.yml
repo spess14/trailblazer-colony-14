@@ -6396,6 +6396,13 @@ Entries:
   id: 1541
   time: '2026-06-18T17:21:27.000'
   url: https://github.com/moff-station/moff-station-14/pull/1541
+- author: OrbitSystem07
+  changes:
+  - message: Test subjects can no longer leave genpop whenever they wish
+    type: fix
+  id: 1542
+  time: '2026-06-21T01:13:14.000'
+  url: https://github.com/moff-station/moff-station-14/pull/1542
 - author: Nyxilath
   changes:
   - message: Xenoarch throw effect now features a shockwave effect.
