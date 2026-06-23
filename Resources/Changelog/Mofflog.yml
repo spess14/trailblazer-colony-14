@@ -6469,5 +6469,14 @@ Entries:
   id: 1557
   time: '2026-06-23T02:11:03.000'
   url: https://github.com/moff-station/moff-station-14/pull/1557
+- author: Nyxilath
+  changes:
+  - message: Gray accents now respect the accentless trait.
+    type: fix
+  - message: Gray accent is now selectable as a trait.
+    type: add
+  id: 1564
+  time: '2026-06-23T18:17:43.000'
+  url: https://github.com/moff-station/moff-station-14/pull/1564
 Name: Mofflog
 Order: -2
