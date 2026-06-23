@@ -6446,6 +6446,13 @@ Entries:
   url: https://github.com/moff-station/moff-station-14/pull/1550
 - author: Nyxilath
   changes:
+  - message: Avali Ninjas now spawn with an oxygen tank.
+    type: fix
+  id: 1552
+  time: '2026-06-23T16:34:07.000'
+  url: https://github.com/moff-station/moff-station-14/pull/1552
+- author: Nyxilath
+  changes:
   - message: Personal item for character 'Delirium'
     type: add
   id: 1555
