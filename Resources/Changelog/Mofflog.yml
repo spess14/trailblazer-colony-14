@@ -6444,5 +6444,23 @@ Entries:
   id: 1550
   time: '2026-06-21T18:04:49.000'
   url: https://github.com/moff-station/moff-station-14/pull/1550
+- author: Nyxilath
+  changes:
+  - message: Personal item for character 'Delirium'
+    type: add
+  id: 1555
+  time: '2026-06-23T02:11:03.000'
+  url: https://github.com/moff-station/moff-station-14/pull/1555
+- author: Dave
+  changes:
+  - message: gray suit storage displacements fix
+    type: fix
+  - message: new gar glasses sprites
+    type: add
+  - message: gray's guidebook entry
+    type: tweak
+  id: 1557
+  time: '2026-06-23T02:11:03.000'
+  url: https://github.com/moff-station/moff-station-14/pull/1557
 Name: Mofflog
 Order: -2
