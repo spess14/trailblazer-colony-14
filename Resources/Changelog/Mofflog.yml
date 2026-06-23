@@ -6469,6 +6469,13 @@ Entries:
   id: 1557
   time: '2026-06-23T02:11:03.000'
   url: https://github.com/moff-station/moff-station-14/pull/1557
+- author: DuckManZach
+  changes:
+  - message: Added an automatic discord event for when we have uptime!
+    type: add
+  id: 1560
+  time: '2026-06-23T19:34:53.000'
+  url: https://github.com/moff-station/moff-station-14/pull/1560
 - author: no player facing change, but holy shit thanks Zero
   changes: []
   id: 1562
