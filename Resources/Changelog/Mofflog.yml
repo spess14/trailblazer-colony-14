@@ -6524,5 +6524,12 @@ Entries:
   id: 1568
   time: '2026-06-26T03:16:11.000'
   url: https://github.com/moff-station/moff-station-14/pull/1568
+- author: DuckManZach
+  changes:
+  - message: Shortened ghost role timers.
+    type: tweak
+  id: 1574
+  time: '2026-06-26T17:07:26.000'
+  url: https://github.com/moff-station/moff-station-14/pull/1574
 Name: Mofflog
 Order: -2
