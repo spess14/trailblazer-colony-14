@@ -6517,5 +6517,12 @@ Entries:
   id: 1566
   time: '2026-06-24T17:08:10.000'
   url: https://github.com/moff-station/moff-station-14/pull/1566
+- author: Nyxilath
+  changes:
+  - message: Grays are now more gray.
+    type: tweak
+  id: 1568
+  time: '2026-06-26T03:16:11.000'
+  url: https://github.com/moff-station/moff-station-14/pull/1568
 Name: Mofflog
 Order: -2
