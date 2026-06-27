@@ -1,5 +1,4 @@
 using System.Globalization;
-using System.Linq; // Moffstation
 using Content.Client.Humanoid;
 using Content.Client.Message;
 using Content.Client.Players.PlayTimeTracking;
@@ -26,23 +25,9 @@ using Direction = Robust.Shared.Maths.Direction;
 
 // CD: Records editor imports
 using Content.Client._CD.Records.UI;
-using Content.Client.Lobby.UI.Roles;
-using Content.Client.Stylesheets;
 using Content.Client._tc14.UI;
-using Content.Client.Lobby.UI.Loadouts;
-using Content.Client.Lobby.UI.Roles;
-using Content.Client.UserInterface.Systems.Guidebook;
-using Content.Shared._CD.Records;
 // End CD - Character Records
-using Content.Shared._DV.Traits;
-using Robust.Shared.Utility; // DV - Traits
-using Content.Shared.Clothing;
-using Content.Shared.Guidebook;
-using Content.Shared.Humanoid.Prototypes;
-using Content.Shared.Preferences.Loadouts;
-using Content.Shared.Roles;
-using Robust.Client.Graphics;
-using Robust.Shared.Utility;
+using Content.Shared._DV.Traits; // DV - Traits
 
 namespace Content.Client.Lobby.UI
 {

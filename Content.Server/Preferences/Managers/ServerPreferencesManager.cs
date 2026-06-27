@@ -8,7 +8,6 @@ using Content.Server.Database;
 using Content.Shared._CD.Records; // CD
 using Content.Shared._DV.Traits; // DV
 using Content.Shared.Body;
-using Content.Shared._CD.Records;
 using Content.Shared._tc14.Skills.Prototypes;
 using Content.Shared.CCVar;
 using Content.Shared.Construction.Prototypes;
@@ -18,7 +17,6 @@ using Content.Shared.Humanoid.Prototypes;
 using Content.Shared.Preferences;
 using Content.Shared.Preferences.Loadouts;
 using Content.Shared.Roles;
-using Content.Shared.Traits;
 using Robust.Server.Player;
 using Robust.Shared.Configuration;
 using Robust.Shared.Enums;

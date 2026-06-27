@@ -30,7 +30,7 @@ namespace Content.Server.Light.EntitySystems
         [Dependency] private SharedAppearanceSystem _appearance = default!;
         [Dependency] private StackSystem _stackSystem = default!;
         [Dependency] private NameModifierSystem _nameModifier = default!;
-        [Dependency] private readonly IPrototypeManager _protoManager = default!;
+        [Dependency] private IPrototypeManager _protoManager = default!;
 
         private static readonly ProtoId<TagPrototype> TrashTag = "Trash";
 
