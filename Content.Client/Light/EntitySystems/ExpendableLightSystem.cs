@@ -7,11 +7,11 @@ using Robust.Shared.Prototypes;
 
 namespace Content.Client.Light.EntitySystems;
 
-public sealed class ExpendableLightSystem : VisualizerSystem<ExpendableLightComponent>
+public sealed partial class ExpendableLightSystem : VisualizerSystem<ExpendableLightComponent>
 {
-    [Dependency] private readonly PointLightSystem _pointLightSystem = default!;
-    [Dependency] private readonly SharedAudioSystem _audioSystem = default!;
-    [Dependency] private readonly LightBehaviorSystem _lightBehavior = default!;
+    [Dependency] private PointLightSystem _pointLightSystem = default!;
+    [Dependency] private SharedAudioSystem _audioSystem = default!;
+    [Dependency] private LightBehaviorSystem _lightBehavior = default!;
     [Dependency] private readonly IPrototypeManager _protoManager = default!;
 
     public override void Initialize()

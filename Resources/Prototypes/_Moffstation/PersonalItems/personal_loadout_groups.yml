@@ -15,18 +15,24 @@
   loadouts:
   - PersonalItemAdelineTurtleneck
   - PersonalItemAineBeret
+  - PersonalItemAliceCaholicFlask
   - PersonalItemAllSaintsDayCrook
   - PersonalItemAnatolyGown
   - PersonalItemAngelPiano
   - PersonalItemArieApple
   - PersonalItemAsterGuitar
-#  - PersonalItemAuroraPin - Remove moffstation personal item
+  - PersonalItemAuroraPin
   - PersonalItemAzumeGuitar
   - PersonalItemBintendoHat
   - PersonalItemBoxcarGlasses
+  - PersonalItemBuckJusticeHat
   - PersonalItemCamillaRing
+  - PersonalItemCandiceClownMask
+  - PersonalItemCandicePirateHat
   - PersonalItemCarolynFlettCigsPack
   - PersonalItemCatCard
+  - PersonalItemChadsChants
+  - PersonalItemChelsiCodex
   - PersonalItemCinnabarMask
   - PersonalItemCooksEnvelope
   - PersonalItemCooksPlushie
@@ -36,22 +42,28 @@
   - PersonalItemDawnBottle
   - PersonalItemDeliPearl
   - PersonalItemDelilahSuit
+  - PersonalItemDelirumMask
   - PersonalItemEclipseSunshadeGun
   - PersonalItemEddieGuitar
   - PersonalItemFredSuit
   - PersonalItemFrostMedicalWebbing
   - PersonalItemGhostwoodCoat
   - PersonalItemGigsShaker
+  - PersonalItemGristleMcThornbodyDogtags
+  - PersonalItemGumboSlippers
   - PersonalItemHercynSuit
   - PersonalItemHotSauceFireExtinguisher
   - PersonalItemIchabodHead
   - PersonalItemIoImplanter
   - PersonalItemIrisRing
   - PersonalItemJaceFinlayMask
+  - PersonalItemJamesRobyHat
+  - PersonalItemJeiDogtags
   - PersonalItemJessMask
   - PersonalItemJibberPistol
   - PersonalItemJulieFavOutfit
   - PersonalItemKatieWristBand
+  - PersonalItemKazaWreath
   - PersonalItemKazoSkates
   - PersonalItemKennyPrisonerShirt
   - PersonalItemKethendachuakJumpskirt
@@ -70,8 +82,10 @@
   - PersonalItemPeedeeAvatar
   - PersonalItemPeriwinkleFace
   - PersonalItemPilkmanPlushie
+  - PersonalItemPlastiPicture
   - PersonalItemPlentJacket
-#  - PersonalItemRemiaPin - TC14 - Remove moffstation personal item
+  - PersonalItemRemiaPin
+  - PersonalItemReneePlanetaryPasscard
   - PersonalItemRoseHeadphones
   - PersonalItemRufflerMask
   - PersonalItemRykerPen
@@ -87,7 +101,7 @@
   - PersonalItemShimmyPistolCase
   - PersonalItemSiegeHalffloofMask
   - PersonalItemSigerthePlushie
-#  - PersonalItemSkiesOfSunshine - TC14 - Remove moffstation personal item
+  - PersonalItemSkiesOfSunshine
   - PersonalItemSkrikiPlush
   - PersonalItemSqueaksHampter
   - PersonalItemStellaPistol

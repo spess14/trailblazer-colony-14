@@ -1,6 +1,7 @@
 using System.Numerics;
-using Content.Shared._CD.Records;
 using Content.Shared._tc14.Skills.Prototypes;
+using Content.Shared._CD.Records; // CD
+using Content.Shared._DV.Traits; // DV
 using Content.Shared.Humanoid.Markings;
 using Content.Shared.Humanoid.Prototypes;
 using Content.Shared.Preferences;
