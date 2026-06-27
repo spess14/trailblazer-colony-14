@@ -10,10 +10,10 @@ namespace Content.Shared._tc14.Chemistry.Systems;
 /// <summary>
 /// Handles <see cref="FueledHeaterComponent"/>.
 /// </summary>
-public sealed partial class FueledHeaterSystem : EntitySystem
+public sealed class FueledHeaterSystem : EntitySystem
 {
-    [Dependency] private SharedSolutionContainerSystem _solution = default!;
-    [Dependency] private SharedTemperatureSystem _temperature = default!;
+    [Dependency] private readonly SharedSolutionContainerSystem _solution = default!;
+    [Dependency] private readonly SharedTemperatureSystem _temperature = default!;
 
     public override void Update(float frameTime)
     {
@@ -31,11 +31,11 @@ public sealed partial class FueledHeaterSystem : EntitySystem
         var entityCount = placer.PlacedEntities.Count;
         foreach (var heatingEntity in placer.PlacedEntities)
         {
-            if (!TryComp<SolutionManagerComponent>(heatingEntity, out var container))
+            if (!TryComp<SolutionContainerManagerComponent>(heatingEntity, out var container))
                 continue;
 
             var solutionEnergy = heater.SolutionHeatPerSecond * frameTime / entityCount;
-            foreach (var (_, soln) in _solution.EnumerateSolutions((heatingEntity, container), false))
+            foreach (var (_, soln) in _solution.EnumerateSolutions((heatingEntity, container)))
             {
                 _solution.AddThermalEnergyClamped(soln, solutionEnergy, 0, heater.MaxTemp);
             }

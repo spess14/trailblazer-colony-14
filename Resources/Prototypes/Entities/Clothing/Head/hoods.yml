@@ -165,7 +165,6 @@
         Heat: 0.95
         Radiation: 0.65
   - type: IdentityBlocker
-  - type: IngestionBlocker
   - type: BreathMask
   - type: HideLayerClothing
     slots:
@@ -282,9 +281,9 @@
   name: bartender winter coat hood
   components:
   - type: Sprite
-    sprite: _Moffstation/Clothing/Head/Hoods/Coat/hoodbartender.rsi # Moffstation
+    sprite: Clothing/Head/Hoods/Coat/hoodbartender.rsi
   - type: Clothing
-    sprite: _Moffstation/Clothing/Head/Hoods/Coat/hoodbartender.rsi # Moffstation
+    sprite: Clothing/Head/Hoods/Coat/hoodbartender.rsi
 # Moffstation - Start - Command Outfit Resprite
 #- type: entity                ~I couldn't get it to work with the hood here, Winter Coats are so scuffed >.<~
 #  parent: ClothingHeadHatHoodWinterBase
@@ -305,9 +304,9 @@
   name: cargo winter coat hood
   components:
   - type: Sprite
-    sprite: _Moffstation/Clothing/Head/Hoods/Coat/hoodcargo.rsi # Moffstation
+    sprite: Clothing/Head/Hoods/Coat/hoodcargo.rsi
   - type: Clothing
-    sprite: _Moffstation/Clothing/Head/Hoods/Coat/hoodcargo.rsi # Moffstation
+    sprite: Clothing/Head/Hoods/Coat/hoodcargo.rsi
 
 - type: entity
   parent: ClothingHeadHatHoodWinterBase
@@ -427,9 +426,9 @@
   name: mime coat hood
   components:
   - type: Sprite
-    sprite: _Moffstation/Clothing/Head/Hoods/Coat/hoodmime.rsi # Moffstation
+    sprite: Clothing/Head/Hoods/Coat/hoodmime.rsi
   - type: Clothing
-    sprite: _Moffstation/Clothing/Head/Hoods/Coat/hoodmime.rsi # Moffstation
+    sprite: Clothing/Head/Hoods/Coat/hoodmime.rsi
 
 - type: entity
   parent: ClothingHeadHatHoodWinterBase
@@ -438,9 +437,9 @@
   name: miner coat hood
   components:
   - type: Sprite
-    sprite: _Moffstation/Clothing/Head/Hoods/Coat/hoodminer.rsi # Moffstation
+    sprite: Clothing/Head/Hoods/Coat/hoodminer.rsi
   - type: Clothing
-    sprite: _Moffstation/Clothing/Head/Hoods/Coat/hoodminer.rsi # Moffstation
+    sprite: Clothing/Head/Hoods/Coat/hoodminer.rsi
 
 - type: entity
   parent: ClothingHeadHatHoodWinterBase
@@ -482,9 +481,9 @@
   name: robotics coat hood
   components:
   - type: Sprite
-    sprite: _Moffstation/Clothing/Head/Hoods/Coat/hoodrobo.rsi # Moffstation
+    sprite: Clothing/Head/Hoods/Coat/hoodrobo.rsi
   - type: Clothing
-    sprite: _Moffstation/Clothing/Head/Hoods/Coat/hoodrobo.rsi # Moffstation
+    sprite: Clothing/Head/Hoods/Coat/hoodrobo.rsi
 
 - type: entity
   parent: ClothingHeadHatHoodWinterBase
@@ -493,9 +492,9 @@
   name: scientist coat hood
   components:
   - type: Sprite
-    sprite: _Moffstation/Clothing/Head/Hoods/Coat/hoodsci.rsi # Moffstation
+    sprite: Clothing/Head/Hoods/Coat/hoodsci.rsi
   - type: Clothing
-    sprite: _Moffstation/Clothing/Head/Hoods/Coat/hoodsci.rsi # Moffstation
+    sprite: Clothing/Head/Hoods/Coat/hoodsci.rsi
 
 - type: entity
   parent: ClothingHeadHatHoodWinterBase

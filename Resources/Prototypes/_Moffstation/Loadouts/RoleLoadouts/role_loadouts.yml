@@ -9,4 +9,4 @@
   - GroupEVATankVox
   - GroupSpeciesBreathTool
   - GroupTankHarness
-  # - PersonalItemsJobAgnostic # TC14 - disable personal item loadouts # Umbra
+  - PersonalItemsJobAgnostic # Umbra

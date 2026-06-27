@@ -9,7 +9,7 @@ namespace Content.Client._tc14.Research.UI;
 [GenerateTypedNameReferences]
 public sealed partial class ResearchTableItem : Control
 {
-    [Dependency] private IPrototypeManager _protoMan = default!;
+    [Dependency] private readonly IPrototypeManager _protoMan = default!;
 
     public ResearchEntryPrototype proto = default!;
     private ResearchDisciplinePrototype _disciplineProto = default!;

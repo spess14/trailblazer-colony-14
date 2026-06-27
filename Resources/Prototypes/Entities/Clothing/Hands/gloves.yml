@@ -176,9 +176,9 @@
   description: Thin sterile latex gloves. Basic PPE for any doctor.
   components:
   - type: Sprite
-    sprite: _Moffstation/Clothing/Hands/latex.rsi # Moffstation
+    sprite: Clothing/Hands/Gloves/latex.rsi
   - type: Clothing
-    sprite: _Moffstation/Clothing/Hands/latex.rsi # Moffstation
+    sprite: Clothing/Hands/Gloves/latex.rsi
   - type: Fiber
     fiberMaterial: fibers-latex
   - type: FingerprintMask
@@ -190,9 +190,9 @@
   description: High-quality nitrile gloves. Expensive medical PPE.
   components:
   - type: Sprite
-    sprite: _Moffstation/Clothing/Hands/nitrile.rsi # Moffstation
+    sprite: Clothing/Hands/Gloves/nitrile.rsi
   - type: Clothing
-    sprite: _Moffstation/Clothing/Hands/nitrile.rsi # Moffstation
+    sprite: Clothing/Hands/Gloves/nitrile.rsi
   - type: Fiber
     fiberMaterial: fibers-nitrile
   - type: FingerprintMask
@@ -238,9 +238,9 @@
   description: Beep boop borp!
   components:
   - type: Sprite
-    sprite: _Moffstation/Clothing/Hands/robohands.rsi # Moffstation
+    sprite: Clothing/Hands/Gloves/robohands.rsi
   - type: Clothing
-    sprite: _Moffstation/Clothing/Hands/robohands.rsi # Moffstation
+    sprite: Clothing/Hands/Gloves/robohands.rsi
   - type: Fiber
     fiberMaterial: fibers-leather
     fiberColor: fibers-black
@@ -302,15 +302,15 @@
       - type: CriminalRecordsHacker
 
 - type: entity
-  parent: [ ClothingHandsGlovesSyntheticBase, BaseSecurityEngineeringContraband ] # Moffstation
+  parent: [ ClothingHandsGlovesColorBlack, BaseSecurityEngineeringContraband ]
   id: ClothingHandsGlovesCombat
   name: combat gloves
   description: These tactical gloves are fireproof and shock resistant.
   components:
   - type: Sprite
-    sprite: _Moffstation/Clothing/Hands/combat.rsi # Moffstation
+    sprite: Clothing/Hands/Gloves/combat.rsi
   - type: Clothing
-    sprite: _Moffstation/Clothing/Hands/combat.rsi # Moffstation
+    sprite: Clothing/Hands/Gloves/combat.rsi
   - type: Insulated
   - type: Fiber
     fiberMaterial: fibers-insulative
@@ -331,7 +331,7 @@
     fiberColor: fibers-black
 
 - type: entity
-  parent: [ BaseSecurityCargoContraband, ClothingHandsGlovesCombat, BaseSlicingRefinable ]
+  parent: [ BaseSecurityCargoContraband, ClothingHandsGlovesCombat ]
   id: ClothingHandsMercGlovesCombat
   name: mercenary combat gloves
   description: High-quality combat gloves to protect hands from mechanical damage during combat.
@@ -340,8 +340,9 @@
     sprite: Clothing/Hands/Gloves/mercbattle.rsi
   - type: Clothing
     sprite: Clothing/Hands/Gloves/mercbattle.rsi
-  - type: ToolRefinable
-    refineResult:
+  - type: Butcherable
+    butcheringType: Knife
+    spawned:
     - id: ClothingHandsGlovesMercFingerless
   - type: Fiber
     fiberMaterial: fibers-insulative
@@ -354,9 +355,9 @@
   description: Plain black gloves without fingertips for the hard working.
   components:
   - type: Sprite
-    sprite: _Moffstation/Clothing/Hands/fingerless.rsi # Moffstation
+    sprite: Clothing/Hands/Gloves/fingerless.rsi
   - type: Clothing
-    sprite: _Moffstation/Clothing/Hands/fingerless.rsi # Moffstation
+    sprite: Clothing/Hands/Gloves/fingerless.rsi
   - type: Fiber
     fiberMaterial: fibers-synthetic
     fiberColor: fibers-black
@@ -372,9 +373,9 @@
   description: Insulated gloves resistant to shocks, or at least they used to.
   components:
   - type: Sprite
-    sprite: _Moffstation/Clothing/Hands/fingerlessinsuls.rsi # Moffstation
+    sprite: Clothing/Hands/Gloves/fingerlessinsuls.rsi
   - type: Clothing
-    sprite: _Moffstation/Clothing/Hands/fingerlessinsuls.rsi # Moffstation
+    sprite: Clothing/Hands/Gloves/fingerlessinsuls.rsi
   - type: Fiber
     fiberMaterial: fibers-insulative
     fiberColor: fibers-yellow
@@ -486,9 +487,9 @@
   description: High-quality rubber gloves, squeaky to do some cleaning!
   components:
   - type: Sprite
-    sprite: _Moffstation/Clothing/Hands/janitor.rsi # Moffstation
+    sprite: Clothing/Hands/Gloves/janitor.rsi
   - type: Clothing
-    sprite: _Moffstation/Clothing/Hands/janitor.rsi # Moffstation
+    sprite: Clothing/Hands/Gloves/janitor.rsi
   - type: Fiber
     fiberMaterial: fibers-rubber
     fiberColor: fibers-yellow

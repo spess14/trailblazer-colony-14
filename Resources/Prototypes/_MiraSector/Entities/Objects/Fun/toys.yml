@@ -6,11 +6,13 @@
   components:
   - type: Item
     size: Small
-  - type: Solution
-    solution:
-      reagents:
-      - ReagentId: Water
-        Quantity: 20
+  - type: SolutionContainerManager
+    solutions:
+      balloon:
+        maxVol: 20
+        reagents:
+        - ReagentId: Water
+          Quantity: 20
   - type: DrawableSolution
     solution: balloon
   - type: RefillableSolution
@@ -24,7 +26,7 @@
     damage:
       types:
         Blunt: 1
-  - type: Injurable
+  - type: Damageable
     damageContainer: Biological
   - type: Destructible
     thresholds:
@@ -63,11 +65,13 @@
   - type: Sprite
     sprite: _MiraSector/Objects/Fun/water_balloon.rsi
     state: nt_balloon
-  - type: Solution
-    solution:
-      reagents:
-      - ReagentId: Vodka
-        Quantity: 20
+  - type: SolutionContainerManager
+    solutions:
+      balloon:
+        maxVol: 20
+        reagents:
+        - ReagentId: Vodka
+          Quantity: 20
 
 - type: entity
   parent: BoxCardboard

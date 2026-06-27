@@ -9,11 +9,19 @@
   - type: Icon
     sprite: /Textures/_tc14/Structures/Windows/plasma_window.rsi # Trailblazer: Structures/Windows/plasma_window.rsi < /Textures/_tc14/Structures/Windows/plasma_window.rsi
   - type: Damageable
-    damageModifierSet: Glass
-  - type: Injurable
     damageContainer: StructuralInorganic
+    damageModifierSet: Glass
   - type: Destructible
     thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 150
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+      - !type:PlaySoundBehavior
+        sound:
+          collection: WindowShatter
     - trigger:
         !type:DamageTrigger
         damage: 75
@@ -74,6 +82,15 @@
       sprite: Structures/Windows/cracks_directional.rsi
   - type: Destructible
     thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 75
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+      - !type:PlaySoundBehavior
+        sound:
+          collection: WindowShatter
     - trigger:
         !type:DamageTrigger
         damage: 37

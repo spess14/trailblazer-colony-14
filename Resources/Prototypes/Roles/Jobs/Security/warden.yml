@@ -18,6 +18,7 @@
   startingGear: WardenGear
   icon: "JobIconWarden"
   supervisors: job-supervisors-hos
+  canBeAntag: false
   access:
   - Security
   - Brig

@@ -25,9 +25,8 @@
         layer:
         - Opaque
   - type: Damageable
-    damageModifierSet: Web # do not ask
-  - type: Injurable
     damageContainer: StructuralInorganic
+    damageModifierSet: Web # do not ask
   - type: MeleeSound
     soundGroups:
       Brute:

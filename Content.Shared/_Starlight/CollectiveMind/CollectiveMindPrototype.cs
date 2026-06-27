@@ -1,5 +1,4 @@
 using Content.Shared.Tag;
-using Content.Shared.Whitelist;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization;
 
@@ -23,7 +22,9 @@ public sealed partial class CollectiveMindPrototype : IPrototype
     [DataField]
     public Color Color = Color.Lime;
 
-    /// If an entity passes any whitelist in this list, they get access to this collective mind.
-    [DataField(required: true)]
-    public List<EntityWhitelist> Requirements = new();
+    [DataField]
+    public List<string> RequiredComponents = [];
+
+    [DataField]
+    public List<ProtoId<TagPrototype>> RequiredTags = [];
 }

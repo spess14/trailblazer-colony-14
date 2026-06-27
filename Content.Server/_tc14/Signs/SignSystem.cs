@@ -10,9 +10,9 @@ namespace Content.Server._tc14.Signs;
 /// <summary>
 /// Handles writing on signs. Has to be on server due to QuickDialogSystem.
 /// </summary>
-public sealed partial class SignSystem : EntitySystem
+public sealed class SignSystem : EntitySystem
 {
-    [Dependency] private QuickDialogSystem _quickDialog = default!;
+    [Dependency] private readonly QuickDialogSystem _quickDialog = default!;
 
     /// <inheritdoc/>
     public override void Initialize()

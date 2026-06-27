@@ -15,16 +15,17 @@ using Content.Shared.Stacks;
 
 namespace Content.Server.Objectives.Systems;
 
-public sealed partial class StealConditionSystem : EntitySystem
+public sealed class StealConditionSystem : EntitySystem
 {
-    [Dependency] private IRobustRandom _random = default!;
-    [Dependency] private IPrototypeManager _proto = default!;
-    [Dependency] private MetaDataSystem _metaData = default!;
-    [Dependency] private MobStateSystem _mobState = default!;
-    [Dependency] private SharedInteractionSystem _interaction = default!;
-    [Dependency] private SharedObjectivesSystem _objectives = default!;
-    [Dependency] private EntityLookupSystem _lookup = default!;
-    [Dependency] private EntityQuery<ContainerManagerComponent> _containerQuery = default!;
+    [Dependency] private readonly IRobustRandom _random = default!;
+    [Dependency] private readonly IPrototypeManager _proto = default!;
+    [Dependency] private readonly MetaDataSystem _metaData = default!;
+    [Dependency] private readonly MobStateSystem _mobState = default!;
+    [Dependency] private readonly SharedInteractionSystem _interaction = default!;
+    [Dependency] private readonly SharedObjectivesSystem _objectives = default!;
+    [Dependency] private readonly EntityLookupSystem _lookup = default!;
+
+    private EntityQuery<ContainerManagerComponent> _containerQuery;
 
     private HashSet<Entity<TransformComponent>> _nearestEnts = new();
     private HashSet<EntityUid> _countedItems = new();
@@ -32,6 +33,8 @@ public sealed partial class StealConditionSystem : EntitySystem
     public override void Initialize()
     {
         base.Initialize();
+
+        _containerQuery = GetEntityQuery<ContainerManagerComponent>();
 
         SubscribeLocalEvent<StealConditionComponent, ObjectiveAssignedEvent>(OnAssigned);
         SubscribeLocalEvent<StealConditionComponent, ObjectiveAfterAssignEvent>(OnAfterAssign);

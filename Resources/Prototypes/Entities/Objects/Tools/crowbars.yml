@@ -12,7 +12,7 @@
     tags:
     - Crowbar
   - type: MeleeWeapon
-    wideAnimationRotation: -90 # Moffstation
+    wideAnimationRotation: -135
     damage:
       types:
         Blunt: 8
@@ -31,14 +31,14 @@
     price: 22
   - type: Prying
   - type: Sprite
-    sprite: &crowbar.rsi "_Moffstation/Objects/Tools/crowbar.rsi" # Moffstation
+    sprite: Objects/Tools/crowbar.rsi
   - type: Clothing
-    sprite: *crowbar.rsi # Moffstation
+    sprite: Objects/Tools/crowbar.rsi
     quickEquip: false
     slots:
     - Belt
   - type: Item
-    sprite: *crowbar.rsi # Moffstation
+    sprite: Objects/Tools/crowbar.rsi
     size: Small
 
 # Standard (grey) Crowbar
@@ -50,7 +50,7 @@
     state: icon
   - type: Item
     storedSprite:
-      sprite: *crowbar.rsi # Moffstation
+      sprite: Objects/Tools/crowbar.rsi
       state: storage
 
 # Emergency (red) Crowbar
@@ -66,26 +66,26 @@
     layers:
     - state: icon
     - state: cover-icon
-      color: &red "#ff2a4e" # Moffstation
+      color: "#990000"
   - type: Item
     storedSprite:
       state: red-storage
-      sprite: *crowbar.rsi # Moffstation
+      sprite: Objects/Tools/crowbar.rsi
     inhandVisuals:
       left:
       - state: inhand-left
       - state: cover-inhand-left
-        color: *red # Moffstation
+        color: "#990000"
       right:
       - state: inhand-right
       - state: cover-inhand-right
-        color: *red # Moffstation
+        color: "#990000"
   - type: Clothing
     clothingVisuals:
       belt:
       - state: equipped-BELT
       - state: cover-equipped-BELT
-        color: *red # Moffstation
+        color: "#990000"
 
 # Autolathe (green) Crowbar
 - type: entity
@@ -96,26 +96,26 @@
     layers:
     - state: icon
     - state: cover-icon
-      color: &green "#98ffdf" # Moffstation
+      color: "#00621c"
   - type: Item
     storedSprite:
       state: green-storage
-      sprite: *crowbar.rsi # Moffstation
+      sprite: Objects/Tools/crowbar.rsi
     inhandVisuals:
       left:
       - state: inhand-left
       - state: cover-inhand-left
-        color: *green # Moffstation
+        color: "#00621c"
       right:
       - state: inhand-right
       - state: cover-inhand-right
-        color: *green # Moffstation
+        color: "#00621c"
   - type: Clothing
     clothingVisuals:
       belt:
       - state: equipped-BELT
       - state: cover-equipped-BELT
-        color: *green # Moffstation
+        color: "#00621c"
 
 # Toolbox (orange) Crowbar
 - type: entity
@@ -126,26 +126,26 @@
     layers:
     - state: icon
     - state: cover-icon
-      color: &orange "#ff7836" # Moffstation
+      color: "#673800"
   - type: Item
     storedSprite:
       state: orange-storage
-      sprite: *crowbar.rsi # Moffstation
+      sprite: Objects/Tools/crowbar.rsi
     inhandVisuals:
       left:
       - state: inhand-left
       - state: cover-inhand-left
-        color: *orange # Moffstation
+        color: "#673800"
       right:
       - state: inhand-right
       - state: cover-inhand-right
-        color: *orange # Moffstation
+        color: "#673800"
   - type: Clothing
     clothingVisuals:
       belt:
       - state: equipped-BELT
       - state: cover-equipped-BELT
-        color: *orange # Moffstation
+        color: "#673800"
 
 # Engineering (yellow) Crowbar
 - type: entity
@@ -156,23 +156,23 @@
     layers:
     - state: icon
     - state: cover-icon
-      color: &yellow "#ffbb20" # Moffstation
+      color: "#968000"
   - type: Item
     storedSprite:
       state: yellow-storage
-      sprite: *crowbar.rsi # Moffstation
+      sprite: Objects/Tools/crowbar.rsi
     inhandVisuals:
       left:
       - state: inhand-left
       - state: cover-inhand-left
-        color: *yellow # Moffstation
+        color: "#968000"
       right:
       - state: inhand-right
       - state: cover-inhand-right
-        color: *yellow # Moffstation
+        color: "#968000"
   - type: Clothing
     clothingVisuals:
       belt:
       - state: equipped-BELT
       - state: cover-equipped-BELT
-        color: *yellow # Moffstation
+        color: "#968000"

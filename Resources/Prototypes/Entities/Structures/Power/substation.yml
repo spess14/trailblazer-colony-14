@@ -33,7 +33,7 @@
   # Impstation - Start
   - type: AccessReader
     access: [["Engineering"]]
-  - type: ActivatableUIRequiresAccess
+  - type: ActivatableUIRequiresAccess 
   # Impstation - End
 
   # Interface
@@ -46,10 +46,6 @@
     interfaces:
       enum.BatteryUiKey.Key:
         type: BatteryBoundUserInterface
-      # Moffstation - Begin - Expanded Ai Whitelist
-      enum.WiresUiKey.Key:
-        type: WiresBoundUserInterface
-      # Moffstation - End
   - type: ActivatableUI
     key: enum.BatteryUiKey.Key
 
@@ -61,9 +57,8 @@
 
   # Damage
   - type: Damageable
-    damageModifierSet: StructuralMetallicStrong
-  - type: Injurable
     damageContainer: StructuralInorganic
+    damageModifierSet: StructuralMetallicStrong
   - type: PacifismDangerousAttack
 
   # Guidebook
@@ -113,6 +108,12 @@
     thresholds:
     - trigger:
         !type:DamageTrigger
+        damage: 200
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+    - trigger:
+        !type:DamageTrigger
         damage: 100
       behaviors:
       - !type:DoActsBehavior
@@ -149,12 +150,6 @@
     requirePower: true
     highVoltageNode: input
     mediumVoltageNode: output
-  # Moffstation - Begin - Expanded Ai Whitelist
-  - type: StationAiWhitelist
-  - type: Wires
-    boardName: wires-board-name-substation
-    layoutId: ComputerAi
-  # Moffstation - End
 
 # Compact Wall Substation Base
 - type: entity
@@ -204,6 +199,12 @@
     state: substation_wall_static
   - type: Destructible
     thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 200
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
     - trigger:
         !type:DamageTrigger
         damage: 100

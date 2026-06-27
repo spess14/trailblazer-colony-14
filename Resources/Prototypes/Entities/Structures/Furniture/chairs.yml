@@ -28,11 +28,16 @@
     buckleOffset: "0,-0.05"
   - type: Pullable
   - type: Damageable
+    damageContainer: StructuralInorganic # Moffstation - Structural damagetype fix 
     damageModifierSet: Metallic
-  - type: Injurable
-    damageContainer: StructuralInorganic # Moffstation - Structural damagetype fix
   - type: Destructible
     thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 100
+      behaviors:
+        - !type:DoActsBehavior
+          acts: [ "Destruction" ]
     - trigger:
         !type:DamageTrigger
         damage: 50
@@ -207,6 +212,15 @@
     damageModifierSet: Wood
   - type: Destructible
     thresholds:
+    - trigger: # Excess damage, don't spawn entities
+        !type:DamageTrigger
+        damage: 100
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: WoodDestroy
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
     - trigger:
         !type:DamageTrigger
         damage: 25
@@ -264,6 +278,15 @@
       collection: MaleScreams
   - type: Destructible
     thresholds:
+    - trigger: # Excess damage, don't spawn entities
+        !type:DamageTrigger
+        damage: 100
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          path: /Audio/Voice/Human/womanlaugh.ogg
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
     - trigger:
         !type:DamageTrigger
         damage: 50
@@ -300,6 +323,15 @@
     damageModifierSet: Web
   - type: Destructible
     thresholds:
+    - trigger: # Excess damage, don't spawn entities
+        !type:DamageTrigger
+        damage: 100
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: WoodDestroy
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
     - trigger:
         !type:DamageTrigger
         damage: 50
@@ -400,11 +432,16 @@
     graph: Seat
     node: stoolCard
   - type: Damageable
-    damageModifierSet: Card
-  - type: Injurable
     damageContainer: Inorganic
+    damageModifierSet: Card
   - type: Destructible
     thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 40
+      behaviors:
+        - !type:DoActsBehavior
+          acts: [ "Destruction" ]
     - trigger:
         !type:DamageTrigger
         damage: 10
@@ -430,12 +467,20 @@
     node: chairWoodBench
     # Moffstation - Begin - Changing WoodenBench to be Wooden
   - type: Damageable
-    damageModifierSet: Wood
-  - type: Injurable
     damageContainer: StructuralInorganic
+    damageModifierSet: Wood
     # Moffstation - End
   - type: Destructible
     thresholds:
+    - trigger: # Excess damage, don't spawn entities
+        !type:DamageTrigger
+        damage: 100
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: WoodDestroy
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
     - trigger:
         !type:DamageTrigger
         damage: 50

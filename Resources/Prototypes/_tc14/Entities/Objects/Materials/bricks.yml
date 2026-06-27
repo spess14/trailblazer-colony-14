@@ -10,9 +10,8 @@
     sprite: _tc14/Objects/Materials/bricks.rsi
     size: Normal
   - type: Damageable
-    damageModifierSet: Rock
-  - type: Injurable
     damageContainer: Inorganic
+    damageModifierSet: Rock
   - type: Destructible
     thresholds:
     - trigger:

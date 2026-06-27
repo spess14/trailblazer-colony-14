@@ -7,6 +7,7 @@
   startingGear: BridgeAssistantGear
   icon: "JobIconBridgeAssistant"
   supervisors: job-supervisors-captain
+  canBeAntag: false
   access:
   - Command
   - Maintenance

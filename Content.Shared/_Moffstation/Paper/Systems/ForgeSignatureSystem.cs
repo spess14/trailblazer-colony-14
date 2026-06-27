@@ -6,10 +6,10 @@ using Robust.Shared.Configuration;
 
 namespace Content.Shared._Moffstation.Paper.Systems;
 
-public sealed partial class ForgeSignatureSystem : EntitySystem
+public sealed class ForgeSignatureSystem : EntitySystem
 {
-    [Dependency] private ISharedAdminLogManager _adminLogger = default!;
-    [Dependency] private IConfigurationManager _cfgManager = default!;
+    [Dependency] private readonly ISharedAdminLogManager _adminLogger = default!;
+    [Dependency] private readonly IConfigurationManager _cfgManager = default!;
 
     public override void Initialize()
     {

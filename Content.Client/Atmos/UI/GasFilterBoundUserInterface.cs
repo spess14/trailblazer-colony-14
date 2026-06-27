@@ -30,10 +30,11 @@ namespace Content.Client.Atmos.UI
             var atmosSystem = EntMan.System<AtmosphereSystem>();
 
             _window = this.CreateWindow<GasFilterWindow>();
+            _window.PopulateGasList(atmosSystem.Gases);
 
             _window.ToggleStatusButtonPressed += OnToggleStatusButtonPressed;
             _window.FilterTransferRateChanged += OnFilterTransferRatePressed;
-            _window.FilterGasToggled += OnToggleGasPressed; // Moffstation - filter multiple gases
+            _window.SelectGasPressed += OnSelectGasPressed;
         }
 
         private void OnToggleStatusButtonPressed(bool status)
@@ -48,15 +49,23 @@ namespace Content.Client.Atmos.UI
             SendMessage(new GasFilterChangeRateMessage(rate));
         }
 
-        // Moffstation - Begin (filter multiple gases)
-        private void OnToggleGasPressed(Gas gas, bool filtered)
+        private void OnSelectGasPressed()
         {
             if (_window is null)
                 return;
 
-            SendMessage(new GasFilterToggleGasMessage(gas, filtered));
+            if (_window.SelectedGas is null)
+            {
+                SendMessage(new GasFilterSelectGasMessage(null));
+            }
+            else
+            {
+                if (!Enum.TryParse<Gas>(_window.SelectedGas, out var gas))
+                    return;
+
+                SendMessage(new GasFilterSelectGasMessage(gas));
+            }
         }
-        // Moffstation - End
 
         /// <summary>
         /// Update the UI state based on server-sent info
@@ -71,7 +80,17 @@ namespace Content.Client.Atmos.UI
             _window.Title = (cast.FilterLabel);
             _window.SetFilterStatus(cast.Enabled);
             _window.SetTransferRate(cast.TransferRate);
-            _window.SetFilteredGases(cast.FilteredGases); // Moffstation - filter multiple gases
+            if (cast.FilteredGas is not null)
+            {
+                var atmos = EntMan.System<AtmosphereSystem>();
+                var gas = atmos.GetGas((Gas) cast.FilteredGas);
+                var gasName = Loc.GetString(gas.Name);
+                _window.SetGasFiltered(gas.ID, gasName);
+            }
+            else
+            {
+                _window.SetGasFiltered(null, Loc.GetString("comp-gas-filter-ui-filter-gas-none"));
+            }
         }
 
         protected override void Dispose(bool disposing)

@@ -4,10 +4,9 @@ using Content.Shared.Mobs.Components;
 
 namespace Content.Shared._Goob.LastWords;
 
-public sealed partial class LastWordsSystem : EntitySystem
+public sealed class LastWordsSystem : EntitySystem
 {
-    [Dependency] private SharedMindSystem _mindSystem = default!;
-
+    [Dependency] private readonly SharedMindSystem _mindSystem = default!;
     public override void Initialize()
     {
         SubscribeLocalEvent<MobStateComponent, EntitySpokeEvent>(OnEntitySpoke);

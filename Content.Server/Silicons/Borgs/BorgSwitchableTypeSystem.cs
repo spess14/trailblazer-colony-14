@@ -12,12 +12,11 @@ namespace Content.Server.Silicons.Borgs;
 /// <summary>
 /// Server-side logic for borg type switching. Handles more heavyweight and server-specific switching logic.
 /// </summary>
-public sealed partial class BorgSwitchableTypeSystem : SharedBorgSwitchableTypeSystem
+public sealed class BorgSwitchableTypeSystem : SharedBorgSwitchableTypeSystem
 {
-    [Dependency] private BorgSystem _borgSystem = default!;
-    [Dependency] private ServerInventorySystem _inventorySystem = default!;
-
-    [Dependency] private SharedRadioSystem _radio = default!; // MOffstation
+    [Dependency] private readonly BorgSystem _borgSystem = default!;
+    [Dependency] private readonly ServerInventorySystem _inventorySystem = default!;
+    [Dependency] private readonly SharedRadioSystem _radio = default!;
 
     protected override void SelectBorgModule(Entity<BorgSwitchableTypeComponent> ent, ProtoId<BorgTypePrototype> borgType)
     {

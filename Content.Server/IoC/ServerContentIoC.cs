@@ -83,6 +83,6 @@ internal static class ServerContentIoC
         deps.Register<DiscordChatLink>();
         deps.Register<ServerFeedbackManager>();
         deps.Register<ISharedFeedbackManager, ServerFeedbackManager>();
-        deps.Register<IWeightedAntagManager, WeightedAntagManager>(); //Moffstaion - Dummy Antag Manager for Integration tests
+        deps.Register<WeightedAntagManager>();
     }
 }

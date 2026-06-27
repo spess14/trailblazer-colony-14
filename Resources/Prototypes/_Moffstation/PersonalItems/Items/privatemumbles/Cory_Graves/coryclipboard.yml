@@ -33,3 +33,7 @@
   - !type:PersonalItemLoadoutEffect
     character:
     - Cory Graves
+    jobs:
+    - JobQuartermaster
+    - JobSalvageSpecialist
+    - JobCargoTechnician

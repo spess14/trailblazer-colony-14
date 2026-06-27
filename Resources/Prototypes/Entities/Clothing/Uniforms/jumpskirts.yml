@@ -5,9 +5,9 @@
   description: A nice and tidy uniform. Shame about the bar though.
   components:
   - type: Sprite
-    sprite: _Moffstation/Clothing/Uniforms/Jumpskirt/bartender.rsi # Moffstation
+    sprite: Clothing/Uniforms/Jumpskirt/bartender.rsi
   - type: Clothing
-    sprite: _Moffstation/Clothing/Uniforms/Jumpskirt/bartender.rsi # Moffstation
+    sprite: Clothing/Uniforms/Jumpskirt/bartender.rsi
 
 - type: entity
   parent: [ClothingUniformSkirtBase, BaseCommandContraband]
@@ -71,9 +71,9 @@
   description: Can't cook without this.
   components:
   - type: Sprite
-    sprite: _Moffstation/Clothing/Uniforms/Jumpskirt/chef.rsi # Moffstation
+    sprite: Clothing/Uniforms/Jumpskirt/chef.rsi
   - type: Clothing
-    sprite: _Moffstation/Clothing/Uniforms/Jumpskirt/chef.rsi # Moffstation
+    sprite: Clothing/Uniforms/Jumpskirt/chef.rsi
 
 - type: entity
   parent: ClothingUniformSkirtBase
@@ -97,10 +97,10 @@
     sprite: _Moffstation/Clothing/Uniforms/Jumpskirt/jumpskirt.rsi
     layers:
     - state: icon
-      color: &color-white "#FFFFFF"
+      color: &green-scrubs "#77ed94"
     - state: professional-trinkets-icon
     - state: color-trinkets-icon
-      color: &green-scrubs "#77ed94"
+      color: &color-white "#FFFFFF"
   - type: Item
     inhandVisuals:
       left:
@@ -114,10 +114,10 @@
     clothingVisuals:
       jumpsuit:
       - state: equipped-INNERCLOTHING
-        color: *color-white
+        color: *green-scrubs
       - state: professional-trinkets-equipped-INNERCLOTHING
       - state: color-trinkets-equipped-INNERCLOTHING
-        color: *green-scrubs
+        color: *color-white
 # Moffstation - End
 
 - type: entity
@@ -207,27 +207,27 @@
     sprite: _Moffstation/Clothing/Uniforms/Jumpskirt/jumpskirt.rsi
     layers:
     - state: icon
-      color: &color-orange "#db542e"
+      color: &color-darkblue "#547abb"
     - state: basics-trinkets-icon
     - state: color-trinkets-icon
-      color: &color-darkblue "#547abb"
+      color: &color-orange "#db542e"
   - type: Item
     inhandVisuals:
       left:
       - state: inhand-left
-        color: *color-orange
+        color: *color-darkblue
       right:
       - state: inhand-right
-        color: *color-orange
+        color: *color-darkblue
   - type: Clothing
     sprite: _Moffstation/Clothing/Uniforms/Jumpskirt/jumpskirt.rsi
     clothingVisuals:
       jumpsuit:
       - state: equipped-INNERCLOTHING
-        color: *color-orange
+        color: *color-darkblue
       - state: basics-trinkets-equipped-INNERCLOTHING
       - state: color-trinkets-equipped-INNERCLOTHING
-        color: *color-darkblue
+        color: *color-orange
 # Moffstation - End
 
 - type: entity
@@ -369,9 +369,9 @@
   description: ...
   components:
   - type: Sprite
-    sprite: _Moffstation/Clothing/Uniforms/Jumpskirt/mime.rsi # Moffstation
+    sprite: Clothing/Uniforms/Jumpskirt/mime.rsi
   - type: Clothing
-    sprite: _Moffstation/Clothing/Uniforms/Jumpskirt/mime.rsi # Moffstation
+    sprite: Clothing/Uniforms/Jumpskirt/mime.rsi
 
 - type: entity
   parent: ClothingUniformSkirtBase
@@ -442,9 +442,9 @@
   description: 'What can brown do for you?'
   components:
   - type: Sprite
-    sprite: _Moffstation/Clothing/Uniforms/Jumpskirt/qm.rsi # Moffstation
+    sprite: Clothing/Uniforms/Jumpskirt/qm.rsi
   - type: Clothing
-    sprite: _Moffstation/Clothing/Uniforms/Jumpskirt/qm.rsi # Moffstation
+    sprite: Clothing/Uniforms/Jumpskirt/qm.rsi
 
 - type: entity
   parent: [ClothingUniformSkirtBase, BaseCommandContraband]
@@ -823,7 +823,7 @@
     sprite: _Moffstation/Clothing/Uniforms/Jumpskirt/security_grey.rsi # Moffstation
 
 - type: entity
-  parent: [ClothingUniformSkirtBase, BaseSlicingRefinable]
+  parent: ClothingUniformSkirtBase
   id: ClothingUniformJumpskirtWeb
   name: web jumpskirt
   description: Makes it clear that you are one with the webs.
@@ -832,8 +832,9 @@
     sprite: Clothing/Uniforms/Jumpskirt/web.rsi
   - type: Clothing
     sprite: Clothing/Uniforms/Jumpskirt/web.rsi
-  - type: ToolRefinable
-    refineResult:
+  - type: Butcherable
+    butcheringType: Knife
+    spawned:
     - id: MaterialWebSilk1
       amount: 8
   - type: FlavorProfile
@@ -841,6 +842,13 @@
       - cobwebs
     ignoreReagents:
       - Fiber
+  - type: SolutionContainerManager
+    solutions: # 24 (3 (fiber count of web) * 8 (to craft)) + 6 (magical crafting bonus)
+      food:
+        maxVol: 30
+        reagents:
+        - ReagentId: Fiber
+          Quantity: 30
   - type: Construction
     graph: WebObjects
     node: jumpskirt
@@ -1005,9 +1013,9 @@
   description: HONK!
   components:
   - type: Sprite
-    sprite: _Moffstation/Clothing/Uniforms/Jumpskirt/clown.rsi # Moffstation
+    sprite: Clothing/Uniforms/Jumpskirt/clown.rsi
   - type: Clothing
-    sprite: _Moffstation/Clothing/Uniforms/Jumpskirt/clown.rsi # Moffstation
+    sprite: Clothing/Uniforms/Jumpskirt/clown.rsi
   - type: Tag
     tags:
     - ClownSuit

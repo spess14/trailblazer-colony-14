@@ -21,19 +21,16 @@ using Content.Shared.Power;
 
 namespace Content.Server.Shuttles.Systems;
 
-public sealed partial class ThrusterSystem : EntitySystem
+public sealed class ThrusterSystem : EntitySystem
 {
-    [Dependency] private IGameTiming _timing = default!;
-    [Dependency] private SharedMapSystem _mapSystem = default!;
-    [Dependency] private AmbientSoundSystem _ambient = default!;
-    [Dependency] private FixtureSystem _fixtureSystem = default!;
-    [Dependency] private DamageableSystem _damageable = default!;
-    [Dependency] private SharedPointLightSystem _light = default!;
-    [Dependency] private SharedAppearanceSystem _appearance = default!;
-    [Dependency] private TurfSystem _turf = default!;
-
-    [Dependency] private EntityQuery<ThrusterComponent> _thrusterQuery = default!;
-    [Dependency] private EntityQuery<AppearanceComponent> _appearanceQuery = default!;
+    [Dependency] private readonly IGameTiming _timing = default!;
+    [Dependency] private readonly SharedMapSystem _mapSystem = default!;
+    [Dependency] private readonly AmbientSoundSystem _ambient = default!;
+    [Dependency] private readonly FixtureSystem _fixtureSystem = default!;
+    [Dependency] private readonly DamageableSystem _damageable = default!;
+    [Dependency] private readonly SharedPointLightSystem _light = default!;
+    [Dependency] private readonly SharedAppearanceSystem _appearance = default!;
+    [Dependency] private readonly TurfSystem _turf = default!;
 
     // Essentially whenever thruster enables we update the shuttle's available impulses which are used for movement.
     // This is done for each direction available.
@@ -103,6 +100,8 @@ public sealed partial class ThrusterSystem : EntitySystem
 
             var tilePos = change.GridIndices;
             var grid = Comp<MapGridComponent>(uid);
+            var xformQuery = GetEntityQuery<TransformComponent>();
+            var thrusterQuery = GetEntityQuery<ThrusterComponent>();
 
             for (var x = -1; x <= 1; x++)
             {
@@ -116,11 +115,11 @@ public sealed partial class ThrusterSystem : EntitySystem
 
                     while (enumerator.MoveNext(out var ent))
                     {
-                        if (!_thrusterQuery.TryGetComponent(ent.Value, out var thruster) || !thruster.RequireSpace)
+                        if (!thrusterQuery.TryGetComponent(ent.Value, out var thruster) || !thruster.RequireSpace)
                             continue;
 
                         // Work out if the thruster is facing this direction
-                        var xform = Transform(ent.Value);
+                        var xform = xformQuery.GetComponent(ent.Value);
                         var direction = xform.LocalRotation.ToWorldVec();
 
                         if (new Vector2i((int)direction.X, (int)direction.Y) != new Vector2i(x, y))
@@ -338,6 +337,8 @@ public sealed partial class ThrusterSystem : EntitySystem
     {
         // TODO: Only refresh relevant directions.
         var center = Vector2.Zero;
+        var thrustQuery = GetEntityQuery<ThrusterComponent>();
+        var xformQuery = GetEntityQuery<TransformComponent>();
 
         foreach (var dir in new[]
                      { Direction.South, Direction.East, Direction.North, Direction.West })
@@ -348,7 +349,7 @@ public sealed partial class ThrusterSystem : EntitySystem
 
             foreach (var ent in pop)
             {
-                if (!_thrusterQuery.TryGetComponent(ent, out var thruster) || !TryComp(ent, out TransformComponent? xform))
+                if (!thrustQuery.TryGetComponent(ent, out var thruster) || !xformQuery.TryGetComponent(ent, out var xform))
                     continue;
 
                 center += xform.LocalPosition * thruster.Thrust;
@@ -510,14 +511,16 @@ public sealed partial class ThrusterSystem : EntitySystem
         component.ThrustDirections |= direction;
 
         var index = GetFlagIndex(direction);
+        var appearanceQuery = GetEntityQuery<AppearanceComponent>();
+        var thrusterQuery = GetEntityQuery<ThrusterComponent>();
 
         foreach (var uid in component.LinearThrusters[index])
         {
-            if (!_thrusterQuery.TryGetComponent(uid, out var comp))
+            if (!thrusterQuery.TryGetComponent(uid, out var comp))
                 continue;
 
             comp.Firing = true;
-            _appearanceQuery.TryGetComponent(uid, out var appearance);
+            appearanceQuery.TryGetComponent(uid, out var appearance);
             _appearance.SetData(uid, ThrusterVisualState.Thrusting, true, appearance);
         }
     }
@@ -533,13 +536,15 @@ public sealed partial class ThrusterSystem : EntitySystem
         component.ThrustDirections &= ~direction;
 
         var index = GetFlagIndex(direction);
+        var appearanceQuery = GetEntityQuery<AppearanceComponent>();
+        var thrusterQuery = GetEntityQuery<ThrusterComponent>();
 
         foreach (var uid in component.LinearThrusters[index])
         {
-            if (!_thrusterQuery.TryGetComponent(uid, out var comp))
+            if (!thrusterQuery.TryGetComponent(uid, out var comp))
                 continue;
 
-            _appearanceQuery.TryGetComponent(uid, out var appearance);
+            appearanceQuery.TryGetComponent(uid, out var appearance);
             comp.Firing = false;
             _appearance.SetData(uid, ThrusterVisualState.Thrusting, false, appearance);
         }
@@ -557,14 +562,17 @@ public sealed partial class ThrusterSystem : EntitySystem
 
     public void SetAngularThrust(ShuttleComponent component, bool on)
     {
+        var appearanceQuery = GetEntityQuery<AppearanceComponent>();
+        var thrusterQuery = GetEntityQuery<ThrusterComponent>();
+
         if (on)
         {
             foreach (var uid in component.AngularThrusters)
             {
-                if (!_thrusterQuery.TryGetComponent(uid, out var comp))
+                if (!thrusterQuery.TryGetComponent(uid, out var comp))
                     continue;
 
-                _appearanceQuery.TryGetComponent(uid, out var appearance);
+                appearanceQuery.TryGetComponent(uid, out var appearance);
                 comp.Firing = true;
                 _appearance.SetData(uid, ThrusterVisualState.Thrusting, true, appearance);
             }
@@ -573,10 +581,10 @@ public sealed partial class ThrusterSystem : EntitySystem
         {
             foreach (var uid in component.AngularThrusters)
             {
-                if (!_thrusterQuery.TryGetComponent(uid, out var comp))
+                if (!thrusterQuery.TryGetComponent(uid, out var comp))
                     continue;
 
-                _appearanceQuery.TryGetComponent(uid, out var appearance);
+                appearanceQuery.TryGetComponent(uid, out var appearance);
                 comp.Firing = false;
                 _appearance.SetData(uid, ThrusterVisualState.Thrusting, false, appearance);
             }

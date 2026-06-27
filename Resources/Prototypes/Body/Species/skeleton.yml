@@ -75,9 +75,8 @@
   name: Urist McBones
   components:
   - type: Damageable
-    damageModifierSet: Skeleton
-  - type: Injurable
     damageContainer: BiologicalMetaphysical
+    damageModifierSet: Skeleton
   - type: DamageVisuals
     damageOverlayGroups:
       Brute:
@@ -189,7 +188,7 @@
     messagePerceivedByOthers: hugging-success-generic-others
 
 - type: entity
-  parent: OrganBaseOrganic
+  parent: OrganBase
   id: OrganSkeletonPerson
   abstract: true
   suffix: SkeletonPerson
@@ -213,9 +212,13 @@
   parent: [ OrganBaseTorsoSexed, OrganBaseTorso, OrganSkeletonPersonExternal, OrganBaseStomach ]
   id: OrganSkeletonPersonTorso
   components:
-  - type: Metabolizer
-    maxReagents: 0
-    stages: []
+    - type: SolutionContainerManager
+      solutions:
+       stomach:
+          maxVol: 200
+    - type: Metabolizer
+      maxReagents: 0
+      stages: []
   # Moffstation - End
 
 - type: entity

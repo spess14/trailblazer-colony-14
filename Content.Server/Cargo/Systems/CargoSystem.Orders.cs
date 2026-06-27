@@ -9,6 +9,7 @@ using Content.Shared.Cargo.Events;
 using Content.Shared.Cargo.Prototypes;
 using Content.Shared.Database;
 using Content.Shared.Emag.Systems;
+using Content.Shared.IdentityManagement;
 using Content.Shared.Interaction;
 using Content.Shared.Labels.Components;
 using Content.Shared.Paper;
@@ -18,14 +19,15 @@ using Robust.Shared.Map;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
 using Robust.Shared.Utility;
+using Robust.Shared.Random;
 
 namespace Content.Server.Cargo.Systems
 {
     public sealed partial class CargoSystem
     {
-        [Dependency] private SharedTransformSystem _transformSystem = default!;
-        [Dependency] private EmagSystem _emag = default!;
-        [Dependency] private IGameTiming _timing = default!;
+        [Dependency] private readonly SharedTransformSystem _transformSystem = default!;
+        [Dependency] private readonly EmagSystem _emag = default!;
+        [Dependency] private readonly IGameTiming _timing = default!;
 
         private void InitializeConsole()
         {
@@ -233,7 +235,9 @@ namespace Content.Server.Cargo.Systems
 
             if (!_emag.CheckFlag(uid, EmagType.Interaction))
             {
-                order.SetApproverData(_identity.GetIdentityShortInfo(player, uid));
+                var tryGetIdentityShortInfoEvent = new TryGetIdentityShortInfoEvent(uid, player);
+                RaiseLocalEvent(tryGetIdentityShortInfoEvent);
+                order.SetApproverData(tryGetIdentityShortInfoEvent.Title);
 
                 var message = Loc.GetString("cargo-console-unlock-approved-order-broadcast",
                     ("productName", Loc.GetString(product.Name)),
@@ -300,7 +304,7 @@ namespace Content.Server.Cargo.Systems
         {
             foreach (var gridUid in data.Grids)
             {
-                if (!_tradeStationQuery.HasComponent(gridUid))
+                if (!_tradeQuery.HasComponent(gridUid))
                     continue;
 
                 ents.Add(gridUid);

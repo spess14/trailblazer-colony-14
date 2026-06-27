@@ -6,12 +6,12 @@ using Robust.Shared.Timing;
 
 namespace Content.Shared.Damage.Systems;
 
-public sealed partial class DamageOnHoldingSystem : EntitySystem
+public sealed class DamageOnHoldingSystem : EntitySystem
 {
-    [Dependency] private SharedContainerSystem _container = default!;
-    [Dependency] private DamageableSystem _damageableSystem = default!;
-    [Dependency] private IGameTiming _timing = default!;
-    [Dependency] private InventorySystem _inventorySystem = default!; // TC14 - add smithing gloves
+    [Dependency] private readonly SharedContainerSystem _container = default!;
+    [Dependency] private readonly DamageableSystem _damageableSystem = default!;
+    [Dependency] private readonly IGameTiming _timing = default!;
+    [Dependency] private readonly InventorySystem _inventorySystem = default!; // TC14 - add smithing gloves
 
     public override void Initialize()
     {

@@ -163,7 +163,6 @@
     - enum.BorgUiKey.Key
   - type: LockedWiresPanel
   - type: Damageable
-  - type: Injurable
     damageContainer: Silicon
   - type: Destructible
     thresholds:

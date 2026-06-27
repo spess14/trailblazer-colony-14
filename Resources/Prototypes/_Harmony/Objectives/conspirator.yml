@@ -4,7 +4,7 @@
   id: BaseConspiratorObjective
   components:
   - type: Objective
-    issuer: Conspiracy
+    issuer: conspirator-objective-issuer
     difficulty: 0 # uses own system for assignment
   - type: RoleRequirement
     roles:

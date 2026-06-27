@@ -99,7 +99,7 @@
           - WrappedParcel
     sprite: _NF/Objects/Misc/mail_capsule.rsi
   - type: Dumpable
-  - type: Injurable
+  - type: Damageable
     damageContainer: Inorganic
   - type: Destructible
     thresholds:

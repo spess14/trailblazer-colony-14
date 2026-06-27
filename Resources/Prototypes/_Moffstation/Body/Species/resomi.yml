@@ -288,6 +288,7 @@
       Female: UnisexResomi
       Unsexed: UnisexResomi
   - type: Butcherable
+    butcheringType: Spike
     spawned:
     - id: FoodMeatChicken
       amount: 3

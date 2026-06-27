@@ -81,9 +81,8 @@ namespace Content.IntegrationTests.Tests
   name: TestRestockExplode
   components:
   - type: Damageable
-    damageModifierSet: Metallic
-  - type: Injurable
     damageContainer: Inorganic
+    damageModifierSet: Metallic
   - type: Destructible
     thresholds:
     - trigger:

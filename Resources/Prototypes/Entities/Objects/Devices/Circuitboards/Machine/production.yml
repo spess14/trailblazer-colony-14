@@ -1314,10 +1314,6 @@
     stackRequirements:
       Steel: 1
       Cable: 2
-  # Moffstation - Begin - Telecomms blade server
-  - type: BladeServerBoard
-    prototype: TelecomBladeServer
-  # Moffstation - End
 
 - type: entity
   parent: BaseMachineCircuitboard
@@ -1344,7 +1340,7 @@
   - type: Sprite
     state: supply
   - type: MachineBoard
-    prototype: GravityGeneratorMiniUncharged
+    prototype: GravityGeneratorMini
     stackRequirements:
       Capacitor: 4 #moffstation - Revert machine parts
       MatterBin: 3 #moffstation - Revert machine parts

@@ -4,9 +4,9 @@ using Robust.Shared.Prototypes;
 
 namespace Content.Client._Moffstation.Pirate;
 
-public sealed partial class PirateSystem : EntitySystem
+public sealed class PirateSystem : EntitySystem
 {
-    [Dependency] private IPrototypeManager _prototype = default!;
+    [Dependency] private readonly IPrototypeManager _prototype = default!;
     public override void Initialize()
     {
         base.Initialize();

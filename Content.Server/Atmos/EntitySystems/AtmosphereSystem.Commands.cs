@@ -12,8 +12,7 @@ namespace Content.Server.Atmos.EntitySystems;
 
 public sealed partial class AtmosphereSystem
 {
-    [Dependency] private IConsoleHost _consoleHost = default!;
-    [Dependency] private EntityQuery<AtmosFixMarkerComponent> _atmosFixMarkerQuery = default!;
+    [Dependency] private readonly IConsoleHost _consoleHost = default!;
 
     private void InitializeCommands()
     {
@@ -114,6 +113,7 @@ public sealed partial class AtmosphereSystem
 
         RebuildGridTiles(grid);
 
+        var query = GetEntityQuery<AtmosFixMarkerComponent>();
         foreach (var (indices, tile) in ent.Comp1.Tiles.ToArray())
         {
             if (tile.Air is not {Immutable: false} air)
@@ -124,7 +124,7 @@ public sealed partial class AtmosphereSystem
             var enumerator = _mapSystem.GetAnchoredEntitiesEnumerator(grid, grid, indices);
             while (enumerator.MoveNext(out var entUid))
             {
-                if (_atmosFixMarkerQuery.TryComp(entUid, out var marker))
+                if (query.TryComp(entUid, out var marker))
                     mixtureId = marker.Mode;
             }
 

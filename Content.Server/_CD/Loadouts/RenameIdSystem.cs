@@ -11,11 +11,11 @@ using Content.Shared.StationRecords;
 
 namespace Content.Server._CD.Loadouts;
 
-public sealed partial class RenameIdSystem : EntitySystem
+public sealed class RenameIdSystem : EntitySystem
 {
-    [Dependency] private InventorySystem _inventorySystem = default!;
-    [Dependency] private SharedIdCardSystem _idCardSystem = default!;
-    [Dependency] private StationRecordsSystem _records = default!;
+    [Dependency] private readonly InventorySystem _inventorySystem = default!;
+    [Dependency] private readonly SharedIdCardSystem _idCardSystem = default!;
+    [Dependency] private readonly StationRecordsSystem _records = default!;
 
     public override void Initialize()
     {

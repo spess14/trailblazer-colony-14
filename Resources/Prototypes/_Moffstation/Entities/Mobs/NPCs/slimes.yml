@@ -26,7 +26,7 @@
     bloodReferenceSolution: # Geras bloodstream size = slimeperson bloodstream size
       reagents:
         - ReagentId: Slime
-          Quantity: 600
+          Quantity: 300
   - type: Identity
   - type: MultiHandedItem
   - type: Item

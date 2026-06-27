@@ -6,7 +6,7 @@
   - NukieJumpsuit
   - NukieBackpack
   - NukieGloves
-  # - PersonalItemsJobAgnostic # TC14 - disable personal item loadouts
+  - PersonalItemsJobAgnostic
 
 - type: roleLoadout
   id: JobNukeops
@@ -15,7 +15,7 @@
   - NukieJumpsuit
   - NukieBackpack
   - NukieGloves
-  # - PersonalItemsJobAgnostic # TC14 - disable personal item loadouts
+  - PersonalItemsJobAgnostic
 
 - type: roleLoadout
   id: JobNukeopsMedic
@@ -24,7 +24,7 @@
   - NukieJumpsuit
   - NukieMedicalBackpack
   - NukieGloves
-  # - PersonalItemsJobAgnostic # TC14 - disable personal item loadouts
+  - PersonalItemsJobAgnostic
 
 # Pirates
 - type: roleLoadout
@@ -35,7 +35,7 @@
   - PirateOuterCoat
   - CommonBackpack
   - PirateTrinkets
-  # - PersonalItemsJobAgnostic # TC14 - disable personal item loadouts
+  - PersonalItemsJobAgnostic
 
 - type: roleLoadout
   id: JobPirateCaptain
@@ -45,7 +45,7 @@
   - PirateOuterCoat
   - CommonBackpack
   - PirateTrinkets
-  # - PersonalItemsJobAgnostic # TC14 - disable personal item loadouts
+  - PersonalItemsJobAgnostic
 
 - type: startingGear
   parent: PirateGear
@@ -62,7 +62,7 @@
   groups:
   - NukieJumpsuit
   - NukieBackpackEmpty
-  # - PersonalItemsJobAgnostic # TC14 - disable personal item loadouts
+  - PersonalItemsJobAgnostic
 
 # Wizard
 - type: roleLoadout
@@ -73,7 +73,7 @@
   - WizardRobes
   - WizardHat
   - CommonBackpack
-  # - PersonalItemsJobAgnostic # TC14 - disable personal item loadouts
+  - PersonalItemsJobAgnostic
 
 # Xenoborgs
 - type: roleLoadout

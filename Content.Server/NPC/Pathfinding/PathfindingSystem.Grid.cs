@@ -96,7 +96,7 @@ public sealed partial class PathfindingSystem
             // TODO: Dump all this shit and just do it live it's probably fast enough.
             if (comp.DirtyChunks.Count == 0 ||
                 curTime < comp.NextUpdate ||
-                !_mapGridQuery.TryGetComponent(uid, out var mapGridComp))
+                !_gridQuery.TryGetComponent(uid, out var mapGridComp))
             {
                 continue;
             }
@@ -272,7 +272,7 @@ public sealed partial class PathfindingSystem
     {
         if (!_fixturesQuery.TryGetComponent(ev.Sender, out var fixtures) ||
             !IsBodyRelevant(fixtures) ||
-            _mapGridQuery.HasComponent(ev.Sender))
+            _gridQuery.HasComponent(ev.Sender))
         {
             return;
         }
@@ -441,7 +441,7 @@ public sealed partial class PathfindingSystem
                         continue;
                     }
 
-                    var xform = Transform(ent);
+                    var xform = _xformQuery.GetComponent(ent);
 
                     if (xform.ParentUid != grid.Owner ||
                         _maps.LocalToTile(grid.Owner, grid.Comp, xform.Coordinates) != tilePos)
@@ -494,7 +494,7 @@ public sealed partial class PathfindingSystem
                                 }
 
                                 if (!intersects ||
-                                    !TryComp(ent, out TransformComponent? xform))
+                                    !_xformQuery.TryGetComponent(ent, out var xform))
                                 {
                                     continue;
                                 }
@@ -513,7 +513,7 @@ public sealed partial class PathfindingSystem
                             if (!colliding)
                                 continue;
 
-                            if (_accessReaderQuery.HasComponent(ent))
+                            if (_accessQuery.HasComponent(ent))
                             {
                                 flags |= PathfindingBreadcrumbFlag.Access;
                             }

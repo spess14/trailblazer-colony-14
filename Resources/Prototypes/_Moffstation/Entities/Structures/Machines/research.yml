@@ -4,10 +4,9 @@
 - type: entity
   id: BaseResearchAndDevelopmentServer
   abstract: true
+  name: abstract R&D server
   components:
   - type: ResearchServer
-  - type: Machine
-    board: ResearchAndDevelopmentServerMachineCircuitboard
   - type: TechnologyDatabase
     supportedDisciplines:
     - Industrial

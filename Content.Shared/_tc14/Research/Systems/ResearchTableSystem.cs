@@ -12,13 +12,13 @@ namespace Content.Shared._tc14.Research.Systems;
 /// <summary>
 /// Handles ResearchTableComponent, also handles game logic for the UI.
 /// </summary>
-public sealed partial class ResearchTableSystem : EntitySystem
+public sealed class ResearchTableSystem : EntitySystem
 {
-    [Dependency] private IGameTiming _timing = default!;
-    [Dependency] private IPrototypeManager _protoMan = default!;
-    [Dependency] private SharedUserInterfaceSystem _uiSystem = default!;
-    [Dependency] private BlueprintSystem _blueprintSystem = default!;
-    [Dependency] private INetManager _net = default!;
+    [Dependency] private readonly IGameTiming _timing = default!;
+    [Dependency] private readonly IPrototypeManager _protoMan = default!;
+    [Dependency] private readonly SharedUserInterfaceSystem _uiSystem = default!;
+    [Dependency] private readonly BlueprintSystem _blueprintSystem = default!;
+    [Dependency] private readonly INetManager _net = default!;
 
     public override void Initialize()
     {

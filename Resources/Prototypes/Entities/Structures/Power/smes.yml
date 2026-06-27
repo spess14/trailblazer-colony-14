@@ -75,11 +75,6 @@
       castShadows: false
     - type: WiresPanel
     - type: WiresVisuals
-    # Moffstation - Begin - Expanded Ai Whitelist
-    - type: Wires
-      boardName: wires-board-name-smes
-      layoutId: ComputerAi
-    # Moffstation - End
     - type: Machine
       board: SMESMachineCircuitboard
     - type: StationInfiniteBatteryTarget
@@ -91,9 +86,8 @@
       highVoltageNode: input
       mediumVoltageNode: output
     - type: Damageable
-      damageModifierSet: StructuralMetallicStrong
-    - type: Injurable
       damageContainer: StructuralInorganic
+      damageModifierSet: StructuralMetallicStrong
     - type: BatterySensor
     - type: DeviceNetwork
       deviceNetId: AtmosDevices
@@ -111,9 +105,8 @@
     # Impstation - Start
     - type: AccessReader
       access: [["Engineering"]]
-    - type: ActivatableUIRequiresAccess
+    - type: ActivatableUIRequiresAccess 
     # Impstation - End
-    - type: StationAiWhitelist # Moffstation - Expanded Ai Whitelist
 
     # Interface
     - type: BatteryInterface
@@ -125,10 +118,6 @@
       interfaces:
         enum.BatteryUiKey.Key:
           type: BatteryBoundUserInterface
-        # Moffstation - Begin - Expanded Ai Whitelist
-        enum.WiresUiKey.Key:
-          type: WiresBoundUserInterface
-        # Moffstation - End
     - type: ActivatableUI
       key: enum.BatteryUiKey.Key
 

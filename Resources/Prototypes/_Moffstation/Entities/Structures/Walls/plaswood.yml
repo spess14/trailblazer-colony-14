@@ -26,14 +26,13 @@
   - type: Icon
     sprite: _Moffstation/Structures/Walls/plaswood.rsi
   - type: Damageable
-    damageModifierSet: StructuralPlaswood
-  - type: Injurable
     damageContainer: StructuralInorganic
+    damageModifierSet: StructuralPlaswood
   - type: Destructible
     thresholds:
     - trigger:
         !type:DamageTrigger
-        damage: 600 # Health like reinforced wall
+        damage: 600    # Health like reinforced wall 
       behaviors:
       - !type:DoActsBehavior
         acts: ["Destruction"]
@@ -42,7 +41,7 @@
           collection: WoodDestroyHeavy
           params:
             pitch: 0.8
-    - trigger: # Vulnerable to heat damage - explodily
+    - trigger:    # Vulnerable to heat damage - explodily
         !type:DamageTypeTrigger
         damageType: Heat
         damage: 240
@@ -64,13 +63,13 @@
     base: plaswood
   - type: Explosive
     explosionType: FireBomb
-    totalIntensity: 75 # shouldn't be chainable
+    totalIntensity: 75 # shouldn't be chainable 
     intensitySlope: 30
     maxIntensity: 15
     canCreateVacuum: false
     deleteAfterExplosion: false # doesn't actually breach open after explosion
     repeatable: true
-  - type: Tag
+  - type: Tag 
     tags:
     - Wooden
 
@@ -92,9 +91,8 @@
     key: woods
     base: state
   - type: Damageable
-    damageModifierSet: StructuralPlaswood
-  - type: Injurable
     damageContainer: StructuralInorganic
+    damageModifierSet: StructuralPlaswood
   - type: Destructible
     thresholds:
     - trigger:
@@ -127,12 +125,12 @@
     spread: 30
   - type: Explosive
     explosionType: FireBomb
-    totalIntensity: 75 # shouldn't be chainable
+    totalIntensity: 75 # shouldn't be chainable 
     intensitySlope: 30
     maxIntensity: 15
     canCreateVacuum: false
     deleteAfterExplosion: false # doesn't actually breach open after explosion
     repeatable: true
-  - type: Tag
+  - type: Tag 
     tags:
     - Wooden

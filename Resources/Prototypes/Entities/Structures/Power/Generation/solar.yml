@@ -14,9 +14,8 @@
   - type: Transform
     anchored: true
   - type: Damageable
-    damageModifierSet: Metallic
-  - type: Injurable
     damageContainer: StructuralInorganic
+    damageModifierSet: Metallic
   - type: Physics
     bodyType: Static
   - type: Fixtures
@@ -186,6 +185,15 @@
     state: solar_panel_glass_broken
   - type: Destructible
     thresholds:
+    - trigger: # Excess damage, don't spawn entities
+        !type:DamageTrigger
+        damage: 100
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: GlassBreak
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
     - trigger:
         !type:DamageTrigger
         damage: 50
@@ -215,6 +223,15 @@
     state: solar_panel_plasma_broken
   - type: Destructible
     thresholds:
+    - trigger: # Excess damage, don't spawn entities
+        !type:DamageTrigger
+        damage: 100
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: GlassBreak
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
     - trigger:
         !type:DamageTrigger
         damage: 50
@@ -244,6 +261,15 @@
     state: solar_panel_uranium_broken
   - type: Destructible
     thresholds:
+    - trigger: # Excess damage, don't spawn entities
+        !type:DamageTrigger
+        damage: 100
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: GlassBreak
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
     - trigger:
         !type:DamageTrigger
         damage: 50
@@ -291,12 +317,11 @@
     anchored: true
     noRot: true
   - type: Damageable
-    damageModifierSet: Metallic
-  - type: Injurable
     damageContainer: StructuralInorganic
+    damageModifierSet: Metallic
   - type: Destructible
     thresholds:
-    - trigger:
+    - trigger: # Excess damage, don't spawn entities
         !type:DamageTrigger
         damage: 200
       behaviors:
@@ -347,9 +372,8 @@
     anchored: true
     noRot: true
   - type: Damageable
-    damageModifierSet: StructuralMetallic
-  - type: Injurable
     damageContainer: StructuralInorganic
+    damageModifierSet: StructuralMetallic
   - type: Destructible
     thresholds:
     - trigger:

@@ -9,10 +9,10 @@ using Robust.Shared.Prototypes;
 namespace Content.Server._tc14.Skills.Commands;
 
 [AdminCommand(AdminFlags.Debug)]
-public sealed partial class SetSkillExperienceCommand : IConsoleCommand
+public sealed class SetSkillExperienceCommand : IConsoleCommand
 {
-    [Dependency] private IEntityManager _entManager = default!;
-    [Dependency] private IPrototypeManager _protoManager = default!;
+    [Dependency] private readonly IEntityManager _entManager = default!;
+    [Dependency] private readonly IPrototypeManager _protoManager = default!;
 
     public string Command => "setskillexp";
     public string Description => "Set skill experience of an entity in a given skill.";

@@ -16,14 +16,14 @@ namespace Content.Shared.Atmos.Piping.Trinary.Components
         public string FilterLabel { get; }
         public float TransferRate { get; }
         public bool Enabled { get; }
-        public HashSet<Gas> FilteredGases { get; } // Moffstation - filter multiple gases
+        public Gas? FilteredGas { get; }
 
-        public GasFilterBoundUserInterfaceState(string filterLabel, float transferRate, bool enabled, HashSet<Gas> filteredGases)
+        public GasFilterBoundUserInterfaceState(string filterLabel, float transferRate, bool enabled, Gas? filteredGas)
         {
             FilterLabel = filterLabel;
             TransferRate = transferRate;
             Enabled = enabled;
-            FilteredGases = filteredGases; // Moffstation - fitler multiple gases
+            FilteredGas = filteredGas;
         }
     }
 
@@ -49,14 +49,9 @@ namespace Content.Shared.Atmos.Piping.Trinary.Components
         }
     }
 
-    // Moffstation - Begin (filter multiple gases)
-
     [Serializable, NetSerializable]
-    public sealed class GasFilterToggleGasMessage(Gas gas, bool filtered) : BoundUserInterfaceMessage
+    public sealed class GasFilterSelectGasMessage(Gas? gas) : BoundUserInterfaceMessage
     {
-        public readonly Gas Gas = gas;
-        public readonly bool Filtered = filtered;
+        public readonly Gas? Gas = gas;
     }
-
-    // Moffstation - End
 }

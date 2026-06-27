@@ -42,16 +42,11 @@
   parent: BaseGoldBorgModuleRecipe
   id: BorgModuleTopicalsGeneric
   result: BorgModuleTopicalsGeneric
-
+  
 - type: latheRecipe
   parent: BaseBorgModuleRecipe
   id: BorgModuleGravity
   result: BorgModuleGravity
-
-- type: latheRecipe
-  parent: BaseBorgModuleRecipe
-  id: BorgModuleInvestigation
-  result: BorgModuleInvestigation
 
 # Science Modules
 - type: latheRecipe

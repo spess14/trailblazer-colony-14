@@ -1,3 +1,5 @@
+using System.Linq;
+using Content.Shared.Decals;
 using Microsoft.Extensions.ObjectPool;
 using Robust.Shared;
 using Robust.Shared.Configuration;
@@ -14,17 +16,20 @@ namespace Content.Shared.Chunking;
 ///     This system just exists to provide some utility functions for other systems that chunk data that needs to be
 ///     sent to players. In particular, see <see cref="GetChunksForSession"/>.
 /// </summary>
-public sealed partial class ChunkingSystem : EntitySystem
+public sealed class ChunkingSystem : EntitySystem
 {
-    [Dependency] private IConfigurationManager _configurationManager = default!;
-    [Dependency] private IMapManager _mapManager = default!;
-    [Dependency] private SharedTransformSystem _transform = default!;
+    [Dependency] private readonly IConfigurationManager _configurationManager = default!;
+    [Dependency] private readonly IMapManager _mapManager = default!;
+    [Dependency] private readonly SharedTransformSystem _transform = default!;
+
+    private EntityQuery<TransformComponent> _xformQuery;
 
     private Box2 _baseViewBounds;
 
     public override void Initialize()
     {
         base.Initialize();
+        _xformQuery = GetEntityQuery<TransformComponent>();
         Subs.CVar(_configurationManager, CVars.NetMaxUpdateRange, OnPvsRangeChanged, true);
     }
 
@@ -62,7 +67,7 @@ public sealed partial class ChunkingSystem : EntitySystem
         int chunkSize,
         float viewEnlargement)
     {
-        if (!TryComp(viewer, out TransformComponent? xform))
+        if (!_xformQuery.TryGetComponent(viewer, out var xform))
             return;
 
         var pos = _transform.GetWorldPosition(xform);

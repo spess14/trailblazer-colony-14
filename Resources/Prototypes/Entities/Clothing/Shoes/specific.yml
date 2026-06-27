@@ -21,8 +21,11 @@
         name: clothing-boots-sidearm
         whitelist:
           tags:
-          - ToyKnife
+          - Knife
           - ToySidearm
+        blacklist:
+          components:
+          - Sharp
 
 - type: entity
   parent: ClothingShoesClownBase
@@ -31,9 +34,9 @@
   description: "The prankster's standard-issue clowning shoes. Damn they're huge!"
   components:
   - type: Sprite
-    sprite: _Moffstation/Clothing/Shoes/clown.rsi # Moffstation
+    sprite: Clothing/Shoes/Specific/clown.rsi
   - type: Clothing
-    sprite: _Moffstation/Clothing/Shoes/clown.rsi # Moffstation
+    sprite: Clothing/Shoes/Specific/clown.rsi
   - type: FootstepModifier
     footstepSoundCollection:
       collection: FootstepClown
@@ -52,15 +55,9 @@
   description: "When humor and footwear combine into new levels of absurdity."
   components:
   - type: Sprite
-    sprite: _Moffstation/Clothing/Shoes/clown_banana.rsi # Moffstation
+    sprite: Clothing/Shoes/Specific/clown_banana.rsi
   - type: Clothing
-    # Moffstation - Begin - New banana shoe sprites
-    sprite: _Moffstation/Clothing/Shoes/clown_banana.rsi
-    clothingVisuals:
-      shoes:
-      - state: equipped-FEET
-        offset: "0, -0.04"
-    # Moffstation - End
+    sprite: Clothing/Shoes/Specific/clown_banana.rsi
   # Moffstation - Begin - New Banana Shoes update!
   - type: FootstepModifier
     footstepSoundCollection:
@@ -86,9 +83,9 @@
   description: Made of refined bananium and shined with the pulp of a fresh banana peel. These make a flashy statement.
   components:
   - type: Sprite
-    sprite: _Moffstation/Clothing/Shoes/bling.rsi #Moffstation
+    sprite: Clothing/Shoes/Specific/bling.rsi
   - type: Clothing
-    sprite: _Moffstation/Clothing/Shoes/bling.rsi #Moffstation
+    sprite: Clothing/Shoes/Specific/bling.rsi
   - type: FootstepModifier
     footstepSoundCollection:
       collection: FootstepClown
@@ -119,9 +116,9 @@
   description: Specialised non-slip rubber boots, designed to reduce janitorial workplace accidents; a tider's treasure.
   components:
   - type: Sprite
-    sprite: _Moffstation/Clothing/Shoes/galoshes.rsi # Moffstation
+    sprite: Clothing/Shoes/Specific/galoshes.rsi
   - type: Clothing
-    sprite: _Moffstation/Clothing/Shoes/galoshes.rsi # Moffstation
+    sprite: Clothing/Shoes/Specific/galoshes.rsi
   - type: NoSlip
   - type: SlowedOverSlippery
     slowdownModifier: 0.7
@@ -182,13 +179,13 @@
       - ClothMade
       - Recyclable
     - type: Sprite
-      sprite: _Moffstation/Clothing/Shoes/color.rsi # Moffstation
+      sprite: Clothing/Shoes/color.rsi
       layers:
       - state: icon
         color: "#3f3f3f"
       - state: soles-icon
     - type: Clothing
-      sprite: _Moffstation/Clothing/Shoes/color.rsi # Moffstation
+      sprite: Clothing/Shoes/color.rsi
       clothingVisuals:
         shoes:
         - state: equipped-FEET
@@ -224,9 +221,9 @@
   description: A court jester's shoes, updated with modern squeaking technology.
   components:
     - type: Sprite
-      sprite: _Moffstation/Clothing/Shoes/jester2.rsi # Moffstation
+      sprite: Clothing/Shoes/Specific/jester.rsi
     - type: Clothing
-      sprite: _Moffstation/Clothing/Shoes/jester2.rsi # Moffstation
+      sprite: Clothing/Shoes/Specific/jester.rsi
     - type: FootstepModifier
       footstepSoundCollection:
         collection: FootstepJester
@@ -241,9 +238,9 @@
   description: "Cursed pair of cluwne shoes."
   components:
   - type: Sprite
-    sprite: _Moffstation/Clothing/Shoes/cluwne.rsi
+    sprite: Clothing/Shoes/Specific/cluwne.rsi
   - type: Clothing
-    sprite: _Moffstation/Clothing/Shoes/cluwne.rsi
+    sprite: Clothing/Shoes/Specific/cluwne.rsi
   - type: Unremoveable
 
 - type: entity
@@ -254,16 +251,16 @@
   components:
   - type: Sprite
     state: "icon"
-    sprite: _Moffstation/Clothing/Shoes/large_clown.rsi # Moffstation
+    sprite: Clothing/Shoes/Specific/large_clown.rsi
   - type: Clothing
-    sprite: _Moffstation/Clothing/Shoes/large_clown.rsi # Moffstation
+    sprite: Clothing/Shoes/Specific/large_clown.rsi
     clothingVisuals:
       shoes:
       - state: equipped-FEET
-        offset: "0, -0.08" # Moffstation
+        offset: "0, -0.02"
   - type: Item
     size: Small
-    sprite: _Moffstation/Clothing/Shoes/large_clown.rsi # Moffstation
+    sprite: Clothing/Shoes/Specific/large_clown.rsi
   - type: ClothingSpeedModifier
     walkModifier: 0.8
     sprintModifier: 0.8

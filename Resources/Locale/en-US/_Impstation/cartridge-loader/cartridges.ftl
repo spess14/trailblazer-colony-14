@@ -1,7 +1,6 @@
 sos-program-name = SOS
 sos-caller-defaultname = Unknown
-# Moffstation - added location variable
-sos-message = {$name} is requesting help {$location}!
+sos-message = {$name} is requesting help!
 
 sos-notification-message = Thank you for using the PDA SoS app! Help will arrive at your location shortly!
 sos-notification-message-pizza =  Your order of one aggressive pizza is on it's way!

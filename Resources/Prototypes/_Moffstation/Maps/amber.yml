@@ -2,7 +2,7 @@
   id: Amber
   mapName: 'Amber'
   mapPath: /Maps/_Moffstation/amber.yml
-  minPlayers: 25  # Moffstation - min player adjustment
+  minPlayers: 15
   maxPlayers: 60
   stations:
     Amber:

@@ -2,7 +2,7 @@
   id: Scylla
   mapName: 'Scylla'
   mapPath: /Maps/_Harmony/scylla.yml
-  minPlayers: 35 # Moffstation - increased min pop
+  minPlayers: 20
   maxPlayers: 55
   stations:
     Scylla:

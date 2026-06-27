@@ -8,7 +8,7 @@
   - Trinkets
   - GroupTankHarness
   - StowawaySurvival
-  # - PersonalItemsJobAgnostic # TC14 - disable personal item loadouts
+  - PersonalItemsJobAgnostic
 
 # Wizard duelist
 - type: roleLoadout
@@ -18,6 +18,6 @@
   - CommonBackpack
   - Glasses
   - Trinkets
-  # - PersonalItemsJobAgnostic # TC14 - disable personal item loadouts
+  - PersonalItemsJobAgnostic
   - SurvivalExtended
   - GroupSpeciesBreathTool

@@ -114,7 +114,7 @@
     color: "#43ccb5"
 
 - type: entity
-  parent: BaseComputerAiAccess # Moffstation - Expanded Ai whitelist
+  parent: BaseComputer
   id: BaseComputerShuttle
   name: shuttle console
   description: Used to pilot a shuttle.
@@ -712,9 +712,8 @@
     energy: 4.0
     color: "#3c5eb5"
   - type: Damageable
-    damageModifierSet: StructuralMetallicStrong
-  - type: Injurable
     damageContainer: StructuralInorganic
+    damageModifierSet: StructuralMetallicStrong
 
 - type: entity
   parent: ComputerComms
@@ -1228,9 +1227,8 @@
     speechVerb: Robotic
     speechSounds: Pai
   - type: Damageable
-    damageModifierSet: StructuralMetallicStrong
-  - type: Injurable
     damageContainer: StructuralInorganic
+    damageModifierSet: StructuralMetallicStrong
   - type: GuideHelp
     guides:
     - Cloning

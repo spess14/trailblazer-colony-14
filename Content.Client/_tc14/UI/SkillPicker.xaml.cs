@@ -10,11 +10,12 @@ using Robust.Shared.Prototypes;
 
 namespace Content.Client._tc14.UI;
 
+//TODO saving and stuff
 [GenerateTypedNameReferences]
 public sealed partial class SkillPicker : BoxContainer
 {
-    [Dependency] private IPrototypeManager _prototypeManager = default!;
-    [Dependency] private IConfigurationManager _configurationManager = default!;
+    [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
+    [Dependency] private readonly IConfigurationManager _configurationManager = default!;
 
     private readonly int _passionPoints;
     private readonly int _maxPointsPerSkill;

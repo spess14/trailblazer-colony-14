@@ -11,11 +11,11 @@ namespace Content.Server._Moffstation.Objectives.Systems;
 /// <summary>
 /// Handles assigning a target to an objective entity with <see cref="LocationObjectiveComponent"/> using different components.
 /// </summary>
-public sealed partial class PickDepartmentObjectiveSystem : EntitySystem
+public sealed class PickDepartmentObjectiveSystem : EntitySystem
 {
-    [Dependency] private IRobustRandom _random = default!;
-    [Dependency] private IPrototypeManager _prototypeManager = default!;
-    [Dependency] private SharedJobSystem _jobs = default!;
+    [Dependency] private readonly IRobustRandom _random = default!;
+    [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
+    [Dependency] private readonly SharedJobSystem _jobs = default!;
 
     public override void Initialize()
     {

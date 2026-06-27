@@ -8,11 +8,12 @@
   components:
   - type: Sprite
     sprite: _Moffstation/PersonalItems/Items/ThEmeralDuke/DawnCometrider/bottlebag.rsi
-  - type: Solution
-    solution:
-      reagents:
-      - ReagentId: DeathInTheAfternoon
-        Quantity: 120
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        reagents:
+        - ReagentId: DeathInTheAfternoon
+          Quantity: 100
   - type: FitsInDispenser
     solution: drink
   - type: Label

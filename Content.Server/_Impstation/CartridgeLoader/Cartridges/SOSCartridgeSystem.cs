@@ -1,5 +1,4 @@
 using Content.Server.Chat.Systems;
-using Content.Server.Pinpointer; // Moffstation
 using Content.Server.Radio.EntitySystems;
 using Content.Shared.Access.Components;
 using Content.Shared.CartridgeLoader;
@@ -11,19 +10,16 @@ using Robust.Shared.Containers;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Timing;
-using Robust.Shared.Utility; // Moffstation
 
 namespace Content.Server._Impstation.CartridgeLoader.Cartridges;
 
-public sealed partial class SOSCartridgeSystem : EntitySystem
+public sealed class SOSCartridgeSystem : EntitySystem
 {
-    [Dependency] private SharedContainerSystem _container = default!;
-    [Dependency] private RadioSystem _radio = default!;
-    [Dependency] private ChatSystem _chat = default!;
-    [Dependency] private IGameTiming _timing = default!;
-    [Dependency] private IRobustRandom _random = default!;
-
-    [Dependency] private NavMapSystem _navMap = default!; // Moffstation
+    [Dependency] private readonly SharedContainerSystem _container = default!;
+    [Dependency] private readonly RadioSystem _radio = default!;
+    [Dependency] private readonly ChatSystem _chat = default!;
+    [Dependency] private readonly IGameTiming _timing = default!;
+    [Dependency] private readonly IRobustRandom _random = default!;
 
     public override void Initialize()
     {
@@ -50,9 +46,7 @@ public sealed partial class SOSCartridgeSystem : EntitySystem
         {
             SendSoSMessage(args.Loader,
                 ent.Comp.HelpChannel,
-                Loc.GetString(ent.Comp.HelpMessage,
-                    ("name", ent.Comp.LocalizedDefaultName),
-                    ("location", FormattedMessage.RemoveMarkupPermissive(_navMap.GetNearestBeaconString(args.Loader)))), // Moffstation
+                Loc.GetString(ent.Comp.HelpMessage, ("name", ent.Comp.LocalizedDefaultName)),
                 ent.Comp.LocalizedNotificationMessage);
         }
         else
@@ -75,9 +69,7 @@ public sealed partial class SOSCartridgeSystem : EntitySystem
                 {
                     SendSoSMessage(args.Loader,
                         ent.Comp.HelpChannel,
-                        Loc.GetString(ent.Comp.HelpMessage,
-                            ("name", idCardComp.FullName ?? ent.Comp.LocalizedDefaultName),
-                            ("location", FormattedMessage.RemoveMarkupPermissive(_navMap.GetNearestBeaconString(args.Loader)))), // Moffstation
+                        Loc.GetString(ent.Comp.HelpMessage, ("name", idCardComp.FullName ?? ent.Comp.LocalizedDefaultName)),
                         Loc.GetString(_random.Prob(ent.Comp.FunnyChance)
                             ? ent.Comp.LocalizedFunnyNotificationMessage
                             : ent.Comp.LocalizedNotificationMessage));

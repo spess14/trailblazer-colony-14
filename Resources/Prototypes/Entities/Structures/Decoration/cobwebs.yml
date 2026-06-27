@@ -18,9 +18,8 @@
   - type: Transform
     anchored: true
   - type: Damageable
-    damageModifierSet: Wood
-  - type: Injurable
     damageContainer: Inorganic
+    damageModifierSet: Wood
   - type: Destructible
     thresholds:
     - trigger:

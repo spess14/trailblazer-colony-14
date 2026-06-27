@@ -4,6 +4,8 @@ using System.Numerics;
 using Content.IntegrationTests.Fixtures;
 using Content.Server.Cargo.Components;
 using Content.Server.Cargo.Systems;
+using Content.Server.Nutrition.Components;
+using Content.Server.Nutrition.EntitySystems;
 using Content.Shared.Cargo.Prototypes;
 using Content.Shared.Mobs.Components;
 using Content.Shared.Prototypes;
@@ -12,8 +14,6 @@ using Content.Shared.Whitelist;
 using Robust.Shared.GameObjects;
 using Robust.Shared.Map;
 using Robust.Shared.Prototypes;
-using Content.Shared.Storage;
-using Content.Shared.Tools.Components;
 
 namespace Content.IntegrationTests.Tests;
 
@@ -155,6 +155,7 @@ public sealed class CargoTest : GameTest
         var componentFactory = server.ResolveDependency<IComponentFactory>();
         var whitelist = entManager.System<EntityWhitelistSystem>();
         var cargo = entManager.System<CargoSystem>();
+        var sliceableSys = entManager.System<SliceableFoodSystem>();
 
         var bounties = protoManager.EnumeratePrototypes<CargoBountyPrototype>().ToList();
 
@@ -167,14 +168,14 @@ public sealed class CargoTest : GameTest
             var sliceableEntityProtos = protoManager.EnumeratePrototypes<EntityPrototype>()
                 .Where(p => !p.Abstract)
                 .Where(p => !pair.IsTestPrototype(p))
-                .Where(p => p.TryGetComponent<ToolRefinableComponent>(out _, componentFactory))
+                .Where(p => p.TryGetComponent<SliceableFoodComponent>(out _, componentFactory))
                 .Select(p => p.ID)
                 .ToList();
 
             foreach (var proto in sliceableEntityProtos)
             {
                 var ent = entManager.SpawnEntity(proto, coord);
-                var sliceable = entManager.GetComponent<ToolRefinableComponent>(ent);
+                var sliceable = entManager.GetComponent<SliceableFoodComponent>(ent);
 
                 // Check each bounty
                 foreach (var bounty in bounties)
@@ -187,32 +188,19 @@ public sealed class CargoTest : GameTest
                             continue;
 
                         // Spawn a slice
+                        var slice = entManager.SpawnEntity(sliceable.Slice, coord);
 
-                        var sliceCountByProtoId = EntitySpawnCollection.GetSpawns(sliceable.RefineResult)
-                                                                    .GroupBy(x => x)
-                                                                    .ToDictionary(x => x.Key, x => x.Count());
-
-                        foreach (var (sliceProtoId, sliceCount) in sliceCountByProtoId)
+                        // See if the slice also counts for this bounty entry
+                        if (!cargo.IsValidBountyEntry(slice, entry))
                         {
-                            var slice = entManager.SpawnEntity(sliceProtoId, coord);
-
-                            // See if the slice also counts for this bounty entry
-                            if (!cargo.IsValidBountyEntry(slice, entry))
-                            {
-                                entManager.DeleteEntity(slice);
-                                continue;
-                            }
-
                             entManager.DeleteEntity(slice);
-
-                            // If for some reason it can only make one slice, that's okay, I guess
-                            Assert.That(
-                                sliceCount,
-                                Is.EqualTo(1),
-                                $"{proto} counts as part of cargo bounty {bounty.ID} "
-                                + $"and slices into {sliceCount} slices which count for the same bounty!"
-                            );
+                            continue;
                         }
+
+                        entManager.DeleteEntity(slice);
+
+                        // If for some reason it can only make one slice, that's okay, I guess
+                        Assert.That(sliceable.TotalCount, Is.EqualTo(1), $"{proto} counts as part of cargo bounty {bounty.ID} and slices into {sliceable.TotalCount} slices which count for the same bounty!");
                     }
                 }
 

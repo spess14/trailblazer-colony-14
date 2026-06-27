@@ -3,35 +3,31 @@
   name: collective-mind-carp
   keycode: 'c'
   color: "#787878"
-  requirements:
-  - components:
-    - Devourer
-  - tags:
-    - Carp
+  requiredComponents:
+  - Devourer
+  requiredTags:
+  - Carp
 
 - type: collectiveMind
   id: Dionas
   name: collective-mind-diona
   keycode: 'd'
   color: "#15912a"
-  requirements:
-  - tags:
-    - DionaHivemind
+  requiredTags:
+  - DionaHivemind
 
 - type: collectiveMind
   id: Spiders
   name: collective-mind-spider
   keycode: 's'
   color: "#8f6741"
-  requirements:
-  - components:
-    - Spider
+  requiredComponents:
+  - Spider
 
 - type: collectiveMind
   id: Zombies
   name: collective-mind-zombie
   keycode: 'z'
   color: "#508053"
-  requirements:
-  - components:
-    - Zombie
+  requiredComponents:
+  - Zombie

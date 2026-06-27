@@ -7,7 +7,7 @@ namespace Content.Client._Moffstation.BladeServer.UI;
 [GenerateTypedNameReferences]
 public sealed partial class BladeServerControl : Control
 {
-    [Dependency] private EntityManager _entMan = default!;
+    [Dependency] private readonly EntityManager _entMan = default!;
 
     public event Action<GUIBoundKeyEventArgs>? OnPressed;
     public event Action? OnEjectPressed;

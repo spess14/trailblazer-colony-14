@@ -4,13 +4,15 @@
   name: nocturine hypo
   description: A self-refilling injector for rapid administration of nocturine to victms.
   components:
-  - type: Solution
-    solution:
-      maxVol: 12
-      reagents:
-      - ReagentId: NocturineXenoborg # Moffstation - Xenoborgs get the nocturine w/ delay.
-        Quantity: 12
+  - type: SolutionContainerManager
+    solutions:
+      hypospray:
+        maxVol: 12
+        reagents:
+        - ReagentId: NocturineXenoborg # Moffstation - Xenoborgs get the nocturine w/ delay.
+          Quantity: 12
   - type: SolutionRegeneration
+    solution: hypospray
     generated:
       reagents:
       - ReagentId: NocturineXenoborg # Moffstation - Xenoborgs get the nocturine w/ delay.

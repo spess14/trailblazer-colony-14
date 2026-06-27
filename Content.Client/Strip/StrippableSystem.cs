@@ -17,11 +17,11 @@ namespace Content.Client.Strip;
 /// <summary>
 ///     This is the client-side stripping system, which just triggers UI updates on events.
 /// </summary>
-public sealed partial class StrippableSystem : SharedStrippableSystem
+public sealed class StrippableSystem : SharedStrippableSystem
 {
     // Moffstation - Begin - Obscuring Virtual Entities are unique per item in the strip UI
-    [Dependency] private MetaDataSystem _meta = default!;
-    [Dependency] private SpriteSystem _sprite = default!;
+    [Dependency] private readonly MetaDataSystem _meta = default!;
+    [Dependency] private readonly SpriteSystem _sprite = default!;
 
     [ViewVariables]
     private static readonly EntProtoId HiddenSlotEntId = "StrippingHiddenEntity";

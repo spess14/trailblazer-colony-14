@@ -56,7 +56,6 @@
   text: "/ServerInfo/Guidebook/Science/Robotics.xml"
   children:
   - Cyborgs
-  - AIShells #Moffstation - Ai Shells
 
 - type: guideEntry
   id: Cyborgs

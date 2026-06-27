@@ -6,7 +6,7 @@
   components:
   - type: FlavorProfile
     flavors:
-    - vampiric
+    - flavor-ash-and-undeath
 
 - type: entity
   id: OrganVampireMetabolizer

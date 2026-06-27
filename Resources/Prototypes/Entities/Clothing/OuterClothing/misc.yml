@@ -21,9 +21,9 @@
   description: A darker apron designed for bartenders.
   components:
   - type: Sprite
-    sprite: _Moffstation/Clothing/OuterClothing/Misc/apronbar.rsi # Moffstation
+    sprite: Clothing/OuterClothing/Misc/apronbar.rsi
   - type: Clothing
-    sprite: _Moffstation/Clothing/OuterClothing/Misc/apronbar.rsi # Moffstation
+    sprite: Clothing/OuterClothing/Misc/apronbar.rsi
   - type: Tag
     tags:
     - Apron
@@ -53,16 +53,16 @@
   description: An apron-jacket used by a high class chef.
   components:
   - type: Sprite
-    sprite: _Moffstation/Clothing/OuterClothing/Misc/apronchef.rsi # Moffstation
+    sprite: Clothing/OuterClothing/Misc/apronchef.rsi
   - type: Clothing
-    sprite: _Moffstation/Clothing/OuterClothing/Misc/apronchef.rsi # Moffstation
+    sprite: Clothing/OuterClothing/Misc/apronchef.rsi
   - type: Tag
     tags:
     - Apron
     - WhitelistChameleon
 
 - type: entity
-  parent: ClothingOuterStorageSuitStorageAttachableBase # Moffstation
+  parent: ClothingOuterStorageBase
   id: ClothingOuterJacketChef
   name: chef jacket
   description: An apron-jacket used by a high class chef.
@@ -238,17 +238,6 @@
   - type: Tag
     tags:
     - WhitelistChameleon
-
-- type: entity
-  parent: ClothingOuterBase
-  id: ClothingOuterWizardFake
-  name: fake wizard robes
-  description: Covered in glittery stars and mystery stains. Instantly boosts your arcane fashion sense.
-  components:
-  - type: Sprite
-    sprite: Clothing/OuterClothing/Misc/wizard_fake.rsi
-  - type: Clothing
-    sprite: Clothing/OuterClothing/Misc/wizard_fake.rsi
 
 - type: entity
   parent: ClothingOuterBase

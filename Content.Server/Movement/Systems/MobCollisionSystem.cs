@@ -6,13 +6,14 @@ using Robust.Shared.Player;
 
 namespace Content.Server.Movement.Systems;
 
-public sealed partial class MobCollisionSystem : SharedMobCollisionSystem
+public sealed class MobCollisionSystem : SharedMobCollisionSystem
 {
-    [Dependency] private EntityQuery<ActorComponent> _actorQuery = default!;
+    private EntityQuery<ActorComponent> _actorQuery;
 
     public override void Initialize()
     {
         base.Initialize();
+        _actorQuery = GetEntityQuery<ActorComponent>();
         SubscribeLocalEvent<MobCollisionComponent, MobCollisionMessage>(OnServerMobCollision);
     }
 

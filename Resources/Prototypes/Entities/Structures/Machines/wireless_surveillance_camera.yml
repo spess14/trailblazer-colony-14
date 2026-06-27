@@ -10,9 +10,8 @@
     - type: WirelessNetworkConnection
       range: 10000 # Moffstation - Listening outpost spying
     - type: Damageable
-      damageModifierSet: Metallic
-    - type: Injurable
       damageContainer: StructuralInorganic
+      damageModifierSet: Metallic
     - type: Rotatable
       rotateWhileAnchored: true
     - type: Fixtures

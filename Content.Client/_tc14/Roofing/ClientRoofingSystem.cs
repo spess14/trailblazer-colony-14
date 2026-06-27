@@ -6,10 +6,10 @@ using Robust.Shared.Player;
 
 namespace Content.Client._tc14.Roofing;
 
-public sealed partial class ClientRoofingSystem : RoofingSystem
+public sealed class ClientRoofingSystem : RoofingSystem
 {
-    [Dependency] private IOverlayManager _overlay = default!;
-    [Dependency] private SharedPopupSystem _popup = default!;
+    [Dependency] private readonly IOverlayManager _overlay = default!;
+    [Dependency] private readonly SharedPopupSystem _popup = default!;
     public override bool OnToggleRoofOverlay(ICommonSession? session, EntityCoordinates coords, EntityUid uid)
     {
         if (_overlay.HasOverlay<RoofingOverlay>())

@@ -7,9 +7,9 @@ using Robust.Shared.Map.Components;
 
 namespace Content.Client._tc14.Roofing;
 
-public sealed partial class RoofingOverlay : Overlay
+public sealed class RoofingOverlay : Overlay
 {
-    [Dependency] private IEntityManager _entManager = default!;
+    [Dependency] private readonly IEntityManager _entManager = default!;
 
     private EntityLookupSystem _lookup;
     private SharedMapSystem _maps;

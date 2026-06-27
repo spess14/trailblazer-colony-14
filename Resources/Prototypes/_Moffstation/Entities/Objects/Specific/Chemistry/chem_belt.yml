@@ -15,9 +15,9 @@
   - type: Item
     size: Ginormous
   - type: Storage
-    maxItemSize: Large 
+    maxItemSize: Normal 
     grid:
-      - 0,0,7,1
+      - 0,0,6,1
     whitelist:
       components:
         - FitsInDispenser

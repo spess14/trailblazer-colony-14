@@ -26,13 +26,13 @@
   description: A loosely tied necktie, a perfect accessory for the over-worked detective.
   components:
   - type: Sprite
-    sprite: _Moffstation/Clothing/Neck/dettie.rsi # Moffstation
+    sprite: Clothing/Neck/Ties/dettie.rsi
   - type: Clothing
-    sprite: _Moffstation/Clothing/Neck/dettie.rsi # Moffstation
+    sprite: Clothing/Neck/Ties/dettie.rsi
   - type: Item
     storedSprite:
       state: storage
-      sprite: _Moffstation/Clothing/Neck/dettie.rsi # Moffstation
+      sprite: Clothing/Neck/Ties/dettie.rsi
 
 - type: entity
   parent: ClothingNeckBase

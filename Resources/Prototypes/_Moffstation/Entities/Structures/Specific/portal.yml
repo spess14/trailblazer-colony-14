@@ -26,9 +26,8 @@
     falloff: 10.0
     netsync: false
   - type: Damageable
-    damageModifierSet: Metallic
-  - type: Injurable
     damageContainer: Inorganic
+    damageModifierSet: Metallic
   - type: Destructible
     thresholds:
     - trigger:

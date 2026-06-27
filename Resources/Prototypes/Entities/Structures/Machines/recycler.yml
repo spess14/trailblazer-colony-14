@@ -93,9 +93,8 @@
     fuelCost: 25
   # Moffstation - Start - Preventing parenting into an electronic
   - type: Damageable
-    damageModifierSet: Metallic
-  - type: Injurable
     damageContainer: StructuralInorganic
+    damageModifierSet: Metallic 
   # Moffstation - End
   - type: Destructible
     thresholds:

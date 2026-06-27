@@ -121,6 +121,7 @@
   - type: Puller
     needsHands: false
   - type: Butcherable
+    butcheringType: Spike
     spawned:
     - id: FoodMeatLizard
       amount: 5
@@ -172,7 +173,7 @@
   - type: Wagging
 
 - type: entity
-  parent: OrganBaseOrganic
+  parent: OrganBase
   id: OrganReptilian
   abstract: true
   suffix: Reptilian

@@ -1,6 +1,3 @@
-using System.Linq;
-using System.Text.RegularExpressions;
-using Content.Shared._Moffstation.Extensions;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype.Array;
 
@@ -21,7 +18,7 @@ public sealed partial class QuickPhrasePrototype : IPrototype, IInheritingProtot
     /// </summary>
     [ViewVariables]
     [ParentDataField(typeof(AbstractPrototypeIdArraySerializer<QuickPhrasePrototype>))]
-    public string[]? Parents { get; set; }
+    public string[]? Parents { get; set;  }
 
     [ViewVariables]
     [NeverPushInheritance]
@@ -32,29 +29,19 @@ public sealed partial class QuickPhrasePrototype : IPrototype, IInheritingProtot
     /// The phrase that this prototype represents.
     /// </summary>
     [DataField]
-    public LocId? Text;
-
-    /// <summary>
-    /// The localized text of the phrase. If <see cref="Text"/> is not null, that is the localization string used. If it
-    /// is null, we construct the localization string based on <see cref="ID"/>, stripping "phrase" from the ends of the
-    /// string, converting it from camelCase to kebab-case, and adding "phrase-" to the front.
-    /// </summary>
-    [ViewVariables(VVAccess.ReadOnly)]
-    public string LocalizedText => Loc.GetString(
-        Text ?? $"phrase-{ID.Trim("Phrase").CamelCaseToKebabCase()}"
-    );
-
-    /// <summary>
-    /// The tab in the UI that this phrase falls under.
-    /// </summary>
-    [DataField(required: true)]
-    public LocId Tab;
+    public LocId Text = string.Empty;
 
     /// <summary>
     /// Determines how the phrase is sorted in the UI.
     /// </summary>
-    [DataField(required: true)]
-    public LocId Group;
+    [DataField]
+    public string Group = string.Empty;
+
+    /// <summary>
+    /// The tab in the UI that this phrase falls under.
+    /// </summary>
+    [DataField]
+    public string Tab = string.Empty;
 
     /// <summary>
     /// Color of button in UI.

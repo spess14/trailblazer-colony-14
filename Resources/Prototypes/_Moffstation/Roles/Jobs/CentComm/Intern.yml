@@ -6,6 +6,7 @@
   setPreference: false
   icon: "JobIconCentralCommandIntern"
   supervisors: job-supervisors-centcom
+  canBeAntag: false
   accessGroups:
   - AllAccess
   access:

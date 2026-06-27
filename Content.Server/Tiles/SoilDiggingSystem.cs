@@ -5,9 +5,9 @@ namespace Content.Server.Tiles;
 /// <summary>
 /// This handles...
 /// </summary>
-public sealed partial class SoilDiggingSystem : EntitySystem
+public sealed class SoilDiggingSystem : EntitySystem
 {
-    [Dependency] private EntityManager _entMan = default!;
+    [Dependency] private readonly EntityManager _entMan = default!;
     /// <inheritdoc/>
     public override void Initialize()
     {

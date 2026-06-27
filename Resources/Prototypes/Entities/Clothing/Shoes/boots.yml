@@ -56,8 +56,6 @@
     sprite: Clothing/Shoes/Boots/combatboots.rsi
   - type: Clothing
     sprite: Clothing/Shoes/Boots/combatboots.rsi
-  - type: ClothingSlowOnDamageModifier
-    modifier: 0.5
 
 - type: entity
   parent: ClothingShoesMilitaryBase
@@ -90,8 +88,6 @@
     sprite: Clothing/Shoes/Boots/mercboots.rsi
   - type: Clothing
     sprite: Clothing/Shoes/Boots/mercboots.rsi
-  - type: ClothingSlowOnDamageModifier
-    modifier: 0.5
 
 - type: entity
   parent: ClothingShoesBaseButcherable
@@ -120,9 +116,9 @@
   name: cargo winter boots
   components:
   - type: Sprite
-    sprite: _Moffstation/Clothing/Shoes/winterbootscargo.rsi # Moffstation
+    sprite: Clothing/Shoes/Boots/winterbootscargo.rsi
   - type: Clothing
-    sprite: _Moffstation/Clothing/Shoes/winterbootscargo.rsi # Moffstation
+    sprite: Clothing/Shoes/Boots/winterbootscargo.rsi
 
 - type: entity
   parent: ClothingShoesBaseWinterBoots
@@ -150,9 +146,9 @@
   name: science winter boots
   components:
   - type: Sprite
-    sprite: _Moffstation/Clothing/Shoes/winterbootssci.rsi # Moffstation
+    sprite: Clothing/Shoes/Boots/winterbootssci.rsi
   - type: Clothing
-    sprite: _Moffstation/Clothing/Shoes/winterbootssci.rsi # Moffstation
+    sprite: Clothing/Shoes/Boots/winterbootssci.rsi
 
 - type: entity
   parent: [ClothingShoesBaseWinterBoots, ClothingShoesMilitaryBase, BaseSecurityContraband]
@@ -190,11 +186,13 @@
       - cobwebs
     ignoreReagents:
       - Fiber
-  - type: Solution
-    solution: # 20 (10 (fiber count of web) * 2 (to craft))
-      reagents:
-      - ReagentId: Fiber
-        Quantity: 20
+  - type: SolutionContainerManager
+    solutions: # 6 (3 (fiber count of web) * 2 (to craft)) + 4 (magical crafting bonus)
+      food:
+        maxVol: 10
+        reagents:
+        - ReagentId: Fiber
+          Quantity: 10
   - type: Butcherable
     spawned:
     - id: MaterialWebSilk1

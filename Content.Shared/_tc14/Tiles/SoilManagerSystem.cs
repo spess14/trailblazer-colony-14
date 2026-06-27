@@ -2,12 +2,16 @@ using Content.Shared.Burial.Components;
 using Content.Shared.DoAfter;
 using Content.Shared.Interaction;
 using Content.Shared.Maps;
+using Content.Shared.Physics;
 using Content.Shared.Tools;
 using Content.Shared.Tools.Components;
 using Content.Shared.Tools.Systems;
 using Robust.Shared.Map;
 using Robust.Shared.Map.Components;
 using Robust.Shared.Network;
+using Robust.Shared.Physics;
+using Robust.Shared.Physics.Components;
+using Robust.Shared.Physics.Systems;
 using Robust.Shared.Prototypes;
 
 namespace Content.Shared._tc14.Tiles;
@@ -15,17 +19,17 @@ namespace Content.Shared._tc14.Tiles;
 /// <summary>
 ///     Handles digging up soil.
 /// </summary>
-public sealed partial class SoilManagerSystem : EntitySystem
+public sealed class SoilManagerSystem : EntitySystem
 {
-    [Dependency] private SharedTransformSystem _transform = default!;
-    [Dependency] private SharedMapSystem _map = default!;
-    [Dependency] private ITileDefinitionManager _tileDefinitionManager = default!;
-    [Dependency] private SharedDoAfterSystem _doAfterSystem = default!;
-    [Dependency] private SharedToolSystem _tool = default!;
-    [Dependency] private TileSystem _tile = default!;
-    [Dependency] private INetManager _net = default!;
+    [Dependency] private readonly SharedTransformSystem _transform = default!;
+    [Dependency] private readonly SharedMapSystem _map = default!;
+    [Dependency] private readonly ITileDefinitionManager _tileDefinitionManager = default!;
+    [Dependency] private readonly SharedDoAfterSystem _doAfterSystem = default!;
+    [Dependency] private readonly SharedToolSystem _tool = default!;
+    [Dependency] private readonly TileSystem _tile = default!;
+    [Dependency] private readonly INetManager _net = default!;
 
-    private static ProtoId<ToolQualityPrototype> ChiselingQuality = "Chiseling";
+    private static readonly ProtoId<ToolQualityPrototype> ChiselingQuality = "Chiseling";
 
     /// <inheritdoc/>
     public override void Initialize()

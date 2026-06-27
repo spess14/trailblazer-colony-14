@@ -160,8 +160,8 @@
         Base: alive
       Dead:
         Base: dead
-  - type: ToolRefinable
-    refineResult:
+  - type: Butcherable
+    spawned:
     - id: FoodMeatTomato
       amount: 2
   - type: Destructible

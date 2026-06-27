@@ -7,7 +7,6 @@
   - PositronicBrain
   - SciFlash
   - CyborgEndoskeleton
-  - AiShell # Moffstation - Add Ai Shells
 
 - type: latheRecipePack
   id: BorgModulesStatic
@@ -18,7 +17,6 @@
   - BorgModuleInflatable
   - BorgModuleArtistry
   - BorgModuleBureaucracy # Moffstation - Give service borgs some love
-  - BorgModuleInvestigation # Moffstation
 
 - type: latheRecipePack
   id: BorgLimbsStatic

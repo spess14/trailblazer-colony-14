@@ -22,14 +22,14 @@ namespace Content.Server.Mech.Equipment.EntitySystems;
 /// <summary>
 /// Handles <see cref="MechGrabberComponent"/> and all related UI logic
 /// </summary>
-public sealed partial class MechGrabberSystem : EntitySystem
+public sealed class MechGrabberSystem : EntitySystem
 {
-    [Dependency] private SharedContainerSystem _container = default!;
-    [Dependency] private MechSystem _mech = default!;
-    [Dependency] private SharedDoAfterSystem _doAfter = default!;
-    [Dependency] private InteractionSystem _interaction = default!;
-    [Dependency] private SharedAudioSystem _audio = default!;
-    [Dependency] private TransformSystem _transform = default!;
+    [Dependency] private readonly SharedContainerSystem _container = default!;
+    [Dependency] private readonly MechSystem _mech = default!;
+    [Dependency] private readonly SharedDoAfterSystem _doAfter = default!;
+    [Dependency] private readonly InteractionSystem _interaction = default!;
+    [Dependency] private readonly SharedAudioSystem _audio = default!;
+    [Dependency] private readonly TransformSystem _transform = default!;
 
     /// <inheritdoc/>
     public override void Initialize()
@@ -155,7 +155,7 @@ public sealed partial class MechGrabberSystem : EntitySystem
             return;
 
         args.Handled = true;
-        component.AudioStream = _audio.PlayPvs(component.GrabSound, uid, component.GrabSoundParams)?.Entity; // Moffstation - Add sound variation
+        component.AudioStream = _audio.PlayPvs(component.GrabSound, uid)?.Entity;
         var doAfterArgs = new DoAfterArgs(EntityManager, args.User, component.GrabDelay, new GrabberDoAfterEvent(), uid, target: target, used: uid)
         {
             BreakOnMove = true

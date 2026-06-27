@@ -18,7 +18,6 @@ public sealed class EntityStorageTests : GameTest
   components:
   - type: EntityStorage
   - type: Damageable
-  - type: Injurable
     damageContainer: Inorganic
   - type: Destructible
     thresholds:

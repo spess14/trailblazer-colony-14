@@ -257,10 +257,10 @@
   components:
   - type: XAEApplyComponents
     components:
-    - type: Solution
-      id: beaker
-      solution:
-        maxVol: 120
+    - type: SolutionContainerManager
+      solutions:
+        beaker:
+          maxVol: 150
     - type: FitsInDispenser
       solution: beaker
     - type: RefillableSolution
@@ -306,9 +306,7 @@
           Blunt: 4
       soundHit:
         path: /Audio/Weapons/bladeslice.ogg
-    - type: Tool
-      qualities:
-      - Slicing
+    - type: Sharp
 
 - type: entity
   id: XenoArtifactGenerateEnergy

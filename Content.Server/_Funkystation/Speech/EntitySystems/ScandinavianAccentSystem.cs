@@ -6,9 +6,9 @@ using Robust.Shared.Random;
 
 namespace Content.Server._Funkystation.Speech.EntitySystems;
 
-public sealed partial class ScandinavianAccentSystem : EntitySystem
+public sealed class ScandinavianAccentSystem : EntitySystem
 {
-    [Dependency] private IRobustRandom _random = default!;
+    [Dependency] private readonly IRobustRandom _random = default!;
 
     private static readonly Regex RegexLowercaseAe = new(@"ae");
     private static readonly Regex RegexUppercaseAe = new(@"A(?i)e");

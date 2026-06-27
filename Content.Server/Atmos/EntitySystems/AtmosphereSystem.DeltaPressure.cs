@@ -141,13 +141,9 @@ public sealed partial class AtmosphereSystem
 
             /*
              In order to perform SIMD ops we load the values into opposing pairs, where:
-             groupA: North, East
-             groupB: South, West
+             groupA: North, East, South, West
+             groupB: South, West, North, East
              That way NumericsHelpers can just do vectorized operations on them super easily.
-
-             In a sense this means that the arrays, per index, would look like:
-             0, 1 - 0, 2
-             0, 1 - 1, 3
              */
             for (var i = 0; i < len; i++)
             {
@@ -155,9 +151,8 @@ public sealed partial class AtmosphereSystem
                 var pairBase = i * DeltaPressurePairCount;
                 for (var j = 0; j < DeltaPressurePairCount; j++)
                 {
-                    var pressurePairBase = DeltaPressurePairCount * j;
-                    groupA[pairBase + j] = pressures[presBase + pressurePairBase];
-                    groupB[pairBase + j] = pressures[presBase + pressurePairBase + 1];
+                    groupA[pairBase + j] = pressures[presBase + j];
+                    groupB[pairBase + j] = pressures[presBase + j + DeltaPressurePairCount];
                 }
             }
 

@@ -1,4 +1,0 @@
-- type: shader
-  id: ShockwaveShader
-  kind: source
-  path: "/Textures/_Moffstation/Shaders/shockwave.swsl"

@@ -95,7 +95,7 @@
   # Moffstation - End
 
 - type: entity
-  parent: [ MobEeepBase, SolutionDart ]
+  parent: [ MobEeepBase ]
   id: MobEeeplet
   suffix: "baby"
   name: eeeplet
@@ -114,7 +114,7 @@
     bloodReferenceSolution:
       reagents:
       - ReagentId: ChloralHydrate
-        Quantity: 400
+        Quantity: 200
   - type: Sprite
     sprite: _Impstation/Mobs/Aliens/eeeplet.rsi
     noRot: true
@@ -147,11 +147,12 @@
         Blunt: 2
   - type: StaminaDamageOnHit
     damage: 20
-  - type: Solution
-    solution:
-      reagents:
-      - ReagentId: ChloralHydrate
-        Quantity: 1000
+  - type: SolutionContainerManager
+    solutions:
+      chloralhydrate:
+        reagents:
+        - ReagentId: ChloralHydrate
+          Quantity: 500
   - type: MeleeChemicalInjector
     solution: chloralhydrate
     transferAmount: 5
@@ -195,7 +196,7 @@
     bloodReferenceSolution:
       reagents:
       - ReagentId: ChloralHydrate
-        Quantity: 800
+        Quantity: 400
   - type: Electrified
     requirePower: false
     shockDamage: 4

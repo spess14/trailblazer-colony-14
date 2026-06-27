@@ -25,9 +25,8 @@
     useSound:
       path: /Audio/Effects/Footsteps/largethud.ogg
   - type: Damageable
-    damageModifierSet: FlimsyMetallic
-  - type: Injurable
     damageContainer: Inorganic
+    damageModifierSet: FlimsyMetallic
   - type: MeleeWeapon
     wideAnimationRotation: -135
     damage:

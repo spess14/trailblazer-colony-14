@@ -13,14 +13,13 @@ using Robust.Shared.Containers;
 
 namespace Content.Shared.Clothing;
 
-public sealed partial class SharedMagbootsSystem : EntitySystem
+public sealed class SharedMagbootsSystem : EntitySystem
 {
-    [Dependency] private AlertsSystem _alerts = default!;
-    [Dependency] private ItemToggleSystem _toggle = default!;
-    [Dependency] private SharedContainerSystem _container = default!;
-    [Dependency] private SharedGravitySystem _gravity = default!;
-
-    [Dependency] private SharedActionsSystem _actions = default!; // Moffstation
+    [Dependency] private readonly AlertsSystem _alerts = default!;
+    [Dependency] private readonly ItemToggleSystem _toggle = default!;
+    [Dependency] private readonly SharedContainerSystem _container = default!;
+    [Dependency] private readonly SharedGravitySystem _gravity = default!;
+    [Dependency] private readonly SharedActionsSystem _actions = default!; // Moffstation
 
     public override void Initialize()
     {
@@ -46,7 +45,7 @@ public sealed partial class SharedMagbootsSystem : EntitySystem
     {
         if (args.Handled)
             return;
-
+    
         args.Handled = true;
 
         _actions.SetToggled(args.Action.Owner, !args.Action.Comp.Toggled);

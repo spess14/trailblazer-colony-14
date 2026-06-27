@@ -27,7 +27,7 @@
   description: A nice and tidy uniform. Shame about the bar though.
   components:
   - type: Sprite
-    sprite: _Moffstation/Clothing/Uniforms/Jumpsuit/bartender.rsi # Moffstation
+    sprite: Clothing/Uniforms/Jumpsuit/bartender.rsi
 
 - type: entity
   parent: ClothingUniformBase
@@ -36,9 +36,9 @@
   description: A decent jacket, for a decent monkey.
   components:
   - type: Sprite
-    sprite: _Moffstation/Clothing/Uniforms/Jumpsuit/punpun.rsi # Moffstation
+    sprite: Clothing/Uniforms/Jumpsuit/punpun.rsi
   - type: Clothing
-    sprite: _Moffstation/Clothing/Uniforms/Jumpsuit/punpun.rsi # Moffstation
+    sprite: Clothing/Uniforms/Jumpsuit/punpun.rsi
   - type: SuitSensor
     controlsLocked: false
     randomMode: false
@@ -51,9 +51,9 @@
   description: A special purple outfit to serve drinks.
   components:
   - type: Sprite
-    sprite: _Moffstation/Clothing/Uniforms/Jumpsuit/bartender_purple.rsi # Moffstation
+    sprite: Clothing/Uniforms/Jumpsuit/bartender_purple.rsi
   - type: Clothing
-    sprite: _Moffstation/Clothing/Uniforms/Jumpsuit/bartender_purple.rsi # Moffstation
+    sprite: Clothing/Uniforms/Jumpsuit/bartender_purple.rsi
 
 - type: entity
   parent: [ClothingUniformBase, BaseCommandContraband]
@@ -80,7 +80,7 @@
   # sprite: Clothing/Uniforms/Jumpsuit/cargotech.rsi #Moffstation - End - Cargo Outfits
 
 - type: entity
-  parent: [ClothingUniformBase, ClothingUniformFoldableBase]
+  parent: ClothingUniformBase # Moffstation
   id: ClothingUniformJumpsuitSalvageSpecialist
   name: salvage specialist's jumpsuit
   description: It's a snappy jumpsuit with a sturdy set of overalls. It's very dirty.
@@ -163,9 +163,9 @@
   description: Can't cook without this.
   components:
   - type: Sprite
-    sprite: _Moffstation/Clothing/Uniforms/Jumpsuit/chef.rsi # Moffstation
+    sprite: Clothing/Uniforms/Jumpsuit/chef.rsi
   - type: Clothing
-    sprite: _Moffstation/Clothing/Uniforms/Jumpsuit/chef.rsi # Moffstation
+    sprite: Clothing/Uniforms/Jumpsuit/chef.rsi
 
 - type: entity
   parent: [ClothingUniformBase, ClothingUniformFoldableBase]
@@ -187,27 +187,27 @@
     sprite: _Moffstation/Clothing/Uniforms/Jumpsuit/jumpsuit.rsi
     layers:
     - state: icon
-      color: &color-white "#FFFFFF"
+      color: &green-scrubs "#77ed94"
     - state: professional-trinkets-icon
     - state: color-trinkets-icon
-      color: &green-scrubs "#77ed94"
+      color: &color-white "#FFFFFF"
   - type: Item
     inhandVisuals:
       left:
       - state: inhand-left
-        color: *green-scrubs
+        color: *color-white
       right:
       - state: inhand-right
-        color: *green-scrubs
+        color: *color-white
   - type: Clothing
     sprite: _Moffstation/Clothing/Uniforms/Jumpsuit/scrubs.rsi
     clothingVisuals:
       jumpsuit:
       - state: equipped-INNERCLOTHING
-        color: *color-white
+        color: *green-scrubs
       - state: professional-trinkets-equipped-INNERCLOTHING
       - state: color-trinkets-equipped-INNERCLOTHING
-        color: *green-scrubs
+        color: *color-white
 # Moffstation - End
 
 - type: entity
@@ -249,9 +249,9 @@
   description: HONK!
   components:
   - type: Sprite
-    sprite: _Moffstation/Clothing/Uniforms/Jumpsuit/clown.rsi # Moffstation
+    sprite: Clothing/Uniforms/Jumpsuit/clown.rsi
   - type: Clothing
-    sprite: _Moffstation/Clothing/Uniforms/Jumpsuit/clown.rsi # Moffstation
+    sprite: Clothing/Uniforms/Jumpsuit/clown.rsi
   - type: Tag
     tags:
     - ClownSuit
@@ -263,9 +263,9 @@
   name: banana clown suit
   components:
   - type: Sprite
-    sprite: _Moffstation/Clothing/Uniforms/Jumpsuit/clown_banana.rsi # Moffstation
+    sprite: Clothing/Uniforms/Jumpsuit/clown_banana.rsi
   - type: Clothing
-    sprite: _Moffstation/Clothing/Uniforms/Jumpsuit/clown_banana.rsi # Moffstation
+    sprite: Clothing/Uniforms/Jumpsuit/clown_banana.rsi
   - type: Construction
     graph: BananaClownJumpsuit
     node: jumpsuit
@@ -290,9 +290,9 @@
   id: ClothingUniformJumpsuitJesterAlt
   components:
   - type: Sprite
-    sprite: _Moffstation/Clothing/Uniforms/Jumpsuit/jester2.rsi # Moffstation
+    sprite: Clothing/Uniforms/Jumpsuit/jester2.rsi
   - type: Clothing
-    sprite: _Moffstation/Clothing/Uniforms/Jumpsuit/jester2.rsi # Moffstation
+    sprite: Clothing/Uniforms/Jumpsuit/jester2.rsi
 
 - type: entity
   parent: [ClothingUniformBase, BaseCommandContraband] # Moffstation
@@ -315,7 +315,7 @@
     sprite: _Moffstation/Clothing/Uniforms/Jumpsuit/cmo_turtle.rsi # Moffstation
 
 - type: entity
-  parent: [ClothingUniformBase, ClothingUniformFoldableBase]
+  parent: ClothingUniformBase
   id: ClothingUniformJumpsuitDetective
   name: hard-worn suit
   description: Someone who wears this means business.
@@ -326,7 +326,7 @@
       sprite: _Moffstation/Clothing/Uniforms/Jumpsuit/detective.rsi # Moffstation
 
 - type: entity
-  parent: [ClothingUniformBase, ClothingUniformFoldableBase]
+  parent: ClothingUniformBase
   id: ClothingUniformJumpsuitDetectiveGrey
   name: noir suit
   description: A hard-boiled private investigator's grey suit, complete with tie clip.
@@ -347,27 +347,27 @@
     sprite: _Moffstation/Clothing/Uniforms/Jumpsuit/jumpsuit.rsi
     layers:
     - state: icon
-      color: &color-orange "#db542e"
+      color: &color-darkblue "#547abb"
     - state: basics-trinkets-icon
     - state: color-trinkets-icon
-      color: &color-darkblue "#547abb"
+      color: &color-orange "#db542e"
   - type: Item
     inhandVisuals:
       left:
       - state: inhand-left
-        color: *color-orange
+        color: *color-darkblue
       right:
       - state: inhand-right
-        color: *color-orange
+        color: *color-darkblue
   - type: Clothing
     sprite: _Moffstation/Clothing/Uniforms/Jumpsuit/jumpsuit.rsi
     clothingVisuals:
       jumpsuit:
       - state: equipped-INNERCLOTHING
-        color: *color-orange
+        color: *color-darkblue
       - state: basics-trinkets-equipped-INNERCLOTHING
       - state: color-trinkets-equipped-INNERCLOTHING
-        color: *color-darkblue
+        color: *color-orange
     # Moffstation - End
 
 - type: entity
@@ -549,9 +549,9 @@
   description: ...
   components:
   - type: Sprite
-    sprite: _Moffstation/Clothing/Uniforms/Jumpsuit/mime.rsi # Moffstation
+    sprite: Clothing/Uniforms/Jumpsuit/mime.rsi
   - type: Clothing
-    sprite: _Moffstation/Clothing/Uniforms/Jumpsuit/mime.rsi # Moffstation
+    sprite: Clothing/Uniforms/Jumpsuit/mime.rsi
 
 - type: entity
   parent: ClothingUniformBase
@@ -622,9 +622,9 @@
   description: 'What can brown do for you?'
   components:
   - type: Sprite
-    sprite: _Moffstation/Clothing/Uniforms/Jumpsuit/qm.rsi # Moffstation
+    sprite: Clothing/Uniforms/Jumpsuit/qm.rsi
   - type: Clothing
-    sprite: _Moffstation/Clothing/Uniforms/Jumpsuit/qm.rsi # Moffstation
+    sprite: Clothing/Uniforms/Jumpsuit/qm.rsi
 
 - type: entity
   parent: [ClothingUniformBase, BaseCommandContraband]
@@ -644,9 +644,9 @@
   description: Inspired by the quartermasters of military's past, the perfect outfit for supplying a formal occasion.
   components:
     - type: Sprite
-      sprite: _Moffstation/Clothing/Uniforms/Jumpsuit/qmformal.rsi # Moffstation
+      sprite: Clothing/Uniforms/Jumpsuit/qmformal.rsi
     - type: Clothing
-      sprite: _Moffstation/Clothing/Uniforms/Jumpsuit/qmformal.rsi # Moffstation
+      sprite: Clothing/Uniforms/Jumpsuit/qmformal.rsi
 
 - type: entity
   parent: [ClothingUniformBase, BaseCommandContraband]
@@ -729,12 +729,12 @@
   description: I'm a little busy right now, Calhoun.
   components:
   - type: Sprite
-    sprite: _Moffstation/Clothing/Uniforms/Jumpsuit/security_blue.rsi # Moffstation - New Security Outfits
+    sprite: Clothing/Uniforms/Jumpsuit/security_blue.rsi
   - type: Clothing
-    sprite: _Moffstation/Clothing/Uniforms/Jumpsuit/security_blue.rsi # Moffstation - New Security Outfits
+    sprite: Clothing/Uniforms/Jumpsuit/security_blue.rsi
 
 - type: entity
-  parent: [ClothingUniformBase, BaseSecurityContraband, ClothingUniformFoldableBase] # Moffstation
+  parent: [ClothingUniformBase, BaseSecurityContraband]
   id: ClothingUniformJumpsuitSecGrey
   name: grey security jumpsuit
   description: A tactical relic of years past before Nanotrasen decided it was cheaper to dye the suits red instead of washing out the blood.
@@ -1224,9 +1224,9 @@
   description: Cursed cluwne suit.
   components:
   - type: Sprite
-    sprite: _Moffstation/Clothing/Uniforms/Jumpsuit/cluwne.rsi # Moffstation
+    sprite: Clothing/Uniforms/Jumpsuit/cluwne.rsi
   - type: Clothing
-    sprite: _Moffstation/Clothing/Uniforms/Jumpsuit/cluwne.rsi # Moffstation
+    sprite: Clothing/Uniforms/Jumpsuit/cluwne.rsi
   - type: Unremoveable
 
 - type: entity
@@ -1271,9 +1271,9 @@
   description: Black as a starry night.
   components:
   - type: Sprite
-    sprite: _Moffstation/Clothing/Uniforms/Jumpsuit/hawaiblack.rsi # Moffstation
+    sprite: Clothing/Uniforms/Jumpsuit/hawaiblack.rsi
   - type: Clothing
-    sprite: _Moffstation/Clothing/Uniforms/Jumpsuit/hawaiblack.rsi # Moffstation
+    sprite: Clothing/Uniforms/Jumpsuit/hawaiblack.rsi
 
 - type: entity
   parent: ClothingUniformBase
@@ -1282,9 +1282,9 @@
   description: Blue as a huge ocean.
   components:
   - type: Sprite
-    sprite: _Moffstation/Clothing/Uniforms/Jumpsuit/hawaiblue.rsi # Moffstation
+    sprite: Clothing/Uniforms/Jumpsuit/hawaiblue.rsi
   - type: Clothing
-    sprite: _Moffstation/Clothing/Uniforms/Jumpsuit/hawaiblue.rsi # Moffstation
+    sprite: Clothing/Uniforms/Jumpsuit/hawaiblue.rsi
 
 - type: entity
   parent: ClothingUniformBase
@@ -1293,9 +1293,9 @@
   description: Red as a juicy watermelons.
   components:
   - type: Sprite
-    sprite: _Moffstation/Clothing/Uniforms/Jumpsuit/hawaired.rsi # Moffstation
+    sprite: Clothing/Uniforms/Jumpsuit/hawaired.rsi
   - type: Clothing
-    sprite: _Moffstation/Clothing/Uniforms/Jumpsuit/hawaired.rsi # Moffstation
+    sprite: Clothing/Uniforms/Jumpsuit/hawaired.rsi
 
 - type: entity
   parent: ClothingUniformBase
@@ -1304,9 +1304,9 @@
   description: Yellow as a bright sun.
   components:
   - type: Sprite
-    sprite: _Moffstation/Clothing/Uniforms/Jumpsuit/hawaiyellow.rsi # Moffstation
+    sprite: Clothing/Uniforms/Jumpsuit/hawaiyellow.rsi
   - type: Clothing
-    sprite: _Moffstation/Clothing/Uniforms/Jumpsuit/hawaiyellow.rsi # Moffstation
+    sprite: Clothing/Uniforms/Jumpsuit/hawaiyellow.rsi
 
 - type: entity
   parent: [UnsensoredClothingUniformBase, BaseSyndicateContraband] # Moffstation - (No Sensors for Enemy Gear)
@@ -1375,7 +1375,7 @@
     sprite: _Moffstation/Clothing/Uniforms/Jumpsuit/senior_officer.rsi # Moffstation
 
 - type: entity
-  parent: [ClothingUniformBase, BaseSlicingRefinable]
+  parent: ClothingUniformBase
   id: ClothingUniformJumpsuitWeb
   name: web jumpsuit
   description: Makes it clear that you are one with the webs.
@@ -1384,8 +1384,9 @@
     sprite: Clothing/Uniforms/Jumpsuit/web.rsi
   - type: Clothing
     sprite: Clothing/Uniforms/Jumpsuit/web.rsi
-  - type: ToolRefinable
-    refineResult:
+  - type: Butcherable
+    butcheringType: Knife
+    spawned:
     - id: MaterialWebSilk1
       amount: 8
   - type: FlavorProfile
@@ -1393,6 +1394,13 @@
       - cobwebs
     ignoreReagents:
       - Fiber
+  - type: SolutionContainerManager
+    solutions: # 24 (3 (fiber count of web) * 8 (to craft)) + 6 (magical crafting bonus)
+      food:
+        maxVol: 30
+        reagents:
+        - ReagentId: Fiber
+          Quantity: 30
   - type: Construction
     graph: WebObjects
     node: jumpsuit

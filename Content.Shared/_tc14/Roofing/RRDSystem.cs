@@ -13,13 +13,13 @@ namespace Content.Shared._tc14.Roofing;
 /// Manages the RRD.
 /// </summary>
 // ReSharper disable once InconsistentNaming
-public sealed partial class RRDSystem : EntitySystem
+public sealed class RRDSystem : EntitySystem
 {
-    [Dependency] private SharedAudioSystem _audio = default!;
-    [Dependency] private SharedMapSystem _map = default!;
-    [Dependency] private SharedTransformSystem _transform = default!;
-    [Dependency] private SharedRoofSystem _roof = default!;
-    [Dependency] private SharedPopupSystem _popup = default!;
+    [Dependency] private readonly SharedAudioSystem _audio = default!;
+    [Dependency] private readonly SharedMapSystem _map = default!;
+    [Dependency] private readonly SharedTransformSystem _transform = default!;
+    [Dependency] private readonly SharedRoofSystem _roof = default!;
+    [Dependency] private readonly SharedPopupSystem _popup = default!;
 
     /// <inheritdoc/>
     public override void Initialize()

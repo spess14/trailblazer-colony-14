@@ -68,7 +68,7 @@
 
 - type: entity
   id: BriefcaseWeaponHushpupFilled
-  parent: BriefcaseWeaponMedium # Moffstation - Hushup rebalance
+  parent: BriefcaseWeaponSmall
   name: secure hushpup case
   components:
   - type: EntityTableContainerFill
@@ -76,11 +76,7 @@
       storagebase: !type:AllSelector
         children:
         - id: WeaponShotgunHushpup
-        # Moffstation - Start - Hushup rebalance
-        - id: TreasureCoinMarked
-        - id: ShellShotgun
-          amount: 5
-        # Moffstation - End
+        - id: TreasureCoinIron
 
 - type: entity
   id: BriefcaseWeaponC20Filled

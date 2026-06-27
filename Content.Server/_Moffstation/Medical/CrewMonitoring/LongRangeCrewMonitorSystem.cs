@@ -5,9 +5,9 @@ using Content.Shared.Station.Components;
 
 namespace Content.Server._Moffstation.Medical.CrewMonitoring;
 
-public sealed partial class LongRangeCrewMonitorSystem : EntitySystem
+public sealed class LongRangeCrewMonitorSystem : EntitySystem
 {
-    [Dependency] private StationSystem _station = default!;
+    [Dependency] private readonly StationSystem _station = default!;
 
     public override void Initialize()
     {

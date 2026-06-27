@@ -1,6 +1,6 @@
 - type: entity
   abstract: true
-  parent: [SolutionFood, SolutionToolSmall, Clothing]
+  parent: Clothing
   id: ClothingHeadBase
   components:
   - type: Clothing
@@ -13,11 +13,13 @@
     storedRotation: -90
   - type: Edible
     requiresSpecialDigestion: true
-  - type: Solution
-    solution:
-      reagents:
-      - ReagentId: Fiber
-        Quantity: 15
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 10
+        reagents:
+        - ReagentId: Fiber
+          Quantity: 10
   - type: Tag
     tags:
     - ClothMade
@@ -25,12 +27,14 @@
 
 - type: entity
   abstract: true
-  parent: [ClothingHeadBase, BaseSlicingRefinable]
+  parent: ClothingHeadBase
   id: ClothingHeadBaseButcherable
   components:
-  - type: ToolRefinable
-    refineResult:
+  - type: Butcherable
+    butcheringType: Knife
+    spawned:
     - id: MaterialCloth1
+      amount: 1
   - type: PhysicalComposition # 50% of the amount of cloth you'd obtain upon butchering
     materialComposition:
       Cloth: 50
@@ -57,7 +61,7 @@
     equippedPrefix: off
   - type: Item
     heldPrefix: off
-    size: Normal # I'm not updating the solution because these probably shouldn't be edible...
+    size: Normal
   - type: ToggleableVisuals
     spriteLayer: light
   - type: ItemTogglePointLight

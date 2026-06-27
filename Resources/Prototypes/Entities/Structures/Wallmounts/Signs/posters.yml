@@ -6,11 +6,19 @@
   - type: Sprite
     sprite: _Moffstation/Structures/Wallmounts/posters.rsi # Moffstation - Posters
   - type: Damageable
-    damageModifierSet: Card
-  - type: Injurable
     damageContainer: StructuralInorganic
+    damageModifierSet: Card
   - type: Destructible
     thresholds:
+    - trigger: # Excess damage, don't spawn entities
+        !type:DamageTrigger
+        damage: 50
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          path: /Audio/Effects/poster_broken.ogg
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
     - trigger:
         !type:DamageTrigger
         damage: 15

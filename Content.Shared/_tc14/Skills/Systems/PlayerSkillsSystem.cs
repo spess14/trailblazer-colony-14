@@ -14,12 +14,12 @@ namespace Content.Shared._tc14.Skills.Systems;
 /// <summary>
 /// Has basic API for player skills.
 /// </summary>
-public sealed partial class PlayerSkillsSystem : EntitySystem
+public sealed class PlayerSkillsSystem : EntitySystem
 {
-    [Dependency] private IGameTiming _timing = default!;
-    [Dependency] private IPrototypeManager _protoMan = default!;
-    [Dependency] private IRobustRandom _random = default!;
-    [Dependency] private IConfigurationManager _configurationManager = default!;
+    [Dependency] private readonly IGameTiming _timing = default!;
+    [Dependency] private readonly IPrototypeManager _protoMan = default!;
+    [Dependency] private readonly IRobustRandom _random = default!;
+    [Dependency] private readonly IConfigurationManager _configurationManager = default!;
 
     private int _skillPointsAmount;
 

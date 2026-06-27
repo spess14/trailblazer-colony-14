@@ -4,7 +4,7 @@
   id: BaseTouristObjective
   components:
   - type: Objective
-    issuer: Civilians
+    issuer: objective-issuer-self
     difficulty: 1
   - type: RoleRequirement
     roles:

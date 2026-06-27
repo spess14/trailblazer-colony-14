@@ -19,7 +19,6 @@
   - type: Tool
     qualities:
     - Cutting
-    - Shearing
     useSound:
       path: /Audio/Items/wirecutter.ogg
     speedModifier: 0.05
@@ -166,12 +165,6 @@
     damage:
       types:
         Blunt: 4
-  # Moffstation - Toolbox Throwable
-  - type: DamageOtherOnHit
-    damage:
-      types:
-        Blunt: 1.5 # just below 50% 
-  # Moffstation - End
 
 - type: entity
   id: CowToolboxFilled

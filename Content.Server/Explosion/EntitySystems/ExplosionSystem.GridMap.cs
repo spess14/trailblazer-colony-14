@@ -1,6 +1,8 @@
 using System.Numerics;
 using Content.Shared.Atmos;
+using Content.Shared.Explosion;
 using Content.Shared.Explosion.Components;
+using Content.Shared.Explosion.EntitySystems;
 using Robust.Shared.Map;
 using Robust.Shared.Map.Components;
 
@@ -100,8 +102,9 @@ public sealed partial class ExplosionSystem
                 continue;
             }
 
-            var xform = Transform(gridToTransform);
-            var  (_, gridWorldRotation, gridWorldMatrix, invGridWorldMatrid) = _transformSystem.GetWorldPositionRotationMatrixWithInv(xform);
+            var xforms = GetEntityQuery<TransformComponent>();
+            var xform = xforms.GetComponent(gridToTransform);
+            var  (_, gridWorldRotation, gridWorldMatrix, invGridWorldMatrid) = _transformSystem.GetWorldPositionRotationMatrixWithInv(xform, xforms);
 
             var localEpicentre = (Vector2i) Vector2.Transform(epicentre.Position, invGridWorldMatrid);
             var matrix = offsetMatrix * gridWorldMatrix * targetMatrix;

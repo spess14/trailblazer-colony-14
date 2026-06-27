@@ -25,16 +25,15 @@ namespace Content.Shared.Silicons.StationAi;
 /// </summary>
 public abstract partial class SharedStationAiFixerConsoleSystem : EntitySystem
 {
-    [Dependency] private SharedUserInterfaceSystem _userInterface = default!;
-    [Dependency] private ItemSlotsSystem _itemSlots = default!;
-    [Dependency] private SharedContainerSystem _container = default!;
-    [Dependency] private MobStateSystem _mobState = default!;
-    [Dependency] private IGameTiming _timing = default!;
-    [Dependency] private SharedAppearanceSystem _appearance = default!;
-    [Dependency] private ISharedAdminLogManager _adminLogger = default!;
-
-    [Dependency] private SharedSiliconLawSystem _siliconLaw = default!;
-    [Dependency] private SharedMindSystem _mind = default!;
+    [Dependency] private readonly SharedUserInterfaceSystem _userInterface = default!;
+    [Dependency] private readonly ItemSlotsSystem _itemSlots = default!;
+    [Dependency] private readonly SharedContainerSystem _container = default!;
+    [Dependency] private readonly MobStateSystem _mobState = default!;
+    [Dependency] private readonly IGameTiming _timing = default!;
+    [Dependency] private readonly SharedAppearanceSystem _appearance = default!;
+    [Dependency] private readonly SharedSiliconLawSystem _siliconLaw = default!;
+    [Dependency] private readonly SharedMindSystem _mind = default!;
+    [Dependency] private readonly ISharedAdminLogManager _adminLogger = default!;
 
     public override void Initialize()
     {
@@ -340,7 +339,7 @@ public abstract partial class SharedStationAiFixerConsoleSystem : EntitySystem
                 case StationAiFixerConsoleAction.Purge:
                     if (!TryGetStationAiHolder(ent, out _))
                         break;
-
+                    
                     QueueDel(ent.Comp.ActionTarget);
 
                     ent.Comp.ActionTarget = null;

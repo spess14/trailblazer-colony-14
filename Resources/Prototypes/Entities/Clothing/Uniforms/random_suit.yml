@@ -8,7 +8,7 @@
   components:
   - type: SuitSensor
   - type: Sprite
-    sprite: _Moffstation/Clothing/Uniforms/procedural.rsi # Moffstation
+    sprite: Clothing/Uniforms/procedural.rsi
     layers:
     - state: base_torso_standard
       map: [ "torso" ]
@@ -19,7 +19,7 @@
     - state: mask_null
       map: [ "overlay" ]
   - type: Clothing
-    sprite: _Moffstation/Clothing/Uniforms/procedural.rsi # Moffstation
+    sprite: Clothing/Uniforms/procedural.rsi
     clothingVisuals:
       jumpsuit:
       - state: base_torso_standard

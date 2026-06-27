@@ -19,11 +19,11 @@ namespace Content.Shared.ActionBlocker
     /// Utility methods to check if a specific entity is allowed to perform an action.
     /// </summary>
     [UsedImplicitly]
-    public sealed partial class ActionBlockerSystem : EntitySystem
+    public sealed class ActionBlockerSystem : EntitySystem
     {
-        [Dependency] private SharedContainerSystem _container = default!;
+        [Dependency] private readonly SharedContainerSystem _container = default!;
 
-        [Dependency] private EntityQuery<ComplexInteractionComponent> _complexInteractionQuery = default!;
+        [Dependency] private readonly EntityQuery<ComplexInteractionComponent> _complexInteractionQuery = default!;
 
         // These two methods should probably both live in SharedMoverController
         // but they're called in a million places and I'm not doing that
@@ -45,9 +45,7 @@ namespace Content.Shared.ActionBlocker
                 Dirty(uid, component);
 
             component.CanMove = !ev.Cancelled;
-            var updatedEv = new CanMoveUpdatedEvent(component.CanMove);
-            RaiseLocalEvent(uid, ref updatedEv);
-            return component.CanMove;
+            return !ev.Cancelled;
         }
 
         /// <summary>

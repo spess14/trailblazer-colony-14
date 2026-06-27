@@ -5,9 +5,9 @@ using Content.Shared.Speech;
 
 namespace Content.Server._Funkystation.Speech.EntitySystems;
 
-public sealed partial class CakAccentSystem : EntitySystem
+public sealed class CakAccentSystem : EntitySystem
 {
-    [Dependency] private ReplacementAccentSystem _replacement = default!;
+    [Dependency] private readonly ReplacementAccentSystem _replacement = default!;
 
     private static readonly Regex RegexWhitespace = new(@"\s");
 

@@ -239,10 +239,11 @@ public abstract class RadialMenuButtonBase : BaseButton
     /// <inheritdoc />
     protected override void KeyBindUp(GUIBoundKeyEventArgs args)
     {
-        if (args.Function.IsClickOrAltClick())
+        if (args.Function.IsClickOrAltClick()) // MoffStation
             base.KeyBindUp(args);
     }
 
+    // MoffStation - Begin
     /// <inheritdoc />
     protected override void KeyBindDown(GUIBoundKeyEventArgs args)
     {
@@ -290,10 +291,11 @@ public sealed class RadialMenuContextualCentralTextureButton : TextureButton
     /// <inheritdoc />
     protected override void KeyBindUp(GUIBoundKeyEventArgs args)
     {
-        if (args.Function.IsClickOrAltClick())
+        if (args.Function.IsClickOrAltClick()) // MoffStation
             base.KeyBindUp(args);
     }
 
+    // MoffStation - Begin
     /// <inheritdoc />
     protected override void KeyBindDown(GUIBoundKeyEventArgs args)
     {
@@ -695,6 +697,7 @@ public class RadialMenuButtonWithSector : RadialMenuButton, IRadialMenuItemWithS
     }
 }
 
+//MoffStation - Begin
 static file class RadialMenuButtonsHelpers
 {
     public static bool IsClickOrAltClick(this BoundKeyFunction function)
@@ -703,3 +706,4 @@ static file class RadialMenuButtonsHelpers
                || function == ContentKeyFunctions.AltActivateItemInWorld;
     }
 }
+//MoffStation - End

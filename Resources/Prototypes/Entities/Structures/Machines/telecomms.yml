@@ -1,5 +1,5 @@
 - type: entity
-  parent: [ BaseTelecomServer, BaseMachinePowered, ConstructibleMachine ] # Moffstation - Inherit from Moffstation's abstract parent
+  parent: [ BaseMachinePowered, ConstructibleMachine ]
   id: TelecomServer
   name: telecommunication server
   description: When powered and filled with encryption keys it allows radio headset communication.
@@ -134,12 +134,7 @@
         variant-nokey:
           True: { shader: unshaded }
           False: { shader: shaded }
-  # Moffstation - Start - Add abstract telecom server parent.
-  #     Changes to this section must be carefully considered: if the change should apply to the machine variant, leave
-  #     it on this proto. If it should apply to the machine variant AND the blade server variant, comment out the
-  #     change here and duplicate it to the abstract parent.
-#  - type: Appearance
-  # Moffstation - End
+  - type: Appearance
   - type: AmbientOnPowered
   - type: AmbientSound
     volume: -9
@@ -147,12 +142,7 @@
     enabled: false
     sound:
       path: /Audio/Ambience/Objects/server_fans.ogg
-  # Moffstation - Start - Add abstract telecom server parent.
-  #     Changes to this section must be carefully considered: if the change should apply to the machine variant, leave
-  #     it on this proto. If it should apply to the machine variant AND the blade server variant, comment out the
-  #     change here and duplicate it to the abstract parent.
-#  - type: WiresVisuals
-  # Moffstation - End
+  - type: WiresVisuals
   - type: Physics
     bodyType: Static
   - type: Fixtures
@@ -179,24 +169,16 @@
         node: machineFrame
       - !type:DoActsBehavior
         acts: ["Destruction"]
-  # Moffstation - Start - Add abstract telecom server parent.
-  #     Changes to this section must be carefully considered: if the change should apply to the machine variant, leave
-  #     it on this proto. If it should apply to the machine variant AND the blade server variant, comment out the
-  #     change here and duplicate it to the abstract parent.
-#  - type: WiresPanel
-  # Moffstation - End
+  - type: Machine
+    board: TelecomServerCircuitboard
+  - type: WiresPanel
   - type: Transform
     anchored: true
   - type: Pullable
-  # Moffstation - Start - Add abstract telecom server parent.
-  #     Changes to this section must be carefully considered: if the change should apply to the machine variant, leave
-  #     it on this proto. If it should apply to the machine variant AND the blade server variant, comment out the
-  #     change here and duplicate it to the abstract parent.
-#  - type: EncryptionKeyHolder
-#    keysExtractionMethod: Prying
-#    keySlots: 10
-#  - type: TelecomServer
-  # Moffstation - End
+  - type: EncryptionKeyHolder
+    keysExtractionMethod: Prying
+    keySlots: 10
+  - type: TelecomServer
   - type: ContainerContainer
     containers:
       key_slots: !type:Container

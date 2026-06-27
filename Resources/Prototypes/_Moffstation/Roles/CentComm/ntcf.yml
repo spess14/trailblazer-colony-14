@@ -10,6 +10,7 @@
   startingGear: NTCFPilotGear
   icon: "JobIconNanotrasen"
   supervisors: job-supervisors-centcom
+  canBeAntag: false
   access:
   - CentralCommand
   - Command
@@ -60,6 +61,7 @@
   startingGear: NTCFEngineerGear
   icon: "JobIconNanotrasen"
   supervisors: job-supervisors-centcom
+  canBeAntag: false
   access:
   - Atmospherics
   - CentralCommand

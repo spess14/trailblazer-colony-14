@@ -1,8 +1,7 @@
 ## Petting animals
 
 petting-failure-pawgliaci = you try to pet {THE($target)} on its floofy head but it flinches away
-petting-failure-syndicat = You try to pet {$target} but they move away inviting you to pet them again.
-petting-success-syndicat = You pet {$target} on {POSS-ADJ($target)} bloodred suit covered head.
+
 
 ## Petting silicons
 

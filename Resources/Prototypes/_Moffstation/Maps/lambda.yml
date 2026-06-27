@@ -2,7 +2,7 @@
   id: Lambda
   mapName: 'Lambda Bioresearch Station'
   mapPath: /Maps/_Moffstation/lambda.yml
-  minPlayers: 35
+  minPlayers: 30
   maxPlayers: 50
   stations:
     Lambda:

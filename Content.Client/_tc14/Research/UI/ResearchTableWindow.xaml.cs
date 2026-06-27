@@ -14,8 +14,8 @@ namespace Content.Client._tc14.Research.UI;
 [GenerateTypedNameReferences]
 public sealed partial class ResearchTableWindow : FancyWindow
 {
-    [Dependency] private IEntityManager _entMan = default!;
-    [Dependency] private IPrototypeManager _protoMan = default!;
+    [Dependency] private readonly IEntityManager _entMan = default!;
+    [Dependency] private readonly IPrototypeManager _protoMan = default!;
     private readonly SpriteSystem _sprite;
 
     private EntityUid _entity;
