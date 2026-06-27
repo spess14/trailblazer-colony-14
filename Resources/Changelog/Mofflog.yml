@@ -6387,6 +6387,13 @@ Entries:
   id: 1531
   time: '2026-06-16T17:42:45.000'
   url: https://github.com/moff-station/moff-station-14/pull/1531
+- author: DuckManZach
+  changes:
+  - message: Xeno stats have been changed back to their original values
+    type: tweak
+  id: 1532
+  time: '2026-06-27T04:05:37.000'
+  url: https://github.com/moff-station/moff-station-14/pull/1532
 - author: Dave
   changes:
   - message: new PAI sprites
