@@ -72,7 +72,11 @@
   id: StoneAxe
   description: Great for busting down doors and logs.
   components:
-  - type: Sharp
+  - type: Tool
+    qualities:
+    - Slicing
+    useSound:
+      path: /Audio/Items/Culinary/chop.ogg
   - type: Execution
     doAfterDuration: 4.0
   - type: Sprite

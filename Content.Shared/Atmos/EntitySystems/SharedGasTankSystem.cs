@@ -93,7 +93,7 @@ public abstract partial class SharedGasTankSystem : GasMaxPressureSystem<GasTank
 
     private void OnGetAlternativeVerb(Entity<GasTankComponent> entity, ref GetVerbsEvent<AlternativeVerb> args)
     {
-        if (component.IsInfinite) return; // TC14 - Vox gas recycler; it's an infinite gas tank. Opening a valve on it is a bad idea.
+        if (entity.Comp.IsInfinite) return; // TC14 - Vox gas recycler; it's an infinite gas tank. Opening a valve on it is a bad idea.
         if (!args.CanAccess || !args.CanInteract || args.Hands == null)
             return;
 

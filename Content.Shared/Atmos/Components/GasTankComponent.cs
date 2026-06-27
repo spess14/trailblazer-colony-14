@@ -54,25 +54,6 @@ public sealed partial class GasTankComponent : GasMaxPressureHolderComponent
     [DataField, AutoNetworkedField]
     public EntityUid? ToggleActionEntity;
 
-    /// <summary>
-    ///     Valve to release gas from tank
-    /// </summary>
-    [DataField, AutoNetworkedField]
-    public bool IsValveOpen;
-
-    /// <summary>
-    ///     Gas release rate in L/s
-    /// </summary>
-    [DataField, AutoNetworkedField]
-    public float ValveOutputRate = 100f;
-
-    [DataField]
-    public SoundSpecifier ValveSound =
-        new SoundCollectionSpecifier("valveSqueak")
-        {
-            Params = AudioParams.Default.WithVolume(-5f),
-        };
-
     // TC14 - Begin - Vox gas recycler
     [DataField, AutoNetworkedField]
     public bool IsInfinite;

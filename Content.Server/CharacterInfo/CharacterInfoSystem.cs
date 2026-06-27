@@ -17,6 +17,7 @@ public sealed partial class CharacterInfoSystem : EntitySystem
     [Dependency] private MindSystem _minds = default!;
     [Dependency] private RoleSystem _roles = default!;
     [Dependency] private SharedObjectivesSystem _objectives = default!;
+    [Dependency] private IPrototypeManager _protoMan = default!;
     [Dependency] private PlayerSkillsSystem _skills = default!;
 
     public override void Initialize()

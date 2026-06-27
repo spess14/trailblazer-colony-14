@@ -51,8 +51,6 @@ public sealed partial class MainMenuControl : Control
         // I don't just enumerate them all as there's some hideous parallaxes, and it's easier
         // to update an allowlist than to randomly get an ugly one to fix a blocklist.
         BackgroundParallax.ParallaxPrototype = _random.Pick(Parallaxes).Id;
-
-        var logoTexture = resCache.GetResource<TextureResource>("/Textures/_Moffstation/Logo/logo.png"); // Moffstation - use our logo
         Logo.Texture = logoTexture;
 
         var currentUserName = configMan.GetCVar(CVars.PlayerName);
