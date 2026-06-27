@@ -1,4 +1,15 @@
 - type: gameMapPool
-  id: DefaultMapPool
+  id: DefaultMapPoolUpstream # Moffstation - Custom Map Pool
   maps:
-  - Planet # it's almost as if we're having a planetary fork here :godo:
+  - Bagel
+  - Box
+  - Elkridge
+  - Fland
+  - Marathon
+  - Oasis
+  - Packed
+  - Plasma
+  - Reach
+  - Exo
+  - Snowball
+  - Serpentcrest
