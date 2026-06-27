@@ -32,7 +32,7 @@
   sound:
     params:
       volume: -12
-    collection: AmbienceMining
+    collection: AmbiencePlanet
   rules: OnMapGrid
   fadeIn: true
   interruptable: true
