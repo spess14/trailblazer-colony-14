@@ -3,7 +3,6 @@ using Content.Client.Humanoid;
 using Content.Client.Message;
 using Content.Client.Players.PlayTimeTracking;
 using Content.Client.Sprite;
-using Content.Shared._tc14.Skills.Prototypes;
 using Content.Shared.CCVar;
 using Content.Shared.GameTicking;
 using Content.Shared.Humanoid;
@@ -25,7 +24,6 @@ using Direction = Robust.Shared.Maths.Direction;
 
 // CD: Records editor imports
 using Content.Client._CD.Records.UI;
-using Content.Client._tc14.UI;
 // End CD - Character Records
 using Content.Shared._DV.Traits; // DV - Traits
 
@@ -88,14 +86,10 @@ namespace Content.Client.Lobby.UI
         // CD: Record editor
         private readonly RecordEditorGui _recordsTab;
 
-        // TC14: add passions
-        private SkillPicker? _skillPicker;
-
         private ISawmill _sawmill;
 
         private MarkingsViewModel _markingsModel = new();
 
-        // TC14: add passions
         public HumanoidProfileEditor(
             IClientPreferencesManager preferencesManager,
             IConfigurationManager configurationManager,
@@ -360,6 +354,7 @@ namespace Content.Client.Lobby.UI
             #endregion CosmaticRecords
 
             RefreshFlavorText();
+            RefreshSkills(); // TC14 - add passions
 
             #region Dummy
 
@@ -387,29 +382,6 @@ namespace Content.Client.Lobby.UI
 
             UpdateSpeciesGuidebookIcon();
             IsDirty = false;
-        }
-
-        // TC14: add passions
-        public void RefreshSkills()
-        {
-            if (_skillPicker != null || Profile is null)
-                return;
-
-            _skillPicker = new SkillPicker(Profile.Passions);
-            TabContainer.AddChild(_skillPicker);
-            TabContainer.SetTabTitle(TabContainer.ChildCount - 1, Loc.GetString("skills-passionmenu-name"));
-
-            _skillPicker.OnPassionsChanged += OnPassionsChange;
-        }
-
-        // TC14: add passions
-        private void OnPassionsChange(Dictionary<ProtoId<SkillPrototype>, int> content)
-        {
-            if (Profile is null)
-                return;
-
-            Profile = Profile.WithSkills(content);
-            SetDirty();
         }
 
         // Begin DeltaV - Traits Integration
@@ -640,7 +612,6 @@ namespace Content.Client.Lobby.UI
                 _preferencesManager.Preferences?.SelectedCharacterIndex);
         }
 
-        // TC14: add passions
         /// <summary>
         /// Sets the editor to the specified profile with the specified slot.
         /// </summary>
@@ -661,6 +632,7 @@ namespace Content.Client.Lobby.UI
             UpdateEyePickers();
             UpdateSaveButton();
             UpdateMarkings();
+            UpdateSkills(); // TC14 - add passions
 
             // CD: our controls
             UpdateHeightControls();
@@ -676,7 +648,7 @@ namespace Content.Client.Lobby.UI
             RefreshFlavorText();
             ReloadPreview();
 
-            RefreshSkills();
+            RefreshSkills(); // TC14 - add passions
 
             if (Profile != null)
             {

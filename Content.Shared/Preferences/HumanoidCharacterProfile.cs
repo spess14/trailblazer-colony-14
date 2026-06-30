@@ -150,7 +150,7 @@ namespace Content.Shared.Preferences
         public PlayerProvidedCharacterRecords? CDCharacterRecords;
         // Moffstation End
 
-        // TC14: add passions
+        // TC14 - add passions
         public HumanoidCharacterProfile(
             string name,
             string flavortext,
@@ -201,7 +201,7 @@ namespace Content.Shared.Preferences
             }
         }
 
-        // TC14: add passions
+        // TC14 - add passions
         /// <summary>Copy constructor</summary>
         public HumanoidCharacterProfile(HumanoidCharacterProfile other)
             : this(other.Name,
@@ -513,7 +513,7 @@ namespace Content.Shared.Preferences
         }
         // Moffstation End
 
-        // TC14: add passions
+        // TC14 - add passions
         public HumanoidCharacterProfile WithPassions(Dictionary<ProtoId<SkillPrototype>, int> dict)
         {
             return new(this)
@@ -530,7 +530,7 @@ namespace Content.Shared.Preferences
                 ("age", Age)
             );
 
-        // TC14: add passions
+        // TC14 - add passions
         public bool MemberwiseEquals(HumanoidCharacterProfile other)
         {
             if (Name != other.Name) return false;
@@ -554,7 +554,7 @@ namespace Content.Shared.Preferences
             return Appearance.Equals(other.Appearance);
         }
 
-        // TC14: add passions
+        // TC14 - add passions
         public void EnsureValid(ICommonSession session, IDependencyCollection collection)
         {
             var configManager = collection.Resolve<IConfigurationManager>();
@@ -830,7 +830,7 @@ namespace Content.Shared.Preferences
             return obj is HumanoidCharacterProfile other && Equals(other);
         }
 
-        // TC14: add passions
+        // TC14 - add passions
         public override int GetHashCode()
         {
             var hashCode = new HashCode();

@@ -90,7 +90,7 @@ public sealed partial class HumanoidCharacterProfileV1
     public PlayerProvidedCharacterRecords? CDCharacterRecords;
     // Moffstation End
 
-    // TC14: add passions
+    // TC14 - add passions
     [DataField]
     public Dictionary<ProtoId<SkillPrototype>, int> Passions;
 

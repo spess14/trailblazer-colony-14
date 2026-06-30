@@ -31,12 +31,14 @@ public sealed partial class SkillPicker : BoxContainer
         _maxPointsPerSkill = _configurationManager.GetCVar(CCVars.MaxPointsPerSkill);
         _skills = _prototypeManager.EnumeratePrototypes<SkillPrototype>();
         _skills = _skills.OrderByDescending(s => s.Priority);
-        BuildEntries(passions);
+        RebuildEntries(passions);
         UpdatePassions();
     }
 
-    private void BuildEntries(IReadOnlyDictionary<ProtoId<SkillPrototype>, int>? passions)
+    public void RebuildEntries(IReadOnlyDictionary<ProtoId<SkillPrototype>, int>? passions)
     {
+        _spinBoxes.Clear();
+        SkillPassionContainer.RemoveAllChildren();
         passions ??= new Dictionary<ProtoId<SkillPrototype>, int>();
         foreach (var skill in _skills)
         {
