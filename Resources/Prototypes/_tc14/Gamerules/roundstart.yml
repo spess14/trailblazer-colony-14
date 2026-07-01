@@ -1,5 +1,40 @@
 - type: entity
+  id: PlanetStationEventScheduler
   parent: BaseGameRule
-  id: PlanetaryStationGameRule
   components:
-  - type: BluespaceLockerRule
+  - type: BasicStationEventScheduler
+    scheduledGameRules: !type:NestedSelector
+      tableId: PlanetGameRulesTable
+
+- type: entityTable
+  id: PlanetGameRulesTable
+  table: !type:AllSelector
+    children:
+    - !type:NestedSelector
+      tableId: EntitySpawnTable
+
+- type: entityTable
+  id: EntitySpawnTable
+  table: !type:AllSelector # we need to pass a list of rules, since rules have further restrictions to consider via StationEventComp
+    children:
+    - id: PlanetSlimesSpawn
+
+- type: entity
+  id: PlanetSlimesSpawn
+  parent: BaseStationEventShortDelay
+  components:
+  - type: StationEvent
+    startAnnouncement: station-event-vent-creatures-start-horde-announcement
+    startAudio:
+      path: /Audio/Announcements/attention.ogg
+    # earliestStart: 20
+    weight: 5
+  - type: PlanetEntitySummonRule
+    table: !type:GroupSelector
+      rolls: 4, 8
+      children:
+      # Moffstation - Start - Make mobs smash stuff
+      - id: MobAdultSlimesBlueAngrySmasher
+      - id: MobAdultSlimesGreenAngrySmasher
+      - id: MobAdultSlimesYellowAngrySmasher
+      # Moffstation - End
