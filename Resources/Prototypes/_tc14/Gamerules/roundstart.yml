@@ -31,7 +31,7 @@
     weight: 5
   - type: PlanetEntitySummonRule
     table: !type:GroupSelector
-      rolls: 4, 8
+      rolls: 1, 1
       children:
       # Moffstation - Start - Make mobs smash stuff
       - id: MobAdultSlimesBlueAngrySmasher

@@ -3,11 +3,12 @@ using System.Numerics;
 using Content.Server._tc14.StationEvents.Components;
 using Content.Server.GameTicking;
 using Content.Server.Pinpointer;
+using Content.Server.Station.Components;
 using Content.Server.StationEvents.Events;
-using Content.Server.VentHorde.Systems;
 using Content.Shared.EntityTable;
 using Content.Shared.GameTicking.Components;
 using Content.Shared.Maps;
+using Content.Shared.Objectives.Systems;
 using Content.Shared.Physics;
 using Robust.Shared.Map;
 using Robust.Shared.Map.Components;
@@ -30,6 +31,7 @@ public sealed partial class PlanetEntitySummonRule : StationEventSystem<PlanetEn
     [Dependency] private SharedTransformSystem _transform = default!;
     [Dependency] private EntityTableSystem _table = default!;
     [Dependency] private IGameTiming _timing = default!;
+    [Dependency] private TargetSystem _target = default!;
     [Dependency] private TurfSystem _turfSystem = default!;
 
     protected override void Added(EntityUid uid,
@@ -39,7 +41,9 @@ public sealed partial class PlanetEntitySummonRule : StationEventSystem<PlanetEn
     {
         var mapId = _gameTicker.DefaultMap;
         var mapGrid = _map.GetAllGrids(mapId)
-            .First(grid => HasComp<MapGridComponent>(grid.Owner));
+            .First(grid => HasComp<MapGridComponent>(grid.Owner)
+                           && !HasComp<BecomesStationComponent>(grid.Owner));
+        Log.Info($"Map Grid: {mapGrid.Owner}");
         var players = EntityQuery<ActorComponent, TransformComponent>();
         var positions = players.Select(player => player.Item2.Coordinates).ToList();
         var centerPoint = CenterMass(positions);
