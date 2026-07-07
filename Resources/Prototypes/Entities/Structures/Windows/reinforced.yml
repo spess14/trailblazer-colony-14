@@ -4,10 +4,10 @@
   parent: [BaseDeltaPressureReinforcedGlass, Window]
   components:
   - type: Sprite
-    drawdepth: Walls # Trailblazer: Walls < Walltops
-    sprite: /Textures/_tc14/Structures/Windows/reinforced_window.rsi # Trailblazer: Structures/Windows/reinforced_window.rsi < /Textures/_tc14/Structures/Windows/window.rsi
+    drawdepth: WallTops
+    sprite: _Moffstation/Structures/Windows/reinforced_window.rsi # Moffstation
   - type: Icon
-    sprite: /Textures/_tc14/Structures/Windows/reinforced_window.rsi # Trailblazer: Structures/Windows/reinforced_window.rsi < /Textures/_tc14/Structures/Windows/window.rsi
+    sprite: _Moffstation/Structures/Windows/reinforced_window.rsi # Moffstation
   - type: Repairable
     fuelCost: 10
     doAfterDelay: 2
@@ -59,10 +59,10 @@
     - Window
   components:
   - type: Sprite
-    sprite: Structures/Windows/directional.rsi
+    sprite: _Moffstation/Structures/Windows/directional.rsi # Moffstation
     state: reinforced_window
   - type: Icon
-    sprite: Structures/Windows/directional.rsi
+    sprite: _Moffstation/Structures/Windows/directional.rsi # Moffstation
     state: reinforced_window
   - type: Construction
     graph: WindowDirectional
@@ -110,7 +110,7 @@
   components:
   - type: Sprite
     drawdepth: WallTops
-    sprite: /Textures/_tc14/Structures/Windows/reinforced_window_diagonal.rsi # Trailblazer: Structures/Windows/reinforced_window_diagonal.rsi < /Textures/_tc14/Structures/Windows/reinforced_window_diagonal.rsi
+    sprite: _Moffstation/Structures/Windows/reinforced_window_diagonal.rsi # Moffstation
     state: state0
   - type: Tag
     tags:
@@ -118,10 +118,10 @@
     - Window
   - type: IconSmooth
     mode: Diagonal
-    key: walls # Trailblazer: windows < walls
+    key: walls # Moffstation
     base: state
   - type: Icon
-    sprite: /Textures/_tc14/Structures/Windows/reinforced_window_diagonal.rsi # Trailblazer: Structures/Windows/reinforced_window_diagonal.rsi < /Textures/_tc14/Structures/Windows/reinforced_window_diagonal.rsi
+    sprite: _Moffstation/Structures/Windows/reinforced_window_diagonal.rsi # Moffstation
     state: state0
   - type: Fixtures
     fixtures:

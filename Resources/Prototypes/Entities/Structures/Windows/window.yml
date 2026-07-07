@@ -24,9 +24,9 @@
       - Window
   - type: Sprite
     drawdepth: WallTops
-    sprite: /Textures/_tc14/Structures/Windows/window.rsi # Trailblazers: Structures/Windows/window.rsi < Textures/_tc14/Structures/Windows/window.rsi
+    sprite: _Moffstation/Structures/Windows/window.rsi # Moffstation
   - type: Icon
-    sprite: /Textures/_tc14/Structures/Windows/window.rsi # Trailblazers: Structures/Windows/window.rsi < Textures/_tc14/Structures/Windows/window.rsi
+    sprite: _Moffstation/Structures/Windows/window.rsi # Moffstation
     state: full
   - type: Physics
     bodyType: Static
@@ -68,7 +68,7 @@
         acts: [ "Destruction" ]
   - type: Airtight
   - type: IconSmooth
-    key: walls # Trailblazer: windows < walls
+    key: walls # Moffstation
     base: window
   - type: InteractionPopup
     interactSuccessString: comp-window-knock
@@ -137,10 +137,10 @@
         collection: GlassSmack
   - type: Sprite
     drawdepth: Mobs
-    sprite: Structures/Windows/directional.rsi
+    sprite: _Moffstation/Structures/Windows/directional.rsi # Moffstation
     state: window
   - type: Icon
-    sprite: Structures/Windows/directional.rsi
+    sprite: _Moffstation/Structures/Windows/directional.rsi # Moffstation
     state: window
   - type: InteractionPopup
     interactSuccessString: comp-window-knock
@@ -240,7 +240,7 @@
   components:
   - type: Sprite
     drawdepth: WallTops
-    sprite: /Textures/_tc14/Structures/Windows/window_diagonal.rsi # Trailblazer: Structures/Windows/window_diagonal.rsi < /_tc14/Structures/Windows/window_diagonal.rsi
+    sprite: _Moffstation/Structures/Windows/window_diagonal.rsi # Moffstation
     state: state0
   - type: Tag
     tags:
@@ -248,10 +248,10 @@
     - Window
   - type: IconSmooth
     mode: Diagonal
-    key: walls # Trailblazers: windows < walls
+    key: walls # Moffstation
     base: state
   - type: Icon
-    sprite: /Textures/_tc14/Structures/Windows/window_diagonal.rsi # Trailblazer: Structures/Windows/window_diagonal.rsi < /_tc14/Structures/Windows/window_diagonal.rsi
+    sprite: _Moffstation/Structures/Windows/window_diagonal.rsi # Moffstation
     state: state0
   - type: Fixtures
     fixtures:

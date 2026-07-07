@@ -565,9 +565,9 @@
   name: reinforced wall
   components:
   - type: Sprite
-    sprite: _tc14/Structures/Walls/solid.rsi # Trailblazer: Structures/Walls/solid.rsi < _tc14/Structures/Walls/solid.rsi
+    sprite: _Moffstation/Structures/Walls/solid.rsi # Moffstation
   - type: Icon
-    sprite: _tc14/Structures/Walls/solid.rsi # Trailblazer: Structures/Walls/solid.rsi < _tc14/Structures/Walls/solid.rsi
+    sprite: _Moffstation/Structures/Walls/solid.rsi # Moffstation
     state: rgeneric
   - type: Construction
     graph: Girder
@@ -627,9 +627,9 @@
   suffix: rusted
   components:
   - type: Sprite
-    sprite: Structures/Walls/solid_rust.rsi
+    sprite: _Moffstation/Structures/Walls/solid_rust.rsi # Moffstation
   - type: Icon
-    sprite: Structures/Walls/solid_rust.rsi
+    sprite: _Moffstation/Structures/Walls/solid_rust.rsi # Moffstation
     state: rgeneric
   - type: Construction
     graph: Girder
@@ -658,10 +658,10 @@
   components:
   - type: Sprite
     drawdepth: Walls
-    sprite: Structures/Walls/reinforced_diagonal.rsi
+    sprite: _Moffstation/Structures/Walls/reinforced_diagonal.rsi #Moffstation
     state: state0
   - type: Icon
-    sprite: Structures/Walls/reinforced_diagonal.rsi
+    sprite: _Moffstation/Structures/Walls/reinforced_diagonal.rsi #Moffstation
     state: state0
   - type: Damageable
     damageModifierSet: StructuralMetallicStrong
@@ -787,10 +787,10 @@
   components:
   - type: Sprite
     drawdepth: Walls
-    sprite: _tc14/Structures/Walls/shuttle_diagonal.rsi  # Trailblazer: Structures/Walls/shuttle_diagonal.rsi < _tc14/Structures/Walls/shuttle_diagonal.rsi
+    sprite: Structures/Walls/shuttle_diagonal.rsi
     state: state0
   - type: Icon
-    sprite: _tc14/Structures/Walls/shuttle_diagonal.rsi  # Trailblazer: Structures/Walls/shuttle_diagonal.rsi < _tc14/Structures/Walls/shuttle_diagonal.rsi
+    sprite: Structures/Walls/shuttle_diagonal.rsi
     state: state0
   - type: Reflect
     reflectProb: 1
@@ -866,9 +866,9 @@
   - type: RadiationBlocker
     resistance: 5
   - type: Sprite
-    sprite: /Textures/_tc14/Structures/Walls/shuttle.rsi # trailblazer: Structures/Walls/shuttle.rsi  < /Textures/_tc14/Structures/Walls/shuttle.rsi
+    sprite: Structures/Walls/shuttle.rsi
   - type: Icon
-    sprite: /Textures/_tc14/Structures/Walls/shuttle.rsi # trailblazer: Structures/Walls/shuttle.rsi  < /Textures/_tc14/Structures/Walls/shuttle.rsi
+    sprite: Structures/Walls/shuttle.rsi
     state: full
   - type: Construction
     graph: Girder
@@ -908,13 +908,13 @@
   name: solid wall
   components:
   - type: Sprite
-    sprite: _tc14/Structures/Walls/solid.rsi # Trailblazer: Structures/Walls/solid.rsi < _tc14/Structures/Walls/solid.rsi
+    sprite: _Moffstation/Structures/Walls/solid.rsi # Moffstation
   - type: WallReplacementMarker
   - type: Construction
     graph: Girder
     node: wall
   - type: Icon
-    sprite: _tc14/Structures/Walls/solid.rsi # Trailblazer: Structures/Walls/solid.rsi < _tc14/Structures/Walls/solid.rsi
+    sprite: _Moffstation/Structures/Walls/solid.rsi # Moffstation
   - type: RCDDeconstructable
     cost: 6
     delay: 8
@@ -943,10 +943,10 @@
   components:
   - type: Sprite
     drawdepth: Walls
-    sprite: Structures/Walls/solid_diagonal.rsi
+    sprite: _Moffstation/Structures/Walls/solid_diagonal.rsi #Moffstation
     state: state0
   - type: Icon
-    sprite: Structures/Walls/solid_diagonal.rsi
+    sprite: _Moffstation/Structures/Walls/solid_diagonal.rsi #Moffstation
     state: state0
   - type: Destructible
     thresholds:
@@ -968,9 +968,9 @@
   suffix: rusted
   components:
   - type: Sprite
-    sprite: Structures/Walls/solid_rust.rsi
+    sprite: _Moffstation/Structures/Walls/solid_rust.rsi # Moffstation
   - type: Icon
-    sprite: Structures/Walls/solid_rust.rsi
+    sprite: _Moffstation/Structures/Walls/solid_rust.rsi # Moffstation
     state: full
   - type: Construction
     graph: Girder
@@ -1154,9 +1154,9 @@
   description: The traditional greytide defense.
   components:
   - type: Sprite
-    sprite: _tc14/Structures/Walls/wood.rsi #Trailblazer: Structures/Walls/wood.rsi < _tc14/Structures/Walls/wood.rsi
+    sprite: Structures/Walls/wood.rsi
   - type: Icon
-    sprite: _tc14/Structures/Walls/wood.rsi #Trailblazer: Structures/Walls/wood.rsi < _tc14/Structures/Walls/wood.rsi
+    sprite: Structures/Walls/wood.rsi
   - type: Construction
     graph: Barricade
     node: woodWall
@@ -1174,7 +1174,7 @@
       - !type:DoActsBehavior
         acts: ["Destruction"]
   - type: IconSmooth
-    key: walls # Trailblazer: woods < walls
+    key: woods
     base: wood
 
 - type: entity
@@ -1409,9 +1409,9 @@
   description: Stone by stone, perfectly fitted together to form a wall.
   components:
   - type: Sprite
-    sprite: /Textures/_tc14/Structures/Walls/cobblebrick.rsi # Trailblazer: Structures/Walls/cobblebrick.rsi < /Textures/_tc14/Structures/Walls/cobblebrick.rsi
+    sprite: Structures/Walls/cobblebrick.rsi
   - type: Icon
-    sprite: /Textures/_tc14/Structures/Walls/cobblebrick.rsi # Trailblazer: Structures/Walls/cobblebrick.rsi < /Textures/_tc14/Structures/Walls/cobblebrick.rsi
+    sprite: Structures/Walls/cobblebrick.rsi
   - type: RCDDeconstructable
     cost: 6
     delay: 8
