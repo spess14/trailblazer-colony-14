@@ -3,23 +3,26 @@
   name: guide-entry-references
   priority: 30
   text: "/ServerInfo/Guidebook/References.xml"
+  showInTree: true # TC14 - enable guidebook
   children:
   - Chemicals
   - Drinks
   - FoodRecipes
   - Writing
-  - Lawsets
+  # - Lawsets TC14 - no lawsets
 
 - type: guideEntry
   id: Drinks
   name: guide-entry-drinks
   text: "/ServerInfo/Guidebook/ReferenceTables/Drinks.xml"
+  showInTree: true # TC14 - enable guidebook
   filterEnabled: True
 
 - type: guideEntry
   id: FoodRecipes
   name: guide-entry-foodrecipes
   text: "/ServerInfo/Guidebook/Service/FoodRecipes.xml"
+  showInTree: true # TC14 - enable guidebook
   filterEnabled: True
   children:
   - PizzaRecipes
@@ -42,96 +45,112 @@
   id: PizzaRecipes
   name: guide-entry-pizza-recipes
   text: "/ServerInfo/Guidebook/Service/PizzaRecipes.xml"
+  showInTree: true # TC14 - enable guidebook
   filterEnabled: True
 
 - type: guideEntry
   id: SavoryRecipes
   name: guide-entry-savory-recipes
   text: "/ServerInfo/Guidebook/Service/SavoryRecipes.xml"
+  showInTree: true # TC14 - enable guidebook
   filterEnabled: True
 
 - type: guideEntry
   id: BreadRecipes
   name: guide-entry-bread-recipes
   text: "/ServerInfo/Guidebook/Service/BreadRecipes.xml"
+  showInTree: true # TC14 - enable guidebook
   filterEnabled: True
 
 - type: guideEntry
   id: BreakfastRecipes
   name: guide-entry-breakfast-recipes
   text: "/ServerInfo/Guidebook/Service/BreakfastRecipes.xml"
+  showInTree: true # TC14 - enable guidebook
   filterEnabled: True
 
 - type: guideEntry
   id: MothRecipes
   name: guide-entry-moth-recipes
   text: "/ServerInfo/Guidebook/Service/MothRecipes.xml"
+  showInTree: true # TC14 - enable guidebook
   filterEnabled: True
 
 - type: guideEntry
   id: PastaRecipes
   name: guide-entry-pasta-recipes
   text: "/ServerInfo/Guidebook/Service/PastaRecipes.xml"
+  showInTree: true # TC14 - enable guidebook
   filterEnabled: True
 
 - type: guideEntry
   id: DessertRecipes
   name: guide-entry-dessert-recipes
   text: "/ServerInfo/Guidebook/Service/DessertRecipes.xml"
+  showInTree: true # TC14 - enable guidebook
   filterEnabled: True
 
 - type: guideEntry
   id: SoupRecipes
   name: guide-entry-soup-recipes
   text: "/ServerInfo/Guidebook/Service/SoupRecipes.xml"
+  showInTree: true # TC14 - enable guidebook
   filterEnabled: True
 
 - type: guideEntry
   id: PieRecipes
   name: guide-entry-pie-recipes
   text: "/ServerInfo/Guidebook/Service/PieRecipes.xml"
+  showInTree: true # TC14 - enable guidebook
   filterEnabled: True
 
 - type: guideEntry
   id: BarsAndCookiesRecipes
   name: guide-entry-barsandcookies-recipes
   text: "/ServerInfo/Guidebook/Service/BarsAndCookiesRecipes.xml"
+  showInTree: true # TC14 - enable guidebook
   filterEnabled: True
 
 - type: guideEntry
   id: CakeRecipes
   name: guide-entry-cake-recipes
   text: "/ServerInfo/Guidebook/Service/CakeRecipes.xml"
+  showInTree: true # TC14 - enable guidebook
   filterEnabled: True
 
 - type: guideEntry
   id: SaladRecipes
   name: guide-entry-salad-recipes
   text: "/ServerInfo/Guidebook/Service/SaladRecipes.xml"
+  showInTree: true # TC14 - enable guidebook
   filterEnabled: True
 
 - type: guideEntry
   id: OtherRecipes
   name: guide-entry-other-recipes
   text: "/ServerInfo/Guidebook/Service/OtherRecipes.xml"
+  showInTree: true # TC14 - enable guidebook
   filterEnabled: True
 
 - type: guideEntry
   id: MedicinalRecipes
   name: guide-entry-medicinal-recipes
   text: "/ServerInfo/Guidebook/Service/MedicinalRecipes.xml"
+  showInTree: true # TC14 - enable guidebook
   filterEnabled: True
 
 - type: guideEntry
   id: SecretRecipes
   name: guide-entry-secret-recipes
   text: "/ServerInfo/Guidebook/Service/SecretRecipes.xml"
+  showInTree: true # TC14 - enable guidebook
   filterEnabled: True
 
 - type: guideEntry
   id: Writing
   name: guide-entry-writing
   text: "/ServerInfo/Guidebook/Writing.xml"
+  showInTree: true # TC14 - enable guidebook
 
 - type: guideEntry
   id: Lawsets

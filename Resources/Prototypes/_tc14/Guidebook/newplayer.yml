@@ -29,7 +29,6 @@
   showInTree: true
   children:
   - TCYourFirstCharacter
-  - TCSpecies
 
 - type: guideEntry
   id: TCYourFirstCharacter

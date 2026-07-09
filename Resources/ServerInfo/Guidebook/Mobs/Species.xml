@@ -1,7 +1,7 @@
 <Document>
   # Species
 
-  Nanotrasen employs a variety of sapient species.
+  Andromeda XIV has a variety of sapient species. <!-- TC14 -->
 
   <Box>
   <GuideEntityEmbed Entity="AppearanceArachnid" Caption="Arachnid"/>

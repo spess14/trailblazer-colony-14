@@ -182,7 +182,7 @@ public sealed partial class GuidebookWindow : FancyWindow, ILinkClickHandler, IA
         if (rootEntries == null)
         {
             HashSet<ProtoId<GuideEntryPrototype>> entries = new(_entries.Keys);
-            foreach (var entry in _entries.Values)
+            foreach (var entry in _entries.Values.Where(e => e.ShowInTree)) // TC14 - only account for displayed guidebook entries
             {
                 entries.ExceptWith(entry.Children);
             }

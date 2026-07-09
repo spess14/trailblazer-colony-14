@@ -2,13 +2,16 @@
   id: Avali
   name: species-name-avali
   text: "/ServerInfo/_Moffstation/Guidebook/Mobs/Avali.xml"
+  showInTree: true # TC14 - enable guidebook
 
 - type: guideEntry
   id: Gray
   name: species-name-gray
   text: "/ServerInfo/_Moffstation/Guidebook/Mobs/Gray.xml"
+  showInTree: true # TC14 - enable guidebook
 
 - type: guideEntry
   id: Resomi
   name: species-name-resomi
   text: "/ServerInfo/_Moffstation/Guidebook/Mobs/Resomi.xml"
+  showInTree: true # TC14 - enable guidebook

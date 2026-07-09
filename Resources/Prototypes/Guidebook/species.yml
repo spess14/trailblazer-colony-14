@@ -2,16 +2,17 @@
   id: Species
   name: guide-entry-species
   text: "/ServerInfo/Guidebook/Mobs/Species.xml"
+  showInTree: true # TC14 - enable guidebook
   children:
   - Arachnid
-  # - Avali # Moffstation - Avali Guidebook Entry; TC14 - move to our namespace
+  - Avali # Moffstation - Avali Guidebook Entry
   - Diona
   - Dwarf
   - Gray # Moffstation - Gray Guidebook Entry
   - Human
   - Moth
   - Reptilian
-  # - Resomi # Moffstation - Resomi Guidebook Entry; TC14 - move to our namespace
+  - Resomi # Moffstation - Resomi Guidebook Entry
   - SlimePerson
   - Thaven # Macro - Thaven Guidebook Entry
   - Vox
@@ -21,43 +22,52 @@
   id: Arachnid
   name: species-name-arachnid
   text: "/ServerInfo/Guidebook/Mobs/Arachnid.xml"
+  showInTree: true # TC14 - enable guidebook
 
 - type: guideEntry
   id: Diona
   name: species-name-diona
   text: "/ServerInfo/Guidebook/Mobs/Diona.xml"
+  showInTree: true # TC14 - enable guidebook
 
 - type: guideEntry
   id: Dwarf
   name: species-name-dwarf
   text: "/ServerInfo/Guidebook/Mobs/Dwarf.xml"
+  showInTree: true # TC14 - enable guidebook
 
 - type: guideEntry
   id: Human
   name: species-name-human
   text: "/ServerInfo/Guidebook/Mobs/Human.xml"
+  showInTree: true # TC14 - enable guidebook
 
 - type: guideEntry
   id: Moth
   name: species-name-moth
   text: "/ServerInfo/Guidebook/Mobs/Moth.xml"
+  showInTree: true # TC14 - enable guidebook
 
 - type: guideEntry
   id: Reptilian
   name: species-name-reptilian
   text: "/ServerInfo/Guidebook/Mobs/Reptilian.xml"
+  showInTree: true # TC14 - enable guidebook
 
 - type: guideEntry
   id: SlimePerson
   name: species-name-slime
   text: "/ServerInfo/Guidebook/Mobs/SlimePerson.xml"
+  showInTree: true # TC14 - enable guidebook
 
 - type: guideEntry
   id: Vox
   name: species-name-vox
   text: "/ServerInfo/Guidebook/Mobs/Vox.xml"
+  showInTree: true # TC14 - enable guidebook
 
 - type: guideEntry
   id: Vulpkanin
   name: species-name-vulpkanin
   text: "/ServerInfo/Guidebook/Mobs/Vulpkanin.xml"
+  showInTree: true # TC14 - enable guidebook
