@@ -8,23 +8,6 @@
   },
   "states": [
     {
-      "name": "stonebrick"
-    },
-    {
-      "name": "stonebrick_2"
-    },
-    {
-      "name": "stonebrick_3"
-    },
-    {
-      "name": "stonebrick-inhand-left",
-      "directions": 4
-    },
-    {
-      "name": "stonebrick-inhand-right",
-      "directions": 4
-    },
-    {
       "name": "brick"
     },
     {

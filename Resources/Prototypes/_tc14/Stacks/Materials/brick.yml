@@ -1,8 +1,8 @@
 - type: stack
-  name: stack-stone-brick
-  id: BrickStone
-  icon: { sprite: "_tc14/Objects/Materials/bricks.rsi", state: stonebrick }
-  spawn: BrickStone1
+  name: stack-rock
+  id: Rock
+  icon: { sprite: "_tc14/Objects/Items/rock.rsi", state: rock }
+  spawn: RockItem1
   maxCount: 30
 
 - type: stack

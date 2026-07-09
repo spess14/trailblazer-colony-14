@@ -8,7 +8,7 @@
     <GuideEntityEmbed Entity="BushForage"/>
   </Box>
 
-  Try to locate rocks nearby. By using a rock on another rock, you will create a basic cutting tool: it can be used for cutting things out of wood.
+  Try to locate rocks nearby. With rocks, you can create a basic cutting tool: it can be used for cutting things out of wood.
   <Box>
     <GuideEntityEmbed Entity="RockItem"/>
     <GuideEntityEmbed Entity="FlakingRock"/>
@@ -23,13 +23,7 @@
   </Box>
 
   With basic tools and materials, you should look for a place to settle. It is recommended to settle in a place with moderate temperature and flowing water nearby.
-  If you wish to build out of stone, use your chisel on rocks to make stone bricks.
-  <Box>
-    <GuideEntityEmbed Entity="BrickStone"/>
-    <GuideEntityEmbed Entity="WallCobblebrick"/>
-  </Box>
-
-  With shelter being established, it is time to look into food production.
+  When you have shelter, it is time to look into food production.
   <Box>
     <GuideEntityEmbed Entity="hydroponicsSoil"/>
   </Box>

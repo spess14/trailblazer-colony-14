@@ -24,43 +24,6 @@
 
 - type: entity
   parent: BrickBase
-  id: BrickStone
-  name: stone brick
-  suffix: Full
-  components:
-  - type: Material
-  - type: Stack
-    stackType: BrickStone
-    baseLayer: base
-    layerStates:
-    - stonebrick
-    - stonebrick_2
-    - stonebrick_3
-  - type: Sprite
-    state: stonebrick_3
-    layers:
-    - state: stonebrick_3
-      map: [ "base" ]
-  - type: Item
-    heldPrefix: brick
-  - type: Appearance
-
-- type: entity
-  parent: BrickStone
-  id: BrickStone1
-  name: stone brick
-  suffix: Single
-  components:
-  - type: Sprite
-    state: stonebrick
-  - type: Stack
-    count: 1
-  - type: Construction
-    graph: Rock
-    node: brick
-
-- type: entity
-  parent: BrickBase
   id: BrickClay
   name: brick
   suffix: Full

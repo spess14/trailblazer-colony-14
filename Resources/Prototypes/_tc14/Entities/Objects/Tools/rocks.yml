@@ -3,7 +3,12 @@
   id: RockItem
   name: rock
   description: Bash two of those together and see what happens.
+  suffix: Full
   components:
+  - type: Material
+  - type: Stack
+    stackType: Rock
+    baseLayer: rock
   - type: Sprite
     sprite: _tc14/Objects/Items/rock.rsi
     state: "rock"
@@ -18,26 +23,18 @@
       behaviors:
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
-  - type: Tool
-    qualities:
-    - Hammering
-    useSound:
-      path: /Audio/Effects/Footsteps/largethud.ogg
   - type: Damageable
     damageModifierSet: FlimsyMetallic
   - type: Injurable
     damageContainer: Inorganic
-  - type: Construction
-    graph: Rock
-    node: start
-  - type: MeleeWeapon
-    wideAnimationRotation: -135
-    damage:
-      types:
-        Blunt: 7
-  - type: Tag
-    tags:
-    - Rock
+
+- type: entity
+  parent: RockItem
+  id: RockItem1
+  suffix: Single
+  components:
+  - type: Stack
+    count: 1
 
 - type: entity
   parent: BaseKnife
@@ -63,7 +60,7 @@
   - type: Injurable
     damageContainer: Inorganic
   - type: Construction
-    graph: Rock
+    graph: FlakingRock
     node: flakingRock
   - type: Tool
     qualities:

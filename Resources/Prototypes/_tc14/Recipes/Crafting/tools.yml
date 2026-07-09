@@ -1,4 +1,12 @@
 - type: construction
+  id: FlakingRock
+  graph: FlakingRock
+  startNode: start
+  targetNode: flakingRock
+  category: construction-category-tools
+  objectType: Item
+
+- type: construction
   id: chisel
   graph: Chisel
   startNode: start
