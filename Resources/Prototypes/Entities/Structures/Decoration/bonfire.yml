@@ -59,7 +59,7 @@
   - type: PlaceableSurface
   - type: FueledHeater
     solutionHeatPerSecond: 100
-    entityHeatPerSecond: 750
+    entityHeatPerSecond: 1500 # slightly lower compared to medium grill
   # TC14 - End
 
 - type: entity

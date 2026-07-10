@@ -29,6 +29,7 @@
   </Box>
 
   In order to make advanced items, you will need better workstations and research.
+  Tip: if you cannot find coal, logs can be converted into charcoal by putting them on a bonfire.
   <Box>
     <GuideEntityEmbed Entity="Workbench"/>
     <GuideEntityEmbed Entity="Smeltery"/>

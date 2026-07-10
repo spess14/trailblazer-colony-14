@@ -290,6 +290,11 @@
   components:
   - type: Stack
     count: 1
+  # TC14 - Begin - charcoal
+  - type: Construction
+    graph: Charcoal
+    node: charcoal
+  # TC14 - End
 
 - type: entity
   parent: Coal

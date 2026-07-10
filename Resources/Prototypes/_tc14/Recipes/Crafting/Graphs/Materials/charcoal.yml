@@ -1,0 +1,15 @@
+# cooked meat patty
+- type: constructionGraph
+  id: Charcoal
+  start: start
+  graph:
+  - node: start
+    edges:
+    - to: charcoal
+      completed:
+      - !type:PlaySound
+        sound: /Audio/Effects/sizzle.ogg
+      steps:
+      - minTemperature: 335
+  - node: charcoal
+    entity: Coal1
