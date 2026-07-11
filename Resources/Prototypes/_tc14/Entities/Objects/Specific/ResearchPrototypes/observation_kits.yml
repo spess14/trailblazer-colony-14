@@ -1,8 +1,8 @@
 - type: entity
-  name: observation kit
+  name: research kit
   parent: BaseItem
-  id: ObservationKit
-  description: A handheld device capable of collecting research data from prototypes.
+  id: ResearchKit
+  description: A notebook capable of collecting research data from materials.
   components:
   - type: Sprite
     sprite: _tc14/Objects/Devices/observation_kit.rsi
@@ -16,6 +16,4 @@
     - Belt
   - type: TCResearchPointSource
     hasExamine: true
-    canBeObserved: false
-    destructOnObservation: false
-  - type: ObservationKit
+  - type: ResearchKit

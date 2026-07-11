@@ -1,6 +1,5 @@
 - type: entity
-  # TC14: add BaseResearchPrototypeItem as parent
-  parent: [ BaseItem, BasePaperLabelable, BaseResearchPrototypeItem ] #TODO: Add sprites for different types of paper, replace BasePaperLabelable with BasePaperLabelableVisualized
+  parent: [ BaseItem, BasePaperLabelable ] #TODO: Add sprites for different types of paper, replace BasePaperLabelable with BasePaperLabelableVisualized
   id: SeedBase
   abstract: true
   components:
@@ -24,11 +23,6 @@
     - type: StaticPrice
       price: 20
     - type: PhysicalComposition
-    # TC14 - Begin - add research data to seeds
-    - type: TCResearchPointSource
-      storedPoints:
-        DisciplineBiosocial: 10
-    # TC14 - End
     # TC14 - Begin - juice seeds for oil
     - type: Extractable
       juiceSolution:

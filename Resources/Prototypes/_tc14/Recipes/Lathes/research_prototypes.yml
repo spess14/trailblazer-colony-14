@@ -1,6 +1,6 @@
 - type: latheRecipe
-  id: ObservationKit
-  result: ObservationKit
+  id: ResearchKit
+  result: ResearchKit
   completetime: 2
   categories:
   - Tools

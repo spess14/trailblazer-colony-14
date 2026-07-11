@@ -11,7 +11,7 @@
   Each research entry has different disciplines: your PhD in biology won't help as much with electricity.
   To get research points, you need another storage of technobabble - this time, you will be the one writing it.
   <Box>
-    <GuideEntityEmbed Entity="ObservationKit"/>
+    <GuideEntityEmbed Entity="ResearchKit"/>
   </Box>
 
   Finally, you'll need something you can observe for points. These are either prototypes or regular items.

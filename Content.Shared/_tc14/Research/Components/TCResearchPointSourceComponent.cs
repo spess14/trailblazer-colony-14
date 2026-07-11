@@ -22,16 +22,4 @@ public sealed partial class TCResearchPointSourceComponent : Component
     /// </summary>
     [DataField, AutoNetworkedField]
     public bool HasExamine;
-
-    /// <summary>
-    /// Can you observe this using the observation kit?
-    /// </summary>
-    [DataField, AutoNetworkedField]
-    public bool CanBeObserved = true;
-
-    /// <summary>
-    /// Does this item destroy itself when observed via the observation kit?
-    /// </summary>
-    [DataField, AutoNetworkedField]
-    public bool DestructOnObservation = true;
 }
