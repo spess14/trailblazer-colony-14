@@ -14,14 +14,6 @@
   - RecyclerCrudeCircuitboard
 
 - type: latheRecipePack
-  id: TCPrototypes
-  recipes:
-  - FlimsyKnife
-  - SkeletonModel
-  - Electrodes
-  - ObservationKit
-
-- type: latheRecipePack
   id: TCClothing
   recipes:
   - ClothingBeltSheath

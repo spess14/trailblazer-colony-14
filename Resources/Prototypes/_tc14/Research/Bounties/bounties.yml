@@ -1,0 +1,90 @@
+- type: researchBounty
+  id: BountyKnife
+  rewardedPoints:
+    DisciplineMilitary: 20
+  conditions:
+  - !type:AnyTagCondition
+    tags:
+    - Knife
+  name: researchbounty-name-knife
+  spriteEntity: Shiv
+
+- type: researchBounty
+  id: BountyCuffs
+  rewardedPoints:
+    DisciplineMilitary: 15
+  conditions:
+  - !type:AnyTagCondition
+    tags:
+    - Handcuffs
+  name: researchbounty-name-cuffs
+  spriteEntity: Cablecuffs
+
+- type: researchBounty
+  id: BountyBrutepack
+  rewardedPoints:
+    DisciplineMedical: 20
+  maxAmount: 3
+  conditions:
+  - !type:AnyTagCondition
+    tags:
+    - Brutepack
+  name: researchbounty-name-brutepack
+  spriteEntity: Brutepack
+
+- type: researchBounty
+  id: BountyWater
+  rewardedPoints:
+    DisciplineMedical: 15
+  conditions:
+  - !type:ReagentCondition
+    reagent: Water
+    min: 10
+  name: researchbounty-name-water
+  spriteEntity: DrinkWaterBottleFull
+
+- type: researchBounty
+  id: BountyPlant
+  rewardedPoints:
+    DisciplineBiosocial: 20
+  maxAmount: 5
+  conditions:
+  - !type:AnyTagCondition
+    tags:
+    - Seed
+  name: researchbounty-name-seed
+  spriteEntity: WheatSeeds
+
+- type: researchBounty
+  id: BountyBucket
+  rewardedPoints:
+    DisciplineBiosocial: 15
+  conditions:
+  - !type:AnyTagCondition
+    tags:
+    - Bucket
+  name: researchbounty-name-bucket
+  spriteEntity: Bucket
+
+- type: researchBounty
+  id: BountyIgniter
+  rewardedPoints:
+    DisciplineIndustrial: 20
+  maxAmount: 3
+  conditions:
+  - !type:AnyTagCondition
+    tags:
+    - Igniter
+  name: researchbounty-name-igniter
+  spriteEntity: Igniter
+
+- type: researchBounty
+  id: BountyIntercom
+  rewardedPoints:
+    DisciplineIndustrial: 15
+  conditions:
+  - !type:AnyTagCondition
+    tags:
+    - IntercomElectronics
+  name: researchbounty-name-intercom
+  spriteEntity: IntercomElectronics

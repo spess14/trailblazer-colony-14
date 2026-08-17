@@ -7,7 +7,7 @@ using Robust.Client.UserInterface;
 using Robust.Client.UserInterface.Controls;
 using static Content.Client.Stylesheets.StylesheetHelpers;
 
-namespace Content.Client._tc14.Research.UI;
+namespace Content.Client._tc14.Research.UI.Table;
 
 [CommonSheetlet]
 public sealed class ResearchTableSheetlet : Sheetlet<NanotrasenStylesheet>

@@ -17,3 +17,6 @@
 
 - type: Tag
   id: Rock
+
+- type: Tag
+  id: Seed

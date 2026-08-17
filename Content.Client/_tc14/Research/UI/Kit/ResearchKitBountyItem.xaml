@@ -1,0 +1,21 @@
+<BoxContainer xmlns="https://spacestation14.io"
+              Margin="10 10 10 0"
+              HorizontalExpand="True"
+              VerticalExpand="True"
+              Visible="True"
+              HorizontalAlignment="Stretch">
+    <PanelContainer StyleClasses="BackgroundPanel" HorizontalExpand="True" VerticalExpand="True">
+        <BoxContainer Orientation="Vertical" SeparationOverride="5" VerticalExpand="True">
+            <BoxContainer Orientation="Horizontal" HorizontalExpand="True" SeparationOverride="5">
+                <EntityPrototypeView Name="ResearchBountySpriteView"/>
+                <RichTextLabel Name="ResearchBountyNameLabel"/>
+                <BoxContainer HorizontalExpand="True"/>
+                <Label Name="ResearchBountyProgress" Text="0/0"/>
+            </BoxContainer>
+            <BoxContainer Orientation="Horizontal" HorizontalExpand="True" SeparationOverride="5">
+                <Label Text="Rewards (Base): "/>
+                <BoxContainer Name="ResearchItemRewardBoxContainer" Orientation="Horizontal" SeparationOverride="5"/>
+            </BoxContainer>
+        </BoxContainer>
+    </PanelContainer>
+</BoxContainer>

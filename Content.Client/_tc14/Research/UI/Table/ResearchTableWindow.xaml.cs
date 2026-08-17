@@ -9,7 +9,7 @@ using Robust.Client.UserInterface.Controls;
 using Robust.Client.UserInterface.XAML;
 using Robust.Shared.Prototypes;
 
-namespace Content.Client._tc14.Research.UI;
+namespace Content.Client._tc14.Research.UI.Table;
 
 [GenerateTypedNameReferences]
 public sealed partial class ResearchTableWindow : FancyWindow
@@ -53,9 +53,9 @@ public sealed partial class ResearchTableWindow : FancyWindow
         FallbackResearchItemSidePanel(); // No state update initially, so...
     }
 
-    private ResearchTableItem CreateResearchItem(ResearchEntryPrototype prototype)
+    private Table.ResearchTableItem CreateResearchItem(ResearchEntryPrototype prototype)
     {
-        var button = new ResearchTableItem(prototype);
+        var button = new Table.ResearchTableItem(prototype);
         ResearchTreeDragContainer.AddChild(button);
         button.OnButtonClicked += () =>
         {
@@ -154,7 +154,7 @@ public sealed partial class ResearchTableWindow : FancyWindow
 
     private void UpdateResearchItems(HashSet<ProtoId<ResearchEntryPrototype>> researched)
     {
-        foreach (var child in ResearchTreeDragContainer.Children.OfType<ResearchTableItem>())
+        foreach (var child in Enumerable.OfType<Table.ResearchTableItem>(ResearchTreeDragContainer.Children))
         {
             child.SetResearched(researched.Contains(child.proto));
             if (child.proto.Dependencies.Count == 0)

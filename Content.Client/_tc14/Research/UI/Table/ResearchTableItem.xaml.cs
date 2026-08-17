@@ -4,7 +4,7 @@ using Robust.Client.UserInterface;
 using Robust.Client.UserInterface.XAML;
 using Robust.Shared.Prototypes;
 
-namespace Content.Client._tc14.Research.UI;
+namespace Content.Client._tc14.Research.UI.Table;
 
 [GenerateTypedNameReferences]
 public sealed partial class ResearchTableItem : Control

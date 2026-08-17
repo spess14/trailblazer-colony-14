@@ -2,7 +2,7 @@ using Content.Shared._tc14.Research;
 using JetBrains.Annotations;
 using Robust.Client.UserInterface;
 
-namespace Content.Client._tc14.Research.UI;
+namespace Content.Client._tc14.Research.UI.Table;
 
 [UsedImplicitly]
 public sealed class ResearchTableBoundUserInterface : BoundUserInterface

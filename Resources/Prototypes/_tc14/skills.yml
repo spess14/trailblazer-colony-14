@@ -15,9 +15,10 @@
 #   id: SkillCreating
 #   name: skill-creating
 
-# - type: skill
-#   id: SkillResearch
-#   name: skill-research
+- type: skill
+  id: SkillResearch
+  name: skill-research
+  priority: 2
 
 - type: skill
   id: SkillMedical

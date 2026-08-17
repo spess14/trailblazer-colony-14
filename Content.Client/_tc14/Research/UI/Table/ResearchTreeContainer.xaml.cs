@@ -7,7 +7,7 @@ using Robust.Client.UserInterface.Controls;
 using Robust.Client.UserInterface.XAML;
 using Robust.Shared.Prototypes;
 
-namespace Content.Client._tc14.Research.UI;
+namespace Content.Client._tc14.Research.UI.Table;
 
 [GenerateTypedNameReferences]
 public sealed partial class ResearchTreeContainer : LayoutContainer
@@ -27,7 +27,7 @@ public sealed partial class ResearchTreeContainer : LayoutContainer
 
         var itemCenterVector = new Vector2(GridScale, GridScale);
         itemCenterVector /= 3; //half the size of an item; 96/3 = 64/2
-        foreach (var dependant in Children.OfType<ResearchTableItem>())
+        foreach (var dependant in Children.OfType<Table.ResearchTableItem>())
         {
             foreach (var dependencyId in dependant.proto.Dependencies)
             {
@@ -37,8 +37,8 @@ public sealed partial class ResearchTreeContainer : LayoutContainer
         }
     }
 
-    private ResearchTableItem GetItemByProtoId(ProtoId<ResearchEntryPrototype> protoId)
+    private Table.ResearchTableItem GetItemByProtoId(ProtoId<ResearchEntryPrototype> protoId)
     {
-        return Children.OfType<ResearchTableItem>().First(i => i.proto.ID == protoId);
+        return Children.OfType<Table.ResearchTableItem>().First(i => i.proto.ID == protoId);
     }
 }

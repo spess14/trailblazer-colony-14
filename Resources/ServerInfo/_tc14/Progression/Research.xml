@@ -1,30 +1,26 @@
 <Document>
   # Research
-  Surprise: you do not have the whole compendium of all sentients' knowledge of the past millenniums. However, you know a thing or two: to reproduce some technology, you just need to conduct some experiments.
+  You do not immediately have access to every possible technology out of the gate: while you do know the general concept, you need some materials to solidify your theory.
 
-  First of all, you have to store all the technobabble somewhere.
+  Research Workbench is the first workstation you'll need.
   <Box>
     <GuideEntityEmbed Entity="ResearchWorkbench"/>
   </Box>
 
-  Research Workbench stores your research: if it's destroyed, your settlement also rolls back to the stone age.
-  Each research entry has different disciplines: your PhD in biology won't help as much with electricity.
-  To get research points, you need another storage of technobabble - this time, you will be the one writing it.
+  Research Workbench stores your research and research points. Research points are used to unlock researches, and research unlocks recipes.
+  Each research entry has different disciplines: you will need a corresponding type of research points to unlock the research of that discipline.
+  To get research points, you will need a book to write your observations into.
   <Box>
-    <GuideEntityEmbed Entity="ObservationKit"/>
+    <GuideEntityEmbed Entity="ResearchKit"/>
   </Box>
 
-  Finally, you'll need something you can observe for points. These are either prototypes or regular items.
-  In order to actually generate points from the prototype, you will need to experiment with it - I'm sure you'll figure it out.
-  Be careful - you will DESTROY the item you're observing. Also, most prototypes are rather fragile - you can (and probably will) break them during experimentation.
-  <Box>
-    <GuideEntityEmbed Entity="FlimsyKnife"/>
-    <GuideEntityEmbed Entity="SkeletonModel"/>
-    <GuideEntityEmbed Entity="ElectrodesPrototype"/>
-    <GuideEntityEmbed Entity="TomatoSeeds"/>
-  </Box>
+  In this book, you will find notes about the items you'll need to progress.
+  Use a book on the requested item in order to consume that item and convert it into research points. You might need more than one item.
+  Be careful - you will DESTROY the item you're using for research. If you need to submit a solution (like water), the container for it will also be destroyed.
+  Having a higher research skill increases the amount of points you'll get. Research kit displays only the base values (aka the ones you get without any skill).
 
-  The rest is simple: use the observation kit on the prototype/item with points, then use the observation kit on your nearest Research Workbench.
+  To deposit research points, simply use your research kit on the research workbench.
+  Then, select the research you'd like to pursue, click "Research" to spend research points on it, then click "Print" to get a blueprint.
   <Box>
     <GuideEntityEmbed Entity="BlueprintFulton"/>
   </Box>
