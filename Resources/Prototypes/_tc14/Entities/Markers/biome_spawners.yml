@@ -12,7 +12,7 @@
       children:
       - !type:GroupSelector
         children:
-        - id: RockItem
+        - id: RockItem1
         - id: BushForage
       - !type:GroupSelector
         prob: 0.05

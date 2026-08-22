@@ -1,6 +1,6 @@
 - type: ore
   id: OreRockPlain
-  oreEntity: RockItem
+  oreEntity: RockItem1
   minOreYield: 0
   maxOreYield: 1
 
