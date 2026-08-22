@@ -196,13 +196,14 @@
   - type: PdaBorderColor
     borderColor: "#717059"
   # TC14 - Begin - colonist role tweaks
-  - type: CartridgeLoader
-    uiKey: enum.PdaUiKey.Key
-    preinstalled:
-    - CrewManifestCartridge
-    - NotekeeperCartridge
-    - NanoTaskCartridge
-    - AstroNavCartridge
+  - type: EntityTableContainerFill
+    containers:
+      preinstalled-program-container: !type:AllSelector
+        children:
+        - id: CrewManifestCartridge
+        - id: NotekeeperCartridge
+        - id: NanoTaskCartridge
+        - id: AstroNavCartridge
   # TC14 - End
 
 - type: entity

@@ -219,11 +219,8 @@
     node: start
   - type: AtmosExposed
   - type: Temperature
-    currentTemperature: 290
   - type: TemperatureDamage
   - type: InternalTemperature
-    thickness: 0.02
-    area: 2
   # TC14 - End
 
 - type: entity

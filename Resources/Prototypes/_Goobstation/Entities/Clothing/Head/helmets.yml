@@ -14,8 +14,7 @@
   - type: Clothing
     sprite: _Goobstation/Textures/Helmets/helldiver.rsi
   - type: TemperatureProtection
-    heatingCoefficient: 0.1
-    coolingCoefficient: 0.1
+    coefficient: 0.1
   - type: HideLayerClothing
     slots:
     - Hair
