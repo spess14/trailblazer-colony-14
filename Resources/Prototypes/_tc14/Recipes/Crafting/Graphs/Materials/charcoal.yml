@@ -10,6 +10,6 @@
       - !type:PlaySound
         sound: /Audio/Effects/sizzle.ogg
       steps:
-      - minTemperature: 335
+      - minTemperature: 310
   - node: charcoal
     entity: Coal1
