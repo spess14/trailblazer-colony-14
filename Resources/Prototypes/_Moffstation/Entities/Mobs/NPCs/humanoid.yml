@@ -1,10 +1,13 @@
 - type: entity
   id: MobWildHumanoid
   abstract: true
+  suffix: Wild
   components:
   - type: RandomHumanoidAppearance
   - type: RandomMetadata
-    nameSegments: [ NamesDeathCommando ]
+    nameSegments:
+    - NamesDeathCommandoFirst
+    - NamesDeathCommandoLast
   - type: GhostRole
     makeSentient: true
     name: ghost-role-information-wild-human-name
@@ -40,7 +43,6 @@
   parent: [ MobHuman, MobWildHumanoid ]
   components:
   - type: MonkeyAccent
-
 
 - type: entity
   id: MobWildReptilian
