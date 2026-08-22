@@ -6,7 +6,9 @@ using Content.Client.CharacterInfo;
 using Content.Client.UserInterface.Systems.Chat;
 using Content.IntegrationTests.Fixtures;
 using Content.IntegrationTests.Fixtures.Attributes;
+using Content.Shared._tc14.Skills.Prototypes;
 using Content.Shared.CCVar;
+using Content.Shared.FixedPoint;
 using Content.Shared.Roles;
 using NUnit.Framework;
 using Robust.Client.UserInterface;
@@ -44,7 +46,8 @@ public sealed class ChatHighlightTest : GameTest
             null, // Moff - Collective minds
             null,
             Captain,
-            "John Doe"
+            "John Doe",
+            new Dictionary<ProtoId<SkillPrototype>, FixedPoint2>() // TC14 - stub skill dict
         );
 
         var method = chatController.GetType().GetMethod(
@@ -129,7 +132,8 @@ public sealed class ChatHighlightTest : GameTest
             null, // Moff - Collective minds
             null,
             Captain,
-            "John Doe"
+            "John Doe",
+            new Dictionary<ProtoId<SkillPrototype>, FixedPoint2>() // TC14 - stub skill dict
         );
 
         var method = chatController.GetType().GetMethod(

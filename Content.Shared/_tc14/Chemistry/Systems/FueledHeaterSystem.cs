@@ -43,7 +43,7 @@ public sealed partial class FueledHeaterSystem : EntitySystem
         var entityEnergy = heater.EntityHeatPerSecond * frameTime / entityCount;
         foreach (var ent in placer.PlacedEntities)
         {
-            if (TryComp<TemperatureComponent>(ent, out var temperature) && temperature.CurrentTemperature < heater.MaxTemp)
+            if (TryComp<TemperatureComponent>(ent, out var temperature) && temperature.Temperature < heater.MaxTemp)
                 _temperature.ChangeHeat(ent, entityEnergy);
         }
     }

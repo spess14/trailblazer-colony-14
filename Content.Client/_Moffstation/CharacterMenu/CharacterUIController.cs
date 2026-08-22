@@ -109,7 +109,7 @@ public sealed partial class CharacterUIController : UIController, IOnStateEntere
             return;
         }
 
-        var (entity, objectives, minds, briefing, jobId, entityName) = data; // Starlight - Collective Mind - Added minds variable.
+        var (entity, objectives, minds, briefing, jobId, entityName, skills) = data; // Starlight - Collective Mind - Added minds variable.
 
         _window.SpriteView.SetEntity(entity);
 
