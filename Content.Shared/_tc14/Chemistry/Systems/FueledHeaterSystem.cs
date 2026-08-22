@@ -31,12 +31,9 @@ public sealed partial class FueledHeaterSystem : EntitySystem
         var entityCount = placer.PlacedEntities.Count;
         foreach (var heatingEntity in placer.PlacedEntities)
         {
-            if (!TryComp<SolutionManagerComponent>(heatingEntity, out var container))
-                continue;
-
-            var solutionEnergy = heater.SolutionHeatPerSecond * frameTime / entityCount;
-            foreach (var (_, soln) in _solution.EnumerateSolutions((heatingEntity, container), false))
+            foreach (var (_, soln) in _solution.EnumerateSolutions(heatingEntity))
             {
+                var solutionEnergy = heater.SolutionHeatPerSecond * frameTime / entityCount;
                 _solution.AddThermalEnergyClamped(soln, solutionEnergy, 0, heater.MaxTemp);
             }
         }
