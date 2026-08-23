@@ -163,9 +163,9 @@ Even if you explain your changes, this does **not** mean your changes will autom
 ## Before submitting a pull request
 Before submitting a pull request, make sure to:
 - Test your changes in a development environment running TC14.
-  - Be sure to play around with your feature more than "if it works" as it could cause weird behavior when interacting with other features.
+    - Be sure to play around with your feature more than "if it works" as it could cause weird behavior when interacting with other features.
 - Double-check your diff on git to make sure you didn't accidentally include any changes you didn't mean to.
-  - Similarly, make sure you're PRing to the right place, otherwise you'll accidentally include a morbillion commits and pipe bomb someone else.
+    - Similarly, make sure you're PRing to the right place, otherwise you'll accidentally include a morbillion commits and pipe bomb someone else.
 - Revert any unnecessary whitespace changes in your pull request.
 
 ## HELP I ACCIDENTALLY INCLUDED ROBUSTTOOLBOX IN MY CHANGES

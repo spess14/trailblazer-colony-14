@@ -24,14 +24,9 @@ namespace Content.Server._tc14.StationEvents.Events;
 public sealed partial class PlanetEntitySummonRule : StationEventSystem<PlanetEntitySummonRuleComponent>
 {
     [Dependency] private IRobustRandom _random = default!;
-    [Dependency] private NavMapSystem _navMap = default!;
-    [Dependency] private IMapManager _map = default!;
-    [Dependency] private SharedMapSystem _smap = default!;
+    [Dependency] private SharedMapSystem _map = default!;
     [Dependency] private GameTicker _gameTicker = default!;
-    [Dependency] private SharedTransformSystem _transform = default!;
     [Dependency] private EntityTableSystem _table = default!;
-    [Dependency] private IGameTiming _timing = default!;
-    [Dependency] private TargetSystem _target = default!;
     [Dependency] private TurfSystem _turfSystem = default!;
 
     protected override void Added(EntityUid uid,
@@ -80,7 +75,7 @@ public sealed partial class PlanetEntitySummonRule : StationEventSystem<PlanetEn
             var distance = (radius.Y - radius.X) * Math.Sqrt(_random.NextFloat()) * ((float)i / tries) + radius.X;
             var tempTargetCoords = baseCoords.Offset(_random.NextAngle().ToVec() * (float)distance);
             Log.Info($"{tempTargetCoords.ToString()}");
-            if (!_smap.TryGetTileRef(ent.Owner, ent.Comp, tempTargetCoords, out var tileRef)
+            if (!_map.TryGetTileRef(ent.Owner, ent.Comp, tempTargetCoords, out var tileRef)
                 || _turfSystem.IsTileBlocked(tileRef, CollisionGroup.MobMask))
                 continue;
             target = tempTargetCoords;

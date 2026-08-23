@@ -1,10 +1,11 @@
 using Robust.Shared.Audio;
 using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
+using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom;
 
 namespace Content.Shared.Atmos.Components;
 
-[RegisterComponent, NetworkedComponent, AutoGenerateComponentState(true)]
+[RegisterComponent, NetworkedComponent, AutoGenerateComponentState(true), AutoGenerateComponentPause]
 public sealed partial class GasTankComponent : GasMaxPressureHolderComponent
 {
     private const float DefaultLowPressure = Atmospherics.OneAtmosphere;
@@ -58,4 +59,10 @@ public sealed partial class GasTankComponent : GasMaxPressureHolderComponent
     [DataField, AutoNetworkedField]
     public bool IsInfinite;
     // TC14 - End
+
+    /// <summary>
+    ///     Tracks elapsed time between client state updates for <see cref="GasMaxPressureHolderComponent"/>.
+    /// </summary>
+    [DataField(customTypeSerializer: typeof(TimeOffsetSerializer)), AutoNetworkedField, AutoPausedField]
+    public TimeSpan NextDirtyTime;
 }
