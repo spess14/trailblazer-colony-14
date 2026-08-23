@@ -219,6 +219,7 @@
     node: start
   - type: AtmosExposed
   - type: Temperature
+    heatCapacity: 15000
   - type: TemperatureDamage
   - type: InternalTemperature
   # TC14 - End
