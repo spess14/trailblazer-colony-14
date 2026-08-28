@@ -2,7 +2,7 @@
   parent: BaseItem
   id: RockItem
   name: rock
-  description: Bash two of those together and see what happens.
+  description: Two of those could be crafted into an improvised knife.
   suffix: Full
   components:
   - type: Material
