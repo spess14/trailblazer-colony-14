@@ -10,11 +10,6 @@
   - ResearchKit
 
 - type: latheRecipePack
-  id: TCStructures
-  recipes:
-  - RecyclerCrudeCircuitboard
-
-- type: latheRecipePack
   id: TCClothing
   recipes:
   - ClothingBeltSheath

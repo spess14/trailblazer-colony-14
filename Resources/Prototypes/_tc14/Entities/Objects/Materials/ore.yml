@@ -13,14 +13,15 @@
   - type: PhysicalComposition
     chemicalComposition:
       Sulfur: 10
+    materialComposition:
+      Sulfur: 100
   - type: Extractable
-    grindableSolutionName: sulfurore
-  - type: SolutionContainerManager
-    solutions:
-      sulfurore:
-        reagents:
-        - ReagentId: Sulfur
-          Quantity: 10
+    grindableSolutionName: composite
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: Sulfur
+        Quantity: 10
   - type: Item
     sprite: _tc14/Objects/Materials/materials.rsi
     heldPrefix: sulfur
@@ -36,3 +37,12 @@
   components:
   - type: Stack
     count: 1
+
+- type: material
+  id: Sulfur
+  stackEntity: SulfurOre1
+  name: stack-sulfur-ore
+  unit: materials-unit-bunch
+  icon: { sprite: _tc14/Objects/Materials/materials.rsi, state: sulfur }
+  color: "#ffde54"
+  price: 0.1

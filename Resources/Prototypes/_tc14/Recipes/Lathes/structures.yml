@@ -1,0 +1,10 @@
+- type: latheRecipe
+  parent: BaseToolRecipe
+  id: RecyclerFlatpack
+  result: RecyclerFlatpack
+  categories:
+  - Machines
+  materials:
+    Steel: 3000
+  icon:
+    entity: RecyclerFlatpack

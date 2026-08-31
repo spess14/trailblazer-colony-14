@@ -646,6 +646,7 @@
       staticPacks:
       - OreSmelting
       - RGlassSmelting
+      - TCOreSmelting # TC14 - add plastic recipe
 
 - type: entity
   parent: OreProcessor
@@ -664,6 +665,7 @@
     - OreSmelting
     - RGlassSmelting
     - AdvancedSmelting
+    - TCOreSmelting # TC14 - add plastic recipe
 
 - type: entity
   parent: BaseLathe

@@ -15,6 +15,10 @@
         - id: RockItem1
         - id: BushForage
       - !type:GroupSelector
+        prob: 0.5
+        children:
+        - id: SalvageSpawnerScrapCommon
+      - !type:GroupSelector
         prob: 0.05
         children:
         - id: SpawnMobCow
@@ -25,3 +29,20 @@
         - id: SpawnMobScurret
         - id: SpawnMobReindeerBuck
         - id: SpawnMobReindeerDoe
+
+- type: entityTable
+  id: SalvageScrapOverworld
+  table: !type:GroupSelector
+    children:
+    # scrap. do not add treasure scrap from vanilla loottables, since a bunch of items from there are kinda useless
+    - !type:GroupSelector
+      children:
+      - !type:NestedSelector
+        tableId: SalvageScrapLowValue
+        weight: 60
+      - !type:NestedSelector
+        tableId: SalvageScrapHighValue
+        weight: 30
+      - !type:NestedSelector
+        tableId: SalvageScrapLarge
+        weight: 10

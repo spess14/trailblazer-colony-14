@@ -1,0 +1,7 @@
+- type: latheRecipe
+  id: SheetPlastic1
+  result: SheetPlastic1
+  completetime: 0.25 # TC14 - add ore processing time
+  materials:
+    Sulfur: 200
+    Coal: 100

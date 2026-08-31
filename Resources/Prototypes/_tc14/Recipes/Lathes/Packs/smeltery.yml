@@ -2,3 +2,8 @@
   id: TCSmithing
   recipes:
   - IngotMoltenSteel
+
+- type: latheRecipePack
+  id: TCOreSmelting
+  recipes:
+  - SheetPlastic1

@@ -1,0 +1,16 @@
+- type: entity
+  parent: BaseFlatpack
+  id: RecyclerFlatpack
+  name: recycler flatpack
+  description: A flatpack used for constructing a recycler.
+  components:
+  - type: Sprite
+    layers:
+    - state: base
+    - state: overlay
+      color: "#8f1336"
+    - state: icon-default
+  - type: Flatpack
+    entity: Recycler
+  - type: StaticPrice
+    price: 500
