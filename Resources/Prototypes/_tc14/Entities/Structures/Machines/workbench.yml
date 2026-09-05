@@ -17,20 +17,7 @@
     - LightsStatic
     - ServiceStatic
     - TopicalsStatic
-    - ClothingCivilian
-    - ClothingCargo
-    - ClothingCommand
-    - ClothingEngineering
-    - ClothingMedical
-    - ClothingScience
-    - ClothingSecurity
-    - ClothingService
-    - ClothingSyndie
-    - WinterCoats
-    - Ties
-    - Scarves
     - TCTools
-    - TCClothing
 
 - type: entity
   id: Workbench
@@ -148,3 +135,81 @@
     interfaces:
       enum.ResearchTableUiKey.Key:
         type: ResearchTableBoundUserInterface
+
+- type: entity
+  id: SewingWorkbench
+  parent: BaseMachine
+  name: sewing workbench
+  description: Used to make clothing.
+  components:
+  - type: Appearance
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.4,-0.4,0.4,0.4"
+        density: 190
+        mask:
+        - MachineMask
+        layer:
+        - MachineLayer
+  - type: Sprite
+    sprite: /Textures/_tc14/Structures/Machines/loom.rsi
+    layers:
+    - state: loom
+  - type: Lathe
+    idleState: loom
+    materialUseMultiplier: 1.5
+    producingSound: /Audio/Machines/uniformprinter.ogg
+    staticPacks:
+    - TowelsStatic
+    - ClothingCivilian
+    - ClothingCargo
+    - ClothingCommand
+    - ClothingEngineering
+    - ClothingMedical
+    - ClothingScience
+    - ClothingSecurity
+    - ClothingService
+    - WinterCoats
+    - Ties
+    - Scarves
+    - Carpets
+    - Bedsheets
+    - MoffstationClothingCargo
+    - MoffstationClothingCommand
+    - MoffstationClothingMedical
+    - MoffstationClothingScience
+    - MoffstationClothingSecurity
+    - MoffstationClothingService
+    - MoffstationClothingEngineering
+    - MoffstationCostumes
+    - ModularHudFramesStatic
+    - TCClothing
+  - type: Construction
+    graph: Loom
+    node: loom
+  - type: MaterialStorage
+    whitelist:
+      tags:
+      - Sheet
+      - RawMaterial
+      - Ingot
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 100
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: ActivatableUI
+    key: enum.LatheUiKey.Key
+  - type: UserInterface
+    interfaces:
+      enum.LatheUiKey.Key:
+        type: LatheBoundUserInterface
+  - type: Transform
+    anchored: true
+  - type: Pullable

@@ -11,3 +11,17 @@
         doAfter: 1
   - node: Workbench
     entity: Workbench
+
+- type: constructionGraph
+  id: Loom
+  start: start
+  graph:
+  - node: start
+    edges:
+    - to: loom
+      steps:
+      - material: WoodPlank
+        amount: 5
+        doAfter: 1
+  - node: loom
+    entity: SewingWorkbench

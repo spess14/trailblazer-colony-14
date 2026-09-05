@@ -37,6 +37,18 @@
   - !type:TileNotBlocked
 
 - type: construction
+  id: Loom
+  graph: Loom
+  startNode: start
+  targetNode: loom
+  category: construction-category-structures
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+  - !type:TileNotBlocked
+
+- type: construction
   id: Soil
   graph: PlanetSoil
   startNode: start

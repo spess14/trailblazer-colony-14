@@ -34,5 +34,6 @@
     <GuideEntityEmbed Entity="Workbench"/>
     <GuideEntityEmbed Entity="Smeltery"/>
     <GuideEntityEmbed Entity="ResearchWorkbench"/>
+    <GuideEntityEmbed Entity="SewingWorkbench"/>
   </Box>
 </Document>
