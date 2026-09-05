@@ -28,7 +28,7 @@ public sealed partial class PhysicalLockTargetSystem : EntitySystem
 
         if (!physLockComp.IsForged)
         {
-            _popup.PopupClient(Loc.GetString("lockkey-locking-unforged"), args.User);
+            _popup.PopupEntity(Loc.GetString("lockkey-locking-unforged"), args.User);
             return;
         }
 
@@ -36,7 +36,7 @@ public sealed partial class PhysicalLockTargetSystem : EntitySystem
         var physReader = EnsureComp<KeyReaderComponent>(ent);
         physReader.AllowedKey = physLockComp.AllowedKey;
         _lock.Unlock(ent, null, lockComp);
-        _popup.PopupClient(Loc.GetString("lockkey-locking-success"), args.User);
+        _popup.PopupEntity(Loc.GetString("lockkey-locking-success"), args.User);
         args.Handled = true;
         PredictedQueueDel(args.Used);
     }

@@ -2,7 +2,11 @@ using System.Diagnostics.CodeAnalysis;
 using Content.Shared._tc14.Locking.Components;
 using Content.Shared.Hands.EntitySystems;
 using Content.Shared.Lock;
+using Content.Shared.Prying.Components;
+using Content.Shared.Verbs;
 using JetBrains.Annotations;
+using Robust.Shared.Prototypes;
+using Robust.Shared.Utility;
 
 namespace Content.Shared._tc14.Locking.Systems;
 
@@ -12,6 +16,9 @@ namespace Content.Shared._tc14.Locking.Systems;
 public sealed partial class KeyReaderSystem : EntitySystem
 {
     [Dependency] private SharedHandsSystem _hands = default!;
+    [Dependency] private KeyForgingSystem _keyforge = default!;
+
+    private const string LockPrototype = "Lock";
 
     /// <inheritdoc/>
     public override void Initialize()
@@ -20,6 +27,53 @@ public sealed partial class KeyReaderSystem : EntitySystem
 
         SubscribeLocalEvent<KeyReaderComponent, FindAvailableLocksEvent>(OnFindAvailableLocks);
         SubscribeLocalEvent<KeyReaderComponent, CheckUserHasLockAccessEvent>(OnCheckLockAccess);
+        SubscribeLocalEvent<KeyReaderComponent, BeforePryEvent>(OnBeforePry, after: [typeof(LockSystem)]);
+        SubscribeLocalEvent<KeyReaderComponent, GetVerbsEvent<AlternativeVerb>>(AddRemoveLockVerb);
+    }
+
+    private void AddRemoveLockVerb(Entity<KeyReaderComponent> ent, ref GetVerbsEvent<AlternativeVerb> args)
+    {
+        if (!args.CanComplexInteract || !args.CanAccess)
+            return;
+
+        var lockComp = CompOrNull<LockComponent>(ent);
+        var locked = lockComp?.Locked == true;
+
+        AlternativeVerb verb = new()
+        {
+            Disabled = locked,
+            Act = () =>
+            {
+                if (lockComp is null)
+                    return;
+                var key = ent.Comp.AllowedKey;
+                var lockUid = PredictedSpawnAtPosition(LockPrototype, Transform(ent).Coordinates);
+                var physLockComp = Comp<PhysicalLockComponent>(lockUid);
+                _keyforge.ForgeLock((lockUid, physLockComp), key);
+                Dirty(lockUid, physLockComp);
+                var lockEv = new FindAvailableLocksEvent(ent);
+                RaiseLocalEvent(ent, ref lockEv);
+                if (lockEv.FoundReaders == LockTypes.Key)
+                    RemCompDeferred<LockComponent>(ent);
+                RemCompDeferred<KeyReaderComponent>(ent);
+            },
+            Text = Loc.GetString("lockkey-remove-verb-text"),
+            Icon = new SpriteSpecifier.Texture(new("/Textures/Interface/VerbIcons/screwdriver.png")),
+        };
+        args.Verbs.Add(verb);
+    }
+
+    private void OnBeforePry(Entity<KeyReaderComponent> ent, ref BeforePryEvent args)
+    {
+        if (args.Cancelled)
+            return;
+
+        if (CompOrNull<LockComponent>(ent)?.Locked != true)
+            return;
+
+        args.Message = ent.Comp.PryFailedPopup;
+
+        args.Cancelled = true;
     }
 
     private void OnFindAvailableLocks(Entity<KeyReaderComponent> ent, ref FindAvailableLocksEvent args)

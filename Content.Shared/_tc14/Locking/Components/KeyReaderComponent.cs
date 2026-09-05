@@ -13,4 +13,10 @@ public sealed partial class KeyReaderComponent : Component
     /// </summary>
     [DataField, AutoNetworkedField]
     public ushort AllowedKey;
+
+    /// <summary>
+    /// Popup text if someone tries to pry a locked object open
+    /// </summary>
+    [DataField, AutoNetworkedField]
+    public LocId PryFailedPopup = "lockkey-prying-fail";
 }

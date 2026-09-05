@@ -18,3 +18,7 @@ lockkey-examine-key-forged = This key is already forged.
 lockkey-examine-key-unforged = This key is not yet forged.
 lockkey-examine-lock-forged = This lock is already forged.
 lockkey-examine-lock-unforged = This lock is not yet forged.
+
+lockkey-prying-fail = This is locked and cannot be pried!
+
+lockkey-remove-verb-text = Remove lock
