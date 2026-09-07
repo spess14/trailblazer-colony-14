@@ -19,6 +19,7 @@ skills-20 = Absolute Master
 skills-unknown = Unknown
 
 skills-passionmenu-name = Skills
+skills-cannothaveskills = No skills!
 skills-passionmenu-skills = [bold]Skills[/bold]
 skills-passionmenu-passions = [bold]Passions[/bold]
 skills-passionmenu-label = Passion points: {$points}/{$maxPoints}

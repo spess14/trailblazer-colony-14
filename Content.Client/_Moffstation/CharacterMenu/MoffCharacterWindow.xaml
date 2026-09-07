@@ -107,6 +107,39 @@
                 </PanelContainer>
             </BoxContainer>
 
+            <!-- TC14 - Skill Display -->
+            <BoxContainer Orientation="Vertical" HorizontalExpand="True">
+                <RichTextLabel Text="{Loc 'skills-passionmenu-name'}"/>
+                <PanelContainer StyleClasses="PanelDark"
+                                Margin="0 0 10 0"
+                                MinWidth="220"
+                                HorizontalExpand="True"
+                                VerticalExpand="True">
+                    <ScrollContainer Name="SkillsScroll"
+                                     Access="Public"
+                                     HScrollEnabled="False"
+                                     MinWidth="270"
+                                     VerticalExpand="True">
+                        <BoxContainer Name="SkillsWrapper"
+                                      Access="Public"
+                                      Orientation="Vertical">
+                            <Label Name="NoSkillsLabel"
+                                   Access="Public"
+                                   Text="{Loc 'skills-cannothaveskills'}"
+                                   StyleClasses="LabelSubText"
+                                   HorizontalAlignment="Center"
+                                   VerticalAlignment="Top"
+                                   VerticalExpand="False"/>
+                            <BoxContainer Name="Skills"
+                                          Access="Public"
+                                          Orientation="Vertical"
+                                          Margin="5 5 5 5"
+                                          SeparationOverride="5"/>
+                        </BoxContainer>
+                    </ScrollContainer>
+                </PanelContainer>
+            </BoxContainer>
+
         </BoxContainer>
 
         <!-- Collective Minds -->

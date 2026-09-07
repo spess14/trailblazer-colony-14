@@ -4,6 +4,7 @@ using Content.Client.Gameplay;
 using Content.Client.Message;
 using Content.Client.UserInterface.Controls;
 using Content.Client.UserInterface.Systems.Objectives.Controls;
+using Content.Shared._tc14.Skills.Systems;
 using Content.Shared.Input;
 using JetBrains.Annotations;
 using Robust.Client.GameObjects;
@@ -12,6 +13,7 @@ using Robust.Client.UserInterface;
 using Robust.Client.UserInterface.Controllers;
 using Robust.Client.UserInterface.Controls;
 using Robust.Shared.Input.Binding;
+using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
 using static Robust.Client.UserInterface.Controls.BaseButton;
 
@@ -21,10 +23,12 @@ namespace Content.Client._Moffstation.CharacterMenu;
 public sealed partial class CharacterUIController : UIController, IOnStateEntered<GameplayState>, IOnStateExited<GameplayState>, IOnSystemChanged<CharacterInfoSystem>
 {
     [Dependency] private IPlayerManager _player = default!;
+    [Dependency] private IPrototypeManager _protoManager = default!; // TC14 - Skill Display
 
     [UISystemDependency] private readonly CharacterInfoSystem _characterInfo = default!;
     [UISystemDependency] private readonly MoffCharacterWindowSystem _characterWindow = default!;
     [UISystemDependency] private readonly SpriteSystem _sprite = default!;
+    [UISystemDependency] private readonly PlayerSkillsSystem _skills = default!; // TC14 - Skill Display
 
     private const int DescriptionWordLimit = 40;
 
@@ -143,6 +147,7 @@ public sealed partial class CharacterUIController : UIController, IOnStateEntere
         _window.Objectives.RemoveAllChildren();
         _window.Briefing.RemoveAllChildren();
         _window.Minds.RemoveAllChildren(); // Starlight - Collective Mind
+        _window.Skills.RemoveAllChildren(); // TC14 - Skills Display
 
         var canPickObjectives = _characterWindow.CanPickObjectives(_player.LocalEntity);
         _window.AddObjectiveButtons(objectives.Count, canPickObjectives);
@@ -188,6 +193,30 @@ public sealed partial class CharacterUIController : UIController, IOnStateEntere
             briefingControl.Label.SetMessage(text);
             _window.Briefing.AddChild(briefingControl);
         }
+
+        // TC14 - Begin - Skill display
+        if (skills is null || skills.Count == 0)
+        {
+            _window.NoSkillsLabel.Visible = true;
+        }
+        else
+        {
+            _window.NoSkillsLabel.Visible = false;
+            foreach (var (skillId, skillExp) in skills)
+            {
+                if (!_protoManager.Resolve(skillId, out var prototype))
+                    continue;
+                var skillText = new FormattedMessage();
+                skillText.TryAddMarkup(Loc.GetString("character-info-skill-text",
+                        ("skill", Loc.GetString(prototype.Name)),
+                        ("level", Loc.GetString(_skills.GetVerbalLevelDesc(skillExp)))),
+                    out _);
+                var skillLabel = new RichTextLabel();
+                skillLabel.SetMessage(skillText);
+                _window.Skills.AddChild(skillLabel);
+            }
+        }
+        // TC14 - End
 
         var controls = _characterInfo.GetCharacterInfoControls(entity);
         foreach (var control in controls)
