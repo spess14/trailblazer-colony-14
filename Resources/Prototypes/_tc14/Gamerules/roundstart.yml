@@ -36,9 +36,7 @@
       rolls: 1, 1
       children:
       - id: MobAdultSlimesReformableAngrySmasher
-        weight: 2
       - id: MobAdultSlimesReformablePoisonousAngrySmasher
-        weight: 1
 
 - type: entity
   id: PlanetCarpsSpawn
