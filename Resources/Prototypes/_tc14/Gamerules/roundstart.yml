@@ -35,9 +35,8 @@
     table: !type:GroupSelector
       rolls: 1, 1
       children:
-      - id: MobAdultSlimesBlueAngrySmasher
-      - id: MobAdultSlimesGreenAngrySmasher
-      - id: MobAdultSlimesYellowAngrySmasher
+      - id: MobAdultSlimesReformableAngrySmasher
+      - id: MobAdultSlimesReformablePoisonousAngrySmasher
 
 - type: entity
   id: PlanetCarpsSpawn

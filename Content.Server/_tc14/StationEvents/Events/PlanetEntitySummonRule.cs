@@ -38,7 +38,6 @@ public sealed partial class PlanetEntitySummonRule : StationEventSystem<PlanetEn
         var mapGrid = _map.GetAllGrids(mapId)
             .First(grid => HasComp<MapGridComponent>(grid.Owner)
                            && !HasComp<BecomesStationComponent>(grid.Owner));
-        Log.Info($"Map Grid: {mapGrid.Owner}");
         var players = EntityQuery<HumanoidProfileComponent, TransformComponent>();
         var positions = players.Select(player => player.Item2.Coordinates).ToList();
         var randomPlayerPosition = _random.Pick(positions).Position;
@@ -55,8 +54,7 @@ public sealed partial class PlanetEntitySummonRule : StationEventSystem<PlanetEn
 
         foreach (var spawn in spawns)
         {
-            var spawned = Spawn(spawn.Id, targetCoords.Value);
-            Log.Info($"{targetCoords.Value.ToString()}");
+            Spawn(spawn.Id, targetCoords.Value);
         }
         base.Added(uid, component, gameRule, args);
     }
