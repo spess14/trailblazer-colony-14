@@ -4,6 +4,7 @@ using Content.Shared._tc14.Skills.Components;
 using Content.Shared._tc14.Skills.Prototypes;
 using Content.Shared.FixedPoint;
 using Content.Shared.GameTicking;
+using JetBrains.Annotations;
 using Robust.Shared.Configuration;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
@@ -67,6 +68,7 @@ public sealed partial class PlayerSkillsSystem : EntitySystem
     /// <summary>
     /// Returns the dictionary of skills. Use if you need all the skill data at once.
     /// </summary>
+    [PublicAPI]
     public Dictionary<ProtoId<SkillPrototype>, FixedPoint2>? GetSkills(EntityUid uid)
     {
         return !TryComp<PlayerSkillsComponent>(uid, out var comp) ? null : comp.Skills;
@@ -75,6 +77,7 @@ public sealed partial class PlayerSkillsSystem : EntitySystem
     /// <summary>
     /// Get the experience in a specific skill.
     /// </summary>
+    [PublicAPI]
     public FixedPoint2? GetSkill(ProtoId<SkillPrototype> skillId, EntityUid uid)
     {
         return GetSkills(uid)?[skillId];
@@ -83,6 +86,7 @@ public sealed partial class PlayerSkillsSystem : EntitySystem
     /// <summary>
     /// Directly set experience in a skill to a value. This must be used instead of directly setting it on a component.
     /// </summary>
+    [PublicAPI]
     public void SetSkillExperience(ProtoId<SkillPrototype> skillId, EntityUid uid, FixedPoint2 value)
     {
         if (!TryComp<PlayerSkillsComponent>(uid, out var comp))
@@ -96,6 +100,7 @@ public sealed partial class PlayerSkillsSystem : EntitySystem
     /// <summary>
     /// Adds experience to the skill.
     /// </summary>
+    [PublicAPI]
     public void AddSkillExperience(ProtoId<SkillPrototype> skillId, EntityUid uid, FixedPoint2 delta)
     {
         if (!_protoMan.Resolve(skillId, out _))
@@ -113,6 +118,7 @@ public sealed partial class PlayerSkillsSystem : EntitySystem
     /// <summary>
     /// Use this for any roll/contest
     /// </summary>
+    [PublicAPI]
     public int GetSkillLevel(ProtoId<SkillPrototype> skillId, EntityUid uid)
     {
         var skillExp = GetSkill(skillId, uid);
@@ -124,6 +130,7 @@ public sealed partial class PlayerSkillsSystem : EntitySystem
     /// <summary>
     /// Makes a DC check for a certain skill. The type of check is dN + skill.
     /// </summary>
+    [PublicAPI]
     public int MakeRoll(ProtoId<SkillPrototype> skillId, EntityUid uid, int d)
     {
         var rand = new System.Random((int)_timing.CurTick.Value);
@@ -135,6 +142,7 @@ public sealed partial class PlayerSkillsSystem : EntitySystem
     /// Good example of this system: https://wiki.hypixel.net/Ferocity
     /// TODO This does not belong here. Move it to some sort of random wrapper.
     /// </summary>
+    [PublicAPI]
     public int CumulativeChanceRoll(float chance, int cap = int.MaxValue)
     {
         var ret = 0;
@@ -153,6 +161,7 @@ public sealed partial class PlayerSkillsSystem : EntitySystem
     /// If results are equal, return null.
     /// Otherwise, return if the first player won.
     /// </summary>
+    [PublicAPI]
     public bool? Contest(ProtoId<SkillPrototype> skillId, EntityUid first, EntityUid second)
     {
         var firstRoll = MakeRoll(skillId, first, 20);
@@ -160,21 +169,5 @@ public sealed partial class PlayerSkillsSystem : EntitySystem
         if (firstRoll == secondRoll)
             return null;
         return firstRoll > secondRoll;
-    }
-
-    public LocId GetVerbalLevelDesc(FixedPoint2 exp)
-    {
-        var lvl = (int)Math.Floor(exp.Float());
-        return lvl switch
-        {
-            0 => new LocId("skills-0"),
-            <= 4 => new LocId("skills-1to4"),
-            <= 8 => new LocId("skills-5to8"),
-            <= 12 => new LocId("skills-9to12"),
-            <= 16 => new LocId("skills-13to16"),
-            <= 19 => new LocId("skills-17to19"),
-            20 => new LocId("skills-20"),
-            _ => new LocId("skills-unknown"),
-        };
     }
 }

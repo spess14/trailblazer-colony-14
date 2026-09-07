@@ -109,7 +109,7 @@
 
             <!-- TC14 - Skill Display -->
             <BoxContainer Orientation="Vertical" HorizontalExpand="True">
-                <RichTextLabel Text="{Loc 'skills-passionmenu-name'}"/>
+                <RichTextLabel Text="{Loc 'skills-character-name'}"/>
                 <PanelContainer StyleClasses="PanelDark"
                                 Margin="0 0 10 0"
                                 MinWidth="220"

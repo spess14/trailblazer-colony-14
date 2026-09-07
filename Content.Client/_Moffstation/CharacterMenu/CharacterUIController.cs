@@ -209,7 +209,7 @@ public sealed partial class CharacterUIController : UIController, IOnStateEntere
                 var skillText = new FormattedMessage();
                 skillText.TryAddMarkup(Loc.GetString("character-info-skill-text",
                         ("skill", Loc.GetString(prototype.Name)),
-                        ("level", Loc.GetString(_skills.GetVerbalLevelDesc(skillExp)))),
+                        ("level", skillExp)),
                     out _);
                 var skillLabel = new RichTextLabel();
                 skillLabel.SetMessage(skillText);

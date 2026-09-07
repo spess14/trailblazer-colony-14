@@ -9,17 +9,10 @@ skill-research = [color=mediumpurple]Research[/color]
 skill-medical = [color=lightblue]Medical[/color]
 skill-excavation = [color=gray]Excavation[/color]
 
-skills-0 = Barely heard of it
-skills-1to4 = Beginner
-skills-5to8 = Familiar
-skills-9to12 = Professional
-skills-13to16 = Expert
-skills-17to19 = Master
-skills-20 = Absolute Master
-skills-unknown = Unknown
+skills-cannothaveskills = No skills!
+skills-character-name = [bold]Skills:[/bold]
 
 skills-passionmenu-name = Skills
-skills-cannothaveskills = No skills!
 skills-passionmenu-skills = [bold]Skills[/bold]
 skills-passionmenu-passions = [bold]Passions[/bold]
 skills-passionmenu-label = Passion points: {$points}/{$maxPoints}
