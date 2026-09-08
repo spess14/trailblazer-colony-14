@@ -12,6 +12,8 @@ skill-excavation = [color=gray]Excavation[/color]
 skills-cannothaveskills = No skills!
 skills-character-name = [bold]Skills:[/bold]
 
+skills-skillvalue = {$x} ({$y}%)
+
 skills-passionmenu-name = Skills
 skills-passionmenu-skills = [bold]Skills[/bold]
 skills-passionmenu-passions = [bold]Passions[/bold]

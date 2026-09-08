@@ -170,4 +170,10 @@ public sealed partial class PlayerSkillsSystem : EntitySystem
             return null;
         return firstRoll > secondRoll;
     }
+
+    [PublicAPI]
+    public string GetReadableSkillValue(FixedPoint2 value)
+    {
+        return Loc.GetString("skills-skillvalue", ("x", value.Int()), ("y", (int) ((value - value.Int())*100)));
+    }
 }

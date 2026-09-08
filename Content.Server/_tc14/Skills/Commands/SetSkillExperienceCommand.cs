@@ -45,13 +45,13 @@ public sealed partial class SetSkillExperienceCommand : IConsoleCommand
                     return;
                 }
 
-                if (!int.TryParse(args[2], out var amountInt))
+                if (!float.TryParse(args[2], out var amountFloat))
                 {
                     shell.WriteLine($"Invalid amount: {args[2]}.");
                     return;
                 }
 
-                _entManager.System<PlayerSkillsSystem>().SetSkillExperience(args[1], entity, FixedPoint2.New(amountInt));
+                _entManager.System<PlayerSkillsSystem>().SetSkillExperience(args[1], entity, FixedPoint2.New(amountFloat));
                 break;
             default:
                 shell.WriteLine(Help);
