@@ -40,6 +40,11 @@ public sealed partial class PlanetEntitySummonRule : StationEventSystem<PlanetEn
                            && !HasComp<BecomesStationComponent>(grid.Owner));
         var players = EntityQuery<HumanoidProfileComponent, TransformComponent>();
         var positions = players.Select(player => player.Item2.Coordinates).ToList();
+        if (positions.Count == 0)
+        {
+            Log.Warning($"No players found for {args.RuleId}!");
+            return;
+        }
         var randomPlayerPosition = _random.Pick(positions).Position;
         var radius = new Vector2(component.MinDistance, component.MaxDistance);
         var targetCoords = SelectRandomTileInRange(randomPlayerPosition, radius, component.MaxAttempts, mapGrid);
