@@ -2,8 +2,12 @@ using System.Linq;
 using Content.Shared._tc14.CCVar;
 using Content.Shared._tc14.Skills.Components;
 using Content.Shared._tc14.Skills.Prototypes;
+using Content.Shared.CharacterInfo;
+using Content.Shared.Damage.Systems;
 using Content.Shared.FixedPoint;
 using Content.Shared.GameTicking;
+using Content.Shared.Mobs;
+using Content.Shared.Mobs.Components;
 using JetBrains.Annotations;
 using Robust.Shared.Configuration;
 using Robust.Shared.Prototypes;
@@ -30,8 +34,29 @@ public sealed partial class PlayerSkillsSystem : EntitySystem
         base.Initialize();
         SubscribeLocalEvent<PlayerSkillsComponent, ComponentInit>(OnInit);
         SubscribeLocalEvent<PlayerSkillsComponent, PlayerSpawnCompleteEvent>(OnPlayerSpawn);
+        SubscribeLocalEvent<PlayerSkillsComponent, PlayerSkillActionEvent>(OnSkillXP);
+        SubscribeLocalEvent<MobStateComponent, DamageDealtEvent>(OnDamageDealt);
 
         _skillPointsAmount = _configurationManager.GetCVar(CCVars.RoundstartSkillPoints);
+    }
+
+    private void OnDamageDealt(Entity<MobStateComponent> ent, ref DamageDealtEvent args)
+    {
+        if (args.Origin is null || !TryComp<PlayerSkillsComponent>(args.Origin, out var comp))
+            return;
+        if (ent.Comp.CurrentState != MobState.Alive)
+            return;
+        var ev = new PlayerSkillActionEvent("SkillFinesse", args.Damage.GetTotal() * 0.005);
+        RaiseLocalEvent(args.Origin.Value, ref ev);
+    }
+
+    /// <summary>
+    /// TODO: add skill learning rate and make calculations here
+    /// </summary>
+    private void OnSkillXP(Entity<PlayerSkillsComponent> ent, ref PlayerSkillActionEvent args)
+    {
+        AddSkillExperience(args.Skill, ent, args.SkillPoints);
+        RaiseNetworkEvent(new RequestCharacterInfoEvent(GetNetEntity(ent)));
     }
 
     private void OnPlayerSpawn(EntityUid uid, PlayerSkillsComponent component, ref PlayerSpawnCompleteEvent args)
@@ -176,4 +201,18 @@ public sealed partial class PlayerSkillsSystem : EntitySystem
     {
         return Loc.GetString("skills-skillvalue", ("x", value.Int()), ("y", (int) ((value - value.Int())*100)));
     }
+}
+
+[ByRefEvent]
+public sealed class PlayerSkillActionEvent(ProtoId<SkillPrototype> skill, FixedPoint2 skillPoints) : EntityEventArgs
+{
+    /// <summary>
+    /// What skill is the player getting points in?
+    /// </summary>
+    public readonly ProtoId<SkillPrototype> Skill = skill;
+
+    /// <summary>
+    /// The amount of points the player is going to gain.
+    /// </summary>
+    public readonly FixedPoint2 SkillPoints = skillPoints;
 }

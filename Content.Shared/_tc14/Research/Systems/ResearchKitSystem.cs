@@ -90,6 +90,7 @@ public sealed partial class ResearchKitSystem : EntitySystem
         {
             var proto = _protoMan.Index(matchedBounty.BountyPrototype);
             var multiplier = GetMultiplier(ent, args.User);
+            var pointTotal = 0;
             foreach (var pair in proto.RewardedPoints)
             {
                 if (comp.StoredPoints.ContainsKey(pair.Key))
@@ -100,7 +101,13 @@ public sealed partial class ResearchKitSystem : EntitySystem
                 {
                     comp.StoredPoints.Add(pair.Key, (int)(pair.Value * multiplier));
                 }
+
+                pointTotal += (int)(pair.Value * multiplier);
             }
+
+            var ev = new PlayerSkillActionEvent("SkillResearch", pointTotal * 0.01);
+            RaiseLocalEvent(args.User, ref ev);
+
             ent.Comp.Bounties.Remove(matchedBounty);
             GenerateBounties(ent);
             Dirty(ent.Owner, comp);

@@ -1,6 +1,9 @@
 - type: skill
   id: SkillFinesse
   name: skill-finesse
+  icon:
+    sprite: _tc14/Interface/Misc/skills.rsi
+    state: finesse
   priority: 7
 
 # - type: skill
@@ -18,14 +21,23 @@
 - type: skill
   id: SkillResearch
   name: skill-research
+  icon:
+    sprite: _tc14/Interface/Misc/skills.rsi
+    state: research
   priority: 2
 
 - type: skill
   id: SkillMedical
   name: skill-medical
+  icon:
+    sprite: _tc14/Interface/Misc/skills.rsi
+    state: medical
   priority: 3
 
 - type: skill
   id: SkillExcavation
   name: skill-excavation
+  icon:
+    sprite: _tc14/Interface/Misc/skills.rsi
+    state: excavation
   priority: 6

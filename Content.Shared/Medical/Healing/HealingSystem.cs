@@ -82,8 +82,13 @@ public sealed partial class HealingSystem : EntitySystem
         if (healing.ModifyBloodLevel != 0 && bloodstream != null)
             _bloodstreamSystem.TryModifyBloodLevel((target.Owner, bloodstream), healing.ModifyBloodLevel);
 
+        // TC14 - Begin - apply medical skill
         if (!_damageable.TryChangeDamage(target.Owner, healing.Damage * _damageable.UniversalTopicalsHealModifier * (0.75 + _skills.GetSkillLevel("SkillMedical", args.User) * 0.05), out var healed, true, origin: args.Args.User) && healing.BloodlossModifier != 0)
             return;
+
+        var ev = new PlayerSkillActionEvent("SkillMedical", 0.02*Math.Abs(healed.GetTotal().Float()));
+        RaiseLocalEvent(args.User, ref ev);
+        // TC14 - End
 
         var total = healed.GetTotal();
 

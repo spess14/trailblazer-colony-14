@@ -1,7 +1,9 @@
+using System.Numerics;
 using Content.Client._Starlight.UserInterface.Controls;
 using Content.Client.CharacterInfo;
 using Content.Client.Gameplay;
 using Content.Client.Message;
+using Content.Client.Stylesheets;
 using Content.Client.UserInterface.Controls;
 using Content.Client.UserInterface.Systems.Objectives.Controls;
 using Content.Shared._tc14.Skills.Systems;
@@ -206,14 +208,30 @@ public sealed partial class CharacterUIController : UIController, IOnStateEntere
             {
                 if (!_protoManager.Resolve(skillId, out var prototype))
                     continue;
+                var container = new BoxContainer
+                {
+                    SeparationOverride = 5,
+                    Orientation = BoxContainer.LayoutOrientation.Horizontal,
+                    VerticalAlignment = Control.VAlignment.Center,
+                };
+                var texture = new TextureRect
+                {
+                    Texture = _sprite.Frame0(prototype.Icon),
+                    TextureScale = new Vector2(3,3),
+                };
                 var skillText = new FormattedMessage();
                 skillText.TryAddMarkup(Loc.GetString("character-info-skill-text",
                         ("skill", Loc.GetString(prototype.Name)),
                         ("level", _skills.GetReadableSkillValue(skillExp))),
                     out _);
-                var skillLabel = new RichTextLabel();
+                var skillLabel = new RichTextLabel
+                {
+                    StyleClasses = {StyleClass.LabelHeading},
+                };
                 skillLabel.SetMessage(skillText);
-                _window.Skills.AddChild(skillLabel);
+                container.AddChild(texture);
+                container.AddChild(skillLabel);
+                _window.Skills.AddChild(container);
             }
         }
         // TC14 - End

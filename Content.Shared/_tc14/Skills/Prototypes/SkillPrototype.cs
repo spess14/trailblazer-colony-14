@@ -1,5 +1,6 @@
 using Content.Shared.FixedPoint;
 using Robust.Shared.Prototypes;
+using Robust.Shared.Utility;
 
 namespace Content.Shared._tc14.Skills.Prototypes;
 
@@ -42,4 +43,10 @@ public sealed partial class SkillPrototype : IPrototype
     /// </summary>
     [DataField]
     public FixedPoint2 InitialValue = FixedPoint2.Zero;
+
+    /// <summary>
+    /// Icon assigned to the skill.
+    /// </summary>
+    [DataField(required: true)]
+    public SpriteSpecifier Icon = default!;
 }

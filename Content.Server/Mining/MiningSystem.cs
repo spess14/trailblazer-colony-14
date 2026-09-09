@@ -39,7 +39,7 @@ public sealed partial class MiningSystem : EntitySystem
 
         var coords = Transform(uid).Coordinates;
         var toSpawn = _random.Next(proto.MinOreYield, proto.MaxOreYield+1);
-        // TC14 Begin: spawn more ore based on excavation skill
+        // TC14 - Begin - spawn more ore based on excavation skill
         var maxSkill = 0;
         var query = EntityQueryEnumerator<PlayerSkillsComponent, TransformComponent>();
         while (query.MoveNext(out var pUid, out _, out var transformComp))
@@ -48,9 +48,11 @@ public sealed partial class MiningSystem : EntitySystem
             if (!_transform.InRange(coords, transformComp.Coordinates, 3f))
                 continue;
             maxSkill = Math.Max(maxSkill, _skills.GetSkillLevel("SkillExcavation", pUid));
+            var ev = new PlayerSkillActionEvent("SkillExcavation", 0.02);
+            RaiseLocalEvent(pUid, ref ev);
         }
         toSpawn += _skills.CumulativeChanceRoll(maxSkill * 0.1f); // You get a maximum of two additional drops max.
-        // TC14 End: spawn more ore based on excavation skill
+        // TC14 - End
         for (var i = 0; i < toSpawn; i++)
         {
             Spawn(proto.OreEntity, coords.Offset(_random.NextVector2(0.2f)));

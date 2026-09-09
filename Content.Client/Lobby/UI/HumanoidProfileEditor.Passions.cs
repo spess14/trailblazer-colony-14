@@ -12,7 +12,7 @@ public sealed partial class HumanoidProfileEditor
     {
         if (Profile is null || _skillPicker is not null)
             return;
-        _skillPicker = new SkillPicker(Profile.Passions);
+        _skillPicker = new SkillPicker(Profile.Passions, _sprite);
         TabContainer.AddChild(_skillPicker);
         TabContainer.SetTabTitle(TabContainer.ChildCount - 1, Loc.GetString("skills-passionmenu-name"));
 
