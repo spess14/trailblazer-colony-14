@@ -1114,6 +1114,54 @@ namespace Content.Server.Database.Migrations.Postgres
                     b.ToTable("moff_player", (string)null);
                 });
 
+            modelBuilder.Entity("Content.Server.Database.MoffModel+MoffPreference", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer")
+                        .HasColumnName("moff_preference_id");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("PreferenceId")
+                        .HasColumnType("integer")
+                        .HasColumnName("preference_id");
+
+                    b.HasKey("Id")
+                        .HasName("PK_moff_preference");
+
+                    b.HasIndex("PreferenceId")
+                        .IsUnique();
+
+                    b.ToTable("moff_preference", (string)null);
+                });
+
+            modelBuilder.Entity("Content.Server.Database.MoffModel+MoffProfile", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer")
+                        .HasColumnName("moff_profile_id");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<bool>("Enabled")
+                        .HasColumnType("boolean")
+                        .HasColumnName("enabled");
+
+                    b.Property<int>("ProfileId")
+                        .HasColumnType("integer")
+                        .HasColumnName("profile_id");
+
+                    b.HasKey("Id")
+                        .HasName("PK_moff_profile");
+
+                    b.HasIndex("ProfileId")
+                        .IsUnique();
+
+                    b.ToTable("moff_profile", (string)null);
+                });
+
             modelBuilder.Entity("Content.Server.Database.Passion", b =>
                 {
                     b.Property<int>("Id")
@@ -1146,32 +1194,6 @@ namespace Content.Server.Database.Migrations.Postgres
                         .IsUnique();
 
                     b.ToTable("passion", (string)null);
-                });
-
-            modelBuilder.Entity("Content.Server.Database.MoffModel+MoffProfile", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("integer")
-                        .HasColumnName("moff_profile_id");
-
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
-
-                    b.Property<bool>("Enabled")
-                        .HasColumnType("boolean")
-                        .HasColumnName("enabled");
-
-                    b.Property<int>("ProfileId")
-                        .HasColumnType("integer")
-                        .HasColumnName("profile_id");
-
-                    b.HasKey("Id")
-                        .HasName("PK_moff_profile");
-
-                    b.HasIndex("ProfileId")
-                        .IsUnique();
-
-                    b.ToTable("moff_profile", (string)null);
                 });
 
             modelBuilder.Entity("Content.Server.Database.PlayTime", b =>
@@ -2164,18 +2186,6 @@ namespace Content.Server.Database.Migrations.Postgres
                     b.Navigation("Profile");
                 });
 
-            modelBuilder.Entity("Content.Server.Database.Passion", b =>
-                {
-                    b.HasOne("Content.Server.Database.Profile", "Profile")
-                        .WithMany("Passions")
-                        .HasForeignKey("ProfileId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired()
-                        .HasConstraintName("FK_passion_profile_profile_id");
-
-                    b.Navigation("Profile");
-                });
-
             modelBuilder.Entity("Content.Server.Database.MoffModel+MoffJobPriority", b =>
                 {
                     b.HasOne("Content.Server.Database.MoffModel+MoffPreference", "MoffPreference")
@@ -2221,6 +2231,18 @@ namespace Content.Server.Database.Migrations.Postgres
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired()
                         .HasConstraintName("FK_moff_profile_profile_profile_id");
+
+                    b.Navigation("Profile");
+                });
+
+            modelBuilder.Entity("Content.Server.Database.Passion", b =>
+                {
+                    b.HasOne("Content.Server.Database.Profile", "Profile")
+                        .WithMany("Passions")
+                        .HasForeignKey("ProfileId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired()
+                        .HasConstraintName("FK_passion_profile_profile_id");
 
                     b.Navigation("Profile");
                 });
@@ -2499,9 +2521,9 @@ namespace Content.Server.Database.Migrations.Postgres
 
                     b.Navigation("Loadouts");
 
-                    b.Navigation("Passions");
-
                     b.Navigation("MoffProfile");
+
+                    b.Navigation("Passions");
 
                     b.Navigation("Traits");
                 });
