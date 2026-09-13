@@ -42,9 +42,11 @@ public sealed partial class PlayerSkillsSystem : EntitySystem
 
     private void OnDamageDealt(Entity<MobStateComponent> ent, ref DamageDealtEvent args)
     {
-        if (args.Origin is null || !TryComp<PlayerSkillsComponent>(args.Origin, out var comp))
+        if (args.Origin is null || !HasComp<PlayerSkillsComponent>(args.Origin))
             return;
         if (ent.Comp.CurrentState != MobState.Alive)
+            return;
+        if (args.Damage.GetTotal() <= 0)
             return;
         var ev = new PlayerSkillActionEvent("SkillFinesse", args.Damage.GetTotal() * 0.005);
         RaiseLocalEvent(args.Origin.Value, ref ev);
@@ -130,6 +132,12 @@ public sealed partial class PlayerSkillsSystem : EntitySystem
     {
         if (!_protoMan.Resolve(skillId, out _))
         {
+            return;
+        }
+
+        if (delta <= 0)
+        {
+            Log.Warning($"Tried to add non-positive ({delta}) EXP to {skillId} of {uid}!");
             return;
         }
 
