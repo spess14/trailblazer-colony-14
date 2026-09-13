@@ -204,21 +204,23 @@
   id: FloorLightAstroGrass
   target: FloorAstroGrass
 
-- type: tileAlias
-  id: FloorIronsandTile
-  target: FloorAsteroidIronsand
-
-- type: tileAlias
-  id: FloorIronsandConcrete
-  target: FloorAsteroidIronsand
-
-- type: tileAlias
-  id: FloorIronsandConcreteMono
-  target: FloorAsteroidIronsand
-
-- type: tileAlias
-  id: FloorIronsandConcreteSmooth
-  target: FloorAsteroidIronsand
+# Moff Start - Ironsands namespace change
+#- type: tileAlias
+#  id: FloorIronsandTile
+#  target: FloorAsteroidIronsand
+#
+#- type: tileAlias
+#  id: FloorIronsandConcrete
+#  target: FloorAsteroidIronsand
+#
+#- type: tileAlias
+#  id: FloorIronsandConcreteMono
+#  target: FloorAsteroidIronsand
+#
+#- type: tileAlias
+#  id: FloorIronsandConcreteSmooth
+#  target: FloorAsteroidIronsand
+# Moff End
 
 - type: tileAlias
   id: FloorGrayConcrete
@@ -244,17 +246,19 @@
   id: FloorOldConcreteSmooth
   target: FloorConcreteSmooth
 
-- type: tileAlias
-  id: IronsandPacked
-  target: FloorAsteroidIronsand
-
-- type: tileAlias
-  id: IronsandPaved
-  target: FloorAsteroidIronsand
-
-- type: tileAlias
-  id: PlatingIronsand
-  target: Plating
+# Moff Start - Ironsands namespace change
+#- type: tileAlias
+#  id: IronsandPacked
+#  target: FloorAsteroidIronsand
+#
+#- type: tileAlias
+#  id: IronsandPaved
+#  target: FloorAsteroidIronsand
+#
+#- type: tileAlias
+#  id: PlatingIronsand
+#  target: Plating
+# Moff End
 
 - type: tileAlias
   id: FloorCaveDrought
@@ -331,3 +335,33 @@
 - type: tileAlias
   id: FloorAsphalt
   target: FloorConcrete
+
+# Moff - 2026-08-18 - Ironsands namespace change
+
+- type: tileAlias
+  id: PlatingIronsand
+  target: MoffPlatingIronsand
+
+- type: tileAlias
+  id: FloorIronsandTile
+  target: FloorMoffIronsandTile
+
+- type: tileAlias
+  id: FloorIronsandConcrete
+  target: FloorMoffIronsandConcrete
+
+- type: tileAlias
+  id: FloorIronsandConcreteMono
+  target: FloorMoffIronsandConcreteMono
+
+- type: tileAlias
+  id: FloorIronsandConcreteSmooth
+  target: FloorMoffIronsandConcreteSmooth
+
+- type: tileAlias
+  id: IronsandPacked
+  target: MoffIronsandPacked
+
+- type: tileAlias
+  id: IronsandPaved
+  target: MoffIronsandPaved

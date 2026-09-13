@@ -944,13 +944,13 @@ PinionAirlock: Airlock
 PinionAirlockGlass: AirlockGlass
 PinionAirlockAssembly: AirlockAssembly
 BananiumDoor: GoldDoor
-EncrustedIronstoneDoor: SilverDoor
-IronstoneDoor: SilverDoor
+# EncrustedIronstoneDoor: SilverDoor # Moff
+# IronstoneDoor: SilverDoor # Moff
 WallSnowCobblebrick: WallBrick
 WallSandCobblebrick: WallBrick
 WallChromiteCobblebrick: WallBrick
 WallAndesiteCobblebrick: WallBrick
-WallIronsandCobblebrick: WallBrick
+# WallIronsandCobblebrick: WallBrick # Moff
 WallCobblebrick: WallConcrete
 WallAsteroidCobblebrick: WallConcrete
 WallBasaltCobblebrick: WallConcrete
@@ -1062,9 +1062,11 @@ FireAlarmXeno: FireAlarm
 FireAxeFlaming: SpawnPointNukieDemolitionWeapon
 
 # 2026-07-26
-IronsandStepConvexCorner: null
-IronsandStepConcaveCorner: null
-IronsandStep: null
+# Moff Start - Ironsands namespace change
+# IronsandStepConvexCorner: null
+# IronsandStepConcaveCorner: null
+# IronsandStep: null
+# Moff End
 
 # 2026-07-27
 TurnstileGenpopEnter: EnergyGateGenpopEnter
@@ -1080,11 +1082,13 @@ FloorTileItemGrayConcreteSmooth: null
 FloorTileItemOldConcrete: null
 FloorTileItemOldConcreteMono: null
 FloorTileItemOldConcreteSmooth: null
-FloorTileItemIronsandConcrete: null
-FloorTileItemIronsandConcreteMono: null
-FloorTileItemIronsandConcreteSmooth: null
-IronSandstone: IronRock
-IronSandstoneMining: IronRock
+# Moff Start - Ironsands namespace change
+# FloorTileItemIronsandConcrete: null
+# FloorTileItemIronsandConcreteMono: null
+# FloorTileItemIronsandConcreteSmooth: null
+# IronSandstone: IronRock
+# IronSandstoneMining: IronRock
+# Moff End
 AsteroidRockBananium: AsteroidRock
 AsteroidRockBananiumCrab: AsteroidRock
 IronRockBananium: IronRock
@@ -1159,3 +1163,16 @@ AnomalyRockBananium: AnomalyRockCoal
 ClockworkGirder: Girder
 BaseAsteroidRock: AsteroidRock
 ButtonFrameExit: ButtonFrameWhite
+
+# Moff - 2026-08-18 - Ironsands namespace change
+FloorTileItemIronsandConcrete: FloorTileItemMoffIronsandConcrete
+FloorTileItemIronsandConcreteMono: FloorTileItemMoffIronsandConcreteMono
+FloorTileItemIronsandConcreteSmooth: FloorTileItemMoffIronsandConcreteSmooth
+IronstoneDoor: MoffIronstoneDoor
+EncrustedIronstoneDoor: MoffEncrustedIronstoneDoor
+IronSandstone: MoffIronSandstone
+IronSandstoneMining: MoffIronSandstoneMining
+WallIronsandCobblebrick: WallMoffIronsandCobblebrick
+IronsandStep: MoffIronsandStep
+IronsandStepConvexCorner: MoffIronsandStepConvexCorner
+IronsandStepConcaveCorner: MoffIronsandStepConcaveCorner

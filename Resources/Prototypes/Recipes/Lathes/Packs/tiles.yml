@@ -63,6 +63,9 @@
   - FloorTileItemConcrete
   - FloorTileItemConcreteMono
   - FloorTileItemConcreteSmooth
+  - FloorTileItemMoffIronsandConcrete # Moff - keeping ironsand when it's removed upstream
+  - FloorTileItemMoffIronsandConcreteMono # Moff - keeping ironsand when it's removed upstream
+  - FloorTileItemMoffIronsandConcreteSmooth # Moff - keeping ironsand when it's removed upstream
 
 - type: latheRecipePack
   id: CircuitFloorsStatic
