@@ -27,24 +27,21 @@
   id: FloorSteelCheckerLight
   parent: BaseStationTile
   name: tiles-steel-floor-checker-light
-  sprite: /Textures/_Moffstation/Tiles/cafeteria.png # Moff
-  variants: 4 # Moff
+  sprite: /Textures/Tiles/Checker/checker-light.png
   itemDrop: FloorTileItemSteelCheckerLight
 
 - type: tile
   id: FloorSteelCheckerDark
   parent: BaseStationTile
   name: tiles-steel-floor-checker-dark
-  sprite: /Textures/_Moffstation/Tiles/checker_dark.png # Moff
-  variants: 4 # Moff
+  sprite: /Textures/Tiles/Checker/checker-dark.png
   itemDrop: FloorTileItemSteelCheckerDark
 
 - type: tile
   id: FloorWood
   parent: BaseStationTile
   name: tiles-wood
-  sprite: /Textures/_Moffstation/Tiles/wood.png # Moff
-  variants: 4 # Moff
+  sprite: /Textures/Tiles/Wood/wood.png
   footstepSounds:
     collection: FootstepWood
   barestepSounds:
@@ -64,17 +61,7 @@
   id: FloorLino
   parent: BaseStationTile
   name: tiles-linoleum-floor
-  # Moffstation - Start - New Tiles
-  sprite: /Textures/_Moffstation/Tiles/lino.png
-  variants: 6
-  placementVariants:
-  - 1.0
-  - 1.0
-  - 1.0
-  - 1.0
-  - 1.0
-  - 1.0
-  # Moffstation - End
+  sprite: /Textures/Tiles/lino.png
   footstepSounds:
     collection: FootstepTile
   itemDrop: FloorTileItemLino
@@ -92,7 +79,7 @@
   id: FloorBlue
   parent: BaseStationTile
   name: tiles-blue-tile
-  sprite: /Textures/_Moffstation/Tiles/blue.png # Moffstation
+  sprite: /Textures/Tiles/blue.png
   footstepSounds:
     collection: FootstepTile
   itemDrop: FloorTileItemBlue
@@ -101,8 +88,7 @@
   id: FloorSteelLime
   parent: BaseStationTile
   name: tiles-lime-floor
-  sprite: /Textures/_Moffstation/Tiles/lime.png # Moff
-  variants: 4 # Moff
+  sprite: /Textures/Tiles/lime.png
   itemDrop: FloorTileItemLime
 
 # Departmental
@@ -110,7 +96,7 @@
   id: FloorFreezer
   parent: BaseStationTile
   name: tiles-freezer
-  sprite: /Textures/_Moffstation/Tiles/freezer.png # Moffstation
+  sprite: /Textures/Tiles/freezer.png
   footstepSounds:
     collection: FootstepHull
   itemDrop: FloorTileItemFreezer
@@ -119,29 +105,28 @@
   id: FloorBar
   parent: BaseStationTile
   name: tiles-bar-floor
-  sprite: /Textures/_Moffstation/Tiles/bar.png # Moff
-  variants: 4 # Moff
+  sprite: /Textures/Tiles/Checker/checker-bar.png
   itemDrop: FloorTileItemBar
 
 - type: tile
   id: FloorClown
   parent: BaseStationTile
   name: tiles-clown-floor
-  sprite: /Textures/_Moffstation/Tiles/Checker/checker-clown.png # Moffstation
+  sprite: /Textures/Tiles/Checker/checker-clown.png
   itemDrop: FloorTileItemClown
 
 - type: tile
   id: FloorMime
   parent: BaseStationTile
   name: tiles-mime-floor
-  sprite: /Textures/_Moffstation/Tiles/Checker/checker-mime.png # Moffstation
+  sprite: /Textures/Tiles/Checker/checker-mime.png
   itemDrop: FloorTileItemMime
 
 - type: tile
   id: FloorKitchen
   parent: BaseStationTile
   name: tiles-kitchen-floor
-  sprite: /Textures/_Moffstation/Tiles/Checker/checker-kitchen.png # Moffstation
+  sprite: /Textures/Tiles/Checker/checker-kitchen.png
   footstepSounds:
     collection: FootstepTile
   itemDrop: FloorTileItemKitchen
@@ -150,7 +135,7 @@
   id: FloorLaundry
   parent: BaseStationTile
   name: tiles-laundry-floor
-  sprite: /Textures/_Moffstation/Tiles/Checker/checker-laundry.png # Moffstation
+  sprite: /Textures/Tiles/Checker/checker-laundry.png
   footstepSounds:
     collection: FootstepTile
   itemDrop: FloorTileItemLaundry
@@ -196,7 +181,7 @@
   id: FloorCarpetOffice
   parent: BaseStationTile
   name: tiles-office-carpet-floor
-  sprite: /Textures/_Moffstation/Tiles/carpetoffice.png # Moffstation
+  sprite: /Textures/Tiles/carpetoffice.png
   footstepSounds:
     collection: FootstepCarpet
   barestepSounds:
@@ -208,7 +193,7 @@
   id: FloorBoxing
   parent: BaseStationTile
   name: tiles-boxing-ring-floor
-  sprite: /Textures/_Moffstation/Tiles/boxing.png # Moffstation
+  sprite: /Textures/Tiles/boxing.png
   variants: 4
   friction: 1.25
   itemDrop: FloorTileItemBoxing
@@ -227,7 +212,7 @@
   id: FloorGold
   parent: BaseStationTile
   name: tiles-gold-tile
-  sprite: /Textures/_Moffstation/Tiles/gold.png # Moffstation
+  sprite: /Textures/Tiles/gold.png
   footstepSounds:
     collection: FootstepTile
   itemDrop: FloorTileItemGold
@@ -236,7 +221,7 @@
   id: FloorSilver
   parent: BaseStationTile
   name: tiles-silver-tile
-  sprite: /Textures/_Moffstation/Tiles/silver.png # Moffstation
+  sprite: /Textures/Tiles/silver.png
   footstepSounds:
     collection: FootstepTile
   itemDrop: FloorTileItemSilver
@@ -295,8 +280,7 @@
   id: FloorWoodTile
   parent: BaseStationTile
   name: tiles-wood2
-  sprite: /Textures/_Moffstation/Tiles/wood_tile.png # Moff
-  variants: 4 # Moff
+  sprite: /Textures/Tiles/Wood/wood-tile.png
   footstepSounds:
     collection: FootstepWood
   barestepSounds:
@@ -307,7 +291,7 @@
   id: FloorBrokenWood
   parent: BaseStationTile
   name: tiles-wood3
-  sprite: /Textures/_Moffstation/Tiles/Wood/wood-broken.png # Moffstation
+  sprite: /Textures/Tiles/Wood/wood-broken.png
   variants: 7
   footstepSounds:
     collection: FootstepWood
