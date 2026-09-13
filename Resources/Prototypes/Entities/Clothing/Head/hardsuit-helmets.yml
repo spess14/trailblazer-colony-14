@@ -134,23 +134,12 @@
       head:
       - state: equipped-head-light
         shader: unshaded
-      # Moffstation - Start - Add Hardsuits for Resomi.
-      head-resomi:
-      - state: equipped-head-light-resomi
-        shader: unshaded
-      # Moffstation - End - Add Hardsuits for Resomi.
   - type: Clothing
     clothingVisuals:
       head:
       - state: equipped-head
       - state: equipped-head-unshaded
         shader: unshaded
-      # Moffstation - Start - Add Hardsuits for Resomi.
-      head-resomi:
-      - state: equipped-head-resomi
-      - state: equipped-head-unshaded-resomi
-        shader: unshaded
-      # Moffstation - End - Add Hardsuits for Resomi.
   - type: PointLight
     radius: 6
     energy: 1 #Moffstation
@@ -186,32 +175,11 @@
       head:
       - state: equipped-head-light
         shader: unshaded
-      head-vox:
-      - state: equipped-head-light-vox
-        shader: unshaded
-      head-vulpkanin:
-      - state: equipped-head-light-vulpkanin
-        shader: unshaded
-      head-reptilian:
-      - state: equipped-head-light-reptilian
-        shader: unshaded
   - type: Clothing
     clothingVisuals:
       head:
       - state: equipped-head
       - state: equipped-head-unshaded
-        shader: unshaded
-      head-vox:
-      - state: equipped-head-vox
-      - state: equipped-head-unshaded-vox
-        shader: unshaded
-      head-vulpkanin:
-      - state: equipped-head-vulpkanin
-      - state: equipped-head-unshaded-vulpkanin
-        shader: unshaded
-      head-reptilian:
-      - state: equipped-head-reptilian
-      - state: equipped-head-unshaded-reptilian
         shader: unshaded
   # Moffstation - End
   - type: PressureProtection
@@ -405,32 +373,11 @@
       head:
       - state: equipped-head-light
         shader: unshaded
-      head-vox:
-      - state: equipped-head-light-vox
-        shader: unshaded
-      head-vulpkanin:
-      - state: equipped-head-light-vulpkanin
-        shader: unshaded
-      head-reptilian:
-      - state: equipped-head-light-reptilian
-        shader: unshaded
   - type: Clothing
     clothingVisuals:
       head:
       - state: equipped-head
       - state: equipped-head-unshaded
-        shader: unshaded
-      head-vox:
-      - state: equipped-head-vox
-      - state: equipped-head-unshaded-vox
-        shader: unshaded
-      head-vulpkanin:
-      - state: equipped-head-vulpkanin
-      - state: equipped-head-unshaded-vulpkanin
-        shader: unshaded
-      head-reptilian:
-      - state: equipped-head-reptilian
-      - state: equipped-head-unshaded-reptilian
         shader: unshaded
 # Moffstation - End
   - type: PressureProtection
@@ -515,32 +462,11 @@
       head:
       - state: equipped-head-light
         shader: unshaded
-      head-vox:
-      - state: equipped-head-light-vox
-        shader: unshaded
-      head-vulpkanin:
-      - state: equipped-head-light-vulpkanin
-        shader: unshaded
-      head-reptilian:
-      - state: equipped-head-light-reptilian
-        shader: unshaded
   - type: Clothing
     clothingVisuals:
       head:
       - state: equipped-head
       - state: equipped-head-unshaded
-        shader: unshaded
-      head-vox:
-      - state: equipped-head-vox
-      - state: equipped-head-unshaded-vox
-        shader: unshaded
-      head-vulpkanin:
-      - state: equipped-head-vulpkanin
-      - state: equipped-head-unshaded-vulpkanin
-        shader: unshaded
-      head-reptilian:
-      - state: equipped-head-reptilian
-      - state: equipped-head-unshaded-reptilian
         shader: unshaded
   - type: PointLight
     color: "DodgerBlue"
@@ -578,32 +504,11 @@
       head:
       - state: equipped-head-light
         shader: unshaded
-      head-vox:
-      - state: equipped-head-light-vox
-        shader: unshaded
-      head-vulpkanin:
-      - state: equipped-head-light-vulpkanin
-        shader: unshaded
-      head-reptilian:
-      - state: equipped-head-light-reptilian
-        shader: unshaded
   - type: Clothing
     clothingVisuals:
       head:
       - state: equipped-head
       - state: equipped-head-unshaded
-        shader: unshaded
-      head-vox:
-      - state: equipped-head-vox
-      - state: equipped-head-unshaded-vox
-        shader: unshaded
-      head-vulpkanin:
-      - state: equipped-head-vulpkanin
-      - state: equipped-head-unshaded-vulpkanin
-        shader: unshaded
-      head-reptilian:
-      - state: equipped-head-reptilian
-      - state: equipped-head-unshaded-reptilian
         shader: unshaded
   - type: PointLight
     radius: 6
@@ -1110,15 +1015,6 @@
       head:
       - state: equipped-head-light
         shader: unshaded
-      head-vox:
-      - state: equipped-head-light-vox
-        shader: unshaded
-      head-vulpkanin:
-      - state: equipped-head-light-vulpkanin
-        shader: unshaded
-      head-reptilian:
-      - state: equipped-head-light-reptilian
-        shader: unshaded
 # Moffstation - End
   - type: Clothing
     equipSound: /Audio/Mecha/mechmove03.ogg
@@ -1128,18 +1024,6 @@
       head:
       - state: equipped-head
       - state: equipped-head-unshaded
-        shader: unshaded
-      head-vox:
-      - state: equipped-head-vox
-      - state: equipped-head-unshaded-vox
-        shader: unshaded
-      head-vulpkanin:
-      - state: equipped-head-vulpkanin
-      - state: equipped-head-unshaded-vulpkanin
-        shader: unshaded
-      head-reptilian:
-      - state: equipped-head-reptilian
-      - state: equipped-head-unshaded-reptilian
         shader: unshaded
   # Moffstation - End
   - type: PointLight
@@ -1181,32 +1065,11 @@
       head:
       - state: equipped-head-light
         shader: unshaded
-      head-vox:
-      - state: equipped-head-light-vox
-        shader: unshaded
-      head-vulpkanin:
-      - state: equipped-head-light-vulpkanin
-        shader: unshaded
-      head-reptilian:
-      - state: equipped-head-light-reptilian
-        shader: unshaded
   - type: Clothing
     clothingVisuals:
       head:
       - state: equipped-head
       - state: equipped-head-unshaded
-        shader: unshaded
-      head-vox:
-      - state: equipped-head-vox
-      - state: equipped-head-unshaded-vox
-        shader: unshaded
-      head-vulpkanin:
-      - state: equipped-head-vulpkanin
-      - state: equipped-head-unshaded-vulpkanin
-        shader: unshaded
-      head-reptilian:
-      - state: equipped-head-reptilian
-      - state: equipped-head-unshaded-reptilian
         shader: unshaded
 # Moffstation - End - New Hardsuit Sprites
   - type: PointLight
