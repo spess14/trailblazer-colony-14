@@ -4,3 +4,12 @@
   completetime: 1
   materials:
     Cloth: 300
+
+- type: latheRecipe
+  id: Cloth
+  result: MaterialCloth1
+  categories:
+  - Materials
+  completetime: 1
+  materials:
+    Cotton: 100
