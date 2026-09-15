@@ -1,0 +1,22 @@
+{
+    "version": 1,
+    "license": "CC-BY-SA-3.0",
+    "copyright": "modifier from towercap.rsi by murphyneko",
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+    "states": [
+        {
+            "name": "logbundle"
+        },
+        {
+            "name": "logbundle-inhand-left",
+            "directions": 4
+        },
+        {
+            "name": "logbundle-inhand-right",
+            "directions": 4
+        }
+    ]
+}

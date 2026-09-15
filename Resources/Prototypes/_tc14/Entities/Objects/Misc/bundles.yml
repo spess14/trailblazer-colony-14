@@ -1,0 +1,50 @@
+- type: entity
+  id: LogBundle
+  name: tower-cap log bundle
+  parent: BaseItem
+  description: Four logs bundled together.
+  components:
+  - type: Sprite
+    sprite: _tc14/Objects/Items/logbundle.rsi
+    state: logbundle
+  - type: Item
+    size: Large
+  - type: ToolRefinable
+    qualityNeeded: Slicing
+    refineResult:
+    - id: Log
+      amount: 4
+  - type: Construction
+    graph: CharcoalBundle
+    node: bundle
+  - type: AtmosExposed
+  - type: Temperature
+    heatCapacity: 15000
+  - type: TemperatureDamage
+  - type: InternalTemperature
+
+- type: entity
+  parent: Coal
+  id: Coal4
+  suffix: Four
+  components:
+  - type: Stack
+    count: 4
+  # TC14 - Begin - charcoal
+  - type: Construction
+    graph: Charcoal
+    node: charcoal
+  # TC14 - End
+
+- type: entity
+  parent: Coal
+  id: Coal16
+  suffix: Sixteen
+  components:
+  - type: Stack
+    count: 16
+  # TC14 - Begin - charcoal
+  - type: Construction
+    graph: CharcoalBundle
+    node: charcoal
+  # TC14 - End

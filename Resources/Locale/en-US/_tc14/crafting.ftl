@@ -2,3 +2,4 @@
 construction-graph-tag-flaking-rock = a flaking rock
 construction-graph-tag-handle = a wooden handle
 construction-graph-tag-anvil = an anvil
+construction-graph-tag-log = a log

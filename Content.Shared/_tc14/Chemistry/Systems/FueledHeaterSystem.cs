@@ -1,3 +1,4 @@
+using System.Linq;
 using Content.Shared._tc14.Chemistry.Components;
 using Content.Shared.Chemistry.Components.SolutionManager;
 using Content.Shared.Chemistry.EntitySystems;
@@ -28,12 +29,13 @@ public sealed partial class FueledHeaterSystem : EntitySystem
 
     private void UpdateHeater(EntityUid uid, FueledHeaterComponent heater, ItemPlacerComponent placer, float frameTime)
     {
-        var entityCount = placer.PlacedEntities.Count;
+        var entityCount = placer.PlacedEntities.Count(HasComp<TemperatureComponent>);
+        var solutionCount = placer.PlacedEntities.Count(e => _solution.EnumerateSolutions(e).Any());
         foreach (var heatingEntity in placer.PlacedEntities)
         {
             foreach (var (_, soln) in _solution.EnumerateSolutions(heatingEntity))
             {
-                var solutionEnergy = heater.SolutionHeatPerSecond * frameTime / entityCount;
+                var solutionEnergy = heater.SolutionHeatPerSecond * frameTime / solutionCount;
                 _solution.AddThermalEnergyClamped(soln, solutionEnergy, 0, heater.MaxTemp);
             }
         }

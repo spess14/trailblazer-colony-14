@@ -1,4 +1,3 @@
-# cooked meat patty
 - type: constructionGraph
   id: Charcoal
   start: start
@@ -12,4 +11,45 @@
       steps:
       - minTemperature: 310
   - node: charcoal
-    entity: Coal1
+    entity: Coal4
+
+- type: constructionGraph
+  id: CharcoalBundle
+  start: start
+  graph:
+  - node: start
+    edges:
+    - to: bundle
+      steps:
+      - tag: Log
+        name: construction-graph-tag-log
+        doAfter: 1
+      - tag: Log
+        name: construction-graph-tag-log
+        doAfter: 1
+      - tag: Log
+        name: construction-graph-tag-log
+        doAfter: 1
+      - tag: Log
+        name: construction-graph-tag-log
+        doAfter: 1
+  - node: bundle
+    entity: LogBundle
+    edges:
+    - to: charcoal
+      completed:
+      - !type:PlaySound
+        sound: /Audio/Effects/sizzle.ogg
+      steps:
+      - minTemperature: 310
+  - node: charcoal
+    entity: Coal16
+
+- type: construction
+  id: LogBundle
+  graph: CharcoalBundle
+  startNode: start
+  targetNode: bundle
+  category: construction-category-materials
+  objectType: Item
+

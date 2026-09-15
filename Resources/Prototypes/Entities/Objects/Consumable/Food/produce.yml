@@ -222,6 +222,9 @@
     heatCapacity: 15000
   - type: TemperatureDamage
   - type: InternalTemperature
+  - type: Tag
+    tags:
+      - Log
   # TC14 - End
 
 - type: entity

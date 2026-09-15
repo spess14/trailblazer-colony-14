@@ -13,6 +13,9 @@
   id: Handle
 
 - type: Tag
+  id: Log
+
+- type: Tag
   id: PlanetRuin
 
 - type: Tag
