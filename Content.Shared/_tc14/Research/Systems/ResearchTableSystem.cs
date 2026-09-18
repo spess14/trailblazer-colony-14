@@ -3,6 +3,7 @@ using Content.Shared._tc14.Research.Prototypes;
 using Content.Shared.Research.Components;
 using Content.Shared.Research.Systems;
 using Content.Shared.UserInterface;
+using Robust.Shared.Audio.Systems;
 using Robust.Shared.Network;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
@@ -15,6 +16,7 @@ namespace Content.Shared._tc14.Research.Systems;
 public sealed partial class ResearchTableSystem : EntitySystem
 {
     [Dependency] private IGameTiming _timing = default!;
+    [Dependency] private SharedAudioSystem _audio = default!;
     [Dependency] private IPrototypeManager _protoMan = default!;
     [Dependency] private SharedUserInterfaceSystem _uiSystem = default!;
     [Dependency] private BlueprintSystem _blueprintSystem = default!;
@@ -41,6 +43,7 @@ public sealed partial class ResearchTableSystem : EntitySystem
         var blueprint = Spawn("TCBlueprint", Transform(ent).Coordinates);
         var blueprintComp = EnsureComp<BlueprintComponent>(blueprint);
         _blueprintSystem.SetBlueprintRecipes((blueprint, blueprintComp), proto.UnlockedRecipes);
+        _audio.PlayPvs(ent.Comp.PrintedSound, ent);
     }
 
     private void OnBeforeUiOpened(Entity<ResearchTableComponent> ent, ref BeforeActivatableUIOpenEvent args)

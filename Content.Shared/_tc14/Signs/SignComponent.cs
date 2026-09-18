@@ -1,3 +1,4 @@
+using Robust.Shared.Audio;
 using Robust.Shared.GameStates;
 using Robust.Shared.Utility;
 
@@ -44,4 +45,16 @@ public sealed partial class SignComponent : Component
     /// </summary>
     [DataField, AutoNetworkedField]
     public LocId DialogPrompt = "sign-dialog-prompt";
+
+    /// <summary>
+    /// LocId that is used for the popup when the text is changed.
+    /// </summary>
+    [DataField, AutoNetworkedField]
+    public LocId PopupLoc = "sign-popup";
+
+    /// <summary>
+    /// Audio that plays when changing text.
+    /// </summary>
+    [DataField, AutoNetworkedField]
+    public SoundSpecifier? ChangedTextSound = new SoundCollectionSpecifier("PaperScribbles", AudioParams.Default.WithVariation(0.1f));
 }
