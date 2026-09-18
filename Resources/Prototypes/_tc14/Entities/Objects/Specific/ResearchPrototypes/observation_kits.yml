@@ -23,3 +23,16 @@
     interfaces:
       enum.ResearchKitUiKey.Key:
         type: ResearchKitBoundUserInterface
+
+- type: entity
+  parent: ResearchKit
+  id: ResearchKitDebug
+  suffix: DEBUG
+  name: book of knowledge
+  components:
+  - type: TCResearchPointSource
+    storedPoints:
+      DisciplineIndustrial: 99999
+      DisciplineMilitary: 99999
+      DisciplineBiosocial: 99999
+      DisciplineMedical: 99999

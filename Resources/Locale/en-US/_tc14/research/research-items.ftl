@@ -18,3 +18,4 @@ tc-research-rnd-name = R&D
 # Industrial
 tc-research-electricity-name = Electricity
 tc-research-fabrication-name = Fabrication
+tc-research-batteries-name = Improved Batteries

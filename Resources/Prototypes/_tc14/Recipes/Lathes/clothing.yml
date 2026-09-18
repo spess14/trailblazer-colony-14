@@ -13,3 +13,39 @@
   completetime: 1
   materials:
     Cotton: 100
+
+- type: latheRecipe
+  id: PlantBag
+  result: PlantBag
+  categories:
+  - Utility
+  completetime: 1
+  materials:
+    Cloth: 500
+
+- type: latheRecipe
+  id: OreBag
+  result: OreBag
+  categories:
+  - Utility
+  completetime: 1
+  materials:
+    Cloth: 500
+
+- type: latheRecipe
+  id: ChemBag
+  result: ChemBag
+  categories:
+  - Utility
+  completetime: 1
+  materials:
+    Cloth: 500
+
+- type: latheRecipe
+  id: BooksBag
+  result: BooksBag
+  categories:
+  - Utility
+  completetime: 1
+  materials:
+    Cloth: 500

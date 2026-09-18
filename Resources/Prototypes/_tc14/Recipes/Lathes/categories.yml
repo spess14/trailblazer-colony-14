@@ -5,3 +5,7 @@
 - type: latheCategory
   id: Topicals
   name: lathe-category-topicals
+
+- type: latheCategory
+  id: Utility
+  name: lathe-category-utility

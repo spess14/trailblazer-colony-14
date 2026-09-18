@@ -3,7 +3,7 @@
   name: tc-research-electricity-name
   discipline: DisciplineIndustrial
   iconPrototype: SMESBasic
-  gridLocation: 0,1
+  gridLocation: 0,2
   unlockedRecipes:
   - DoorElectronics
   - SignalTimerElectronics
@@ -23,7 +23,7 @@
   name: tc-research-fabrication-name
   discipline: DisciplineIndustrial
   iconPrototype: Protolathe
-  gridLocation: 1,1
+  gridLocation: 1,2
   dependencies:
   - ResearchElectricity
   unlockedRecipes:
@@ -33,3 +33,15 @@
   - ExosuitFabricatorMachineCircuitboard
   - CutterMachineCircuitboard
   - BorgChargerCircuitboard
+
+- type: researchEntry
+  id: ResearchBatteries
+  name: tc-research-batteries-name
+  discipline: DisciplineIndustrial
+  iconPrototype: PowerCellHigh
+  gridLocation: 0,3
+  dependencies:
+  - ResearchElectricity
+  unlockedRecipes:
+  - PowerCellHigh
+  - PowerCellHyper

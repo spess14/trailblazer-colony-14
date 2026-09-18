@@ -3,7 +3,7 @@
   name: tc-research-agriculture-name
   discipline: DisciplineBiosocial
   iconPrototype: FoodTomato
-  gridLocation: 0,2
+  gridLocation: 0,4
   unlockedRecipes:
   - HydroponicsToolMiniHoe
   - HydroponicsToolScythe
@@ -16,7 +16,7 @@
   name: tc-research-botany-name
   discipline: DisciplineBiosocial
   iconPrototype: SeedExtractor
-  gridLocation: 1,2
+  gridLocation: 1,4
   dependencies:
   - ResearchAgriculture
   - ResearchElectricity

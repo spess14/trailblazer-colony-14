@@ -12,5 +12,9 @@
 - type: latheRecipePack
   id: TCClothing
   recipes:
+  - PlantBag
+  - OreBag
+  - ChemBag
+  - BooksBag
   - ClothingBeltSheath
   - Cloth
