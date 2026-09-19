@@ -10,8 +10,9 @@
     layers:
     - state: stunbaton_off
       map: [ "enum.ToggleableVisuals.Layer" ]
-  - type: Stunbaton
-    energyPerUse: 50
+  - type: ItemToggleExaminableStatus
+  - type: ItemToggleRequiresCharge
+    requiredCharge: 50
   - type: ItemToggle
     onActivate: false
 # ES START
@@ -42,6 +43,11 @@
         Blunt: 7
     bluntStaminaDamageFactor: 2.0
     angle: 60
+    animation: WeaponArcThrust
+  - type: MeleeBatteryHitsLeft
+  - type: StaminaDamageOnHitRequiresToggle
+  - type: StaminaDamageOnHitRequiresCharge
+    requiredCharge: 50
     wideAnimation: WeaponArcThrust
 # ES START
   - type: ESSparkOnItemToggle
@@ -97,6 +103,9 @@
     guides:
     - Security
     - Antagonists
+  - type: Tag
+    tags:
+    - Stunbaton
 
 - type: entity
   name: truncheon
