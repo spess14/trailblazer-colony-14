@@ -1214,6 +1214,8 @@ WindoorAssemblySecure: WindoorAssembly
 WindoorAssemblySecurePlasma: WindoorAssemblyPlasma
 WindoorAssemblySecureUranium: WindoorAssemblyUranium
 
+WindoorSecureFreelanceLocked: WindoorFreelanceLocked # Moff
+
 # Moff - we are reversing this because we dont have it yet
 #LightReplacer: LightReplacerFilled
 LightReplacerFilled: LightReplacer
