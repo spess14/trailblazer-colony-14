@@ -1,14 +1,13 @@
-﻿- type: entity
+- type: entity
   abstract: true
-  parent: BaseStructure
+  parent: [ BaseStructure, StructureHealthFurnitureStrong ]
   id: BaseStatue
   components:
   - type: Sprite
+    noRot: true
     drawdepth: Mobs
   - type: Damageable
-    damageModifierSet: Rock
-  - type: Injurable
-    damageContainer: StructuralInorganic
+    damageModifierSet: RockMod
   - type: Destructible
     thresholds:
     - trigger:
@@ -18,8 +17,6 @@
       - !type:PlaySoundBehavior
         sound:
           path: /Audio/Effects/break_stone.ogg
-      - !type:DoActsBehavior
-        acts: [ "Destruction" ]
 
 - type: entity
   parent: BaseStatue
@@ -36,8 +33,8 @@
     offset: "0.0,0.5"
 
 - type: entity
+  parent: BaseStatue
   id: StatueVenusBlue
-  parent: BaseStructure
   name: statue of a pure maiden
   suffix: Blue
   description: An ancient marble statue. The subject is depicted with a floor-length braid and is wielding a blue toolbox.
@@ -51,64 +48,36 @@
 
 - type: entity
   parent: BaseStatue
-  id: StatueOrnateClown
-  name: ornate savior statue
-  description: A gilded statue. It portrays the return of the savior who will rise up and lead the clowns to the great honk.
+  id: StatueBananiumClown
+  name: bananium savior statue
+  description: A bananium statue. It portrays the return of the savior who will rise up and lead the clowns to the great honk.
   components:
-  - type: Transform
-    noRot: true
   - type: Sprite
-    sprite: Structures/Decoration/statue-ornate-clown.rsi
-    state: icon
+    noRot: true
+    sprite: Structures/Decoration/statues.rsi
+    state: bananium_clown
     drawdepth: Mobs
-    offset: "0.0,0.3125"
+    offset: "0.0,0.5"
   - type: Construction
-    graph: OrnateStatueClown
-    node: ornateStatueClown
+    graph: BananiumStatueClown
+    node: bananiumStatue
   - type: Damageable
-    damageModifierSet: Metallic # Moff - PreciousMetalMod comes from a later upstream PR
-  - type: SpriteFade
-  - type: Fixtures
-    fixtures:
-      fix1:
-        shape:
-          !type:PhysShapeAabb
-          bounds: "-0.4,-0.25,0.4,0.45"
-        density: 60
-        mask:
-        - MachineMask
-        layer:
-        - MidImpassable
-        - LowImpassable
+    damageModifierSet: BananiumMod
 
 # Ironsand Statues
 
 - type: entity
   abstract: true
-  parent: BaseStructure
+  parent: BaseStatue
   id: BaseIronsandStatue
   description: A mysterious statue found in a desert of iron sand.
   components:
-  - type: Sprite
-    noRot: true
-    drawdepth: Mobs
-  - type: Damageable
-    damageModifierSet: Rock
-  - type: Injurable
-    damageContainer: StructuralInorganic
   - type: Destructible
     thresholds:
     - trigger:
         !type:DamageTrigger
-        damage: 100
+        damage: 80
       behaviors:
-      - !type:PlaySoundBehavior
-        sound:
-          path: /Audio/Effects/break_stone.ogg
-          params:
-            volume: -6
-      - !type:DoActsBehavior
-        acts: [ "Destruction" ]
       - !type:SpawnEntitiesBehavior
         spawn:
           SteelOre1:

@@ -44,7 +44,7 @@
       types:
         Slash: 15
         Heat: 15
-        Structural: 20
+        Structural: 12
   - type: MeleeWeapon
     wideAnimationRotation: -135
     attackRate: 1
@@ -276,7 +276,7 @@
           # Moffstation - Start - e-cutlass buff
             Slash: 12
             Heat: 12
-            Structural: 20
+            Structural: 10 # 40% bonus damage to structures, based on esword
           # Moffstation - End
     deactivatedSecret: true
   - type: Sprite
@@ -319,7 +319,6 @@
         types:
             Slash: 12
             Heat: 12
-            Structural: 15
   - type: ItemToggleActiveSound
     activeSound:
       path: /Audio/Weapons/ebladehum.ogg
@@ -384,7 +383,7 @@
       types:
         Slash: 20
         Heat: 20
-        Structural: 40 # Moffstation adjustment - previously 20
+        Structural: 16 # Moff - 40% bonus damage to structures, based on esword
   - type: MeleeRequiresWield
   - type: HeldSpeedModifier #slowdown is what balances this compared to a dsword
     walkModifier: 0.70 # Moffstation adjustment - previously .6
