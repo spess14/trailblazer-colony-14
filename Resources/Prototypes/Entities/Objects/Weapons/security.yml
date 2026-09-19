@@ -48,7 +48,6 @@
   - type: StaminaDamageOnHitRequiresToggle
   - type: StaminaDamageOnHitRequiresCharge
     requiredCharge: 50
-    wideAnimation: WeaponArcThrust
 # ES START
   - type: ESSparkOnItemToggle
     count: 1
