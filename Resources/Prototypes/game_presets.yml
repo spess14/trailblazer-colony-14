@@ -253,7 +253,7 @@
   rules:
   - Xenoborgs
   - DummyNonAntagChance
-  - SubGamemodesRuleNoWizardNoXenoborg # no two motherships
+  - SubGamemodesRuleNoWizard # Moff - Expanded subantags
   # Moff Start - Split into the calm and spicy schedulers below
   # - BasicStationEventScheduler
   - MoffCalmStationEventScheduler
