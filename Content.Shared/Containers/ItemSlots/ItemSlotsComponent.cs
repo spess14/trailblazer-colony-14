@@ -181,18 +181,21 @@ public sealed partial class ItemSlot
     /// The popup shown when a standard insertion interaction uses an item rejected by this slot's filters.
     /// </summary>
     [DataField]
+    [Access(typeof(ItemSlotsSystem), Other = AccessPermissions.ReadWriteExecute)] // Moffstation - Allow setting from foreign systems
     public LocId? WhitelistFailPopup;
 
     /// <summary>
     /// The popup shown when a standard interaction tries to insert into or eject from this slot while it is locked.
     /// </summary>
     [DataField]
+    [Access(typeof(ItemSlotsSystem), Other = AccessPermissions.ReadWriteExecute)] // Moffstation - Allow setting from foreign systems
     public LocId? LockedFailPopup;
 
     /// <summary>
     /// The popup shown after a successful standard insertion interaction, including a swap.
     /// </summary>
     [DataField]
+    [Access(typeof(ItemSlotsSystem), Other = AccessPermissions.ReadWriteExecute)] // Moffstation - Allow setting from foreign systems
     public LocId? InsertSuccessPopup;
 
     /// <summary>
