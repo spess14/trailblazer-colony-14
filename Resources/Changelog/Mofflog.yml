@@ -8244,5 +8244,14 @@ Entries:
   id: 1933
   time: '2026-09-22T19:02:46.000'
   url: https://github.com/moff-station/moff-station-14/pull/1933
+- author: Centronias
+  changes:
+  - message: Fixed Ichabod's Head.
+    type: fix
+  - message: You can now see Ichabod's head in-hand while holding it. You monster.
+    type: add
+  id: 1947
+  time: '2026-09-22T21:17:23.000'
+  url: https://github.com/moff-station/moff-station-14/pull/1947
 Name: Mofflog
 Order: -2
