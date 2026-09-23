@@ -2,19 +2,16 @@ using System.Linq;
 using System.Numerics;
 using Content.Server._tc14.StationEvents.Components;
 using Content.Server.GameTicking;
-using Content.Server.Pinpointer;
-using Content.Server.Station.Components;
 using Content.Server.StationEvents.Events;
 using Content.Shared.EntityTable;
 using Content.Shared.GameTicking.Components;
 using Content.Shared.Humanoid;
 using Content.Shared.Maps;
-using Content.Shared.Objectives.Systems;
 using Content.Shared.Physics;
+using Content.Shared.Station.Components;
 using Robust.Shared.Map;
 using Robust.Shared.Map.Components;
 using Robust.Shared.Random;
-using Robust.Shared.Timing;
 
 namespace Content.Server._tc14.StationEvents.Events;
 

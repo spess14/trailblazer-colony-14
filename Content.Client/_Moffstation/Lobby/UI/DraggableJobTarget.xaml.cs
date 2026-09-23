@@ -1,7 +1,7 @@
 using System.Collections.Immutable;
 using System.Linq;
 using System.Numerics;
-using Content.Client._Moffstation.ReadyManifest;
+//using Content.Client._Moffstation.ReadyManifest; TC14 - removed
 using Content.Shared._Moffstation.Extensions;
 using Content.Shared.Preferences;
 using Content.Shared.Roles;
