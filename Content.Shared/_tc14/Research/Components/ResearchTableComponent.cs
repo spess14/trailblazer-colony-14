@@ -1,4 +1,5 @@
 using Content.Shared._tc14.Research.Prototypes;
+using Robust.Shared.Audio;
 using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom;
@@ -26,12 +27,18 @@ public sealed partial class ResearchTableComponent : Component
     /// <summary>
     /// Time at which the table will be able to make another blueprint.
     /// </summary>
-    [DataField(customTypeSerializer: typeof(TimeOffsetSerializer))]
+    [DataField(customTypeSerializer: typeof(TimeOffsetSerializer)), AutoNetworkedField]
     public TimeSpan NextPrintTime = TimeSpan.Zero;
 
     /// <summary>
     /// The time between prints.
     /// </summary>
-    [DataField]
+    [DataField, AutoNetworkedField]
     public TimeSpan PrintDelay = TimeSpan.FromSeconds(5);
+
+    /// <summary>
+    /// Audio that plays when printing a blueprint.
+    /// </summary>
+    [DataField, AutoNetworkedField]
+    public SoundSpecifier? PrintedSound = new SoundCollectionSpecifier("PaperScribbles", AudioParams.Default.WithVariation(0.1f));
 }
