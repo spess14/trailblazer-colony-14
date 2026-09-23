@@ -7,7 +7,6 @@
     TCWallRock: TCWallRockTin
     AsteroidRock: AsteroidRockTin
     WallRock: WallRockTin
-    WallRockBasalt: WallRockBasaltTin
     WallRockChromite: WallRockChromiteTin
     WallRockSand: WallRockSandTin
     WallRockSnow: WallRockSnowTin
@@ -22,7 +21,6 @@
     TCWallRock: TCWallRockQuartz
     AsteroidRock: AsteroidRockQuartz
     WallRock: WallRockQuartz
-    WallRockBasalt: WallRockBasaltQuartz
     WallRockChromite: WallRockChromiteQuartz
     WallRockSnow: WallRockSnowQuartz
   maxCount: 30
@@ -36,7 +34,6 @@
     TCWallRock: TCWallRockCoal
     AsteroidRock: AsteroidRockCoal
     WallRock: WallRockCoal
-    WallRockBasalt: WallRockBasaltCoal
     WallRockChromite: WallRockChromiteCoal
     WallRockSand: WallRockSandCoal
     WallRockSnow: WallRockSnowCoal
@@ -51,7 +48,6 @@
     TCWallRock: TCWallRockSalt
     AsteroidRock: AsteroidRockSalt
     WallRock: WallRockSalt
-    WallRockBasalt: WallRockBasaltSalt
     WallRockChromite: WallRockChromiteSalt
     WallRockSand: WallRockSandSalt
     WallRockSnow: WallRockSnowSalt
@@ -68,7 +64,6 @@
     TCWallRock: TCWallRockGold
     AsteroidRock: AsteroidRockGold
     WallRock: WallRockGold
-    WallRockBasalt: WallRockBasaltGold
     WallRockChromite: WallRockChromiteGold
     WallRockSand: WallRockSandGold
     WallRockSnow: WallRockSnowGold
@@ -84,7 +79,6 @@
     TCWallRock: TCWallRockSilver
     AsteroidRock: AsteroidRockSilver
     WallRock: WallRockSilver
-    WallRockBasalt: WallRockBasaltSilver
     WallRockChromite: WallRockChromiteSilver
     WallRockSand: WallRockSandSilver
     WallRockSnow: WallRockSnowSilver
@@ -101,7 +95,6 @@
     TCWallRock: TCWallRockPlasma
     AsteroidRock: AsteroidRockPlasma
     WallRock: WallRockPlasma
-    WallRockBasalt: WallRockBasaltPlasma
     WallRockChromite: WallRockChromitePlasma
     WallRockSand: WallRockSandPlasma
     WallRockSnow: WallRockSnowPlasma
@@ -117,7 +110,6 @@
     TCWallRock: TCWallRockUranium
     AsteroidRock: AsteroidRockUranium
     WallRock: WallRockUranium
-    WallRockBasalt: WallRockBasaltUranium
     WallRockChromite: WallRockChromiteUranium
     WallRockSand: WallRockSandUranium
     WallRockSnow: WallRockSnowUranium
@@ -132,7 +124,6 @@
     TCWallRock: TCWallRockDiamond
     AsteroidRock: AsteroidRockDiamond
     WallRock: WallRockDiamond
-    WallRockBasalt: WallRockBasaltDiamond
     WallRockChromite: WallRockChromiteDiamond
     WallRockSand: WallRockSandDiamond
     WallRockSnow: WallRockSnowDiamond
@@ -148,7 +139,6 @@
     TCWallRock: TCWallRockArtifactFragment
     AsteroidRock: AsteroidRockArtifactFragment
     WallRock: WallRockArtifactFragment
-    WallRockBasalt: WallRockBasaltArtifactFragment
     WallRockChromite: WallRockChromiteArtifactFragment
     WallRockSand: WallRockSandArtifactFragment
     WallRockSnow: WallRockSnowArtifactFragment
