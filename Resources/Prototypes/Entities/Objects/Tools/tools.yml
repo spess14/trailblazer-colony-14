@@ -504,6 +504,7 @@
   - type: StaticPrice
     price: 25
   - type: Shovel
+  - type: SoilDigger # TC14: bypass fuckass single event subscription restriction
 
 - type: entity
   parent: BaseItem

@@ -31,7 +31,7 @@ public sealed partial class SoilManagerSystem : EntitySystem
     public override void Initialize()
     {
         base.Initialize();
-        SubscribeLocalEvent<ShovelComponent, AfterInteractEvent>(OnShovelAfterInteract);
+        SubscribeLocalEvent<SoilDiggerComponent, AfterInteractEvent>(OnShovelAfterInteract);
         SubscribeLocalEvent<ToolComponent, AfterInteractEvent>(OnChiselAfterInteract);
     }
 
@@ -53,7 +53,7 @@ public sealed partial class SoilManagerSystem : EntitySystem
         return true;
     }
 
-    private void OnShovelAfterInteract(Entity<ShovelComponent> ent, ref AfterInteractEvent args)
+    private void OnShovelAfterInteract(Entity<SoilDiggerComponent> ent, ref AfterInteractEvent args)
     {
         if (!GetInteractedWithTileDef(ref args, out var tileRef))
             return;
@@ -65,7 +65,7 @@ public sealed partial class SoilManagerSystem : EntitySystem
 
         var doAfterArgs = new DoAfterArgs(EntityManager,
             args.User,
-            2f / ent.Comp.SpeedModifier,
+            2f,
             new SoilDigEvent
             {
                 SoilPrototypeName = tileDef.SoilPrototypeName.Value,
