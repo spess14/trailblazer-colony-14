@@ -8,48 +8,6 @@
   weather: true
   indestructible: true
 
-- type: tile
-  id: FloorPlanetDirt
-  parent: BaseFloorPlanet
-  name: tiles-dirt-planet-floor
-  sprite: /Textures/Tiles/Planet/dirt.rsi/dirt.png
-  variants: 4
-
-# Desert
-- type: tile
-  id: FloorDesert
-  parent: BaseFloorPlanet
-  name: tiles-desert-floor
-  sprite: /Textures/Tiles/Planet/Desert/desert.png
-  variants: 6
-
-- type: tile
-  id: FloorLowDesert
-  name: tiles-low-desert-floor
-  sprite: /Textures/Tiles/Planet/Desert/low_desert.png
-  variants: 6
-
-# Grass
-- type: tile
-  id: FloorPlanetGrass
-  parent: BaseFloorPlanet
-  name: tiles-grass-planet-floor
-  sprite: /Textures/Tiles/Planet/Grass/grass.png
-  variants: 4
-  edgeSpritePriority: 1
-  edgeSprites:
-    SouthEast: /Textures/Tiles/Planet/Grass/single_edge.png
-    NorthEast: /Textures/Tiles/Planet/Grass/single_edge.png
-    NorthWest: /Textures/Tiles/Planet/Grass/single_edge.png
-    SouthWest: /Textures/Tiles/Planet/Grass/single_edge.png
-    South: /Textures/Tiles/Planet/Grass/double_edge.png
-    East: /Textures/Tiles/Planet/Grass/double_edge.png
-    North: /Textures/Tiles/Planet/Grass/double_edge.png
-    West: /Textures/Tiles/Planet/Grass/double_edge.png
-  baseTurf: FloorPlanetDirt
-  footstepSounds:
-    collection: FootstepGrass
-
 # Lava
 - type: tile
   id: FloorBasalt

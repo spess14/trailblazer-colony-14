@@ -13,5 +13,5 @@
         amount: 4
         doAfter: 5
   - node: wall
-    entity: WallCobblebrick
+    entity: WallConcrete
 
