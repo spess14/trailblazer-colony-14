@@ -28,10 +28,10 @@ public sealed class CharacterInfoEvent : EntityEventArgs
     public readonly Dictionary<string, List<ObjectiveInfo>> Objectives;
     public readonly string? Briefing;
     public readonly Dictionary<ProtoId<CollectiveMindPrototype>, CollectiveMindMemberData>? CollectiveMinds; // Starlight - Collective Minds
-    public readonly Dictionary<ProtoId<SkillPrototype>, FixedPoint2> Skills;
+    public readonly Dictionary<ProtoId<SkillPrototype>, FixedPoint4> Skills;
 
     public CharacterInfoEvent(NetEntity netEntity, Dictionary<string, List<ObjectiveInfo>> objectives, string? briefing, ProtoId<JobPrototype>? job, Dictionary<ProtoId<CollectiveMindPrototype>, CollectiveMindMemberData>? collectiveMinds,
-        Dictionary<ProtoId<SkillPrototype>, FixedPoint2> skills) // Starlight - Collective Minds
+        Dictionary<ProtoId<SkillPrototype>, FixedPoint4> skills) // Starlight - Collective Minds
     {
         NetEntity = netEntity;
         Objectives = objectives;

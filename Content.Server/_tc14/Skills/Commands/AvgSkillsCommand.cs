@@ -24,7 +24,7 @@ public sealed partial class AvgSkillsCommand : IConsoleCommand
         {
             case 0:
                 var players = 0;
-                var totalSkills = new Dictionary<ProtoId<SkillPrototype>, FixedPoint2>();
+                var totalSkills = new Dictionary<ProtoId<SkillPrototype>, FixedPoint4>();
                 var query = _entManager.AllEntityQueryEnumerator<PlayerSkillsComponent, ActorComponent>();
                 while (query.MoveNext(out var comp, out _))
                 {

@@ -48,7 +48,7 @@ public sealed partial class PlayerSkillsSystem : EntitySystem
             return;
         if (args.Damage.GetTotal() <= 0)
             return;
-        var ev = new PlayerSkillActionEvent("SkillFinesse", args.Damage.GetTotal() * 0.005);
+        var ev = new PlayerSkillActionEvent("SkillFinesse", args.Damage.GetTotal().Float() * 0.005);
         RaiseLocalEvent(args.Origin.Value, ref ev);
     }
 
@@ -76,7 +76,7 @@ public sealed partial class PlayerSkillsSystem : EntitySystem
         }
         for (var i = 0; i < _skillPointsAmount; i++)
         {
-            AddSkillExperience(_random.Pick(passionList), uid, FixedPoint2.New(1));
+            AddSkillExperience(_random.Pick(passionList), uid, FixedPoint4.New(1));
         }
     }
 
@@ -96,7 +96,7 @@ public sealed partial class PlayerSkillsSystem : EntitySystem
     /// Returns the dictionary of skills. Use if you need all the skill data at once.
     /// </summary>
     [PublicAPI]
-    public Dictionary<ProtoId<SkillPrototype>, FixedPoint2>? GetSkills(EntityUid uid)
+    public Dictionary<ProtoId<SkillPrototype>, FixedPoint4>? GetSkills(EntityUid uid)
     {
         return !TryComp<PlayerSkillsComponent>(uid, out var comp) ? null : comp.Skills;
     }
@@ -105,7 +105,7 @@ public sealed partial class PlayerSkillsSystem : EntitySystem
     /// Get the experience in a specific skill.
     /// </summary>
     [PublicAPI]
-    public FixedPoint2? GetSkill(ProtoId<SkillPrototype> skillId, EntityUid uid)
+    public FixedPoint4? GetSkill(ProtoId<SkillPrototype> skillId, EntityUid uid)
     {
         return GetSkills(uid)?[skillId];
     }
@@ -114,13 +114,13 @@ public sealed partial class PlayerSkillsSystem : EntitySystem
     /// Directly set experience in a skill to a value. This must be used instead of directly setting it on a component.
     /// </summary>
     [PublicAPI]
-    public void SetSkillExperience(ProtoId<SkillPrototype> skillId, EntityUid uid, FixedPoint2 value)
+    public void SetSkillExperience(ProtoId<SkillPrototype> skillId, EntityUid uid, FixedPoint4 value)
     {
         if (!TryComp<PlayerSkillsComponent>(uid, out var comp))
             return;
         if (!_protoMan.Resolve(skillId, out var prototype))
             return;
-        comp.Skills[skillId] = FixedPoint2.Clamp(value, FixedPoint2.Zero, prototype.MaxLevel);
+        comp.Skills[skillId] = FixedPoint4.Clamp(value, FixedPoint4.Zero, prototype.MaxLevel);
         Dirty(uid, comp);
     }
 
@@ -128,7 +128,7 @@ public sealed partial class PlayerSkillsSystem : EntitySystem
     /// Adds experience to the skill.
     /// </summary>
     [PublicAPI]
-    public void AddSkillExperience(ProtoId<SkillPrototype> skillId, EntityUid uid, FixedPoint2 delta)
+    public void AddSkillExperience(ProtoId<SkillPrototype> skillId, EntityUid uid, FixedPoint4 delta)
     {
         if (!_protoMan.Resolve(skillId, out _))
         {
@@ -205,14 +205,14 @@ public sealed partial class PlayerSkillsSystem : EntitySystem
     }
 
     [PublicAPI]
-    public string GetReadableSkillValue(FixedPoint2 value)
+    public string GetReadableSkillValue(FixedPoint4 value)
     {
         return Loc.GetString("skills-skillvalue", ("x", value.Int()), ("y", (int) ((value - value.Int())*100)));
     }
 }
 
 [ByRefEvent]
-public sealed class PlayerSkillActionEvent(ProtoId<SkillPrototype> skill, FixedPoint2 skillPoints) : EntityEventArgs
+public sealed class PlayerSkillActionEvent(ProtoId<SkillPrototype> skill, FixedPoint4 skillPoints) : EntityEventArgs
 {
     /// <summary>
     /// What skill is the player getting points in?
@@ -222,5 +222,5 @@ public sealed class PlayerSkillActionEvent(ProtoId<SkillPrototype> skill, FixedP
     /// <summary>
     /// The amount of points the player is going to gain.
     /// </summary>
-    public readonly FixedPoint2 SkillPoints = skillPoints;
+    public readonly FixedPoint4 SkillPoints = skillPoints;
 }

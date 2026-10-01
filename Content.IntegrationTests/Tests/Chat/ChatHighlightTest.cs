@@ -47,7 +47,7 @@ public sealed class ChatHighlightTest : GameTest
             null,
             Captain,
             "John Doe",
-            new Dictionary<ProtoId<SkillPrototype>, FixedPoint2>() // TC14 - stub skill dict
+            new Dictionary<ProtoId<SkillPrototype>, FixedPoint4>() // TC14 - stub skill dict
         );
 
         var method = chatController.GetType().GetMethod(
@@ -133,7 +133,7 @@ public sealed class ChatHighlightTest : GameTest
             null,
             Captain,
             "John Doe",
-            new Dictionary<ProtoId<SkillPrototype>, FixedPoint2>() // TC14 - stub skill dict
+            new Dictionary<ProtoId<SkillPrototype>, FixedPoint4>() // TC14 - stub skill dict
         );
 
         var method = chatController.GetType().GetMethod(

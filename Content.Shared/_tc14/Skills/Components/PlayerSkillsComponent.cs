@@ -15,5 +15,5 @@ public sealed partial class PlayerSkillsComponent : Component
     /// Skill levels and progress towards them.
     /// </summary>
     [DataField, AutoNetworkedField]
-    public Dictionary<ProtoId<SkillPrototype>, FixedPoint2> Skills = new();
+    public Dictionary<ProtoId<SkillPrototype>, FixedPoint4> Skills = new();
 }

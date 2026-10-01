@@ -58,7 +58,7 @@ public sealed partial class CharacterInfoSystem : EntitySystem
         string? Briefing,
         ProtoId<JobPrototype>? JobId,
         string EntityName,
-        Dictionary<ProtoId<SkillPrototype>, FixedPoint2> Skills
+        Dictionary<ProtoId<SkillPrototype>, FixedPoint4> Skills
     );
 
     /// <summary>
