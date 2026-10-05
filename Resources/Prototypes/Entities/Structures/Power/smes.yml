@@ -112,11 +112,13 @@
       - PowerStorage
       - VoltageNetworks
       - Power
+    # TC14 - Start - remove access
     # Impstation - Start
-    - type: AccessReader
-      access: [["Engineering"]]
-    - type: ActivatableUIRequiresAccess
+#    - type: AccessReader
+#      access: [["Engineering"]]
+#    - type: ActivatableUIRequiresAccess
     # Impstation - End
+    # TC14 - End
     - type: StationAiWhitelist # Moffstation - Expanded Ai Whitelist
 
     # Interface

@@ -2,6 +2,7 @@ using System.Linq;
 using Content.Server.Power.Components;
 using Content.Server.Solar.Components;
 using Content.Shared.GameTicking;
+using Content.Shared.Light.EntitySystems;
 using Content.Shared.Physics;
 using JetBrains.Annotations;
 using Robust.Shared.Physics;
@@ -19,6 +20,7 @@ namespace Content.Server.Solar.EntitySystems
         [Dependency] private IRobustRandom _robustRandom = default!;
         [Dependency] private SharedPhysicsSystem _physicsSystem = default!;
         [Dependency] private SharedTransformSystem _transformSystem = default!;
+        [Dependency] private SharedRoofSystem _roofSystem = default!; // TC14 - Rework solars
 
         /// <summary>
         /// Maximum panel angular velocity range - used to stop people rotating panels fast enough that the lag prevention becomes noticable
@@ -51,7 +53,7 @@ namespace Content.Server.Solar.EntitySystems
         /// TODO: *Should be moved into the solar tracker when powernet allows for it.*
         /// The current target panel velocity.
         /// </summary>
-        public Angle TargetPanelVelocity = Angle.Zero;
+        public Angle TargetPanelVelocity = Angle.FromDegrees(1f / 60); // TC14 - Rework solars
 
         /// <summary>
         /// TODO: *Should be moved into the solar tracker when powernet allows for it.*
@@ -64,6 +66,11 @@ namespace Content.Server.Solar.EntitySystems
         /// </summary>
         private readonly Queue<Entity<SolarPanelComponent>> _updateQueue = new();
 
+        /// <summary>
+        /// Fixed coverage of solar panels, set in <see cref="SharedLightCycleSystem.cs"/>
+        /// </summary>
+        public float GlobalCoverage; // TC14 - Rework solars
+
         public override void Initialize()
         {
             SubscribeLocalEvent<SolarPanelComponent, MapInitEvent>(OnMapInit);
@@ -75,7 +82,7 @@ namespace Content.Server.Solar.EntitySystems
         {
             RandomizeSun();
             TargetPanelRotation = Angle.Zero;
-            TargetPanelVelocity = Angle.Zero;
+            TargetPanelVelocity = Angle.FromDegrees(1f / 60); // TC14 - Rework solars
             TotalPanelPower = 0;
         }
 
@@ -121,6 +128,13 @@ namespace Content.Server.Solar.EntitySystems
 
         private void UpdatePanelCoverage(Entity<SolarPanelComponent> panel)
         {
+            // TC14 - Begin - Rework solars
+            panel.Comp.Coverage = _roofSystem.IsRooved(panel) ? 0 : GlobalCoverage;
+            UpdateSupply(panel, panel);
+            return;
+            // TC14 - End
+
+#pragma warning disable CS0162 // Unreachable code detected
             var entity = panel.Owner;
             var xform = Comp<TransformComponent>(entity);
 
@@ -167,6 +181,7 @@ namespace Content.Server.Solar.EntitySystems
             // Total coverage calculated; apply it to the panel.
             panel.Comp.Coverage = coverage;
             UpdateSupply(panel, panel);
+#pragma warning restore CS0162 // Unreachable code detected
         }
 
         public void UpdateSupply(

@@ -8,3 +8,15 @@
     Steel: 3000
   icon:
     entity: RecyclerFlatpack
+
+- type: latheRecipe
+  parent: BaseToolRecipe
+  id: SolarAssemblyFlatpack
+  result: SolarAssemblyFlatpack
+  categories:
+  - Machines
+  materials:
+    Steel: 700
+    Glass: 200
+  icon:
+    entity: SolarAssemblyFlatpack

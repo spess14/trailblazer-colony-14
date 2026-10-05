@@ -30,11 +30,13 @@
     supplyRampTolerance: 5000
     supplyRampRate: 1000
   - type: StationInfiniteBatteryTarget
+  # TC14 - Start - remove access
   # Impstation - Start
-  - type: AccessReader
-    access: [["Engineering"]]
-  - type: ActivatableUIRequiresAccess
+#  - type: AccessReader
+#    access: [["Engineering"]]
+#  - type: ActivatableUIRequiresAccess
   # Impstation - End
+  # TC14 - End
 
   # Interface
   - type: BatteryInterface

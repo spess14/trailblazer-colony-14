@@ -12,8 +12,25 @@ namespace Content.Shared.Light.EntitySystems;
 public abstract partial class SharedRoofSystem : EntitySystem
 {
     [Dependency] private EntityLookupSystem _lookup = default!;
+    [Dependency] private SharedMapSystem _maps = default!; // TC14 - Roof changes
+    [Dependency] private TurfSystem _turf = default!; // TC14 - Roof changes
 
     private HashSet<Entity<IsRoofComponent>> _roofSet = new();
+
+    // TC14 - Begin - Roof changes
+    public bool IsRooved(EntityUid entity)
+    {
+        var transform = Transform(entity);
+        var mapUid = _maps.GetMapOrInvalid(transform.MapID);
+        if (!TryComp(mapUid, out MapGridComponent? mapGrid) ||
+            !TryComp(mapUid, out RoofComponent? roofComp))
+            return false;
+        var tileRef = _turf.GetTileRef(transform.Coordinates);
+        if (tileRef is null)
+            return false;
+        return IsRooved((mapUid, mapGrid, roofComp), tileRef.Value.GridIndices);
+    }
+    // TC14 - End
 
     /// <summary>
     /// Returns whether the specified tile is roof-occupied.

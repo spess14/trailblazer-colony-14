@@ -45,3 +45,14 @@
   unlockedRecipes:
   - PowerCellHigh
   - PowerCellHyper
+
+- type: researchEntry
+  id: ResearchSolarPower
+  name: tc-research-solarpower-name
+  discipline: DisciplineIndustrial
+  iconPrototype: SolarPanel
+  gridLocation: 1,3
+  dependencies:
+  - ResearchFabrication
+  unlockedRecipes:
+  - SolarAssemblyFlatpack
