@@ -254,7 +254,7 @@ public sealed partial class MoffEnrollEventSystem : EntitySystem
             return;
 
         gameRule.Added = true;
-        var addedEv = new GameRuleAddedEvent(ruleUid, MetaData(ruleUid).EntityPrototype?.ID ?? string.Empty);
+        var addedEv = new GameRuleAddedEvent((ruleUid, gameRule));
         RaiseLocalEvent(ruleUid, ref addedEv, true);
     }
 

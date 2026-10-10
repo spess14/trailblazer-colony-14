@@ -1,14 +1,13 @@
-﻿#nullable enable
+#nullable enable
 using System.Collections.Generic;
 using Content.IntegrationTests.Fixtures.Attributes;
 using Content.IntegrationTests.Utility;
-using Content.Server.Antag;
-using Content.Server.Antag.Components;
 using Content.Server.GameTicking;
 using Content.Server.Ghost.Roles;
 using Content.Server.Ghost.Roles.Components;
 using Content.Shared._ES.Voting.Components;
 using Content.Shared.Antag;
+using Content.Shared.Antag.Components;
 using Content.Shared.Players;
 using Robust.Shared.GameObjects;
 using Robust.Shared.Map;
@@ -34,7 +33,7 @@ public sealed partial class AntagGhostRoleTest : AntagTest
     private static readonly string[] AntagGameRules = GameDataScrounger.EntitiesWithComponent("AntagSelection");
 
     [Test]
-    [TestOf(typeof(GameTicker)), TestOf(typeof(AntagSelectionSystem)), TestOf(typeof(AntagSelectionComponent)), TestOf(typeof(GhostRoleSystem))]
+    [TestOf(typeof(ServerGameTicker)), TestOf(typeof(AntagSelectionSystem)), TestOf(typeof(AntagSelectionComponent)), TestOf(typeof(GhostRoleSystem))]
     [TestCaseSource(nameof(AntagGameRules))]
     [Description($"Ensures all GameRule entities with {nameof(AntagSelectionComponent)} can properly spawn those roles and they can be taken.")]
     [RunOnSide(Side.Server)]
@@ -74,7 +73,7 @@ public sealed partial class AntagGhostRoleTest : AntagTest
         while (roleEnumerator.MoveNext(out var spawner, out var role, out var xform))
         {
             // Ensure the ghost role spawner spawned correctly!
-            Assert.That(spawner.Rule, Is.EqualTo(gameRule));
+            Assert.That(spawner.Rule, Is.EqualTo(gameRule?.Owner));
             Assert.That(spawner.Definition, Is.Not.Null);
             AssertGhostRoleTaken(spawner, role, xform);
             var value = rules[spawner.Definition.Value];
@@ -90,7 +89,7 @@ public sealed partial class AntagGhostRoleTest : AntagTest
     }
 
     [Test]
-    [TestOf(typeof(GameTicker)), TestOf(typeof(AntagSelectionSystem)), TestOf(typeof(AntagSelectionComponent)), TestOf(typeof(GhostRoleSystem))]
+    [TestOf(typeof(ServerGameTicker)), TestOf(typeof(AntagSelectionSystem)), TestOf(typeof(AntagSelectionComponent)), TestOf(typeof(GhostRoleSystem))]
     [Description("Ensures a player can take all antag ghost roles sequentially without transferring unwanted mind data.")]
     [RunOnSide(Side.Server)]
     public void TestAntagGhostRolesSequential()

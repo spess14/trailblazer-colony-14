@@ -1,5 +1,5 @@
 using Content.Shared.Dragon;
-using Robust.Shared.Prototypes;
+using Content.Shared.EntityTable.EntitySelectors;
 
 namespace Content.Server.Dragon;
 
@@ -37,8 +37,11 @@ public sealed partial class DragonRiftComponent : SharedDragonRiftComponent
     [DataField]
     public float SpawnCooldown = 30f;
 
-    [DataField("spawn")]
-    public EntProtoId SpawnPrototype = "MobCarpDragon";
+    /// <summary>
+    /// The table of entities to consider for spawning. One will be picked every spawn.
+    /// </summary>
+    [DataField(required: true)]
+    public EntityTableSelector Spawn;
 
     // Moffstation - Start - Empowered carp spawns
     ///  Accumulator for empowerment to track which spawns are replaced. Starts at n-1 for cooldown to ensure spawn on first valid cycle.

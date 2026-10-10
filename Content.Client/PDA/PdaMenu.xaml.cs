@@ -1,7 +1,10 @@
-using Content.Client.GameTicking.Managers;
+using Content.Shared.PDA;
+using Robust.Shared.Utility;
+using Content.Shared.CartridgeLoader;
 using Content.Client.Message;
 using Content.Shared._Moffstation.PDA;
 using Content.Shared.AlertLevel;
+using Content.Shared.GameTicking;
 using Content.Shared.CartridgeLoader;
 using Content.Shared.PDA;
 using Content.Shared.Random.Helpers;
@@ -29,7 +32,7 @@ namespace Content.Client.PDA
         [Dependency] private IRobustRandom _random = default!; // Moffstation - PDA Advertisements
 
         private readonly AlertLevelSystem _alert = default!;
-        private readonly ClientGameTicker _gameTicker;
+        private readonly GameTicker _gameTicker;
 
         public const int HomeView = 0;
         public const int ProgramListView = 1;
@@ -54,7 +57,7 @@ namespace Content.Client.PDA
         {
             IoCManager.InjectDependencies(this);
             _alert = _entitySystem.GetEntitySystem<AlertLevelSystem>();
-            _gameTicker = _entitySystem.GetEntitySystem<ClientGameTicker>();
+            _gameTicker = _entitySystem.GetEntitySystem<GameTicker>();
             RobustXamlLoader.Load(this);
 
             ViewContainer.OnChildAdded += control => control.Visible = false;

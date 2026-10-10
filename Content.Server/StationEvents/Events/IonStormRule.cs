@@ -9,25 +9,29 @@ using Robust.Shared.Random; // macro
 
 namespace Content.Server.StationEvents.Events;
 
+/// <summary>
+/// Handler for events that alter the laws of silicon entities (e.g. cyborgs, AI) on the affected station.
+/// </summary>
+/// <seealso cref="IonStormRuleComponent"/>
 public sealed partial class IonStormRule : StationEventSystem<IonStormRuleComponent>
 {
     [Dependency] private SharedEmpVulnerableSystem _empVulnerable = default!; //Moffstation - EMP Vulnerability
     [Dependency] private IRobustRandom _random = default!; // macro
 
-    protected override void Started(EntityUid uid,
-        IonStormRuleComponent comp,
-        GameRuleComponent gameRule,
+    protected override void Started(Entity<
+        IonStormRuleComponent ,
+        GameRuleComponent > ent, ref
         GameRuleStartedEvent args)
     {
-        base.Started(uid, comp, gameRule, args);
+        base.Started(ent, ref args);
 
-        if (!TryGetRandomStation(out var chosenStation))
+        if (!Station.TryGetRandomStation<StationEventEligibleComponent>(out var chosenStation))
             return;
 
         // begin macro edit
         // var query = EntityQueryEnumerator<SiliconLawBoundComponent, TransformComponent, IonStormTargetComponent>();
         var query = EntityQueryEnumerator<IonStormTargetComponent, TransformComponent>();
-        while (query.MoveNext(out var ent, out var target, out var xform))
+        while (query.MoveNext(out var borgUid, out var target, out var xform))
         // end macro edit
         {
             // only affect law holders on the station, and check random chance (macro edit)
@@ -45,10 +49,10 @@ public sealed partial class IonStormRule : StationEventSystem<IonStormRuleCompon
         while (empAffectedQuery.MoveNext(out var ent, out var empVulnerable, out var xform))
         {
             // only affect vulnerable entities on the station
-            if (CompOrNull<StationMemberComponent>(xform.GridUid)?.Station != chosenStation)
+            if (CompOrNull<StationMemberComponent>(xform.GridUid)?.Station != chosenStation.Value.Owner)
                 continue;
 
-            _empVulnerable.IonStormTarget((ent, empVulnerable));
+            _empVulnerable.IonStormTarget((borgUid, empVulnerable));
         }
         //Moffstation - End
     }
