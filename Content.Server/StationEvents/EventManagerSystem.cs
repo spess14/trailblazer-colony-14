@@ -112,7 +112,7 @@ public sealed partial class EventManagerSystem : EntitySystem
         // playerCount does a lock so we'll just keep the variable here
         currentTime ??= _gameTicker.RoundDuration();
 
-        var totalWeight = 0d;
+        var totalWeight = 0f; // Moff - Early merge of https://github.com/space-wizards/space-station-14/pull/44424
 
         foreach (var (eventId, prob) in selectedEvents)
         {

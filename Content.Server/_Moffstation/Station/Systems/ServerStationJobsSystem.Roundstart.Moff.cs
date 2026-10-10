@@ -15,7 +15,7 @@ using Robust.Shared.Utility;
 // ReSharper disable once CheckNamespace // Partial part of upstream system
 namespace Content.Server.Station.Systems;
 
-public sealed partial class StationJobsSystem
+public sealed partial class ServerStationJobsSystem
 {
     [Dependency] private MoffCharacterSelectionManager _moffCharacterSelection = default!;
     [Dependency] private ISharedPlayerManager _playerMan = default!;

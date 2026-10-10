@@ -455,7 +455,7 @@ public sealed partial class ServerArrivalsSystem : ArrivalsSystem
     private void OnFirstArrival(Entity<ArrivalsShuttleComponent> ent, ref FirstArrivalEvent ev)
     {
         // Fixes to problems exclusive to the group arrivals start
-        if (_cfgManager.GetCVar(MoffCCVars.StartAtArrivals))
+        if (Cfg.GetCVar(MoffCCVars.StartAtArrivals))
         {
             if (_station.GetStationInMap(Transform(ent.Owner).MapID) is not { } station)
                 return;

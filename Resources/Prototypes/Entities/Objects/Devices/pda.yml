@@ -1137,13 +1137,15 @@
   - type: Icon
     state: pda-clear
 
-- type: entity
-  parent: ClearPDA
-  id: PrisonerPDA # This mostly just exists for the sake of the chameleon UI giving a clear PDA with a prisoner ID
-  suffix: Prisoner
-  components:
-  - type: Pda
-    id: PrisonerIDCard
+# Moff Start - Prisoner job
+#- type: entity
+#  parent: ClearPDA
+#  id: PrisonerPDA # This mostly just exists for the sake of the chameleon UI giving a clear PDA with a prisoner ID
+#  suffix: Prisoner
+#  components:
+#  - type: Pda
+#    id: PrisonerIDCard
+# Moff end
 
 - type: entity
   parent: ClearPDA

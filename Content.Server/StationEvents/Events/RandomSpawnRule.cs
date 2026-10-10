@@ -27,12 +27,12 @@ public sealed partial class RandomSpawnRule : StationEventSystem<RandomSpawnRule
         {
             Sawmill.Info($"Spawning {ent.Comp1.Prototype} at {coords}");
             // Moffstation - Syndicate dead drop
-            var ent = Spawn(ent.Comp1.Prototype, coords);
+            var spawn = Spawn(ent.Comp1.Prototype, coords);
 
-            if (comp.RadioMessage is {} radioMessage)
+            if (ent.Comp1.RadioMessage is {} radioMessage)
             {
-                var message = Loc.GetString(radioMessage.Message, ("location", FormattedMessage.RemoveMarkupOrThrow(_navMap.GetNearestBeaconString(ent))));
-                _radio.SendRadioMessage(ent, message, radioMessage.Channel, ent);
+                var message = Loc.GetString(radioMessage.Message, ("location", FormattedMessage.RemoveMarkupOrThrow(_navMap.GetNearestBeaconString(spawn))));
+                _radio.SendRadioMessage(spawn, message, radioMessage.Channel, spawn);
             }
             // Moffstation - End
         }

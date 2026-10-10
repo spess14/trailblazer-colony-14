@@ -28,6 +28,12 @@ public abstract partial class StationSystem
             if (!filter(uid))
                 continue;
 
+            // Moff Start - Pirate "stations" are not real stations
+            // TODO: Fix pirates so we don't have to use this hack
+            if (HasComp<PirateStationComponent>(uid))
+                continue;
+            // Moff End
+
             stations.Add((uid, data));
         }
 
@@ -88,7 +94,11 @@ public abstract partial class StationSystem
     public bool TryFindRandomTile(out Vector2i tile,
         [NotNullWhen(true)] out Entity<StationDataComponent>? targetStation,
         [NotNullWhen(true)] out Entity<MapGridComponent>? targetGrid,
-        out EntityCoordinates targetCoords)
+        out EntityCoordinates targetCoords,
+        // Moff Start - Add Largestgrid and safeatmos options
+        bool largestGrid = false,
+        bool safeAtmos = false)
+        // Moff End
     {
         tile = default;
         targetStation = null;
@@ -99,7 +109,11 @@ public abstract partial class StationSystem
             return TryFindRandomTileOnStation(targetStation.Value,
                 out tile,
                 out targetGrid,
-                out targetCoords);
+                out targetCoords,
+                // Moff Start - Add Largestgrid and safeatmos options
+                largestGrid: largestGrid,
+                safeAtmos: safeAtmos);
+                // Moff End
         }
 
         return false;
@@ -135,7 +149,11 @@ public abstract partial class StationSystem
         out Vector2i tile,
         [NotNullWhen(true)] out Entity<MapGridComponent>? targetGrid,
         out EntityCoordinates targetCoords,
-        int numAttempts = 10)
+        int numAttempts = 10,
+        // Moff Start - Add Largestgrid and safeatmos options
+        bool largestGrid = false,
+        bool safeAtmos = false)
+        // Moff End
     {
         tile = default;
         targetCoords = EntityCoordinates.Invalid;

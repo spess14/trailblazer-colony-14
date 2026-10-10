@@ -35,7 +35,7 @@ public sealed partial class AntagRandomSpawnSystem : GameRuleSystem<AntagRandomS
     {
         if (ent.Comp.Coords == null)
         {
-            if (TryFindRandomTile(out _ , out _, out _, out var coords, largestGrid: true, safeAtmos: true))
+            if (_station.TryFindRandomTile(out _ , out _, out _, out var coords, largestGrid: true, safeAtmos: true))
                 ent.Comp.Coords = coords;
         }
 

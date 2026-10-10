@@ -37,8 +37,8 @@
   - type: Objective
     difficulty: 1
     icon:
-      sprite: Mobs/Animals/spider.rsi
-      state: tarantula
+      sprite: Mobs/Animals/Spiders/tarantulaspider.rsi
+      state: idle
   - type: NumberObjective
     min: 2
     max: 6

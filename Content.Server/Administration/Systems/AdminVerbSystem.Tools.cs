@@ -60,6 +60,7 @@ public sealed partial class AdminVerbSystem
     [Dependency] private SharedBatterySystem _batterySystem = default!;
     [Dependency] private MetaDataSystem _metaSystem = default!;
     [Dependency] private GunSystem _gun = default!;
+    [Dependency] private IRobustRandom _random = default!; // Moff
 
     private void AddTricksVerbs(GetVerbsEvent<Verb> args)
     {

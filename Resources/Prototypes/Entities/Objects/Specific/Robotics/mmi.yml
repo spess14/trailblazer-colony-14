@@ -109,8 +109,8 @@
     sprite: Objects/Specific/Robotics/mmi.rsi
     layers:
     - state: posibrain
-      - map: ["light"]
-        shader: unshaded
+    - map: ["light"]
+      shader: unshaded
   - type: ToggleableGhostRole
     examineTextMindPresent: positronic-brain-installed
     examineTextMindSearching: positronic-brain-still-searching

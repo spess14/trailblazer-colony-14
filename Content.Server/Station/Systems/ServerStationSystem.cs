@@ -316,7 +316,11 @@ public sealed partial class ServerStationSystem : Shared.Station.Systems.Station
         out Vector2i tile,
         [NotNullWhen(true)] out Entity<MapGridComponent>? targetGrid,
         out EntityCoordinates targetCoords,
-        int numAttempts = 10)
+        int numAttempts = 10,
+        // Moff Start - Add Largestgrid and safeatmos options
+        bool largestGrid = false,
+        bool safeAtmos = false)
+        // Moff End
     {
         tile = default;
         targetCoords = EntityCoordinates.Invalid;
@@ -396,7 +400,12 @@ public sealed partial class ServerStationSystem : Shared.Station.Systems.Station
 
             // Invalid tile, try again.
             if (_atmos.IsTileSpace(targetGrid.Value.Owner, Transform(targetGrid.Value).MapUid, tileRef.GridIndices)
-                || _atmos.IsTileAirBlockedCached(targetGrid.Value.Owner, tileRef.GridIndices))
+                || _atmos.IsTileAirBlockedCached(targetGrid.Value.Owner, tileRef.GridIndices)
+                // Moff Start - Add Largestgrid and safeatmos options
+                || GetLargestGrid(station.AsNullable()) != targetGrid.Value.Owner && largestGrid
+                || Transform(targetGrid.Value).MapUid is not { } map
+                || !_atmos.IsTileMixtureProbablySafe(targetGrid.Value.Owner, map, tileRef.GridIndices) && safeAtmos)
+                // Moff End
             {
                 continue;
             }

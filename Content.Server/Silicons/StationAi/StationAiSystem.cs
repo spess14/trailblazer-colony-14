@@ -19,7 +19,7 @@ using Content.Shared.Damage.Systems;
 using Content.Shared.Destructible;
 using Content.Shared.DeviceNetwork.Components;
 using Content.Shared.DoAfter;
-using Content.Shared.Medical.SuitSensor; // Moffstation - AI Warp
+using Content.Shared.Medical.SuitSensors;
 using Content.Shared.Mobs;
 using Content.Shared.Mobs.Systems;
 using Content.Shared.Popups;

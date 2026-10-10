@@ -1,10 +1,12 @@
 # Prisoner isn't an actual roundstart role, so these startingGear prototypes are mostly for use with the "Set Outfit" debug verb
-- type: startingGear
-  id: PrisonerGear
-  equipment:
-    jumpsuit: ClothingUniformJumpsuitPrisoner
-    shoes: ClothingShoesColorBlack
-    id: PrisonerIDCard
+# Moff Start - Prisoner job
+#- type: startingGear
+#  id: PrisonerGear
+#  equipment:
+#    jumpsuit: ClothingUniformJumpsuitPrisoner
+#    shoes: ClothingShoesColorBlack
+#    id: PrisonerIDCard
+# Moff end
 
 - type: startingGear
   id: PrisonerMuzzledGear

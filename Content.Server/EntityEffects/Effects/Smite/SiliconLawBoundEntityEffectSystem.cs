@@ -15,8 +15,8 @@ public sealed partial class SiliconLawBoundEntityEffectSystem : EntityEffectSyst
 
     protected override void Effect(Entity<SiliconLawProviderComponent> entity, ref EntityEffectEvent<SiliconLawBound> args)
     {
-        EnsureComp<SiliconLawBoundComponent>(entity);
-        _siliconLaws.GetLaws(entity.Owner);
-        _siliconLaws.NotifyLawsChanged(entity);
+        var lawBoundComponent = EnsureComp<SiliconLawBoundComponent>(entity);
+        _siliconLaws.GetProviderLaws(entity.AsNullable());
+        _siliconLaws.NotifyLawsChanged((entity, lawBoundComponent));
     }
 }

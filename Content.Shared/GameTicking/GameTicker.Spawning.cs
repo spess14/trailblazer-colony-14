@@ -11,5 +11,5 @@ public abstract partial class GameTicker
     /// <param name="station">The station they're spawning on</param>
     /// <param name="jobId">An optional job for them to spawn as</param>
     /// <param name="silent">Whether or not the player should be greeted upon joining</param>
-    public virtual void MakeJoinGame(ICommonSession player, EntityUid station, string? jobId = null, bool silent = false) { }
+    public virtual void MakeJoinGame(ICommonSession player, int? profileIndex, EntityUid station, string? jobId = null, bool silent = false) { } // Moff - Multi character selection
 }

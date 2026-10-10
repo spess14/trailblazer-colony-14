@@ -139,7 +139,7 @@ public record struct RoundEndTextAppendEvent
         var line = "";
         foreach (var word in words)
         {
-            line += word + separator;
+            line += word + new string(separator, 1);
 
             // If there's a linebreak within the word, reset the line
             if (word.Contains("\n"))
