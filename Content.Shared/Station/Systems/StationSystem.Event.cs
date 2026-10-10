@@ -1,4 +1,5 @@
 ﻿using System.Diagnostics.CodeAnalysis;
+using Content.Shared._Moffstation.Pirate.Components;
 using Content.Shared.Station.Components;
 using JetBrains.Annotations;
 using Robust.Shared.Collections;
@@ -51,6 +52,8 @@ public abstract partial class StationSystem
     [PublicAPI]
     public bool TryGetRandomStation<T>([NotNullWhen(true)] out Entity<StationDataComponent, T>? station, Func<EntityUid, bool>? filter = null) where T : IComponent
     {
+
+
         var stations = new ValueList<Entity<StationDataComponent, T>>(Count<T>());
 
         filter ??= _ => true;
@@ -60,6 +63,12 @@ public abstract partial class StationSystem
         {
             if (!filter(uid))
                 continue;
+
+            // Moff Start - Pirate "stations" are not real stations
+            // TODO: Fix pirates so we don't have to use this hack
+            if (HasComp<PirateStationComponent>(uid))
+                continue;
+            // Moff End
 
             stations.Add((uid, data, comp));
         }

@@ -1,10 +1,9 @@
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
-using Content.Server._Moffstation.Antag;
 using Content.Shared._ES.Voting.Components; // Moffstation - enrollment-driven antag rules
-using Content.Server.Administration.Managers;
 using Content.Shared.Administration.Logs;
 using Content.Shared.Antag.Components;
+using Content.Shared.Preferences;
 using Content.Shared.Clothing;
 using Content.Shared.Database;
 using Content.Shared.Follower;
@@ -118,7 +117,7 @@ public abstract partial class AntagSelectionSystem : GameRuleSystem<AntagSelecti
         // Moff start - an Enroll rule with a vote manager is filled from the enrolled players by
         // MoffEnrollEventSystem, so it mustn't also spawn ghost roles. Enroll rules without a manager keep
         // the legacy ghost-role behavior.
-        else if (component.SelectionTime != Enroll || !HasComp<ESSynchronizedVoteManagerComponent>(uid))
+        else if (rule.Comp1.SelectionTime != Enroll || !HasComp<ESSynchronizedVoteManagerComponent>(rule.Owner))
         // Moff end
             SpawnGhostRoles(rule, players.Length);
     }
@@ -273,13 +272,15 @@ public abstract partial class AntagSelectionSystem : GameRuleSystem<AntagSelecti
         return dict;
     }
 
-    private float GetWeight(ICommonSession player)
+    protected virtual float GetWeight(ICommonSession player) // Moff - Antag weights
     {
-        // Moff start - We have antag weights, so they can cleanly slot into here.
-        // return 1f;
-        return _weightedAntagMan.GetWeight(player.UserId);
-        // Moff end
+        // Moff - this is overriden on the server, using our weight system
+        return 1f;
     }
+
+    // Moff Start - Multi-character selection
+    protected virtual HumanoidCharacterProfile? GetMoffAntagProfile(ICommonSession player) => null;
+    // Moff end
 
     private void AssignAntags(Entity<AntagSelectionComponent> gameRule)
     {
@@ -720,10 +721,11 @@ public abstract partial class AntagSelectionSystem : GameRuleSystem<AntagSelecti
 
         // Moffstation - Begin - Use LoadoutAwareEquip function to equip Roleloadout and Starting gear, this allows custom loadouts for antags.
         // _loadout.Equip(antag, gear, prototype.RoleLoadout);
-        // Moff - Multi-character selection: prefer the character this player actually spawned as.
-        var profile = _moffCharacterPicker.GetSpawnedProfile(player.UserId)
-                      ?? _pref.GetPreferences(player.UserId).SelectedCharacter;
-        Loadout.LoadoutAwareEquip(antag, player, gear, prototype.RoleLoadout, profile);
+        // Moff - Multi-character selection
+        if (GetMoffAntagProfile(player) is { } profile)
+            Loadout.LoadoutAwareEquip(antag, player, gear, prototype.RoleLoadout, profile);
+        else
+            Loadout.Equip(antag, gear, prototype.RoleLoadout);
         // Moffstation - End
 
         // Ensure that we have the right mind for our entity.

@@ -1,6 +1,7 @@
 using Content.Shared.Alert;
 using Content.Shared._Moffstation.Clothing; // Moffstation
-using Content.Shared._Moffstation.Weapons.Ranged.Components; // Moffstation
+using Content.Shared._Moffstation.Weapons.Ranged.Components;
+using Content.Shared.Actions; // Moffstation
 using Content.Shared.Atmos.Components;
 using Content.Shared.Clothing.EntitySystems;
 using Content.Shared.Gravity;
@@ -22,6 +23,7 @@ public sealed partial class SharedMagbootsSystem : EntitySystem
     [Dependency] private ItemToggleSystem _toggle = default!;
     [Dependency] private SharedContainerSystem _container = default!;
     [Dependency] private SharedGravitySystem _gravity = default!;
+    [Dependency] private SharedActionsSystem _actions = default!; // Moffstation
 
     [Dependency] private EntityQuery<MovedByPressureComponent> _movedByPressureQuery;
 
