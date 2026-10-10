@@ -72,6 +72,65 @@ def main():
     send_message_lines(message_lines)
 
 
+def get_most_recent_workflow(
+    sess: requests.Session, github_repository: str, github_run: str
+) -> Any:
+    workflow_run = get_current_run(sess, github_repository, github_run)
+    past_runs = get_past_runs(sess, workflow_run)
+    for run in past_runs:
+        return run
+
+    raise RuntimeError("Could not find a previous successful workflow run")
+
+
+def get_current_run(
+    sess: requests.Session, github_repository: str, github_run: str
+) -> Any:
+    resp = sess.get(
+        f"{GITHUB_API_URL}/repos/{github_repository}/actions/runs/{github_run}"
+    )
+    resp.raise_for_status()
+    return resp.json()
+
+
+def get_past_runs(sess: requests.Session, current_run: Any) -> Iterable[Any]:
+    """
+    Get all successful workflow runs before our current one.
+    """
+    params = {
+        # Moff Start - Changelog bob fixed
+        # "status": "success",
+        # "created": f"<={current_run['created_at']}",
+        # Moff end
+        "per_page": 100,
+    }
+    url = f"{current_run['workflow_url']}/runs"
+
+    while url:
+        resp = sess.get(url, params=params)
+        resp.raise_for_status()
+
+        # Moff - sort the changebob
+        for run in sorted(resp.json()["workflow_runs"], key=lambda run: run["created_at"], reverse=True):
+            # First past successful run that isn't our current run.
+            if run["id"] == current_run["id"]:
+                continue
+
+            # Moff Start - Changelog machine fixed
+            if run["conclusion"] != "success" or run["created_at"] > current_run["created_at"]:
+                continue
+            # Moff end
+
+            yield run
+
+        next_url = resp.links.get("next", {}).get("url")
+        if not next_url:
+            break
+
+        url = next_url
+        params = None
+
+
 def get_last_changelog() -> str:
     github_repository, github_run, github_token = (
         actions_changelog_github.get_required_github_env()

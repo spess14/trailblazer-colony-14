@@ -721,7 +721,7 @@ public abstract partial class AntagSelectionSystem : GameRuleSystem<AntagSelecti
         // Moffstation - Begin - Use LoadoutAwareEquip function to equip Roleloadout and Starting gear, this allows custom loadouts for antags.
         // _loadout.Equip(antag, gear, prototype.RoleLoadout);
         // Moff - Multi-character selection: prefer the character this player actually spawned as.
-        var profile = MoffCharacterPicker.GetSpawnedProfile(player.UserId)
+        var profile = _moffCharacterPicker.GetSpawnedProfile(player.UserId)
                       ?? _pref.GetPreferences(player.UserId).SelectedCharacter;
         Loadout.LoadoutAwareEquip(antag, player, gear, prototype.RoleLoadout, profile);
         // Moffstation - End

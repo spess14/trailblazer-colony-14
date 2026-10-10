@@ -175,6 +175,7 @@ public sealed class RulePlayerSpawningEvent
     /// </summary>
     /// <remarks>If you spawn a player by yourself from this event, don't forget to call <see cref="Shared.GameTicking.GameTicker.PlayerJoinGame"/> on them.</remarks>
     public List<ICommonSession> PlayerPool { get; }
+    [Obsolete("Moffstation has multi-profile selection, so this dictionary is WRONG. It's left in place to minimize changes to upstream code, but when looking for what profiles to spawn a player as, one should use the `MoffCharacterSelectionManager` to get all active profiles for a user")] // Moff - Multi profile selection
     public IReadOnlyDictionary<NetUserId, HumanoidCharacterProfile> Profiles { get; }
     public bool Forced { get; }
 
