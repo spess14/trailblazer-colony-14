@@ -46,9 +46,19 @@
     description: tourist-objective-condition-ventmob-description
   - type: TouristPhotosCondition
     targetPrototypes:
-      - MobClownSpider
-      - MobGiantSpider
-      - MobGiantSpiderAngry
+      # Moff Start - Upstream giant spider variants
+      # - MobClownSpider
+      # - MobGiantSpider
+      # - MobGiantSpiderAngry
+      - MobGiantSpiderClown
+      - MobGiantSpiderClownAngry
+      - MobGiantSpiderTarantula
+      - MobGiantSpiderTarantulaAngry
+      - MobGiantSpiderHunterAngry
+      - MobGiantSpiderGuardAngry
+      - MobGiantSpiderMidwifeAngry
+      - MobGiantSpiderNurseAngry
+      # Moff end
       - MobPurpleSnake
       - MobSmallPurpleSnake
       - MobCobraSpace

@@ -1,4 +1,3 @@
-using System.Linq;
 using Content.Server._MACRO.StrangeMoods;
 using Content.Server._MACRO.StrangeMoods.Eui;
 using Content.Server.Administration.Logs;
@@ -15,7 +14,6 @@ using Content.Shared._MACRO.StrangeMoods;
 using Content.Shared._Moffstation.Verbs; // Moff - Multi-character selection
 using Content.Shared.Administration;
 using Content.Shared.Administration.Systems;
-using Content.Shared.Chemistry.Components;
 using Content.Shared.Chemistry.Components.SolutionManager;
 using Content.Shared.Chemistry.EntitySystems;
 using Content.Shared.Configurable;

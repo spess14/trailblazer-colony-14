@@ -1,5 +1,4 @@
 using System.Linq;
-using Content.Shared.PowerCell;
 using Content.Shared.DeviceNetwork.Events;
 using Content.Shared.Medical.CrewMonitoring;
 using Content.Shared.Pinpointer;

@@ -766,9 +766,11 @@
     tags:
     - WhitelistChameleon
     - SurvivalBoxInsertable # Moffstation - (Survival Box Improvements)
-  - type: ImageOverlay
-    pathToOverlayImage: "/Textures/Clothing/Head/Welding/weldingTexture.png"
-    additionalColorOverlay: "#00000050"
+  # Moff Start - Funky welding masks
+  # - type: ImageOverlay
+  #   pathToOverlayImage: "/Textures/Clothing/Head/Welding/weldingTexture.png"
+  #   additionalColorOverlay: "#00000050"
+  # Moff end
 
 # Entity tables
 - type: entityTable

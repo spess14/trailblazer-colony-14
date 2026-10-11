@@ -42,11 +42,7 @@
     rechargeSound:
       path: /Audio/Weapons/Guns/MagIn/energycrossbow_reload.ogg
   - type: BallisticAmmoProvider
-    # Moff Start - Entity table integration
-    # proto: EnergyCrossbowBolt
-    ammoTable:
-      id: EnergyCrossbowBolt
-    # Moff End
+    proto: EnergyCrossbowBolt
     capacity: 1
     cycleable: false
   - type: ContainerContainer

@@ -73,6 +73,9 @@ public abstract partial class StationEventSystem<T> : GameRuleSystem<T> where T 
     {
         base.Ended(rule, ref args);
 
+        if (TerminatingOrDeleted(rule)) // Moff - Rules ended by entity deletion skip end effects
+            return;
+
         if (!TryComp<StationEventComponent>(rule, out var stationEvent))
             return;
 

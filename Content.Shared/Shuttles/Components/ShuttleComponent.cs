@@ -14,7 +14,7 @@ public sealed partial class ShuttleComponent : Component
     /// <summary>
     /// Thrust gets multiplied by this value if it's for braking.
     /// </summary>
-    [DataField]
+    // [DataField] // Moff - Consts can't be datafields, trips the YAML linter
     public const float BrakeCoefficient = 1.5f;
 
     /// <summary>
@@ -23,7 +23,7 @@ public sealed partial class ShuttleComponent : Component
     [DataField]
     public float BaseMaxLinearVelocity = 60f;
 
-    [DataField]
+    // [DataField] // Moff - Consts can't be datafields, trips the YAML linter
     public const float MaxAngularVelocity = 4f;
 
     /// <summary>

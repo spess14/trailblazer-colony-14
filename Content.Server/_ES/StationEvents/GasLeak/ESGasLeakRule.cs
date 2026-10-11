@@ -98,6 +98,9 @@ public sealed partial class ESGasLeakRule : StationEventSystem<ESGasLeakRuleComp
     {
         base.Ended(rule, ref args);
 
+        if (TerminatingOrDeleted(rule)) // Moff - Rules ended by entity deletion skip end effects
+            return;
+
         if (!RobustRandom.Prob(rule.Comp.SparkChance))
             return;
 

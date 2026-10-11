@@ -325,7 +325,9 @@ public static partial class GameDataScrounger
 
         foreach (var parent in entity.Parents)
         {
-            var parentMeta = _entitiesMetaIndex![parent];
+            if (!_entitiesMetaIndex!.TryGetValue(parent, out var parentMeta)) // Moff - Variant parents aren't indexed
+                continue;
+
             VisitEntity(parentMeta, visitedEntities);
 
             entity.Components.UnionWith(parentMeta.Components);

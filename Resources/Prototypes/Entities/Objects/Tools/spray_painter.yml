@@ -57,8 +57,8 @@
   suffix: ""
   components:
   - type: LimitedCharges
-    maxCharges: 15
-    lastCharges: 15
+    maxCharges: 50 # Moff - increase charges from 15 to 50
+    lastCharges: 50 # Moff - increase charges from 15 to 50
 
 - type: entity
   parent: SprayPainter

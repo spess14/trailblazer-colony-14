@@ -104,7 +104,7 @@ public sealed partial class ServerAntagSelectionSystem : AntagSelectionSystem
         if (!_pref.TryGetCachedPreferences(session.UserId, out var prefs))
             yield break;
 
-        foreach (var antag in prefs.SelectedCharacter.AntagPreferences)
+        foreach (var antag in GetMoffEnabledAntagPreferences(session)) // Moff - Multi-character selection
         {
             // We also check this in IsSessionValid, but we also check it here since this is public API.
             if (_ban.IsRoleBanned(session, antag) || !_playTime.IsAllowed(session, antag))
