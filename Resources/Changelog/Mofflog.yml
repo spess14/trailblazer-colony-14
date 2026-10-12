@@ -8090,6 +8090,21 @@ Entries:
   id: 1870
   time: '2026-09-17T19:34:05.000'
   url: https://github.com/moff-station/moff-station-14/pull/1870
+- author: DrWhoFan13
+  changes:
+  - message: Cat Ears are no longer illegal to possess!
+    type: tweak
+  - message: Cat Ears are now worthless.
+    type: tweak
+  - message: A single pair of Cat Ears are now available in the DramaDrobe!
+    type: add
+  - message: Cat Ears are no longer purchasable from the Uplink.
+    type: remove
+  - message: Cat Ears no longer force emoticons.
+    type: remove
+  id: 1871
+  time: '2026-10-12T18:17:39.000'
+  url: https://github.com/moff-station/moff-station-14/pull/1871
 - author: Wintoli
   changes:
   - message: The EMP hardbomb had its size and price slightly reduced.
