@@ -1,10 +1,14 @@
-﻿using Content.IntegrationTests.Fixtures;
+﻿using System.Numerics;
+using Content.IntegrationTests.Fixtures;
 using Content.IntegrationTests.Fixtures.Attributes;
 using Content.IntegrationTests.Utility;
 using Content.Server.StationEvents;
 using Content.Server.StationEvents.Components;
 using Content.Shared.GameTicking;
 using Content.Shared.GameTicking.Components;
+using Content.Shared.Mind;
+using Content.Shared.Station.Components;
+using Robust.Shared.Map;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
 
@@ -16,12 +20,13 @@ public sealed partial class EventSchedulerTest : GameTest
     {
         Dirty = true,
         DummyTicker = false,
-        Connected = true,
+        Connected = false, // Moff - Client reconnects leak memory
         Map = PoolManager.TestStation
     };
 
     [SidedDependency(Side.Server)] private EventManagerSystem _eventMan = default!;
     [SidedDependency(Side.Server)] private GameTicker _gameTicker = default!;
+    [SidedDependency(Side.Server)] private SharedMindSystem _mind = default!; // Moff - Client reconnects leak memory
 
     private static readonly string[] AntagGameRules = GameDataScrounger.EntitiesWithComponent("StationEvent");
 
@@ -33,6 +38,14 @@ public sealed partial class EventSchedulerTest : GameTest
     [RunOnSide(Side.Server)]
     public void TestEventScheduler(string ruleId)
     {
+        // Moff Start - Client reconnects leak memory
+        // Stands in for the connected player's body, which rules like ParadoxCloneSpawn need as a target.
+        var grids = SEntMan.EntityQueryEnumerator<StationMemberComponent>();
+        Assert.That(grids.MoveNext(out var grid, out _), Is.True);
+        var body = SSpawnAtPosition("MobHuman", new EntityCoordinates(grid, Vector2.Zero));
+        _mind.TransferTo(_mind.CreateMind(null), body);
+        // Moff end
+
         var ruleEv = new EntProtoId[] { ruleId };
         var rule = SProtoMan.Index<EntityPrototype>(ruleId);
         Assert.That(rule.TryComp<GameRuleComponent>(out var ruleComp, SEntMan.ComponentFactory), Is.True);
