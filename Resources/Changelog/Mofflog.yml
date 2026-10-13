@@ -8645,6 +8645,13 @@ Entries:
   url: https://github.com/moff-station/moff-station-14/pull/2010
 - author: WigglySuperNoodle
   changes:
+  - message: Observe warning text now actually reflects Moff's rules and respawns.
+    type: tweak
+  id: 2022
+  time: '2026-10-13T02:09:38.000'
+  url: https://github.com/moff-station/moff-station-14/pull/2022
+- author: WigglySuperNoodle
+  changes:
   - message: Custom spooky sounds for shadowcats!
     type: add
   id: 2023
