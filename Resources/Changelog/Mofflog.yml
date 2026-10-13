@@ -6440,6 +6440,18 @@ Entries:
   id: 1537
   time: '2026-06-21T00:47:47.000'
   url: https://github.com/moff-station/moff-station-14/pull/1537
+- author: KentoDaNeko, Centronias
+  changes:
+  - message: Added the Rebar Crossbow, a craftable tider weapon capable of launching
+      arrows and metal bolts. Insert a power cell and it'll heat up metal bolts to
+      deal substantial heat damage too (at the cost of discharging the cell very,
+      very fast!)
+    type: add
+  - message: Added metal bolts for the crossbow, craftable from steel rods.
+    type: add
+  id: 1540
+  time: '2026-10-13T04:27:52.000'
+  url: https://github.com/moff-station/moff-station-14/pull/1540
 - author: OrbitSystem07
   changes:
   - message: Borgs brains and Ais no longer get automatically destroyed in large enough
