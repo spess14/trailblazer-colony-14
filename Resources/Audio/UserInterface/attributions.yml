@@ -1,5 +1,10 @@
 - files:
   - click.ogg
+  license: "CC-BY-SA-4.0"
+  copyright: "Faithful recreation by @mjarduk on discord"
+  source: "https://discord.gg/x6BSUAr8cH"
+
+- files:
   - hover.ogg
   license: "CC-BY-SA-4.0"
   copyright: "Faithful recreation by @mjarduk on discord"
