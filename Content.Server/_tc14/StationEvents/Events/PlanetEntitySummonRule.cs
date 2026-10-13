@@ -22,14 +22,11 @@ public sealed partial class PlanetEntitySummonRule : StationEventSystem<PlanetEn
 {
     [Dependency] private IRobustRandom _random = default!;
     [Dependency] private SharedMapSystem _map = default!;
-    [Dependency] private GameTicker _gameTicker = default!;
+    [Dependency] private ServerGameTicker _gameTicker = default!;
     [Dependency] private EntityTableSystem _table = default!;
     [Dependency] private TurfSystem _turfSystem = default!;
 
-    protected override void Added(EntityUid uid,
-        PlanetEntitySummonRuleComponent component,
-        GameRuleComponent gameRule,
-        GameRuleAddedEvent args)
+    protected override void Added(Entity<PlanetEntitySummonRuleComponent, GameRuleComponent> ent, ref GameRuleAddedEvent args)
     {
         var mapId = _gameTicker.DefaultMap;
         var mapGrid = _map.GetAllGrids(mapId)
@@ -39,26 +36,26 @@ public sealed partial class PlanetEntitySummonRule : StationEventSystem<PlanetEn
         var positions = players.Select(player => player.Item2.Coordinates).ToList();
         if (positions.Count == 0)
         {
-            Log.Warning($"No players found for {args.RuleId}!");
+            Log.Warning($"No players found for PlanetEntitySummonRule!");
             return;
         }
         var randomPlayerPosition = _random.Pick(positions).Position;
-        var radius = new Vector2(component.MinDistance, component.MaxDistance);
-        var targetCoords = SelectRandomTileInRange(randomPlayerPosition, radius, component.MaxAttempts, mapGrid);
+        var radius = new Vector2(ent.Comp1.MinDistance, ent.Comp1.MaxDistance);
+        var targetCoords = SelectRandomTileInRange(randomPlayerPosition, radius, ent.Comp1.MaxAttempts, mapGrid);
         if (targetCoords is null)
         {
-            Log.Warning($"No location found for {args.RuleId}!");
-            ForceEndSelf(uid, gameRule);
+            Log.Warning($"No location found for PlanetEntitySummonRule!");
+            ForceEndSelf((ent.Owner, ent.Comp2));
             return;
         }
 
-        var spawns = _table.GetSpawns(component.Table);
+        var spawns = _table.GetSpawns(ent.Comp1.Table);
 
         foreach (var spawn in spawns)
         {
             Spawn(spawn.Id, targetCoords.Value);
         }
-        base.Added(uid, component, gameRule, args);
+        base.Added(ent, ref args);
     }
 
     /// <summary>
