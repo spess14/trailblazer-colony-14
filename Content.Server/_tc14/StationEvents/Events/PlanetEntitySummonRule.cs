@@ -12,6 +12,7 @@ using Content.Shared.Station.Components;
 using Robust.Shared.Map;
 using Robust.Shared.Map.Components;
 using Robust.Shared.Random;
+using Robust.Shared.Utility;
 
 namespace Content.Server._tc14.StationEvents.Events;
 
@@ -30,21 +31,28 @@ public sealed partial class PlanetEntitySummonRule : StationEventSystem<PlanetEn
     {
         var mapId = _gameTicker.DefaultMap;
         var mapGrid = _map.GetAllGrids(mapId)
-            .First(grid => HasComp<MapGridComponent>(grid.Owner)
+            .FirstOrNull(grid => HasComp<MapGridComponent>(grid.Owner)
                            && !HasComp<BecomesStationComponent>(grid.Owner));
+        if (mapGrid is null)
+        {
+            Log.Warning($"No valid grid found for {ToPrettyString(ent.Owner):rule}!");
+            ForceEndSelf((ent.Owner, ent.Comp2));
+            return;
+        }
         var players = EntityQuery<HumanoidProfileComponent, TransformComponent>();
         var positions = players.Select(player => player.Item2.Coordinates).ToList();
         if (positions.Count == 0)
         {
-            Log.Warning($"No players found for PlanetEntitySummonRule!");
+            Log.Warning($"No players found for {ToPrettyString(ent.Owner):rule}!");
+            ForceEndSelf((ent.Owner, ent.Comp2));
             return;
         }
         var randomPlayerPosition = _random.Pick(positions).Position;
         var radius = new Vector2(ent.Comp1.MinDistance, ent.Comp1.MaxDistance);
-        var targetCoords = SelectRandomTileInRange(randomPlayerPosition, radius, ent.Comp1.MaxAttempts, mapGrid);
+        var targetCoords = SelectRandomTileInRange(randomPlayerPosition, radius, ent.Comp1.MaxAttempts, mapGrid.Value);
         if (targetCoords is null)
         {
-            Log.Warning($"No location found for PlanetEntitySummonRule!");
+            Log.Warning($"No location found for {ToPrettyString(ent.Owner):rule}!");
             ForceEndSelf((ent.Owner, ent.Comp2));
             return;
         }
