@@ -31,6 +31,7 @@
     weight: 2
     earliestStart: 30
     reoccurrenceDelay: 15
+    duration: 0
   - type: PlanetEntitySummonRule
     table: !type:GroupSelector
       rolls: 1, 1
@@ -48,6 +49,7 @@
     weight: 5
     earliestStart: 30
     reoccurrenceDelay: 15
+    duration: 0
   - type: PlanetEntitySummonRule
     table: !type:GroupSelector
       rolls: 1, 4
@@ -64,6 +66,7 @@
     weight: 3
     earliestStart: 45
     reoccurrenceDelay: 15
+    duration: 0
   - type: PlanetEntitySummonRule
     table: !type:GroupSelector
       rolls: 1, 3

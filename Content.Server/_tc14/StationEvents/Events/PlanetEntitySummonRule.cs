@@ -27,8 +27,9 @@ public sealed partial class PlanetEntitySummonRule : StationEventSystem<PlanetEn
     [Dependency] private EntityTableSystem _table = default!;
     [Dependency] private TurfSystem _turfSystem = default!;
 
-    protected override void Added(Entity<PlanetEntitySummonRuleComponent, GameRuleComponent> ent, ref GameRuleAddedEvent args)
+    protected override void Started(Entity<PlanetEntitySummonRuleComponent, GameRuleComponent> ent, ref GameRuleStartedEvent args)
     {
+        base.Started(ent, ref args);
         var mapId = _gameTicker.DefaultMap;
         var mapGrid = _map.GetAllGrids(mapId)
             .FirstOrNull(grid => HasComp<MapGridComponent>(grid.Owner)
@@ -36,7 +37,7 @@ public sealed partial class PlanetEntitySummonRule : StationEventSystem<PlanetEn
         if (mapGrid is null)
         {
             Log.Warning($"No valid grid found for {ToPrettyString(ent.Owner):rule}!");
-            ForceEndSelf((ent.Owner, ent.Comp2));
+            //ForceEndSelf((ent.Owner, ent.Comp2));
             return;
         }
         var players = EntityQuery<HumanoidProfileComponent, TransformComponent>();
@@ -44,7 +45,7 @@ public sealed partial class PlanetEntitySummonRule : StationEventSystem<PlanetEn
         if (positions.Count == 0)
         {
             Log.Warning($"No players found for {ToPrettyString(ent.Owner):rule}!");
-            ForceEndSelf((ent.Owner, ent.Comp2));
+            //ForceEndSelf((ent.Owner, ent.Comp2));
             return;
         }
         var randomPlayerPosition = _random.Pick(positions).Position;
@@ -53,7 +54,7 @@ public sealed partial class PlanetEntitySummonRule : StationEventSystem<PlanetEn
         if (targetCoords is null)
         {
             Log.Warning($"No location found for {ToPrettyString(ent.Owner):rule}!");
-            ForceEndSelf((ent.Owner, ent.Comp2));
+            //ForceEndSelf((ent.Owner, ent.Comp2));
             return;
         }
 
@@ -63,7 +64,6 @@ public sealed partial class PlanetEntitySummonRule : StationEventSystem<PlanetEn
         {
             Spawn(spawn.Id, targetCoords.Value);
         }
-        base.Added(ent, ref args);
     }
 
     /// <summary>
