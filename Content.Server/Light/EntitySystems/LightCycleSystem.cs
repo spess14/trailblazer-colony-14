@@ -1,6 +1,5 @@
-using Content.Server.GameTicking; // TC14 - Rework solars
 using Content.Server.Solar.EntitySystems; // TC14 - Rework solars
-using Content.Shared;
+using Content.Shared.GameTicking;
 using Content.Shared.Light.Components;
 using Content.Shared.Light.EntitySystems;
 using Robust.Shared.Map.Components; // TC14 - Rework solars
