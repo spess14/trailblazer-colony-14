@@ -8,7 +8,6 @@
   - Chemicals
   - Drinks
   - FoodRecipes
-  - Writing
   # - Lawsets TC14 - no lawsets
 
 - type: guideEntry
@@ -145,12 +144,6 @@
   text: "/ServerInfo/Guidebook/Service/SecretRecipes.xml"
   showInTree: true # TC14 - enable guidebook
   filterEnabled: True
-
-- type: guideEntry
-  id: Writing
-  name: guide-entry-writing
-  text: "/ServerInfo/Guidebook/Writing.xml"
-  showInTree: true # TC14 - enable guidebook
 
 - type: guideEntry
   id: Lawsets
