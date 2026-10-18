@@ -49,3 +49,13 @@
   completetime: 1
   materials:
     Cloth: 500
+
+- type: latheRecipe
+  id: ClothingHandsGlovesColorYellow
+  result: ClothingHandsGlovesColorYellow
+  categories:
+  - Utility
+  completetime: 1
+  materials:
+    Plastic: 200
+    Cloth: 300
