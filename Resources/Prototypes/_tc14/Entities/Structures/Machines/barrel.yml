@@ -1,0 +1,47 @@
+- type: entity
+  id: FermentingBarrel
+  parent: StorageTankIndestructible
+  name: fermenting barrel
+  placement:
+    mode: SnapgridCenter
+  components:
+  - type: Sprite
+    snapCardinals: false
+    sprite: _CP14/Structures/Specific/Service/barrel.rsi
+    state: barrel
+  - type: InteractionOutline
+  - type: Clickable
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.3,-0.5,0.3,0.5"
+        density: 190
+        mask:
+        - MachineMask
+        layer:
+        - MachineLayer
+  - type: Transform
+    anchored: true
+    noRot: false
+  - type: Pullable
+  - type: Rotatable
+    rotateWhileAnchored: true
+  - type: Damageable
+    damageModifierSet: Wood
+  - type: Injurable
+    damageContainer: StructuralInorganic
+  - type: DumpableSolution
+    solution: tank
+  - type: ExaminableSolution
+    solution: tank
+    exactVolume: true
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 100
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
