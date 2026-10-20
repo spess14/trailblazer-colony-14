@@ -11,7 +11,7 @@
       steps:
       - material: Rock
         amount: 10
-        doAfter: 5
+        doAfter: 3
   - node: smeltery
     entity: Smeltery
 
@@ -28,6 +28,6 @@
       steps:
       - material: WoodPlank
         amount: 10
-        doAfter: 5
+        doAfter: 3
   - node: researchbench
     entity: ResearchWorkbench

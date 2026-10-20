@@ -1,7 +1,7 @@
 - type: entity
-  id: FermentingBarrel
+  id: WoodenKeg
   parent: StorageTankIndestructible
-  name: fermenting barrel
+  name: wooden keg
   placement:
     mode: SnapgridCenter
   components:
@@ -37,6 +37,9 @@
   - type: ExaminableSolution
     solution: tank
     exactVolume: true
+  - type: Construction
+    graph: WoodenKeg
+    node: keg
   - type: Destructible
     thresholds:
     - trigger:
