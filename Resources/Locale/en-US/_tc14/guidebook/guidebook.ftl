@@ -5,6 +5,7 @@ guide-entry-research = Research
 guide-entry-smithing = Smithing
 guide-entry-mechanics = Mechanics
 guide-entry-mechanics-skills = Skills
+guide-entry-mechanics-brewing = Brewing
 
 guide-entry-rules-0-0 = 0.0
 guide-entry-rules-0-1 = 0.1
