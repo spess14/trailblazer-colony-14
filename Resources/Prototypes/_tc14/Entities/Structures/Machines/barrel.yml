@@ -1,7 +1,8 @@
 - type: entity
-  id: WoodenKeg
+  id: FermentingBarrel
   parent: StorageTankIndestructible
-  name: wooden keg
+  name: fermenting barrel
+  description: Dump fermentable material in, dispense your drink after a bit.
   placement:
     mode: SnapgridCenter
   components:
@@ -34,12 +35,21 @@
     damageContainer: StructuralInorganic
   - type: DumpableSolution
     solution: tank
+  - type: SolutionTransfer
+    canChangeTransferAmount: true
   - type: ExaminableSolution
     solution: tank
     exactVolume: true
   - type: Construction
-    graph: WoodenKeg
-    node: keg
+    graph: FermentingBarrel
+    node: barrel
+  - type: Fermenter
+  - type: MixableSolution
+    solution: tank
+  - type: ReactionMixer
+    mixerType: None
+    reactionTypes:
+    - Ferment
   - type: Destructible
     thresholds:
     - trigger:

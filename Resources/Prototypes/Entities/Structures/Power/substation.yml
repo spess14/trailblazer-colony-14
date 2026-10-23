@@ -30,7 +30,7 @@
     supplyRampTolerance: 5000
     supplyRampRate: 1000
   - type: StationInfiniteBatteryTarget
-  # TC14 - Start - remove access
+  # TC14 - Begin - remove access
   # Impstation - Start
 #  - type: AccessReader
 #    access: [["Engineering"]]

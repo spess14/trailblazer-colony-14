@@ -1,10 +1,10 @@
 - type: constructionGraph
-  id: WoodenKeg
+  id: FermentingBarrel
   start: start
   graph:
   - node: start
     edges:
-    - to: keg
+    - to: barrel
       completed:
       - !type:SnapToGrid
         southRotation: true
@@ -12,5 +12,5 @@
       - material: WoodPlank
         amount: 10
         doAfter: 3
-  - node: keg
-    entity: WoodenKeg
+  - node: barrel
+    entity: FermentingBarrel

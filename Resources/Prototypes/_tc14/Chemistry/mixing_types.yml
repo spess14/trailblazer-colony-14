@@ -1,0 +1,5 @@
+- type: mixingCategory
+  id: Ferment
+  verbText: mixing-verb-default-ferment
+  icon:
+    entity: FermentingBarrel

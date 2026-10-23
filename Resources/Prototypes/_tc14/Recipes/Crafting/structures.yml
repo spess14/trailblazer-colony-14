@@ -85,10 +85,10 @@
   - !type:TileNotBlocked
 
 - type: construction
-  id: WoodenKeg
-  graph: WoodenKeg
+  id: FermentingBarrel
+  graph: FermentingBarrel
   startNode: start
-  targetNode: keg
+  targetNode: barrel
   category: construction-category-structures
   objectType: Structure
   placementMode: SnapgridCenter

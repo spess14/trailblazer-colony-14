@@ -1,0 +1,11 @@
+- type: reaction
+  id: Beer
+  requiredMixerCategories:
+  - Ferment
+  reactants:
+    Water:
+      amount: 2
+    Flour:
+      amount: 1
+  products:
+    Beer: 3
