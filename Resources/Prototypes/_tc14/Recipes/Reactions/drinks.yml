@@ -9,3 +9,199 @@
       amount: 1
   products:
     Beer: 3
+
+- type: reaction
+  id: EnergyDrink
+  requiredMixerCategories:
+  - Ferment
+  reactants:
+    Coffee:
+      amount: 5
+    Water:
+      amount: 1
+    Sugar:
+      amount: 2
+  products:
+    EnergyDrink: 5
+
+- type: reaction
+  id: RootBeer
+  requiredMixerCategories:
+  - Ferment
+  reactants:
+    Cellulose:
+      amount: 2
+    Water:
+      amount: 2
+    Flour:
+      amount: 1
+  products:
+    RootBeer: 3
+
+- type: reaction
+  id: SpaceMountainWind
+  requiredMixerCategories:
+  - Ferment
+  reactants:
+    JuiceLemon:
+      amount: 2
+    JuiceLime:
+      amount: 2
+    SodaWater:
+      amount: 2
+  products:
+    SpaceMountainWind: 5
+
+- type: reaction
+  id: Absinthe
+  requiredMixerCategories:
+  - Ferment
+  reactants:
+    Bicaridine:
+      amount: 1
+    Kelotane:
+      amount: 1
+  products:
+    Absinthe: 2
+
+- type: reaction
+  id: Ale
+  requiredMixerCategories:
+  - Ferment
+  reactants:
+    Beer:
+      amount: 1
+    Enzyme:
+      amount: 1
+  products:
+    Ale: 2
+
+- type: reaction
+  id: BlueCuracao
+  requiredMixerCategories:
+  - Ferment
+  reactants:
+    Ethanol:
+      amount: 1
+    JuiceLemon:
+      amount: 1
+    JuiceLime:
+      amount: 1
+  products:
+    BlueCuracao: 3
+
+- type: reaction
+  id: Champagne
+  requiredMixerCategories:
+  - Ferment
+  reactants:
+    Wine:
+      amount: 1
+    Soda:
+      amount: 1
+  products:
+    Champagne: 2
+
+- type: reaction
+  id: CoffeeLiqueur
+  requiredMixerCategories:
+  - Ferment
+  reactants:
+    Coffee:
+      amount: 1
+    Vodka:
+      amount: 1
+  products:
+    CoffeeLiqueur: 2
+
+- type: reaction
+  id: Cognac
+  requiredMixerCategories:
+  - Ferment
+  reactants:
+    Wine:
+      amount: 5
+    Cellulose:
+      amount: 1
+  products:
+    Cognac: 5
+
+- type: reaction
+  id: Gin
+  requiredMixerCategories:
+  - Ferment
+  reactants:
+    Cellulose:
+      amount: 2
+    Vodka:
+      amount: 2
+    SpaceMountainWind:
+      amount: 1
+  products:
+    Gin: 5
+
+- type: reaction
+  id: MelonLiquor
+  requiredMixerCategories:
+  - Ferment
+  reactants:
+    JuiceWatermelon:
+      amount: 2
+    Vodka:
+      amount: 1
+  products:
+    MelonLiquor: 3
+
+- type: reaction
+  id: Rum
+  requiredMixerCategories:
+  - Ferment
+  reactants:
+    Whiskey:
+      amount: 1
+    Water:
+      amount: 1
+    Sugar:
+      amount: 1
+  products:
+    Rum: 3
+
+- type: reaction
+  id: Tequila
+  requiredMixerCategories:
+  - Ferment
+  reactants:
+    JuicePineapple:
+      amount: 1
+    Sugar:
+      amount: 1
+  products:
+    Tequila: 2
+
+- type: reaction
+  id: Vermouth
+  requiredMixerCategories:
+  - Ferment
+  reactants:
+    Wine:
+      amount: 2
+    Sugar:
+      amount: 1
+    Vodka:
+      amount: 1
+  products:
+    Vermouth: 3
+
+- type: reaction
+  id: Whiskey
+  requiredMixerCategories:
+  - Ferment
+  reactants:
+    Cornmeal:
+      amount: 3
+    Water:
+      amount: 1
+    Flour:
+      amount: 1
+  products:
+    Whiskey: 4
