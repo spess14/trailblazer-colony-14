@@ -1,5 +1,6 @@
 - type: reaction
   id: Beer
+  priority: 100 # Low prio to not interrupt other flour + water reactions like rootbeer
   requiredMixerCategories:
   - Ferment
   reactants:
@@ -31,10 +32,8 @@
   reactants:
     Cellulose:
       amount: 2
-    Water:
+    Beer:
       amount: 2
-    Flour:
-      amount: 1
   products:
     RootBeer: 3
 
@@ -199,9 +198,7 @@
   reactants:
     Cornmeal:
       amount: 3
-    Water:
-      amount: 1
-    Flour:
-      amount: 1
+    Beer:
+      amount: 2
   products:
     Whiskey: 4

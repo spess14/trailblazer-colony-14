@@ -65,6 +65,8 @@
   - type: EmptyOnMachineDeconstruct
     containers:
     - blueprint
+  - type: Damageable
+    damageModifierSet: WoodMod
   - type: Injurable
     damageContainer: StructuralInorganic
   - type: Destructible
@@ -103,6 +105,8 @@
         - MachineMask
         layer:
         - MachineLayer
+  - type: Damageable
+    damageModifierSet: WoodMod
   - type: Injurable
     damageContainer: StructuralInorganic
   - type: Destructible
@@ -147,6 +151,8 @@
   description: Used to make clothing.
   components:
   - type: Appearance
+  - type: Damageable
+    damageModifierSet: WoodMod
   - type: Injurable
     damageContainer: StructuralInorganic
   - type: Fixtures
