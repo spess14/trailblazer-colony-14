@@ -97,7 +97,7 @@
   reactants:
     Wine:
       amount: 1
-    Soda:
+    SodaWater:
       amount: 1
   products:
     Champagne: 2
