@@ -65,6 +65,10 @@
   - type: EmptyOnMachineDeconstruct
     containers:
     - blueprint
+  - type: Damageable
+    damageModifierSet: WoodMod
+  - type: Injurable
+    damageContainer: StructuralInorganic
   - type: Destructible
     thresholds:
     - trigger:
@@ -101,6 +105,10 @@
         - MachineMask
         layer:
         - MachineLayer
+  - type: Damageable
+    damageModifierSet: WoodMod
+  - type: Injurable
+    damageContainer: StructuralInorganic
   - type: Destructible
     thresholds:
     - trigger:
@@ -143,6 +151,10 @@
   description: Used to make clothing.
   components:
   - type: Appearance
+  - type: Damageable
+    damageModifierSet: WoodMod
+  - type: Injurable
+    damageContainer: StructuralInorganic
   - type: Fixtures
     fixtures:
       fix1:

@@ -20,10 +20,10 @@
     color: "#3db83b"
     castShadows: false
     netsync: false
-  # TC14 - Start - remove access
+  # TC14 - Begin - remove access
 #  - type: AccessReader
 #    access: [["Engineering"]]
-  # TC14 - Start - remove access
+  # TC14 - End
   - type: Sprite
     drawdepth: WallMountedItems
     sprite: Structures/Wallmounts/apc.rsi

@@ -1,3 +1,4 @@
+using Content.Shared._tc14.Chemistry.Systems; // TC14 - add brewing
 using Content.Shared.Chemistry.Components;
 using Content.Shared.DoAfter;
 using Content.Shared.IdentityManagement;
@@ -26,6 +27,24 @@ public sealed partial class ReactionMixerSystem : EntitySystem
         SubscribeLocalEvent<ReactionMixerComponent, ShakeEvent>(OnShake);
         SubscribeLocalEvent<ReactionMixerComponent, ReactionMixDoAfterEvent>(OnDoAfter);
     }
+
+    // TC14 - Begin - add brewing
+    [SubscribeLocalEvent]
+    private void OnFerment(Entity<ReactionMixerComponent> ent, ref FermentEvent args)
+    {
+        var mixAttemptEvent = new MixingAttemptEvent(ent);
+        if (mixAttemptEvent.Cancelled)
+            return;
+
+        if (!_solutionContainer.TryGetMixableSolution(ent.Owner, out var soln, out _))
+            return;
+
+        _solutionContainer.UpdateChemicals(soln.Value, true, ent.Comp);
+
+        var afterMixingEvent = new AfterMixingEvent(ent, ent);
+        RaiseLocalEvent(ent, ref afterMixingEvent);
+    }
+    // TC14 - End
 
     private void OnUseInHand(Entity<ReactionMixerComponent> ent, ref UseInHandEvent args)
     {

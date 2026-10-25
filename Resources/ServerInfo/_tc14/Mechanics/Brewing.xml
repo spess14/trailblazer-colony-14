@@ -1,0 +1,10 @@
+<Document>
+  # Brewing
+  Some drinks (mostly alcoholic) have to be fermented in order to be made. Check out the guidebook for their recipes.
+
+  <Box>
+    <GuideEntityEmbed Entity="FermentingBarrel"/>
+  </Box>
+
+  In order to ferment something, dump the ingredients into the fermenting barrel, then wait a bit. You will be able to dispense the drink from the barrel by using any fluid container on it.
+</Document>
