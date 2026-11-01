@@ -4,7 +4,7 @@ using Content.Shared.AlertLevel;
 using Content.Shared.CCVar;
 using Content.Server.Chat.Managers;
 using Content.Server.Chat.Systems;
-using Content.Server.DeviceNetwork.Systems;
+using Content.Shared.DeviceNetwork.Systems;
 using Content.Server.GameTicking;
 using Content.Server.Shuttles.Components;
 using Content.Server.Shuttles.Systems;
@@ -296,6 +296,7 @@ namespace Content.Server.RoundEnd
             _countdownTokenSource = new();
 
             countdownTime ??= TimeSpan.FromSeconds(_cfg.GetCVar(CCVars.RoundRestartTime));
+            InitializeRoundEndExtension(countdownTime.Value); // Moff - Round end extension vote
             int time;
             string unitsLocString;
             if (countdownTime.Value.TotalSeconds < 60)
@@ -375,6 +376,8 @@ namespace Content.Server.RoundEnd
 
         public override void Update(float frameTime)
         {
+            RoundEndExtensionsUpdate(); // Moff - Round end extension vote
+
             // Check if we should auto-call.
             int mins = _autoCalledBefore ? _cfg.GetCVar(CCVars.EmergencyShuttleAutoCallExtensionTime)
                                         : _cfg.GetCVar(CCVars.EmergencyShuttleAutoCallTime);

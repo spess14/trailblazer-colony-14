@@ -52,8 +52,7 @@
   - type: BlockWeather
   - type: PhysicalLockTarget # TC14 - keys and locks
   - type: IconSmooth
-    key: walls
-    mode: NoSprite
+    key: doors
   - type: PlacementReplacement
     key: walls
   - type: StructureAligner
@@ -265,4 +264,3 @@
           MaterialCardboard: *BaseDoorSpawn
   - type: IconSmooth
     key: cards
-    mode: NoSprite
