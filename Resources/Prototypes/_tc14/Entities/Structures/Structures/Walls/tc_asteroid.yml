@@ -33,7 +33,12 @@
   - type: Sprite
     sprite: _tc14/Structures/Walls/stone.rsi
   - type: IconSmooth
-    key: walls
+    key: stone
+    states:
+    - !type:CornerSpriteSmoothing
+      mask: [ stone, doors ]
+      base: stone
+      index: 0
 
 # Ore veins
 - type: entity
@@ -51,9 +56,6 @@
   - type: MiningScannerViewable
   - type: Sprite
     sprite: _tc14/Structures/Walls/Ore/stone_coal.rsi
-  - type: IconSmooth
-    key: walls
-    base: stone
 
 - type: entity
   id: TCWallRockGold
@@ -70,9 +72,6 @@
   - type: MiningScannerViewable
   - type: Sprite
     sprite: _tc14/Structures/Walls/Ore/stone_gold.rsi
-  - type: IconSmooth
-    key: walls
-    base: stone
 
 - type: entity
   id: TCWallRockDiamond
@@ -89,9 +88,6 @@
   - type: MiningScannerViewable
   - type: Sprite
     sprite: _tc14/Structures/Walls/Ore/stone_diamond.rsi
-  - type: IconSmooth
-    key: walls
-    base: stone
 
 - type: entity
   id: TCWallRockPlasma
@@ -108,9 +104,6 @@
   - type: MiningScannerViewable
   - type: Sprite
     sprite: _tc14/Structures/Walls/Ore/stone_plasma.rsi
-  - type: IconSmooth
-    key: walls
-    base: stone
 
 - type: entity
   id: TCWallRockQuartz
@@ -127,9 +120,6 @@
   - type: MiningScannerViewable
   - type: Sprite
     sprite: _tc14/Structures/Walls/Ore/stone_quartz.rsi
-  - type: IconSmooth
-    key: walls
-    base: stone
 
 - type: entity
   id: TCWallRockSilver
@@ -146,9 +136,6 @@
   - type: MiningScannerViewable
   - type: Sprite
     sprite: _tc14/Structures/Walls/Ore/stone_silver.rsi
-  - type: IconSmooth
-    key: walls
-    base: stone
 
 # Yes I know it drops steel but we may get smelting at some point
 - type: entity
@@ -166,9 +153,6 @@
   - type: MiningScannerViewable
   - type: Sprite
     sprite: _tc14/Structures/Walls/Ore/stone_tin.rsi
-  - type: IconSmooth
-    key: walls
-    base: stone
 
 - type: entity
   id: TCWallRockUranium
@@ -185,9 +169,6 @@
   - type: MiningScannerViewable
   - type: Sprite
     sprite: _tc14/Structures/Walls/Ore/stone_uranium.rsi
-  - type: IconSmooth
-    key: walls
-    base: stone
 
 - type: entity
   id: TCWallRockBananium
@@ -204,9 +185,6 @@
   - type: MiningScannerViewable
   - type: Sprite
     sprite: _tc14/Structures/Walls/Ore/stone_bananium.rsi
-  - type: IconSmooth
-    key: walls
-    base: stone
 
 - type: entity
   id: TCWallRockArtifactFragment
@@ -223,9 +201,6 @@
   - type: MiningScannerViewable
   - type: Sprite
     sprite: _tc14/Structures/Walls/Ore/stone_artifact_fragment.rsi
-  - type: IconSmooth
-    key: walls
-    base: stone
 
 - type: entity
   id: TCWallRockSalt
@@ -242,9 +217,6 @@
   - type: MiningScannerViewable
   - type: Sprite
     sprite: _tc14/Structures/Walls/Ore/stone_salt.rsi
-  - type: IconSmooth
-    key: walls
-    base: stone
 
 - type: entity
   id: TCWallRockSulfur
@@ -261,6 +233,3 @@
   - type: MiningScannerViewable
   - type: Sprite
     sprite: _tc14/Structures/Walls/Ore/stone_sulfur.rsi
-  - type: IconSmooth
-    key: walls
-    base: stone
