@@ -13,4 +13,4 @@
         amount: 5
         doAfter: 1
   - node: soil
-    entity: hydroponicsSoil
+    entity: HydroponicsSoil

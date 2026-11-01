@@ -1,48 +1,13 @@
 using Content.Client.Light.Components;
-using Content.Shared.Examine;
 using Content.Shared.Light.Components;
 using Robust.Client.GameObjects;
-using Robust.Shared.Audio.Systems;
-using Robust.Shared.Prototypes;
 
 namespace Content.Client.Light.EntitySystems;
 
 public sealed partial class ExpendableLightVisualsSystem : VisualizerSystem<ExpendableLightComponent>
 {
     [Dependency] private PointLightSystem _pointLightSystem = default!;
-    [Dependency] private SharedAudioSystem _audioSystem = default!;
     [Dependency] private LightBehaviorSystem _lightBehavior = default!;
-    [Dependency] private IPrototypeManager _protoManager = default!;
-
-    public override void Initialize()
-    {
-        base.Initialize();
-
-        SubscribeLocalEvent<ExpendableLightComponent, ComponentShutdown>(OnLightShutdown);
-        SubscribeLocalEvent<ExpendableLightComponent, ExaminedEvent>(OnExamine);
-    }
-
-    private void OnLightShutdown(EntityUid uid, ExpendableLightComponent component, ComponentShutdown args)
-    {
-        component.PlayingStream = _audioSystem.Stop(component.PlayingStream);
-    }
-
-    // TODO This is a duplicate of the server method (and has to be eventually deduplicated) due to lacking a non-abstract component in Shared to subscribe to.
-    private void OnExamine(Entity<ExpendableLightComponent> ent, ref ExaminedEvent args)
-    {
-        if (!args.IsInDetailsRange)
-            return;
-
-        var protoId = ent.Comp.RefuelMaterialID;
-
-        if (!_protoManager.Resolve(protoId, out var proto))
-            return;
-
-        using (args.PushGroup(nameof(ExpendableLightComponent)))
-        {
-            args.PushMarkup(Loc.GetString("expendable-light-description", ("stackName", Loc.GetString(proto.Name))));
-        }
-    }
 
     protected override void OnAppearanceChange(EntityUid uid, ExpendableLightComponent comp, ref AppearanceChangeEvent args)
     {

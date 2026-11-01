@@ -1,3 +1,4 @@
+using Content.Shared.Examine;
 using Content.Shared.IgnitionSource;
 using Content.Shared.Interaction;
 using Content.Shared.Interaction.Events;
@@ -25,6 +26,7 @@ public sealed partial class ExpendableLightSystem : EntitySystem
     [Dependency] private NameModifierSystem _nameModifier = default!;
     [Dependency] private IGameTiming _timing = default!;
     [Dependency] private INetManager _net = default!;
+    [Dependency] private IPrototypeManager _protoManager = default!; // TC14 - refuelable torches
 
     [Dependency] private EntityQuery<StackComponent> _stackQuery;
     [Dependency] private EntityQuery<AppearanceComponent> _appearanceQuery;
@@ -43,6 +45,25 @@ public sealed partial class ExpendableLightSystem : EntitySystem
                 UpdateLight((uid, light));
         }
     }
+
+    // TC14 - Begin - refuelable torches
+    [SubscribeLocalEvent]
+    private void OnExamine(Entity<ExpendableLightComponent> ent, ref ExaminedEvent args)
+    {
+        if (!args.IsInDetailsRange)
+            return;
+
+        var protoId = ent.Comp.RefuelMaterialID;
+
+        if (!_protoManager.Resolve(protoId, out var proto))
+            return;
+
+        using (args.PushGroup(nameof(ExpendableLightComponent)))
+        {
+            args.PushMarkup(Loc.GetString("expendable-light-description", ("stackName", Loc.GetString(proto.Name))));
+        }
+    }
+    // TC14 - End
 
     /// <summary>
     /// Light refueling logic
