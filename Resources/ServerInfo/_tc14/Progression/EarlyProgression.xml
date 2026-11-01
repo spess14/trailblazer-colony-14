@@ -25,7 +25,7 @@
   With basic tools and materials, you should look for a place to settle. It is recommended to settle in a place with moderate temperature and flowing water nearby.
   When you have shelter, it is time to look into food production.
   <Box>
-    <GuideEntityEmbed Entity="hydroponicsSoil"/>
+    <GuideEntityEmbed Entity="HydroponicsSoil"/>
   </Box>
 
   In order to make advanced items, you will need better workstations and research.

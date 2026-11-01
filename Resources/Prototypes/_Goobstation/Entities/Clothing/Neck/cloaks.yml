@@ -11,4 +11,5 @@
   - type: Sprite
     sprite: _Goobstation/Textures/Cloaks/helldiver.rsi
   - type: StealTarget
-    stealGroup: HeadCloak
+    stealGroup:
+    - HeadCloak
