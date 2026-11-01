@@ -34,7 +34,6 @@
     sprite: _tc14/Structures/Walls/stone.rsi
   - type: IconSmooth
     key: walls
-    base: stone
 
 # Ore veins
 - type: entity
