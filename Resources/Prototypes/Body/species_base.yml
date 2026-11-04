@@ -11,6 +11,7 @@
   - BaseMob
   - MobCombat
   - MobDamageable
+  - ESBaseMob
   - MobPolymorphable
   - StripableInventoryBase
   - BaseSpeciesAppearance

@@ -1,7 +1,7 @@
 - type: entity
-  abstract: true
-  id: BaseItem
   name: "item"
+  id: BaseItem
+  abstract: true
   components:
   - type: Item
     size: Small
@@ -44,6 +44,9 @@
     noRot: false
   - type: Pullable
   - type: DamageExaminable
+  # ES START
+  - type: ESViewconeOccludable
+  # ES END
   - type: Rotatable
     increment: 30
 

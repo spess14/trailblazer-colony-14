@@ -1,6 +1,7 @@
 using System.Diagnostics.CodeAnalysis;
 using System.Numerics;
 using Content.Shared._Moffstation.Extensions;
+using Content.Shared._ES.Viewcone;
 using Content.Shared.ActionBlocker;
 using Content.Shared.CCVar;
 using Content.Shared.Friction;
@@ -48,6 +49,9 @@ public abstract partial class SharedMoverController : VirtualController
     [Dependency] private SharedGravitySystem _gravity = default!;
     [Dependency] private SharedTransformSystem _transform = default!;
     [Dependency] private TagSystem _tags = default!;
+    // ES START
+    [Dependency] private ESViewconeEffectSystem _viewconeEffect = default!;
+    // ES END
 
     [Dependency] protected EntityQuery<CanMoveInAirComponent> CanMoveInAirQuery = default!;
     [Dependency] protected EntityQuery<FootstepModifierComponent> FootstepModifierQuery = default!;
@@ -67,6 +71,10 @@ public abstract partial class SharedMoverController : VirtualController
     [Dependency] protected EntityQuery<TransformComponent> XformQuery = default!;
 
     private static readonly ProtoId<TagPrototype> FootstepSoundTag = "FootstepSound";
+
+    // ES START
+    private static readonly EntProtoId ESFootstepViewconeEffect = "ESViewconeEffectFootstep";
+    // ES END
 
     private bool _relativeMovement;
     private float _minDamping;
@@ -363,6 +371,10 @@ public abstract partial class SharedMoverController : VirtualController
                 {
                     _audio.PlayPredicted(sound, uid, uid, audioParams);
                 }
+
+                // ES START
+                _viewconeEffect.SpawnEffect(uid, ESFootstepViewconeEffect, wishDir.ToWorldAngle());
+                // ES END
             }
         }
     }
