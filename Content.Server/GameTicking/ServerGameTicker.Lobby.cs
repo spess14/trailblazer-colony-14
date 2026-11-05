@@ -79,10 +79,10 @@ public sealed partial class ServerGameTicker
         var desc = (Decoy == null) ? Loc.GetString(preset.Description) : Loc.GetString(Decoy.Description);
         return Loc.GetString(
             RunLevel == GameRunLevel.PreRoundLobby
-                // Moffstation - Start - Moff text
-                ? "game-ticker-get-info-preround-text-moff"
-                : "game-ticker-get-info-text-moff",
-                // Moffstation - End
+                // TC14 - Begin - our text
+                ? "game-ticker-get-info-preround-text-tc14"
+                : "game-ticker-get-info-text-tc14",
+                // TC14 - End
             ("roundId", RoundId),
             ("playerCount", playerCount),
             ("readyCount", readyCount),
