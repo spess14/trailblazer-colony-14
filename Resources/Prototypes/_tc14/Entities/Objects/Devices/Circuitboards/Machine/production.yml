@@ -17,3 +17,19 @@
       Silicon: 20
   - type: StaticPrice
     price: 40
+
+- type: entity
+  id: SeedSplicerMachineCircuitboard
+  parent: BaseMachineCircuitboard
+  name: seed splicer machine board
+  description: A machine printed circuit board for a seed splicer.
+  components:
+  - type: Sprite
+    state: service
+  - type: MachineBoard
+    prototype: SeedSplicer
+    stackRequirements:
+      Capacitor: 1
+      # replacing the console screen
+      Glass: 1
+      Cable: 2
