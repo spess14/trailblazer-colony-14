@@ -8,7 +8,7 @@
     },
     "states": [
         {
-            "name": "seedextractor",
+            "name": "seed-splicer",
             "delays": [
                 [
                     0.1,
