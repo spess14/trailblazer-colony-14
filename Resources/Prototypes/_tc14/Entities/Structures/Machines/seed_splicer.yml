@@ -42,3 +42,29 @@
           False: { visible: false }
   - type: Machine
     board: SeedExtractorMachineCircuitboard
+  - type: ItemSlots
+    slots:
+      seed1:
+        name: seedsplicer-seed1
+        ejectSound: /Audio/Machines/id_swipe.ogg
+        insertSound: /Audio/Weapons/Guns/MagIn/batrifle_magin.ogg
+        ejectOnBreak: true
+        swap: false
+        whitelist:
+          components:
+          - Seed
+      seed2:
+        name: seedsplicer-seed2
+        ejectSound: /Audio/Machines/id_swipe.ogg
+        insertSound: /Audio/Weapons/Guns/MagIn/batrifle_magin.ogg
+        ejectOnBreak: true
+        swap: false
+        whitelist:
+          components:
+          - Seed
+  - type: SeedSplicer
+  - type: ContainerContainer
+    containers:
+      board: !type:Container
+      SeedSplicer-seed1: !type:ContainerSlot
+      SeedSplicer-seed2: !type:ContainerSlot
