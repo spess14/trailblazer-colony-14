@@ -1,0 +1,4 @@
+- type: reagent
+  id: BloodThatDoesNotEvaporate
+  parent: Blood
+  evaporationSpeed: 0
