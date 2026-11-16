@@ -68,3 +68,9 @@
       board: !type:Container
       SeedSplicer-seed1: !type:ContainerSlot
       SeedSplicer-seed2: !type:ContainerSlot
+  - type: ActivatableUI
+    key: enum.SeedSplicerUiKey.Key
+  - type: UserInterface
+    interfaces:
+      enum.SeedSplicerUiKey.Key:
+        type: SeedSplicerBoundUserInterface
