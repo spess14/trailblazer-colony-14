@@ -18,7 +18,7 @@
                 <BoxContainer Orientation="Vertical"
                               Margin="5 5 5 5"
                               SeparationOverride="5">
-                    <SpriteView Name="SeedOneSpriteView"/>
+                    <SpriteView Name="SeedOneSpriteView" Scale="2 2"/>
                     <Label Text="???" Name="SeedOneName"/>
                     <Button Name="SeedOneSlotButton" Access="Public"/>
                 </BoxContainer>
@@ -30,7 +30,7 @@
                 <BoxContainer Orientation="Vertical"
                               Margin="5 5 5 5"
                               SeparationOverride="5">
-                    <SpriteView Name="SeedTwoSpriteView"/>
+                    <SpriteView Name="SeedTwoSpriteView" Scale="2 2"/>
                     <Label Text="???" Name="SeedTwoName"/>
                     <Button Name="SeedTwoSlotButton" Access="Public"/>
                 </BoxContainer>
@@ -50,7 +50,7 @@
                           Margin="5 5 5 5"
                           SeparationOverride="5"
                           Align="Center">
-                <SpriteView Name="ResultSeedSpriteView"/>
+                <SpriteView Name="ResultSeedSpriteView" Scale="2 2"/>
                 <Label Text="???" Name="ResultSeedName"/>
             </BoxContainer>
         </PanelContainer>

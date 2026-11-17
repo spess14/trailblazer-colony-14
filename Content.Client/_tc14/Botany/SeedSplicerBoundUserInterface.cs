@@ -1,3 +1,4 @@
+using Content.Shared._tc14.Botany.Components;
 using JetBrains.Annotations;
 using Robust.Client.UserInterface;
 
@@ -14,5 +15,12 @@ public sealed class SeedSplicerBoundUserInterface(EntityUid owner, Enum uiKey) :
         base.Open();
 
         _window = this.CreateWindow<SeedSplicerWindow>();
+    }
+
+    protected override void UpdateState(BoundUserInterfaceState state)
+    {
+        base.UpdateState(state);
+        var castState = (SeedSplicerBoundUserInterfaceState) state;
+        _window?.UpdateState(castState);
     }
 }
