@@ -35,7 +35,7 @@ public sealed partial class ResearchEntryPrototype : IPrototype
     /// How many points do you need to research this?
     /// </summary>
     [DataField]
-    public int Points = 100;
+    public int Points;
 
     /// <summary>
     /// Where on the research tree grid should this entry be located?

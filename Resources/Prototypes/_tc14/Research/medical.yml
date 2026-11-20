@@ -1,4 +1,5 @@
 - type: researchEntry
+  points: 100
   id: ResearchMedicine
   name: tc-research-medicine-name
   discipline: DisciplineMedical
@@ -14,6 +15,7 @@
   - Defibrillator
 
 - type: researchEntry
+  points: 150
   id: ResearchTideChem
   name: tc-research-tidechem-name
   discipline: DisciplineMedical
@@ -30,11 +32,12 @@
   - ChemistryEmptyBottle01
 
 - type: researchEntry
+  points: 150
   id: ResearchChemistry
   name: tc-research-chemistry-name
   discipline: DisciplineMedical
   iconPrototype: ClothingEyesGlassesChemical
-  gridLocation: 2,0
+  gridLocation: 1,1
   dependencies:
   - ResearchTideChem
   - ResearchElectricity
