@@ -19,15 +19,15 @@ public enum SeedSplicerUiKey : byte
 
 [Serializable, NetSerializable]
 public sealed class SeedSplicerBoundUserInterfaceState(
-    NetEntity seedOne,
-    NetEntity seedTwo,
     EntProtoId? seedOneProto,
-    EntProtoId? seedTwoProto)
+    EntProtoId? seedTwoProto,
+    string? seedOneName,
+    string? seedTwoName)
     : BoundUserInterfaceState
 {
-    public NetEntity SeedOne = seedOne;
-    public NetEntity SeedTwo = seedTwo;
     public EntProtoId? SeedOneProto = seedOneProto;
     public EntProtoId? SeedTwoProto = seedTwoProto;
+    public string? SeedOneName = seedOneName;
+    public string? SeedTwoName = seedTwoName;
 }
 

@@ -10,6 +10,9 @@ namespace Content.Client._tc14.Botany;
 public sealed partial class SeedSplicerWindow : FancyWindow
 {
     [Dependency] private IPrototypeManager _protoMan = default!;
+    private const string InsertText = "verb-categories-insert";
+    private const string EjectText = "verb-categories-eject";
+    private const string EmptySlot = "???";
 
     public SeedSplicerWindow()
     {
@@ -19,28 +22,30 @@ public sealed partial class SeedSplicerWindow : FancyWindow
 
     public void UpdateState(SeedSplicerBoundUserInterfaceState state)
     {
-        var seed1 = state.SeedOne;
-        var seed2 = state.SeedTwo;
-        _protoMan.Resolve(state.SeedOneProto, out var proto1);
-        _protoMan.Resolve(state.SeedTwoProto, out var proto2);
-        if (seed1 != NetEntity.Invalid)
-            SeedOneSpriteView.SetEntity(seed1);
+        var seedProto1 = state.SeedOneProto;
+        var seedProto2 = state.SeedTwoProto;
+        var seedName1 = state.SeedOneName;
+        var seedName2 = state.SeedTwoName;
+        if (seedProto1 is not null && seedName1 is not null)
+        {
+            SeedOneName.Text = Loc.GetString(seedName1);
+            SeedOneSlotButton.Text = Loc.GetString(EjectText);
+        }
         else
         {
-            SeedOneName.Text = "???";
-            SeedOneSpriteView.SetEntity(null);
+            SeedOneName.Text = EmptySlot;
+            SeedOneSlotButton.Text = Loc.GetString(InsertText);
         }
-        if (seed2 != NetEntity.Invalid)
-            SeedTwoSpriteView.SetEntity(seed2);
+        if (seedProto2 is not null && seedName2 is not null)
+        {
+            SeedTwoName.Text = Loc.GetString(seedName2);
+            SeedTwoSlotButton.Text = Loc.GetString(EjectText);
+        }
         else
         {
-            SeedTwoName.Text = "???";
-            SeedTwoSpriteView.SetEntity(null);
+            SeedTwoName.Text = EmptySlot;
+            SeedTwoSlotButton.Text = Loc.GetString(InsertText);
         }
-        if (proto1 is not null)
-            SeedOneName.Text = proto1.Name;
-        if (proto2 is not null)
-            SeedTwoName.Text = proto2.Name;
     }
 }
 
