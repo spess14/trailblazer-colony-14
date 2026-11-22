@@ -126,10 +126,6 @@ namespace Content.Shared.Interaction
                     new PointerInputCmdHandler(HandleActivateItemInWorld))
                 .Bind(ContentKeyFunctions.TryPullObject,
                     new PointerInputCmdHandler(HandleTryPullObject))
-                // ES START
-                .Bind(EngineKeyFunctions.UseSecondary,
-                    new PointerInputCmdHandler(ESHandleEntityMenuRotate))
-                // ES END
                 .Register<SharedInteractionSystem>();
 
             _rateLimit.Register(RateLimitKey,
@@ -140,20 +136,6 @@ namespace Content.Shared.Interaction
                     RateLimitAlertAdmins)
             );
         }
-
-        // ES START
-        private bool ESHandleEntityMenuRotate(ICommonSession? session, EntityCoordinates coords, EntityUid uid)
-        {
-            if (!ValidateClientInput(session, coords, uid, out var user))
-                return true;
-
-            // clientside handles opening the menu, but we want to rotate to it also
-            // // which we do in shared
-            ValidateInteractAndFace(user.Value, coords);
-
-            return false;
-        }
-        // ES END
 
         private void RateLimitAlertAdmins(ICommonSession session)
         {

@@ -18,7 +18,7 @@
         Blunt: 5
     soundHit:
       collection: MetalThud
-    bluntStaminaDamageFactor: 2.5 # Moff
+    bluntStaminaDamageFactor: 2 # Moff # TC14 - nerf nightstick to 5 hits
   - type: Item
     size: Small
   - type: ItemToggle

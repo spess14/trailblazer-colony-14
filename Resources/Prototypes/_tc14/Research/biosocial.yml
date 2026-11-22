@@ -1,4 +1,5 @@
 - type: researchEntry
+  points: 100
   id: ResearchAgriculture
   name: tc-research-agriculture-name
   discipline: DisciplineBiosocial
@@ -13,6 +14,7 @@
   - PlantAnalyzer
 
 - type: researchEntry
+  points: 150
   id: ResearchBotany
   name: tc-research-botany-name
   discipline: DisciplineBiosocial

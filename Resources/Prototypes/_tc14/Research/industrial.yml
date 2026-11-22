@@ -1,4 +1,5 @@
 - type: researchEntry
+  points: 100
   id: ResearchElectricity
   name: tc-research-electricity-name
   discipline: DisciplineIndustrial
@@ -20,6 +21,7 @@
   - PowerCellMedium
 
 - type: researchEntry
+  points: 150
   id: ResearchFabrication
   name: tc-research-fabrication-name
   discipline: DisciplineIndustrial
@@ -36,6 +38,7 @@
   - BorgChargerCircuitboard
 
 - type: researchEntry
+  points: 150
   id: ResearchBatteries
   name: tc-research-batteries-name
   discipline: DisciplineIndustrial
@@ -48,6 +51,7 @@
   - PowerCellHyper
 
 - type: researchEntry
+  points: 150
   id: ResearchSolarPower
   name: tc-research-solarpower-name
   discipline: DisciplineIndustrial
