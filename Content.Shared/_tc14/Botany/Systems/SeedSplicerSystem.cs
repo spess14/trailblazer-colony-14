@@ -16,29 +16,40 @@ public sealed partial class SeedSplicerSystem : EntitySystem
     [Dependency] private IPrototypeManager _protoMan = default!;
     [Dependency] private IEntityManager _entityManager = default!;
 
-    // TODO
-    public void SpliceSeed(Entity<SeedSplicerComponent> ent)
+    [SubscribeLocalEvent]
+    private void OnSplice(Entity<SeedSplicerComponent> ent, ref SeedSplicerSpliceEvent args)
     {
         if (!_slot.TryGetSlot(ent.Owner, SeedSplicerComponent.Slot1, out var slot1) || !_slot.TryGetSlot(ent.Owner, SeedSplicerComponent.Slot2, out var slot2))
             return;
-        if (!TryComp<SeedComponent>(slot1.ContainerSlot?.ContainedEntity, out var seed1) || !TryComp<SeedComponent>(slot2.ContainerSlot?.ContainedEntity, out var seed2))
+        var entUid1 = slot1.ContainerSlot?.ContainedEntity;
+        var entUid2 = slot2.ContainerSlot?.ContainedEntity;
+        GetSeedInfo(entUid1, out _, out var seedProto1, out _);
+        GetSeedInfo(entUid2, out _, out var seedProto2, out _);
+        if (seedProto1 is null || seedProto2 is null)
             return;
-        PredictedSpawnAtPosition("WheatSeeds", Transform(ent).Coordinates);
+        var spliceProto = FindSplice(seedProto1.Value, seedProto2.Value);
+        if (spliceProto is null)
+            return;
+        // TODO implement chance scaling with botany skill
+        QueueDel(entUid1);
+        QueueDel(entUid2);
+        PredictedSpawnAtPosition(spliceProto.OutputSeed, Transform(ent).Coordinates);
+        UpdateState(ent);
     }
 
     [SubscribeLocalEvent]
     private void OnInsert(Entity<SeedSplicerComponent> ent, ref EntInsertedIntoContainerMessage args)
     {
-        UpdateState(ent, args);
+        UpdateState(ent);
     }
 
     [SubscribeLocalEvent]
     private void OnEject(Entity<SeedSplicerComponent> ent, ref EntRemovedFromContainerMessage args)
     {
-        UpdateState(ent, args);
+        UpdateState(ent);
     }
 
-    public SeedSplicePrototype? FindSplice(EntProtoId plantProto1, EntProtoId plantProto2)
+    private SeedSplicePrototype? FindSplice(EntProtoId plantProto1, EntProtoId plantProto2)
     {
         var prototypes = _protoMan.EnumeratePrototypes<SeedSplicePrototype>();
         return prototypes.FirstOrDefault(p => p.Seed1 == plantProto1 && p.Seed2 == plantProto2);
@@ -49,7 +60,7 @@ public sealed partial class SeedSplicerSystem : EntitySystem
         return FindSpliceName(FindSplice(plantProto1, plantProto2));
     }
 
-    public string? FindSpliceName(SeedSplicePrototype? proto)
+    private string? FindSpliceName(SeedSplicePrototype? proto)
     {
         if (proto is null)
             return null;
@@ -61,38 +72,38 @@ public sealed partial class SeedSplicerSystem : EntitySystem
         return null;
     }
 
-    private void UpdateState(Entity<SeedSplicerComponent> ent, EntityEventArgs args)
+    private void UpdateState(Entity<SeedSplicerComponent> ent)
     {
         if (!_slot.TryGetSlot(ent.Owner, SeedSplicerComponent.Slot1, out var slot1) || !_slot.TryGetSlot(ent.Owner, SeedSplicerComponent.Slot2, out var slot2))
             return;
         var entUid1 = slot1.ContainerSlot?.ContainedEntity;
         var entUid2 = slot2.ContainerSlot?.ContainedEntity;
-        EntProtoId? plantProto1 = null, plantProto2 = null;
-        EntProtoId? seedProto1 = null, seedProto2 = null;
-        SeedSplicePrototype? resultProto = null;
-        string? seedName1 = null, seedName2 = null, resultName = null;
-        if (TryComp<SeedComponent>(entUid1, out var seedComp1))
-            plantProto1 = seedComp1.PlantProtoId;
-        if (TryComp<SeedComponent>(entUid2, out var seedComp2))
-            plantProto2 = seedComp2.PlantProtoId;
-        if (_protoMan.Resolve(plantProto1, out var plant1) &&
-            plant1.TryComp<PlantDataComponent>(out var plantData1, _entityManager.ComponentFactory))
-        {
-            seedName1 = plantData1.Name;
-            seedProto1 = plantData1.PacketPrototype;
-        }
-        if (_protoMan.Resolve(plantProto2, out var plant2) &&
-            plant2.TryComp<PlantDataComponent>(out var plantData2, _entityManager.ComponentFactory))
-        {
-            seedName2 = plantData2.Name;
-            seedProto2 = plantData2.PacketPrototype;
-        }
+        string? resultName = null;
+        GetSeedInfo(entUid1, out _, out var seedProto1, out var seedName1);
+        GetSeedInfo(entUid2, out _, out var seedProto2, out var seedName2);
         if (seedProto1 is not null && seedProto2 is not null)
         {
-            resultProto = FindSplice(seedProto1.Value, seedProto2.Value);
+            var resultProto = FindSplice(seedProto1.Value, seedProto2.Value);
             resultName = FindSpliceName(resultProto);
         }
         var state = new SeedSplicerBoundUserInterfaceState(seedName1, seedName2, resultName);
         _userInterface.SetUiState(ent.Owner, SeedSplicerUiKey.Key, state);
+    }
+
+    private void GetSeedInfo(EntityUid? seed, out EntProtoId? plantProto, out EntProtoId? seedProto, out string? seedName)
+    {
+        plantProto = null;
+        seedProto = null;
+        seedName = null;
+        if (seed is null)
+            return;
+        if (TryComp<SeedComponent>(seed, out var seedComp))
+            plantProto = seedComp.PlantProtoId;
+        if (_protoMan.Resolve(plantProto, out var plant) &&
+            plant.TryComp<PlantDataComponent>(out var plantData, _entityManager.ComponentFactory))
+        {
+            seedProto = plantData.PacketPrototype;
+            seedName = plantData.Name;
+        }
     }
 }

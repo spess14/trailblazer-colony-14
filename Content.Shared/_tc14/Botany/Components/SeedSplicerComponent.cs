@@ -1,7 +1,5 @@
-using Content.Shared._tc14.Botany.Prototypes;
-using Content.Shared.Botany.Items.Components;
+using Content.Shared.Chemistry;
 using Robust.Shared.GameStates;
-using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization;
 
 namespace Content.Shared._tc14.Botany.Components;
@@ -33,3 +31,5 @@ public sealed class SeedSplicerBoundUserInterfaceState(
     public string? ResultName = resultName;
 }
 
+[Serializable, NetSerializable]
+public sealed class SeedSplicerSpliceEvent : BoundUserInterfaceMessage;
