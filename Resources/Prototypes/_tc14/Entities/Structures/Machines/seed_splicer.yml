@@ -47,7 +47,6 @@
       seed1:
         name: seedsplicer-seed1
         ejectSound: /Audio/Machines/id_swipe.ogg
-        insertSound: /Audio/Weapons/Guns/MagIn/batrifle_magin.ogg
         ejectOnBreak: true
         swap: false
         whitelist:
@@ -56,7 +55,6 @@
       seed2:
         name: seedsplicer-seed2
         ejectSound: /Audio/Machines/id_swipe.ogg
-        insertSound: /Audio/Weapons/Guns/MagIn/batrifle_magin.ogg
         ejectOnBreak: true
         swap: false
         whitelist:

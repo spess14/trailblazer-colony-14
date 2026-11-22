@@ -14,13 +14,10 @@ public sealed partial class SeedSplicerSystem : EntitySystem
     [Dependency] private IPrototypeManager _protoMan = default!;
     [Dependency] private IEntityManager _entityManager = default!;
 
-    private const string Slot1 = "seed1";
-    private const string Slot2 = "seed2";
-
     // TODO
     public void SpliceSeed(Entity<SeedSplicerComponent> ent)
     {
-        if (!_slot.TryGetSlot(ent.Owner, Slot1, out var slot1) || !_slot.TryGetSlot(ent.Owner, Slot2, out var slot2))
+        if (!_slot.TryGetSlot(ent.Owner, SeedSplicerComponent.Slot1, out var slot1) || !_slot.TryGetSlot(ent.Owner, SeedSplicerComponent.Slot2, out var slot2))
             return;
         if (!TryComp<SeedComponent>(slot1.ContainerSlot?.ContainedEntity, out var seed1) || !TryComp<SeedComponent>(slot2.ContainerSlot?.ContainedEntity, out var seed2))
             return;
@@ -41,7 +38,7 @@ public sealed partial class SeedSplicerSystem : EntitySystem
 
     private void UpdateState(Entity<SeedSplicerComponent> ent, EntityEventArgs args)
     {
-        if (!_slot.TryGetSlot(ent.Owner, Slot1, out var slot1) || !_slot.TryGetSlot(ent.Owner, Slot2, out var slot2))
+        if (!_slot.TryGetSlot(ent.Owner, SeedSplicerComponent.Slot1, out var slot1) || !_slot.TryGetSlot(ent.Owner, SeedSplicerComponent.Slot2, out var slot2))
             return;
         var entUid1 = slot1.ContainerSlot?.ContainedEntity;
         var entUid2 = slot2.ContainerSlot?.ContainedEntity;

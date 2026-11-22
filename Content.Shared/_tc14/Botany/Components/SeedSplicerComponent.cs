@@ -8,7 +8,8 @@ namespace Content.Shared._tc14.Botany.Components;
 [RegisterComponent, NetworkedComponent]
 public sealed partial class SeedSplicerComponent : Component
 {
-
+    public static string Slot1 = "seed1";
+    public static string Slot2 = "seed2";
 }
 
 [Serializable, NetSerializable]
