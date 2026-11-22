@@ -1,3 +1,4 @@
+using Content.Shared._tc14.Botany.Prototypes;
 using Content.Shared.Botany.Items.Components;
 using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
@@ -20,15 +21,15 @@ public enum SeedSplicerUiKey : byte
 
 [Serializable, NetSerializable]
 public sealed class SeedSplicerBoundUserInterfaceState(
-    EntProtoId? seedOneProto,
-    EntProtoId? seedTwoProto,
+    //SeedSplicePrototype? resultProto,
     string? seedOneName,
-    string? seedTwoName)
+    string? seedTwoName,
+    string? resultName)
     : BoundUserInterfaceState
 {
-    public EntProtoId? SeedOneProto = seedOneProto;
-    public EntProtoId? SeedTwoProto = seedTwoProto;
+    //public SeedSplicePrototype? ResultProto = resultProto;
     public string? SeedOneName = seedOneName;
     public string? SeedTwoName = seedTwoName;
+    public string? ResultName = resultName;
 }
 

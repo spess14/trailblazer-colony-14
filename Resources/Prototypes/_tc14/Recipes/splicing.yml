@@ -1,0 +1,5 @@
+- type: seedSplice
+  id: DebugSplice
+  seed1: WheatSeeds
+  seed2: WheatSeeds
+  outputSeed: MeatwheatSeeds
