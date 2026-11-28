@@ -1,0 +1,14 @@
+<Document>
+  # Botany
+  There are some new tools for botanists to enjoy.
+
+  ## Seed Splicer
+
+  <Box>
+    <GuideEntityEmbed Entity="SeedSplicer"/>
+  </Box>
+
+  Unlocked with a specific research, seed splicing allows you to get a new type of seed by combining two other seeds.
+
+  Note: seed order matters here - for example, wheat seed in slot 1 and apple seed in slot 2 might have a different outcome than wheat seed in slot 2 and apple seed in slot 1.
+</Document>

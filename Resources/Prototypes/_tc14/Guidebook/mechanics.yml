@@ -19,3 +19,17 @@
   name: guide-entry-mechanics-brewing
   text: "/ServerInfo/_tc14/Mechanics/Brewing.xml"
   showInTree: true
+
+- type: guideEntry
+  id: TCBotany
+  name: guide-entry-mechanics-botany
+  text: "/ServerInfo/_tc14/Mechanics/Botany.xml"
+  showInTree: true
+  children:
+  - TCSplicingList
+
+- type: guideEntry
+  id: TCSplicingList
+  name: guide-entry-mechanics-splicing-list
+  text: "/ServerInfo/_tc14/Mechanics/SplicingRecipes.xml"
+  showInTree: true
