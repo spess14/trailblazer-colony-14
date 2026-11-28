@@ -36,7 +36,8 @@
                 </BoxContainer>
             </PanelContainer>
         </BoxContainer>
-        <BoxContainer Align="Center">
+        <BoxContainer Align="Center" Orientation="Vertical" HorizontalAlignment="Center" SeparationOverride="5">
+            <Label Text="{Loc 'seedsplicer-chance-unknown'}" Name="SpliceChanceLabel"/>
             <Button Name="SpliceButton"
                     Access="Public"
                     Text="{Loc 'seedsplicer-ui-splice'}"/>

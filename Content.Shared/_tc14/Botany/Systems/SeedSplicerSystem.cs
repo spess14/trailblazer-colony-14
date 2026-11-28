@@ -4,8 +4,13 @@ using Content.Shared._tc14.Botany.Prototypes;
 using Content.Shared.Botany.Components;
 using Content.Shared.Botany.Items.Components;
 using Content.Shared.Containers.ItemSlots;
+using Content.Shared.Random.Helpers;
+using Robust.Shared.Audio;
+using Robust.Shared.Audio.Systems;
 using Robust.Shared.Containers;
+using Robust.Shared.Network;
 using Robust.Shared.Prototypes;
+using Robust.Shared.Timing;
 
 namespace Content.Shared._tc14.Botany.Systems;
 
@@ -14,7 +19,10 @@ public sealed partial class SeedSplicerSystem : EntitySystem
     [Dependency] private ItemSlotsSystem _slot = default!;
     [Dependency] private SharedUserInterfaceSystem _userInterface = default!;
     [Dependency] private IPrototypeManager _protoMan = default!;
+    [Dependency] private IGameTiming _timing = default!;
+    [Dependency] private SharedAudioSystem _audio = default!;
     [Dependency] private IEntityManager _entityManager = default!;
+    [Dependency] private INetManager _net = default!;
 
     [SubscribeLocalEvent]
     private void OnSplice(Entity<SeedSplicerComponent> ent, ref SeedSplicerSpliceEvent args)
@@ -31,9 +39,22 @@ public sealed partial class SeedSplicerSystem : EntitySystem
         if (spliceProto is null)
             return;
         // TODO implement chance scaling with botany skill
+        var random = SharedRandomExtensions.PredictedRandom(_timing, GetNetEntity(ent));
         QueueDel(entUid1);
         QueueDel(entUid2);
-        PredictedSpawnAtPosition(spliceProto.OutputSeed, Transform(ent).Coordinates);
+        SoundSpecifier sound;
+        if (random.Next(100) < spliceProto.Chance * 100)
+        {
+            PredictedSpawnAtPosition(spliceProto.OutputSeed, Transform(ent).Coordinates);
+            sound = ent.Comp.SuccessSound;
+        }
+        else
+        {
+            PredictedSpawnAtPosition(spliceProto.Seed1, Transform(ent).Coordinates);
+            sound = ent.Comp.FailureSound;
+        }
+        if (_net.IsServer)
+            _audio.PlayPvs(_audio.ResolveSound(sound), ent.Owner);
         UpdateState(ent);
     }
 
@@ -79,14 +100,16 @@ public sealed partial class SeedSplicerSystem : EntitySystem
         var entUid1 = slot1.ContainerSlot?.ContainedEntity;
         var entUid2 = slot2.ContainerSlot?.ContainedEntity;
         string? resultName = null;
+        int? chance = null;
         GetSeedInfo(entUid1, out _, out var seedProto1, out var seedName1);
         GetSeedInfo(entUid2, out _, out var seedProto2, out var seedName2);
         if (seedProto1 is not null && seedProto2 is not null)
         {
             var resultProto = FindSplice(seedProto1.Value, seedProto2.Value);
             resultName = FindSpliceName(resultProto);
+            chance = resultProto is null ? null : (int)(resultProto.Chance * 100);
         }
-        var state = new SeedSplicerBoundUserInterfaceState(seedName1, seedName2, resultName);
+        var state = new SeedSplicerBoundUserInterfaceState(seedName1, seedName2, resultName, chance);
         _userInterface.SetUiState(ent.Owner, SeedSplicerUiKey.Key, state);
     }
 

@@ -1,4 +1,5 @@
 using Content.Shared.Chemistry;
+using Robust.Shared.Audio;
 using Robust.Shared.GameStates;
 using Robust.Shared.Serialization;
 
@@ -9,6 +10,12 @@ public sealed partial class SeedSplicerComponent : Component
 {
     public static string Slot1 = "seed1";
     public static string Slot2 = "seed2";
+
+    [DataField]
+    public SoundSpecifier SuccessSound = new SoundCollectionSpecifier("CargoPing");
+
+    [DataField]
+    public SoundSpecifier FailureSound = new SoundCollectionSpecifier("CargoError");
 }
 
 [Serializable, NetSerializable]
@@ -22,13 +29,15 @@ public sealed class SeedSplicerBoundUserInterfaceState(
     //SeedSplicePrototype? resultProto,
     string? seedOneName,
     string? seedTwoName,
-    string? resultName)
+    string? resultName,
+    int? chance)
     : BoundUserInterfaceState
 {
     //public SeedSplicePrototype? ResultProto = resultProto;
     public string? SeedOneName = seedOneName;
     public string? SeedTwoName = seedTwoName;
     public string? ResultName = resultName;
+    public int? Chance = chance;
 }
 
 [Serializable, NetSerializable]

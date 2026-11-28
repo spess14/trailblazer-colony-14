@@ -9,9 +9,10 @@ namespace Content.Client._tc14.Botany;
 [GenerateTypedNameReferences]
 public sealed partial class SeedSplicerWindow : FancyWindow
 {
-    [Dependency] private IPrototypeManager _protoMan = default!;
     private const string InsertText = "verb-categories-insert";
     private const string EjectText = "verb-categories-eject";
+    private const string UnknownChance = "seedsplicer-chance-unknown";
+    private const string KnownChance = "seedsplicer-chance";
     private const string EmptySlot = "???";
 
     public SeedSplicerWindow()
@@ -26,6 +27,7 @@ public sealed partial class SeedSplicerWindow : FancyWindow
         var seedName2 = state.SeedTwoName;
         //var resultProto = state.ResultProto;
         var resultName = state.ResultName;
+        var chance = state.Chance;
         if (seedName1 is not null)
         {
             SeedOneName.Text = Loc.GetString(seedName1);
@@ -47,6 +49,9 @@ public sealed partial class SeedSplicerWindow : FancyWindow
             SeedTwoSlotButton.Text = Loc.GetString(InsertText);
         }
         ResultSeedName.Text = resultName is not null ? Loc.GetString(resultName) : EmptySlot;
+        SpliceChanceLabel.Text = chance is not null
+            ? Loc.GetString(KnownChance, ("chance", chance))
+            : Loc.GetString(UnknownChance);
     }
 }
 
